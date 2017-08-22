@@ -1,0 +1,148 @@
+\section{Cfg\_\-Base Class Reference}
+\label{classCfg__Base}\index{Cfg\_\-Base@{Cfg\_\-Base}}
+
+
+Base-\/class for automatically loading and saving of preferences.  
+
+
+{\ttfamily \#include $<$Preferences.h$>$}Inheritance diagram for Cfg\_\-Base::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.93103cm]{classCfg__Base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cfg\_\-Base} (const wxString \&keyname)
+\item 
+virtual {\bf $\sim$Cfg\_\-Base} ()\label{classCfg__Base_a50eea53750a7e5f37fc42685471e5024}
+
+\item 
+virtual void {\bf LoadFromFile} (wxConfigBase $\ast$cfg)=0\label{classCfg__Base_ae9284946eb2a5bd3158b03a6692e1673}
+
+\item 
+virtual void {\bf SaveToFile} (wxConfigBase $\ast$cfg)=0\label{classCfg__Base_af1f3a1732d4288d631d6cc2a0949c194}
+
+\item 
+virtual bool {\bf TransferFromWindow} ()
+\item 
+virtual bool {\bf TransferToWindow} ()
+\item 
+virtual bool {\bf ConnectToWidget} (int id, wxWindow $\ast$parent=NULL)
+\item 
+virtual const wxString \& {\bf GetKey} ()
+\item 
+virtual bool {\bf HasChanged} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf SetChanged} (bool changed)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf m\_\-key}\label{classCfg__Base_ade63b9e4961af3a9ff36007a9f025d4d}
+
+\item 
+bool {\bf m\_\-changed}\label{classCfg__Base_adb76ad2d7b09469a0369d00fe66d3ace}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base-\/class for automatically loading and saving of preferences. The purpose of this class is to perform two tasks: 1) To load and save a variable using wxConfig 2) If nescecarry, to syncronize it with a widget
+
+This pure-\/virtual class servers as the base of all the Cfg types defined below, and exposes the entire interface.
+
+Please note that for reasons of simplicity these classes dont provide direct access to the variables they maintain, as there is no real need for this.
+
+To create a sub-\/class you need only provide the Load/Save functionality, as it is given that not all variables have a widget assosiated. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cfg\_\-Base@{Cfg\_\-Base}!Cfg\_\-Base@{Cfg\_\-Base}}
+\index{Cfg\_\-Base@{Cfg\_\-Base}!Cfg_Base@{Cfg\_\-Base}}
+\subsubsection[{Cfg\_\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Cfg\_\-Base::Cfg\_\-Base (const wxString \& {\em keyname})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCfg__Base_a1379cae85a4567b763d79d179d27d969}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em keyname}]This is the keyname under which the variable is to be saved. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Cfg\_\-Base@{Cfg\_\-Base}!ConnectToWidget@{ConnectToWidget}}
+\index{ConnectToWidget@{ConnectToWidget}!Cfg_Base@{Cfg\_\-Base}}
+\subsubsection[{ConnectToWidget}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Base::ConnectToWidget (int {\em id}, \/  wxWindow $\ast$ {\em parent} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Base_a9a35bb2cf49980a993c333724779845c}
+
+
+Connects a widget with the specified ID to the Cfg object. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]The ID of the widget. \item[{\em parent}]A pointer to the widgets parent, to speed up searches. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false otherwise.
+\end{DoxyReturn}
+This function only makes sense for Cfg-\/classes that have the capability to interact with a widget, see \doxyref{Cfg\_\-Tmpl::ConnectToWidget()}{p.}{classCfg__Tmpl_a7873f74fa4f0adc0268fa2eb2b1e94fb}. 
+
+Reimplemented in {\bf Cfg\_\-Tmpl$<$ TYPE $>$} \doxyref{}{p.}{classCfg__Tmpl_a7873f74fa4f0adc0268fa2eb2b1e94fb}, {\bf Cfg\_\-Tmpl$<$ int $>$} \doxyref{}{p.}{classCfg__Tmpl_a7873f74fa4f0adc0268fa2eb2b1e94fb}, {\bf Cfg\_\-Tmpl$<$ wxString $>$} \doxyref{}{p.}{classCfg__Tmpl_a7873f74fa4f0adc0268fa2eb2b1e94fb}, and {\bf Cfg\_\-Tmpl$<$ bool $>$} \doxyref{}{p.}{classCfg__Tmpl_a7873f74fa4f0adc0268fa2eb2b1e94fb}.\index{Cfg\_\-Base@{Cfg\_\-Base}!GetKey@{GetKey}}
+\index{GetKey@{GetKey}!Cfg_Base@{Cfg\_\-Base}}
+\subsubsection[{GetKey}]{\setlength{\rightskip}{0pt plus 5cm}virtual const wxString\& Cfg\_\-Base::GetKey ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Base_a1379d03a0bda527b6d067b1c01906762}
+
+
+Gets the key assosiated with Cfg object. \begin{DoxyReturn}{Returns}
+The config-\/key of this object. 
+\end{DoxyReturn}
+
+
+References m\_\-key.
+
+Referenced by Cfg\_\-Colour::LoadFromFile(), Cfg\_\-Bool::LoadFromFile(), Cfg\_\-Int$<$ int $>$::LoadFromFile(), Cfg\_\-Str::LoadFromFile(), Cfg\_\-Colour::SaveToFile(), Cfg\_\-Bool::SaveToFile(), Cfg\_\-Int$<$ int $>$::SaveToFile(), Cfg\_\-Str::SaveToFile(), and Cfg\_\-Skin::TransferToWindow().\index{Cfg\_\-Base@{Cfg\_\-Base}!HasChanged@{HasChanged}}
+\index{HasChanged@{HasChanged}!Cfg_Base@{Cfg\_\-Base}}
+\subsubsection[{HasChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Base::HasChanged ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Base_aaa3b6bdf928818e60d45784cf7a05c84}
+
+
+Specifies if the variable has changed since the \doxyref{TransferFromWindow()}{p.}{classCfg__Base_aa3caf9ca25dc21a68545ca97cc5306ec} call. \begin{DoxyReturn}{Returns}
+True if the variable has changed, false otherwise. 
+\end{DoxyReturn}
+
+
+References m\_\-changed.
+
+Referenced by PrefsUnifiedDlg::CfgChanged(), and Cfg\_\-Str\_\-Encrypted::TransferFromWindow().\index{Cfg\_\-Base@{Cfg\_\-Base}!SetChanged@{SetChanged}}
+\index{SetChanged@{SetChanged}!Cfg_Base@{Cfg\_\-Base}}
+\subsubsection[{SetChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Cfg\_\-Base::SetChanged (bool {\em changed})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCfg__Base_aff88e03b27fd4c125eb8c79e1768c2ea}
+
+
+Sets the changed status. 
+\begin{DoxyParams}{Parameters}
+\item[{\em changed}]The new status. \end{DoxyParams}
+
+
+References m\_\-changed.
+
+Referenced by Cfg\_\-Tmpl$<$ bool $>$::TransferFromWindow().\index{Cfg\_\-Base@{Cfg\_\-Base}!TransferFromWindow@{TransferFromWindow}}
+\index{TransferFromWindow@{TransferFromWindow}!Cfg_Base@{Cfg\_\-Base}}
+\subsubsection[{TransferFromWindow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Base::TransferFromWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Base_aa3caf9ca25dc21a68545ca97cc5306ec}
+
+
+Syncs the variable with the contents of the widget. \begin{DoxyReturn}{Returns}
+True of success, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf Cfg\_\-Tmpl$<$ TYPE $>$} \doxyref{}{p.}{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}, {\bf Cfg\_\-Str\_\-Encrypted} \doxyref{}{p.}{classCfg__Str__Encrypted_aa2b128bc7eeea8945f3d3f3a43845b98}, {\bf Cfg\_\-Path} \doxyref{}{p.}{classCfg__Path_a0e6a255e323a02ace456bcd373286dc6}, {\bf Cfg\_\-Int$<$ TYPE $>$} \doxyref{}{p.}{classCfg__Int_a03844a2ba87bfe719362fe0175486de2}, {\bf Cfg\_\-Lang} \doxyref{}{p.}{classCfg__Lang_af7e18d9ba8bd0dcd367c93ec73951473}, {\bf Cfg\_\-Skin} \doxyref{}{p.}{classCfg__Skin_a4513dabfbfb487cfca8ad4748743e34e}, {\bf Cfg\_\-Tmpl$<$ int $>$} \doxyref{}{p.}{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}, {\bf Cfg\_\-Tmpl$<$ wxString $>$} \doxyref{}{p.}{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}, {\bf Cfg\_\-Tmpl$<$ bool $>$} \doxyref{}{p.}{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}, and {\bf Cfg\_\-Int$<$ int $>$} \doxyref{}{p.}{classCfg__Int_a03844a2ba87bfe719362fe0175486de2}.\index{Cfg\_\-Base@{Cfg\_\-Base}!TransferToWindow@{TransferToWindow}}
+\index{TransferToWindow@{TransferToWindow}!Cfg_Base@{Cfg\_\-Base}}
+\subsubsection[{TransferToWindow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Base::TransferToWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Base_a8b67d1c10f8a90aa8b6b1a7fcf18500c}
+
+
+Syncs the widget with the contents of the variable. \begin{DoxyReturn}{Returns}
+True of success, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf Cfg\_\-Tmpl$<$ TYPE $>$} \doxyref{}{p.}{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}, {\bf Cfg\_\-Path} \doxyref{}{p.}{classCfg__Path_a8c9b4197c6d841c286a473632ae1864c}, {\bf Cfg\_\-Int$<$ TYPE $>$} \doxyref{}{p.}{classCfg__Int_a9eabec1486d7225c8f3f4b62ef2833cd}, {\bf Cfg\_\-Lang} \doxyref{}{p.}{classCfg__Lang_a427939abc4a2c4003b1d5a36da8b0379}, {\bf Cfg\_\-Skin} \doxyref{}{p.}{classCfg__Skin_a9f292631347b2fec93dea26afab71b5d}, {\bf Cfg\_\-Tmpl$<$ int $>$} \doxyref{}{p.}{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}, {\bf Cfg\_\-Tmpl$<$ wxString $>$} \doxyref{}{p.}{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}, {\bf Cfg\_\-Tmpl$<$ bool $>$} \doxyref{}{p.}{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}, and {\bf Cfg\_\-Int$<$ int $>$} \doxyref{}{p.}{classCfg__Int_a9eabec1486d7225c8f3f4b62ef2833cd}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Preferences.h\end{DoxyCompactItemize}

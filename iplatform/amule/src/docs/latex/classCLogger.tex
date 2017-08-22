@@ -1,0 +1,101 @@
+\section{CLogger Class Reference}
+\label{classCLogger}\index{CLogger@{CLogger}}
+
+
+Functions for logging operations.  
+
+
+{\ttfamily \#include $<$Logger.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf IsEnabled} (DebugType) const \label{classCLogger_ae41ec882b82aee4b05af966b104024c3}
+
+\item 
+void {\bf SetEnabled} (DebugType type, bool enabled)\label{classCLogger_a5a7d49880f59003c72658f8dfca3bb2a}
+
+\item 
+bool {\bf IsEnabledStdoutLog} () const \label{classCLogger_a3d4483818e83c608399dc607ecbdc273}
+
+\item 
+void {\bf SetEnabledStdoutLog} (bool enabled)\label{classCLogger_a42c201d2e7d58bb80659b0553cb239d4}
+
+\item 
+void {\bf AddLogLine} (const wxString \&file, int line, bool critical, DebugType type, const wxString \&str, bool toStdout=false, bool toGUI=true)
+\item 
+void {\bfseries AddLogLine} (const wxString \&file, int line, bool critical, DebugType type, const std::ostringstream \&msg)\label{classCLogger_a979fdb64d5415e3bdfbb9fb5e56e7a96}
+
+\item 
+void {\bfseries AddLogLine} (const wxString \&file, int line, bool critical, const std::ostringstream \&msg)\label{classCLogger_ac37cfb74ecf867770a9b1b8119ee35f4}
+
+\item 
+const {\bf CDebugCategory} \& {\bf GetDebugCategory} (int index)\label{classCLogger_a2272a95e26a25f087fb3a34c0bc2321f}
+
+\item 
+unsigned int {\bf GetDebugCategoryCount} ()\label{classCLogger_a2e660173830efcced89de1bbb8767f44}
+
+\item 
+bool {\bf OpenLogfile} (const wxString \&name)\label{classCLogger_a10f7ca1cea6f2c7f29bec770aa548d64}
+
+\item 
+void {\bf CloseLogfile} ()\label{classCLogger_a1cd0fda9d10bb9ac453d8af4fc30ef75}
+
+\item 
+const wxString \& {\bf GetLogfileName} () const \label{classCLogger_a5150d92346e1bfc7426170ead32f4208}
+
+\item 
+void {\bf OnLoggingEvent} (class {\bf CLoggingEvent} \&evt)\label{classCLogger_a4e2bb4643bc87205ca94b45f18b6fbf4}
+
+\item 
+{\bf CLogger} ()\label{classCLogger_a9bee05627064da478ba32af360b8ef19}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf FlushApplog} ()\label{classCLogger_a803c3606cf26dfedfabe2ba8c1a2849e}
+
+\item 
+void {\bf DoLine} (const wxString \&line, bool toStdout, bool toGUI)\label{classCLogger_a879bb8970ee4f25642c717cadb262189}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class wxFFileOutputStream $\ast$ {\bfseries applog}\label{classCLogger_a1ebbd16f8201353fe2ce585279f8a57c}
+
+\item 
+wxString {\bfseries m\_\-LogfileName}\label{classCLogger_a2b0b5c20ef4abe9d325646971cd8a334}
+
+\item 
+wxString {\bfseries m\_\-ApplogBuf}\label{classCLogger_a82ed70170ea664eae105ea6b24b8fc11}
+
+\item 
+bool {\bfseries m\_\-StdoutLog}\label{classCLogger_a379076f375f8710e6520d99811c3bcac}
+
+\item 
+int {\bfseries m\_\-count}\label{classCLogger_ae8b73f181c8be173cd5e5a160237bf73}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions for logging operations. 
+
+\subsection{Member Function Documentation}
+\index{CLogger@{CLogger}!AddLogLine@{AddLogLine}}
+\index{AddLogLine@{AddLogLine}!CLogger@{CLogger}}
+\subsubsection[{AddLogLine}]{\setlength{\rightskip}{0pt plus 5cm}void CLogger::AddLogLine (const wxString \& {\em file}, \/  int {\em line}, \/  bool {\em critical}, \/  DebugType {\em type}, \/  const wxString \& {\em str}, \/  bool {\em toStdout} = {\ttfamily false}, \/  bool {\em toGUI} = {\ttfamily true})}\label{classCLogger_a4f274d60bb37aaff6c773bf1256ff496}
+
+
+Logs the specified line of text, prefixed with the name of the DebugType. (except for logStandard)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]\item[{\em line}]\item[{\em critical}]If true, then the message will be made visible directly to the user. \item[{\em type}]The debug-\/category, the name of which will be prepended to the line. \item[{\em str}]The actual line of text.\end{DoxyParams}
+This function is thread-\/safe. If it is called by the main thread, the event will be sent directly to the application, otherwise it will be queued in the event-\/loop. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Logger.h\item 
+src/Logger.cpp\item 
+src/LoggerConsole.cpp\end{DoxyCompactItemize}

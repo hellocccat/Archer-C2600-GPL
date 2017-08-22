@@ -1,0 +1,128 @@
+\section{CTag Class Reference}
+\label{classCTag}\index{CTag@{CTag}}
+Inheritance diagram for CTag::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.55319cm]{classCTag}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CTag} (const {\bf CTag} \&rTag)\label{classCTag_aba4f28afbd560a765213de276a53d100}
+
+\item 
+{\bfseries CTag} (const {\bf CFileDataIO} \&data, bool bOptUTF8)\label{classCTag_a8e0d8694a6957073859d0455a451e3f1}
+
+\item 
+{\bf CTag} \& {\bfseries operator=} (const {\bf CTag} \&)\label{classCTag_abefca45d175f3c22c0c6ac5648923681}
+
+\item 
+uint8 {\bfseries GetType} () const \label{classCTag_a5664e6b18b35f8abbd358a3b54ed3b81}
+
+\item 
+uint8 {\bfseries GetNameID} () const \label{classCTag_af89158120be977b1180c19291df60e5e}
+
+\item 
+const wxString \& {\bfseries GetName} () const \label{classCTag_a68d80411b18f1669734c8df6f7710f56}
+
+\item 
+bool {\bfseries IsStr} () const \label{classCTag_a42552c8c7cbd22124adba3b1184c4bc5}
+
+\item 
+bool {\bfseries IsInt} () const \label{classCTag_aa35bd07dde6f73988df1229454f64e06}
+
+\item 
+bool {\bfseries IsFloat} () const \label{classCTag_a114f9771c00b34d56df97c430fe89aa3}
+
+\item 
+bool {\bfseries IsHash} () const \label{classCTag_a528c69df6bf5759098e50ae17f2ab9ec}
+
+\item 
+bool {\bfseries IsBlob} () const \label{classCTag_a99ef67d8239f0c7d3efa48d4dbe6eb46}
+
+\item 
+bool {\bfseries IsBsob} () const \label{classCTag_a0051234a7235aac35568f1c5cfc6e0aa}
+
+\item 
+uint64 {\bfseries GetInt} () const \label{classCTag_a3db6dcdec105b950139c19cf8ec1f92a}
+
+\item 
+const wxString \& {\bfseries GetStr} () const \label{classCTag_a5d1c25833bff165483abcb71026e06f3}
+
+\item 
+float {\bfseries GetFloat} () const \label{classCTag_a4a897ae1d818892409f776953aa33576}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetHash} () const \label{classCTag_abc1d21b4888b776f478750b01684100f}
+
+\item 
+const byte $\ast$ {\bfseries GetBlob} () const \label{classCTag_a0f74040183c60e2bc7bd859657696f0a}
+
+\item 
+uint32 {\bfseries GetBlobSize} () const \label{classCTag_a17d19d83ddd23f150de7b31e517bcc07}
+
+\item 
+const byte $\ast$ {\bfseries GetBsob} () const \label{classCTag_ab819147ce51740e5605bfd808024356a}
+
+\item 
+uint32 {\bfseries GetBsobSize} () const \label{classCTag_a46c16d910f49a8c1b8a62a87afbbf894}
+
+\item 
+{\bf CTag} $\ast$ {\bfseries CloneTag} ()\label{classCTag_a3fe4bcecc901cfad592a761324e1dd57}
+
+\item 
+bool {\bfseries WriteTagToFile} ({\bf CFileDataIO} $\ast$file, EUtf8Str eStrEncode=utf8strNone, bool restrictive=true) const \label{classCTag_a858d7fda7388e4f98810117eca4f593d}
+
+\item 
+bool {\bfseries WriteNewEd2kTag} ({\bf CFileDataIO} $\ast$file, EUtf8Str eStrEncode=utf8strNone) const \label{classCTag_acc7374afc774cb47795af75a135413fd}
+
+\item 
+wxString {\bfseries GetFullInfo} () const \label{classCTag_aa2fa15a04e357ccd275014007c5246b2}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CTag} (const wxString \&Name)\label{classCTag_a5b92041781ed1617c42f5e64993e50ab}
+
+\item 
+{\bfseries CTag} (uint8 uName)\label{classCTag_a6b114309a7a00fb5524773c4ef8da8ee}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8 {\bfseries m\_\-uType}\label{classCTag_a0c1ea7eeb38f2d23196b4b21ad2bb5de}
+
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>{\bf CMD4Hash} $\ast$ {\bfseries m\_hashVal}\\
+\>wxString $\ast$ {\bfseries m\_pstrVal}\\
+\>uint64 {\bfseries m\_uVal}\\
+\>float {\bfseries m\_fVal}\\
+\>unsigned char $\ast$ {\bfseries m\_pData}\\
+\}; \label{classCTag_ab8929e3b188e215b11d883b1c6c5d99f}
+\\
+
+\end{tabbing}\item 
+uint32 {\bfseries m\_\-nSize}\label{classCTag_a7e2472a8253212c956d8f8473a80d6f9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8 {\bfseries m\_\-uName}\label{classCTag_a36cd53c12a6f10dcadda731c94f4592e}
+
+\item 
+wxString {\bfseries m\_\-Name}\label{classCTag_a5f22ebd46151a6d1a863beb70d5e0c91}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Tag.h\item 
+src/Tag.cpp\end{DoxyCompactItemize}

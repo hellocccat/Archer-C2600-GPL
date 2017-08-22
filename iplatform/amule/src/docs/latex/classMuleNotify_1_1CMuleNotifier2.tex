@@ -1,0 +1,79 @@
+\section{MuleNotify::CMuleNotifier2$<$ ARG\_\-1, ARG\_\-2 $>$ Class Template Reference}
+\label{classMuleNotify_1_1CMuleNotifier2}\index{MuleNotify::CMuleNotifier2@{MuleNotify::CMuleNotifier2}}
+
+
+Notification functor for functions taking 2 arguments.  
+
+
+{\ttfamily \#include $<$GuiEvents.h$>$}Inheritance diagram for MuleNotify::CMuleNotifier2$<$ ARG\_\-1, ARG\_\-2 $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classMuleNotify_1_1CMuleNotifier2}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ {\bfseries FuncType} )(ARG\_\-1, ARG\_\-2)\label{classMuleNotify_1_1CMuleNotifier2_a5b07fde70ed7ab5ea8ec32ff7039f99e}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleNotifier2} (FuncType func, ARG\_\-1 arg1, ARG\_\-2 arg2)
+\item 
+virtual void {\bf Notify} () const 
+\item 
+virtual {\bf CMuleNotiferBase} $\ast$ {\bf Clone} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FuncType {\bfseries m\_\-func}\label{classMuleNotify_1_1CMuleNotifier2_a06babf2b38524c0a9a6a81b552d0a76b}
+
+\item 
+ARG\_\-1 {\bfseries m\_\-arg1}\label{classMuleNotify_1_1CMuleNotifier2_ae013a725fa4cdbb49fbd78421d990010}
+
+\item 
+ARG\_\-2 {\bfseries m\_\-arg2}\label{classMuleNotify_1_1CMuleNotifier2_a62e54aaa5faea28b0d99f567a16bab47}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename ARG\_\-1, typename ARG\_\-2$>$ class MuleNotify::CMuleNotifier2$<$ ARG\_\-1, ARG\_\-2 $>$}
+
+Notification functor for functions taking 2 arguments. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MuleNotify::CMuleNotifier2@{MuleNotify::CMuleNotifier2}!CMuleNotifier2@{CMuleNotifier2}}
+\index{CMuleNotifier2@{CMuleNotifier2}!MuleNotify::CMuleNotifier2@{MuleNotify::CMuleNotifier2}}
+\subsubsection[{CMuleNotifier2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename ARG\_\-1, typename ARG\_\-2$>$ {\bf MuleNotify::CMuleNotifier2}$<$ ARG\_\-1, ARG\_\-2 $>$::{\bf CMuleNotifier2} (FuncType {\em func}, \/  ARG\_\-1 {\em arg1}, \/  ARG\_\-2 {\em arg2})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classMuleNotify_1_1CMuleNotifier2_a80ae995f131f9101f84a401f078c6323}
+
+
+Creates a functor from the given function and arguments. 
+
+References MuleNotify::DeepCopy().
+
+\subsection{Member Function Documentation}
+\index{MuleNotify::CMuleNotifier2@{MuleNotify::CMuleNotifier2}!Clone@{Clone}}
+\index{Clone@{Clone}!MuleNotify::CMuleNotifier2@{MuleNotify::CMuleNotifier2}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename ARG\_\-1, typename ARG\_\-2$>$ virtual {\bf CMuleNotiferBase}$\ast$ {\bf MuleNotify::CMuleNotifier2}$<$ ARG\_\-1, ARG\_\-2 $>$::Clone (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classMuleNotify_1_1CMuleNotifier2_a6d0917f615962bbafafe207bddfcaf24}
+\begin{DoxySeeAlso}{See also}
+CMuleNotifierBase::Clone 
+\end{DoxySeeAlso}
+
+
+Implements {\bf MuleNotify::CMuleNotiferBase} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotiferBase_a1635226025e567acb8625ab2748c7f48}.\index{MuleNotify::CMuleNotifier2@{MuleNotify::CMuleNotifier2}!Notify@{Notify}}
+\index{Notify@{Notify}!MuleNotify::CMuleNotifier2@{MuleNotify::CMuleNotifier2}}
+\subsubsection[{Notify}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename ARG\_\-1, typename ARG\_\-2$>$ virtual void {\bf MuleNotify::CMuleNotifier2}$<$ ARG\_\-1, ARG\_\-2 $>$::Notify () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classMuleNotify_1_1CMuleNotifier2_aadf62a1fe8e4a8d93907c9e444d10276}
+\begin{DoxySeeAlso}{See also}
+CMuleNotifierBase:: \doxyref{Notify}{p.}{classMuleNotify_1_1CMuleNotifier2_aadf62a1fe8e4a8d93907c9e444d10276} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf MuleNotify::CMuleNotiferBase} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotiferBase_a9f308e62a164a742dc1daab6792b0fd2}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/GuiEvents.h\end{DoxyCompactItemize}

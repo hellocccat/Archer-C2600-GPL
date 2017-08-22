@@ -1,0 +1,55 @@
+diff --git a/GobiSerial.c b/GobiSerial.c
+index b07fbfa..0d8e1ca 100644
+--- a/GobiSerial.c
++++ b/GobiSerial.c
+@@ -49,6 +49,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ #include <linux/usb.h> 
+ #include <linux/usb/serial.h>
+ #include <linux/version.h>
++#include <linux/module.h>
+ 
+ //---------------------------------------------------------------------------
+ // Global veriable and defination
+@@ -200,6 +201,8 @@ static struct usb_serial_driver gGobiDevice =
+ #endif
+ };
+ 
++struct usb_serial_driver *gobi_serial_drivers[] = {&gGobiDevice, NULL};
++
+ //---------------------------------------------------------------------------
+ // USB serial core overridding Methods
+ //---------------------------------------------------------------------------
+@@ -703,7 +706,7 @@ static int __init GobiInit( void )
+    gGobiDevice.num_ports = NUM_BULK_EPS;
+ 
+    // Registering driver to USB serial core layer 
+-   nRetval = usb_serial_register( &gGobiDevice );
++   nRetval = usb_serial_register_drivers(&GobiDriver, gobi_serial_drivers);
+    if (nRetval != 0)
+    {
+       return nRetval;
+@@ -713,7 +716,7 @@ static int __init GobiInit( void )
+    nRetval = usb_register( &GobiDriver );
+    if (nRetval != 0) 
+    {
+-      usb_serial_deregister( &gGobiDevice );
++      usb_serial_deregister_drivers(&GobiDriver, gobi_serial_drivers);
+       return nRetval;
+    }
+ 
+@@ -738,7 +741,7 @@ static void __exit GobiExit( void )
+ {
+    gpClose = NULL;
+    usb_deregister( &GobiDriver );
+-   usb_serial_deregister( &gGobiDevice );
++   usb_serial_deregister_drivers(&GobiDriver, gobi_serial_drivers);
+ }
+ 
+ // Calling kernel module to init our driver
+@@ -750,5 +753,5 @@ MODULE_AUTHOR( DRIVER_AUTHOR );
+ MODULE_DESCRIPTION( DRIVER_DESC );
+ MODULE_LICENSE("Dual BSD/GPL");
+ 
+-module_param( debug, bool, S_IRUGO | S_IWUSR );
++module_param( debug, int, S_IRUGO | S_IWUSR );
+ MODULE_PARM_DESC( debug, "Debug enabled or not" );

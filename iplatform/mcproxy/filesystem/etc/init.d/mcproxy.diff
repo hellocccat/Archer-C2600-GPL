@@ -1,0 +1,63 @@
+diff --git a/net/mcproxy/files/mcproxy.init b/net/mcproxy/files/mcproxy.init
+index f309359..98a939e 100644
+--- a/net/mcproxy/files/mcproxy.init
++++ b/net/mcproxy/files/mcproxy.init
+@@ -14,6 +14,7 @@ mcproxy_pinstance() {
+ 	config_get instname $1 name
+ 	config_get upstream $1 upstream
+ 	config_get downstreams $1 downstreams
++	config_get protocol config protocol "IGMPv3"
+ 
+ 	#section name as instance name
+ 	[ -n "$instname" ] || {
+@@ -22,19 +23,29 @@ mcproxy_pinstance() {
+ 
+ 	#default WAN
+ 	[ -n "$upstream" ] || {
+-		config_load network
+-		config_get upstream wan ifname
+-		uci_set_state mcproxy $1 upstream "$upstream"
++		upstream=$(uci_get_state network wan ifname wan)
+ 	}
+ 
+ 	#default LAN
+         [ -n "$downstreams" ] || {
+-		config_load network
+-		config_get downstreams lan ifname
+-		uci_set_state mcproxy $1 downstreams "$downstreams"
++		downstreams=$(uci_get_state network lan ifname lan)
+         }
+ 
+ 	echo "pinstance $instname: \"$upstream\" ==> \"$downstreams\";" >>$CONF_FILE
++
++	#protocol string beginning with 'IGMP' (ipv4)
++	if [ "${protocol#IGMP}" != "$protocol" ]; then
++		#ignore UPNP group from the downstream side
++		echo "" >>$CONF_FILE
++		echo "table upnp{" >>$CONF_FILE
++		echo "  (239.255.255.250|*)" >>$CONF_FILE
++		echo "};" >>$CONF_FILE
++
++		echo "" >>$CONF_FILE
++		for downif in $downstreams; do
++			echo "pinstance $instname downstream \"$downif\" in blacklist table upnp;" >>$CONF_FILE
++		done
++	fi
+ }
+ 
+ start() {
+@@ -45,9 +56,14 @@ start() {
+ 	echo "protocol $protocol;" >$CONF_FILE
+ 
+ 	config_foreach mcproxy_pinstance pinstance
++	#workaround for CR689700
++	#mcrpoxy will exit with signal ABRT when network interfaces are not prepared.
++	#The root cause is GCC4.6 didn't handle throw/catch mechanism well.
++	rm -f /tmp/mcproxy.*.core
+ 	service_start /usr/sbin/mcproxy -f $CONF_FILE
+ }
+ 
+ stop() {
+ 	service_stop /usr/sbin/mcproxy
++	rm -f /tmp/mcproxy.*.core
+ }

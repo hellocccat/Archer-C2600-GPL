@@ -1,0 +1,15 @@
+# Extra configs for debugging
+
+CONFIG_PACKAGE_gdb=y
+CONFIG_PACKAGE_gdbserver=y
+
+CONFIG_PACKAGE_strace=y
+
+CONFIG_PACKAGE_tcpdump=y
+
+CONFIG_PACKAGE_rsync=y
+CONFIG_PACKAGE_rsyncd=y
+
+CONFIG_PACKAGE_zile=y
+
+CONFIG_PACKAGE_luaprofiler=y

@@ -1,0 +1,71 @@
+\section{CStatTreeItemReconnects Class Reference}
+\label{classCStatTreeItemReconnects}\index{CStatTreeItemReconnects@{CStatTreeItemReconnects}}
+
+
+Special counter for reconnects.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemReconnects::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCStatTreeItemReconnects}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemReconnects} (const wxString \&label)
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Special counter for reconnects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemReconnects@{CStatTreeItemReconnects}!CStatTreeItemReconnects@{CStatTreeItemReconnects}}
+\index{CStatTreeItemReconnects@{CStatTreeItemReconnects}!CStatTreeItemReconnects@{CStatTreeItemReconnects}}
+\subsubsection[{CStatTreeItemReconnects}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemReconnects::CStatTreeItemReconnects (const wxString \& {\em label})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemReconnects_a93ed6c30fc132371ae7b6c3ad568abc7}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemReconnects@{CStatTreeItemReconnects}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemReconnects@{CStatTreeItemReconnects}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemReconnects::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemReconnects_ad95e7e632bcbbe3a36b961494fa1aec6}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemCounterTmpl$<$ uint32\_\-t $>$} \doxyref{}{p.}{classCStatTreeItemCounterTmpl_a66b6cef53bb90774ef812524342484d7}.
+
+References CECTag::AddTag(), and CStatTreeItemCounterTmpl$<$ uint32\_\-t $>$::m\_\-value.\index{CStatTreeItemReconnects@{CStatTreeItemReconnects}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemReconnects@{CStatTreeItemReconnects}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemReconnects::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemReconnects_a1f339236098b3b66d362fe32b02952a7}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemCounterTmpl$<$ uint32\_\-t $>$} \doxyref{}{p.}{classCStatTreeItemCounterTmpl_a2417fdecd9a5887763cd4137aae05241}.
+
+References CStatTreeItemBase::m\_\-label, and CStatTreeItemCounterTmpl$<$ uint32\_\-t $>$::m\_\-value.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

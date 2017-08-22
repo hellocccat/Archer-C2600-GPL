@@ -1,0 +1,79 @@
+\section{CObserver$<$ EventType $>$ Class Template Reference}
+\label{classCObserver}\index{CObserver@{CObserver}}
+
+
+This class implements the observable part of an Observer/Observable pattern.  
+
+
+{\ttfamily \#include $<$Observable.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf CObservable}$<$ EventType $>$ {\bfseries ObservableType}\label{classCObserver_a1ef3c149359bfde1bf4a224a9ad9b537}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$CObserver} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf ReceiveNotification} (const {\bf ObservableType} $\ast$o, const EventType \&e)=0
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::set$<$ {\bf ObservableType} $\ast$ $>$ {\bfseries ObservableSetType}\label{classCObserver_a11936d342076048a6caa8bd7dc7febde}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxMutex {\bf m\_\-mutex}\label{classCObserver_a8dba5ea3df2e0ac1ab5b78020009509e}
+
+\item 
+ObservableSetType {\bf m\_\-list}\label{classCObserver_a5137196a05a031272f9e13341051b6a6}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CObservable$<$ EventType $>$}\label{classCObserver_acca93c09fd9bfd324d55b64e3660dc13}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename EventType$>$ class CObserver$<$ EventType $>$}
+
+This class implements the observable part of an Observer/Observable pattern. The EventType paramter is used to specify a protocol for the event-\/type used by a particular Observer/Observable set and allows for any level of information passing to be used, depending on the context.
+
+In order to simplify matters for subclasses, both the Observer and the Observable class keep track of which objects are observing what, so that instances can safely be created and destroyed without having to manually keep the observers and observables in sync. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CObserver@{CObserver}!$\sim$CObserver@{$\sim$CObserver}}
+\index{$\sim$CObserver@{$\sim$CObserver}!CObserver@{CObserver}}
+\subsubsection[{$\sim$CObserver}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename EventType $>$ {\bf CObserver}$<$ EventType $>$::$\sim${\bf CObserver} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCObserver_a82118c156d434d3eb15cc0080f9409ef}
+
+
+Destructor. All observables which has this object registered are notified as to avoid dangling pointers. This will not result in actual events. 
+
+References CObservable$<$ EventType $>$::m\_\-list, CObserver$<$ EventType $>$::m\_\-list, CObservable$<$ EventType $>$::m\_\-mutex, and CObserver$<$ EventType $>$::m\_\-mutex.
+
+\subsection{Member Function Documentation}
+\index{CObserver@{CObserver}!ReceiveNotification@{ReceiveNotification}}
+\index{ReceiveNotification@{ReceiveNotification}!CObserver@{CObserver}}
+\subsubsection[{ReceiveNotification}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename EventType$>$ virtual void {\bf CObserver}$<$ EventType $>$::ReceiveNotification (const {\bf ObservableType} $\ast$ {\em o}, \/  const EventType \& {\em e})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classCObserver_a30fe2542f01b0c754fcba4461e4f3cfc}
+
+
+This function is called when an observed subject publishes an event. 
+\begin{DoxyParams}{Parameters}
+\item[{\em o}]The publisher of the event. \item[{\em e}]The actual event. \end{DoxyParams}
+
+
+Referenced by CObservable$<$ EventType $>$::NotifyObservers().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Observable.h\end{DoxyCompactItemize}

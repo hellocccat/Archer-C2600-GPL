@@ -1,0 +1,62 @@
+\section{CProxyData Class Reference}
+\label{classCProxyData}\index{CProxyData@{CProxyData}}
+
+
+The ProxyData class will hold information about the proxy server to be used.  
+
+
+{\ttfamily \#include $<$Proxy.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CProxyData} ()\label{classCProxyData_af68baf69fbde529f8bc97dccda81f3cb}
+
+\item 
+{\bf CProxyData} (bool proxyEnable, CProxyType proxyType, const wxString \&proxyHostName, unsigned short proxyPort, bool enablePassword, const wxString \&userName, const wxString \&password)
+\item 
+void {\bf Clear} ()\label{classCProxyData_a87a257656faec7afbbb1c0beb29b3566}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\_\-proxyEnable}\label{classCProxyData_a98f403be733907f0747dcfed8658e8ec}
+
+\item 
+CProxyType {\bf m\_\-proxyType}\label{classCProxyData_a319af7e3463971207d3e528ce3639288}
+
+\item 
+wxString {\bf m\_\-proxyHostName}\label{classCProxyData_a77f11bf8aef5c06298a3329725b62f89}
+
+\item 
+unsigned short {\bf m\_\-proxyPort}\label{classCProxyData_adf3a0c857c343c69fec7276ef9bf40c7}
+
+\item 
+bool {\bf m\_\-enablePassword}\label{classCProxyData_ad8d2644bc1b6f9ecb55551519dea2cd6}
+
+\item 
+wxString {\bf m\_\-userName}\label{classCProxyData_ae33db15612ca168be370b741b1ea6e0c}
+
+\item 
+wxString {\bf m\_\-password}\label{classCProxyData_af1b6eac818d96a3ace65cf254f19a437}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The ProxyData class will hold information about the proxy server to be used. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CProxyData@{CProxyData}!CProxyData@{CProxyData}}
+\index{CProxyData@{CProxyData}!CProxyData@{CProxyData}}
+\subsubsection[{CProxyData}]{\setlength{\rightskip}{0pt plus 5cm}CProxyData::CProxyData (bool {\em proxyEnable}, \/  CProxyType {\em proxyType}, \/  const wxString \& {\em proxyHostName}, \/  unsigned short {\em proxyPort}, \/  bool {\em enablePassword}, \/  const wxString \& {\em userName}, \/  const wxString \& {\em password})}\label{classCProxyData_a02e928eb8014bdb284fa19df13ebc044}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em proxyEnable}]Whether proxy is enabled or not. \item[{\em proxyType}]The type of the proxy server. \item[{\em proxyHostName}]The proxy host name or IP address. \item[{\em proxyPort}]The proxy port number. \item[{\em enablePassword}]Whether authentication should be performed. \item[{\em userName}]The user name to authenticate to the server. \item[{\em password}]The password to authenticate to the server. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Proxy.h\item 
+src/Proxy.cpp\end{DoxyCompactItemize}

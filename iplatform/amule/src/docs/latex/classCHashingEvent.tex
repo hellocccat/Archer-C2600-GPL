@@ -1,0 +1,75 @@
+\section{CHashingEvent Class Reference}
+\label{classCHashingEvent}\index{CHashingEvent@{CHashingEvent}}
+
+
+This event is used to signal the completion of a hashing event.  
+
+
+{\ttfamily \#include $<$ThreadTasks.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CHashingEvent} (wxEventType type, {\bf CKnownFile} $\ast$result, const {\bf CKnownFile} $\ast$owner=NULL)
+\item 
+virtual wxEvent $\ast$ {\bf Clone} () const 
+\item 
+const {\bf CKnownFile} $\ast$ {\bf GetOwner} () const 
+\item 
+{\bf CKnownFile} $\ast$ {\bf GetResult} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CKnownFile} $\ast$ {\bf m\_\-owner}\label{classCHashingEvent_a8c8bc5315c46a5a84907f2a8cab2def5}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bf m\_\-result}\label{classCHashingEvent_af82edeef0dcf612edfaff9320f2e024b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This event is used to signal the completion of a hashing event. \begin{DoxySeeAlso}{See also}
+\doxyref{CHashingTask}{p.}{classCHashingTask} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CHashingEvent@{CHashingEvent}!CHashingEvent@{CHashingEvent}}
+\index{CHashingEvent@{CHashingEvent}!CHashingEvent@{CHashingEvent}}
+\subsubsection[{CHashingEvent}]{\setlength{\rightskip}{0pt plus 5cm}CHashingEvent::CHashingEvent (wxEventType {\em type}, \/  {\bf CKnownFile} $\ast$ {\em result}, \/  const {\bf CKnownFile} $\ast$ {\em owner} = {\ttfamily NULL})}\label{classCHashingEvent_a88e8657cdb6c4b0a021efdfbfd2858fc}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]MULE\_\-EVT\_\-HASHING or MULE\_\-EVT\_\-AICH\_\-HASHING. \item[{\em result}]\end{DoxyParams}
+
+
+Referenced by Clone().
+
+\subsection{Member Function Documentation}
+\index{CHashingEvent@{CHashingEvent}!Clone@{Clone}}
+\index{Clone@{Clone}!CHashingEvent@{CHashingEvent}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}wxEvent $\ast$ CHashingEvent::Clone (void) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCHashingEvent_aecb806d4bbe78a4dbfff2909f5d2cabb}
+\begin{DoxySeeAlso}{See also}
+wxEvent::Clone 
+\end{DoxySeeAlso}
+
+
+References CHashingEvent(), m\_\-owner, and m\_\-result.\index{CHashingEvent@{CHashingEvent}!GetOwner@{GetOwner}}
+\index{GetOwner@{GetOwner}!CHashingEvent@{CHashingEvent}}
+\subsubsection[{GetOwner}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CKnownFile} $\ast$ CHashingEvent::GetOwner () const}\label{classCHashingEvent_a3e1e2c7bdd75b14883f3010105de5511}
+
+
+Returns the owner (may be NULL) of the hashing result. 
+
+References m\_\-owner.\index{CHashingEvent@{CHashingEvent}!GetResult@{GetResult}}
+\index{GetResult@{GetResult}!CHashingEvent@{CHashingEvent}}
+\subsubsection[{GetResult}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CKnownFile} $\ast$ CHashingEvent::GetResult () const}\label{classCHashingEvent_a9daa4644fabe6e599035834a979e482d}
+
+
+Returns a CKnownfile used to store the results of the hashing. 
+
+References m\_\-result.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadTasks.h\item 
+src/ThreadTasks.cpp\end{DoxyCompactItemize}

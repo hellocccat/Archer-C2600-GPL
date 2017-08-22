@@ -1,0 +1,50 @@
+\section{CChatSession Class Reference}
+\label{classCChatSession}\index{CChatSession@{CChatSession}}
+
+
+This class is used to display chat sessions.  
+
+
+{\ttfamily \#include $<$ChatSelector.h$>$}Inheritance diagram for CChatSession::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCChatSession}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CChatSession} (wxWindow $\ast$parent, wxWindowID id=-\/1, const wxString \&value=wxT(\char`\"{}\char`\"{}), const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=0, const wxValidator \&validator=wxDefaultValidator, const wxString \&name=wxTextCtrlNameStr)\label{classCChatSession_ad18e6475fd0a683403140c28eda2dccc}
+
+\item 
+void {\bf AddText} (const wxString \&text, const wxTextAttr \&style, bool newline=true)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64 {\bfseries m\_\-client\_\-id}\label{classCChatSession_a5f65a6425dd1d699a99da3baa69e79b2}
+
+\item 
+bool {\bfseries m\_\-active}\label{classCChatSession_a5d902745c305bf706b020c64edf1a7c4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to display chat sessions. 
+
+\subsection{Member Function Documentation}
+\index{CChatSession@{CChatSession}!AddText@{AddText}}
+\index{AddText@{AddText}!CChatSession@{CChatSession}}
+\subsubsection[{AddText}]{\setlength{\rightskip}{0pt plus 5cm}void CChatSession::AddText (const wxString \& {\em text}, \/  const wxTextAttr \& {\em style}, \/  bool {\em newline} = {\ttfamily true})}\label{classCChatSession_a7f9fff4cf816b167b6a3898e69188f04}
+
+
+Appends the specified text. 
+\begin{DoxyParams}{Parameters}
+\item[{\em text}]The text to add. \item[{\em style}]The style of the new text. \item[{\em newline}]If a newline should be added to the end of the line.\end{DoxyParams}
+If newline is false, then no newlines will be at the end of added text, even if the passed string ends with newlines. Multiline strings are broken into indivudual lines and each are timestamped with the same date. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ChatSelector.h\item 
+src/ChatSelector.cpp\end{DoxyCompactItemize}

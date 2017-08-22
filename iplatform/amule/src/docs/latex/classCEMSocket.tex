@@ -1,0 +1,262 @@
+\section{CEMSocket Class Reference}
+\label{classCEMSocket}\index{CEMSocket@{CEMSocket}}
+Inheritance diagram for CEMSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5cm]{classCEMSocket}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf StandardPacketQueueEntry}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CEMSocket} (const {\bf CProxyData} $\ast$ProxyData=NULL)\label{classCEMSocket_a3c193bbb1aaaa3a8d3d0a06c6bf8dc88}
+
+\item 
+virtual void {\bf SendPacket} ({\bf CPacket} $\ast$packet, bool delpacket=true, bool controlpacket=true, uint32 actualPayloadSize=0)
+\item 
+bool {\bfseries IsConnected} ()\label{classCEMSocket_ad9b3899d6ae34680008aff1e6be74cdf}
+
+\item 
+uint8 {\bfseries GetConState} ()\label{classCEMSocket_a92999ac293e5e04a84864542ec2f70df}
+
+\item 
+void {\bfseries SetDownloadLimit} (uint32 limit)\label{classCEMSocket_ac3d3038d1eb21e06966fba29e1d3c828}
+
+\item 
+void {\bfseries DisableDownloadLimit} ()\label{classCEMSocket_ab4d69509564ab3e1bb3cbc0a5ef58f81}
+
+\item 
+virtual uint32 {\bfseries GetTimeOut} () const \label{classCEMSocket_a5dc926c06496f3e611a9593d439030c3}
+
+\item 
+virtual void {\bfseries SetTimeOut} (uint32 uTimeOut)\label{classCEMSocket_a7c7645ff15336800919905e231818ee7}
+
+\item 
+uint32 {\bfseries GetLastCalledSend} ()\label{classCEMSocket_a2fbcd2c90b0f7d9c96f41bf056d3f333}
+
+\item 
+uint64 {\bfseries GetSentBytesCompleteFileSinceLastCallAndReset} ()\label{classCEMSocket_a82fe6db83c3c4f266be9e410f1ddf2dd}
+
+\item 
+uint64 {\bfseries GetSentBytesPartFileSinceLastCallAndReset} ()\label{classCEMSocket_afe6c4049dd97f0176d139fb9bb293c59}
+
+\item 
+uint64 {\bfseries GetSentBytesControlPacketSinceLastCallAndReset} ()\label{classCEMSocket_a08e1eafc273d813048297be50db9c29d}
+
+\item 
+uint64 {\bfseries GetSentPayloadSinceLastCallAndReset} ()\label{classCEMSocket_a5604673b82a0667850067a4f443b5b2b}
+
+\item 
+void {\bf TruncateQueues} ()
+\item 
+virtual {\bf SocketSentBytes} {\bfseries SendControlData} (uint32 maxNumberOfBytesToSend, uint32 minFragSize)\label{classCEMSocket_a677612c82610e2da8d9fd8a646ffb1ea}
+
+\item 
+virtual {\bf SocketSentBytes} {\bfseries SendFileAndControlData} (uint32 maxNumberOfBytesToSend, uint32 minFragSize)\label{classCEMSocket_a48975c7193d6b01429f0dab944d7af95}
+
+\item 
+uint32 {\bf GetNeededBytes} ()
+\item 
+void {\bfseries Destroy} ()\label{classCEMSocket_a97142ac51d81ca359d1cad6fb9f5ff45}
+
+\item 
+bool {\bfseries OnDestroy} ()\label{classCEMSocket_a09b2215a83379a02f438800bdf5749d8}
+
+\item 
+virtual void {\bfseries OnError} (int nErrorCode)\label{classCEMSocket_ae5750e4247b2f65b6ceb12e5014d596f}
+
+\item 
+virtual void {\bfseries OnSend} (int nErrorCode)\label{classCEMSocket_ad054611c633df72975761aa231fa5045}
+
+\item 
+virtual void {\bfseries OnReceive} (int nErrorCode)\label{classCEMSocket_a7284d6ad625ce8cd281d2f8973e13aa4}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries PacketReceived} ({\bf CPacket} $\ast$packet)\label{classCEMSocket_add50089c3b39231af9ba60e12c986cd7}
+
+\item 
+virtual void {\bfseries OnClose} (int nErrorCode)\label{classCEMSocket_afba8175185ea3720b370395524c7603a}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8 {\bfseries byConnected}\label{classCEMSocket_a06fe0dcae99a93ed0b182ea6ae085cf9}
+
+\item 
+uint32 {\bfseries m\_\-uTimeOut}\label{classCEMSocket_a66fd5ae307f0a38f057c368ecbb445ad}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CPacket} $\ast$ $>$ {\bfseries CPacketQueue}\label{classCEMSocket_a6892f079d96ee5106a7f7d58e40cdbd2}
+
+\item 
+typedef std::list$<$ {\bf StandardPacketQueueEntry} $>$ {\bfseries CStdPacketQueue}\label{classCEMSocket_a622c775a1b763dbf450f11f4df327d88}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf SocketSentBytes} {\bf Send} (uint32 maxNumberOfBytesToSend, uint32 minFragSize, bool onlyAllowedToSendControlPacket)
+\item 
+void {\bfseries ClearQueues} ()\label{classCEMSocket_a43d31240acc1add01524d18ba97c6680}
+
+\item 
+uint32 {\bfseries GetNextFragSize} (uint32 current, uint32 minFragSize)\label{classCEMSocket_a1a02e0e31bf009b8b94eb5d9e266210b}
+
+\item 
+bool {\bfseries HasSent} ()\label{classCEMSocket_a23280339e7a82165187bfb693c63a495}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries downloadLimit}\label{classCEMSocket_a6fd7d805dceaec3f690dff01ce7fab4b}
+
+\item 
+bool {\bfseries downloadLimitEnable}\label{classCEMSocket_ac4caf17b461f5513301f3e606ce6aaff}
+
+\item 
+bool {\bfseries pendingOnReceive}\label{classCEMSocket_a0193e0cfbea99bed8bf4d10961e62655}
+
+\item 
+byte {\bfseries pendingHeader} [PACKET\_\-HEADER\_\-SIZE]\label{classCEMSocket_ac606bf8e5858344876ee4f686bf8e288}
+
+\item 
+uint32 {\bfseries pendingHeaderSize}\label{classCEMSocket_ab6fae5c23ff327d2a020cb7951297ead}
+
+\item 
+byte $\ast$ {\bfseries pendingPacket}\label{classCEMSocket_a4051c2e338bd74c1d18104d6b722ed59}
+
+\item 
+uint32 {\bfseries pendingPacketSize}\label{classCEMSocket_a52e92152998c716efb940ab519dd8c4a}
+
+\item 
+byte $\ast$ {\bfseries sendbuffer}\label{classCEMSocket_a9016a1c2b1cbe7c6f37bed0adfc9ae69}
+
+\item 
+uint32 {\bfseries sendblen}\label{classCEMSocket_a769f4237d364d884e7190e949044fa40}
+
+\item 
+uint32 {\bfseries sent}\label{classCEMSocket_a9b7357adadb714c333ae7afe4b732d19}
+
+\item 
+CPacketQueue {\bfseries m\_\-control\_\-queue}\label{classCEMSocket_ad0c661b41ad3f3ccd098b29f00baf2f3}
+
+\item 
+CStdPacketQueue {\bfseries m\_\-standard\_\-queue}\label{classCEMSocket_ae4205890ec9356e5bbbf909a14b30c5d}
+
+\item 
+bool {\bfseries m\_\-currentPacket\_\-is\_\-controlpacket}\label{classCEMSocket_a99eee066a74f2d0bacc406a61e77c9a1}
+
+\item 
+wxMutex {\bfseries m\_\-sendLocker}\label{classCEMSocket_a1d8852dce4f5826c98c74ab3caa156c8}
+
+\item 
+uint64 {\bfseries m\_\-numberOfSentBytesCompleteFile}\label{classCEMSocket_ab293a2fc84199fdbb87102513f376253}
+
+\item 
+uint64 {\bfseries m\_\-numberOfSentBytesPartFile}\label{classCEMSocket_af589f3a151abeb0e8a9cfb259313867b}
+
+\item 
+uint64 {\bfseries m\_\-numberOfSentBytesControlPacket}\label{classCEMSocket_aaf3a7bb839af42c84131db1c3cae721c}
+
+\item 
+bool {\bfseries m\_\-currentPackageIsFromPartFile}\label{classCEMSocket_af7965ccacc37f0d4a1f9aca5b333a028}
+
+\item 
+bool {\bfseries m\_\-bAccelerateUpload}\label{classCEMSocket_ad60efd5649511bf115b278ba08792f40}
+
+\item 
+uint32 {\bfseries lastCalledSend}\label{classCEMSocket_a78370bb61036b165bd47c28c0c3f1d9f}
+
+\item 
+uint32 {\bfseries lastSent}\label{classCEMSocket_ad7dde877fd23cb382d607a305e2ce897}
+
+\item 
+uint32 {\bfseries lastFinishedStandard}\label{classCEMSocket_a3e9306338a380b1a28456e53734845de}
+
+\item 
+uint32 {\bfseries m\_\-actualPayloadSize}\label{classCEMSocket_a3fadcedd9024c8ce24bd31e4ef38b8a4}
+
+\item 
+uint32 {\bfseries m\_\-actualPayloadSizeSent}\label{classCEMSocket_af903009f03dfb886fcd6dce8ab2bc367}
+
+\item 
+bool {\bfseries m\_\-bBusy}\label{classCEMSocket_a28db466af9e72505392a07166ff4155d}
+
+\item 
+bool {\bfseries m\_\-hasSent}\label{classCEMSocket_a2b2978f7f03b56db7e10d919f6893cb5}
+
+\item 
+bool {\bfseries DoingDestroy}\label{classCEMSocket_a4fb5930c7ef71f547a317affaff1ceb8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CEMSocket@{CEMSocket}!GetNeededBytes@{GetNeededBytes}}
+\index{GetNeededBytes@{GetNeededBytes}!CEMSocket@{CEMSocket}}
+\subsubsection[{GetNeededBytes}]{\setlength{\rightskip}{0pt plus 5cm}uint32 CEMSocket::GetNeededBytes ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCEMSocket_a17cf64b4461d18f479cf4b3d50f19c94}
+
+
+Decides the (minimum) amount the socket needs to send to prevent timeout. \begin{DoxyAuthor}{Author}
+SlugFiller 
+\end{DoxyAuthor}
+
+
+Implements {\bf ThrottledFileSocket} \doxyref{}{p.}{classThrottledFileSocket}.\index{CEMSocket@{CEMSocket}!Send@{Send}}
+\index{Send@{Send}!CEMSocket@{CEMSocket}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SocketSentBytes} CEMSocket::Send (uint32 {\em maxNumberOfBytesToSend}, \/  uint32 {\em minFragSize}, \/  bool {\em onlyAllowedToSendControlPacket})\hspace{0.3cm}{\ttfamily  [private, virtual]}}\label{classCEMSocket_a5be6d1c13d23344f8912e386e3654139}
+
+
+Try to put queued up data on the socket. Control packets have higher priority, and will be sent first, if possible. Standard packets can be split up in several package containers. In that case all the parts of a split package must be sent in a row, without any control packet in between.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em maxNumberOfBytesToSend}]This is the maximum number of bytes that is allowed to be put on the socket this call. The actual number of sent bytes will be returned from the method.\item[{\em onlyAllowedToSendControlPacket}]This call we only try to put control packets on the sockets. If there's a standard packet \char`\"{}in the way\char`\"{}, and we think that this socket is no longer an upload slot, then it is ok to send the standard packet to get it out of the way. But it is not allowed to pick a new standard packet from the queue during this call. Several split packets are counted as one standard packet though, so it is ok to finish them all off if necessary.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the actual number of bytes that were put on the socket. 
+\end{DoxyReturn}
+\index{CEMSocket@{CEMSocket}!SendPacket@{SendPacket}}
+\index{SendPacket@{SendPacket}!CEMSocket@{CEMSocket}}
+\subsubsection[{SendPacket}]{\setlength{\rightskip}{0pt plus 5cm}void CEMSocket::SendPacket ({\bf CPacket} $\ast$ {\em packet}, \/  bool {\em delpacket} = {\ttfamily true}, \/  bool {\em controlpacket} = {\ttfamily true}, \/  uint32 {\em actualPayloadSize} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCEMSocket_ab410d8113285acfaac0ac268f455d06c}
+
+
+Queues up the packet to be sent. Another thread will actually send the packet.
+
+If the packet is not a control packet, and if the socket decides that its queue is full and forceAdd is false, then the socket is allowed to refuse to add the packet to its queue. It will then return false and it is up to the calling thread to try to call SendPacket for that packet again at a later time.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]address to the packet that should be added to the queue\item[{\em delpacket}]if true, the responsibility for deleting the packet after it has been sent has been transferred to this object. If false, don't delete the packet after it has been sent.\item[{\em controlpacket}]the packet is a controlpacket\item[{\em forceAdd}]this packet must be added to the queue, even if it is full. If this flag is true then the method can not refuse to add the packet, and therefore not return false.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the packet was added to the queue, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf CClientTCPSocket} \doxyref{}{p.}{classCClientTCPSocket_a78237fc807229ec1d0cb1f3977c7df79}, and {\bf CServerSocket} \doxyref{}{p.}{classCServerSocket_a0f6a39e240dfffbf7673d76f1eeba377}.\index{CEMSocket@{CEMSocket}!TruncateQueues@{TruncateQueues}}
+\index{TruncateQueues@{TruncateQueues}!CEMSocket@{CEMSocket}}
+\subsubsection[{TruncateQueues}]{\setlength{\rightskip}{0pt plus 5cm}void CEMSocket::TruncateQueues ()}\label{classCEMSocket_acef4d9b73d6f670ecc579a4fafb823e5}
+
+
+Removes all packets from the standard queue that don't have to be sent for the socket to be able to send a control packet. Before a socket can send a new packet, the current packet has to be finished. If the current packet is part of a split packet, then all parts of that split packet must be sent before the socket can send a control packet.
+
+This method keeps in standard queue only those packets that must be sent (rest of split packet), and removes everything after it. The method doesn't touch the control packet queue. 
+
+Referenced by CUpDownClient::FlushSendBlocks().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/EMSocket.h\item 
+src/EMSocket.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,164 @@
+\section{Kademlia::CKademliaUDPListener Class Reference}
+\label{classKademlia_1_1CKademliaUDPListener}\index{Kademlia::CKademliaUDPListener@{Kademlia::CKademliaUDPListener}}
+Inheritance diagram for Kademlia::CKademliaUDPListener::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classKademlia_1_1CKademliaUDPListener}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Bootstrap} (uint32\_\-t ip, uint16\_\-t port, uint8\_\-t kadVersion=0, const {\bf CUInt128} $\ast$cryptTargetID=NULL)\label{classKademlia_1_1CKademliaUDPListener_ae1d2a1de8e64c745ca50b059f2b9cf11}
+
+\item 
+void {\bfseries FirewalledCheck} (uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey, uint8\_\-t kadVersion)\label{classKademlia_1_1CKademliaUDPListener_a84e05f527655f9a8de62a7fa34c8b8b2}
+
+\item 
+void {\bfseries SendMyDetails} (uint8\_\-t opcode, uint32\_\-t ip, uint16\_\-t port, uint8\_\-t kadVersion, const {\bf CKadUDPKey} \&targetKey, const {\bf CUInt128} $\ast$cryptTargetID, bool requestAckPacket)\label{classKademlia_1_1CKademliaUDPListener_a84fdaf862521d939e851964a59bb234d}
+
+\item 
+void {\bfseries SendNullPacket} (uint8\_\-t opcode, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&targetKey, const {\bf CUInt128} $\ast$cryptTargetID)\label{classKademlia_1_1CKademliaUDPListener_aa056d189319f1848c15874e5e7c52405}
+
+\item 
+void {\bfseries SendPublishSourcePacket} (const {\bf CContact} \&contact, const {\bf CUInt128} \&targetID, const {\bf CUInt128} \&contactID, const TagPtrList \&tags)\label{classKademlia_1_1CKademliaUDPListener_a9df49c55c61c498d81a19ddb2f06de41}
+
+\item 
+virtual void {\bfseries ProcessPacket} (const uint8\_\-t $\ast$data, uint32\_\-t lenData, uint32\_\-t ip, uint16\_\-t port, bool validReceiverKey, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_af65bfcc72ca22a814d4a4c5ba8df0489}
+
+\item 
+void {\bfseries SendPacket} (const {\bf CMemFile} \&data, uint8\_\-t opcode, uint32\_\-t destinationHost, uint16\_\-t destinationPort, const {\bf CKadUDPKey} \&targetKey, const {\bf CUInt128} $\ast$cryptTargetID)\label{classKademlia_1_1CKademliaUDPListener_aa2dcb4c254b9a90bd47af84f1ee8d77c}
+
+\item 
+bool {\bfseries FindNodeIDByIP} ({\bf CKadClientSearcher} $\ast$requester, uint32\_\-t ip, uint16\_\-t tcpPort, uint16\_\-t udpPort)\label{classKademlia_1_1CKademliaUDPListener_aff12f3003cd5affe84f1c021d0dceeb3}
+
+\item 
+void {\bfseries ExpireClientSearch} ({\bf CKadClientSearcher} $\ast$expireImmediately=NULL)\label{classKademlia_1_1CKademliaUDPListener_a013cb8ec2063914eefb5610260ef85c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf FetchNodeID\_\-Struct} $>$ {\bfseries FetchNodeIDList}\label{classKademlia_1_1CKademliaUDPListener_a4a695e6a15f14705085613e2cfccc8e5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries SendLegacyChallenge} (uint32\_\-t ip, uint16\_\-t port, const {\bf CUInt128} \&contactID)\label{classKademlia_1_1CKademliaUDPListener_ad3f4da4d75c8fcccd2f61570f0558e11}
+
+\item 
+void {\bfseries ProcessSearchResponse} ({\bf CMemFile} \&bio)\label{classKademlia_1_1CKademliaUDPListener_a25f5ee1917bf890f1e177d92c4d8f224}
+
+\item 
+void {\bfseries ProcessSearchResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket)\label{classKademlia_1_1CKademliaUDPListener_adc7a5ebe69f682b45aa0712443d6a65f}
+
+\item 
+void {\bfseries ProcessPublishResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip)\label{classKademlia_1_1CKademliaUDPListener_a2547d7bb9630ef1690c5b3c0fb18ea50}
+
+\item 
+void {\bfseries ProcessSearchNotesResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip)\label{classKademlia_1_1CKademliaUDPListener_a8316278548df40a7491a774e69cb7f15}
+
+\item 
+void {\bfseries ProcessFirewalledRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_abca55631e446976a8afbe49631415035}
+
+\item 
+void {\bfseries ProcessFirewalledResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a4903eea970ebb75bc6345bd1745e70e0}
+
+\item 
+void {\bfseries ProcessFirewalledAckResponse} (uint32\_\-t lenPacket)\label{classKademlia_1_1CKademliaUDPListener_a7f49131ae845a208670612a2692f5c93}
+
+\item 
+void {\bfseries ProcessFindBuddyRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a9a38d245339708e2127717a416b0ea45}
+
+\item 
+void {\bfseries ProcessFindBuddyResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a853ef27edfb8f7d2793cf6edf736a52f}
+
+\item 
+void {\bfseries ProcessCallbackRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_adcf09b291af8eeb31c8c2b8928823006}
+
+\item 
+bool {\bfseries AddContact2} (const uint8\_\-t $\ast$data, uint32\_\-t lenData, uint32\_\-t ip, uint16\_\-t \&port, uint8\_\-t $\ast$outVersion, const {\bf CKadUDPKey} \&key, bool \&ipVerified, bool update, bool fromHelloReq, bool $\ast$outRequestsACK, {\bf CUInt128} $\ast$outContactID)\label{classKademlia_1_1CKademliaUDPListener_ab8e7860f3c6773df18fe13e888f5bf90}
+
+\item 
+void {\bfseries Process2BootstrapRequest} (uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_aa842082ac7c584abd95a52c3288d1c3f}
+
+\item 
+void {\bfseries Process2BootstrapResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey, bool validReceiverKey)\label{classKademlia_1_1CKademliaUDPListener_a8ce943e108e98c4e116dee1a65a27f63}
+
+\item 
+void {\bfseries Process2HelloRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey, bool validReceiverKey)\label{classKademlia_1_1CKademliaUDPListener_a2335371f4c4cb1819d12bca2d8977eda}
+
+\item 
+void {\bfseries Process2HelloResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey, bool validReceiverKey)\label{classKademlia_1_1CKademliaUDPListener_ae87ac53aad26c8876a620ed25a005165}
+
+\item 
+void {\bfseries Process2HelloResponseAck} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, bool validReceiverKey)\label{classKademlia_1_1CKademliaUDPListener_aa0321b6540abbf20fa3b8c81a9f4dd69}
+
+\item 
+void {\bfseries ProcessKademlia2Request} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a53594374f21eb70b0e070cbeb3f355cc}
+
+\item 
+void {\bfseries ProcessKademlia2Response} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_ad367afe032cdcf8208d387e3b7fc3eb6}
+
+\item 
+void {\bfseries Process2SearchNotesRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a4679f81552c1b2ca92bd2b664cb29719}
+
+\item 
+void {\bfseries Process2SearchKeyRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a34a0fb30bb63d873f9be8a144f2dfdaa}
+
+\item 
+void {\bfseries Process2SearchSourceRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a92efb62d19e16d1a7233372844298eda}
+
+\item 
+void {\bfseries Process2SearchResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a7e3017219c093d72d5a05fa941c9d5fe}
+
+\item 
+void {\bfseries Process2PublishNotesRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_ae7ea39097940d688e0e01d213d65d585}
+
+\item 
+void {\bfseries Process2PublishKeyRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_ad8be447e3ebcd3f002ecb58b96d29ca7}
+
+\item 
+void {\bfseries Process2PublishSourceRequest} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a0c762e2e03b2f700b72b22a355ebb160}
+
+\item 
+void {\bfseries Process2PublishResponse} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_a18a36fb2bfd1af46f57956db6cc28e75}
+
+\item 
+void {\bfseries Process2Ping} (uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_ab712af2196a0952b7df84e6876635121}
+
+\item 
+void {\bfseries Process2Pong} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip)\label{classKademlia_1_1CKademliaUDPListener_aa9a17a714a34b089d79bf09bd2d08c88}
+
+\item 
+void {\bfseries Process2FirewallUDP} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip)\label{classKademlia_1_1CKademliaUDPListener_aed4bc29fce17a1d877daf502db80a95d}
+
+\item 
+void {\bfseries ProcessFirewalled2Request} (const uint8\_\-t $\ast$packetData, uint32\_\-t lenPacket, uint32\_\-t ip, uint16\_\-t port, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademliaUDPListener_aa7a96d311aa78d12ea73750f69686292}
+
+\item 
+void {\bfseries DebugClientOutput} (const wxString \&place, uint32\_\-t kad\_\-ip, uint32\_\-t port, const uint8\_\-t $\ast$data=NULL, int len=0)\label{classKademlia_1_1CKademliaUDPListener_a0ab8c119f52ef585c7abca385e01830d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf SSearchTerm} $\ast$ {\bfseries CreateSearchExpressionTree} ({\bf CMemFile} \&bio, int iLevel)\label{classKademlia_1_1CKademliaUDPListener_a5facaabffe2142ef1c1f1791df1ea063}
+
+\item 
+static void {\bfseries Free} ({\bf SSearchTerm} $\ast$pSearchTerms)\label{classKademlia_1_1CKademliaUDPListener_ab3b4776a29ecb01500e6a1002bd02bf7}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FetchNodeIDList {\bfseries m\_\-fetchNodeIDRequests}\label{classKademlia_1_1CKademliaUDPListener_a2dac61ff2d3077bdcce8faa3fd610c9f}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/net/KademliaUDPListener.h\item 
+src/kademlia/net/KademliaUDPListener.cpp\end{DoxyCompactItemize}

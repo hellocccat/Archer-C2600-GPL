@@ -1,0 +1,69 @@
+\section{ItemsContainer$<$ T $>$ Class Template Reference}
+\label{classItemsContainer}\index{ItemsContainer@{ItemsContainer}}
+
+
+{\ttfamily \#include $<$WebServer.h$>$}Inheritance diagram for ItemsContainer$<$ T $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classItemsContainer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ T $>$::iterator {\bfseries ItemIterator}\label{classItemsContainer_a5134a4f232f3ec9f7a88bd937acbab38}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries ItemsContainer} ({\bf CamulewebApp} $\ast$webApp)\label{classItemsContainer_acb828690053b160003fd62d6617e26ec}
+
+\item 
+int {\bfseries ItemCount} ()\label{classItemsContainer_aa60d93ddc4978b0808a8119ed39e8767}
+
+\item 
+T $\ast$ {\bfseries AddItem} (T \&item)\label{classItemsContainer_ad6f699eec065f2a63a50cdf3bb64540f}
+
+\item 
+virtual bool {\bf ReQuery} ()=0
+\item 
+ItemIterator {\bfseries GetBeginIterator} ()\label{classItemsContainer_a7e0ee860d0484cf5b75f00144d7f6c62}
+
+\item 
+ItemIterator {\bfseries GetEndIterator} ()\label{classItemsContainer_af87096b6ca95b048f7b3dadd5c947886}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries EraseAll} ()\label{classItemsContainer_a29a7749db88a05d24909f92df1d8a5df}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CamulewebApp} $\ast$ {\bfseries m\_\-webApp}\label{classItemsContainer_a68f1e041d66e31c5a42961a8281709ec}
+
+\item 
+std::list$<$ T $>$ {\bfseries m\_\-items}\label{classItemsContainer_a5da622bbf6706077d30170d6da7e5aab}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class ItemsContainer$<$ T $>$}
+
+T -\/ type of items in container 
+
+\subsection{Member Function Documentation}
+\index{ItemsContainer@{ItemsContainer}!ReQuery@{ReQuery}}
+\index{ReQuery@{ReQuery}!ItemsContainer@{ItemsContainer}}
+\subsubsection[{ReQuery}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual bool {\bf ItemsContainer}$<$ T $>$::ReQuery ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classItemsContainer_a66b3954cd3f77947f5fe0e123903b77d}
+Re-\/query server: refresh all dataset 
+
+Implemented in {\bf UploadsInfo} \doxyref{}{p.}{classUploadsInfo_a2bffe7b47657d335d136cbcc14a7b4fe}, {\bf ServersInfo} \doxyref{}{p.}{classServersInfo_a44de14c9b4c8045f74500d07ec8c243b}, {\bf SharedFileInfo} \doxyref{}{p.}{classSharedFileInfo_a825e128f0df4cb2fb967c8579cfacc6d}, {\bf SearchInfo} \doxyref{}{p.}{classSearchInfo_a06686dba0c4cd828084a9e4e05f50677}, and {\bf DownloadFileInfo} \doxyref{}{p.}{classDownloadFileInfo_af8f7182b288cba630dc386ddd748d01c}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\end{DoxyCompactItemize}

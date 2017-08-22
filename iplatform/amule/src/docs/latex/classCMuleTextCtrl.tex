@@ -1,0 +1,66 @@
+\section{CMuleTextCtrl Class Reference}
+\label{classCMuleTextCtrl}\index{CMuleTextCtrl@{CMuleTextCtrl}}
+
+
+This class is a slightly improved wxTextCtrl that supports the traditional popup-\/menu usually provided by text-\/ctrls.  
+
+
+{\ttfamily \#include $<$MuleTextCtrl.h$>$}Inheritance diagram for CMuleTextCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCMuleTextCtrl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleTextCtrl} (wxWindow $\ast$parent, wxWindowID id, const wxString \&value=wxEmptyString, const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=0, const wxValidator \&validator=wxDefaultValidator, const wxString \&name=wxTextCtrlNameStr)\label{classCMuleTextCtrl_a833ca73effed293dec68c975213acfeb}
+
+\item 
+virtual {\bf $\sim$CMuleTextCtrl} ()\label{classCMuleTextCtrl_a3f93d90f932fc66be3017878c23eb8be}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnRightDown} (wxMouseEvent \&evt)
+\item 
+void {\bf OnPaste} (wxCommandEvent \&evt)
+\item 
+void {\bf OnSelAll} (wxCommandEvent \&evt)\label{classCMuleTextCtrl_ae9a4c3858e5e80a824531ce84d777a1f}
+
+\item 
+void {\bf OnClear} (wxCommandEvent \&evt)\label{classCMuleTextCtrl_ac6825a447dc49d6d3996f2eff95e8a63}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a slightly improved wxTextCtrl that supports the traditional popup-\/menu usually provided by text-\/ctrls. It provides the following options:
+\begin{DoxyItemize}
+\item Cut
+\item Copy
+\item Paste
+\item Clear
+\item Select All
+\end{DoxyItemize}
+
+Other than that, it acts exactly like an ordinary wxTextCtrl. 
+
+\subsection{Member Function Documentation}
+\index{CMuleTextCtrl@{CMuleTextCtrl}!OnPaste@{OnPaste}}
+\index{OnPaste@{OnPaste}!CMuleTextCtrl@{CMuleTextCtrl}}
+\subsubsection[{OnPaste}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleTextCtrl::OnPaste (wxCommandEvent \& {\em evt})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCMuleTextCtrl_a4d1c2dc549b9c46584668bd4cc931427}
+
+
+This function takes care of pasting text. Pleaes note that it is only needed because wxMenu disallows enabling and disabling of items that use the predefined wxID\_\-PASTE id. This is the only one of the already provided commands we need to override, since the others already work just fine. \index{CMuleTextCtrl@{CMuleTextCtrl}!OnRightDown@{OnRightDown}}
+\index{OnRightDown@{OnRightDown}!CMuleTextCtrl@{CMuleTextCtrl}}
+\subsubsection[{OnRightDown}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleTextCtrl::OnRightDown (wxMouseEvent \& {\em evt})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCMuleTextCtrl_adce8d5931ba699e4ae24349c607f4709}
+
+
+This function takes care of creating the popup-\/menu. Please note that by using the RIGHT\_\-DOWN event, I'm disabling the second type of selection that the wxTextCtrl supports. However, I frankly only noticed that second selection type while implementing this, so I doubth that anyone will be missing it ... 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MuleTextCtrl.h\item 
+src/MuleTextCtrl.cpp\end{DoxyCompactItemize}

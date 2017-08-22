@@ -1,0 +1,107 @@
+\section{MuleGifCtrl Class Reference}
+\label{classMuleGifCtrl}\index{MuleGifCtrl@{MuleGifCtrl}}
+
+
+\doxyref{MuleGifCtrl}{p.}{classMuleGifCtrl} is a simple widget for displaying a gif animation.  
+
+
+{\ttfamily \#include $<$MuleGifCtrl.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf MuleGifCtrl} (wxWindow $\ast$parent, wxWindowID id, const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=0, const wxValidator \&validator=wxDefaultValidator, const wxString \&name=wxControlNameStr)
+\item 
+virtual {\bf $\sim$MuleGifCtrl} ()\label{classMuleGifCtrl_a92dda3feda712a6c253dbffd157ca924}
+
+\item 
+bool {\bf LoadData} (const char $\ast$data, int size)
+\item 
+void {\bf Start} ()\label{classMuleGifCtrl_abeabdbd265488e945965e4cd4c8aee10}
+
+\item 
+void {\bf Stop} ()\label{classMuleGifCtrl_a6f9f7ad5456fabe152a7bc7f5bcb644b}
+
+\item 
+virtual wxSize {\bf GetBestSize} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnTimer} (wxTimerEvent \&event)\label{classMuleGifCtrl_afa9fb33c6a84d211f4501987e826e4b2}
+
+\item 
+void {\bf OnPaint} (wxPaintEvent \&event)
+\item 
+void {\bf OnErase} (wxEraseEvent \&event)\label{classMuleGifCtrl_a92c46c41f191141e8dfae3e214fe50e6}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf MuleGIFDecoder} $\ast$ {\bf m\_\-decoder}\label{classMuleGifCtrl_a1467c3e89d53741022847bd30545917a}
+
+\item 
+wxTimer {\bf m\_\-timer}\label{classMuleGifCtrl_a642604c6e6bed56c0ae3f32d4e08a403}
+
+\item 
+wxBitmap {\bf m\_\-frame}\label{classMuleGifCtrl_a5eee77af46f8da423f43ab2e83725447}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{MuleGifCtrl}{p.}{classMuleGifCtrl} is a simple widget for displaying a gif animation. It is based on the animation classes by Julian Smart and Guillermo Rodriguez Garcia, but is specialized for the reduced requirements of the aMule project. It provides flicker-\/free redrawing using wxBufferedPaintDC.
+
+To reduce complexity, several things have been hardcoded, though they can easily be changed:
+\begin{DoxyItemize}
+\item The animation will continue to loop until \doxyref{Stop()}{p.}{classMuleGifCtrl_a6f9f7ad5456fabe152a7bc7f5bcb644b} is called.
+\item The gif image is assumed to be transparent.
+\item Start will start the animation from the first frame and wont continue a stopped animation. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MuleGifCtrl@{MuleGifCtrl}!MuleGifCtrl@{MuleGifCtrl}}
+\index{MuleGifCtrl@{MuleGifCtrl}!MuleGifCtrl@{MuleGifCtrl}}
+\subsubsection[{MuleGifCtrl}]{\setlength{\rightskip}{0pt plus 5cm}MuleGifCtrl::MuleGifCtrl (wxWindow $\ast$ {\em parent}, \/  wxWindowID {\em id}, \/  const wxPoint \& {\em pos} = {\ttfamily wxDefaultPosition}, \/  const wxSize \& {\em size} = {\ttfamily wxDefaultSize}, \/  long {\em style} = {\ttfamily 0}, \/  const wxValidator \& {\em validator} = {\ttfamily wxDefaultValidator}, \/  const wxString \& {\em name} = {\ttfamily wxControlNameStr})}\label{classMuleGifCtrl_adbf3e73bd8c7fd7cdcf867ed923d77be}
+
+
+Contructor. See wxWindow class documentation for more information. 
+
+\subsection{Member Function Documentation}
+\index{MuleGifCtrl@{MuleGifCtrl}!GetBestSize@{GetBestSize}}
+\index{GetBestSize@{GetBestSize}!MuleGifCtrl@{MuleGifCtrl}}
+\subsubsection[{GetBestSize}]{\setlength{\rightskip}{0pt plus 5cm}wxSize MuleGifCtrl::GetBestSize ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classMuleGifCtrl_a9576f25181a27f8e887da78b935b3d98}
+
+
+Returns the prefered size of the widget. \begin{DoxyReturn}{Returns}
+Prefered size, which is the size of the animation. 
+\end{DoxyReturn}
+
+
+References m\_\-decoder.\index{MuleGifCtrl@{MuleGifCtrl}!LoadData@{LoadData}}
+\index{LoadData@{LoadData}!MuleGifCtrl@{MuleGifCtrl}}
+\subsubsection[{LoadData}]{\setlength{\rightskip}{0pt plus 5cm}bool MuleGifCtrl::LoadData (const char $\ast$ {\em data}, \/  int {\em size})}\label{classMuleGifCtrl_a95c691e0be9cea0a60735bc9b60fd67c}
+
+
+This loads the gif image from a char-\/array with a specific size. 
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]The array containing the image. \item[{\em size}]The size of the array. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the data was loaded, false otherwise.
+\end{DoxyReturn}
+This sets the current animation and displays the first frame. If another animation was loaded, it will be unloaded and the animation stopped.
+
+To convert a image to a format readable by this function, you can use the utility hexdump. Look at \doxyref{inetdownload.h}{p.}{inetdownload_8h_source} for how to format the output. 
+
+References m\_\-decoder, m\_\-frame, and m\_\-timer.\index{MuleGifCtrl@{MuleGifCtrl}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!MuleGifCtrl@{MuleGifCtrl}}
+\subsubsection[{OnPaint}]{\setlength{\rightskip}{0pt plus 5cm}void MuleGifCtrl::OnPaint (wxPaintEvent \& {\em event})\hspace{0.3cm}{\ttfamily  [private]}}\label{classMuleGifCtrl_aaeb60672c230aed29ff09cf73ae913e2}
+
+
+Function for drawing the animation. This functions draws the current frame, which is changed in \doxyref{OnTimer()}{p.}{classMuleGifCtrl_afa9fb33c6a84d211f4501987e826e4b2}, using a wxBufferedPaintDC. By doing so and also catching the ERASE\_\-BACKGROUND events we avoid flickering on redraws. 
+
+References m\_\-decoder, and m\_\-frame.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MuleGifCtrl.h\item 
+src/MuleGifCtrl.cpp\end{DoxyCompactItemize}

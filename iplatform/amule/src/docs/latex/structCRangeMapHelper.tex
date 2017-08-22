@@ -1,0 +1,54 @@
+\section{CRangeMapHelper$<$ VALUE, KEYTYPE $>$ Struct Template Reference}
+\label{structCRangeMapHelper}\index{CRangeMapHelper@{CRangeMapHelper}}
+
+
+Default helper structure for normal \doxyref{CRangeMap}{p.}{classCRangeMap} instantations.  
+
+
+{\ttfamily \#include $<$RangeMap.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef VALUE $\ast$ {\bf ValuePtr}\label{structCRangeMapHelper_aa0da4a2f2897166e47997666abf31b1e}
+
+\item 
+typedef VALUE \& {\bf ValueRef}\label{structCRangeMapHelper_a1a543a59727c666e87fbca2b92d4eae9}
+
+\item 
+typedef const VALUE \& {\bf ConstValueRef}\label{structCRangeMapHelper_aaa0d59a60cc84ef29cb942bbf8968bd9}
+
+\item 
+typedef const VALUE $\ast$ {\bf ConstValuePtr}\label{structCRangeMapHelper_a8c098ac59e6759d544dedc6af51e2bca}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf operator==} (const {\bf CRangeMapHelper}$<$ VALUE, KEYTYPE $>$ \&o) const \label{structCRangeMapHelper_a9e49dd7fc6ae0571a9732e330d2ab841}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+KEYTYPE {\bf first}\label{structCRangeMapHelper_ad81947566dc2fc0c46707598728aa46c}
+
+\item 
+VALUE {\bf second}\label{structCRangeMapHelper_ad52135cf9052eee5f7285d68a393b2c4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename VALUE, typename KEYTYPE$>$ struct CRangeMapHelper$<$ VALUE, KEYTYPE $>$}
+
+Default helper structure for normal \doxyref{CRangeMap}{p.}{classCRangeMap} instantations. Specializations should must have the following properties.
+\begin{DoxyItemize}
+\item The four value typedefs (see comments for details).
+\item A template-\/defined member variable named 'first'.
+\item A comparison operator that doesn't consider the 'first' field.
+\end{DoxyItemize}
+
+The typedefs are used to specify the return values of iterators. 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/RangeMap.h\end{DoxyCompactItemize}

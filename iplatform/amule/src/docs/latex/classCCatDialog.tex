@@ -1,0 +1,72 @@
+\section{CCatDialog Class Reference}
+\label{classCCatDialog}\index{CCatDialog@{CCatDialog}}
+
+
+This dialog takes of displaying either existing or new categories, so that the user can add or change them.  
+
+
+{\ttfamily \#include $<$CatDialog.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CCatDialog} (wxWindow $\ast$parent, bool allowbrowse, int catindex=-\/1)
+\item 
+{\bf $\sim$CCatDialog} ()\label{classCCatDialog_ac208ab0193c03fec35e4497c00e42a53}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxBitmap {\bf MakeBitmap} ()
+\item 
+void {\bf OnBnClickedBrowse} (wxCommandEvent \&evt)\label{classCCatDialog_a9fdf5aa9cadb5c527065d33fe5673111}
+
+\item 
+void {\bf OnBnClickedOk} (wxCommandEvent \&evt)\label{classCCatDialog_a57fd45a5932f4ee21c25187a76a89d34}
+
+\item 
+void {\bf OnBnClickColor} (wxCommandEvent \&evt)\label{classCCatDialog_a38a2fdc70e4814e40acf7376be60aa56}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleColour} {\bf m\_\-colour}\label{classCCatDialog_a982e7ca4543db7a3c75d4ba895069e05}
+
+\item 
+{\bf Category\_\-Struct} $\ast$ {\bf m\_\-category}\label{classCCatDialog_a5494db895cdb27762751119e0f4d4bf6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This dialog takes of displaying either existing or new categories, so that the user can add or change them. It is a self-\/contained entity, and does not rely on the categories staying the same while the dialog is visble, though it will overwrite any changes made to the selected category in the mean time. Also, if the selected category has been deleted then it will simply be readded.
+
+It does however rely on the Transferwnd keeping its own list of categories up-\/ to-\/date. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CCatDialog@{CCatDialog}!CCatDialog@{CCatDialog}}
+\index{CCatDialog@{CCatDialog}!CCatDialog@{CCatDialog}}
+\subsubsection[{CCatDialog}]{\setlength{\rightskip}{0pt plus 5cm}CCatDialog::CCatDialog (wxWindow $\ast$ {\em parent}, \/  bool {\em allowbrowse}, \/  int {\em catindex} = {\ttfamily -\/1})}\label{classCCatDialog_a69796bfc51959c91f67597fbeb3a5cd6}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em parent}]The parent of the new dialog. \item[{\em catindex}]The category to be edited.\end{DoxyParams}
+The parameter catindex can be a valid index, in which case that category will be selected, or it can be less than zero, in which case a new category will be created. 
+
+\subsection{Member Function Documentation}
+\index{CCatDialog@{CCatDialog}!MakeBitmap@{MakeBitmap}}
+\index{MakeBitmap@{MakeBitmap}!CCatDialog@{CCatDialog}}
+\subsubsection[{MakeBitmap}]{\setlength{\rightskip}{0pt plus 5cm}wxBitmap CCatDialog::MakeBitmap ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCCatDialog_a1ba08933e939db973a97183afc44ad4f}
+
+
+Helper function for making the color-\/preview. This function creates a single-\/color 16x16 image, using the m\_\-colour member variable. 
+
+References m\_\-colour.
+
+Referenced by OnBnClickColor().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/CatDialog.h\item 
+src/CatDialog.cpp\end{DoxyCompactItemize}

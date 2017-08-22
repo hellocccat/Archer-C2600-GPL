@@ -1,0 +1,59 @@
+\section{CDeadSourceList::CDeadSource Class Reference}
+\label{classCDeadSourceList_1_1CDeadSource}\index{CDeadSourceList::CDeadSource@{CDeadSourceList::CDeadSource}}
+
+
+Record of dead source.  
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CDeadSource} (uint32 ID, uint16 Port, uint32 ServerIP, uint16 KadPort)
+\item 
+bool {\bf operator==} (const {\bf CDeadSource} \&other) const \label{classCDeadSourceList_1_1CDeadSource_a7d07ce71d18c56d582e72ac7123a767f}
+
+\item 
+void {\bf SetTimeout} (uint32 t)\label{classCDeadSourceList_1_1CDeadSource_a8628a58f6e7f2ef22b8511b0dc26db91}
+
+\item 
+uint32 {\bf GetTimeout} () const \label{classCDeadSourceList_1_1CDeadSource_acb4aaced64e95c67586da10f3a7a5be0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bf m\_\-ID}\label{classCDeadSourceList_1_1CDeadSource_a9269a5681b039fe8aa9ba1723038adf1}
+
+\item 
+uint16 {\bf m\_\-Port}\label{classCDeadSourceList_1_1CDeadSource_a418fbda2b23fbafb3b9b75be8671a60a}
+
+\item 
+uint16 {\bf m\_\-KadPort}\label{classCDeadSourceList_1_1CDeadSource_a64b0df1de999fe0de7e9bb134a81c50a}
+
+\item 
+uint32 {\bf m\_\-ServerIP}\label{classCDeadSourceList_1_1CDeadSource_ac984bdea9aa6e2b7edf8480fe6cb3f8a}
+
+\item 
+uint32 {\bf m\_\-TimeStamp}\label{classCDeadSourceList_1_1CDeadSource_af257ffc899d43ae8adc3847dc970e371}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Record of dead source. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CDeadSourceList::CDeadSource@{CDeadSourceList::CDeadSource}!CDeadSource@{CDeadSource}}
+\index{CDeadSource@{CDeadSource}!CDeadSourceList::CDeadSource@{CDeadSourceList::CDeadSource}}
+\subsubsection[{CDeadSource}]{\setlength{\rightskip}{0pt plus 5cm}CDeadSourceList::CDeadSource::CDeadSource (uint32 {\em ID}, \/  uint16 {\em Port}, \/  uint32 {\em ServerIP}, \/  uint16 {\em KadPort})}\label{classCDeadSourceList_1_1CDeadSource_abd5f4b22449d503f5df4ec4af5870ca8}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The IP/ID of the recorded client. \item[{\em Port}]The TCP port of the recorded client. \item[{\em ServerIP}]The ip of the connected server. \item[{\em KadPort}]The Kad port used by the client.\end{DoxyParams}
+Notes: $\ast$ ID must be specified. $\ast$ Either KadPort or Port must be specified. $\ast$ For lowid sources, ServerIP must be specified. 
+
+References m\_\-ID, m\_\-KadPort, m\_\-Port, m\_\-ServerIP, and m\_\-TimeStamp.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/DeadSourceList.h\item 
+src/DeadSourceList.cpp\end{DoxyCompactItemize}

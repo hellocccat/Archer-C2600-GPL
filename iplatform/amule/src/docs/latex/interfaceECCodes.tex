@@ -1,0 +1,1228 @@
+\section{ECCodes Interface Reference}
+\label{interfaceECCodes}\index{ECCodes@{ECCodes}}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final short {\bfseries EC\_\-CURRENT\_\-PROTOCOL\_\-VERSION} = 0x0204\label{interfaceECCodes_ab28f542f44013cb0cbeea1892750ce86}
+
+\item 
+static final int {\bfseries EC\_\-FLAG\_\-ZLIB} = 0x00000001\label{interfaceECCodes_a8846c8f641ae8e7d1b0d53ff4c3d3685}
+
+\item 
+static final int {\bfseries EC\_\-FLAG\_\-UTF8\_\-NUMBERS} = 0x00000002\label{interfaceECCodes_a949f3bf2810ef46bb4ec604fd2df3cd8}
+
+\item 
+static final int {\bfseries EC\_\-FLAG\_\-UNKNOWN\_\-MASK} = 0xff7f7f08\label{interfaceECCodes_a8f79a7491bb0d3f94b3c77a04b8d28f2}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-NOOP} = 0x01\label{interfaceECCodes_a6514ec9bba14067cb14912b0be4b622a}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-AUTH\_\-REQ} = 0x02\label{interfaceECCodes_a012a0dd4938465051e5ed7e8a93a1fab}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-AUTH\_\-FAIL} = 0x03\label{interfaceECCodes_a5c6254499c4d5e26e73038749e1f676f}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-AUTH\_\-OK} = 0x04\label{interfaceECCodes_af9bf7770a6fd00dba5cceaa0b83153ef}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-FAILED} = 0x05\label{interfaceECCodes_a723d2602cd260beb4721cfb513ebedfa}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-STRINGS} = 0x06\label{interfaceECCodes_ae7a6a04474f6fcecc7a669b405683c7d}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-MISC\_\-DATA} = 0x07\label{interfaceECCodes_a7a85d9cf1284248d89362796fde2d5e0}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SHUTDOWN} = 0x08\label{interfaceECCodes_a249a17b45bd85b98f2ffe6011ff1f059}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-ADD\_\-LINK} = 0x09\label{interfaceECCodes_a93eb9c36cef27a30af424db3c8a790e2}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-STAT\_\-REQ} = 0x0A\label{interfaceECCodes_af2aa937f15d3f939b61cccd2b72debd4}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-CONNSTATE} = 0x0B\label{interfaceECCodes_a70e083c7363e2e5604c939598e94c450}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-STATS} = 0x0C\label{interfaceECCodes_a5fc49b87ad4ceea6caf51a703412f4fc}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-DLOAD\_\-QUEUE} = 0x0D\label{interfaceECCodes_a54abad64319124c60010c85a8c559def}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-ULOAD\_\-QUEUE} = 0x0E\label{interfaceECCodes_afff04f804fc7ca715421c2626a9ebf78}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-SHARED\_\-FILES} = 0x10\label{interfaceECCodes_a83be04c5dc14230904d67bd426b99575}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SHARED\_\-SET\_\-PRIO} = 0x11\label{interfaceECCodes_a6769014cc1f597f001feb2ee93394941}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-REMOVE\_\-NO\_\-NEEDED} = 0x12\label{interfaceECCodes_a65ffbbb4813e61c04cd1cd2f373914c4}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-REMOVE\_\-FULL\_\-QUEUE} = 0x13\label{interfaceECCodes_a4eacdf76f681e3f069408a7822cf8bec}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-REMOVE\_\-HIGH\_\-QUEUE} = 0x14\label{interfaceECCodes_a13f271ac859eb3df03e2f3d59a6fa8d4}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-UNUSED} = 0x15\label{interfaceECCodes_ab39daf9145b8a4b43dba3f965a2e5ccd}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-SWAP\_\-A4AF\_\-THIS} = 0x16\label{interfaceECCodes_a000872cb37a0f590e94f7c33b3551337}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-SWAP\_\-A4AF\_\-THIS\_\-AUTO} = 0x17\label{interfaceECCodes_ad877aa5f13268354cfde159c89e01c98}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-SWAP\_\-A4AF\_\-OTHERS} = 0x18\label{interfaceECCodes_a566f7f8729e709b83374abc99ff050ec}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-PAUSE} = 0x19\label{interfaceECCodes_abda2548baaa5d5d7a01d9637291f2470}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-RESUME} = 0x1A\label{interfaceECCodes_ae47ddac75484c3a3d52d097dfa64a493}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-STOP} = 0x1B\label{interfaceECCodes_a7e13404454d3e453db95fe9e6140851d}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-PRIO\_\-SET} = 0x1C\label{interfaceECCodes_a56a1b30cc09ca34b251753dd0fb4975a}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-DELETE} = 0x1D\label{interfaceECCodes_a331d5da0cfe735c07652f3f17c4516c8}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-PARTFILE\_\-SET\_\-CAT} = 0x1E\label{interfaceECCodes_a0f25b2caaa27083d0e87fc6b8b80de6f}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-DLOAD\_\-QUEUE} = 0x1F\label{interfaceECCodes_abb50f94a08a9dc31ba71737e714c2304}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-ULOAD\_\-QUEUE} = 0x20\label{interfaceECCodes_a0ffcd67cf26e224ad6e2dd91544de5c8}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SHARED\_\-FILES} = 0x22\label{interfaceECCodes_ae7ec7549cababc3f3a5bce608888f24a}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SHAREDFILES\_\-RELOAD} = 0x23\label{interfaceECCodes_affa0994476f4a620b2b65f07a26cb6ba}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-RENAME\_\-FILE} = 0x25\label{interfaceECCodes_a5fbeadf2370f6ed13d49ddde2829290f}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SEARCH\_\-START} = 0x26\label{interfaceECCodes_ad478edb16490ef93a1beb05a9f6d336f}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SEARCH\_\-STOP} = 0x27\label{interfaceECCodes_aac1295802cd475319814d005bb2a5904}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SEARCH\_\-RESULTS} = 0x28\label{interfaceECCodes_a1d46c2288e4a0bd7b29a4fac38d0fdeb}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SEARCH\_\-PROGRESS} = 0x29\label{interfaceECCodes_aadb589c738fac6bd90f41b1a9377acaa}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-DOWNLOAD\_\-SEARCH\_\-RESULT} = 0x2A\label{interfaceECCodes_a05d03b34fb75f967e7d8e1790982d3ba}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-IPFILTER\_\-RELOAD} = 0x2B\label{interfaceECCodes_a25b0e2e194daa25e88a1d03c51e84037}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-SERVER\_\-LIST} = 0x2C\label{interfaceECCodes_ae33ee2e1bd2f034d1fb4f4082d2fe05b}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SERVER\_\-LIST} = 0x2D\label{interfaceECCodes_a459e2e98cc6da8b932a70179190406ca}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SERVER\_\-DISCONNECT} = 0x2E\label{interfaceECCodes_a28acf5324f0639133afb71288bae885b}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SERVER\_\-CONNECT} = 0x2F\label{interfaceECCodes_a4f4b3a5f4a26857f70f8757e9e07f35a}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SERVER\_\-REMOVE} = 0x30\label{interfaceECCodes_a244b74a17cb6299af6e1bd310d10a470}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SERVER\_\-ADD} = 0x31\label{interfaceECCodes_a7f8dfadd9621c2bd5e51733e9a5478a0}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SERVER\_\-UPDATE\_\-FROM\_\-URL} = 0x32\label{interfaceECCodes_a2cd8781b0a7fcca3f474658ed6230c8e}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-ADDLOGLINE} = 0x33\label{interfaceECCodes_ae06aa6d1347c044ef1fdbb6eb447ef36}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-ADDDEBUGLOGLINE} = 0x34\label{interfaceECCodes_a5f84dc954f8eb8d408db994cddda18a8}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-LOG} = 0x35\label{interfaceECCodes_ab954d66ffa8134d99c7b728e3f616345}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-DEBUGLOG} = 0x36\label{interfaceECCodes_a8ef3c315c89c26e90d36be47bfb9a439}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-SERVERINFO} = 0x37\label{interfaceECCodes_a746a96729e68a426a33a71fd0da9558a}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-LOG} = 0x38\label{interfaceECCodes_a1500ea1510c60da1b75053bc5efa152d}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-DEBUGLOG} = 0x39\label{interfaceECCodes_ac75cca78381c5bfe06ba8d534aa334fc}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SERVERINFO} = 0x3A\label{interfaceECCodes_a7f04560425f6a0f7fa32dfe9f3f995e0}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-RESET\_\-LOG} = 0x3B\label{interfaceECCodes_ae04d746389dbf9e0d5d2b8f2d29998c5}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-RESET\_\-DEBUGLOG} = 0x3C\label{interfaceECCodes_a3f0be6126a90ea30a58b44b99c0d3686}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-CLEAR\_\-SERVERINFO} = 0x3D\label{interfaceECCodes_a643f28e831f703fd2e8d619815b98282}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-LAST\_\-LOG\_\-ENTRY} = 0x3E\label{interfaceECCodes_aead36d587ef814e69e0d778dc7c1afbb}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-PREFERENCES} = 0x3F\label{interfaceECCodes_ab8676be89c9c7f08dc718aabc5643fe8}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SET\_\-PREFERENCES} = 0x40\label{interfaceECCodes_aa0593387c338c30340012c14257277a9}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-CREATE\_\-CATEGORY} = 0x41\label{interfaceECCodes_ae69a1995b7228638479d8c92417e613b}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-UPDATE\_\-CATEGORY} = 0x42\label{interfaceECCodes_a15aae80201c6a0318c84f698249e2159}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-DELETE\_\-CATEGORY} = 0x43\label{interfaceECCodes_acd11a06724e3334038da3f83f166ba9a}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-STATSGRAPHS} = 0x44\label{interfaceECCodes_a8f9cebbc1a4048b39604b637f8f3dd6c}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-STATSGRAPHS} = 0x45\label{interfaceECCodes_ac29038c252af86cb01ed9df8dca75a75}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-STATSTREE} = 0x46\label{interfaceECCodes_a6bc88cadc731cf308f8f6877878db7d2}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-STATSTREE} = 0x47\label{interfaceECCodes_a0387ece22c22d4e3338d183c4ccb6516}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-KAD\_\-START} = 0x48\label{interfaceECCodes_a64e8928d4e93dcf6d1ef8d8253175dc8}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-KAD\_\-STOP} = 0x49\label{interfaceECCodes_a1520a57ace9467a1a2e3b54f0da43372}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-CONNECT} = 0x4A\label{interfaceECCodes_a139d3eb58d544cec0c2b418120cb0939}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-DISCONNECT} = 0x4B\label{interfaceECCodes_ae1f09309dad9af5b8e192c9c9af30447}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-KAD\_\-UPDATE\_\-FROM\_\-URL} = 0x4D\label{interfaceECCodes_addaebf5c8de811b8792d1840cda0fee5}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-KAD\_\-BOOTSTRAP\_\-FROM\_\-IP} = 0x4E\label{interfaceECCodes_ae82f48b677e201d972c44f4014cd659b}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-AUTH\_\-SALT} = 0x4F\label{interfaceECCodes_a87cadd3783948c0cc8825b6cd740f7dc}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-AUTH\_\-PASSWD} = 0x50\label{interfaceECCodes_a0a28cc835ba721417d384b30c7f90e81}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-IPFILTER\_\-UPDATE} = 0x51\label{interfaceECCodes_aeda28c095dcc1039e7f6254f79a8c1d2}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-GET\_\-UPDATE} = 0x52\label{interfaceECCodes_a714779ed7479e098dbe422afb655d23a}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-CLEAR\_\-COMPLETED} = 0x53\label{interfaceECCodes_a9ef7cb7681ad3b04a2f7ef0bc6e0ec0b}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-CLIENT\_\-SWAP\_\-TO\_\-ANOTHER\_\-FILE} = 0x54\label{interfaceECCodes_ad7b0b9cf3a8870eaec01d3b3df52c7df}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SHARED\_\-FILE\_\-SET\_\-COMMENT} = 0x55\label{interfaceECCodes_ab96dc73357ff940cb82db8a0c9625947}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-SERVER\_\-SET\_\-STATIC\_\-PRIO} = 0x56\label{interfaceECCodes_a91e289c81e952eedc425bec6bed08635}
+
+\item 
+static final byte {\bfseries EC\_\-OP\_\-FRIEND} = 0x57\label{interfaceECCodes_a10bfecdbb1cc2c79bb9e923ce445c28b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STRING} = 0x0000\label{interfaceECCodes_a87886149b79ca2ed2e123476cb9410b1}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PASSWD\_\-HASH} = 0x0001\label{interfaceECCodes_af173ae339225661cd5433189fec1436a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PROTOCOL\_\-VERSION} = 0x0002\label{interfaceECCodes_a3a16cfe5eee80c6a86da32ccba5cba72}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-VERSION\_\-ID} = 0x0003\label{interfaceECCodes_a157944884bcc9ddff5e21fd1bd7a3dcf}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-DETAIL\_\-LEVEL} = 0x0004\label{interfaceECCodes_a93aa9f1582d5e7841c6c7ad1fd397ab8}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONNSTATE} = 0x0005\label{interfaceECCodes_a30cfad3c75ddccabaa5afc08ffe8347d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-ED2K\_\-ID} = 0x0006\label{interfaceECCodes_a9342cb799fb30c03f93be3b353736a3f}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-LOG\_\-TO\_\-STATUS} = 0x0007\label{interfaceECCodes_a499f53defc38bc33b1cd693fc0705157}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-BOOTSTRAP\_\-IP} = 0x0008\label{interfaceECCodes_aace6917d51dfdc9265653066154f03db}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-BOOTSTRAP\_\-PORT} = 0x0009\label{interfaceECCodes_ab41787adfb708a32fab6caa73df262e0}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-ID} = 0x000A\label{interfaceECCodes_af2b1f6bbac7306d8902a999593cd899d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PASSWD\_\-SALT} = 0x000B\label{interfaceECCodes_a376979d10e0ff8049f8b49db9628aa2a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CAN\_\-ZLIB} = 0x000C\label{interfaceECCodes_ad9e5f5ace8dd002422423e174971d3d8}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CAN\_\-UTF8\_\-NUMBERS} = 0x000D\label{interfaceECCodes_a3a5e2ece74c940a1a8237112daa11f7b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CAN\_\-NOTIFY} = 0x000E\label{interfaceECCodes_a06a8c0de107543a98914009babb25ecd}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-ECID} = 0x000F\label{interfaceECCodes_a7446b9d5c4b6e6702aaf9f9edd514ec2}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-NAME} = 0x0100\label{interfaceECCodes_a035d469efccd02192a5677363995a153}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-VERSION} = 0x0101\label{interfaceECCodes_a73577ef481a58cb202fd3f14cd5add51}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-MOD} = 0x0102\label{interfaceECCodes_a0da96715576ca79909de05961427416c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-UL\_\-SPEED} = 0x0200\label{interfaceECCodes_a529d92c4f92192bbca3d3f1c10720aba}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-DL\_\-SPEED} = 0x0201\label{interfaceECCodes_a2702bad8becb69a06c2d204303c6812e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-UL\_\-SPEED\_\-LIMIT} = 0x0202\label{interfaceECCodes_ab9d4a1e7b4246b8c5bf941986b17cb40}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-DL\_\-SPEED\_\-LIMIT} = 0x0203\label{interfaceECCodes_a386cc6fa525462bd99149966a8e80080}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-UP\_\-OVERHEAD} = 0x0204\label{interfaceECCodes_a7339be23e1a6babc4b9ba58897388ce3}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-DOWN\_\-OVERHEAD} = 0x0205\label{interfaceECCodes_ad28ac5e9dd5112eddf25bede8704e285}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-TOTAL\_\-SRC\_\-COUNT} = 0x0206\label{interfaceECCodes_a48747c68ae67d85ad41a7a2fc0715566}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-BANNED\_\-COUNT} = 0x0207\label{interfaceECCodes_ab2260fb3c2edc8c0676c8e247a2128f8}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-UL\_\-QUEUE\_\-LEN} = 0x0208\label{interfaceECCodes_a9dae60cf72343c06995fc1e94584a857}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-ED2K\_\-USERS} = 0x0209\label{interfaceECCodes_a50377cdcfd4b6282fb69bc2503c49f35}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-USERS} = 0x020A\label{interfaceECCodes_ab5ce97c038e34c3940eb40881b485820}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-ED2K\_\-FILES} = 0x020B\label{interfaceECCodes_acebc44203410cee2d0a2235086561ad4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-FILES} = 0x020C\label{interfaceECCodes_af899fbc458f0cd243d095dd8e4b65e8d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-LOGGER\_\-MESSAGE} = 0x020D\label{interfaceECCodes_a7708ad7817a93e49983c43f00a08b2d6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-FIREWALLED\_\-UDP} = 0x020E\label{interfaceECCodes_adf2f2088919163791f9f2db936a7b579}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-INDEXED\_\-SOURCES} = 0x020F\label{interfaceECCodes_a226d2a1c7669db3ea09a93030c3a79d5}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-INDEXED\_\-KEYWORDS} = 0x0210\label{interfaceECCodes_acd7ba277a4210c50bd69961cb42ab125}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-INDEXED\_\-NOTES} = 0x0211\label{interfaceECCodes_aa522b2daeab68e74860002cc4b0c2540}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-INDEXED\_\-LOAD} = 0x0212\label{interfaceECCodes_a8bbcb96a40f954eb59bf7510972e9c72}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-IP\_\-ADRESS} = 0x0213\label{interfaceECCodes_a7e1045b099ea15f220e71e606e381e10}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-BUDDY\_\-STATUS} = 0x0214\label{interfaceECCodes_a6099094aac12c667d47b66045e244f2f}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-BUDDY\_\-IP} = 0x0215\label{interfaceECCodes_a6cb514866fc600c4405540951043a289}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-BUDDY\_\-PORT} = 0x0216\label{interfaceECCodes_ae363fc09282ff63dabed60e047acda39}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-KAD\_\-IN\_\-LAN\_\-MODE} = 0x0217\label{interfaceECCodes_ae50e39cc7d49a40b91200bfcb99eb4d1}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-TOTAL\_\-SENT\_\-BYTES} = 0x0218\label{interfaceECCodes_a95aec1e5c5fbc69d470f5ac8ade5cf68}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-TOTAL\_\-RECEIVED\_\-BYTES} = 0x0219\label{interfaceECCodes_a4356d80cf633936666b90200f77ce03e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATS\_\-SHARED\_\-FILE\_\-COUNT} = 0x021A\label{interfaceECCodes_a6e4c222bb7f7e85984e0e77391e3dd9c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE} = 0x0300\label{interfaceECCodes_a4b43d6f6fe5273a9a0e80a181ccd395a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-NAME} = 0x0301\label{interfaceECCodes_a2677358afe19b175adecf49e21605ed4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-PARTMETID} = 0x0302\label{interfaceECCodes_ac0d08edef3a70b00795f07dc5ce63e88}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SIZE\_\-FULL} = 0x0303\label{interfaceECCodes_a2fc2563d71d8e232afe27aa3efa30775}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SIZE\_\-XFER} = 0x0304\label{interfaceECCodes_a702185f901ae23be5b74caa61f9b6112}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SIZE\_\-XFER\_\-UP} = 0x0305\label{interfaceECCodes_a64968856b8985a1afd3d99dbb03685d7}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SIZE\_\-DONE} = 0x0306\label{interfaceECCodes_a6c0dc47d8780299817d282d577a4acb7}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SPEED} = 0x0307\label{interfaceECCodes_a3e183595c48484ffb0f3838c6cb4f13f}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-STATUS} = 0x0308\label{interfaceECCodes_a648b489a4a296411023b681415b481e5}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-PRIO} = 0x0309\label{interfaceECCodes_a1d2bd403075c1bfcff29839aca7e3c37}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SOURCE\_\-COUNT} = 0x030A\label{interfaceECCodes_a5900c7691516e2ba6ab62937286201ae}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SOURCE\_\-COUNT\_\-A4AF} = 0x030B\label{interfaceECCodes_adcf96c3db1915dabb73a79303905e271}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SOURCE\_\-COUNT\_\-NOT\_\-CURRENT} = 0x030C\label{interfaceECCodes_a63e39992dbf2d95eda03a798b0a348a6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SOURCE\_\-COUNT\_\-XFER} = 0x030D\label{interfaceECCodes_a51369d91832d36d0a5fe7e3368cb2cca}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-ED2K\_\-LINK} = 0x030E\label{interfaceECCodes_a114fab35c2734e381ee622ba865b9079}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-CAT} = 0x030F\label{interfaceECCodes_a5fbd94bd9cc3cefc698cedd8b9c3b5ba}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-LAST\_\-RECV} = 0x0310\label{interfaceECCodes_a1f79bce1c6d9a94544ddcd916de08f2d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-LAST\_\-SEEN\_\-COMP} = 0x0311\label{interfaceECCodes_a1e8a37e6cd3b95819731ac3cb40f74b6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-PART\_\-STATUS} = 0x0312\label{interfaceECCodes_a9d143a937a4924aad42067730f02ab21}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-GAP\_\-STATUS} = 0x0313\label{interfaceECCodes_a5130ceaf60933bfabb61fba707fcafb9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-REQ\_\-STATUS} = 0x0314\label{interfaceECCodes_a275c7d25aa792e69aeb66e464a59166f}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SOURCE\_\-NAMES} = 0x0315\label{interfaceECCodes_a25c4abb2526ba006db96e30b7f7587bf}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-COMMENTS} = 0x0316\label{interfaceECCodes_a3666953cb53d131cd546aa541f68b313}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-STOPPED} = 0x0317\label{interfaceECCodes_aba0d86da50e4bd433f98483335314ad4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-DOWNLOAD\_\-ACTIVE} = 0x0318\label{interfaceECCodes_ae8a9dc68bcc785c3a95b3d6b49ac9fd6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-LOST\_\-CORRUPTION} = 0x0319\label{interfaceECCodes_a9a7f00bd0c5e47a377b79703c0da9852}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-GAINED\_\-COMPRESSION} = 0x031A\label{interfaceECCodes_ac307211bdc448d1be8a381fd789c7198}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SAVED\_\-ICH} = 0x031B\label{interfaceECCodes_a32593533ee206f31bc4365dbc3beacca}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SOURCE\_\-NAMES\_\-COUNTS} = 0x031C\label{interfaceECCodes_a28df0c1c46aec2dc6bc13e94a44ac4ab}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-AVAILABLE\_\-PARTS} = 0x031D\label{interfaceECCodes_ab6bcd1942cf1cb3bcb4deec5b190b32b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-HASH} = 0x031E\label{interfaceECCodes_a56b27a24eee21a0fa6d5b36eeef5562c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-SHARED} = 0x031F\label{interfaceECCodes_aa036da865b34f0acfe44021b844da045}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-HASHED\_\-PART\_\-COUNT} = 0x0320\label{interfaceECCodes_adc1faaa633b573b980729981d2f8d6e4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-A4AFAUTO} = 0x0321\label{interfaceECCodes_a7b9a9156b7202ed3fde6f4f641630c9f}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PARTFILE\_\-A4AF\_\-SOURCES} = 0x0322\label{interfaceECCodes_af4d891b9987196e21721ce9b08328ed7}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE} = 0x0400\label{interfaceECCodes_a7287a9e715b75009100cf0b4c6a29aec}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-XFERRED} = 0x0401\label{interfaceECCodes_a2dba4428c3d4b509914d7fcd80ea6691}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-XFERRED\_\-ALL} = 0x0402\label{interfaceECCodes_a09a68ea44e06e18d6659615c737c55ee}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-REQ\_\-COUNT} = 0x0403\label{interfaceECCodes_a4236b61c4fc5784c852847c663451e31}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-REQ\_\-COUNT\_\-ALL} = 0x0404\label{interfaceECCodes_a1f80ceb9cd71a9e2772732c3c047a5b8}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-ACCEPT\_\-COUNT} = 0x0405\label{interfaceECCodes_ab4f42afcf34bf61718957250a3d6aefb}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-ACCEPT\_\-COUNT\_\-ALL} = 0x0406\label{interfaceECCodes_a4e9a98b124e97f24320cf2bcf0dfd7dd}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-AICH\_\-MASTERHASH} = 0x0407\label{interfaceECCodes_a4e9f37fef9cdf4cf176ac3a3bcb7ec35}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-FILENAME} = 0x0408\label{interfaceECCodes_aa5e849340d0545fbe6155ba849eea828}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-COMPLETE\_\-SOURCES\_\-LOW} = 0x0409\label{interfaceECCodes_af7051956cf069fe80858ba71d775e90a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-COMPLETE\_\-SOURCES\_\-HIGH} = 0x040A\label{interfaceECCodes_ae99996e3604202eafb71a8e943fa557a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-PRIO} = 0x040B\label{interfaceECCodes_a4311e67889200b162b51e48ff4982a3d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-ON\_\-QUEUE} = 0x040C\label{interfaceECCodes_a328add322492df2036f480af5e5af865}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-COMPLETE\_\-SOURCES} = 0x040D\label{interfaceECCodes_aa889c7282f3f41be7ee9f7eb14852fe9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-COMMENT} = 0x040E\label{interfaceECCodes_a1ceae74afbfd41e2b2ecbca927f4df62}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KNOWNFILE\_\-RATING} = 0x040F\label{interfaceECCodes_a91e43b6b2ab2f66003ea727194f39dc7}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER} = 0x0500\label{interfaceECCodes_aac7a1cac8b23dd295f394883d1e42c47}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-NAME} = 0x0501\label{interfaceECCodes_ae9c4728f121e34caee5d11c0121dba31}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-DESC} = 0x0502\label{interfaceECCodes_af1819b4bf3c1edc73d9e6c01fa9626fe}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-ADDRESS} = 0x0503\label{interfaceECCodes_af930c011466368bfd6eaae59c502203b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-PING} = 0x0504\label{interfaceECCodes_a39ac33b5db298c45fc1ff3f55b742f41}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-USERS} = 0x0505\label{interfaceECCodes_adb1c3a3ea002eec197494103b41c44dc}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-USERS\_\-MAX} = 0x0506\label{interfaceECCodes_a86afd27cf628c698cdba36d8de347b7e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-FILES} = 0x0507\label{interfaceECCodes_a15fb1b93f9b007e5098ec9c9ffcf55e3}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-PRIO} = 0x0508\label{interfaceECCodes_acc4f500379ecb6b1b950279458a18d7a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-FAILED} = 0x0509\label{interfaceECCodes_a57fef1abe6cef1568c419ea2ae143c63}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-STATIC} = 0x050A\label{interfaceECCodes_af4cb040b61fc7ccd5de03b4b1d1ba744}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-VERSION} = 0x050B\label{interfaceECCodes_a98aed2ad4d5f849147f9598c059ae613}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-IP} = 0x050C\label{interfaceECCodes_a2e441f45809afc5ce7a73a653c0bb972}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVER\_\-PORT} = 0x050D\label{interfaceECCodes_a4dbb41f7d824b188740f7a78311b56a2}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT} = 0x0600\label{interfaceECCodes_ab44629d813a165daf6a5cc4078f69ba6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-SOFTWARE} = 0x0601\label{interfaceECCodes_ae9d70adfcda16a3b40aec35fdcf35644}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-SCORE} = 0x0602\label{interfaceECCodes_a4cf4102a30b1dce6160b047471230e58}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-HASH} = 0x0603\label{interfaceECCodes_a06c84aafa13a0bb3fcdfc36a5f823054}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-FRIEND\_\-SLOT} = 0x0604\label{interfaceECCodes_a356ffaae5085b4971355fe906434c5be}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-WAIT\_\-TIME} = 0x0605\label{interfaceECCodes_ad920fe6ee8288cb275afd52bfe555099}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-XFER\_\-TIME} = 0x0606\label{interfaceECCodes_ae0350e49c92bd2d7413665df5fa68507}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-QUEUE\_\-TIME} = 0x0607\label{interfaceECCodes_a08cadcbf9a3c9e2d4448b91e3a2e5666}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-LAST\_\-TIME} = 0x0608\label{interfaceECCodes_abc0748e453ba941c94a751941b7b5612}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-UPLOAD\_\-SESSION} = 0x0609\label{interfaceECCodes_a493dd4c3ba3a76d796ffee6154549ab9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-UPLOAD\_\-TOTAL} = 0x060A\label{interfaceECCodes_a96b394160ebb12309451bf6b300e253a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-DOWNLOAD\_\-TOTAL} = 0x060B\label{interfaceECCodes_a0ab72e55183b769b58d15375bfcb7a6c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-DOWNLOAD\_\-STATE} = 0x060C\label{interfaceECCodes_af57fd5dcd4251faa2129f369b1d03020}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-UP\_\-SPEED} = 0x060D\label{interfaceECCodes_a07a3c72d9bd335691f16b6891336f70d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-DOWN\_\-SPEED} = 0x060E\label{interfaceECCodes_a38631365671403147019ed9ee8493a4a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-FROM} = 0x060F\label{interfaceECCodes_ac7cde3773120b2cc383c6090eceb0eb0}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-USER\_\-IP} = 0x0610\label{interfaceECCodes_a96df4ddf630217859a51e1ca6c2ca513}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-USER\_\-PORT} = 0x0611\label{interfaceECCodes_ab1085d6bce17ce46e7d7c4fcfd496723}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-SERVER\_\-IP} = 0x0612\label{interfaceECCodes_ae2d3601e13792daff4cd2a68642936bc}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-SERVER\_\-PORT} = 0x0613\label{interfaceECCodes_a52a169b4bc1d7ce23843e6978585991a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-SERVER\_\-NAME} = 0x0614\label{interfaceECCodes_a6bdf45f11956ebb4877b4890ca637e7c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-SOFT\_\-VER\_\-STR} = 0x0615\label{interfaceECCodes_ac70c942d9b68e3484034d9f598d7c5d4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-WAITING\_\-POSITION} = 0x0616\label{interfaceECCodes_a2f3b14a7041f7f053dac614d98f24b6a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-IDENT\_\-STATE} = 0x0617\label{interfaceECCodes_a91094ac20e910201597db61b793ddd7a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-OBFUSCATION\_\-STATUS} = 0x0618\label{interfaceECCodes_af77be06acf1126cd445fb837e7cc09c1}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-CURRENTLYUNUSED1} = 0x0619\label{interfaceECCodes_a990f6b11166cfb2458d3764135a521bb}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-REMOTE\_\-QUEUE\_\-RANK} = 0x061A\label{interfaceECCodes_a4f4592bd3eae845f13fccb24b7357e08}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-DISABLE\_\-VIEW\_\-SHARED} = 0x061B\label{interfaceECCodes_a53475c9868c7cc88a2e4c7c21fc53f8b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-UPLOAD\_\-STATE} = 0x061C\label{interfaceECCodes_abed726bf30881781a89d5b74a8ef080d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-EXT\_\-PROTOCOL} = 0x061D\label{interfaceECCodes_aef2935d089812dd7da69c72ceda33916}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-USER\_\-ID} = 0x061E\label{interfaceECCodes_a28b26b3ab7fc3c3ab25bb0493bfa64b7}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-UPLOAD\_\-FILE} = 0x061F\label{interfaceECCodes_a2c3ae46773ceb196f1ec4cd71280ca4f}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-REQUEST\_\-FILE} = 0x0620\label{interfaceECCodes_aff1dd581183cdfde395019ba8f59ffe4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-A4AF\_\-FILES} = 0x0621\label{interfaceECCodes_a0eec35a063f25e3d997ce37b9b4bd977}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-OLD\_\-REMOTE\_\-QUEUE\_\-RANK} = 0x0622\label{interfaceECCodes_aa53257843eb9b73649be65d9c1cdf2d3}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-KAD\_\-PORT} = 0x0623\label{interfaceECCodes_afb3f2c7798a9649ce9d02f3cdc497621}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-PART\_\-STATUS} = 0x0624\label{interfaceECCodes_af5e4816c1861b08b0dfaa969cbfea210}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-NEXT\_\-REQUESTED\_\-PART} = 0x0625\label{interfaceECCodes_ab08df8335f6d96198c304fc2cbe80dc0}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-LAST\_\-DOWNLOADING\_\-PART} = 0x0626\label{interfaceECCodes_a84b831a5fbfd67de5775e7c91b7f3c4e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-REMOTE\_\-FILENAME} = 0x0627\label{interfaceECCodes_a992930cf894049577e9aaca4906327c8}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-MOD\_\-VERSION} = 0x0628\label{interfaceECCodes_a485b82b11166f3da0d8e891491b234f4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-OS\_\-INFO} = 0x0629\label{interfaceECCodes_a8ee2d067ffc9b0657b11fcaba6a1c7aa}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-AVAILABLE\_\-PARTS} = 0x062A\label{interfaceECCodes_ad9254d536b8d7361a306bc154de2b5f8}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CLIENT\_\-UPLOAD\_\-PART\_\-STATUS} = 0x062B\label{interfaceECCodes_ac5a940a85a5418a3adc5fabe6fdbb234}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCHFILE} = 0x0700\label{interfaceECCodes_a9aaee89583e0a8d8e45ae419724bc1a4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-TYPE} = 0x0701\label{interfaceECCodes_aee8a98e64f1cc6a3c17a4a564b0aafb3}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-NAME} = 0x0702\label{interfaceECCodes_a42220249e0833d52dc5585197c593f87}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-MIN\_\-SIZE} = 0x0703\label{interfaceECCodes_ab29c6248d757f9b64f919128542bdf62}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-MAX\_\-SIZE} = 0x0704\label{interfaceECCodes_a7b25a51ada2ba72e79ae786e50221117}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-FILE\_\-TYPE} = 0x0705\label{interfaceECCodes_acfa60a8ab4a71c92ad8023b6fd8c780d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-EXTENSION} = 0x0706\label{interfaceECCodes_a4de08986c43bef48662ae1fa1a8c8fb4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-AVAILABILITY} = 0x0707\label{interfaceECCodes_adf08d7ccacbb1dcdb2c310cf0fc218af}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-STATUS} = 0x0708\label{interfaceECCodes_aab4e18fa4d3ce8b24daf3077e582dc71}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SEARCH\_\-PARENT} = 0x0709\label{interfaceECCodes_a7f44120313d42711401062a99334a812}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND} = 0x0800\label{interfaceECCodes_afa30c732151ed0253181dc35b1b458fb}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-NAME} = 0x0801\label{interfaceECCodes_ad97f3fc5c5c944f31848929bf3f777b9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-HASH} = 0x0802\label{interfaceECCodes_a109a4b6aa5fbd5f8daaf26d3864d6819}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-IP} = 0x0803\label{interfaceECCodes_a5ed08e28ac6667e3dad38b6b49654402}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-PORT} = 0x0804\label{interfaceECCodes_aca904d4464c2dca6a9003300ac12b918}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-CLIENT} = 0x0805\label{interfaceECCodes_a053d488c042549a95fe57a980e9082c5}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-ADD} = 0x0806\label{interfaceECCodes_a62978af61a1e10846734a3a846ec32a6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-REMOVE} = 0x0807\label{interfaceECCodes_ab63ed11bdd4ca763b01c7625243bcdbb}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-FRIENDSLOT} = 0x0808\label{interfaceECCodes_adf44938b5733860b7b1dd98071365b5b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FRIEND\_\-SHARED} = 0x0809\label{interfaceECCodes_a4596f739e8f04342d03a2f60a0b9ab5e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SELECT\_\-PREFS} = 0x1000\label{interfaceECCodes_ab2502c9fa1d4aa1e26ecf6c8f1bfad92}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-CATEGORIES} = 0x1100\label{interfaceECCodes_a9c646093d3aee7a9054a68c02688d444}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CATEGORY} = 0x1101\label{interfaceECCodes_ad1e1618c6d29a7051d9afa0007421fac}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CATEGORY\_\-TITLE} = 0x1102\label{interfaceECCodes_a0c594a99bbd1111956aaf4fc0f0e0371}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CATEGORY\_\-PATH} = 0x1103\label{interfaceECCodes_aa343d5f936a2f060973cf99ceb5df746}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CATEGORY\_\-COMMENT} = 0x1104\label{interfaceECCodes_a8788f48843cb18150a1bea298d986dd4}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CATEGORY\_\-COLOR} = 0x1105\label{interfaceECCodes_ae202578e82a6f01bb60b4082d6f57b21}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CATEGORY\_\-PRIO} = 0x1106\label{interfaceECCodes_a8f458f8aa2f4aa8bfe08a22bdece44c3}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-GENERAL} = 0x1200\label{interfaceECCodes_a628262c89d5f927770820b1e2fa58b32}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-USER\_\-NICK} = 0x1201\label{interfaceECCodes_a2099bf1decf768aac2e4273a767774ee}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-USER\_\-HASH} = 0x1202\label{interfaceECCodes_a3c3ae93beb8f91c4c4a5dd299b280b81}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-USER\_\-HOST} = 0x1203\label{interfaceECCodes_a0b93705a8c310acc8d8faf2a506db638}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-GENERAL\_\-CHECK\_\-NEW\_\-VERSION} = 0x1204\label{interfaceECCodes_ad4c316e400da34db3173c5e2d8d93906}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-CONNECTIONS} = 0x1300\label{interfaceECCodes_affa4d3ebacc43b2fe6ddde73aabb0753}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-DL\_\-CAP} = 0x1301\label{interfaceECCodes_a48056782ff7342e243cd3bfccf0c6494}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-UL\_\-CAP} = 0x1302\label{interfaceECCodes_a7ea19ec543325a78bacf6f86614cef57}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-MAX\_\-DL} = 0x1303\label{interfaceECCodes_acd9d0ee4ea6f46f0cdc1e0fbb179a65a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-MAX\_\-UL} = 0x1304\label{interfaceECCodes_ae0b8a2ff57638e0c7d1670d5b2acc59c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-SLOT\_\-ALLOCATION} = 0x1305\label{interfaceECCodes_a989c6ac5849e2a3ee6b3417792de6350}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-TCP\_\-PORT} = 0x1306\label{interfaceECCodes_a29854151bea562def7589e5f5c48be21}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-UDP\_\-PORT} = 0x1307\label{interfaceECCodes_afd34c42e0bd2e714b8e8b8fdc1a8fa3c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-UDP\_\-DISABLE} = 0x1308\label{interfaceECCodes_ac2c1800b8cfbd246aa1d6c21937bacca}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-MAX\_\-FILE\_\-SOURCES} = 0x1309\label{interfaceECCodes_a184bc040873298e9481966aac44fcb06}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-MAX\_\-CONN} = 0x130A\label{interfaceECCodes_adac4d67ee1e4865688293ede8cd60690}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-AUTOCONNECT} = 0x130B\label{interfaceECCodes_ab1da8ca761db9a01c042821d447b88e6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CONN\_\-RECONNECT} = 0x130C\label{interfaceECCodes_a558fd3595027238fb85f02ce8e1cb3ac}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-NETWORK\_\-ED2K} = 0x130D\label{interfaceECCodes_a5e09dd39ca2341a2e655ca0fce7d2603}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-NETWORK\_\-KADEMLIA} = 0x130E\label{interfaceECCodes_a4029487d3a285fa8e6a1d626f01cd65c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-MESSAGEFILTER} = 0x1400\label{interfaceECCodes_aa87404c00714d83240c898ecca90f819}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-MSGFILTER\_\-ENABLED} = 0x1401\label{interfaceECCodes_a52c5bc181580a0582d0b80b902320796}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-MSGFILTER\_\-ALL} = 0x1402\label{interfaceECCodes_a288054a7246cb90e6634622501ecf995}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-MSGFILTER\_\-FRIENDS} = 0x1403\label{interfaceECCodes_a673ac40075816e09fdcf35860d0eedce}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-MSGFILTER\_\-SECURE} = 0x1404\label{interfaceECCodes_aa12fa6120830cd06dcf9cd0bec417edf}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-MSGFILTER\_\-BY\_\-KEYWORD} = 0x1405\label{interfaceECCodes_a48e29f5f514d52ffb38aa7edfa120f4b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-MSGFILTER\_\-KEYWORDS} = 0x1406\label{interfaceECCodes_aa2e4171bab50e53bc47b2f5a82807a05}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-REMOTECTRL} = 0x1500\label{interfaceECCodes_abaaaf8531c7c8e40e9eafde121fdf75b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-WEBSERVER\_\-AUTORUN} = 0x1501\label{interfaceECCodes_af295eda0f8b4577f958b916273774444}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-WEBSERVER\_\-PORT} = 0x1502\label{interfaceECCodes_ad65f03b20f5f2dc61f05c979db2b8839}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-WEBSERVER\_\-GUEST} = 0x1503\label{interfaceECCodes_a6a5d606d35fcd1946e2a4f413cc6538a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-WEBSERVER\_\-USEGZIP} = 0x1504\label{interfaceECCodes_ac26b55124a17e5a2ab55a936011e6ece}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-WEBSERVER\_\-REFRESH} = 0x1505\label{interfaceECCodes_a4c52c0ad482e4a2a78b0586bc125be95}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-WEBSERVER\_\-TEMPLATE} = 0x1506\label{interfaceECCodes_a0cae066b84fa9061ffba1f50139a4275}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-ONLINESIG} = 0x1600\label{interfaceECCodes_a08dfc7055bc05d919491451c2dd7be91}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-ONLINESIG\_\-ENABLED} = 0x1601\label{interfaceECCodes_afd1aeaf196d95d84fc83e861e8fae14e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-SERVERS} = 0x1700\label{interfaceECCodes_a3e1f899f3fa8d01ee53d5cd4eeb141f9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-REMOVE\_\-DEAD} = 0x1701\label{interfaceECCodes_a446b684230fb1e817e958e1ea25d6b35}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-DEAD\_\-SERVER\_\-RETRIES} = 0x1702\label{interfaceECCodes_ae78db3fbf2b27e156f2bc010500b5436}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-AUTO\_\-UPDATE} = 0x1703\label{interfaceECCodes_aa34106977b3fb2ad30b3e715fc2b1a13}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-URL\_\-LIST} = 0x1704\label{interfaceECCodes_a06c35a4d812e5a92712ca7470ec97d73}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-ADD\_\-FROM\_\-SERVER} = 0x1705\label{interfaceECCodes_a980f0168beab07a17e5aa19431732987}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-ADD\_\-FROM\_\-CLIENT} = 0x1706\label{interfaceECCodes_a0c4d617929062440dd350556adfaec1a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-USE\_\-SCORE\_\-SYSTEM} = 0x1707\label{interfaceECCodes_a5e236196e81d70f6ce7c6f0e2f00a02d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-SMART\_\-ID\_\-CHECK} = 0x1708\label{interfaceECCodes_a986af699f4d01bc4127a1271c75cb4ad}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-SAFE\_\-SERVER\_\-CONNECT} = 0x1709\label{interfaceECCodes_a40172ffb7aca909926d2a84a21b17f17}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-AUTOCONN\_\-STATIC\_\-ONLY} = 0x170A\label{interfaceECCodes_a8335c3bb0ffc73231a04541f996588f3}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-MANUAL\_\-HIGH\_\-PRIO} = 0x170B\label{interfaceECCodes_a4d601a310195e49d191f9054a5b5d90e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SERVERS\_\-UPDATE\_\-URL} = 0x170C\label{interfaceECCodes_a372e7aa6fa8cfa98a797e635c11ef959}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-FILES} = 0x1800\label{interfaceECCodes_aed4170ac566aa44a7fcd34d10b22e831}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-ICH\_\-ENABLED} = 0x1801\label{interfaceECCodes_a9756c7d375ec4b9d8e7b12e263c1e82a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-AICH\_\-TRUST} = 0x1802\label{interfaceECCodes_a8be79886790812557481ec5eb6488cb9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-NEW\_\-PAUSED} = 0x1803\label{interfaceECCodes_a696e967810879a86e6291c3c5b50efb7}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-NEW\_\-AUTO\_\-DL\_\-PRIO} = 0x1804\label{interfaceECCodes_aedcb6aed00da147ddc26954c019377e9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-PREVIEW\_\-PRIO} = 0x1805\label{interfaceECCodes_aa10eccd7180eed256c2e74f100365430}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-NEW\_\-AUTO\_\-UL\_\-PRIO} = 0x1806\label{interfaceECCodes_a30f5f8eea62ef3cfc4c37a34b6a2cee7}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-UL\_\-FULL\_\-CHUNKS} = 0x1807\label{interfaceECCodes_a36ed140cf59bdd8a735336feb3680315}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-START\_\-NEXT\_\-PAUSED} = 0x1808\label{interfaceECCodes_a24f826913ef9f009c2f97c61ffbf7326}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-RESUME\_\-SAME\_\-CAT} = 0x1809\label{interfaceECCodes_aeaf60c511c5301ea0e72c33bb3661b95}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-SAVE\_\-SOURCES} = 0x180A\label{interfaceECCodes_ada831d1a4b53d4179e54a2e1b39ebdb0}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-EXTRACT\_\-METADATA} = 0x180B\label{interfaceECCodes_af067ead433fc3f44f59d8b9758cb550b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-ALLOC\_\-FULL\_\-SIZE} = 0x180C\label{interfaceECCodes_a33b2c4df44df334ea88dba6a5e377a1d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-CHECK\_\-FREE\_\-SPACE} = 0x180D\label{interfaceECCodes_a545e78f74f8f7cbfb67df6a8824d65fa}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-FILES\_\-MIN\_\-FREE\_\-SPACE} = 0x180E\label{interfaceECCodes_a0e10a137b482f8bdb5af35a6692c76fc}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-SRCDROP} = 0x1900\label{interfaceECCodes_ae6b54128efd7f5c9a5ed8ef807d108b6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SRCDROP\_\-NONEEDED} = 0x1901\label{interfaceECCodes_a4bdb25b6c6bfb97b81fd8574ac725c37}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SRCDROP\_\-DROP\_\-FQS} = 0x1902\label{interfaceECCodes_acbd13456956c786c87b50c27cfc2c19e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SRCDROP\_\-DROP\_\-HQRS} = 0x1903\label{interfaceECCodes_a7bf8b5fd4c7563d4f5e8c32f60e8cc66}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SRCDROP\_\-HQRS\_\-VALUE} = 0x1904\label{interfaceECCodes_a0a5ecd2c6c1a2991fdb41cd4a2dcb750}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SRCDROP\_\-AUTODROP\_\-TIMER} = 0x1905\label{interfaceECCodes_a7566f63861d6f536059ad3f3b239c1e6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-DIRECTORIES} = 0x1A00\label{interfaceECCodes_a34b6a144ed50dc7cfe836252dcd6b50d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-DIRECTORIES\_\-INCOMING} = 0x1A01\label{interfaceECCodes_a05df5174fafe4b5538832293fec49cce}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-DIRECTORIES\_\-TEMP} = 0x1A02\label{interfaceECCodes_a0b95f271d123ff3af0bb7292042134c5}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-DIRECTORIES\_\-SHARED} = 0x1A03\label{interfaceECCodes_a4147d2adfc176f3f8bf611c8f012c489}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-DIRECTORIES\_\-SHARE\_\-HIDDEN} = 0x1A04\label{interfaceECCodes_a41377bf4545f44899462c5c34866084a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-STATISTICS} = 0x1B00\label{interfaceECCodes_a78166050fa1c1cbdce8b301e3d6b8b58}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATSGRAPH\_\-WIDTH} = 0x1B01\label{interfaceECCodes_a22b0a9139019a5243dfca1b7c58e568e}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATSGRAPH\_\-SCALE} = 0x1B02\label{interfaceECCodes_aab56ece7e94cfd663638155b9f2196c7}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATSGRAPH\_\-LAST} = 0x1B03\label{interfaceECCodes_a7801ec93205189415c0361c11ea702c9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATSGRAPH\_\-DATA} = 0x1B04\label{interfaceECCodes_a85803b97c88d4178042fa78a2ddd40fd}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATTREE\_\-CAPPING} = 0x1B05\label{interfaceECCodes_aacdf820039c40060d523aa96dfcf024a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATTREE\_\-NODE} = 0x1B06\label{interfaceECCodes_aa891aab914be015baaff76ae7f79f964}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STAT\_\-NODE\_\-VALUE} = 0x1B07\label{interfaceECCodes_a93ebe4124310e574ba920aaf93cded80}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STAT\_\-VALUE\_\-TYPE} = 0x1B08\label{interfaceECCodes_a2f10143556d32d2b38a8ef178d9059d6}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-STATTREE\_\-NODEID} = 0x1B09\label{interfaceECCodes_ac8fad02c6e4e617a85101fa62f93b5cb}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-SECURITY} = 0x1C00\label{interfaceECCodes_a936b23da8d12ac9c77b071a438dacfab}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SECURITY\_\-CAN\_\-SEE\_\-SHARES} = 0x1C01\label{interfaceECCodes_a961cf7d3918391d296447e2c68fd0d4a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-IPFILTER\_\-CLIENTS} = 0x1C02\label{interfaceECCodes_ac6ad04bbe8846150d006c73ddc510c45}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-IPFILTER\_\-SERVERS} = 0x1C03\label{interfaceECCodes_a3edbfb40dc94a61f87e9058e29d46f4f}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-IPFILTER\_\-AUTO\_\-UPDATE} = 0x1C04\label{interfaceECCodes_a76ec1003c25661b1f34d356976170533}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-IPFILTER\_\-UPDATE\_\-URL} = 0x1C05\label{interfaceECCodes_abe29a5da37a34e4e8e09c3ad13ff763f}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-IPFILTER\_\-LEVEL} = 0x1C06\label{interfaceECCodes_a7cbb6c11fcbd7344cd1ab232ca5b460d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-IPFILTER\_\-FILTER\_\-LAN} = 0x1C07\label{interfaceECCodes_a8a47cf3ce5f3ac0213ee2504f5eee837}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SECURITY\_\-USE\_\-SECIDENT} = 0x1C08\label{interfaceECCodes_a342057bd49ed71a8e1ab3fd6488e496c}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SECURITY\_\-OBFUSCATION\_\-SUPPORTED} = 0x1C09\label{interfaceECCodes_a5a672fd5a54431f7dbe1aef857c45c87}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SECURITY\_\-OBFUSCATION\_\-REQUESTED} = 0x1C0A\label{interfaceECCodes_a155eba2963d52963033760cdc4ac51b9}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-SECURITY\_\-OBFUSCATION\_\-REQUIRED} = 0x1C0B\label{interfaceECCodes_a5819896a2da15da21f6c33e4f99f311b}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-CORETWEAKS} = 0x1D00\label{interfaceECCodes_a03c73dff2a8413d5854c6f8d060d349d}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CORETW\_\-MAX\_\-CONN\_\-PER\_\-FIVE} = 0x1D01\label{interfaceECCodes_ac8c391407a509bd00aa3fba7f94a7ba1}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CORETW\_\-VERBOSE} = 0x1D02\label{interfaceECCodes_a4c2a178e2053eaef12c8b13c1038641a}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CORETW\_\-FILEBUFFER} = 0x1D03\label{interfaceECCodes_a44aae95e309bb93ad7dc76bbfa258af8}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CORETW\_\-UL\_\-QUEUE} = 0x1D04\label{interfaceECCodes_a1c70d6aa61ee58c958ea574e9515e897}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-CORETW\_\-SRV\_\-KEEPALIVE\_\-TIMEOUT} = 0x1D05\label{interfaceECCodes_ab0c1068e52d4fa0ec08807d2a5f5d819}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-PREFS\_\-KADEMLIA} = 0x1E00\label{interfaceECCodes_ad7423067900378b4416487e540772278}
+
+\item 
+static final short {\bfseries EC\_\-TAG\_\-KADEMLIA\_\-UPDATE\_\-URL} = 0x1E01\label{interfaceECCodes_aaef86cb747adfd4fad8c4d162871493e}
+
+\item 
+static final byte {\bfseries EC\_\-DETAIL\_\-CMD} = 0x00\label{interfaceECCodes_a92c2f0fa7bec3ac618f5f9884ebcd8d0}
+
+\item 
+static final byte {\bfseries EC\_\-DETAIL\_\-WEB} = 0x01\label{interfaceECCodes_a59372e6c1b2f0642dc6b82b40cb87fb6}
+
+\item 
+static final byte {\bfseries EC\_\-DETAIL\_\-FULL} = 0x02\label{interfaceECCodes_aaa206145eca0b4b4dbba1248a785781d}
+
+\item 
+static final byte {\bfseries EC\_\-DETAIL\_\-UPDATE} = 0x03\label{interfaceECCodes_a7f15fb3691360d0b7e084e05ea70f636}
+
+\item 
+static final byte {\bfseries EC\_\-DETAIL\_\-INC\_\-UPDATE} = 0x04\label{interfaceECCodes_adbf9a9f485f44aaf888e5a65d3728522}
+
+\item 
+static final byte {\bfseries EC\_\-SEARCH\_\-LOCAL} = 0x00\label{interfaceECCodes_a815b5991470a4ac63f42092d49b2a743}
+
+\item 
+static final byte {\bfseries EC\_\-SEARCH\_\-GLOBAL} = 0x01\label{interfaceECCodes_a6039c8fda3ba68c0dc14098e54bbcc3c}
+
+\item 
+static final byte {\bfseries EC\_\-SEARCH\_\-KAD} = 0x02\label{interfaceECCodes_aafa1dd5c65b8dfd1c7e418f02f59d84f}
+
+\item 
+static final byte {\bfseries EC\_\-SEARCH\_\-WEB} = 0x03\label{interfaceECCodes_a6dabd0ae8b51beecbe0d943f516940f8}
+
+\item 
+static final byte {\bfseries EC\_\-VALUE\_\-INTEGER} = 0x00\label{interfaceECCodes_adcd24d39ddc74e83bdbbc49f9e4b4747}
+
+\item 
+static final byte {\bfseries EC\_\-VALUE\_\-ISTRING} = 0x01\label{interfaceECCodes_acc93e6c0e7548efbc543fe12910b4ae8}
+
+\item 
+static final byte {\bfseries EC\_\-VALUE\_\-BYTES} = 0x02\label{interfaceECCodes_ae36f50cc73eb42f487a09304d1672988}
+
+\item 
+static final byte {\bfseries EC\_\-VALUE\_\-ISHORT} = 0x03\label{interfaceECCodes_aa21f64442cd99f7938521d705c737b63}
+
+\item 
+static final byte {\bfseries EC\_\-VALUE\_\-TIME} = 0x04\label{interfaceECCodes_aff41843564453141c12133015d6e82ff}
+
+\item 
+static final byte {\bfseries EC\_\-VALUE\_\-SPEED} = 0x05\label{interfaceECCodes_a598226df111848c708af5c0335f56371}
+
+\item 
+static final byte {\bfseries EC\_\-VALUE\_\-STRING} = 0x06\label{interfaceECCodes_af134620e0bd58e8df5e9ac90b37e913a}
+
+\item 
+static final byte {\bfseries EC\_\-VALUE\_\-DOUBLE} = 0x07\label{interfaceECCodes_add248d1d886ff923b8e1d53d235e290a}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-CATEGORIES} = 0x00000001\label{interfaceECCodes_a97002bfdd22511989b4e2f93598ee379}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-GENERAL} = 0x00000002\label{interfaceECCodes_a1c1485f91aaa8a335bfc310bfe2e2818}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-CONNECTIONS} = 0x00000004\label{interfaceECCodes_a1b04954f2e0a999d9738c5c96083d134}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-MESSAGEFILTER} = 0x00000008\label{interfaceECCodes_a91a0415351379cc48fc5609d3de59102}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-REMOTECONTROLS} = 0x00000010\label{interfaceECCodes_af40aa3879d508eef26cb6517eba27416}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-ONLINESIG} = 0x00000020\label{interfaceECCodes_a5f099320806a47dd5ee52881a27b7e35}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-SERVERS} = 0x00000040\label{interfaceECCodes_aa206d4051978ef4f9e7e3d3b9d3d05d5}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-FILES} = 0x00000080\label{interfaceECCodes_a31089ed8edb4ef9bc5f475fcaa2522ac}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-SRCDROP} = 0x00000100\label{interfaceECCodes_a2f1f67e840ac54c093cdc171e7d31a08}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-DIRECTORIES} = 0x00000200\label{interfaceECCodes_a25a56364f1ebe34c488f75ad81813e01}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-STATISTICS} = 0x00000400\label{interfaceECCodes_a0788e297afa5552bf66ffa6730e9d8a9}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-SECURITY} = 0x00000800\label{interfaceECCodes_ab5b11c7963a14ef2e7d3b6f751ed186e}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-CORETWEAKS} = 0x00001000\label{interfaceECCodes_a9837d81edd41a92eb0b2c57f6a49f967}
+
+\item 
+static final int {\bfseries EC\_\-PREFS\_\-KADEMLIA} = 0x00002000\label{interfaceECCodes_a1413e8b2f735c84c825a85c2a563c53b}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/java/ECCodes.java\end{DoxyCompactItemize}

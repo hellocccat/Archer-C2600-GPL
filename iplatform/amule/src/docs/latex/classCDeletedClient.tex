@@ -1,0 +1,39 @@
+\section{CDeletedClient Class Reference}
+\label{classCDeletedClient}\index{CDeletedClient@{CDeletedClient}}
+
+
+\doxyref{CDeletedClient}{p.}{classCDeletedClient} Class.  
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf PortAndHash}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf PortAndHash} $>$ {\bfseries PaHList}\label{classCDeletedClient_a9b603b3121987fd26c086962954818c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CDeletedClient} ({\bf CUpDownClient} $\ast$pClient)\label{classCDeletedClient_a9ae9c3f46d71338081f3336cc495f831}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+PaHList {\bfseries m\_\-ItemsList}\label{classCDeletedClient_ad070ec7b86419b39774147cf96aad67e}
+
+\item 
+uint32 {\bfseries m\_\-dwInserted}\label{classCDeletedClient_a73a367a80c0a04c42262650a4d169622}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{CDeletedClient}{p.}{classCDeletedClient} Class. This class / list is a bit overkill, but currently needed to avoid any exploit possibility. It will keep track of certain clients attributes for 2 hours, while the \doxyref{CUpDownClient}{p.}{classCUpDownClient} object might be deleted already. Currently saves: IP, Port, UserHash. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ClientList.cpp\end{DoxyCompactItemize}

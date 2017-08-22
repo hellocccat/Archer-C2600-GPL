@@ -1,0 +1,92 @@
+\section{CScopedPtr$<$ TYPE $>$ Class Template Reference}
+\label{classCScopedPtr}\index{CScopedPtr@{CScopedPtr}}
+
+
+\doxyref{CScopedPtr}{p.}{classCScopedPtr} is a simple smart pointer.  
+
+
+{\ttfamily \#include $<$ScopedPtr.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CScopedPtr} (TYPE $\ast$ptr)
+\item 
+{\bf $\sim$CScopedPtr} ()
+\item 
+TYPE $\ast$ {\bf get} () const 
+\item 
+void {\bf reset} (TYPE $\ast$ptr=0)
+\item 
+TYPE $\ast$ {\bf release} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TYPE $\ast$ {\bfseries m\_\-ptr}\label{classCScopedPtr_ae42c2e93fe659b23af90a97345872a19}
+
+\end{DoxyCompactItemize}
+\label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ \begin{DoxyCompactItemize}
+\item 
+TYPE \& {\bf operator$\ast$} () const 
+\item 
+TYPE $\ast$ {\bfseries operator-\/$>$} () const \label{classCScopedPtr_a8a45f52b42a8a58f9aeda91137ef2ea2}
+
+\item 
+{\bf CScopedPtr} (const {\bf CScopedPtr}$<$ TYPE $>$ \&)\label{classCScopedPtr_aaca2ce5bbd42dbf153334cbc7310c753}
+
+\item 
+{\bf CScopedPtr}$<$ TYPE $>$ \& {\bfseries operator=} (const {\bf CScopedPtr}$<$ TYPE $>$ \&)\label{classCScopedPtr_a836007350c138f75ab6ef4f98a724330}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename TYPE$>$ class CScopedPtr$<$ TYPE $>$}
+
+\doxyref{CScopedPtr}{p.}{classCScopedPtr} is a simple smart pointer. This class is a replacement for std::auto\_\-ptr, with simpler copying schematics, in that it doesn't allow copying or assignment, compared to auto\_\-ptr, which allows only one instance to own a pointer (swapping at assignment). 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CScopedPtr@{CScopedPtr}!CScopedPtr@{CScopedPtr}}
+\index{CScopedPtr@{CScopedPtr}!CScopedPtr@{CScopedPtr}}
+\subsubsection[{CScopedPtr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ {\bf CScopedPtr}$<$ TYPE $>$::{\bf CScopedPtr} (TYPE $\ast$ {\em ptr})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedPtr_a6523d6378fbc92f8372a880033ad82e0}
+
+
+Constructor. Note that \doxyref{CScopedPtr}{p.}{classCScopedPtr} takes ownership of the pointer. \index{CScopedPtr@{CScopedPtr}!$\sim$CScopedPtr@{$\sim$CScopedPtr}}
+\index{$\sim$CScopedPtr@{$\sim$CScopedPtr}!CScopedPtr@{CScopedPtr}}
+\subsubsection[{$\sim$CScopedPtr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ {\bf CScopedPtr}$<$ TYPE $>$::$\sim${\bf CScopedPtr} ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedPtr_ab64b77db57e7a55e34ac1818806dcd69}
+
+
+Frees the pointer owned by the instance. 
+
+\subsection{Member Function Documentation}
+\index{CScopedPtr@{CScopedPtr}!get@{get}}
+\index{get@{get}!CScopedPtr@{CScopedPtr}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ TYPE$\ast$ {\bf CScopedPtr}$<$ TYPE $>$::get () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedPtr_a35dcc5e10151eda86d7a6a9edfa979ff}
+
+
+Returns the actual pointer value. 
+
+Referenced by CHashingTask::Entry(), and CThreadScheduler::Entry().\index{CScopedPtr@{CScopedPtr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!CScopedPtr@{CScopedPtr}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ TYPE\& {\bf CScopedPtr}$<$ TYPE $>$::operator$\ast$ () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedPtr_a785702adb07d213afa569d8aa2d08efe}
+
+
+Deference operators. \index{CScopedPtr@{CScopedPtr}!release@{release}}
+\index{release@{release}!CScopedPtr@{CScopedPtr}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ TYPE$\ast$ {\bf CScopedPtr}$<$ TYPE $>$::release ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedPtr_ae42e5bebddd86ca1d658638eb6d6edab}
+
+
+Returns the actual pointer. The scoped-\/ptr will thereafter contain NULL. 
+
+Referenced by CHashingTask::Entry().\index{CScopedPtr@{CScopedPtr}!reset@{reset}}
+\index{reset@{reset}!CScopedPtr@{CScopedPtr}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ void {\bf CScopedPtr}$<$ TYPE $>$::reset (TYPE $\ast$ {\em ptr} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedPtr_a427761d39cc1e17ce82010beca3bef06}
+
+
+Sets the actual pointer to a different value. The old pointer is freed. 
+
+Referenced by CThreadScheduler::Entry().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ScopedPtr.h\end{DoxyCompactItemize}

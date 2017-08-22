@@ -1,0 +1,32 @@
+diff --git a/hostapd/hostapd_cli.c b/hostapd/hostapd_cli.c
+index 24446b6..ecd5420 100644
+--- a/hostapd/hostapd_cli.c
++++ b/hostapd/hostapd_cli.c
+@@ -76,6 +76,7 @@ static const char *commands_help =
+ #endif /* CONFIG_WPS_OOB */
+ "   wps_ap_pin <cmd> [params..]  enable/disable AP PIN\n"
+ "   wps_config <SSID> <auth> <encr> <key>  configure AP\n"
++"   wps_get_config 	 show current WPS configuration\n"
+ #endif /* CONFIG_WPS */
+ "   get_config           show current configuration\n"
+ "   help                 show this usage help\n"
+@@ -527,6 +528,11 @@ static int hostapd_cli_cmd_get_config(struct wpa_ctrl *ctrl, int argc,
+ 	return wpa_ctrl_command(ctrl, "GET_CONFIG");
+ }
+ 
++static int hostapd_cli_cmd_wps_get_config(struct wpa_ctrl *ctrl, int argc,
++				      char *argv[])
++{
++	return wpa_ctrl_command(ctrl, "WPS_GET_CONFIG");
++}
+ 
+ static int wpa_ctrl_command_sta(struct wpa_ctrl *ctrl, char *cmd,
+ 				char *addr, size_t addr_len)
+@@ -761,6 +767,7 @@ static struct hostapd_cli_cmd hostapd_cli_commands[] = {
+ 	{ "wps_check_pin", hostapd_cli_cmd_wps_check_pin },
+ 	{ "wps_pbc", hostapd_cli_cmd_wps_pbc },
+ 	{ "wps_cancel", hostapd_cli_cmd_wps_cancel },
++	{ "wps_get_config", hostapd_cli_cmd_wps_get_config },
+ #ifdef CONFIG_WPS_OOB
+ 	{ "wps_oob", hostapd_cli_cmd_wps_oob },
+ #endif /* CONFIG_WPS_OOB */

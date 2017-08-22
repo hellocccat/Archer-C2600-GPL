@@ -1,0 +1,146 @@
+\section{CThreadScheduler Class Reference}
+\label{classCThreadScheduler}\index{CThreadScheduler@{CThreadScheduler}}
+
+
+This class mananges scheduling of background tasks.  
+
+
+{\ttfamily \#include $<$ThreadScheduler.h$>$}\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf Start} ()
+\item 
+static void {\bf Terminate} ()
+\item 
+static bool {\bf AddTask} ({\bf CThreadTask} $\ast$task, bool overwrite=false)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::pair$<$ {\bf CThreadTask} $\ast$, uint32 $>$ {\bf CEntryPair}\label{classCThreadScheduler_a701eb99b298422a23caf8007b55bc834}
+
+\item 
+typedef std::map$<$ wxString, {\bf CThreadTask} $\ast$ $>$ {\bfseries CDescMap}\label{classCThreadScheduler_a4807588632679ac840af51f0bd87637c}
+
+\item 
+typedef std::map$<$ wxString, CDescMap $>$ {\bfseries CTypeMap}\label{classCThreadScheduler_ad13b3ac59db52e541f4634de4a67416a}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t {\bf GetTaskCount} () const 
+\item 
+bool {\bf DoAddTask} ({\bf CThreadTask} $\ast$task, bool overwrite)
+\item 
+void {\bf CreateSchedulerThread} ()
+\item 
+void $\ast$ {\bf Entry} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::deque$<$ {\bf CEntryPair} $>$ {\bf m\_\-tasks}\label{classCThreadScheduler_a10448e4f27c2c8840c388231d6ca4549}
+
+\item 
+bool {\bf m\_\-tasksDirty}\label{classCThreadScheduler_ab0f037a5d11177f546c0ee50fdb6f477}
+
+\item 
+CTypeMap {\bf m\_\-taskDescs}\label{classCThreadScheduler_ab6fd95ac8ddb22cce748ffe6d7280b45}
+
+\item 
+{\bf CMuleThread} $\ast$ {\bf m\_\-thread}\label{classCThreadScheduler_ad1bdb930c2a73e98ac4040dfedc07deb}
+
+\item 
+{\bf CThreadTask} $\ast$ {\bf m\_\-currentTask}\label{classCThreadScheduler_a8b7a90fff121b0ea985fa64e36b971fb}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CTaskThread}\label{classCThreadScheduler_a5968e64437e70abbf3878dcd90b765e9}
+
+\item 
+struct {\bf CTaskSorter}\label{classCThreadScheduler_a404dc86c6afd01ddee6ce0d15edddd0d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class mananges scheduling of background tasks. Currently it is assumed that all tasks are IO intensive, so that only a single task is allowed to proceed at any one time. All threads are run in lowest priority mode.
+
+Tasks are sorted by priority (see ETaskPriority) and age.
+
+Note that the scheduler starts in suspended mode, in which tasks are queued but not executed. Call \doxyref{Start()}{p.}{classCThreadScheduler_ad4116c6d8242c1ac8e34afbd7a39c8e5} to begin execution of the tasks. 
+
+\subsection{Member Function Documentation}
+\index{CThreadScheduler@{CThreadScheduler}!AddTask@{AddTask}}
+\index{AddTask@{AddTask}!CThreadScheduler@{CThreadScheduler}}
+\subsubsection[{AddTask}]{\setlength{\rightskip}{0pt plus 5cm}bool CThreadScheduler::AddTask ({\bf CThreadTask} $\ast$ {\em task}, \/  bool {\em overwrite} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCThreadScheduler_a29d446339b5ccb95ed9c879e6cbb710d}
+
+
+Adds a new task to the queue, returning true if the task was queued. Before the task is queued, it is checked against the existing tasks based on type and description. If an matching task already exists, this task-\/object is discarded. The task is also discarded if the scheduler has been terminated. If 'overwrite' is true, any existing duplicate task is dropped, and if already running, terminated.
+
+Note: This function takes ownership of the task.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Start}{p.}{classCThreadScheduler_ad4116c6d8242c1ac8e34afbd7a39c8e5} 
+
+\doxyref{Terminate}{p.}{classCThreadScheduler_ae87a4be43f85db22105cccef90e63f4e} 
+\end{DoxySeeAlso}
+
+
+References DoAddTask(), and CThreadTask::GetDesc().
+
+Referenced by CSharedFileList::CheckAICHHashes(), CHashingTask::OnLastTask(), and CIPFilter::Reload().\index{CThreadScheduler@{CThreadScheduler}!CreateSchedulerThread@{CreateSchedulerThread}}
+\index{CreateSchedulerThread@{CreateSchedulerThread}!CThreadScheduler@{CThreadScheduler}}
+\subsubsection[{CreateSchedulerThread}]{\setlength{\rightskip}{0pt plus 5cm}void CThreadScheduler::CreateSchedulerThread ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCThreadScheduler_a1e5e0c9b75e5fab8b45c68c1946e2d2c}
+
+
+Creates the actual scheduler thread if none exist. 
+
+References m\_\-tasks, m\_\-thread, and CMuleThread::Stop().
+
+Referenced by DoAddTask(), and Start().\index{CThreadScheduler@{CThreadScheduler}!DoAddTask@{DoAddTask}}
+\index{DoAddTask@{DoAddTask}!CThreadScheduler@{CThreadScheduler}}
+\subsubsection[{DoAddTask}]{\setlength{\rightskip}{0pt plus 5cm}bool CThreadScheduler::DoAddTask ({\bf CThreadTask} $\ast$ {\em task}, \/  bool {\em overwrite})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCThreadScheduler_a462dc5e14d5fcfe2a4f61dd77e4da72b}
+
+
+Tries to add the given task to the queue, returning true on success. 
+
+References CreateSchedulerThread(), CThreadTask::GetDesc(), CThreadTask::GetType(), CThreadTask::m\_\-abort, m\_\-currentTask, m\_\-taskDescs, m\_\-tasks, and m\_\-tasksDirty.
+
+Referenced by AddTask().\index{CThreadScheduler@{CThreadScheduler}!Entry@{Entry}}
+\index{Entry@{Entry}!CThreadScheduler@{CThreadScheduler}}
+\subsubsection[{Entry}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ CThreadScheduler::Entry ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCThreadScheduler_a578db276db7a9c1052fd11339228dfa2}
+
+
+Entry function called via internal thread-\/object. 
+
+References CScopedPtr$<$ TYPE $>$::get(), m\_\-currentTask, m\_\-taskDescs, m\_\-tasks, m\_\-tasksDirty, m\_\-thread, CScopedPtr$<$ TYPE $>$::reset(), and CMuleThread::TestDestroy().
+
+Referenced by CTaskThread::Entry().\index{CThreadScheduler@{CThreadScheduler}!GetTaskCount@{GetTaskCount}}
+\index{GetTaskCount@{GetTaskCount}!CThreadScheduler@{CThreadScheduler}}
+\subsubsection[{GetTaskCount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t CThreadScheduler::GetTaskCount () const\hspace{0.3cm}{\ttfamily  [private]}}\label{classCThreadScheduler_a963c3987059ba1b9bdee129cc9c3e0fe}
+
+
+Returns the number of tasks on the queue. 
+
+References m\_\-tasks.\index{CThreadScheduler@{CThreadScheduler}!Start@{Start}}
+\index{Start@{Start}!CThreadScheduler@{CThreadScheduler}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}void CThreadScheduler::Start ()\hspace{0.3cm}{\ttfamily  [static]}}\label{classCThreadScheduler_ad4116c6d8242c1ac8e34afbd7a39c8e5}
+
+
+Starts execution of queued tasks. 
+
+References CreateSchedulerThread().\index{CThreadScheduler@{CThreadScheduler}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!CThreadScheduler@{CThreadScheduler}}
+\subsubsection[{Terminate}]{\setlength{\rightskip}{0pt plus 5cm}void CThreadScheduler::Terminate ()\hspace{0.3cm}{\ttfamily  [static]}}\label{classCThreadScheduler_ae87a4be43f85db22105cccef90e63f4e}
+
+
+Terminates task execution and frees the scheduler object. Tasks added after this are discarded. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadScheduler.h\item 
+src/ThreadScheduler.cpp\end{DoxyCompactItemize}

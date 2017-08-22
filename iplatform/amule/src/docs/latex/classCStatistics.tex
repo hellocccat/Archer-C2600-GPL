@@ -1,0 +1,482 @@
+\section{CStatistics Class Reference}
+\label{classCStatistics}\index{CStatistics@{CStatistics}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries RecordHistory} ()\label{classCStatistics_a66fdcd4f43ab304095d3a91fcc59e381}
+
+\item 
+unsigned {\bfseries GetHistoryForWeb} (unsigned cntPoints, double sStep, double $\ast$sStart, uint32 $\ast$$\ast$graphData)\label{classCStatistics_a5c8538ba6d9f657162675d938296ccb9}
+
+\item 
+unsigned {\bfseries GetHistory} (unsigned cntPoints, double sStep, double sFinal, const std::vector$<$ float $\ast$ $>$ \&ppf, StatsGraphType which\_\-graph)\label{classCStatistics_a229a64016ee4609cc9d7c9828996dd9d}
+
+\item 
+{\bf GraphUpdateInfo} {\bfseries GetPointsForUpdate} ()\label{classCStatistics_a2cb4c1ab93223f02852e91289d4e76e4}
+
+\item 
+void {\bfseries UpdateStatsTree} ()\label{classCStatistics_a136745b987144d4be550cff77692a3ed}
+
+\item 
+void {\bfseries SetAverageMinutes} (uint8 minutes)\label{classCStatistics_a71ee7f8585e321f37a28f04735737352}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries Load} ()\label{classCStatistics_a3cf7f2cb29b7a43216d660c40e7cce0c}
+
+\item 
+static void {\bfseries Save} ()\label{classCStatistics_ac331cfac11c0465a3cdb9740ee65ab7f}
+
+\item 
+static uint64 {\bfseries GetUptimeMillis} ()\label{classCStatistics_a073fd36550a8befb6c177dfc71bc899f}
+
+\item 
+static uint64 {\bfseries GetUptimeSeconds} ()\label{classCStatistics_a9d4b18928b0a97b01dc6872e9e7fd9c3}
+
+\item 
+static uint64 {\bfseries GetStartTime} ()\label{classCStatistics_ad945d3d91f3677c83dc4950a70c03a20}
+
+\item 
+static uint64 {\bfseries GetTotalSentBytes} ()\label{classCStatistics_a6e61f5a7f412385b7385cd3346930a5e}
+
+\item 
+static uint64 {\bfseries GetSessionSentBytes} ()\label{classCStatistics_a17689dc0e88f4dc7eeb0a20021b72cda}
+
+\item 
+static void {\bfseries AddUpOverheadFileRequest} (uint32 size)\label{classCStatistics_a3d5450f3df080b584a25f11ea183dd18}
+
+\item 
+static void {\bfseries AddUpOverheadSourceExchange} (uint32 size)\label{classCStatistics_ac1e57f8558dcc421e793576b96cbd0ce}
+
+\item 
+static void {\bfseries AddUpOverheadServer} (uint32 size)\label{classCStatistics_a4874b8e69b3399aee09281ac19485d39}
+
+\item 
+static void {\bfseries AddUpOverheadKad} (uint32 size)\label{classCStatistics_aca916b382ca3db73f9378542642e53c2}
+
+\item 
+static void {\bfseries AddUpOverheadCrypt} (uint32\_\-t size)\label{classCStatistics_af9093d6ef8b615c7b2691e6419a07c9a}
+
+\item 
+static void {\bfseries AddUpOverheadOther} (uint32 size)\label{classCStatistics_a7b1473ea49db7777f03ab802d1cf5f7f}
+
+\item 
+static double {\bfseries GetUpOverheadRate} ()\label{classCStatistics_af7673a1983ebb722bedc3f87b2ef5ac8}
+
+\item 
+static void {\bfseries AddSuccessfulUpload} ()\label{classCStatistics_a86665d22831329794a4075dc01d33e39}
+
+\item 
+static void {\bfseries AddFailedUpload} ()\label{classCStatistics_ab8c82d41c57114a5cc148a6f54a11831}
+
+\item 
+static void {\bfseries AddUploadTime} (uint32 time)\label{classCStatistics_a634bac4d2a6929b97509d78f0959ed86}
+
+\item 
+static void {\bfseries AddUploadingClient} ()\label{classCStatistics_a1495850008dc66d8460f5f9fbdb5d78e}
+
+\item 
+static void {\bfseries RemoveUploadingClient} ()\label{classCStatistics_a693db25e4542dfb851f378c588c33e39}
+
+\item 
+static uint32 {\bfseries GetActiveUploadsCount} ()\label{classCStatistics_aad124ad82acbed5a56a15b6f254baf2f}
+
+\item 
+static void {\bfseries AddWaitingClient} ()\label{classCStatistics_ab8f9fe7c8c43db236f10bc747328cf01}
+
+\item 
+static void {\bfseries RemoveWaitingClient} ()\label{classCStatistics_a208c7c9642437195f72faf52e8543cf7}
+
+\item 
+static uint32 {\bfseries GetWaitingUserCount} ()\label{classCStatistics_a65c8e2af8bcbec133bfeabfa6588c840}
+
+\item 
+static double {\bfseries GetUploadRate} ()\label{classCStatistics_a3111c7270ecba71c113eabc178344ce4}
+
+\item 
+static uint64 {\bfseries GetTotalReceivedBytes} ()\label{classCStatistics_a7259ef93b357ca4de4e3c906bc0ae765}
+
+\item 
+static uint64 {\bfseries GetSessionReceivedBytes} ()\label{classCStatistics_aac8858c0b6d19fe7f4ad0ecae202f5a4}
+
+\item 
+static void {\bfseries AddDownOverheadFileRequest} (uint32 size)\label{classCStatistics_a0bff32f12fe14db7d82c81b645abe561}
+
+\item 
+static void {\bfseries AddDownOverheadSourceExchange} (uint32 size)\label{classCStatistics_aa52c7613445f2ffd3311b55dae5dc55f}
+
+\item 
+static void {\bfseries AddDownOverheadServer} (uint32 size)\label{classCStatistics_a3895f77394861ac8d3222f2b25218ebc}
+
+\item 
+static void {\bfseries AddDownOverheadKad} (uint32 size)\label{classCStatistics_a1721c68ee0ecbffe41031d19adf8df2f}
+
+\item 
+static void {\bfseries AddDownOverheadCrypt} (uint32\_\-t size)\label{classCStatistics_ae940af12156061896c4b2dd3d8175b7a}
+
+\item 
+static void {\bfseries AddDownOverheadOther} (uint32 size)\label{classCStatistics_ade22fb44489c9de2d5885ddee428d4f9}
+
+\item 
+static double {\bfseries GetDownOverheadRate} ()\label{classCStatistics_a514eca140047e71d8edab4b7fc3d1da0}
+
+\item 
+static void {\bfseries AddFoundSource} ()\label{classCStatistics_ae6c30c4197f413067904c322cae1aa16}
+
+\item 
+static void {\bfseries RemoveFoundSource} ()\label{classCStatistics_aadb835f4f7c20256f1d2bbdd65ff27c9}
+
+\item 
+static uint32 {\bfseries GetFoundSources} ()\label{classCStatistics_ac7716a6ad5c934eda2853dc23047d728}
+
+\item 
+static void {\bfseries AddSourceOrigin} (unsigned origin)\label{classCStatistics_ad2b4d946a2503ef5c91c8df56943628f}
+
+\item 
+static void {\bfseries RemoveSourceOrigin} (unsigned origin)\label{classCStatistics_ab87ec653a36ea161e01163e3fe4ccd28}
+
+\item 
+static void {\bfseries AddDownloadingSource} ()\label{classCStatistics_a7b946c87efe5cb06dc2f102a7e91ee8f}
+
+\item 
+static void {\bfseries RemoveDownloadingSource} ()\label{classCStatistics_a601ee10c840aa4e75c33b5639be775db}
+
+\item 
+static uint32 {\bfseries GetDownloadingSources} ()\label{classCStatistics_ad968f53f5416ea5af51da9b2fd54c01c}
+
+\item 
+static double {\bfseries GetDownloadRate} ()\label{classCStatistics_ac413493ea2052902584f3f66455c5b09}
+
+\item 
+static {\bf CStatTreeItemTimer} $\ast$ {\bfseries GetServerConnectTimer} ()\label{classCStatistics_a91776b0d6d9849e18a35c0b05ed4cb05}
+
+\item 
+static void {\bfseries AddReconnect} ()\label{classCStatistics_a1fa8fb808cadec2623a28700a60d0c4e}
+
+\item 
+static void {\bfseries AddActiveConnection} ()\label{classCStatistics_a487669012f5142fc21cb517b380dc04e}
+
+\item 
+static void {\bfseries RemoveActiveConnection} ()\label{classCStatistics_a7facbff61d648532dcf0949ac2f77d51}
+
+\item 
+static uint32 {\bfseries GetActiveConnections} ()\label{classCStatistics_a4f4695ecdc7aaaac320e24c151f34eec}
+
+\item 
+static uint32 {\bfseries GetPeakConnections} ()\label{classCStatistics_affbbc5ebcb7369a0fa8f038eab2d088c}
+
+\item 
+static void {\bfseries AddMaxConnectionLimitReached} ()\label{classCStatistics_a76af3f6c46ad7936bf8db0eec80ffbf0}
+
+\item 
+static void {\bfseries AddFilteredClient} ()\label{classCStatistics_a5fd0c1fbb98c54d528ecdca39cf12c9a}
+
+\item 
+static void {\bfseries AddUnknownClient} ()\label{classCStatistics_a3ec17b7d6c1cb0cd9a3b44632266d509}
+
+\item 
+static void {\bfseries RemoveUnknownClient} ()\label{classCStatistics_ab9f2c789060d561590dd7d5e9465ee51}
+
+\item 
+static void {\bfseries AddKnownClient} ({\bf CUpDownClient} $\ast$pClient)\label{classCStatistics_a000cc7d1485553182c2a1fdcad4b0891}
+
+\item 
+static void {\bfseries RemoveKnownClient} (uint32 clientSoft, uint32 clientVersion, const wxString \&OSInfo)\label{classCStatistics_a01cb3bc3830e8cc6f90e86187357c6e7}
+
+\item 
+static uint32 {\bfseries GetBannedCount} ()\label{classCStatistics_aa74606722f0f6ea1f825bc2b5f4c19dd}
+
+\item 
+static void {\bfseries AddBannedClient} ()\label{classCStatistics_aaec3cdeedb525c750145eda7bbb9aa62}
+
+\item 
+static void {\bfseries RemoveBannedClient} ()\label{classCStatistics_aebda86bbc4e3c5c925cb1dc2f7ad2320}
+
+\item 
+static void {\bfseries AddServer} ()\label{classCStatistics_a339edf567e2f051148742f53c8667a0c}
+
+\item 
+static void {\bfseries DeleteServer} ()\label{classCStatistics_a24ef62f8183fb082f2dde39138cfd1fe}
+
+\item 
+static void {\bfseries DeleteAllServers} ()\label{classCStatistics_a5d0b13b73dfd3a405f1614360a42e86d}
+
+\item 
+static void {\bfseries AddFilteredServer} ()\label{classCStatistics_a650283c2d24338fe8c4a2f228f958572}
+
+\item 
+static void {\bfseries ClearSharedFilesInfo} ()\label{classCStatistics_a7f6778ebc01173a37fa3186754ca6dff}
+
+\item 
+static void {\bfseries AddSharedFile} (uint64 size)\label{classCStatistics_a8f94af2de8c544086f16cb5385dde72d}
+
+\item 
+static void {\bfseries RemoveSharedFile} (uint64 size)\label{classCStatistics_ac2787638e3496130e52df71652203ff5}
+
+\item 
+static uint32 {\bfseries GetSharedFileCount} ()\label{classCStatistics_a81875b67395be3c81f523a308394befa}
+
+\item 
+static void {\bfseries AddKadNode} ()\label{classCStatistics_ab05fa1d5b7d8e357f5e6c2ddd7c27062}
+
+\item 
+static void {\bfseries RemoveKadNode} ()\label{classCStatistics_a2b64c92a9519251cf47434eb8fdeba81}
+
+\item 
+static void {\bfseries CalculateRates} ()\label{classCStatistics_aa7f8d61a6af19d12c23b93586f4c9257}
+
+\item 
+static void {\bfseries AddReceivedBytes} (uint32 bytes)\label{classCStatistics_afd2950a7badb20f1e54b93a6e25d66eb}
+
+\item 
+static void {\bfseries AddSentBytes} (uint32 bytes)\label{classCStatistics_a3be47fb9d7d1503a9b71c718008518d2}
+
+\item 
+static void {\bfseries AddDownloadFromSoft} (uint8 SoftType, uint32 bytes)\label{classCStatistics_ae0f67ccfa07fb6422dfa3b92c9686efe}
+
+\item 
+static void {\bfseries AddUploadToSoft} (uint8 SoftType, uint32 bytes)\label{classCStatistics_abf21aed4fa28c8b79023fd4d6975db40}
+
+\item 
+static {\bf CECTag} $\ast$ {\bfseries GetECStatTree} (uint8 tree\_\-capping\_\-value)\label{classCStatistics_a4dbaace7dc282818eb74fa48e4e7007e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf HR} $>$::iterator {\bfseries listPOS}\label{classCStatistics_a31a58dcc7fdcc363e4c3de6b4b89df6f}
+
+\item 
+typedef std::list$<$ {\bf HR} $>$::reverse\_\-iterator {\bfseries listRPOS}\label{classCStatistics_a05b87e40e6c0364a7f2eaeb6768af987}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries ComputeAverages} ({\bf HR} $\ast$$\ast$pphr, listRPOS pos, unsigned cntFilled, double sStep, const std::vector$<$ float $\ast$ $>$ \&ppf, StatsGraphType which\_\-graph)\label{classCStatistics_ad7223960c73b6848613ded60c1777601}
+
+\item 
+int {\bfseries GetPointsPerRange} ()\label{classCStatistics_ae76678a42dadc034de64584d70a314a8}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries InitStatsTree} ()\label{classCStatistics_a2fc4207a2d51d9062e66635a4b29a5f9}
+
+\item 
+static {\bf CStatTreeItemBase} $\ast$ {\bfseries GetTreeRoot} ()\label{classCStatistics_a2df96fecf85db94e5eaef53a8ee6de62}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::list$<$ {\bf HR} $>$ {\bfseries listHR}\label{classCStatistics_a645d26ec4aeb370363d2f249e362100a}
+
+\item 
+{\bf CPreciseRateCounter} {\bfseries m\_\-graphRunningAvgDown}\label{classCStatistics_a2a1a97a0dd7432f7d7dd5c72935d5cda}
+
+\item 
+{\bf CPreciseRateCounter} {\bfseries m\_\-graphRunningAvgUp}\label{classCStatistics_abdf092981cf3e8def22eae8e5a62add3}
+
+\item 
+{\bf CPreciseRateCounter} {\bfseries m\_\-graphRunningAvgKad}\label{classCStatistics_a040e0004084fa96536ac1ca6d36c3378}
+
+\item 
+uint8 {\bfseries average\_\-minutes}\label{classCStatistics_a7883f280e7f198a1a1c6799d9812f744}
+
+\item 
+int {\bfseries nHistRanges}\label{classCStatistics_afd1139dcc89723ec8107c0e51503adb6}
+
+\item 
+int {\bfseries bitsHistClockMask}\label{classCStatistics_a51b3b76b49d59cce0c06a1977327443e}
+
+\item 
+int {\bfseries nPointsPerRange}\label{classCStatistics_a60d340b55104670ac15f8ea5e5f33b6e}
+
+\item 
+listPOS $\ast$ {\bfseries aposRecycle}\label{classCStatistics_a7c044045834b7d5ffe5f7220fb54bbed}
+
+\item 
+{\bf HR} {\bfseries hrInit}\label{classCStatistics_a7e8aabd7163822e3c8fe8b2c48f00f12}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf CPreciseRateCounter} $\ast$ {\bfseries s\_\-upOverheadRate}\label{classCStatistics_a77deb8d5d907516d4d09e9af57293e1d}
+
+\item 
+static {\bf CPreciseRateCounter} $\ast$ {\bfseries s\_\-downOverheadRate}\label{classCStatistics_a18e677ca2c5ae02ee4a0c702362b912c}
+
+\item 
+static {\bf CStatTreeItemRateCounter} $\ast$ {\bfseries s\_\-uploadrate}\label{classCStatistics_aec714bbad52a272ad9f4c4091813ba86}
+
+\item 
+static {\bf CStatTreeItemRateCounter} $\ast$ {\bfseries s\_\-downloadrate}\label{classCStatistics_abdbea337ad7c93e40ccbca85e9f43995}
+
+\item 
+static {\bf CStatTreeItemBase} $\ast$ {\bfseries s\_\-statTree}\label{classCStatistics_a9240fe0fbb8e44549f5f6c289810b946}
+
+\item 
+static {\bf CStatTreeItemTimer} $\ast$ {\bfseries s\_\-uptime}\label{classCStatistics_a8b2c1036857a65b603fd6555fe06b3d0}
+
+\item 
+static {\bf CStatTreeItemUlDlCounter} $\ast$ {\bfseries s\_\-sessionUpload}\label{classCStatistics_a049bcc208a86fd7e7ef4348f16cfece7}
+
+\item 
+static {\bf CStatTreeItemPacketTotals} $\ast$ {\bfseries s\_\-totalUpOverhead}\label{classCStatistics_a3f0f6b58ae360a162557668d167ad0a5}
+
+\item 
+static {\bf CStatTreeItemPackets} $\ast$ {\bfseries s\_\-fileReqUpOverhead}\label{classCStatistics_ae1536d35a150d3fe7ff71063508658be}
+
+\item 
+static {\bf CStatTreeItemPackets} $\ast$ {\bfseries s\_\-sourceXchgUpOverhead}\label{classCStatistics_a134db53860fbbd7c89d625c5b596dc22}
+
+\item 
+static {\bf CStatTreeItemPackets} $\ast$ {\bfseries s\_\-serverUpOverhead}\label{classCStatistics_a9ce7582aca38a0a1689043e2ccf5f404}
+
+\item 
+static {\bf CStatTreeItemPackets} $\ast$ {\bfseries s\_\-kadUpOverhead}\label{classCStatistics_a57bde74aa071eaeea86e07cd29b2e6fc}
+
+\item 
+static {\bf CStatTreeItemCounter} $\ast$ {\bfseries s\_\-cryptUpOverhead}\label{classCStatistics_ad8a5a89eed2fc9c83ce44f45ff4461ad}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-activeUploads}\label{classCStatistics_aebd01240a554a6bcfcb4c9a6c0448dfb}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-waitingUploads}\label{classCStatistics_abe72bda57867c279f8e7a97d26f207f1}
+
+\item 
+static {\bf CStatTreeItemCounter} $\ast$ {\bfseries s\_\-totalSuccUploads}\label{classCStatistics_aae2fc178834a4132a73144ac3eb0f7cd}
+
+\item 
+static {\bf CStatTreeItemCounter} $\ast$ {\bfseries s\_\-totalFailedUploads}\label{classCStatistics_adfc7caa35d4b4f04d21218306c522eb2}
+
+\item 
+static {\bf CStatTreeItemCounter} $\ast$ {\bfseries s\_\-totalUploadTime}\label{classCStatistics_aaeef5b53122dabfe6dc6f9bdb02f3e8d}
+
+\item 
+static {\bf CStatTreeItemUlDlCounter} $\ast$ {\bfseries s\_\-sessionDownload}\label{classCStatistics_a0bdf88c36d29679aa45b674b3dd00572}
+
+\item 
+static {\bf CStatTreeItemPacketTotals} $\ast$ {\bfseries s\_\-totalDownOverhead}\label{classCStatistics_ada935028a0fb270ed86609ed6e455181}
+
+\item 
+static {\bf CStatTreeItemPackets} $\ast$ {\bfseries s\_\-fileReqDownOverhead}\label{classCStatistics_a0137bd2e763b14f6ceb6967cc9453c43}
+
+\item 
+static {\bf CStatTreeItemPackets} $\ast$ {\bfseries s\_\-sourceXchgDownOverhead}\label{classCStatistics_a1fcbc911b75131dbc2b4553c5b0107cf}
+
+\item 
+static {\bf CStatTreeItemPackets} $\ast$ {\bfseries s\_\-serverDownOverhead}\label{classCStatistics_a333a5b9895b5d74423f0f585e9ef2bf4}
+
+\item 
+static {\bf CStatTreeItemPackets} $\ast$ {\bfseries s\_\-kadDownOverhead}\label{classCStatistics_acb52d9bbdd86e4045c622e2feb2eae64}
+
+\item 
+static {\bf CStatTreeItemCounter} $\ast$ {\bfseries s\_\-cryptDownOverhead}\label{classCStatistics_a2130e105819ce0d33b287b84e6842fdb}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-foundSources}\label{classCStatistics_a7a75c98cbadede696e131b1895e1254f}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-activeDownloads}\label{classCStatistics_af0925cbeef50661f55f395ee12ba5f85}
+
+\item 
+static {\bf CStatTreeItemReconnects} $\ast$ {\bfseries s\_\-reconnects}\label{classCStatistics_a756b7999abee7c6b52e66836ad42be7c}
+
+\item 
+static {\bf CStatTreeItemTimer} $\ast$ {\bfseries s\_\-sinceFirstTransfer}\label{classCStatistics_ab6d4b94745de26ab58afe9a657b48e1b}
+
+\item 
+static {\bf CStatTreeItemTimer} $\ast$ {\bfseries s\_\-sinceConnected}\label{classCStatistics_a81b89fefb4108e7a69996ecd75680c02}
+
+\item 
+static {\bf CStatTreeItemCounterMax} $\ast$ {\bfseries s\_\-activeConnections}\label{classCStatistics_a4a92855c8166735be2cda68f8a28ef7c}
+
+\item 
+static {\bf CStatTreeItemMaxConnLimitReached} $\ast$ {\bfseries s\_\-limitReached}\label{classCStatistics_abad74bfd2e8a5df939b4338cd46c404e}
+
+\item 
+static {\bf CStatTreeItemSimple} $\ast$ {\bfseries s\_\-avgConnections}\label{classCStatistics_acfcca51186714f2bc86bf762625f9e66}
+
+\item 
+static {\bf CStatTreeItemHiddenCounter} $\ast$ {\bfseries s\_\-clients}\label{classCStatistics_a01145b231232932a2116f8f47a690fdc}
+
+\item 
+static {\bf CStatTreeItemCounter} $\ast$ {\bfseries s\_\-unknown}\label{classCStatistics_afb3d0903fa44d86b77ce10bdd1b246ed}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-filtered}\label{classCStatistics_aaa997284e9338481c6cb2c65dbbbda16}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-banned}\label{classCStatistics_a5ee609ae2ea56dd77bcfbd136493b4e0}
+
+\item 
+static {\bf CStatTreeItemSimple} $\ast$ {\bfseries s\_\-workingServers}\label{classCStatistics_a4b8b3a5c581ba9b2b0cedae26ca13ec3}
+
+\item 
+static {\bf CStatTreeItemSimple} $\ast$ {\bfseries s\_\-failedServers}\label{classCStatistics_ab506a8fdbccd68e9f80980c9594a8238}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-totalServers}\label{classCStatistics_ae0a3f49f40bfd35f80b74d323147f114}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-deletedServers}\label{classCStatistics_a8b93d7fe360ee999797efb889b13a847}
+
+\item 
+static {\bf CStatTreeItemNativeCounter} $\ast$ {\bfseries s\_\-filteredServers}\label{classCStatistics_a0ba256d3cacdfe6d23b307874f1ef6e5}
+
+\item 
+static {\bf CStatTreeItemSimple} $\ast$ {\bfseries s\_\-usersOnWorking}\label{classCStatistics_a3a541ec50789f88dee4179b439e35e27}
+
+\item 
+static {\bf CStatTreeItemSimple} $\ast$ {\bfseries s\_\-filesOnWorking}\label{classCStatistics_a2bb9deaee39649f6b0c7b73ba4dbaad8}
+
+\item 
+static {\bf CStatTreeItemSimple} $\ast$ {\bfseries s\_\-totalUsers}\label{classCStatistics_a2548b79239280c05f91f072ca853a5e2}
+
+\item 
+static {\bf CStatTreeItemSimple} $\ast$ {\bfseries s\_\-totalFiles}\label{classCStatistics_a98459f50f220cda3bd59c390a7494d55}
+
+\item 
+static {\bf CStatTreeItemSimple} $\ast$ {\bfseries s\_\-serverOccupation}\label{classCStatistics_a57b459edf239a7ccedd1f984ddf61e81}
+
+\item 
+static {\bf CStatTreeItemCounter} $\ast$ {\bfseries s\_\-numberOfShared}\label{classCStatistics_ac0e659a81a347af66bdd1ea064571269}
+
+\item 
+static {\bf CStatTreeItemCounter} $\ast$ {\bfseries s\_\-sizeOfShare}\label{classCStatistics_a528462318e2efac05e4720c9b16f37c3}
+
+\item 
+static uint64\_\-t {\bfseries s\_\-kadNodesTotal}\label{classCStatistics_a3844bf31a01e68bf2cc625d0b5a9cdf8}
+
+\item 
+static uint16\_\-t {\bfseries s\_\-kadNodesCur}\label{classCStatistics_abb198195e2b691bff95898ce1918b051}
+
+\item 
+static uint64\_\-t {\bfseries s\_\-totalSent}\label{classCStatistics_a2481790aca5dc52fe8c1a3c63411017f}
+
+\item 
+static uint64\_\-t {\bfseries s\_\-totalReceived}\label{classCStatistics_a96dba72d731c67621a668af69f852cb1}
+
+\item 
+static bool {\bfseries s\_\-statsNeedSave}\label{classCStatistics_a772c0953fd4f58c39fde535e9df9a4bd}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CStatisticsDlg}\label{classCStatistics_ad52500fde9069f98bae7c29011758806}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Statistics.h\item 
+src/Statistics.cpp\end{DoxyCompactItemize}

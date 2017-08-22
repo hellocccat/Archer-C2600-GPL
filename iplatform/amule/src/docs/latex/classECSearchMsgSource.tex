@@ -1,0 +1,40 @@
+\section{ECSearchMsgSource Class Reference}
+\label{classECSearchMsgSource}\index{ECSearchMsgSource@{ECSearchMsgSource}}
+Inheritance diagram for ECSearchMsgSource::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classECSearchMsgSource}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf SEARCHFILE\_\-STATUS}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries SetDirty} ({\bf CSearchFile} $\ast$file)\label{classECSearchMsgSource_a7b9c12aad7749cf79735a291a1aeb5a8}
+
+\item 
+void {\bfseries SetChildDirty} ({\bf CSearchFile} $\ast$file)\label{classECSearchMsgSource_a3497ba1450ae3a66f6b635a91e8fe680}
+
+\item 
+void {\bfseries FlushStatus} ()\label{classECSearchMsgSource_a7901f26d6a22a13d2f929b3e81fa61ff}
+
+\item 
+virtual {\bf CECPacket} $\ast$ {\bfseries GetNextPacket} ()\label{classECSearchMsgSource_a2e1ef95830f5f5db02a1f3d7416bafd7}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ {\bf CMD4Hash}, {\bf SEARCHFILE\_\-STATUS} $>$ {\bfseries m\_\-dirty\_\-status}\label{classECSearchMsgSource_a0dab99e7701c2c9447cd8befe9879c01}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConn.h\item 
+src/ExternalConn.cpp\end{DoxyCompactItemize}

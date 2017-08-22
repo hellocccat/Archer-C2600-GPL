@@ -1,0 +1,73 @@
+\section{CFileLock Class Reference}
+\label{classCFileLock}\index{CFileLock@{CFileLock}}
+
+
+This class provides an easy way to lock non-\/critical files used by multiple applications.  
+
+
+{\ttfamily \#include $<$FileLock.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CFileLock} (const std::string \&file)
+\item 
+{\bf $\sim$CFileLock} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CFileLock} (const {\bf CFileLock} \&)\label{classCFileLock_afa73d15e526f02fc0d48e7d3137ff71d}
+
+\item 
+{\bf CFileLock} \& {\bf operator=} (const {\bf CFileLock} \&)\label{classCFileLock_a5d9d644831dc212aac03984097246d6b}
+
+\item 
+bool {\bf SetLock} (bool doLock)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf m\_\-fd}\label{classCFileLock_a52a94a76288b8683eb60b11ad0f58edc}
+
+\item 
+bool {\bf m\_\-ok}\label{classCFileLock_ae6a5b35f997a69422c8f944c5aa95276}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides an easy way to lock non-\/critical files used by multiple applications. However, since the implementation relies on fcntl, it may not work on all filesystems (NFS) and thus locking is not certain.
+
+Currently, this lock holds an exclusive lock on the file in question. It is assumed that the file will be read/written by all users. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CFileLock@{CFileLock}!CFileLock@{CFileLock}}
+\index{CFileLock@{CFileLock}!CFileLock@{CFileLock}}
+\subsubsection[{CFileLock}]{\setlength{\rightskip}{0pt plus 5cm}CFileLock::CFileLock (const std::string \& {\em file})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCFileLock_a1f7a780ef6ec99f44b661f4294b4aef3}
+
+
+Locks the lock-\/file for the specified file. The lock-\/file is a file named file + \char`\"{}\_\-lock\char`\"{}, and will be created if it does not already exist. This file is not removed afterwards. 
+
+References m\_\-ok, and SetLock().\index{CFileLock@{CFileLock}!$\sim$CFileLock@{$\sim$CFileLock}}
+\index{$\sim$CFileLock@{$\sim$CFileLock}!CFileLock@{CFileLock}}
+\subsubsection[{$\sim$CFileLock}]{\setlength{\rightskip}{0pt plus 5cm}CFileLock::$\sim$CFileLock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCFileLock_a0c43b44f46ea40a7fe3df0be9799e6ac}
+
+
+Releases the lock, if any is held. 
+
+References m\_\-fd, m\_\-ok, and SetLock().
+
+\subsection{Member Function Documentation}
+\index{CFileLock@{CFileLock}!SetLock@{SetLock}}
+\index{SetLock@{SetLock}!CFileLock@{CFileLock}}
+\subsubsection[{SetLock}]{\setlength{\rightskip}{0pt plus 5cm}bool CFileLock::SetLock (bool {\em doLock})\hspace{0.3cm}{\ttfamily  [inline, private]}}\label{classCFileLock_ab66ba1186e9d7d6fde1312c7303af7ab}
+
+
+Locks or unlocks the lock-\/file, returning true on success. 
+
+References m\_\-fd.
+
+Referenced by CFileLock(), and $\sim$CFileLock().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/FileLock.h\end{DoxyCompactItemize}

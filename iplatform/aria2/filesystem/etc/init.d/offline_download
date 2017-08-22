@@ -1,0 +1,35 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2015 zengwei <zengwei@tp-link.net>
+
+START=99
+
+start_monitor() {
+	ps -w |grep -v grep |grep "lua /lib/offline_download/offline_download_op.lua startmonitor"
+	[ $? -eq 0 ] || lua /lib/offline_download/offline_download_op.lua startmonitor &
+}
+
+stop_monitor() {
+	ps -w |grep "lua /lib/offline_download/offline_download_op.lua startmonitor" |grep -v grep |awk '{print $1}'|xargs kill -9
+}
+
+stop_apps() {
+	lua /lib/offline_download/offline_download_op.lua stopapps
+}
+
+start() {
+	#set the system cache var
+	sysctl -w vm.vfs_cache_pressure=200
+	sysctl -w vm.min_free_kbytes=10190
+	
+	#set the cron for checking monitor process
+	echo "*/10 * * * * . /etc/init.d/offline_download && start_monitor" >> /etc/crontabs/root
+	/etc/init.d/cron restart
+	
+	#start monitor process
+	start_monitor
+}
+
+stop() {
+	stop_monitor
+	stop_apps
+}

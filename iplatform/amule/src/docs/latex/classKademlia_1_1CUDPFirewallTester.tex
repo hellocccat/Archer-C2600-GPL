@@ -1,0 +1,89 @@
+\section{Kademlia::CUDPFirewallTester Class Reference}
+\label{classKademlia_1_1CUDPFirewallTester}\index{Kademlia::CUDPFirewallTester@{Kademlia::CUDPFirewallTester}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries IsFirewalledUDP} (bool lastStateIfTesting)\label{classKademlia_1_1CUDPFirewallTester_a318aa376fa1f85e98ed042414d9a7662}
+
+\item 
+static void {\bfseries SetUDPFWCheckResult} (bool succeeded, bool testCancelled, uint32\_\-t fromIP, uint16\_\-t incomingPort)\label{classKademlia_1_1CUDPFirewallTester_afff8749acf2669591f2ebd7c74b37e9e}
+
+\item 
+static void {\bfseries ReCheckFirewallUDP} (bool setUnverified)\label{classKademlia_1_1CUDPFirewallTester_af00f3c7a9c047d1e0c99459529707eae}
+
+\item 
+static bool {\bfseries IsFWCheckUDPRunning} ()  throw ()\label{classKademlia_1_1CUDPFirewallTester_afe44b8284b5ef7691c1d9f6a675cc824}
+
+\item 
+static bool {\bfseries IsVerified} ()  throw ()\label{classKademlia_1_1CUDPFirewallTester_a9c3d8edbfd94631e88fd7138b657156d}
+
+\item 
+static void {\bfseries AddPossibleTestContact} (const {\bf CUInt128} \&clientID, uint32\_\-t ip, uint16\_\-t port, uint16\_\-t tport, const {\bf CUInt128} \&target, uint8\_\-t version, const {\bf CKadUDPKey} \&udpKey, bool ipVerified)\label{classKademlia_1_1CUDPFirewallTester_a8ccf634a394dee76c7f577b4bf72c65d}
+
+\item 
+static void {\bfseries Reset} ()\label{classKademlia_1_1CUDPFirewallTester_a25fb27e35cd92638effbe59d3be73dac}
+
+\item 
+static void {\bfseries Connected} ()\label{classKademlia_1_1CUDPFirewallTester_a83b3360c233288162b6bb40c537b1cc0}
+
+\item 
+static void {\bfseries QueryNextClient} ()\label{classKademlia_1_1CUDPFirewallTester_a25d6f51e7bdde91b5f01a44b7a6c58c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CContact} $>$ {\bfseries PossibleClientList}\label{classKademlia_1_1CUDPFirewallTester_a8b8e4c577d57b22f2f2b9b08783eebd1}
+
+\item 
+typedef std::list$<$ {\bf UsedClient\_\-Struct} $>$ {\bfseries UsedClientList}\label{classKademlia_1_1CUDPFirewallTester_a33c67a8ef89e4889a4875ae7a8d20c2e}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries GetUDPCheckClientsNeeded} ()  throw ()\label{classKademlia_1_1CUDPFirewallTester_a45fe2bd37e146d50bc2019fd3194f911}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries m\_\-firewalledUDP} = false\label{classKademlia_1_1CUDPFirewallTester_afb422fa004332eb6e60b1675f5483a82}
+
+\item 
+static bool {\bfseries m\_\-firewalledLastStateUDP} = false\label{classKademlia_1_1CUDPFirewallTester_ade35eb09c77954623e716735b300dace}
+
+\item 
+static bool {\bfseries m\_\-isFWVerifiedUDP} = false\label{classKademlia_1_1CUDPFirewallTester_a7091338b7f91b2b729bffcedb156e4c7}
+
+\item 
+static bool {\bfseries m\_\-nodeSearchStarted} = false\label{classKademlia_1_1CUDPFirewallTester_abb96c1db6eb91eb9a53bfa726b63cc92}
+
+\item 
+static bool {\bfseries m\_\-timedOut} = false\label{classKademlia_1_1CUDPFirewallTester_a65ae459b5a06f476ad79a4fb5cc2270c}
+
+\item 
+static uint8\_\-t {\bfseries m\_\-fwChecksRunningUDP} = 0\label{classKademlia_1_1CUDPFirewallTester_a4d2dc5dc69a79a6a60abb4b01f103bd9}
+
+\item 
+static uint8\_\-t {\bfseries m\_\-fwChecksFinishedUDP} = 0\label{classKademlia_1_1CUDPFirewallTester_a68b5a7f4132d63fad9e4ed7ed4d8fb4e}
+
+\item 
+static uint32\_\-t {\bfseries m\_\-testStart} = 0\label{classKademlia_1_1CUDPFirewallTester_aeeb9a16fb1e7fa2df168e6883c4fc002}
+
+\item 
+static uint32\_\-t {\bfseries m\_\-lastSucceededTime} = 0\label{classKademlia_1_1CUDPFirewallTester_a11440fe44500e21f6acdd125a1680ae6}
+
+\item 
+static PossibleClientList {\bfseries m\_\-possibleTestClients}\label{classKademlia_1_1CUDPFirewallTester_a8f15c2851f2cd59220e3b367c813be5a}
+
+\item 
+static UsedClientList {\bfseries m\_\-usedTestClients}\label{classKademlia_1_1CUDPFirewallTester_a6c53b9328b8352f853c0ea3d655665fe}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/kademlia/UDPFirewallTester.h\item 
+src/kademlia/kademlia/UDPFirewallTester.cpp\end{DoxyCompactItemize}

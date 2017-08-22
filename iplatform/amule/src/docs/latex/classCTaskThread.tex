@@ -1,0 +1,38 @@
+\section{CTaskThread Class Reference}
+\label{classCTaskThread}\index{CTaskThread@{CTaskThread}}
+
+
+This class is used in a custom implementation of wxThreadHelper.  
+Inheritance diagram for CTaskThread::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCTaskThread}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CTaskThread} ({\bf CThreadScheduler} $\ast$owner)\label{classCTaskThread_a9fcd75af9bf161bc19cfc7c96b737760}
+
+\item 
+void $\ast$ {\bf Entry} ()\label{classCTaskThread_a4248070b00b4f70489e37aa3468f9305}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CThreadScheduler} $\ast$ {\bf m\_\-owner}\label{classCTaskThread_ac49ade8d87d1543a6276254faf902f7f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used in a custom implementation of wxThreadHelper. The reason for not using wxThreadHelper are as follows:
+\begin{DoxyItemize}
+\item wxThreadHelper makes use of wxThread:Kill, which is warned against serveral times in the docs, and even calls it in its destructor.
+\item Managing the thread-\/object is difficult, since the only way to destroy it is to create a new thread. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ThreadScheduler.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\section{CStateMachine Class Reference}
+\label{classCStateMachine}\index{CStateMachine@{CStateMachine}}
+Inheritance diagram for CStateMachine::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCStateMachine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CStateMachine} (const wxString \&name, const unsigned int maxStates, const t\_\-sm\_\-state initialState)\label{classCStateMachine_a59a46b238f8ee702faf5ecabd82b9593}
+
+\item 
+void {\bfseries Clock} ()\label{classCStateMachine_a63eb06935199833937522149f7727a9f}
+
+\item 
+void {\bfseries Schedule} (t\_\-sm\_\-event event)\label{classCStateMachine_ad4e73bd7a60624fcea887cc6a0b90348}
+
+\item 
+t\_\-sm\_\-state {\bfseries GetState} () const \label{classCStateMachine_a2c2679ad5cea45e66e6c39f2b9bc7df1}
+
+\item 
+unsigned int {\bfseries GetClocksInCurrentState} () const \label{classCStateMachine_a5fd0fbe06d06ea3ac78a4170e551d47d}
+
+\item 
+virtual t\_\-sm\_\-state {\bfseries next\_\-state} (t\_\-sm\_\-event event)=0\label{classCStateMachine_a4d119d929563271e5bdae55267cb41b0}
+
+\item 
+virtual void {\bfseries process\_\-state} (t\_\-sm\_\-state state, bool entry)=0\label{classCStateMachine_a11451243383033dacfc952496de4e660}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries flush\_\-queue} ()\label{classCStateMachine_ae3570a95f274c9ea661e0134ed09a47d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+t\_\-sm\_\-state {\bfseries m\_\-state}\label{classCStateMachine_a9a94ee25ab9056f2246fdd16a9ec714f}
+
+\item 
+wxMutex {\bfseries m\_\-stateMutex}\label{classCStateMachine_a0616c5f1c87603c39a7748c29176ddaa}
+
+\item 
+std::queue$<$ t\_\-sm\_\-event $>$ {\bfseries m\_\-queue}\label{classCStateMachine_addedf381033f3f0afa5488a3937cd11d}
+
+\item 
+wxMutex {\bfseries m\_\-queueMutex}\label{classCStateMachine_aed8a2552b238c991b5139ae93f88091c}
+
+\item 
+const wxString {\bfseries m\_\-name}\label{classCStateMachine_a6a74c93357b88d77a00ffeac17d8805d}
+
+\item 
+const unsigned int {\bfseries m\_\-maxStates}\label{classCStateMachine_a1841f0a45b3da55d2e7cef014cca6abc}
+
+\item 
+const unsigned int {\bfseries m\_\-initialState}\label{classCStateMachine_a61042da399918f7a0dfcdde2fc76b307}
+
+\item 
+unsigned int {\bfseries m\_\-clockCounter}\label{classCStateMachine_af125751a6b33739b911d44c85657dc36}
+
+\item 
+unsigned int {\bfseries m\_\-clocksInCurrentState}\label{classCStateMachine_a7991b22d64e7082e2c2a491ad0f9ce7d}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/StateMachine.h\item 
+src/StateMachine.cpp\end{DoxyCompactItemize}

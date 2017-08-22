@@ -1,0 +1,74 @@
+\section{CUserEvents Class Reference}
+\label{classCUserEvents}\index{CUserEvents@{CUserEvents}}
+
+
+Class to handle userspace events.  
+
+
+{\ttfamily \#include $<$UserEvents.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf EventType} 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf ProcessEvent} (enum {\bf EventType} event, const void $\ast$object)
+\item 
+static unsigned int {\bf GetCount} () ATTR(\_\-\_\-const\_\-\_\-)\label{classCUserEvents_a27605ffadc93481b2a677f7e0e272eb7}
+
+\item 
+static const wxString \& {\bf GetDisplayName} (enum {\bf EventType} event) ATTR(\_\-\_\-pure\_\-\_\-)\label{classCUserEvents_a00fd3a04a140e520de05ce5b42b502ae}
+
+\item 
+static bool {\bf IsCoreCommandEnabled} (enum {\bf EventType} event) ATTR(\_\-\_\-pure\_\-\_\-)\label{classCUserEvents_a78a10ce7d1568f729f0de88d03e4531a}
+
+\item 
+static bool {\bf IsGUICommandEnabled} (enum {\bf EventType} event) ATTR(\_\-\_\-pure\_\-\_\-)\label{classCUserEvents_a7c1755d41f00b6b8ec2247a412a18a5f}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const wxString \& {\bfseries GetKey} (const unsigned int event) ATTR(\_\-\_\-pure\_\-\_\-)\label{classCUserEvents_aead19421602d220b4bf73e126abd0f8c}
+
+\item 
+static bool \& {\bfseries GetCoreEnableVar} (const unsigned int event) ATTR(\_\-\_\-pure\_\-\_\-)\label{classCUserEvents_a32861298411c89f687c991a549b3b520}
+
+\item 
+static wxString \& {\bfseries GetCoreCommandVar} (const unsigned int event) ATTR(\_\-\_\-pure\_\-\_\-)\label{classCUserEvents_a363547f84a0e5771505cf1f16532b754}
+
+\item 
+static bool \& {\bfseries GetGUIEnableVar} (const unsigned int event) ATTR(\_\-\_\-pure\_\-\_\-)\label{classCUserEvents_ab37639b92da0df8440f1dcd5331d6ae1}
+
+\item 
+static wxString \& {\bfseries GetGUICommandVar} (const unsigned int event) ATTR(\_\-\_\-pure\_\-\_\-)\label{classCUserEvents_ad2a1352320729b10dd3c2fbfcd4889d1}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CPreferences}\label{classCUserEvents_a22cb0cab0a8dc23af268bf7f5cf94806}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to handle userspace events. These events that we publish to the user and let him specify a command to be run when one of these events occur. 
+
+\subsection{Member Function Documentation}
+\index{CUserEvents@{CUserEvents}!ProcessEvent@{ProcessEvent}}
+\index{ProcessEvent@{ProcessEvent}!CUserEvents@{CUserEvents}}
+\subsubsection[{ProcessEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CUserEvents::ProcessEvent (enum {\bf EventType} {\em event}, \/  const void $\ast$ {\em object})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCUserEvents_a2b834e107460f2d7123da1fe19ccfcea}
+
+
+Process a user event. Notes on the 'object' argument: this should be a pointer to an object instance, from which all of the replacement texts can be generated.
+
+Unfortunately this approach does not provide any type-\/safety, a list of string pairs (key, replacement) would be the best. However, this would need either expanding the macro at all of the places where \doxyref{CUserEvents::ProcessEvent}{p.}{classCUserEvents_a2b834e107460f2d7123da1fe19ccfcea} is called from, or creating lists of parameters for each event, etc = more lists to keep in sync manually. 
+
+Referenced by CDownloadQueue::CheckDiskspace().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/UserEvents.h\item 
+src/UserEvents.cpp\end{DoxyCompactItemize}

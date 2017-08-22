@@ -1,0 +1,10 @@
+--- a/compat/backport-3.15.c
++++ b/compat/backport-3.15.c
+@@ -16,6 +16,7 @@
+ #include <linux/mm.h>
+ #include <linux/slab.h>
+ #include <net/net_namespace.h>
++#include <linux/vmalloc.h>
+ 
+ #if IS_ENABLED(CPTCFG_IEEE802154_6LOWPAN)
+ #if LINUX_VERSION_CODE < KERNEL_VERSION(3,15,0)

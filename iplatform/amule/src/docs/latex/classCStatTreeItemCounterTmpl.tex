@@ -1,0 +1,127 @@
+\section{CStatTreeItemCounterTmpl$<$ \_\-Tp $>$ Class Template Reference}
+\label{classCStatTreeItemCounterTmpl}\index{CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}}
+
+
+Counter-\/type tree item template.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemCounterTmpl$<$ \_\-Tp $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCStatTreeItemCounterTmpl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemCounterTmpl} (const wxString \&label, unsigned flags=stNone)
+\item 
+\_\-Tp {\bf GetValue} () const \label{classCStatTreeItemCounterTmpl_a191169b192c32cc860085c1238c4b242}
+
+\item 
+{\bf operator \_\-Tp} () const \label{classCStatTreeItemCounterTmpl_a326f02b54795e044cb3905ef3325d863}
+
+\item 
+void {\bf SetValue} (\_\-Tp value)\label{classCStatTreeItemCounterTmpl_a977a3175305fd4f2bc4d250ebe4da298}
+
+\item 
+void {\bf operator=} (\_\-Tp value)\label{classCStatTreeItemCounterTmpl_a6c4633d30e3feeeb41d74d57059f5aef}
+
+\item 
+void {\bf operator++} ()\label{classCStatTreeItemCounterTmpl_a4d29044b221d0a77e0605c524b93b3a8}
+
+\item 
+void {\bf operator-\/-\/} ()\label{classCStatTreeItemCounterTmpl_a16cf98107f6c96726c9f20dd27df1287}
+
+\item 
+void {\bf operator+=} (\_\-Tp value)\label{classCStatTreeItemCounterTmpl_a696106b6391ed15d6356e19211f1959f}
+
+\item 
+void {\bf operator-\/=} (\_\-Tp value)\label{classCStatTreeItemCounterTmpl_ac093e951732f0de344d037125c8c9890}
+
+\item 
+void {\bf SetDisplayMode} (enum {\bf EDisplayMode} mode)\label{classCStatTreeItemCounterTmpl_a2ed6da0d7b35fb69a06815fa97a761f9}
+
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\item 
+virtual bool {\bf IsVisible} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\_\-Tp {\bf m\_\-value}\label{classCStatTreeItemCounterTmpl_aa046b5f01738bd7e99d5fc84dc0d147c}
+
+\item 
+enum {\bf EDisplayMode} {\bf m\_\-displaymode}\label{classCStatTreeItemCounterTmpl_acfff526cb017ed49b19a467dfc35bf54}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename \_\-Tp$>$ class CStatTreeItemCounterTmpl$<$ \_\-Tp $>$}
+
+Counter-\/type tree item template. Able to show percentage compared to parent, hide itself when value is zero, and nice functions for changing the value. stShowPercent and stHideIfZero flags take effect only on this node. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}!CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}}
+\index{CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}!CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}}
+\subsubsection[{CStatTreeItemCounterTmpl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-Tp$>$ {\bf CStatTreeItemCounterTmpl}$<$ \_\-Tp $>$::{\bf CStatTreeItemCounterTmpl} (const wxString \& {\em label}, \/  unsigned {\em flags} = {\ttfamily stNone})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemCounterTmpl_aea6410dabfe5044851ccdc334743e46e}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-Tp $>$ void {\bf CStatTreeItemCounterTmpl}$<$ \_\-Tp $>$::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCStatTreeItemCounterTmpl_a66b6cef53bb90774ef812524342484d7}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+Reimplemented in {\bf CStatTreeItemHiddenCounter} \doxyref{}{p.}{classCStatTreeItemHiddenCounter_a808edea2371f62a0d979636e4c39161a}, {\bf CStatTreeItemUlDlCounter} \doxyref{}{p.}{classCStatTreeItemUlDlCounter_a3cfabe67d20d78e5f02486d5d21427dd}, and {\bf CStatTreeItemReconnects} \doxyref{}{p.}{classCStatTreeItemReconnects_ad95e7e632bcbbe3a36b961494fa1aec6}.
+
+References CECTag::AddTag(), dmBytes, CStatTreeItemCounterTmpl$<$ \_\-Tp $>$::m\_\-displaymode, CStatTreeItemBase::m\_\-flags, CStatTreeItemBase::m\_\-parent, CStatTreeItemCounterTmpl$<$ \_\-Tp $>$::m\_\-value, and stShowPercent.\index{CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-Tp $>$ wxString {\bf CStatTreeItemCounterTmpl}$<$ \_\-Tp $>$::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCStatTreeItemCounterTmpl_a2417fdecd9a5887763cd4137aae05241}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+Reimplemented in {\bf CStatTreeItemHiddenCounter} \doxyref{}{p.}{classCStatTreeItemHiddenCounter_a98118fd34d4c1d064c13ccbf1b7d4241}, {\bf CStatTreeItemUlDlCounter} \doxyref{}{p.}{classCStatTreeItemUlDlCounter_a7b74d204fa693fe90c9dc733a4043558}, and {\bf CStatTreeItemReconnects} \doxyref{}{p.}{classCStatTreeItemReconnects_a1f339236098b3b66d362fe32b02952a7}.
+
+References dmBytes, CStatTreeItemCounterTmpl$<$ \_\-Tp $>$::m\_\-displaymode, CStatTreeItemBase::m\_\-flags, CStatTreeItemBase::m\_\-label, CStatTreeItemBase::m\_\-parent, CStatTreeItemCounterTmpl$<$ \_\-Tp $>$::m\_\-value, and stShowPercent.\index{CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}!IsVisible@{IsVisible}}
+\index{IsVisible@{IsVisible}!CStatTreeItemCounterTmpl@{CStatTreeItemCounterTmpl}}
+\subsubsection[{IsVisible}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-Tp$>$ virtual bool {\bf CStatTreeItemCounterTmpl}$<$ \_\-Tp $>$::IsVisible () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCStatTreeItemCounterTmpl_a6ba00ac555c2ee08b157bc761a3fb19a}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::IsVisible()}{p.}{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038}.
+
+Reimplemented in {\bf CStatTreeItemHiddenCounter} \doxyref{}{p.}{classCStatTreeItemHiddenCounter_ac651273e6243095ad682206a3fbdb279}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

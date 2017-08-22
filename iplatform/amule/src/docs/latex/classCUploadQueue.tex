@@ -1,0 +1,98 @@
+\section{CUploadQueue Class Reference}
+\label{classCUploadQueue}\index{CUploadQueue@{CUploadQueue}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Process} ()\label{classCUploadQueue_a483a21f46df5fa539f9601640ab30a02}
+
+\item 
+void {\bfseries AddClientToQueue} ({\bf CUpDownClient} $\ast$client)\label{classCUploadQueue_ad382d30d4b75b69f9b419164ac7f1725}
+
+\item 
+bool {\bfseries RemoveFromUploadQueue} ({\bf CUpDownClient} $\ast$client)\label{classCUploadQueue_a3d9050b97902362414b2a154fd1b47d6}
+
+\item 
+bool {\bfseries RemoveFromWaitingQueue} ({\bf CUpDownClient} $\ast$client)\label{classCUploadQueue_ad885e3ebf18a02bfc5644d0e6ea088de}
+
+\item 
+bool {\bfseries IsOnUploadQueue} (const {\bf CUpDownClient} $\ast$client) const \label{classCUploadQueue_a6d323ffb2707786f661195d693692a48}
+
+\item 
+bool {\bfseries IsDownloading} (const {\bf CUpDownClient} $\ast$client) const \label{classCUploadQueue_a6593580d226ce8c27377fdb7b63c83c9}
+
+\item 
+bool {\bfseries CheckForTimeOver} ({\bf CUpDownClient} $\ast$client)\label{classCUploadQueue_a59c86de6e6f5a447a08b04b4940c537d}
+
+\item 
+void {\bfseries ResortQueue} ()\label{classCUploadQueue_a968956a910e39b2024dc46b2c01af4fd}
+
+\item 
+const CClientRefList \& {\bfseries GetWaitingList} () const \label{classCUploadQueue_a41954e8abe946e2b0e38c40ac6f67b4d}
+
+\item 
+const CClientRefList \& {\bfseries GetUploadingList} () const \label{classCUploadQueue_a6fb138d8f655e8cd6a7a9f52fb875e07}
+
+\item 
+{\bf CUpDownClient} $\ast$ {\bfseries GetWaitingClientByIP\_\-UDP} (uint32 dwIP, uint16 nUDPPort, bool bIgnorePortOnUniqueIP, bool $\ast$pbMultipleIPs=NULL)\label{classCUploadQueue_aebb1ec456ab7d16af80eefaeca759b73}
+
+\item 
+uint16 {\bfseries SuspendUpload} (const {\bf CMD4Hash} \&, bool terminate)\label{classCUploadQueue_aa8a1d3809ce9429151a2b27ba0c3eecb}
+
+\item 
+void {\bfseries ResumeUpload} (const {\bf CMD4Hash} \&)\label{classCUploadQueue_addae0fa2da657978be3112f294e541b0}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries GetAllUploadingKnownFile} ()\label{classCUploadQueue_a29ac6621a27bd839f4dcf34ed8895e09}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries RemoveFromWaitingQueue} (CClientRefList::iterator pos)\label{classCUploadQueue_a69107e3a4720ce87e735cccd6d2ea00e}
+
+\item 
+uint16 {\bfseries GetMaxSlots} () const \label{classCUploadQueue_a8b87f4af805fe608507e06e63270a20a}
+
+\item 
+void {\bfseries AddUpNextClient} ({\bf CUpDownClient} $\ast$directadd=0)\label{classCUploadQueue_a30fbb1d9583e20a31131e77b4b456bf6}
+
+\item 
+bool {\bfseries IsSuspended} (const {\bf CMD4Hash} \&hash)\label{classCUploadQueue_a4700ee1df6d4adaf7188f46357e8a870}
+
+\item 
+void {\bfseries SortGetBestClient} ({\bf CClientRef} $\ast$bestClient=NULL)\label{classCUploadQueue_a9600420b95d169f25885d7400bdf1c60}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CClientRefList {\bfseries m\_\-waitinglist}\label{classCUploadQueue_ab97c57ed61eedf48952029975cc3ce8b}
+
+\item 
+CClientRefList {\bfseries m\_\-uploadinglist}\label{classCUploadQueue_a92227a59360567b98e299c194a2f56a4}
+
+\item 
+std::set$<$ {\bf CMD4Hash} $>$ {\bfseries suspendedUploadsSet}\label{classCUploadQueue_a1897684966fa7713a01b54c143dc7daa}
+
+\item 
+uint32 {\bfseries m\_\-nLastStartUpload}\label{classCUploadQueue_a228080727cee476d8553b4409d294424}
+
+\item 
+uint32 {\bfseries m\_\-lastSort}\label{classCUploadQueue_afb0b6fd328d685f5601d05bcecb78ea0}
+
+\item 
+bool {\bfseries lastupslotHighID}\label{classCUploadQueue_a5199f7344c3bdea52748ee93396981fc}
+
+\item 
+bool {\bfseries m\_\-allowKicking}\label{classCUploadQueue_ad5682d649d6d3b82c0cf5cec7de002d0}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries m\_\-allUploadingKnownFile}\label{classCUploadQueue_a1a19b884e0c91d06fb58b8dcd50abd35}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/UploadQueue.h\item 
+src/UploadQueue.cpp\end{DoxyCompactItemize}

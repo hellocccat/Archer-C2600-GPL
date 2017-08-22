@@ -1,0 +1,128 @@
+\section{CClientTCPSocket Class Reference}
+\label{classCClientTCPSocket}\index{CClientTCPSocket@{CClientTCPSocket}}
+Inheritance diagram for CClientTCPSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5cm]{classCClientTCPSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CClientTCPSocket} ({\bf CUpDownClient} $\ast$in\_\-client=NULL, const {\bf CProxyData} $\ast$ProxyData=NULL)\label{classCClientTCPSocket_a8525fd82e918c22d4502efe107a0bdf0}
+
+\item 
+void {\bfseries Disconnect} (const wxString \&strReason)\label{classCClientTCPSocket_ab771ad82088783c0851dc2e761d59cd0}
+
+\item 
+bool {\bfseries InitNetworkData} ()\label{classCClientTCPSocket_a24ac101f77a49ec11aafd0034373e4f7}
+
+\item 
+bool {\bfseries CheckTimeOut} ()\label{classCClientTCPSocket_a423b807acb6a0efbf3c87ec65be93370}
+
+\item 
+void {\bfseries Safe\_\-Delete} ()\label{classCClientTCPSocket_a314d23afb94a35cf4d5f7da95fe15b95}
+
+\item 
+void {\bfseries Safe\_\-Delete\_\-Client} ()\label{classCClientTCPSocket_a94d7b4bc45b73f115663c7970924bc27}
+
+\item 
+bool {\bfseries ForDeletion} () const \label{classCClientTCPSocket_a17dab289462238116305c43c0817609a}
+
+\item 
+void {\bfseries OnConnect} (int nErrorCode)\label{classCClientTCPSocket_a7a838f8aa4dcae7dda96424c14e9d80b}
+
+\item 
+void {\bfseries OnSend} (int nErrorCode)\label{classCClientTCPSocket_a747a97280276d7a7479329ea589e489b}
+
+\item 
+void {\bfseries OnReceive} (int nErrorCode)\label{classCClientTCPSocket_a269deff51d3d4968ea5678e2f4ae6f9b}
+
+\item 
+void {\bfseries OnClose} (int nErrorCode)\label{classCClientTCPSocket_adf17b61610364e78302418faad5e5dc1}
+
+\item 
+void {\bfseries OnError} (int nErrorCode)\label{classCClientTCPSocket_a34ce702be978eb0ee44ab343b8da921c}
+
+\item 
+uint32 {\bfseries GetRemoteIP} () const \label{classCClientTCPSocket_a27adb6f3cc58792c7c6b7cea62549395}
+
+\item 
+{\bf CUpDownClient} $\ast$ {\bfseries GetClient} ()\label{classCClientTCPSocket_aa24199b523d9ffeb132c9670dc5f74fd}
+
+\item 
+virtual void {\bf SendPacket} ({\bf CPacket} $\ast$packet, bool delpacket=true, bool controlpacket=true, uint32 actualPayloadSize=0)
+\item 
+virtual {\bf SocketSentBytes} {\bfseries SendControlData} (uint32 maxNumberOfBytesToSend, uint32 overchargeMaxBytesToSend)\label{classCClientTCPSocket_a33c75fa1b894cc2e84f806081491ef11}
+
+\item 
+virtual {\bf SocketSentBytes} {\bfseries SendFileAndControlData} (uint32 maxNumberOfBytesToSend, uint32 overchargeMaxBytesToSend)\label{classCClientTCPSocket_a95bec056c2c8ff186dc61e925b9c67bd}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries PacketReceived} ({\bf CPacket} $\ast$packet)\label{classCClientTCPSocket_ac68605b3f2d747b421b3b62e3b7612f8}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries ProcessPacket} (const byte $\ast$packet, uint32 size, uint8 opcode)\label{classCClientTCPSocket_a1983a7284f0c271c8a948dd10f9ebc43}
+
+\item 
+bool {\bfseries ProcessExtPacket} (const byte $\ast$packet, uint32 size, uint8 opcode)\label{classCClientTCPSocket_ad52f69af8e85c591d36504ea067d4715}
+
+\item 
+bool {\bfseries ProcessED2Kv2Packet} (const byte $\ast$packet, uint32 size, uint8 opcode)\label{classCClientTCPSocket_a08d1f7e4fd34bf6a0cf75dd3c0691430}
+
+\item 
+void {\bfseries ResetTimeOutTimer} ()\label{classCClientTCPSocket_ab5a1578964721697388feabd3300da48}
+
+\item 
+void {\bfseries SetClient} ({\bf CUpDownClient} $\ast$client)\label{classCClientTCPSocket_a73a0537a0a1cd7c53cc7e4904fcbeb37}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CUpDownClient} $\ast$ {\bfseries m\_\-client}\label{classCClientTCPSocket_a584d426b1e4da62dc5cac0a306941204}
+
+\item 
+bool {\bfseries m\_\-ForDeletion}\label{classCClientTCPSocket_a73254bd896f5cb3408c1c740e4345b13}
+
+\item 
+uint32 {\bfseries timeout\_\-timer}\label{classCClientTCPSocket_a2a5693ffffc5e23f64a79fe61d9d1cb0}
+
+\item 
+uint32 {\bfseries m\_\-remoteip}\label{classCClientTCPSocket_aae64d3bb88cdc79af5a637fe3a702f9c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CClientTCPSocket@{CClientTCPSocket}!SendPacket@{SendPacket}}
+\index{SendPacket@{SendPacket}!CClientTCPSocket@{CClientTCPSocket}}
+\subsubsection[{SendPacket}]{\setlength{\rightskip}{0pt plus 5cm}void CClientTCPSocket::SendPacket ({\bf CPacket} $\ast$ {\em packet}, \/  bool {\em delpacket} = {\ttfamily true}, \/  bool {\em controlpacket} = {\ttfamily true}, \/  uint32 {\em actualPayloadSize} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCClientTCPSocket_a78237fc807229ec1d0cb1f3977c7df79}
+
+
+Queues up the packet to be sent. Another thread will actually send the packet.
+
+If the packet is not a control packet, and if the socket decides that its queue is full and forceAdd is false, then the socket is allowed to refuse to add the packet to its queue. It will then return false and it is up to the calling thread to try to call SendPacket for that packet again at a later time.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]address to the packet that should be added to the queue\item[{\em delpacket}]if true, the responsibility for deleting the packet after it has been sent has been transferred to this object. If false, don't delete the packet after it has been sent.\item[{\em controlpacket}]the packet is a controlpacket\item[{\em forceAdd}]this packet must be added to the queue, even if it is full. If this flag is true then the method can not refuse to add the packet, and therefore not return false.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the packet was added to the queue, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf CEMSocket} \doxyref{}{p.}{classCEMSocket_ab410d8113285acfaac0ac268f455d06c}.
+
+Referenced by CUpDownClient::SendPacket().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ClientTCPSocket.h\item 
+src/ClientTCPSocket.cpp\end{DoxyCompactItemize}

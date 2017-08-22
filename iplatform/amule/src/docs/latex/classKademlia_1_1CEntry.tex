@@ -1,0 +1,100 @@
+\section{Kademlia::CEntry Class Reference}
+\label{classKademlia_1_1CEntry}\index{Kademlia::CEntry@{Kademlia::CEntry}}
+Inheritance diagram for Kademlia::CEntry::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classKademlia_1_1CEntry}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf sFileNameEntry}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf CEntry} $\ast$ {\bfseries Copy} () const \label{classKademlia_1_1CEntry_a184ea349b0f5dbd863cb3b96241bdb56}
+
+\item 
+virtual bool {\bfseries IsKeyEntry} () const   throw ()\label{classKademlia_1_1CEntry_aeee58ed558188fde567e627864ce4ebb}
+
+\item 
+bool {\bfseries GetIntTagValue} (const wxString \&tagname, uint64\_\-t \&value, bool includeVirtualTags=true) const \label{classKademlia_1_1CEntry_ac7d701970bff2c00d7ac4ddfb74235d1}
+
+\item 
+wxString {\bfseries GetStrTagValue} (const wxString \&tagname) const \label{classKademlia_1_1CEntry_a1b6dc9d08520fcd34f188cf9f8380215}
+
+\item 
+void {\bfseries AddTag} ({\bf CTag} $\ast$tag)\label{classKademlia_1_1CEntry_a218c1c33e24427cae500f0bdd0451633}
+
+\item 
+uint32\_\-t {\bfseries GetTagCount} () const \label{classKademlia_1_1CEntry_ac404e9472515bb6f72ae86547b996243}
+
+\item 
+void {\bfseries WriteTagList} ({\bf CFileDataIO} $\ast$data)\label{classKademlia_1_1CEntry_a22efb21fc98e63d9ccd4cc6f2e09bf25}
+
+\item 
+wxString {\bfseries GetCommonFileNameLowerCase} () const \label{classKademlia_1_1CEntry_a29f3190c1e7d771393bb49c61ced2d86}
+
+\item 
+wxString {\bfseries GetCommonFileName} () const \label{classKademlia_1_1CEntry_ae48d27bc405937b6ef11f594d15af2c0}
+
+\item 
+void {\bfseries SetFileName} (const wxString \&name)\label{classKademlia_1_1CEntry_ade5bdd1bfbf8d234f3421aaf7cf6101f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries m\_\-uIP}\label{classKademlia_1_1CEntry_aff4e1fb7f7c038eef24775d07cae2aae}
+
+\item 
+uint16\_\-t {\bfseries m\_\-uTCPport}\label{classKademlia_1_1CEntry_ab2741a624e68772d6ee42854ac8e04fc}
+
+\item 
+uint16\_\-t {\bfseries m\_\-uUDPport}\label{classKademlia_1_1CEntry_ad0e4d681ed55baf822f79c5a3158996d}
+
+\item 
+{\bf CUInt128} {\bfseries m\_\-uKeyID}\label{classKademlia_1_1CEntry_aacd95abbc90647e272b3df9a7e613a7b}
+
+\item 
+{\bf CUInt128} {\bfseries m\_\-uSourceID}\label{classKademlia_1_1CEntry_a2802422dae6335c040cb397a5a4fe9e7}
+
+\item 
+uint64\_\-t {\bfseries m\_\-uSize}\label{classKademlia_1_1CEntry_a218efce8e69e74fd354995f9296d2eb5}
+
+\item 
+time\_\-t {\bfseries m\_\-tLifeTime}\label{classKademlia_1_1CEntry_abe8d25193a6277f8efa8de61e2049159}
+
+\item 
+bool {\bfseries m\_\-bSource}\label{classKademlia_1_1CEntry_afd17af5f0bfa43c0ff3465f6b4d25108}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf sFileNameEntry} $>$ {\bfseries FileNameList}\label{classKademlia_1_1CEntry_a10fa40caf7c64cbd5649397fc6850d34}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries WriteTagListInc} ({\bf CFileDataIO} $\ast$data, uint32\_\-t increaseTagNumber=0)\label{classKademlia_1_1CEntry_a07566d44ec10f72d237cc3954c9777d0}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FileNameList {\bfseries m\_\-filenames}\label{classKademlia_1_1CEntry_a696337e727d3b169bd01acbd8424c596}
+
+\item 
+TagPtrList {\bfseries m\_\-taglist}\label{classKademlia_1_1CEntry_a96cb48ab35b974eef49f35613afd6fc5}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/kademlia/Entry.h\item 
+src/kademlia/kademlia/Entry.cpp\end{DoxyCompactItemize}

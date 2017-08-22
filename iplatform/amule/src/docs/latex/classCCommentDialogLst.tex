@@ -1,0 +1,52 @@
+\section{CCommentDialogLst Class Reference}
+\label{classCCommentDialogLst}\index{CCommentDialogLst@{CCommentDialogLst}}
+
+
+This dialog is used to display file-\/comments received from other clients.  
+
+
+{\ttfamily \#include $<$CommentDialogLst.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CCommentDialogLst} (wxWindow $\ast$pParent, {\bf CPartFile} $\ast$file)\label{classCCommentDialogLst_a480b5702e7f72bd8055573600bdcfece}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bf SortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)\label{classCCommentDialogLst_afeb0e0fd743b30176c828f938213242b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnBnClickedApply} (wxCommandEvent \&evt)\label{classCCommentDialogLst_a1922b9f029ad9b160ed49965a0a7864d}
+
+\item 
+void {\bfseries OnBnClickedRefresh} (wxCommandEvent \&evt)\label{classCCommentDialogLst_a56ca08fb8da87c5a6d5df999aae65766}
+
+\item 
+void {\bf UpdateList} ()\label{classCCommentDialogLst_a8ff8198d2fa866e7c4441e873c2c3bbf}
+
+\item 
+void {\bf ClearList} ()\label{classCCommentDialogLst_a5b8c4e496a4daeefa37cb1018d00eacd}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPartFile} $\ast$ {\bf m\_\-file}\label{classCCommentDialogLst_a9b18a4ce4548369f89cfd7debb7e103c}
+
+\item 
+{\bf CMuleListCtrl} $\ast$ {\bf m\_\-list}\label{classCCommentDialogLst_a5256bd05b2ba658969dabfbc57fe9657}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This dialog is used to display file-\/comments received from other clients. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/CommentDialogLst.h\item 
+src/CommentDialogLst.cpp\end{DoxyCompactItemize}

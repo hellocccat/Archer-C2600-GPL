@@ -1,0 +1,104 @@
+\section{CQueueEvent$<$ ValueType $>$ Class Template Reference}
+\label{classCQueueEvent}\index{CQueueEvent@{CQueueEvent}}
+
+
+This class defines the protocol used by the \doxyref{CObservableQueue}{p.}{classCObservableQueue} class.  
+
+
+{\ttfamily \#include $<$ObservableQueue.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Type} \{ \par
+{\bf STARTING}, 
+{\bf STOPPING}, 
+{\bf INSERTED}, 
+{\bf REMOVED}, 
+\par
+{\bf CHANGED}, 
+{\bf CLEARED}, 
+{\bf INITIAL}
+ \}
+\item 
+typedef std::vector$<$ ValueType $>$ {\bf ValueList}\label{classCQueueEvent_a66ded4aa20a3b8792dd78c79e7f7ced1}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CQueueEvent} ({\bf Type} event)\label{classCQueueEvent_a317c2801ca298e56d8334bf3f06d69d4}
+
+\item 
+{\bf CQueueEvent} ({\bf Type} event, const {\bf ValueList} $\ast$list)
+\item 
+{\bf CQueueEvent} ({\bf Type} event, const ValueType \&value)\label{classCQueueEvent_ab29de4d26e6ae9d1a1b9f1e528b6b7fe}
+
+\item 
+{\bf Type} {\bf GetEvent} () const \label{classCQueueEvent_a11d6918fb1b07e670c3515694a63a63a}
+
+\item 
+size\_\-t {\bf GetCount} () const \label{classCQueueEvent_addc8a023e0c9469d5d325304e29bd078}
+
+\item 
+ValueType {\bf GetValue} (size\_\-t i) const \label{classCQueueEvent_a5131244690f68c3baa1d29a8463793a0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf ValueList} $\ast$ {\bf m\_\-list}\label{classCQueueEvent_ad26788f9f7e1f497ffaeb366365de6fe}
+
+\item 
+const ValueType $\ast$ {\bf m\_\-value}\label{classCQueueEvent_a907be5acb09bfff8893e7b020fe70b27}
+
+\item 
+{\bf Type} {\bf m\_\-type}\label{classCQueueEvent_ab1149b121c09fc7944a71a0ce3812bdf}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename ValueType$>$ class CQueueEvent$<$ ValueType $>$}
+
+This class defines the protocol used by the \doxyref{CObservableQueue}{p.}{classCObservableQueue} class. This specific protocol can be used by a class to make changes to its contents visible, assuming that said contents does not rely on being in a specific order, as insertions commands do not specify positions.
+
+The class \doxyref{CQueueObserver}{p.}{classCQueueObserver} implements a queue that will always be kept in sync with the class observed, so that it is possible to handle all elements in a container object over a longer period of time, which would normally result in problems with changes accomulating in the list. 
+
+\subsection{Member Enumeration Documentation}
+\index{CQueueEvent@{CQueueEvent}!Type@{Type}}
+\index{Type@{Type}!CQueueEvent@{CQueueEvent}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename ValueType $>$ enum {\bf CQueueEvent::Type}}\label{classCQueueEvent_aa4506aa291d99b7366f8903a72eb9dfa}
+
+
+The events used by this observable type. Note: If more than one instance of a value has been added, removed or updated, then the resulting events should reflect this fact by including the same of instances as has been changed. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{STARTING@{STARTING}!CQueueEvent@{CQueueEvent}}\index{CQueueEvent@{CQueueEvent}!STARTING@{STARTING}}\item[{\em 
+STARTING\label{classCQueueEvent_aa4506aa291d99b7366f8903a72eb9dfaad88551fcfb51b0472d248f068f0cb476}
+}]Signals a QueueObserver that it has been added to a queue. \index{STOPPING@{STOPPING}!CQueueEvent@{CQueueEvent}}\index{CQueueEvent@{CQueueEvent}!STOPPING@{STOPPING}}\item[{\em 
+STOPPING\label{classCQueueEvent_aa4506aa291d99b7366f8903a72eb9dfaa1492bf636ac73fdd9d0ff1b768321948}
+}]Signals a QueueObserver that it has been removed from a queue. \index{INSERTED@{INSERTED}!CQueueEvent@{CQueueEvent}}\index{CQueueEvent@{CQueueEvent}!INSERTED@{INSERTED}}\item[{\em 
+INSERTED\label{classCQueueEvent_aa4506aa291d99b7366f8903a72eb9dfaaa2b6ce6bcb643d408cec4b8194130ab2}
+}]Signals that one or more values have been added. \index{REMOVED@{REMOVED}!CQueueEvent@{CQueueEvent}}\index{CQueueEvent@{CQueueEvent}!REMOVED@{REMOVED}}\item[{\em 
+REMOVED\label{classCQueueEvent_aa4506aa291d99b7366f8903a72eb9dfaa48645914fa3cae5d1ba55de840d5abbd}
+}]Signals that one or more values have been removed. \index{CHANGED@{CHANGED}!CQueueEvent@{CQueueEvent}}\index{CQueueEvent@{CQueueEvent}!CHANGED@{CHANGED}}\item[{\em 
+CHANGED\label{classCQueueEvent_aa4506aa291d99b7366f8903a72eb9dfaaf9f6cc67714e1740d6bb213f9c67c2c0}
+}]Signals that the following values have been updated. \index{CLEARED@{CLEARED}!CQueueEvent@{CQueueEvent}}\index{CQueueEvent@{CQueueEvent}!CLEARED@{CLEARED}}\item[{\em 
+CLEARED\label{classCQueueEvent_aa4506aa291d99b7366f8903a72eb9dfaa1039e98a4daa4194718f74653b91a59a}
+}]Signals that all values have been removed. \index{INITIAL@{INITIAL}!CQueueEvent@{CQueueEvent}}\index{CQueueEvent@{CQueueEvent}!INITIAL@{INITIAL}}\item[{\em 
+INITIAL\label{classCQueueEvent_aa4506aa291d99b7366f8903a72eb9dfaaa9825ea9e5cf9df6d4f1642adba50c37}
+}]Contains the contents of the queue at subscription time. \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CQueueEvent@{CQueueEvent}!CQueueEvent@{CQueueEvent}}
+\index{CQueueEvent@{CQueueEvent}!CQueueEvent@{CQueueEvent}}
+\subsubsection[{CQueueEvent}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename ValueType $>$ {\bf CQueueEvent}$<$ ValueType $>$::{\bf CQueueEvent} ({\bf Type} {\em event}, \/  const {\bf ValueList} $\ast$ {\em list})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCQueueEvent_a4176bab5372c1893196970809e99264d}
+
+
+Constructor for events regarding multiple values. Note: \doxyref{CQueueEvent}{p.}{classCQueueEvent} does not take ownership of the specified list. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ObservableQueue.h\end{DoxyCompactItemize}

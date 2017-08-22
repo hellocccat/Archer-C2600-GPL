@@ -1,0 +1,51 @@
+\section{CLoggingEvent Class Reference}
+\label{classCLoggingEvent}\index{CLoggingEvent@{CLoggingEvent}}
+
+
+This event is sent when a log-\/line is queued.  
+
+
+{\ttfamily \#include $<$Logger.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CLoggingEvent} (bool critical, bool toStdout, bool toGUI, const wxString \&msg)\label{classCLoggingEvent_a407dde9a0bbb9286ce38011876f312ea}
+
+\item 
+const wxString \& {\bfseries Message} () const \label{classCLoggingEvent_a9e132d85a9099d326bffe797b3ccc250}
+
+\item 
+bool {\bfseries IsCritical} () const \label{classCLoggingEvent_a5418d34b7d3b910c0f783fe9a665e9f2}
+
+\item 
+bool {\bfseries ToStdout} () const \label{classCLoggingEvent_a9d091e9f01fbe204b3e9a24ba8526d58}
+
+\item 
+bool {\bfseries ToGUI} () const \label{classCLoggingEvent_a670de88f64d5df8cf4012a0839fa7059}
+
+\item 
+wxEvent $\ast$ {\bfseries Clone} () const \label{classCLoggingEvent_aea0361c9e9a90d710ec212142559401b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-critical}\label{classCLoggingEvent_a635781fdd3d07cc98547b37d9d1ea60d}
+
+\item 
+bool {\bfseries m\_\-stdout}\label{classCLoggingEvent_a2ca75035e3c3794a7a18b3efb29f85ab}
+
+\item 
+bool {\bfseries m\_\-GUI}\label{classCLoggingEvent_a838f85b7a34ba9da3e55cd5163a42195}
+
+\item 
+wxString {\bfseries m\_\-msg}\label{classCLoggingEvent_a1b804d5de4decb32a3f821a7db312adc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This event is sent when a log-\/line is queued. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Logger.h\end{DoxyCompactItemize}

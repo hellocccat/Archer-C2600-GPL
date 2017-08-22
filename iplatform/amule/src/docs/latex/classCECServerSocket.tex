@@ -1,0 +1,101 @@
+\section{CECServerSocket Class Reference}
+\label{classCECServerSocket}\index{CECServerSocket@{CECServerSocket}}
+Inheritance diagram for CECServerSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCECServerSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CECServerSocket} ({\bf ECNotifier} $\ast$notifier)\label{classCECServerSocket_a9e1b4621fb169749c09321805b089a57}
+
+\item 
+virtual const {\bf CECPacket} $\ast$ {\bf OnPacketReceived} (const {\bf CECPacket} $\ast$packet, uint32 trueSize)
+\item 
+virtual void {\bf OnLost} ()
+\item 
+virtual void {\bfseries WriteDoneAndQueueEmpty} ()\label{classCECServerSocket_aef4ba673d1008cb4b4543e81df0cf5eb}
+
+\item 
+void {\bfseries ResetLog} ()\label{classCECServerSocket_a4059b97b9887604da44164afb4c7cab8}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries CONN\_\-INIT}, 
+{\bfseries CONN\_\-SALT\_\-SENT}, 
+{\bfseries CONN\_\-ESTABLISHED}, 
+{\bfseries CONN\_\-FAILED}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CECPacket} $\ast$ {\bfseries Authenticate} (const {\bf CECPacket} $\ast$)\label{classCECServerSocket_ae538b5aaa2897d799957abe915237a9d}
+
+\item 
+{\bf CECPacket} $\ast$ {\bfseries ProcessRequest2} (const {\bf CECPacket} $\ast$request)\label{classCECServerSocket_ac89ea9cca486dc93f72309348c078b0f}
+
+\item 
+virtual bool {\bfseries IsAuthorized} ()\label{classCECServerSocket_abb6222db3977087ad696bf089b0b7015}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ECNotifier} $\ast$ {\bfseries m\_\-ec\_\-notifier}\label{classCECServerSocket_a183f89ffa7f712e4fbbc6f8e4df7dcb0}
+
+\item 
+enum CECServerSocket:: \{ ... \}  {\bfseries m\_\-conn\_\-state}\label{classCECServerSocket_ac59132f9dda6f9adcfeedb6f67eb9a7c}
+
+\item 
+uint64\_\-t {\bfseries m\_\-passwd\_\-salt}\label{classCECServerSocket_a29399b21c69cc19f8ab9d88ee14e92ec}
+
+\item 
+{\bf CLoggerAccess} {\bfseries m\_\-LoggerAccess}\label{classCECServerSocket_a08b6853c32d6e16e7ea2dca1ee33d0a1}
+
+\item 
+{\bf CFileEncoderMap} {\bfseries m\_\-FileEncoder}\label{classCECServerSocket_acdd148f1bb0bea2e1fb99479ff183061}
+
+\item 
+{\bf CObjTagMap} {\bfseries m\_\-obj\_\-tagmap}\label{classCECServerSocket_a5b3281c6b169710e637ee18fdf42a000}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CECServerSocket@{CECServerSocket}!OnLost@{OnLost}}
+\index{OnLost@{OnLost}!CECServerSocket@{CECServerSocket}}
+\subsubsection[{OnLost}]{\setlength{\rightskip}{0pt plus 5cm}void CECServerSocket::OnLost ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCECServerSocket_a29081455ee9896fc197896d8601452b1}
+
+
+Socket lost event handler. This function is called when the socket is lost (either because of a network failure or because the remote end closed the socket gracefully).
+
+The default handler destroys the socket. 
+
+Reimplemented from {\bf CECSocket} \doxyref{}{p.}{classCECSocket_aa1245e93fc1a8f8ad6f1ac0e50c51d97}.\index{CECServerSocket@{CECServerSocket}!OnPacketReceived@{OnPacketReceived}}
+\index{OnPacketReceived@{OnPacketReceived}!CECServerSocket@{CECServerSocket}}
+\subsubsection[{OnPacketReceived}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CECPacket} $\ast$ CECServerSocket::OnPacketReceived (const {\bf CECPacket} $\ast$ {\em packet}, \/  uint32 {\em trueSize})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCECServerSocket_a7e8393ee2814dae9b6eeedcf20c5be30}
+
+
+Event handler function called when a new packet is received. 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The packet that has been received. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reply packet or {\ttfamily NULL} if no reply needed.
+\end{DoxyReturn}
+In this function the application should process the received packet, and create a reply if necessary. The reply must be allocated on the heap with {\ttfamily new}. If no reply is necessary, the return value of the function should be {\ttfamily NULL}. The library will {\ttfamily delete} both packets.
+
+\begin{DoxyNote}{Note}
+This function won't be called for packets received via the \doxyref{SendRecvPacket()}{p.}{classCECSocket_aaee01cc0fb0b37fb44ddf8b363cfdbd5} function. 
+\end{DoxyNote}
+
+
+Reimplemented from {\bf CECSocket} \doxyref{}{p.}{classCECSocket_a4026f260f7839bf95a02f1c178bf2d52}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConn.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,216 @@
+\section{CFormat Class Reference}
+\label{classCFormat}\index{CFormat@{CFormat}}
+
+
+This class offers a typesafe alternative to wxString::Format.  
+
+
+{\ttfamily \#include $<$Format.h$>$}\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf FormatSpecifier}
+\begin{DoxyCompactList}\small\item\em Structure to hold a format specifier. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CFormat} (const wxChar $\ast$str)
+\item 
+{\bf CFormat} (const wxString \&str)
+\item 
+{\footnotesize template$<$typename \_\-Tp $>$ }\\{\bf CFormat} \& {\bf operator\%} (\_\-Tp value)
+\item 
+{\footnotesize template$<$typename \_\-Tp $>$ }\\{\bf CFormat} \& {\bfseries operator\%} (\_\-Tp $\ast$value)\label{classCFormat_a85d31b5d05cc1fa2fb65c2910619a5c9}
+
+\item 
+{\bf CFormat} \& {\bfseries operator\%} (const wxString \&value)\label{classCFormat_a7861f329c2245be5ad2073cab465b84f}
+
+\item 
+{\bf CFormat} \& {\bfseries operator\%} (const {\bf CFormat} \&value)\label{classCFormat_a7058b2a1361e43d55b512289ddc6dc1b}
+
+\item 
+wxString {\bf GetString} () const \label{classCFormat_ad1a819a2416e54fc13e9c901f9a43cbb}
+
+\item 
+{\bf operator wxString} () const \label{classCFormat_a48929cda24a37d0d04515bac529c1dab}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries ProcessArgument} (FormatList::iterator, const wxString \&)\label{classCFormat_ad370203ef6a83845c16d871b2f610f9c}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries ProcessArgument} (FormatList::iterator, unsigned long long)\label{classCFormat_abc8129fb877556b2e6d25b523d988425}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries ProcessArgument} (FormatList::iterator it, double value)\label{classCFormat_aa372b97ab027823570ce0c4afb075a2b}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries ProcessArgument} (FormatList::iterator it, wxChar value)\label{classCFormat_ac2e7481709744791113755dafeff902b}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries ProcessArgument} (FormatList::iterator it, signed long long value)\label{classCFormat_a195cf84b0fc4d0f646a6f018ce9e5943}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries ProcessArgument} (FormatList::iterator it, void $\ast$value)\label{classCFormat_a7790c10972641c41107678b597735a93}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (char value)\label{classCFormat_ac4bf6040076be2b801d058849b591ee0}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (signed char value)\label{classCFormat_a67c585315973fb0c0bed9dcc90ff58f2}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (unsigned char value)\label{classCFormat_a9c9e418cf5348b4404425c27e6859ee7}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (bool value)\label{classCFormat_a73c336cb80bdfe0170a5c2c0327f26b8}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (signed short value)\label{classCFormat_a9ee9420473db0ddc9d75391c220bdfaa}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (unsigned short value)\label{classCFormat_a4b335c0153b3999e0074cbfa52bda751}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (signed int value)\label{classCFormat_a2c024b1f92a636293452e341180bc74d}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (unsigned int value)\label{classCFormat_aabe5904d4de7cf597b70a7cb2a6d99b1}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (signed long value)\label{classCFormat_a0ac3833a3aee1e26e54c74802e034564}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (unsigned long value)\label{classCFormat_ac85cb278d0cbcdcedef7a9f3acb17d9a}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (float value)\label{classCFormat_a6654cfa7978e7ab6fff8211514022c4a}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} (const wxChar $\ast$value)\label{classCFormat_adfec7900bc11974ef8380733f805aaba}
+
+\item 
+{\footnotesize template$<$$>$ }\\{\bf CFormat} \& {\bfseries operator\%} ({\bf CPath} value)\label{classCFormat_a6d06946e1e9fb77f2b7787c6c0f81e0e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf FormatSpecifier} $>$ {\bf FormatList}\label{classCFormat_a082af4c14f1174986109b53d5fa30100}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Init} (const wxString \&str)
+\item 
+wxString {\bf GetModifiers} (FormatList::const\_\-iterator it) const \label{classCFormat_a5aab57e8a0a5b40283f8d632fce5a70c}
+
+\item 
+{\footnotesize template$<$typename \_\-Tp $>$ }\\void {\bf ProcessArgument} (FormatList::iterator it, \_\-Tp value)\label{classCFormat_a1a2b4f4d60319ff602c2f3a302fdd2a2}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FormatList} {\bf m\_\-formats}\label{classCFormat_aa78960c7f77b53fd5853e8a28f73aab4}
+
+\item 
+unsigned {\bf m\_\-argIndex}\label{classCFormat_a2755ef7283ca7c2ec60053a5810c1c96}
+
+\item 
+wxString {\bf m\_\-formatString}\label{classCFormat_aacaac421b43742e49f0081f142b1e215}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class offers a typesafe alternative to wxString::Format. CFormat has been implemented against the description of printf found in the \char`\"{}man 3 printf\char`\"{} manual page.
+
+CFormat lacks the following capabilities:
+\begin{DoxyItemize}
+\item The {\ttfamily \char`\"{}$\ast$\char`\"{}} width-\/modifier, because only one argument is fed at a time.
+\item The {\ttfamily \char`\"{}n\char`\"{}} type, just unsafe and won't be implemented.
+\item The {\ttfamily \char`\"{}C\char`\"{}} and {\ttfamily \char`\"{}S\char`\"{}} types, which are considered obsolete.
+\item The Long Double type, which is extremly slow and shouldn't be used.
+\end{DoxyItemize}
+
+Support for the C99 {\ttfamily a}, {\ttfamily A} conversions and the non-\/standard {\ttfamily '}, {\ttfamily I} flags depend on the underlying C library. Do not use them.
+
+Supports the glibc-\/specific {\ttfamily m} conversion on all platforms, where there's a way to get the error description. If the underlying C library has a thread-\/safe way to get the error description, then this conversion is thread-\/safe, too.
+
+Deviations from printf(3):
+
+CFormat tries hard to format the passed POD-\/type according to the conversion type. Basic type conversions may take place to accomplish this goal. This results in formats accepting a variety of types, namely:
+\begin{DoxyItemize}
+\item {\ttfamily c}, {\ttfamily i}, {\ttfamily d}, {\ttfamily u}, {\ttfamily o}, {\ttfamily x}, {\ttfamily X} accept {\ttfamily wxChar} and all integer types,
+\item {\ttfamily a}, {\ttfamily A}, {\ttfamily e}, {\ttfamily E}, {\ttfamily f}, {\ttfamily F}, {\ttfamily g}, {\ttfamily G} accept {\ttfamily wxChar}, integer and floating-\/point types,
+\item {\ttfamily p} accepts only pointers,
+\item {\ttfamily s} accepts all the above mentioned types in addition to {\ttfamily wxString} and {\ttfamily wxChar$\ast$} types.
+\end{DoxyItemize}
+
+The only exception from this rule is integer ({\ttfamily d}, {\ttfamily i}, {\ttfamily u}) conversion. It will always use the correct conversion ({\ttfamily i} or {\ttfamily u}) depending on the signedness of the passed argument.
+
+{\ttfamily 's'} conversions are inspired by the {\itshape \char`\"{}we're converting to string,
+ anyway\char`\"{}\/} mood. Thus they use a 'default' conversion for each accepted type: {\ttfamily 'c'} for {\ttfamily wxChar}, {\ttfamily 'i'} and {\ttfamily 'u'} for signed and unsigned integers, respectively, {\ttfamily 'g'} for floating-\/point numbers and {\ttfamily 'p'} for pointers.
+
+Other relaxations / differences from printf(3):
+\begin{DoxyItemize}
+\item Length modifiers are read and validated, but always ignored.
+\item As a consequence, invalid combinations of length modifiers and conversion types are silently ignored (i.e. for example the invalid {\ttfamily '\%qs'} format-\/specifier is silently treated as {\ttfamily '\%s'}).
+\item {\ttfamily 'p'} conversion ignores all modifiers except the argument index reference.
+\item You can mix positional and indexed argument references. (You actually can't, because msgfmt will treat this as an error.)
+\item With indexed argument references we allow to leave gaps in the indices. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CFormat@{CFormat}!CFormat@{CFormat}}
+\index{CFormat@{CFormat}!CFormat@{CFormat}}
+\subsubsection[{CFormat}]{\setlength{\rightskip}{0pt plus 5cm}CFormat::CFormat (const wxChar $\ast$ {\em str})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCFormat_a48e256a2790d6990f806b8fc0c218b88}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The format-\/string to be used. \end{DoxyParams}
+
+
+References Init().\index{CFormat@{CFormat}!CFormat@{CFormat}}
+\index{CFormat@{CFormat}!CFormat@{CFormat}}
+\subsubsection[{CFormat}]{\setlength{\rightskip}{0pt plus 5cm}CFormat::CFormat (const wxString \& {\em str})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCFormat_a0dded59cf21c442c883b38d94034fb84}
+
+
+Constructor. This form is required to construct from a plain char $\ast$ with wx 2.9
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The format-\/string to be used. \end{DoxyParams}
+
+
+References Init().
+
+\subsection{Member Function Documentation}
+\index{CFormat@{CFormat}!Init@{Init}}
+\index{Init@{Init}!CFormat@{CFormat}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void CFormat::Init (const wxString \& {\em str})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCFormat_a6b5f4934a5b2fcd52bfa08174c9f4773}
+
+
+Initialize internal structures. Initializes member variables and parses the given format string. 
+
+References CFormat::FormatSpecifier::endPos, m\_\-argIndex, m\_\-formats, m\_\-formatString, CFormat::FormatSpecifier::result, and CFormat::FormatSpecifier::startPos.
+
+Referenced by CFormat().\index{CFormat@{CFormat}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!CFormat@{CFormat}}
+\subsubsection[{operator\%}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-Tp $>$ {\bf CFormat} \& CFormat::operator\% (\_\-Tp {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCFormat_a965a1be03fb324b048bbf3ec626d4675}
+
+
+Feeds a value into the format-\/string. Passing a type that isn't compatible with the current format field results in the field being skipped, and an exception raised.
+
+Passing any type to a \doxyref{CFormat}{p.}{classCFormat} with no free fields results in the argument being ignored.
+
+Specialize this member template to teach \doxyref{CFormat}{p.}{classCFormat} how to handle other types. 
+
+References m\_\-argIndex, and m\_\-formats.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/common/Format.h\item 
+src/libs/common/Format.cpp\item 
+src/libs/common/Path.h\end{DoxyCompactItemize}

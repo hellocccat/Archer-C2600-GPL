@@ -1,0 +1,71 @@
+\section{CSocks4StateMachine Class Reference}
+\label{classCSocks4StateMachine}\index{CSocks4StateMachine@{CSocks4StateMachine}}
+Inheritance diagram for CSocks4StateMachine::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCSocks4StateMachine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CSocks4StateMachine} (const {\bf CProxyData} \&proxyData, CProxyCommand proxyCommand)\label{classCSocks4StateMachine_a63d23f4716764a647cee4fbf258c47a7}
+
+\item 
+void {\bfseries process\_\-state} (t\_\-sm\_\-state state, bool entry)\label{classCSocks4StateMachine_a1cf6dbd1b18d6504ba495c78b0551ae6}
+
+\item 
+t\_\-sm\_\-state {\bfseries next\_\-state} (t\_\-sm\_\-event event)\label{classCSocks4StateMachine_a47de4d5179389cab5c06fdb0a8926037}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Socks4State} \{ \par
+{\bfseries SOCKS4\_\-STATE\_\-START} =  PROXY\_\-STATE\_\-START, 
+{\bfseries SOCKS4\_\-STATE\_\-END} =  PROXY\_\-STATE\_\-END, 
+{\bfseries SOCKS4\_\-STATE\_\-SEND\_\-COMMAND\_\-REQUEST}, 
+{\bfseries SOCKS4\_\-STATE\_\-RECEIVE\_\-COMMAND\_\-REPLY}, 
+\par
+{\bfseries SOCKS4\_\-STATE\_\-PROCESS\_\-COMMAND\_\-REPLY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries process\_\-start} (bool entry)\label{classCSocks4StateMachine_a057e8f1af05010cc227040e777e94604}
+
+\item 
+void {\bfseries process\_\-send\_\-command\_\-request} (bool entry)\label{classCSocks4StateMachine_ab286829889ee9318601f4034789ff02e}
+
+\item 
+void {\bfseries process\_\-receive\_\-command\_\-reply} (bool entry)\label{classCSocks4StateMachine_ac2071abd0470c6ff2d22807986b2e6ea}
+
+\item 
+void {\bfseries process\_\-process\_\-command\_\-reply} (bool entry)\label{classCSocks4StateMachine_aca7089acc5e7a64cb237de62378e5125}
+
+\item 
+void {\bfseries process\_\-end} (bool entry)\label{classCSocks4StateMachine_a75b2aae93145b854c75967e1c15e5ded}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Socks4StateProcessor {\bfseries m\_\-process\_\-state} [SOCKS4\_\-MAX\_\-STATES]\label{classCSocks4StateMachine_a6449526e45e844c9ee4e4e8606d47a4d}
+
+\item 
+wxString {\bfseries m\_\-state\_\-name} [SOCKS4\_\-MAX\_\-STATES]\label{classCSocks4StateMachine_ae6a1823b0b56d4f1f25aedf23a9f6055}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries SOCKS4\_\-MAX\_\-STATES} = 5\label{classCSocks4StateMachine_a94972d47ad84eead308fd8e8088f0733}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Proxy.h\item 
+src/Proxy.cpp\end{DoxyCompactItemize}

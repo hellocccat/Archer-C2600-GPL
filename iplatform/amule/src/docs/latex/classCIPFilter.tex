@@ -1,0 +1,139 @@
+\section{CIPFilter Class Reference}
+\label{classCIPFilter}\index{CIPFilter@{CIPFilter}}
+
+
+This class represents a list of IPs that should not be accepted as valid connection destinations nor sources.  
+
+
+{\ttfamily \#include $<$IPFilter.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CIPFilter} ()\label{classCIPFilter_a65ee957320c8a8438256d7277110e1b1}
+
+\item 
+bool {\bf IsFiltered} (uint32 IP2test, bool isServer=false)
+\item 
+uint32 {\bf BanCount} () const \label{classCIPFilter_a9382ccce0d58233f4a2eaa27a1ae1e1e}
+
+\item 
+void {\bf Reload} ()\label{classCIPFilter_a279af8083b17b5c876046ba580d53176}
+
+\item 
+void {\bf Update} (const wxString \&strURL)
+\item 
+void {\bf DownloadFinished} (uint32 result)\label{classCIPFilter_af96ae918c187c64587074488777ae324}
+
+\item 
+bool {\bf IsReady} () const \label{classCIPFilter_a358a40c3bab8097f84a341dca969b569}
+
+\item 
+void {\bf StartKADWhenReady} ()\label{classCIPFilter_a06f830616b83c7bad16da72dfe0ee7c2}
+
+\item 
+void {\bfseries ConnectToAnyServerWhenReady} ()\label{classCIPFilter_a03cd89106217525ce774872fe9fbc07f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ uint32 $>$ {\bfseries RangeIPs}\label{classCIPFilter_a89e3206ecde91fb87924beeb406b3be5}
+
+\item 
+typedef std::vector$<$ uint16 $>$ {\bfseries RangeLengths}\label{classCIPFilter_a93c335a51b071a3900619b60e3ed73e7}
+
+\item 
+typedef std::vector$<$ std::string $>$ {\bfseries RangeNames}\label{classCIPFilter_a4730af9e1ff88dcf40499c0344ec3944}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnIPFilterEvent} ({\bf CIPFilterEvent} \&)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf m\_\-URL}\label{classCIPFilter_a9a4104c6be0136fc2c4fff52e6808b31}
+
+\item 
+RangeIPs {\bfseries m\_\-rangeIPs}\label{classCIPFilter_aa3870448ba3a050d6da67cd605b1478d}
+
+\item 
+RangeLengths {\bfseries m\_\-rangeLengths}\label{classCIPFilter_a7a6dc6249b62f430e9d57bf4f4c0ab11}
+
+\item 
+RangeNames {\bfseries m\_\-rangeNames}\label{classCIPFilter_a21b2629a179590015f67b361fed5a44c}
+
+\item 
+wxMutex {\bf m\_\-mutex}\label{classCIPFilter_a23506e246cde263318a27620ae95d232}
+
+\item 
+bool {\bfseries m\_\-ready}\label{classCIPFilter_a93bdde31fec2b54488af3b5991392ce5}
+
+\item 
+bool {\bfseries m\_\-startKADWhenReady}\label{classCIPFilter_a37e1edd1e37895d57f398b34ef2eca62}
+
+\item 
+bool {\bfseries m\_\-connectToAnyServerWhenReady}\label{classCIPFilter_a28a5fcf407ab9dabc5551602b308f6fe}
+
+\item 
+bool {\bfseries m\_\-updateAfterLoading}\label{classCIPFilter_ae4f7bb04db66ca6fe1934c749e9a3712}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CIPFilterEvent}\label{classCIPFilter_adce1366cffe4e3f519585f7222e118c7}
+
+\item 
+class {\bf CIPFilterTask}\label{classCIPFilter_a8e9f1c0d63994ef501ac98c4ba10e471}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a list of IPs that should not be accepted as valid connection destinations nor sources. It provides an interface to query whether or not a specific IP is filtered.
+
+Currently this class can handle \doxyref{IPRange}{p.}{structIPRange} files in the Peer-\/Guardian format and the AntiP2P format, read from either text files or text files compressed with the zip compression format.
+
+This class is thread-\/safe. 
+
+\subsection{Member Function Documentation}
+\index{CIPFilter@{CIPFilter}!IsFiltered@{IsFiltered}}
+\index{IsFiltered@{IsFiltered}!CIPFilter@{CIPFilter}}
+\subsubsection[{IsFiltered}]{\setlength{\rightskip}{0pt plus 5cm}bool CIPFilter::IsFiltered (uint32 {\em IP2test}, \/  bool {\em isServer} = {\ttfamily false})}\label{classCIPFilter_a5dd61b18a9b89b4ba20188a989afb037}
+
+
+Checks if a IP is filtered with the current list and AccessLevel. 
+\begin{DoxyParams}{Parameters}
+\item[{\em IP2test}]The IP-\/Address to test for. \item[{\em isServer}]Whether this IP belongs to a server or a client. Needed for statistical purposes only. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it is filtered, false otherwise.
+\end{DoxyReturn}
+Note: IP2Test must be in anti-\/host order (BE on LE platform, LE on BE platform). 
+
+References m\_\-mutex.\index{CIPFilter@{CIPFilter}!OnIPFilterEvent@{OnIPFilterEvent}}
+\index{OnIPFilterEvent@{OnIPFilterEvent}!CIPFilter@{CIPFilter}}
+\subsubsection[{OnIPFilterEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CIPFilter::OnIPFilterEvent ({\bf CIPFilterEvent} \& {\em evt})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCIPFilter_a6ff3afce9fd996c4454dfe97f3ce3b26}
+
+
+Handles the result of loading the dat-\/files. 
+
+References m\_\-mutex, and Update().\index{CIPFilter@{CIPFilter}!Update@{Update}}
+\index{Update@{Update}!CIPFilter@{CIPFilter}}
+\subsubsection[{Update}]{\setlength{\rightskip}{0pt plus 5cm}void CIPFilter::Update (const wxString \& {\em strURL})}\label{classCIPFilter_a2f3168a57b342856c9c59928b8b42890}
+
+
+Starts a download of the ipfilter-\/list at the specified URL. 
+\begin{DoxyParams}{Parameters}
+\item[{\em A}]valid URL.\end{DoxyParams}
+Once the file has been downloaded, the ipfilter.dat file will be replaced with the new file and Reload will be called. 
+
+References m\_\-URL.
+
+Referenced by OnIPFilterEvent().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/IPFilter.h\item 
+src/IPFilter.cpp\end{DoxyCompactItemize}

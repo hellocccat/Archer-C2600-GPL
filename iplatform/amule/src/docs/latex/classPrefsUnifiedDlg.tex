@@ -1,0 +1,139 @@
+\section{PrefsUnifiedDlg Class Reference}
+\label{classPrefsUnifiedDlg}\index{PrefsUnifiedDlg@{PrefsUnifiedDlg}}
+
+
+This class represents a dialog used to display preferences.  
+
+
+{\ttfamily \#include $<$PrefsUnifiedDlg.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PrefsUnifiedDlg} (wxWindow $\ast$parent)
+\item 
+bool {\bf TransferFromWindow} ()\label{classPrefsUnifiedDlg_a2c5802ba169757622b28ceddec35f5ca}
+
+\item 
+bool {\bf TransferToWindow} ()\label{classPrefsUnifiedDlg_a893a12de0ad4a8be4438d4b3da81c87c}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf CfgChanged} (int id)\label{classPrefsUnifiedDlg_af92e07ccb9dafb23503ade451cda8578}
+
+\item 
+{\bf Cfg\_\-Base} $\ast$ {\bf GetCfg} (int id)\label{classPrefsUnifiedDlg_a5885c6362991bc8bd06bb0c5592c0530}
+
+\item 
+void {\bfseries EnableServerTab} (bool enable)\label{classPrefsUnifiedDlg_af9245bbe0249b12e3d2ec8b17ac7b89b}
+
+\item 
+void {\bfseries OnOk} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_a1f1f2a93e6c9c1e5356ca82a58762fae}
+
+\item 
+void {\bfseries OnCancel} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_a5b42a987127f817607e6eabf9617d8eb}
+
+\item 
+void {\bfseries OnClose} (wxCloseEvent \&event)\label{classPrefsUnifiedDlg_a6d8a97ca75e169f0e662300e6d72cf2a}
+
+\item 
+void {\bfseries OnButtonBrowseApplication} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_a1cab88b97001abc94c8ab88728c8a04b}
+
+\item 
+void {\bfseries OnButtonDir} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_aaed137f609974542e1b50b966463e687}
+
+\item 
+void {\bfseries OnButtonEditAddr} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_acad51f79ab512c1462510e9e1bd08cbc}
+
+\item 
+void {\bfseries OnButtonColorChange} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_a8534f6c90d28c8505921f22f198cabee}
+
+\item 
+void {\bfseries OnButtonIPFilterReload} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_a804626c29d9d1d48516f8990c0c23eec}
+
+\item 
+void {\bfseries OnButtonIPFilterUpdate} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_a5ab6168ce3be0b661b9bad00ff4bba8d}
+
+\item 
+void {\bfseries OnColorCategorySelected} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_ae062a1287d1f5703802cb8223e083afc}
+
+\item 
+void {\bfseries OnCheckBoxChange} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_ae14cbe765dbf57bc12cc7bc31bd9c4ac}
+
+\item 
+void {\bfseries OnPrefsPageChange} (wxListEvent \&event)\label{classPrefsUnifiedDlg_a10d65591e03eb3454eace5dae605be85}
+
+\item 
+void {\bfseries OnToolTipDelayChange} (wxSpinEvent \&event)\label{classPrefsUnifiedDlg_a0b5320451074e47bbc0a486bae4d1a57}
+
+\item 
+void {\bfseries OnScrollBarChange} (wxScrollEvent \&event)\label{classPrefsUnifiedDlg_a0c7c603926cb89d94e506d7b5ec22bcd}
+
+\item 
+void {\bfseries OnRateLimitChanged} (wxSpinEvent \&event)\label{classPrefsUnifiedDlg_a777b5d2f3af035223efe70d651449deb}
+
+\item 
+void {\bfseries OnTCPClientPortChange} (wxSpinEvent \&event)\label{classPrefsUnifiedDlg_a35b38981c270f3201902b75cd39f7491}
+
+\item 
+void {\bfseries OnUserEventSelected} (wxListEvent \&event)\label{classPrefsUnifiedDlg_af8fd6dc3ba1f2d7a3c0abe9e6e1e5ede}
+
+\item 
+void {\bfseries OnLanguageChoice} (wxCommandEvent \&event)\label{classPrefsUnifiedDlg_af7949e2881ad78f1db04346eb809f4be}
+
+\item 
+void {\bfseries CreateEventPanels} (const int idx, const wxString \&vars, wxWindow $\ast$parent)\label{classPrefsUnifiedDlg_a31637d54d4d4d4d177265cdbf96a71a1}
+
+\item 
+void {\bfseries OnInitDialog} (wxInitDialogEvent \&evt)\label{classPrefsUnifiedDlg_ac90011227a80fc10501b744453b605fd}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CDirectoryTreeCtrl} $\ast$ {\bf m\_\-ShareSelector}\label{classPrefsUnifiedDlg_a396a826d7bec6bb5ed15871d62a4e62c}
+
+\item 
+wxChoice $\ast$ {\bf m\_\-choiceColor}\label{classPrefsUnifiedDlg_ab6b3b1e27ca9256dfb94d5a53ce4969f}
+
+\item 
+wxButton $\ast$ {\bf m\_\-buttonColor}\label{classPrefsUnifiedDlg_a4dd3866d5583e7885e766413f66dbe0a}
+
+\item 
+wxPanel $\ast$ {\bf m\_\-CurrentPanel}\label{classPrefsUnifiedDlg_ac0452c405e88820156fda709ae8c5667}
+
+\item 
+int {\bf m\_\-IndexServerTab}\label{classPrefsUnifiedDlg_a78ca03e84aa0212cb2cf984ccb689104}
+
+\item 
+bool {\bfseries m\_\-ServerTabVisible}\label{classPrefsUnifiedDlg_a2121c574a3add8779964411fb9bd827e}
+
+\item 
+wxPanel $\ast$ {\bfseries m\_\-ServerWidget}\label{classPrefsUnifiedDlg_a00b1c0903840c52d7a17bde90cc23636}
+
+\item 
+wxListCtrl $\ast$ {\bfseries m\_\-PrefsIcons}\label{classPrefsUnifiedDlg_abc90b550b2f2529ece56e8e08175d9a6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a dialog used to display preferences. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{PrefsUnifiedDlg@{PrefsUnifiedDlg}!PrefsUnifiedDlg@{PrefsUnifiedDlg}}
+\index{PrefsUnifiedDlg@{PrefsUnifiedDlg}!PrefsUnifiedDlg@{PrefsUnifiedDlg}}
+\subsubsection[{PrefsUnifiedDlg}]{\setlength{\rightskip}{0pt plus 5cm}PrefsUnifiedDlg::PrefsUnifiedDlg (wxWindow $\ast$ {\em parent})}\label{classPrefsUnifiedDlg_a7322e89dee660eeb40180ad03f140100}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em parent}]The parent window.\end{DoxyParams}
+This constructor is a much more simple version of the wxDialog one, which only needs to know the parent of the dialog. Please note that it is private so that we can ensure that only one dialog has been created at one time. 
+
+References CUserEvents::GetCount(), CLogger::GetDebugCategory(), CLogger::GetDebugCategoryCount(), CUserEvents::GetDisplayName(), CDebugCategory::GetName(), m\_\-buttonColor, m\_\-choiceColor, m\_\-CurrentPanel, PrefsPage::m\_\-function, m\_\-IndexServerTab, and m\_\-ShareSelector.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/PrefsUnifiedDlg.h\item 
+src/PrefsUnifiedDlg.cpp\end{DoxyCompactItemize}

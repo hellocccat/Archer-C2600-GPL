@@ -1,0 +1,76 @@
+\section{MuleNotify::CMuleGUIEvent Class Reference}
+\label{classMuleNotify_1_1CMuleGUIEvent}\index{MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}}
+
+
+This event is sent when a worker-\/thread makes use of a notify-\/macro.  
+
+
+{\ttfamily \#include $<$GuiEvents.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleGUIEvent} ({\bf CMuleNotiferBase} $\ast$ntf)
+\item 
+virtual {\bf $\sim$CMuleGUIEvent} ()
+\item 
+void {\bf Notify} () const 
+\item 
+virtual wxEvent $\ast$ {\bf Clone} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleGUIEvent} (const {\bf CMuleGUIEvent} \&)
+\item 
+{\bf CMuleGUIEvent} \& {\bf operator=} (const {\bf CMuleGUIEvent} \&)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleNotiferBase} $\ast$ {\bf m\_\-functor}\label{classMuleNotify_1_1CMuleGUIEvent_a739c7e1aa1a62d93887561c483a51817}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This event is sent when a worker-\/thread makes use of a notify-\/macro. This insures that all notifications are executed on the main thread, thereby improving overall threadsafety. The events are currently sent to wxTheApp. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}!CMuleGUIEvent@{CMuleGUIEvent}}
+\index{CMuleGUIEvent@{CMuleGUIEvent}!MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}}
+\subsubsection[{CMuleGUIEvent}]{\setlength{\rightskip}{0pt plus 5cm}MuleNotify::CMuleGUIEvent::CMuleGUIEvent ({\bf CMuleNotiferBase} $\ast$ {\em ntf})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classMuleNotify_1_1CMuleGUIEvent_a24b7218304fc86e0255b3208b678d29d}
+
+
+Takes ownership a notifier functor. \index{MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}!$\sim$CMuleGUIEvent@{$\sim$CMuleGUIEvent}}
+\index{$\sim$CMuleGUIEvent@{$\sim$CMuleGUIEvent}!MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}}
+\subsubsection[{$\sim$CMuleGUIEvent}]{\setlength{\rightskip}{0pt plus 5cm}virtual MuleNotify::CMuleGUIEvent::$\sim$CMuleGUIEvent ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classMuleNotify_1_1CMuleGUIEvent_a793b891473d8ec7c7a58f9052ecccfc2}
+
+
+Destructor, frees the functor object. \index{MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}!CMuleGUIEvent@{CMuleGUIEvent}}
+\index{CMuleGUIEvent@{CMuleGUIEvent}!MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}}
+\subsubsection[{CMuleGUIEvent}]{\setlength{\rightskip}{0pt plus 5cm}MuleNotify::CMuleGUIEvent::CMuleGUIEvent (const {\bf CMuleGUIEvent} \&)\hspace{0.3cm}{\ttfamily  [private]}}\label{classMuleNotify_1_1CMuleGUIEvent_abd3c72608f32de63788f35f2fcff0ebc}
+
+
+Not copyable. 
+
+\subsection{Member Function Documentation}
+\index{MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}!Clone@{Clone}}
+\index{Clone@{Clone}!MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual wxEvent$\ast$ MuleNotify::CMuleGUIEvent::Clone (void) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classMuleNotify_1_1CMuleGUIEvent_ab1bdfdc503ddc3f8a7acbf1592acb6ba}
+\begin{DoxySeeAlso}{See also}
+wxEvent::Clone 
+\end{DoxySeeAlso}
+\index{MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}!Notify@{Notify}}
+\index{Notify@{Notify}!MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}}
+\subsubsection[{Notify}]{\setlength{\rightskip}{0pt plus 5cm}void MuleNotify::CMuleGUIEvent::Notify () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classMuleNotify_1_1CMuleGUIEvent_ad748088a39632c09a3bd6f3440c9f622}
+
+
+Executes the notification. \index{MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}!operator=@{operator=}}
+\index{operator=@{operator=}!MuleNotify::CMuleGUIEvent@{MuleNotify::CMuleGUIEvent}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CMuleGUIEvent}\& MuleNotify::CMuleGUIEvent::operator= (const {\bf CMuleGUIEvent} \&)\hspace{0.3cm}{\ttfamily  [private]}}\label{classMuleNotify_1_1CMuleGUIEvent_a10e4507303728c5c14e4bd14a3971a15}
+
+
+Not assignable. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/GuiEvents.h\end{DoxyCompactItemize}

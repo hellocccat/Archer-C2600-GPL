@@ -1,0 +1,40 @@
+\section{PHP\_\-EXP\_\-NODE Struct Reference}
+\label{structPHP__EXP__NODE}\index{PHP\_\-EXP\_\-NODE@{PHP\_\-EXP\_\-NODE}}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+PHP\_\-EXP\_\-OP {\bfseries op}\label{structPHP__EXP__NODE_a8293a8013fbc08428ea4e6aeecef1b7b}
+
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>struct {\bf PHP\_EXP\_NODE} $\ast$ {\bfseries left}\\
+\>\>union \{\\
+\>\>\>struct {\bf PHP\_EXP\_NODE} $\ast$ {\bfseries right}\\
+\>\>\>struct {\bf PHP\_SYN\_NODE} $\ast$ {\bfseries syn\_right}\\
+\>\>\} \label{structPHP__EXP__NODE_1_1@23_1_1@27_aab633366c1bbe50c0d53b1b44a9c9413}
+\\
+\>\} {\bfseries tree\_node}\\
+\>struct {\bf PHP\_EXP\_NODE} $\ast$ {\bfseries next}\\
+\}; \label{structPHP__EXP__NODE_aa90ade6ad6a74a805593a6557ea04dbe}
+\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>{\bf PHP\_VALUE\_NODE} {\bfseries val\_node}\\
+\>{\bf PHP\_VAR\_NODE} $\ast$ {\bfseries var\_node}\\
+\>struct {\bf PHP\_SCOPE\_ITEM} $\ast$ {\bfseries var\_si\_node}\\
+\>struct {\bf PHP\_EXP\_NODE} $\ast$ {\bfseries exp\_node}\\
+\}; \label{structPHP__EXP__NODE_a9aabb4470dc425da9a99d991b462b63b}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/php\_\-syntree.h\end{DoxyCompactItemize}

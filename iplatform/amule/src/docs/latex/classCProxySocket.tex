@@ -1,0 +1,95 @@
+\section{CProxySocket Class Reference}
+\label{classCProxySocket}\index{CProxySocket@{CProxySocket}}
+Inheritance diagram for CProxySocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5cm]{classCProxySocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CProxySocket} (wxSocketFlags flags=wxSOCKET\_\-NONE, const {\bf CProxyData} $\ast$proxyData=NULL, CProxyCommand proxyCommand=PROXY\_\-CMD\_\-CONNECT, {\bf CDatagramSocketProxy} $\ast$udpSocket=NULL)\label{classCProxySocket_a79eda1c54c707fc3074ef1b3f6d84613}
+
+\item 
+void {\bfseries SetEventHandler} (wxEvtHandler \&handler, int id=wxID\_\-ANY)\label{classCProxySocket_a9335df72f975326b4834a1f93d3d68f3}
+
+\item 
+wxEvtHandler $\ast$ {\bfseries GetEventHandler} (void) const \label{classCProxySocket_a6a7526f4dca43a391dd2b56d5e29d26d}
+
+\item 
+int {\bfseries GetEventHandlerId} (void) const \label{classCProxySocket_a11be3f2839627b4521267049a691b359}
+
+\item 
+void {\bfseries SaveEventHandler} (void)\label{classCProxySocket_a99049602fb6499cad753de3acef7fc8c}
+
+\item 
+void {\bfseries RestoreEventHandler} (void)\label{classCProxySocket_a299ab41bd6afb0a9a0f95b7f4c8eef95}
+
+\item 
+void {\bfseries SetProxyData} (const {\bf CProxyData} $\ast$proxyData)\label{classCProxySocket_a3f69d9186957bf6dafe5d8e27a878000}
+
+\item 
+bool {\bfseries GetUseProxy} () const \label{classCProxySocket_a7664e3e9b5bb2960e226fe6038e2a47d}
+
+\item 
+char $\ast$ {\bfseries GetBuffer} ()\label{classCProxySocket_aeffffc4e0639272a53b0a771fbe010d5}
+
+\item 
+wxIPaddress \& {\bfseries GetProxyBoundAddress} (void) const \label{classCProxySocket_a66e20b3bed7196c66f878a2c5c2c780b}
+
+\item 
+bool {\bfseries Start} (const wxIPaddress \&peerAddress)\label{classCProxySocket_a9287bab4c5a1c45cd1224422b5fb1456}
+
+\item 
+bool {\bfseries ProxyIsCapableOf} (CProxyCommand proxyCommand) const \label{classCProxySocket_a1aede350846007226134b0485ecbc8a9}
+
+\item 
+bool {\bfseries ProxyNegotiationIsOver} () const \label{classCProxySocket_ab41a46dc82b5225ef2b0b8d4e3834279}
+
+\item 
+{\bf CDatagramSocketProxy} $\ast$ {\bfseries GetUDPSocket} () const \label{classCProxySocket_afb2238e33a260631daa04beb74c8a39e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-useProxy}\label{classCProxySocket_ab8e4cbb9c5a2189504ccf1b8c5eb424a}
+
+\item 
+{\bf CProxyData} {\bfseries m\_\-proxyData}\label{classCProxySocket_a969fcbae1d22079fb0da0254010ccfb5}
+
+\item 
+{\bf amuleIPV4Address} {\bfseries m\_\-proxyAddress}\label{classCProxySocket_a6060fcaf25f668e10405b2df118e6397}
+
+\item 
+{\bf CProxyStateMachine} $\ast$ {\bfseries m\_\-proxyStateMachine}\label{classCProxySocket_aea92d15f49aa8ecdb020265fcd417e18}
+
+\item 
+{\bf CDatagramSocketProxy} $\ast$ {\bfseries m\_\-udpSocket}\label{classCProxySocket_ace570bd67814b6dd72f22f1d4400c178}
+
+\item 
+wxEvtHandler $\ast$ {\bfseries m\_\-socketEventHandler}\label{classCProxySocket_a13fb46a495d278a2d49cbc1a3c80fb8c}
+
+\item 
+int {\bfseries m\_\-socketEventHandlerId}\label{classCProxySocket_a490dec35046c9ca024f7687a6538995d}
+
+\item 
+wxEvtHandler $\ast$ {\bfseries m\_\-savedSocketEventHandler}\label{classCProxySocket_a5b4ee327b021e07cf5c8dd572a30830c}
+
+\item 
+int {\bfseries m\_\-savedSocketEventHandlerId}\label{classCProxySocket_adad4b3bb091f34b7ed6c858b9f9bb4d3}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CProxyEventHandler}\label{classCProxySocket_a4a9c4979d59b5a0635dcbd1cbf893216}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Proxy.h\item 
+src/Proxy.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+\section{CHTTPDownloadThread Class Reference}
+\label{classCHTTPDownloadThread}\index{CHTTPDownloadThread@{CHTTPDownloadThread}}
+Inheritance diagram for CHTTPDownloadThread::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCHTTPDownloadThread}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CHTTPDownloadThread} (const wxString \&url, const wxString \&filename, const wxString \&oldfilename, HTTP\_\-Download\_\-File file\_\-id, bool showDialog, bool checkDownloadNewer)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries StopAll} ()\label{classCHTTPDownloadThread_a43eb4fe22933ea4820fa43824983fc4a}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::set$<$ {\bf CHTTPDownloadThread} $\ast$ $>$ {\bfseries ThreadSet}\label{classCHTTPDownloadThread_a62912f647770b8e8dbfcc454c1e2e152}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+ExitCode {\bfseries Entry} ()\label{classCHTTPDownloadThread_a68a1db04d6c52f364d650ff0a1bc9a6c}
+
+\item 
+virtual void {\bfseries OnExit} ()\label{classCHTTPDownloadThread_a9e5db23e5f92ebafeb54b83518862f42}
+
+\item 
+wxInputStream $\ast$ {\bf GetInputStream} (wxHTTP $\ast$\&url\_\-handler, const wxString \&location, bool proxy)\label{classCHTTPDownloadThread_aef2d77af52d585142efa6e36999d29a1}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wxString {\bfseries FormatDateHTTP} (const wxDateTime \&date)\label{classCHTTPDownloadThread_a84c04d035dc09760442335aca9f35255}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-url}\label{classCHTTPDownloadThread_a9aaa2d873e7e8961a35ab0c572c1a43f}
+
+\item 
+wxString {\bfseries m\_\-tempfile}\label{classCHTTPDownloadThread_ac68c9002d7cb3132d206dfe4f7bcaf8b}
+
+\item 
+wxDateTime {\bfseries m\_\-lastmodified}\label{classCHTTPDownloadThread_a1f4cf9b5019c9c925ba85dfbfebf07a3}
+
+\item 
+int {\bf m\_\-result}\label{classCHTTPDownloadThread_a0c1d31a7df5fb109d724a04aab14066a}
+
+\item 
+int {\bfseries m\_\-response}\label{classCHTTPDownloadThread_a95c245463c6e59d622a40e8330d1f4d3}
+
+\item 
+int {\bf m\_\-error}\label{classCHTTPDownloadThread_a9b2c1824d4a5057cf3a17786497d4d0c}
+
+\item 
+HTTP\_\-Download\_\-File {\bf m\_\-file\_\-id}
+\item 
+wxEvtHandler $\ast$ {\bfseries m\_\-companion}\label{classCHTTPDownloadThread_ab6e89c99962030758d7b0803b8f2f82c}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static ThreadSet {\bfseries s\_\-allThreads}\label{classCHTTPDownloadThread_ad21170e2a52f852cf497767088863074}
+
+\item 
+static wxMutex {\bfseries s\_\-allThreadsMutex}\label{classCHTTPDownloadThread_acb419d83fb83f42671b2d9b8d70bc407}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CHTTPDownloadThread@{CHTTPDownloadThread}!CHTTPDownloadThread@{CHTTPDownloadThread}}
+\index{CHTTPDownloadThread@{CHTTPDownloadThread}!CHTTPDownloadThread@{CHTTPDownloadThread}}
+\subsubsection[{CHTTPDownloadThread}]{\setlength{\rightskip}{0pt plus 5cm}CHTTPDownloadThread::CHTTPDownloadThread (const wxString \& {\em url}, \/  const wxString \& {\em filename}, \/  const wxString \& {\em oldfilename}, \/  HTTP\_\-Download\_\-File {\em file\_\-id}, \/  bool {\em showDialog}, \/  bool {\em checkDownloadNewer})}\label{classCHTTPDownloadThread_a5fe1eaf0ab12e96abe999bffb5dc7994}
+
+
+Note: wxChar$\ast$ is used to circumvent the thread-\/unsafe wxString reference counting. 
+
+\subsection{Member Data Documentation}
+\index{CHTTPDownloadThread@{CHTTPDownloadThread}!m\_\-file\_\-id@{m\_\-file\_\-id}}
+\index{m\_\-file\_\-id@{m\_\-file\_\-id}!CHTTPDownloadThread@{CHTTPDownloadThread}}
+\subsubsection[{m\_\-file\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}HTTP\_\-Download\_\-File {\bf CHTTPDownloadThread::m\_\-file\_\-id}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCHTTPDownloadThread_a0f48b1fae046a2b6b285b32cd6babdc8}
+
+
+Additional error code (. \begin{DoxySeeAlso}{See also}
+wxProtocol class) 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/HTTPDownload.h\item 
+src/HTTPDownload.cpp\end{DoxyCompactItemize}

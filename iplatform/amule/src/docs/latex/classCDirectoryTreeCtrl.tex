@@ -1,0 +1,113 @@
+\section{CDirectoryTreeCtrl Class Reference}
+\label{classCDirectoryTreeCtrl}\index{CDirectoryTreeCtrl@{CDirectoryTreeCtrl}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ {\bf CPath} $>$ {\bfseries PathList}\label{classCDirectoryTreeCtrl_a9b82edebb70022eb331676f5f8c94d6e}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CDirectoryTreeCtrl} (wxWindow $\ast$parent, int id, const wxPoint \&pos, wxSize siz, int flags)\label{classCDirectoryTreeCtrl_abf7f5c449e4fb265cc2e28a5cf4ece1b}
+
+\item 
+void {\bfseries GetSharedDirectories} (PathList $\ast$list)\label{classCDirectoryTreeCtrl_a214c891eb774abb666ef82c8ad42ccf9}
+
+\item 
+void {\bfseries SetSharedDirectories} (PathList $\ast$list)\label{classCDirectoryTreeCtrl_aadab5167e29e02d9b5ca734e9781891f}
+
+\item 
+void {\bfseries Init} ()\label{classCDirectoryTreeCtrl_a538bb22302757bb7e453377a1a24a94f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries HasChanged}\label{classCDirectoryTreeCtrl_a5e980c02d6f39c7f64a78c134821db6d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::pair$<$ wxString, {\bf CPath} $>$ {\bfseries SharedMapItem}\label{classCDirectoryTreeCtrl_af0371c02410d41acf2620fda82a71cca}
+
+\item 
+typedef std::map$<$ wxString, {\bf CPath} $>$ {\bfseries SharedMap}\label{classCDirectoryTreeCtrl_a869e1589d1eee58bfb52ec8e6c95e350}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries AddChildItem} (wxTreeItemId hBranch, const {\bf CPath} \&item)\label{classCDirectoryTreeCtrl_ab309a3553e437c07483b4cc8fb142b85}
+
+\item 
+void {\bfseries AddSubdirectories} (wxTreeItemId hBranch, const {\bf CPath} \&path)\label{classCDirectoryTreeCtrl_af74eac8ede4c4fa41597fc2c6623f8d6}
+
+\item 
+bool {\bfseries HasSubdirectories} (const {\bf CPath} \&path)\label{classCDirectoryTreeCtrl_a4737c7085cbf3f2a96e61acdd7998cdf}
+
+\item 
+{\bf CPath} {\bfseries GetFullPath} (wxTreeItemId hItem)\label{classCDirectoryTreeCtrl_ad8fd6761e20a7f05832a2e840d120156}
+
+\item 
+void {\bfseries CheckChanged} (wxTreeItemId hItem, bool bChecked, bool recursed)\label{classCDirectoryTreeCtrl_aa49854c3e6c3290de9c437d63ce13c9d}
+
+\item 
+bool {\bfseries HasSharedSubdirectory} (const {\bf CPath} \&path)\label{classCDirectoryTreeCtrl_aa541bbb4bf58879032d35d3cef2283b5}
+
+\item 
+void {\bfseries UpdateSharedDirectories} ()\label{classCDirectoryTreeCtrl_a3ad30761b7a4a597a9468abbcf4ff5f4}
+
+\item 
+void {\bfseries UpdateParentItems} (wxTreeItemId hChild, bool add)\label{classCDirectoryTreeCtrl_afbeb9a846aa230bda3f1df999be3a8c5}
+
+\item 
+void {\bfseries SetHasSharedSubdirectory} (wxTreeItemId hItem, bool add)\label{classCDirectoryTreeCtrl_a7e3269ed1352734ab4a99a74430a6238}
+
+\item 
+bool {\bfseries IsShared} (const {\bf CPath} \&path)\label{classCDirectoryTreeCtrl_aadf20ca13404f4d1855d0b8e302f4b52}
+
+\item 
+void {\bfseries AddShare} (const {\bf CPath} \&path)\label{classCDirectoryTreeCtrl_ac48f34e7594575ff8680d210667bdcd2}
+
+\item 
+void {\bfseries DelShare} (const {\bf CPath} \&path)\label{classCDirectoryTreeCtrl_a0a691c515fed2686a9a19a4411bf1e40}
+
+\item 
+void {\bfseries MarkChildren} (wxTreeItemId hChild, bool mark, bool recursed)\label{classCDirectoryTreeCtrl_a33b3a0054213aef194d58fe81913837d}
+
+\item 
+void {\bfseries OnItemExpanding} (wxTreeEvent \&evt)\label{classCDirectoryTreeCtrl_a5728ce83028836ffdb32e6aff4ec0110}
+
+\item 
+void {\bfseries OnRButtonDown} (wxTreeEvent \&evt)\label{classCDirectoryTreeCtrl_a6b240fe087c27923f1c61e1961d3cd61}
+
+\item 
+void {\bfseries OnItemActivated} (wxTreeEvent \&evt)\label{classCDirectoryTreeCtrl_a394b549f16cfcec90f91d393e756c6c0}
+
+\item 
+wxString {\bfseries GetKey} (const {\bf CPath} \&path)\label{classCDirectoryTreeCtrl_a7ba577b94239e581b05297ed81933e0f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SharedMap {\bfseries m\_\-lstShared}\label{classCDirectoryTreeCtrl_a946110448bad5c9c6232d1fb8307c1e4}
+
+\item 
+bool {\bfseries m\_\-IsInit}\label{classCDirectoryTreeCtrl_ae11c6dcf2af5a87cd48c05a93ed2f38f}
+
+\item 
+bool {\bfseries m\_\-IsRemote}\label{classCDirectoryTreeCtrl_ac1f8dcd1893c25dc7fc9ebf236c1a62a}
+
+\item 
+wxTreeItemId {\bfseries m\_\-root}\label{classCDirectoryTreeCtrl_a3071dbd94a48fecca6026fde603d5034}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/DirectoryTreeCtrl.h\item 
+src/DirectoryTreeCtrl.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,1440 @@
+\section{CPreferences Class Reference}
+\label{classCPreferences}\index{CPreferences@{CPreferences}}
+Inheritance diagram for CPreferences::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCPreferences}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ {\bf CPath} $>$ {\bfseries PathList}\label{classCPreferences_aa9984e7d9fc122040369546290abb9c8}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPreferences} ()\label{classCPreferences_ac27affe5edeef4cbdf146cb796aa88ce}
+
+\item 
+void {\bfseries Save} ()\label{classCPreferences_a9610efa3f898fe8f7199c23e1bcc3088}
+
+\item 
+void {\bfseries SaveCats} ()\label{classCPreferences_a25473909263352807da54647e136fc2f}
+
+\item 
+void {\bfseries ReloadSharedFolders} ()\label{classCPreferences_a984a1ae6548c355feca25a064d5b2c00}
+
+\item 
+void {\bfseries LoadCats} ()\label{classCPreferences_a4e484659d4e0e9f6958b75b685b75b8e}
+
+\item 
+uint32 {\bfseries AddCat} ({\bf Category\_\-Struct} $\ast$cat)\label{classCPreferences_ae380943fd5b5cada7f66bee76ba251fe}
+
+\item 
+void {\bfseries RemoveCat} (size\_\-t index)\label{classCPreferences_acbe48fc276a338a5f9dc66f15dd620be}
+
+\item 
+uint32 {\bfseries GetCatCount} ()\label{classCPreferences_ad8f3357001365da80f28f00fd5bb2b25}
+
+\item 
+{\bf Category\_\-Struct} $\ast$ {\bfseries GetCategory} (size\_\-t index)\label{classCPreferences_a25a2d4ccab11066b55715187516bf628}
+
+\item 
+const {\bf CPath} \& {\bfseries GetCatPath} (uint8 index)\label{classCPreferences_adb73e8798de2200a2a915807753bac79}
+
+\item 
+uint32 {\bfseries GetCatColor} (size\_\-t index)\label{classCPreferences_ab3b2e4c32d64aaa600cb3ee61a8cfd51}
+
+\item 
+bool {\bfseries CreateCategory} ({\bf Category\_\-Struct} $\ast$\&category, const wxString \&name, const {\bf CPath} \&path, const wxString \&comment, uint32 color, uint8 prio)\label{classCPreferences_a05f83c31ed6aab93241363e24736eb68}
+
+\item 
+bool {\bfseries UpdateCategory} (uint8 cat, const wxString \&name, const {\bf CPath} \&path, const wxString \&comment, uint32 color, uint8 prio)\label{classCPreferences_aa391e44d95a871d8d6a1e8faf6367a5f}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries Score} ()\label{classCPreferences_a403950e0a22e345e195516692a5b7036}
+
+\item 
+static void {\bfseries SetScoreSystem} (bool val)\label{classCPreferences_af17cb0ade438bd2266e350056333820b}
+
+\item 
+static bool {\bfseries Reconnect} ()\label{classCPreferences_af8d2d24270f6d00007fb063ea35c6f13}
+
+\item 
+static void {\bfseries SetReconnect} (bool val)\label{classCPreferences_ad863a3a365124df91c2809ed60331ddb}
+
+\item 
+static bool {\bfseries DeadServer} ()\label{classCPreferences_ab763e5a97772d39480e897a3d3a94626}
+
+\item 
+static void {\bfseries SetDeadServer} (bool val)\label{classCPreferences_a237b7d5f3998a4e098d043815916a571}
+
+\item 
+static const wxString \& {\bfseries GetUserNick} ()\label{classCPreferences_ac371946b4d4cf3ea76387dbfb8bba011}
+
+\item 
+static void {\bfseries SetUserNick} (const wxString \&nick)\label{classCPreferences_a943f6d54fc13c5330b47bcc67ac42fde}
+
+\item 
+static {\bf Cfg\_\-Lang\_\-Base} $\ast$ {\bfseries GetCfgLang} ()\label{classCPreferences_a7b82416d442bc0a55754ffbd43d1c954}
+
+\item 
+static const wxString \& {\bfseries GetAddress} ()\label{classCPreferences_a0f73bf5263d9d73a132b408f3b23a192}
+
+\item 
+static uint16 {\bfseries GetPort} ()\label{classCPreferences_ac9661a958045a0fced85639f20c157d0}
+
+\item 
+static void {\bfseries SetPort} (uint16 val)\label{classCPreferences_afa5508ebc938cbe2547cabb4413eb26f}
+
+\item 
+static uint16 {\bfseries GetUDPPort} ()\label{classCPreferences_aff79ffdd5cea79a80d849c4b8515b7c3}
+
+\item 
+static uint16 {\bfseries GetEffectiveUDPPort} ()\label{classCPreferences_acbc5e8c8ed75edae49a446ad32495233}
+
+\item 
+static void {\bfseries SetUDPPort} (uint16 val)\label{classCPreferences_ae67ae1026d8d51f533d632bf442409cc}
+
+\item 
+static bool {\bfseries IsUDPDisabled} ()\label{classCPreferences_a9a0ca76c7303271cf068464ebcac833e}
+
+\item 
+static void {\bfseries SetUDPDisable} (bool val)\label{classCPreferences_adae948dc5137901471d963382c9cb403}
+
+\item 
+static const {\bf CPath} \& {\bfseries GetIncomingDir} ()\label{classCPreferences_a60df2f2d03ece03f4caf6ee6f61d7978}
+
+\item 
+static void {\bfseries SetIncomingDir} (const {\bf CPath} \&dir)\label{classCPreferences_a7c7fd4e0094d1f27056cbda67ad491cd}
+
+\item 
+static const {\bf CPath} \& {\bfseries GetTempDir} ()\label{classCPreferences_a774aa10723a5e9d4d81371d4a7032f26}
+
+\item 
+static void {\bfseries SetTempDir} (const {\bf CPath} \&dir)\label{classCPreferences_ad662b8c9712dbd72b982d6eebe12e2a5}
+
+\item 
+static const {\bf CMD4Hash} \& {\bfseries GetUserHash} ()\label{classCPreferences_aace546597447e73657246de83d7b9365}
+
+\item 
+static void {\bfseries SetUserHash} (const {\bf CMD4Hash} \&h)\label{classCPreferences_a1e185ac33ff547d891c55a148da93ac2}
+
+\item 
+static uint16 {\bfseries GetMaxUpload} ()\label{classCPreferences_a59225b244bdb63c61210bf0375d86302}
+
+\item 
+static uint16 {\bfseries GetSlotAllocation} ()\label{classCPreferences_a877a7ae716dcfa113e2397474e3e7975}
+
+\item 
+static bool {\bfseries IsICHEnabled} ()\label{classCPreferences_a9d007674671e33a25bb234645e768276}
+
+\item 
+static void {\bfseries SetICHEnabled} (bool val)\label{classCPreferences_a0dcd3e72d87a2420deae2e79e47ce46e}
+
+\item 
+static bool {\bfseries IsTrustingEveryHash} ()\label{classCPreferences_a91910ec5e60677487e0f438a88d9d608}
+
+\item 
+static void {\bfseries SetTrustingEveryHash} (bool val)\label{classCPreferences_a191305d404fb5882b21986c6ed658e75}
+
+\item 
+static bool {\bfseries AutoServerlist} ()\label{classCPreferences_a77b82543713b8afe60f686505b2e5fe0}
+
+\item 
+static void {\bfseries SetAutoServerlist} (bool val)\label{classCPreferences_ac9cf08af8d87c83a5e8668b2e9c19d98}
+
+\item 
+static bool {\bfseries DoMinToTray} ()\label{classCPreferences_aa0f0812e8f8b51daddd7206bf66b51d5}
+
+\item 
+static void {\bfseries SetMinToTray} (bool val)\label{classCPreferences_ad24157f790eb33830081b410641b4754}
+
+\item 
+static bool {\bfseries UseTrayIcon} ()\label{classCPreferences_a2cc533b4b9ef16da2f48ed5c02eca62e}
+
+\item 
+static void {\bfseries SetUseTrayIcon} (bool val)\label{classCPreferences_a9840384fa4d5ce9a73800cce13f1243e}
+
+\item 
+static bool {\bfseries HideOnClose} ()\label{classCPreferences_a8cc2c5e78bd07f470e246d6c2ed6f2c7}
+
+\item 
+static void {\bfseries SetHideOnClose} (bool val)\label{classCPreferences_ab0cff9a3e5c61b9b53398a8c531cd14a}
+
+\item 
+static bool {\bfseries DoAutoConnect} ()\label{classCPreferences_a6a4202fd692fe048899ae927b7828497}
+
+\item 
+static void {\bfseries SetAutoConnect} (bool inautoconnect)\label{classCPreferences_abd687f82bdcdebaa27c3769a878f2d5f}
+
+\item 
+static bool {\bfseries AddServersFromServer} ()\label{classCPreferences_a7c59b3bf83307ddd8c6997d475d79d03}
+
+\item 
+static void {\bfseries SetAddServersFromServer} (bool val)\label{classCPreferences_aed233b782aed03f676ec8a8d82022164}
+
+\item 
+static bool {\bfseries AddServersFromClient} ()\label{classCPreferences_a3a675dc0eed1b9646aa7a3f2af231788}
+
+\item 
+static void {\bfseries SetAddServersFromClient} (bool val)\label{classCPreferences_a2a6cca1f8f1e5e6bc7e6a25e43a45552}
+
+\item 
+static uint16 {\bfseries GetTrafficOMeterInterval} ()\label{classCPreferences_a6f8ca392bc4dba5a66d20f52157a8f50}
+
+\item 
+static void {\bfseries SetTrafficOMeterInterval} (uint16 in)\label{classCPreferences_a830bca68184fb50cd70e4cce15635d2e}
+
+\item 
+static uint16 {\bfseries GetStatsInterval} ()\label{classCPreferences_a71e334ffc64678d8dc741fb41a611ef2}
+
+\item 
+static void {\bfseries SetStatsInterval} (uint16 in)\label{classCPreferences_a296b6e8e7fcd6c4c23e0d588f0e87fe4}
+
+\item 
+static bool {\bfseries IsConfirmExitEnabled} ()\label{classCPreferences_a9530dca053c48bd9f4d480e86e337249}
+
+\item 
+static bool {\bfseries FilterLanIPs} ()\label{classCPreferences_a7022cf71f9b8a85baefdaecfd3e9c07a}
+
+\item 
+static void {\bfseries SetFilterLanIPs} (bool val)\label{classCPreferences_a73aa541ac0ededf0618794a441684777}
+
+\item 
+static bool {\bfseries ParanoidFilter} ()\label{classCPreferences_ade4eec793c4794fc93a6942707128544}
+
+\item 
+static void {\bfseries SetParanoidFilter} (bool val)\label{classCPreferences_afcfd3c908ac95a85be47d721422af1e3}
+
+\item 
+static bool {\bfseries IsOnlineSignatureEnabled} ()\label{classCPreferences_afc0616773fa15e4b1f7e18578e3dbb47}
+
+\item 
+static void {\bfseries SetOnlineSignatureEnabled} (bool val)\label{classCPreferences_ab91a75fa8c5f9c95876fa2c3ac13088f}
+
+\item 
+static uint32 {\bfseries GetMaxGraphUploadRate} ()\label{classCPreferences_abefc060076c840f9362110ebd9bbb9b1}
+
+\item 
+static uint32 {\bfseries GetMaxGraphDownloadRate} ()\label{classCPreferences_a78d039c658d77c2bd65c1c3148ddfe7b}
+
+\item 
+static void {\bfseries SetMaxGraphUploadRate} (uint32 in)\label{classCPreferences_a2deaab5bcd5b500e7542ab7317ae18a4}
+
+\item 
+static void {\bfseries SetMaxGraphDownloadRate} (uint32 in)\label{classCPreferences_a8110837e8b6d6333f85f5485c3877bdc}
+
+\item 
+static uint16 {\bfseries GetMaxDownload} ()\label{classCPreferences_aa1ef1fdb6e20fed05b02c173caa7f9db}
+
+\item 
+static uint16 {\bfseries GetMaxConnections} ()\label{classCPreferences_a76f44c45b1940c17d6e2bd42853badd7}
+
+\item 
+static uint16 {\bfseries GetMaxSourcePerFile} ()\label{classCPreferences_a02815a8120f66bef437393314cc779fd}
+
+\item 
+static uint16 {\bfseries GetMaxSourcePerFileSoft} ()\label{classCPreferences_afff84a1bc20afc812e785a0b2bbcae00}
+
+\item 
+static uint16 {\bfseries GetMaxSourcePerFileUDP} ()\label{classCPreferences_a7ad6be07598acf0c57943c30f1869b9d}
+
+\item 
+static uint16 {\bfseries GetDeadserverRetries} ()\label{classCPreferences_a01a6e2f41fa0145ec70ec7316c4b94e7}
+
+\item 
+static void {\bfseries SetDeadserverRetries} (uint16 val)\label{classCPreferences_ada9a6e99867b1898f35a0f8381843a5c}
+
+\item 
+static uint32 {\bfseries GetServerKeepAliveTimeout} ()\label{classCPreferences_a52a13ef8af11a84798652c8a52f138c6}
+
+\item 
+static void {\bfseries SetServerKeepAliveTimeout} (uint32 val)\label{classCPreferences_ac3fb28704679ec423b90a307212ef147}
+
+\item 
+static const wxString \& {\bfseries GetLanguageID} ()\label{classCPreferences_a8f98ebf8242c46d92f3d0d01512722d2}
+
+\item 
+static void {\bfseries SetLanguageID} (const wxString \&new\_\-id)\label{classCPreferences_a876096fa28d9bddaccbc53a458290e0c}
+
+\item 
+static uint8 {\bfseries CanSeeShares} ()\label{classCPreferences_a52abe2888c3dc11d048e847adf2c6c35}
+
+\item 
+static void {\bfseries SetCanSeeShares} (uint8 val)\label{classCPreferences_ad6b0ccc342c0bf3fe01db52acdf57773}
+
+\item 
+static uint8 {\bfseries GetStatsMax} ()\label{classCPreferences_acb362d0bb023cec9e9cae83f8f6f33f4}
+
+\item 
+static bool {\bfseries UseFlatBar} ()\label{classCPreferences_a5273c900d81074c77960984418dba5ba}
+
+\item 
+static uint8 {\bfseries GetStatsAverageMinutes} ()\label{classCPreferences_a4f124e32828fbbc2b884f44e3de51665}
+
+\item 
+static void {\bfseries SetStatsAverageMinutes} (uint8 in)\label{classCPreferences_acea2ba5bab086f7a5dd6bfab3d9a8f36}
+
+\item 
+static bool {\bfseries GetStartMinimized} ()\label{classCPreferences_ac6cd01538f2f51986391fd94cdb6a257}
+
+\item 
+static void {\bfseries SetStartMinimized} (bool instartMinimized)\label{classCPreferences_a01a370c7119a518bc9b7d9e0d775f3ea}
+
+\item 
+static bool {\bfseries GetSmartIdCheck} ()\label{classCPreferences_a14cb6ea482ee526ae2772b59feac275b}
+
+\item 
+static void {\bfseries SetSmartIdCheck} (bool in\_\-smartidcheck)\label{classCPreferences_a378d464bc05046b579c316e31a2f8e99}
+
+\item 
+static uint8 {\bfseries GetSmartIdState} ()\label{classCPreferences_a27b409b2fe5c07948c65c048bdf92acf}
+
+\item 
+static void {\bfseries SetSmartIdState} (uint8 in\_\-smartidstate)\label{classCPreferences_abcc0d48508097977537220fc10ec4466}
+
+\item 
+static bool {\bfseries GetVerbose} ()\label{classCPreferences_a2cd9048f7e6d7a63c2a61da9503fa22c}
+
+\item 
+static void {\bfseries SetVerbose} (bool val)\label{classCPreferences_a9e4a1a039561832d9028ec1c0195beda}
+
+\item 
+static bool {\bfseries GetPreviewPrio} ()\label{classCPreferences_a4f1d30be3267e7c33d16453a1f2d58cc}
+
+\item 
+static void {\bfseries SetPreviewPrio} (bool in)\label{classCPreferences_af103be3ce45cbf736b7dd9dbde73f6b1}
+
+\item 
+static bool {\bfseries StartNextFile} ()\label{classCPreferences_a931f589d256eed3131d08ad0fb5c4280}
+
+\item 
+static bool {\bfseries StartNextFileSame} ()\label{classCPreferences_abe907c142908d40066c6c651cc3318cd}
+
+\item 
+static bool {\bfseries StartNextFileAlpha} ()\label{classCPreferences_a605c646f46819c364f04a729d03479d7}
+
+\item 
+static void {\bfseries SetStartNextFile} (bool val)\label{classCPreferences_ace9a75115a565912db4740c0322f7b9d}
+
+\item 
+static void {\bfseries SetStartNextFileSame} (bool val)\label{classCPreferences_ad0df7a199c6f1ce71e92d0368fe349f8}
+
+\item 
+static void {\bfseries SetStartNextFileAlpha} (bool val)\label{classCPreferences_a7942aba4fd44a50eb8e32aa0d108b071}
+
+\item 
+static bool {\bfseries ShowOverhead} ()\label{classCPreferences_aa2ff92baaab0a7996ac7a1347773d930}
+
+\item 
+static void {\bfseries SetNewAutoUp} (bool m\_\-bInUAP)\label{classCPreferences_aedcc5c513319e8affa76bbacbf74912a}
+
+\item 
+static bool {\bfseries GetNewAutoUp} ()\label{classCPreferences_a4ae1f3af2dd2cc0aa50b466a279c1095}
+
+\item 
+static void {\bfseries SetNewAutoDown} (bool m\_\-bInDAP)\label{classCPreferences_a900f0d233ab0b00fb91b9982f856339c}
+
+\item 
+static bool {\bfseries GetNewAutoDown} ()\label{classCPreferences_af483029d79a1d673b63ba3847f559cd7}
+
+\item 
+static const wxString \& {\bfseries GetVideoPlayer} ()\label{classCPreferences_a9b82041d9a7ebda1e9b80a2b0e37fae0}
+
+\item 
+static uint32 {\bfseries GetFileBufferSize} ()\label{classCPreferences_a3e0cb4b837ea40d72408ab0c2e45dd61}
+
+\item 
+static void {\bfseries SetFileBufferSize} (uint32 val)\label{classCPreferences_adc8cd56a2a10b67c694f39fccc25fcdd}
+
+\item 
+static uint32 {\bfseries GetQueueSize} ()\label{classCPreferences_a365188bc431fbd55e89ee4c84a73b2d3}
+
+\item 
+static void {\bfseries SetQueueSize} (uint32 val)\label{classCPreferences_af4591452705cc3fc1bfabe1d5db52a2f}
+
+\item 
+static uint8 {\bfseries Get3DDepth} ()\label{classCPreferences_af3706780341c2d58bbee54bd02c76323}
+
+\item 
+static bool {\bfseries AddNewFilesPaused} ()\label{classCPreferences_aa1aeea48735a2799045c25e0a3a3be7b}
+
+\item 
+static void {\bfseries SetAddNewFilesPaused} (bool val)\label{classCPreferences_a9e3bf45ca8798cbdbf07c69ac9e16ce4}
+
+\item 
+static void {\bfseries SetMaxConsPerFive} (int in)\label{classCPreferences_a0c23c86f7a02d384041899dd0035ceb4}
+
+\item 
+static uint16 {\bfseries GetMaxConperFive} ()\label{classCPreferences_af84b2c94aa6891c2b546b3fb5bad294b}
+
+\item 
+static uint16 {\bfseries GetDefaultMaxConperFive} ()\label{classCPreferences_a23508a3ca2b23f56ac676a2c4419e51d}
+
+\item 
+static bool {\bfseries IsSafeServerConnectEnabled} ()\label{classCPreferences_ad3d1503088a632a1a5cdc1d398be978f}
+
+\item 
+static void {\bfseries SetSafeServerConnectEnabled} (bool val)\label{classCPreferences_a5ca4abc26dcea201044bb82e036a9727}
+
+\item 
+static bool {\bfseries IsCheckDiskspaceEnabled} ()\label{classCPreferences_a8d9776a388dc9efdcf7005af36485ad8}
+
+\item 
+static void {\bfseries SetCheckDiskspaceEnabled} (bool val)\label{classCPreferences_a94005a8d94d007aec44fa4d4890c185e}
+
+\item 
+static uint32 {\bfseries GetMinFreeDiskSpaceMB} ()\label{classCPreferences_a02f8c5c91dc7d4e3fbf377633ee78495}
+
+\item 
+static uint64 {\bfseries GetMinFreeDiskSpace} ()\label{classCPreferences_ab88ea1b019f22d6645d1c1db2b0b0177}
+
+\item 
+static void {\bfseries SetMinFreeDiskSpaceMB} (uint32 val)\label{classCPreferences_a9b703e237cd435acabcff059b45eb057}
+
+\item 
+static const wxString \& {\bfseries GetYourHostname} ()\label{classCPreferences_ae66b1679f21197932a140245dc1db31c}
+
+\item 
+static void {\bfseries SetYourHostname} (const wxString \&s)\label{classCPreferences_aa00347dd0227c3fadd2e41af0ac55b2f}
+
+\item 
+static void {\bfseries SetMaxUpload} (uint16 in)\label{classCPreferences_a32ce419161ec5e16fa8ed08fbf193ea9}
+
+\item 
+static void {\bfseries SetMaxDownload} (uint16 in)\label{classCPreferences_a71886a90d5757e46c8a76ad1772dcb29}
+
+\item 
+static void {\bfseries SetSlotAllocation} (uint16 in)\label{classCPreferences_a8c760ff5a7dc55ead73e19500adaad7b}
+
+\item 
+static bool {\bfseries AutoConnectStaticOnly} ()\label{classCPreferences_afabff133d400b3e28909f7f2648204c6}
+
+\item 
+static void {\bfseries SetAutoConnectStaticOnly} (bool val)\label{classCPreferences_aaf2fccdd971c1836a9b72c02e58b58e2}
+
+\item 
+static bool {\bfseries GetUPnPEnabled} ()\label{classCPreferences_acd434a0c61ee9d5cc5664f05ed7e00fc}
+
+\item 
+static void {\bfseries SetUPnPEnabled} (bool val)\label{classCPreferences_a0bdda406d9f5587e48a0ae1a75584fea}
+
+\item 
+static bool {\bfseries GetUPnPECEnabled} ()\label{classCPreferences_ad226d33310c184980339c674f08be4b9}
+
+\item 
+static void {\bfseries SetUPnPECEnabled} (bool val)\label{classCPreferences_aae2b68dc96b72b3edafaba5135746c7a}
+
+\item 
+static bool {\bfseries GetUPnPWebServerEnabled} ()\label{classCPreferences_a1b4f5ca36979fe487f38f885543cd057}
+
+\item 
+static void {\bfseries SetUPnPWebServerEnabled} (bool val)\label{classCPreferences_a0aedd7ce60dc8703c56ce8fb58513e41}
+
+\item 
+static uint16 {\bfseries GetUPnPTCPPort} ()\label{classCPreferences_aa3129566ef98eb2634cd672d1389178e}
+
+\item 
+static void {\bfseries SetUPnPTCPPort} (uint16 val)\label{classCPreferences_a7eff52fcd557670440c916b06e90ad46}
+
+\item 
+static bool {\bfseries IsManualHighPrio} ()\label{classCPreferences_a368ba35d9625dbfc6d0bf860dc726cdf}
+
+\item 
+static void {\bfseries SetManualHighPrio} (bool val)\label{classCPreferences_af0cc72a23a65e756b8118247ac71bc5f}
+
+\item 
+static const wxString \& {\bfseries GetDateTimeFormat} ()\label{classCPreferences_aa9fc1de74d95e77ec0bd6afa3a706ed8}
+
+\item 
+static AllCategoryFilter {\bfseries GetAllcatFilter} ()\label{classCPreferences_ac044a6fe68108da80b36fee9f71678e5}
+
+\item 
+static void {\bfseries SetAllcatFilter} (AllCategoryFilter in)\label{classCPreferences_aaed05ec6636438c23b289eecf2781e87}
+
+\item 
+static bool {\bfseries ShowAllNotCats} ()\label{classCPreferences_ae691b188e634b9ae4936cb1a30afbf7d}
+
+\item 
+static uint16 {\bfseries GetWSPort} ()\label{classCPreferences_a3f5f1eb73346838ab4d849b3ced46970}
+
+\item 
+static void {\bfseries SetWSPort} (uint16 uPort)\label{classCPreferences_a240489beb499c7471eb71a5e3984eed6}
+
+\item 
+static uint16 {\bfseries GetWebUPnPTCPPort} ()\label{classCPreferences_a77501cbb2b95a3035578956f20552470}
+
+\item 
+static void {\bfseries SetWebUPnPTCPPort} (uint16 val)\label{classCPreferences_a05b988df72d145954c6b9bd70ec4abab}
+
+\item 
+static const wxString \& {\bfseries GetWSPass} ()\label{classCPreferences_a772cadd40771902a11d784500d02c95f}
+
+\item 
+static void {\bfseries SetWSPass} (const wxString \&pass)\label{classCPreferences_aed6632b4a4e79ffddcd7e1c70e37edbe}
+
+\item 
+static const wxString \& {\bfseries GetWSPath} ()\label{classCPreferences_ac212f350fecf70dd4c59ff42177d425e}
+
+\item 
+static void {\bfseries SetWSPath} (const wxString \&path)\label{classCPreferences_abf80abb0fef2986f74b66302dbbecb41}
+
+\item 
+static bool {\bfseries GetWSIsEnabled} ()\label{classCPreferences_a3c4f6dedc76b8244bd01dd6bc143e63f}
+
+\item 
+static void {\bfseries SetWSIsEnabled} (bool bEnable)\label{classCPreferences_af858b50eb1d2266e09bf3160fcc3c297}
+
+\item 
+static bool {\bfseries GetWebUseGzip} ()\label{classCPreferences_a1f579c3957af002c695a066e5845fcdb}
+
+\item 
+static void {\bfseries SetWebUseGzip} (bool bUse)\label{classCPreferences_a33707f12c23eb21b5e80ab42bcf41d26}
+
+\item 
+static uint32 {\bfseries GetWebPageRefresh} ()\label{classCPreferences_a0f48c247953da25671b1d768c6614301}
+
+\item 
+static void {\bfseries SetWebPageRefresh} (uint32 nRefresh)\label{classCPreferences_a6873113051b3b4d47ce90a67ed0b7069}
+
+\item 
+static bool {\bfseries GetWSIsLowUserEnabled} ()\label{classCPreferences_ac77cccdb3508b94026bbae2b07862c83}
+
+\item 
+static void {\bfseries SetWSIsLowUserEnabled} (bool in)\label{classCPreferences_a8c329b1d6303e3a39ad1d2d2dc57c15e}
+
+\item 
+static const wxString \& {\bfseries GetWSLowPass} ()\label{classCPreferences_ac1240bd49511d907fa2f8ca77f93d559}
+
+\item 
+static void {\bfseries SetWSLowPass} (const wxString \&pass)\label{classCPreferences_a493f72d01bb9ba038d1bf17927296a41}
+
+\item 
+static const wxString \& {\bfseries GetWebTemplate} ()\label{classCPreferences_a2834fb4cceb17d2d70b1f669e592198b}
+
+\item 
+static void {\bfseries SetWebTemplate} (const wxString \&val)\label{classCPreferences_a2d7de16817a037dc0efc077f49ae9e6f}
+
+\item 
+static void {\bfseries SetMaxSourcesPerFile} (uint16 in)\label{classCPreferences_ab43c123dff8992bf8336b0fbbf61fb69}
+
+\item 
+static void {\bfseries SetMaxConnections} (uint16 in)\label{classCPreferences_a3d5039d677e1dbe168625c487558c243}
+
+\item 
+static bool {\bfseries ShowCatTabInfos} ()\label{classCPreferences_a543d8baab78f4faa75b38dfa768e3d50}
+
+\item 
+static void {\bfseries ShowCatTabInfos} (bool in)\label{classCPreferences_a10777b323394e5d2ea214d275b13bd91}
+
+\item 
+static bool {\bfseries DropNoNeededSources} ()\label{classCPreferences_a78ae47e93101c898d0777e465a9b7ad7}
+
+\item 
+static bool {\bfseries SwapNoNeededSources} ()\label{classCPreferences_a86eeb917f76facc4e64a785eb28c0c30}
+
+\item 
+static uint8 {\bfseries GetNoNeededSources} ()\label{classCPreferences_a019977d34035c8ef7b774e89b42d95ca}
+
+\item 
+static void {\bfseries SetNoNeededSources} (uint8 val)\label{classCPreferences_a660d330f45dfaee04b2caafcaaf57ab6}
+
+\item 
+static bool {\bfseries DropFullQueueSources} ()\label{classCPreferences_ab03920fe25434de57116d0bf0fe30c72}
+
+\item 
+static void {\bfseries SetDropFullQueueSources} (bool val)\label{classCPreferences_ad0e8915c52a172efe06e6ba37a75e6aa}
+
+\item 
+static bool {\bfseries DropHighQueueRankingSources} ()\label{classCPreferences_a1bd7b4dd69a12fb95eef94516f530091}
+
+\item 
+static void {\bfseries SetDropHighQueueRankingSources} (bool val)\label{classCPreferences_aab9f1543d039156f76cce60343a5b153}
+
+\item 
+static uint32 {\bfseries HighQueueRanking} ()\label{classCPreferences_a99d12efdaba96885683b9a0570745d85}
+
+\item 
+static void {\bfseries SetHighQueueRanking} (uint32 val)\label{classCPreferences_a378fa8e60afa25407a6b15965642644f}
+
+\item 
+static uint32 {\bfseries GetAutoDropTimer} ()\label{classCPreferences_aebe65fe35b7e300464f2554519afc303}
+
+\item 
+static void {\bfseries SetAutoDropTimer} (uint32 val)\label{classCPreferences_a95792f2c4a057bbebefa5ec50258a076}
+
+\item 
+static bool {\bfseries AcceptExternalConnections} ()\label{classCPreferences_a98b515cd8d37dacf59fef8e91bb914b0}
+
+\item 
+static void {\bfseries EnableExternalConnections} (bool val)\label{classCPreferences_a52f9f236cb97c57bbefab7de330978b3}
+
+\item 
+static const wxString \& {\bfseries GetECAddress} ()\label{classCPreferences_acdf4d54a57ab00f855a529fd88a5078b}
+
+\item 
+static uint32 {\bfseries ECPort} ()\label{classCPreferences_ab476e374486ff69a3d0e119830de7a6f}
+
+\item 
+static void {\bfseries SetECPort} (uint32 val)\label{classCPreferences_a55bda89631db08064490c5cb8b82dd69}
+
+\item 
+static const wxString \& {\bfseries ECPassword} ()\label{classCPreferences_aa26ae3f6b1d12764687908e5dce924d4}
+
+\item 
+static void {\bfseries SetECPass} (const wxString \&pass)\label{classCPreferences_a83e87339fd1324e4867a03ef93f3fd95}
+
+\item 
+static bool {\bfseries IsTransmitOnlyUploadingClients} ()\label{classCPreferences_a80a882511c5d1f30013a98f210520930}
+
+\item 
+static bool {\bfseries GetFED2KLH} ()\label{classCPreferences_a69bb1985228cdde2e5e02395476a60ce}
+
+\item 
+static bool {\bfseries IsFilteringClients} ()\label{classCPreferences_adb068fe33a259f86dd760da450dcb349}
+
+\item 
+static void {\bfseries SetFilteringClients} (bool val)\label{classCPreferences_a53dfb8ac2c968d25a4e20af67bc6d118}
+
+\item 
+static bool {\bfseries IsFilteringServers} ()\label{classCPreferences_aa970539d2e7f3e3987d08156097c8b54}
+
+\item 
+static void {\bfseries SetFilteringServers} (bool val)\label{classCPreferences_a3da6ecb79cafe8f872e4c7b4e9ff0559}
+
+\item 
+static uint8 {\bfseries GetIPFilterLevel} ()\label{classCPreferences_aabecfddda59b5839860ed460966635c3}
+
+\item 
+static void {\bfseries SetIPFilterLevel} (uint8 level)\label{classCPreferences_afe17b4966d31fbcee4eb0851d0892217}
+
+\item 
+static bool {\bfseries IPFilterAutoLoad} ()\label{classCPreferences_ad11881f512689313b415419fb80347cc}
+
+\item 
+static void {\bfseries SetIPFilterAutoLoad} (bool val)\label{classCPreferences_a82760a5454a0e9e0751387662cc7b838}
+
+\item 
+static const wxString \& {\bfseries IPFilterURL} ()\label{classCPreferences_a64779bebc89b3632f72b2ed34ea5a1b1}
+
+\item 
+static void {\bfseries SetIPFilterURL} (const wxString \&url)\label{classCPreferences_a2219cbb41ba6e707a807444bdf0a09c6}
+
+\item 
+static bool {\bfseries UseIPFilterSystem} ()\label{classCPreferences_ae31ea84dec15134ef613b45b17b9e4d1}
+
+\item 
+static void {\bfseries SetIPFilterSystem} (bool val)\label{classCPreferences_a99f054f4531240d17ecf216f928cca1b}
+
+\item 
+static bool {\bfseries GetSrcSeedsOn} ()\label{classCPreferences_a5fbc5cadf7885ea9a13d67549d9de195}
+
+\item 
+static void {\bfseries SetSrcSeedsOn} (bool val)\label{classCPreferences_a94a5f4b33c4ecf2d0983aee376e2bedd}
+
+\item 
+static bool {\bfseries IsSecureIdentEnabled} ()\label{classCPreferences_a3f18497a167eaf0ebc09f58524b17358}
+
+\item 
+static void {\bfseries SetSecureIdentEnabled} (bool val)\label{classCPreferences_a2347eb4579808d8c644a13b821ea4c1a}
+
+\item 
+static bool {\bfseries GetExtractMetaData} ()\label{classCPreferences_afd3dba8947e7a5409b6c6fb7c442b99e}
+
+\item 
+static void {\bfseries SetExtractMetaData} (bool val)\label{classCPreferences_a0b08aa57fa9e67a5517e9276d4813e35}
+
+\item 
+static bool {\bfseries ShowProgBar} ()\label{classCPreferences_aaca129868ca04e7b71b2f8da439d5eab}
+
+\item 
+static bool {\bfseries ShowPercent} ()\label{classCPreferences_a48f388ab18f3da2ac28dd9b02e3fdc72}
+
+\item 
+static bool {\bfseries GetAllocFullFile} ()\label{classCPreferences_ac27a5dd68715896b186ced476a028212}
+
+\item 
+static void {\bfseries SetAllocFullFile} (bool val)\label{classCPreferences_ad38e7cffdc521c642b3bb0c5f6a8166b}
+
+\item 
+static wxString {\bfseries GetBrowser} ()\label{classCPreferences_aaeb15f1774d85e48d0f5c3b4eaaabc51}
+
+\item 
+static const wxString \& {\bfseries GetSkin} ()\label{classCPreferences_af0757cc1ed6328263a483fa69410a00b}
+
+\item 
+static bool {\bfseries VerticalToolbar} ()\label{classCPreferences_ae77aacfeba5b173c1a353fcdb179541c}
+
+\item 
+static const {\bf CPath} \& {\bfseries GetOSDir} ()\label{classCPreferences_aabad7684d8d1519405b1976a96c177d6}
+
+\item 
+static uint16 {\bfseries GetOSUpdate} ()\label{classCPreferences_a3b70aef82082137b14f4416513c5fef7}
+
+\item 
+static uint8 {\bfseries GetToolTipDelay} ()\label{classCPreferences_afa63a93b1ad3550fcf7dc6478eb7a209}
+
+\item 
+static void {\bfseries UnsetAutoServerStart} ()\label{classCPreferences_a4d7c875bcd3d3fa89f819500983d4854}
+
+\item 
+static void {\bfseries CheckUlDlRatio} ()\label{classCPreferences_af61bcf69301d3c613de57912ac5a4cd4}
+
+\item 
+static void {\bf BuildItemList} (const wxString \&appdir)
+\item 
+static void {\bfseries EraseItemList} ()\label{classCPreferences_aad1ad1afcfc7ebd1dc4a193f859c80b4}
+
+\item 
+static void {\bfseries LoadAllItems} (wxConfigBase $\ast$cfg)\label{classCPreferences_a47c57658d0703abae85657641fe47df6}
+
+\item 
+static void {\bfseries SaveAllItems} (wxConfigBase $\ast$cfg)\label{classCPreferences_a62abf9dbfd0a6d0d8f6e84411c1fc71f}
+
+\item 
+static bool {\bfseries ShowVersionOnTitle} ()\label{classCPreferences_a140ec2ab025fa610261b523c3e72c2eb}
+
+\item 
+static uint8\_\-t {\bfseries GetShowRatesOnTitle} ()\label{classCPreferences_abdee599b5c618ed033d72a9ad2d26edb}
+
+\item 
+static void {\bfseries SetShowRatesOnTitle} (uint8\_\-t val)\label{classCPreferences_a4baaf7bed2e48dc51dca83a9e4311be8}
+
+\item 
+static bool {\bfseries MustFilterMessages} ()\label{classCPreferences_afcec3108eab5edfc8440e00c159031db}
+
+\item 
+static void {\bfseries SetMustFilterMessages} (bool val)\label{classCPreferences_a0dac4df578cf45a1233c8d3e516d2e50}
+
+\item 
+static bool {\bfseries IsFilterAllMessages} ()\label{classCPreferences_ada2a7f85f11b78e226493fd07ad98d6f}
+
+\item 
+static void {\bfseries SetFilterAllMessages} (bool val)\label{classCPreferences_abb02e3281a7bfe5cb02b1ddbbdaae03b}
+
+\item 
+static bool {\bfseries MsgOnlyFriends} ()\label{classCPreferences_a98b66e0b4f401a71e23ad5dfe342da9c}
+
+\item 
+static void {\bfseries SetMsgOnlyFriends} (bool val)\label{classCPreferences_aacbac5fea05093c5eb4253580022d9be}
+
+\item 
+static bool {\bfseries MsgOnlySecure} ()\label{classCPreferences_aedc99cb7631493ea8e095b54509bccd9}
+
+\item 
+static void {\bfseries SetMsgOnlySecure} (bool val)\label{classCPreferences_a6ecb1151b8bbd7761db6589ea587d338}
+
+\item 
+static bool {\bfseries IsFilterByKeywords} ()\label{classCPreferences_a06b2cfaca30145e01959383a2023e07c}
+
+\item 
+static void {\bfseries SetFilterByKeywords} (bool val)\label{classCPreferences_a6943a3dc0bb6f8e4730a62c717215cb8}
+
+\item 
+static const wxString \& {\bfseries GetMessageFilterString} ()\label{classCPreferences_a20524ff21b2c6e448fdb7a5e39c9fd98}
+
+\item 
+static void {\bfseries SetMessageFilterString} (const wxString \&val)\label{classCPreferences_a69068a2a8b7a15df9bd4a1cf0a33d049}
+
+\item 
+static bool {\bfseries IsMessageFiltered} (const wxString \&message)\label{classCPreferences_a27b7215de2a5387fbaaa5f7655abc3cd}
+
+\item 
+static bool {\bfseries ShowMessagesInLog} ()\label{classCPreferences_a4b154c22bdb924e2ea404c2ef2f20796}
+
+\item 
+static bool {\bfseries IsAdvancedSpamfilterEnabled} ()\label{classCPreferences_a6afd19a0f3a782e2dab52b4a23ddbfda}
+
+\item 
+static bool {\bfseries IsChatCaptchaEnabled} ()\label{classCPreferences_aa023fe2d970848d063c6d74f5c19cbf8}
+
+\item 
+static bool {\bfseries FilterComments} ()\label{classCPreferences_ab5a0e775f72fdb1533e645cd6c2c214a}
+
+\item 
+static void {\bfseries SetFilterComments} (bool val)\label{classCPreferences_a1c0fa210f9b563dbf412e2eda736ab6d}
+
+\item 
+static const wxString \& {\bfseries GetCommentFilterString} ()\label{classCPreferences_aab04d646fc53f1eb05b7d20ee622b7df}
+
+\item 
+static void {\bfseries SetCommentFilterString} (const wxString \&val)\label{classCPreferences_a91d7bef667918b4eba3e75cbd59ded2c}
+
+\item 
+static bool {\bfseries IsCommentFiltered} (const wxString \&comment)\label{classCPreferences_ab8a4b22378a6e1ef2a287dc47a135ece}
+
+\item 
+static const {\bf CProxyData} $\ast$ {\bfseries GetProxyData} ()\label{classCPreferences_a8d034229916c5f8cad3e5e094df3d337}
+
+\item 
+static bool {\bfseries ShareHiddenFiles} ()\label{classCPreferences_aafa38f516c0a2af4ab0bc32df03bdbfb}
+
+\item 
+static void {\bfseries SetShareHiddenFiles} (bool val)\label{classCPreferences_ad7da7bbcce6bdb1f4aefdcacd5c387b6}
+
+\item 
+static bool {\bfseries AutoSortDownload} ()\label{classCPreferences_a7fd1caed1bc9bbd33bbb0e93a67724f5}
+
+\item 
+static bool {\bfseries AutoSortDownload} (bool val)\label{classCPreferences_ad7f9fbaec76f15ce5ee6c2ca39f45e0e}
+
+\item 
+static bool {\bfseries GetCheckNewVersion} ()\label{classCPreferences_a537f232aa99dcd7c1ff41c9fd4079852}
+
+\item 
+static void {\bfseries SetCheckNewVersion} (bool val)\label{classCPreferences_a4848f1359ab71fb7fea8e202d30861ea}
+
+\item 
+static bool {\bfseries GetNetworkKademlia} ()\label{classCPreferences_a5eab9125c61f03551dca1265ef442261}
+
+\item 
+static void {\bfseries SetNetworkKademlia} (bool val)\label{classCPreferences_ad3bb86e8652e32cfc41cbcb282d85c8f}
+
+\item 
+static bool {\bfseries GetNetworkED2K} ()\label{classCPreferences_a8285d38792d03c78d21989da5370f84f}
+
+\item 
+static void {\bfseries SetNetworkED2K} (bool val)\label{classCPreferences_ad0383ac7c4f075f5341e74b279bd9b0e}
+
+\item 
+static unsigned {\bfseries GetMaxClientVersions} ()\label{classCPreferences_a2a5a275cd6b25adf6ec80bca9fb4149b}
+
+\item 
+static bool {\bfseries GetDropSlowSources} ()\label{classCPreferences_aa0b0409cb4230483b83278aa5dbceab5}
+
+\item 
+static const wxString \& {\bfseries GetKadNodesUrl} ()\label{classCPreferences_ac85252604b4a5adefcdfd289d92d53da}
+
+\item 
+static void {\bfseries SetKadNodesUrl} (const wxString \&url)\label{classCPreferences_abfcad5ca37324bd145fa059fc1aaf5b0}
+
+\item 
+static const wxString \& {\bfseries GetEd2kServersUrl} ()\label{classCPreferences_aa20ca2c17f679d26c9029778a89223d6}
+
+\item 
+static void {\bfseries SetEd2kServersUrl} (const wxString \&url)\label{classCPreferences_a4ccfbf3b866124c1f4dda12268df2778}
+
+\item 
+static bool {\bfseries IsClientCryptLayerSupported} ()\label{classCPreferences_ab8bc3dd1c23aa482277ba7bccfecdd5d}
+
+\item 
+static bool {\bfseries IsClientCryptLayerRequested} ()\label{classCPreferences_a903b568ca5f1bf0410d271327dd7db1b}
+
+\item 
+static bool {\bfseries IsClientCryptLayerRequired} ()\label{classCPreferences_ad9f2ef43ecac2a2c49469173b510fb21}
+
+\item 
+static bool {\bfseries IsClientCryptLayerRequiredStrict} ()\label{classCPreferences_a3c70766ef1d48b5151f6c78b8a549412}
+
+\item 
+static bool {\bfseries IsServerCryptLayerUDPEnabled} ()\label{classCPreferences_ace2592f692aaed84cd24298c9c7ad278}
+
+\item 
+static bool {\bfseries IsServerCryptLayerTCPRequested} ()\label{classCPreferences_af32759498f8a9cfc2e87f6e47b4919e1}
+
+\item 
+static bool {\bfseries IsServerCryptLayerTCPRequired} ()\label{classCPreferences_aaaf7b43f07c3b7c0b39ce4035bb4c9a3}
+
+\item 
+static uint32 {\bfseries GetKadUDPKey} ()\label{classCPreferences_a9393813c6bce3c924d4bb0bd7078cdc8}
+
+\item 
+static uint8 {\bfseries GetCryptTCPPaddingLength} ()\label{classCPreferences_a6c341efc0e8b02022f028a82269174ae}
+
+\item 
+static void {\bfseries SetClientCryptLayerSupported} (bool v)\label{classCPreferences_a86482ff603a0d0b098eaf9b45d4abb39}
+
+\item 
+static void {\bfseries SetClientCryptLayerRequested} (bool v)\label{classCPreferences_ac11d3ba3a8009f450910348a67e49ebe}
+
+\item 
+static void {\bfseries SetClientCryptLayerRequired} (bool v)\label{classCPreferences_abe023981e15b1860487db1d225d90663}
+
+\item 
+static bool {\bfseries IsGeoIPEnabled} ()\label{classCPreferences_ae46cfd4af51e2ba1bd6c1f855b6c330a}
+
+\item 
+static void {\bfseries SetGeoIPEnabled} (bool v)\label{classCPreferences_a728d064f6e526c218b0538b12c3514c1}
+
+\item 
+static const wxString \& {\bfseries GetGeoIPUpdateUrl} ()\label{classCPreferences_afa31dfe98b442046cb980c43b77e8769}
+
+\item 
+static const wxString \& {\bfseries GetStatsServerName} ()\label{classCPreferences_a20cb08bf66ce39e37c641481043200bd}
+
+\item 
+static const wxString \& {\bfseries GetStatsServerURL} ()\label{classCPreferences_aff1a9ce6b7800e09aeb3f6aa94edee16}
+
+\item 
+static wxString {\bfseries GetLastHTTPDownloadURL} (uint8 t)\label{classCPreferences_aebff389c0a3676442c007cf0f1fa289a}
+
+\item 
+static void {\bfseries SetLastHTTPDownloadURL} (uint8 t, const wxString \&val)\label{classCPreferences_a5921ef19eaef919ec2ba96ab477ce0bb}
+
+\item 
+static bool {\bfseries GetPreventSleepWhileDownloading} ()\label{classCPreferences_a69ad4e4a539ee930d948f7f6354b6d2a}
+
+\item 
+static void {\bfseries SetPreventSleepWhileDownloading} (bool status)\label{classCPreferences_aefe8a5a5f80c20d1d6e5cacf7ffd2b1b}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+PathList {\bfseries shareddir\_\-list}\label{classCPreferences_a106260f9a1af38df43779ee160124e23}
+
+\item 
+wxArrayString {\bfseries adresses\_\-list}\label{classCPreferences_aa2e34308bff4d5b0ecc68efddacf8cd2}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ {\bf Cfg\_\-Base} $\ast$ $>$ {\bfseries CFGList}\label{classCPreferences_a12ca41a944f051a570cd0b063084a6b4}
+
+\item 
+typedef std::map$<$ int, {\bf Cfg\_\-Base} $\ast$ $>$ {\bfseries CFGMap}\label{classCPreferences_aaefdad460fd998a9e2fde1daf912b3ca}
+
+\item 
+typedef std::vector$<$ {\bf Category\_\-Struct} $\ast$ $>$ {\bfseries CatList}\label{classCPreferences_a135e53c7e7c758189674870c2a2fdcf2}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int32 {\bfseries GetRecommendedMaxConnections} ()\label{classCPreferences_a094265c0e6e3a0c77870ae82401feda7}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CatList {\bfseries m\_\-CatList}\label{classCPreferences_abcc1bf572707271ea8112064a7240dd0}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned long {\bf s\_\-colors} [cntStatColors]\label{classCPreferences_af9b3d81500147056a68f74fd1c8c4f6a}
+
+\item 
+static unsigned long {\bf s\_\-colors\_\-ref} [cntStatColors]\label{classCPreferences_a268c99d2c7d46d3bc0a21db3658dc193}
+
+\item 
+static CFGMap {\bfseries s\_\-CfgList}\label{classCPreferences_a67200e67b1eaade10f9bb290adcdda75}
+
+\item 
+static CFGList {\bfseries s\_\-MiscList}\label{classCPreferences_a1163eed6de88611e16cca62ff2fb8ecc}
+
+\item 
+static wxString {\bfseries s\_\-nick}\label{classCPreferences_ae786939dbeb3e41d053ef98c4004c770}
+
+\item 
+static {\bf CMD4Hash} {\bfseries s\_\-userhash}\label{classCPreferences_aebdadb353b68fb9ff5fe175c6b271002}
+
+\item 
+static {\bf Cfg\_\-Lang\_\-Base} $\ast$ {\bfseries s\_\-cfgLang}\label{classCPreferences_a2bed85bd3f1050ed73200175f3296ddd}
+
+\item 
+static uint16 {\bfseries s\_\-maxupload}\label{classCPreferences_a448585f6599ce04352fe5d4e30333a86}
+
+\item 
+static uint16 {\bfseries s\_\-maxdownload}\label{classCPreferences_ac970014228fd2bfe2e8f3974e62baa37}
+
+\item 
+static uint16 {\bfseries s\_\-slotallocation}\label{classCPreferences_a68f05f1e66230b78d758acc682a0665e}
+
+\item 
+static wxString {\bfseries s\_\-Addr}\label{classCPreferences_ad61bc7e2a7452def870dd05b9f178c86}
+
+\item 
+static uint16 {\bfseries s\_\-port}\label{classCPreferences_ad0a192cd1f32e16f2ade7c5589ae9368}
+
+\item 
+static uint16 {\bfseries s\_\-udpport}\label{classCPreferences_af3926906b7a79a5d47537a09ccbd2f29}
+
+\item 
+static bool {\bfseries s\_\-UDPEnable}\label{classCPreferences_a44d0e9a6fd30a49618c59c1171eae385}
+
+\item 
+static uint16 {\bfseries s\_\-maxconnections}\label{classCPreferences_a12764466cb6cc23246800778723cce8d}
+
+\item 
+static bool {\bfseries s\_\-reconnect}\label{classCPreferences_a6026386adbdb8f25d5eae976ba95ad92}
+
+\item 
+static bool {\bfseries s\_\-autoconnect}\label{classCPreferences_ac71bcd35acab2989e293bbee4362894d}
+
+\item 
+static bool {\bfseries s\_\-autoconnectstaticonly}\label{classCPreferences_a8eb64e5200792e4d2b9112217595ee30}
+
+\item 
+static bool {\bfseries s\_\-UPnPEnabled}\label{classCPreferences_a7d92dfc75ec9a4e911866ba13af4149a}
+
+\item 
+static bool {\bfseries s\_\-UPnPECEnabled}\label{classCPreferences_a18ba54e7a6dcab4f9e57b6d072a164eb}
+
+\item 
+static bool {\bfseries s\_\-UPnPWebServerEnabled}\label{classCPreferences_a8ba6bb7d99eda5fa3e26cb0551fd0d1b}
+
+\item 
+static uint16 {\bfseries s\_\-UPnPTCPPort}\label{classCPreferences_a41d0694de8948aaed10dc283d821fe28}
+
+\item 
+static {\bf CProxyData} {\bfseries s\_\-ProxyData}\label{classCPreferences_ade8ea60632b5c0606ce2dbc1b869a47d}
+
+\item 
+static bool {\bfseries s\_\-autoserverlist}\label{classCPreferences_a3e03340db80ea7401c1129f5e460e594}
+
+\item 
+static bool {\bfseries s\_\-deadserver}\label{classCPreferences_a9ebb40eb778bb672e3cf199e3a067595}
+
+\item 
+static {\bf CPath} {\bfseries s\_\-incomingdir}\label{classCPreferences_a8546098adc3d358d290a792ac3cbd46a}
+
+\item 
+static {\bf CPath} {\bfseries s\_\-tempdir}\label{classCPreferences_a2fbfbcc79ca53cf24a934011126e6d49}
+
+\item 
+static bool {\bfseries s\_\-ICH}\label{classCPreferences_ae7470513d7da009fb449f437d6ebcbfe}
+
+\item 
+static bool {\bfseries s\_\-AICHTrustEveryHash}\label{classCPreferences_a8c20813a9bd590bd998657fffdb1fc67}
+
+\item 
+static uint8 {\bfseries s\_\-depth3D}\label{classCPreferences_abd56bf7690cfb317f7f1ee894f9d78bd}
+
+\item 
+static bool {\bfseries s\_\-scorsystem}\label{classCPreferences_a5e705127d90544453d89e18004cb15fc}
+
+\item 
+static bool {\bfseries s\_\-hideonclose}\label{classCPreferences_a3a2761bc1114766700289be98b95af4f}
+
+\item 
+static bool {\bfseries s\_\-mintotray}\label{classCPreferences_a8f7477ca70b74856d8d7e24ae4857754}
+
+\item 
+static bool {\bfseries s\_\-trayiconenabled}\label{classCPreferences_ac74294bd8e80c74ee479163f4ba07962}
+
+\item 
+static bool {\bfseries s\_\-addnewfilespaused}\label{classCPreferences_abbd423e50ffea2b74c8c13c4c4366f61}
+
+\item 
+static bool {\bfseries s\_\-addserversfromserver}\label{classCPreferences_aea1ec18cbdb32f5617d3c62f8380ad16}
+
+\item 
+static bool {\bfseries s\_\-addserversfromclient}\label{classCPreferences_ae48942b4dfe4186a4fbaaebf3c0b08f7}
+
+\item 
+static uint16 {\bfseries s\_\-maxsourceperfile}\label{classCPreferences_a2ce633539f021c9c7ac20cbcb9539b39}
+
+\item 
+static uint16 {\bfseries s\_\-trafficOMeterInterval}\label{classCPreferences_ac9e52903c11464c75cc16bb644e6b223}
+
+\item 
+static uint16 {\bfseries s\_\-statsInterval}\label{classCPreferences_a7cefe86622cc191ed465b1da7c40a348}
+
+\item 
+static uint32 {\bfseries s\_\-maxGraphDownloadRate}\label{classCPreferences_ac88fbe313564a8e36abdc57d9338de2d}
+
+\item 
+static uint32 {\bfseries s\_\-maxGraphUploadRate}\label{classCPreferences_a28171a750a051c4f3cde15859e1a3d35}
+
+\item 
+static bool {\bfseries s\_\-confirmExit}\label{classCPreferences_a6ea6cae6f7e09c48ce2c0554698dedd0}
+
+\item 
+static bool {\bfseries s\_\-filterLanIP}\label{classCPreferences_a9d691f8b2b2043c29388d91b3e0a3cef}
+
+\item 
+static bool {\bfseries s\_\-paranoidfilter}\label{classCPreferences_a674caf094a340d6d935d23ab76cf8915}
+
+\item 
+static bool {\bfseries s\_\-onlineSig}\label{classCPreferences_af034fc24d8fd7ae53cc02d2f4948b430}
+
+\item 
+static wxString {\bfseries s\_\-languageID}\label{classCPreferences_a313c02337f39ad2435b9889e7106ba3c}
+
+\item 
+static uint8 {\bfseries s\_\-iSeeShares}\label{classCPreferences_a83325e3099300aa23bc1a6c872377b33}
+
+\item 
+static uint8 {\bfseries s\_\-iToolDelayTime}\label{classCPreferences_ac9e2380e2a83bf430b8d5ca35f20e12e}
+
+\item 
+static uint8 {\bfseries s\_\-splitterbarPosition}\label{classCPreferences_ad0cae902a3153b056b2e6cac6c360334}
+
+\item 
+static uint16 {\bfseries s\_\-deadserverretries}\label{classCPreferences_aa37b3e9f2eb4b9d35a35408585c9728e}
+
+\item 
+static uint32 {\bfseries s\_\-dwServerKeepAliveTimeoutMins}\label{classCPreferences_ad83604de0012f4d9450c8c4824b9e4c5}
+
+\item 
+static uint8 {\bfseries s\_\-statsMax}\label{classCPreferences_ac1521386e1b56f3ca2174bfb84c6f69c}
+
+\item 
+static uint8 {\bfseries s\_\-statsAverageMinutes}\label{classCPreferences_ae8498ebfb4cbcc56bd27d69c2a6c4f8a}
+
+\item 
+static bool {\bfseries s\_\-bpreviewprio}\label{classCPreferences_acd4e931400deecfb2ba3f281863c33b9}
+
+\item 
+static bool {\bfseries s\_\-smartidcheck}\label{classCPreferences_a4e15bcb1ca89d7c585bb8e00d1be4a58}
+
+\item 
+static uint8 {\bfseries s\_\-smartidstate}\label{classCPreferences_af1c1cb5a9bf23e2ff4e7af779af07be1}
+
+\item 
+static bool {\bfseries s\_\-safeServerConnect}\label{classCPreferences_a00bf12a617fc3a0a6e35f52420d06f60}
+
+\item 
+static bool {\bfseries s\_\-startMinimized}\label{classCPreferences_a96666bdfbbea3d930e42953c618f4785}
+
+\item 
+static uint16 {\bfseries s\_\-MaxConperFive}\label{classCPreferences_a16115f7db1c367d9b9b29c82ae221590}
+
+\item 
+static bool {\bfseries s\_\-checkDiskspace}\label{classCPreferences_a0d8a481e34a70a30882a74dea70bd0d4}
+
+\item 
+static uint32 {\bfseries s\_\-uMinFreeDiskSpace}\label{classCPreferences_ab6da986c915cab2e80fbc9ae3367c699}
+
+\item 
+static wxString {\bfseries s\_\-yourHostname}\label{classCPreferences_acad8323bf92fb57bee7a5b976c333343}
+
+\item 
+static bool {\bfseries s\_\-bVerbose}\label{classCPreferences_acbfe63febb6fddb7fec0eb18c143abe1}
+
+\item 
+static bool {\bfseries s\_\-bmanualhighprio}\label{classCPreferences_a34eb619b05b4f97d1843b9517529c5a5}
+
+\item 
+static bool {\bfseries s\_\-bstartnextfile}\label{classCPreferences_a0914bcdc986dfd8dae557ba654809ea3}
+
+\item 
+static bool {\bfseries s\_\-bstartnextfilesame}\label{classCPreferences_a8a5ffffd5f92760f80ca2ee2a17ac7a5}
+
+\item 
+static bool {\bfseries s\_\-bstartnextfilealpha}\label{classCPreferences_a89e50da4159d3c4c65b200c32c273078}
+
+\item 
+static bool {\bfseries s\_\-bshowoverhead}\label{classCPreferences_a72aca6b3b5ecf8638f1a04f38d399e6b}
+
+\item 
+static bool {\bfseries s\_\-bDAP}\label{classCPreferences_ac6e8aa20efc517b037a656f9126b84fe}
+
+\item 
+static bool {\bfseries s\_\-bUAP}\label{classCPreferences_a7d70585115a5800af93bfa0aea060980}
+
+\item 
+static bool {\bfseries s\_\-showVersionOnTitle}\label{classCPreferences_a53f9474e58666db5515723977f19021b}
+
+\item 
+static uint8\_\-t {\bfseries s\_\-showRatesOnTitle}\label{classCPreferences_a2b4b8b2fb50b7b977106cc40ab814b2b}
+
+\item 
+static wxString {\bfseries s\_\-VideoPlayer}\label{classCPreferences_af1a8cf1e3d8ba463faa8b064cc09248b}
+
+\item 
+static bool {\bfseries s\_\-showAllNotCats}\label{classCPreferences_a287f88a7149c77a6b0cfe30b1a9e0416}
+
+\item 
+static bool {\bfseries s\_\-msgonlyfriends}\label{classCPreferences_ae64d29da7e9ae41efd3be9474e67be1b}
+
+\item 
+static bool {\bfseries s\_\-msgsecure}\label{classCPreferences_a307ee849b8f77a547758f3bdf5e5fee8}
+
+\item 
+static uint8 {\bfseries s\_\-iFileBufferSize}\label{classCPreferences_a4f54ef4e3048b9dc1e3652efc98eddba}
+
+\item 
+static uint8 {\bfseries s\_\-iQueueSize}\label{classCPreferences_a9121357e68509606361d523a7ee1e0d6}
+
+\item 
+static wxString {\bfseries s\_\-datetimeformat}\label{classCPreferences_a41ce343e4dde331d91fa4d27ecaa32cc}
+
+\item 
+static bool {\bfseries s\_\-ToolbarOrientation}\label{classCPreferences_a63c22576f54b21885d7a9bb9b25c9de9}
+
+\item 
+static wxString {\bfseries s\_\-sWebPassword}\label{classCPreferences_a8024c1cb4f5ac2412603aaf174764bed}
+
+\item 
+static wxString {\bfseries s\_\-sWebPath}\label{classCPreferences_ab7085b6aff610513ec744de69a675ed6}
+
+\item 
+static wxString {\bfseries s\_\-sWebLowPassword}\label{classCPreferences_a70e298ffaed8ba91abf3dac32682cb5c}
+
+\item 
+static uint16 {\bfseries s\_\-nWebPort}\label{classCPreferences_ae3aed3ab18c2e2204077d4e249195e45}
+
+\item 
+static uint16 {\bfseries s\_\-nWebUPnPTCPPort}\label{classCPreferences_a446a9f28b646481951089688c14d2b1b}
+
+\item 
+static bool {\bfseries s\_\-bWebEnabled}\label{classCPreferences_ac590be0643c931d0ca02429655ee3d6c}
+
+\item 
+static bool {\bfseries s\_\-bWebUseGzip}\label{classCPreferences_aa638b3a10034f6c1cac04e46a48f47ee}
+
+\item 
+static uint32 {\bfseries s\_\-nWebPageRefresh}\label{classCPreferences_a80f6d8db312cb5d8089eed6a5a754931}
+
+\item 
+static bool {\bfseries s\_\-bWebLowEnabled}\label{classCPreferences_a1d40d9b566c47d4656e4097bda61e739}
+
+\item 
+static wxString {\bfseries s\_\-WebTemplate}\label{classCPreferences_a4628431aa844bcb34a44d7d15e7a542a}
+
+\item 
+static bool {\bfseries s\_\-showCatTabInfos}\label{classCPreferences_af68620714481fa1a2635c6ae25cbc38c}
+
+\item 
+static AllCategoryFilter {\bfseries s\_\-allcatFilter}\label{classCPreferences_af9853d69282e53865e9c2c784b59c64f}
+
+\item 
+static uint8 {\bfseries s\_\-NoNeededSources}\label{classCPreferences_a9b7963f2a7989913aa151ed351a6d4e8}
+
+\item 
+static bool {\bfseries s\_\-DropFullQueueSources}\label{classCPreferences_acbbfe8a829b9665ea61be56ac9a0abb7}
+
+\item 
+static bool {\bfseries s\_\-DropHighQueueRankingSources}\label{classCPreferences_a6ce5355bcf57ba9f51f34aff1be8f66a}
+
+\item 
+static uint32 {\bfseries s\_\-HighQueueRanking}\label{classCPreferences_a7d2a0c07c2aba26fdf83cb4aa57b87ef}
+
+\item 
+static uint32 {\bfseries s\_\-AutoDropTimer}\label{classCPreferences_a2ec2995c0cc3480667fc8aa90762ce57}
+
+\item 
+static bool {\bfseries s\_\-AcceptExternalConnections}\label{classCPreferences_ae4ce7a0e8c30c6bb2db67cf04c7d608f}
+
+\item 
+static wxString {\bfseries s\_\-ECAddr}\label{classCPreferences_a0588e29953b6cc9747a6524d35bac49f}
+
+\item 
+static uint32 {\bfseries s\_\-ECPort}\label{classCPreferences_afda050a4d20ab7a7eab6dd938f39c91c}
+
+\item 
+static wxString {\bfseries s\_\-ECPassword}\label{classCPreferences_a5bc6359f62cadb12ba4ce9d2f62c8898}
+
+\item 
+static bool {\bfseries s\_\-TransmitOnlyUploadingClients}\label{classCPreferences_abbc5df4e3a43c52ccd2bc48d36a17219}
+
+\item 
+static bool {\bfseries s\_\-IPFilterClients}\label{classCPreferences_aef8ac39853f0ec9f42aa1849818b38b7}
+
+\item 
+static bool {\bfseries s\_\-IPFilterServers}\label{classCPreferences_adb1f9b5e4d04958509998699e157e2bf}
+
+\item 
+static uint8 {\bfseries s\_\-filterlevel}\label{classCPreferences_ab1ab433985e695ca770ddb8f16cbd211}
+
+\item 
+static bool {\bfseries s\_\-IPFilterAutoLoad}\label{classCPreferences_a26e11b6bfbbdf59dbc3ce5d14ef75c35}
+
+\item 
+static wxString {\bfseries s\_\-IPFilterURL}\label{classCPreferences_a946f75f1691e26a4a20b10e98987713c}
+
+\item 
+static bool {\bfseries s\_\-IPFilterSys}\label{classCPreferences_a0f4937a6c305ad0264f051f77ab80f3b}
+
+\item 
+static bool {\bfseries s\_\-UseSrcSeeds}\label{classCPreferences_a390b9ae8333098b9021b4fec888d050b}
+
+\item 
+static bool {\bfseries s\_\-ProgBar}\label{classCPreferences_abb9c32cc78302ac8e38ca9104e728e3e}
+
+\item 
+static bool {\bfseries s\_\-Percent}\label{classCPreferences_a587b1211f06ed557567d2cd4d1b63b60}
+
+\item 
+static bool {\bfseries s\_\-SecIdent}\label{classCPreferences_ab1b33952b74d87fefec2afada7b9dc22}
+
+\item 
+static bool {\bfseries s\_\-ExtractMetaData}\label{classCPreferences_a50578c1bc7864b6d4f78696672927120}
+
+\item 
+static bool {\bfseries s\_\-allocFullFile}\label{classCPreferences_a047c85c64cbedff3eefed3c4251f2a06}
+
+\item 
+static wxString {\bfseries s\_\-CustomBrowser}\label{classCPreferences_a2a1d2a12e9d6cbdc1d285a88a394dad8}
+
+\item 
+static bool {\bfseries s\_\-BrowserTab}\label{classCPreferences_a7d7f9c1d0334d5b07d0c2e349b83b6d7}
+
+\item 
+static {\bf CPath} {\bfseries s\_\-OSDirectory}\label{classCPreferences_a11eb42f6b450043ba25edc1f76f10dad}
+
+\item 
+static uint16 {\bfseries s\_\-OSUpdate}\label{classCPreferences_a017da47cdd43c815bd06cef2e40f1629}
+
+\item 
+static wxString {\bfseries s\_\-Skin}\label{classCPreferences_aa2bbffecbc1226c0451fc16f9e880694}
+
+\item 
+static bool {\bfseries s\_\-FastED2KLinksHandler}\label{classCPreferences_ab6fb0ce04e8e832d5c761f0b76568310}
+
+\item 
+static bool {\bfseries s\_\-MustFilterMessages}\label{classCPreferences_a3e1d75905eceb9d24c4b8386a90fd072}
+
+\item 
+static wxString {\bfseries s\_\-MessageFilterString}\label{classCPreferences_afc314532291d5912b2c2f0f839734625}
+
+\item 
+static bool {\bfseries s\_\-FilterAllMessages}\label{classCPreferences_a21e780c78b1777c4bb9a8edbdbd7ec99}
+
+\item 
+static bool {\bfseries s\_\-FilterSomeMessages}\label{classCPreferences_afaec59a718915c5435458ee18ef833a8}
+
+\item 
+static bool {\bfseries s\_\-ShowMessagesInLog}\label{classCPreferences_ae42329db29fffe233e0fda4c332e05c4}
+
+\item 
+static bool {\bfseries s\_\-IsAdvancedSpamfilterEnabled}\label{classCPreferences_a4ca8ab9c47a54670c27808302eaded9c}
+
+\item 
+static bool {\bfseries s\_\-IsChatCaptchaEnabled}\label{classCPreferences_a1032f49f709cd839d2575ce8137d9c2c}
+
+\item 
+static bool {\bfseries s\_\-FilterComments}\label{classCPreferences_ad920967a3990ee264fa6018f49cc0d86}
+
+\item 
+static wxString {\bfseries s\_\-CommentFilterString}\label{classCPreferences_a221c559cd3c957b0a5ac1a6e598ecb19}
+
+\item 
+static bool {\bfseries s\_\-ShareHiddenFiles}\label{classCPreferences_af6a40386282c32b9b5ef091811d548a4}
+
+\item 
+static bool {\bfseries s\_\-AutoSortDownload}\label{classCPreferences_af18bc84c6d5ee745bcbae60869e290f0}
+
+\item 
+static bool {\bfseries s\_\-NewVersionCheck}\label{classCPreferences_a94532d5c6f50505a9c882ebebcca1040}
+
+\item 
+static bool {\bfseries s\_\-ConnectToKad}\label{classCPreferences_a82c486a263e51660fc8632245c7942e9}
+
+\item 
+static bool {\bfseries s\_\-ConnectToED2K}\label{classCPreferences_a420699899d096443fe1c9fc0df823939}
+
+\item 
+static unsigned {\bfseries s\_\-maxClientVersions}\label{classCPreferences_ab49013ef5844d2ecd16be86ed7ba955b}
+
+\item 
+static bool {\bfseries s\_\-DropSlowSources}\label{classCPreferences_a4179c0e9b98cb96dc62de0195864868e}
+
+\item 
+static wxString {\bfseries s\_\-Ed2kURL}\label{classCPreferences_ab854f7138cc5b7bcaa707a56b1a85216}
+
+\item 
+static wxString {\bfseries s\_\-KadURL}\label{classCPreferences_a001b1f81d836238df5ef3326bcd4fb59}
+
+\item 
+static bool {\bfseries s\_\-IsClientCryptLayerSupported}\label{classCPreferences_a1fd963ca4fc26ca61f6e99c1153bdfb0}
+
+\item 
+static bool {\bfseries s\_\-IsClientCryptLayerRequired}\label{classCPreferences_a6b020dc7c3827f7d77ab32c33e224773}
+
+\item 
+static bool {\bfseries s\_\-bCryptLayerRequested}\label{classCPreferences_abb59830b919b1dd48e5d1ae7500cd559}
+
+\item 
+static uint32 {\bfseries s\_\-dwKadUDPKey}\label{classCPreferences_a707bcd2616a634ae4ff6f451bd5c4956}
+
+\item 
+static uint8 {\bfseries s\_\-byCryptTCPPaddingLength}\label{classCPreferences_a34698c67c4662948a916fb170d9a1cbe}
+
+\item 
+static bool {\bfseries s\_\-GeoIPEnabled}\label{classCPreferences_ad30e148d9f201d6a50b1064b6e5e71e1}
+
+\item 
+static wxString {\bfseries s\_\-GeoIPUpdateUrl}\label{classCPreferences_a12d8ec10792008f526003a4de1f7beae}
+
+\item 
+static bool {\bfseries s\_\-preventSleepWhileDownloading}\label{classCPreferences_a82ddbb25671f3cc9769597a5787a63ff}
+
+\item 
+static wxString {\bfseries s\_\-StatsServerName}\label{classCPreferences_ac81786b27d80c5c5116e2dc63063b931}
+
+\item 
+static wxString {\bfseries s\_\-StatsServerURL}\label{classCPreferences_a516c01371301dc0a76c77184c1be801c}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries LoadPreferences} ()\label{classCPreferences_a556e2cbbc92551f575fdaadde63fcd4b}
+
+\item 
+void {\bfseries SavePreferences} ()\label{classCPreferences_a1dd263e3f0a89b3f4fc9c2ad25df1d0d}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf PrefsUnifiedDlg}\label{classCPreferences_ac24ec000139eca6e3db54b6c0fa40c93}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CPreferences@{CPreferences}!BuildItemList@{BuildItemList}}
+\index{BuildItemList@{BuildItemList}!CPreferences@{CPreferences}}
+\subsubsection[{BuildItemList}]{\setlength{\rightskip}{0pt plus 5cm}void CPreferences::BuildItemList (const wxString \& {\em appdir})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPreferences_a0fe6309372e27e872161a53cad50d665}
+
+
+User settings
+
+Browser options
+
+Misc
+
+Connection settings
+
+Proxy
+
+Servers
+
+Files
+
+Web Server
+
+External Connections
+
+GUI behavior
+
+GUI appearence
+
+External Apps
+
+Statistics
+
+Security
+
+Message Filter
+
+Hidden files sharing
+
+Auto-\/Sorting of downloads
+
+Version check
+
+Obfuscation
+
+Power management
+
+The following doesn't have an associated widget or section
+
+References CUserEvents::GetCount(), CProxyData::m\_\-enablePassword, CProxyData::m\_\-password, CProxyData::m\_\-proxyEnable, CProxyData::m\_\-proxyHostName, CProxyData::m\_\-proxyPort, CProxyData::m\_\-proxyType, and CProxyData::m\_\-userName.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Preferences.h\item 
+src/Preferences.cpp\end{DoxyCompactItemize}

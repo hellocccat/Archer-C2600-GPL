@@ -1,0 +1,106 @@
+#! /bin/sh
+
+usage()
+{
+	echo "getfirm <info>"
+	echo "        MAC"
+	echo "        SSID"
+	echo "        PIN"	
+	echo "        MODEL"
+	echo "        FIRM"
+	echo "        WEBSITE"
+	echo "        HARDVERSION"
+	echo "        SOFTVERSION"
+	echo "        LANGUAGE"
+	echo "        PRODUCT_ID"
+	echo "        SPECIAL_ID"
+}
+
+option="$1"
+factoryLanMac="00-0A-EB-AC-25-00"
+factoryPIN="12345670"
+
+case $option in
+	MAC)
+	rm -f /tmp/default-mac >/dev/null 2>&1
+	nvrammanager -r /tmp/default-mac -p default-mac >/dev/null 2>&1
+	if [ -s "/tmp/default-mac" ];then
+		echo $(grep 'MAC'  /tmp/default-mac | cut -d : -f 2-)
+	else
+		echo  $factoryLanMac
+	fi
+	;;
+	
+	SSID)
+	echo  "TP-LINK"
+	;;
+	
+	PIN)
+	rm -f /tmp/pin >/dev/null 2>&1
+	nvrammanager -r /tmp/pin -p pin >/dev/null 2>&1
+	if [ -s "/tmp/pin" ];then
+		echo $(cat /tmp/pin)
+	else
+		echo $factoryPIN
+	fi
+	;;
+
+	MODEL)
+	rm -f /tmp/productinfo >/dev/null 2>&1
+	nvrammanager -r /tmp/productinfo -p product-info > /dev/null 2>&1 
+	echo $(grep 'product_name' /tmp/productinfo | cut -d : -f 2-)
+	;;
+	
+	FIRM)
+	rm -f /tmp/productinfo >/dev/null 2>&1
+	nvrammanager -r /tmp/productinfo -p product-info > /dev/null 2>&1 
+	echo $(grep 'vendor_name' /tmp/productinfo | cut -d : -f 2-)
+	;;
+	
+	WEBSITE)
+	rm -f /tmp/productinfo >/dev/null 2>&1
+	nvrammanager -r /tmp/productinfo -p product-info > /dev/null 2>&1 
+	echo $(grep 'vendor_url' /tmp/productinfo | cut -d : -f 2-)
+	;;
+	
+	HARDVERSION)
+	rm -f /tmp/productinfo >/dev/null 2>&1
+	nvrammanager -r /tmp/productinfo -p product-info > /dev/null 2>&1 
+	echo $(grep 'product_ver' /tmp/productinfo | cut -d : -f 2-)
+	;;
+
+	LANGUAGE) 
+	rm -f /tmp/productinfo >/dev/null 2>&1
+	nvrammanager -r /tmp/productinfo -p product-info > /dev/null 2>&1 
+	echo $(grep 'language' /tmp/productinfo | cut -d : -f 2-)
+	;;
+	
+	PRODUCT_ID)
+	rm -f /tmp/productinfo >/dev/null 2>&1
+	nvrammanager -r /tmp/productinfo -p product-info > /dev/null 2>&1 
+	echo $(grep 'product_id' /tmp/productinfo | cut -d : -f 2-)
+	;;
+	
+	SPECIAL_ID)
+	rm -f /tmp/productinfo >/dev/null 2>&1
+	nvrammanager -r /tmp/productinfo -p product-info > /dev/null 2>&1 
+	echo $(grep 'special_id' /tmp/productinfo | cut -d : -f 2-)
+	;;
+
+	REGION)
+	rm -f /tmp/productinfo >/dev/null 2>&1
+	nvrammanager -r /tmp/productinfo -p product-info > /dev/null 2>&1 
+	echo $(grep 'region' /tmp/productinfo | cut -d : -f 2-)
+	;;
+
+    
+	SOFTVERSION)
+	rm -f /tmp/softversion >/dev/null 2>&1
+	nvrammanager -r /tmp/softversion -p soft-version >/dev/null 2>&1
+	echo $(cat /tmp/softversion)
+	;;
+    
+	*)
+	usage
+	;;
+esac

@@ -1,0 +1,131 @@
+\section{CHashingTask Class Reference}
+\label{classCHashingTask}\index{CHashingTask@{CHashingTask}}
+
+
+This task performs MD4 and/or AICH hashings of a file, depending on the type.  
+
+
+{\ttfamily \#include $<$ThreadTasks.h$>$}Inheritance diagram for CHashingTask::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCHashingTask}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CHashingTask} (const {\bf CPath} \&path, const {\bf CPath} \&filename, const {\bf CPartFile} $\ast$part=NULL)
+\item 
+{\bf CHashingTask} (const {\bf CKnownFile} $\ast$toAICHHash)
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf EHashes} \{ {\bfseries EH\_\-AICH} =  1, 
+{\bfseries EH\_\-MD4} =  2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf OnLastTask} ()
+\item 
+virtual void {\bf Entry} ()
+\item 
+bool {\bf CreateNextPartHash} ({\bf CFileAutoClose} \&file, uint16 part, {\bf CKnownFile} $\ast$owner, {\bf EHashes} toHash)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPath} {\bf m\_\-path}\label{classCHashingTask_a03d8790d6202c03fee3ac807ef721617}
+
+\item 
+{\bf CPath} {\bf m\_\-filename}\label{classCHashingTask_ae88bfe0710980f4442586b36f3da19a1}
+
+\item 
+{\bf EHashes} {\bf m\_\-toHash}\label{classCHashingTask_a9ec294fa2feb7d41184f0d4874673fee}
+
+\item 
+const {\bf CKnownFile} $\ast$ {\bf m\_\-owner}\label{classCHashingTask_a7d84c493f7c69b78df81e1c96e7cf7ef}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This task performs MD4 and/or AICH hashings of a file, depending on the type. For new shared files (using the first constructor, with part == NULL), both MD4 and AICH hashes are created. For incomplete partfiles (rehashed due to changed timestamps), only MD4 hashing is done. For complete partfiles, both MD4 and AICH hashing is done.
+
+For existing shared files (using the second constructor), only an AICH hash is created.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{CHashingEvent}{p.}{classCHashingEvent} 
+
+\doxyref{CAICHSyncTask}{p.}{classCAICHSyncTask} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CHashingTask@{CHashingTask}!CHashingTask@{CHashingTask}}
+\index{CHashingTask@{CHashingTask}!CHashingTask@{CHashingTask}}
+\subsubsection[{CHashingTask}]{\setlength{\rightskip}{0pt plus 5cm}CHashingTask::CHashingTask (const {\bf CPath} \& {\em path}, \/  const {\bf CPath} \& {\em filename}, \/  const {\bf CPartFile} $\ast$ {\em part} = {\ttfamily NULL})}\label{classCHashingTask_a739f5de2317aabd896349bf89e7d901a}
+
+
+Schedules a partfile or new shared file for hashing. 
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]The full path, without filename. \item[{\em filename}]The actual filename. \item[{\em part}]Used to identify the owner in the event-\/handler (PartFiles only).\end{DoxyParams}
+CHashingEvents sent by this type of tasks have the id MULE\_\-EVT\_\-HASHING. \begin{DoxySeeAlso}{See also}
+EVT\_\-MULE\_\-HASHING 
+\end{DoxySeeAlso}
+
+
+References m\_\-toHash.\index{CHashingTask@{CHashingTask}!CHashingTask@{CHashingTask}}
+\index{CHashingTask@{CHashingTask}!CHashingTask@{CHashingTask}}
+\subsubsection[{CHashingTask}]{\setlength{\rightskip}{0pt plus 5cm}CHashingTask::CHashingTask (const {\bf CKnownFile} $\ast$ {\em toAICHHash})}\label{classCHashingTask_a49d54b3b92bb133eee306d100a3c53ef}
+
+
+Schedules a KnownFile to have a AICH hashset created, used by \doxyref{CAICHSyncTask}{p.}{classCAICHSyncTask}. CHashingEvents sent by this type of tasks have the id MULE\_\-EVT\_\-AICH\_\-HASHING. \begin{DoxySeeAlso}{See also}
+EVT\_\-MULE\_\-AICH\_\-HASHING 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CHashingTask@{CHashingTask}!CreateNextPartHash@{CreateNextPartHash}}
+\index{CreateNextPartHash@{CreateNextPartHash}!CHashingTask@{CHashingTask}}
+\subsubsection[{CreateNextPartHash}]{\setlength{\rightskip}{0pt plus 5cm}bool CHashingTask::CreateNextPartHash ({\bf CFileAutoClose} \& {\em file}, \/  uint16 {\em part}, \/  {\bf CKnownFile} $\ast$ {\em owner}, \/  {\bf EHashes} {\em toHash})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCHashingTask_aabb481353351461ced82de1d0bddf43d}
+
+
+Helper function for hashing a PARTSIZE chunk of a file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]The file to read from. \item[{\em part}]The number of the part to hash. \item[{\em owner}]The known-\/ (or part) file representing that file.  createAICH Specifies if AICH hash-\/sets should be created as well. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns false on read-\/errors, true otherwise.
+\end{DoxyReturn}
+This function will create a MD4 hash and, if specified, a AICH hashset for the next part of the file. This function makes the assumption that it wont be called for closed or EOF files. 
+
+References CFileAutoClose::Eof().
+
+Referenced by Entry().\index{CHashingTask@{CHashingTask}!Entry@{Entry}}
+\index{Entry@{Entry}!CHashingTask@{CHashingTask}}
+\subsubsection[{Entry}]{\setlength{\rightskip}{0pt plus 5cm}void CHashingTask::Entry ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCHashingTask_a5be9891c855b55cc1ced07b509079217}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CThreadTask::Entry}{p.}{classCThreadTask_aa771d4d2ec87cb3c73c8d75e12e1a3ec} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CThreadTask} \doxyref{}{p.}{classCThreadTask_aa771d4d2ec87cb3c73c8d75e12e1a3ec}.
+
+References CreateNextPartHash(), CScopedPtr$<$ TYPE $>$::get(), CFileAutoClose::GetLength(), CPath::GetModificationTime(), CPath::JoinPaths(), m\_\-filename, m\_\-owner, m\_\-path, m\_\-toHash, CFileAutoClose::Open(), CScopedPtr$<$ TYPE $>$::release(), and CThreadTask::TestDestroy().\index{CHashingTask@{CHashingTask}!OnLastTask@{OnLastTask}}
+\index{OnLastTask@{OnLastTask}!CHashingTask@{CHashingTask}}
+\subsubsection[{OnLastTask}]{\setlength{\rightskip}{0pt plus 5cm}void CHashingTask::OnLastTask ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCHashingTask_a87266d8af8bbab477f854e8af6a171d8}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CThreadTask::OnLastTask}{p.}{classCThreadTask_a5eac5242e620a396e9027185ff141ff4} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CThreadTask} \doxyref{}{p.}{classCThreadTask_a5eac5242e620a396e9027185ff141ff4}.
+
+References CThreadScheduler::AddTask(), and CThreadTask::GetType().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadTasks.h\item 
+src/ThreadTasks.cpp\end{DoxyCompactItemize}

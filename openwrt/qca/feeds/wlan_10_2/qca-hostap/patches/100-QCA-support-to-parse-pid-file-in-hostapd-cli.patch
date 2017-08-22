@@ -1,0 +1,32 @@
+diff --git a/hostapd/hostapd_cli.c b/hostapd/hostapd_cli.c
+index d710eae..24446b6 100644
+--- a/hostapd/hostapd_cli.c
++++ b/hostapd/hostapd_cli.c
+@@ -104,7 +104,7 @@ static void usage(void)
+ 		"\n"
+ 		"usage: hostapd_cli [-p<path>] [-i<ifname>] [-hvB] "
+ 		"[-a<path>] \\\n"
+-		"                   [-G<ping interval>] [command..]\n"
++		"   [-P<pid file>] [-G<ping interval>] [command..]\n"
+ 		"\n"
+ 		"Options:\n"
+ 		"   -h           help (show this usage text)\n"
+@@ -999,7 +999,7 @@ int main(int argc, char *argv[])
+ 		return -1;
+ 
+ 	for (;;) {
+-		c = getopt(argc, argv, "a:BhG:i:p:v");
++		c = getopt(argc, argv, "a:BhG:i:p:P:v");
+ 		if (c < 0)
+ 			break;
+ 		switch (c) {
+@@ -1025,6 +1025,9 @@ int main(int argc, char *argv[])
+ 		case 'p':
+ 			ctrl_iface_dir = optarg;
+ 			break;
++		case 'P':
++			pid_file = optarg;
++			break;
+ 		default:
+ 			usage();
+ 			return -1;

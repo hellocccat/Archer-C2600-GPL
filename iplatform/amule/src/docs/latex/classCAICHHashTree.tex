@@ -1,0 +1,100 @@
+\section{CAICHHashTree Class Reference}
+\label{classCAICHHashTree}\index{CAICHHashTree@{CAICHHashTree}}
+
+
+\doxyref{CAICHHashTree}{p.}{classCAICHHashTree}.  
+
+
+{\ttfamily \#include $<$SHAHashSet.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAICHHashTree} (uint64 nDataSize, bool bLeftBranch, uint64 nBaseSize)\label{classCAICHHashTree_a5b2985f64e8da034bc4067603824d654}
+
+\item 
+const {\bf CAICHHash} \& {\bfseries GetHash} () const \label{classCAICHHashTree_a66911628a841772b202b14dab8b61a47}
+
+\item 
+uint64 {\bfseries GetNDataSize} () const \label{classCAICHHashTree_a8797ab544815049d92e1f9be837e09af}
+
+\item 
+uint64 {\bfseries GetNBaseSize} () const \label{classCAICHHashTree_aeba3cc80fdcda9764fd566fb59860a86}
+
+\item 
+bool {\bfseries GetIsLeftBranch} () const \label{classCAICHHashTree_a816c5fc1b682705d64519b604f6860d6}
+
+\item 
+bool {\bfseries GetHashValid} () const \label{classCAICHHashTree_a1b8641954f01989da4050cf76e8c04c0}
+
+\item 
+void {\bfseries SetBlockHash} (uint64 nSize, uint64 nStartPos, {\bf CAICHHashAlgo} $\ast$pHashAlg)\label{classCAICHHashTree_a3fd27d63c640b3efb39d4480bd38fdb5}
+
+\item 
+bool {\bfseries ReCalculateHash} ({\bf CAICHHashAlgo} $\ast$hashalg, bool bDontReplace)\label{classCAICHHashTree_abf35ff6d1dcb5318fc9f17e1e912e06c}
+
+\item 
+bool {\bfseries VerifyHashTree} ({\bf CAICHHashAlgo} $\ast$hashalg, bool bDeleteBadTrees)\label{classCAICHHashTree_a4f8f3e4eae4a84937b9c5675f2804a08}
+
+\item 
+{\bf CAICHHashTree} $\ast$ {\bfseries FindHash} (uint64 nStartPos, uint64 nSize)\label{classCAICHHashTree_aaf056fe9babdee7bf8a8045242535902}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAICHHashTree} $\ast$ {\bfseries FindHash} (uint64 nStartPos, uint64 nSize, uint8 $\ast$nLevel)\label{classCAICHHashTree_a955741b218ae1070bda4965a23b0cace}
+
+\item 
+bool {\bfseries CreatePartRecoveryData} (uint64 nStartPos, uint64 nSize, {\bf CFileDataIO} $\ast$fileDataOut, uint32 wHashIdent, bool b32BitIdent)\label{classCAICHHashTree_a4283c07be6212236aa7a1368788504f9}
+
+\item 
+void {\bfseries WriteHash} ({\bf CFileDataIO} $\ast$fileDataOut, uint32 wHashIdent, bool b32BitIdent) const \label{classCAICHHashTree_a8c4bdc68fe04fd4e5a69e7d04cf9833e}
+
+\item 
+bool {\bfseries WriteLowestLevelHashs} ({\bf CFileDataIO} $\ast$fileDataOut, uint32 wHashIdent, bool bNoIdent, bool b32BitIdent) const \label{classCAICHHashTree_aea333192a8bb069268aee0f18c0d36f2}
+
+\item 
+bool {\bfseries LoadLowestLevelHashs} ({\bf CFileDataIO} $\ast$fileInput)\label{classCAICHHashTree_a227b3f0aa3287f0b3e7685966dfc7b80}
+
+\item 
+bool {\bfseries SetHash} ({\bf CFileDataIO} $\ast$fileInput, uint32 wHashIdent, sint8 nLevel=(-\/1), bool bAllowOverwrite=true)\label{classCAICHHashTree_ae40c3be87d3f50c89a63606020934a2b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAICHHash} {\bfseries m\_\-Hash}\label{classCAICHHashTree_aa0d72ba8b65c3253bf2b95e76c36d76e}
+
+\item 
+uint64 {\bfseries m\_\-nDataSize}\label{classCAICHHashTree_afdf757a094184b7cb2113d570241a634}
+
+\item 
+uint64 {\bfseries m\_\-nBaseSize}\label{classCAICHHashTree_affa7f0e19f011eb4d967d2004a95bcf7}
+
+\item 
+bool {\bfseries m\_\-bIsLeftBranch}\label{classCAICHHashTree_a818c36668270ba70d14d37efc2c50cc2}
+
+\item 
+bool {\bfseries m\_\-bHashValid}\label{classCAICHHashTree_aaffa7a1a54b514dc7f56e197a3defdd4}
+
+\item 
+{\bf CAICHHashTree} $\ast$ {\bfseries m\_\-pLeftTree}\label{classCAICHHashTree_a05e357128afa4304e96449bea00211b4}
+
+\item 
+{\bf CAICHHashTree} $\ast$ {\bfseries m\_\-pRightTree}\label{classCAICHHashTree_ac790c825a79da5752decdee7ebca2e53}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CAICHHashSet}\label{classCAICHHashTree_a5dc9cfafed549af462f68b2e1301425d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{CAICHHashTree}{p.}{classCAICHHashTree}. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SHAHashSet.h\item 
+src/SHAHashSet.cpp\end{DoxyCompactItemize}

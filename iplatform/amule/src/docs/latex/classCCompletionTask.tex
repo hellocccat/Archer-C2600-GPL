@@ -1,0 +1,58 @@
+\section{CCompletionTask Class Reference}
+\label{classCCompletionTask}\index{CCompletionTask@{CCompletionTask}}
+
+
+This task performs the final tasks on a complete download.  
+
+
+{\ttfamily \#include $<$ThreadTasks.h$>$}Inheritance diagram for CCompletionTask::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCCompletionTask}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CCompletionTask} (const {\bf CPartFile} $\ast$file)\label{classCCompletionTask_a392abc126f12fdc8a7f20b0cfeb15833}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf Entry} ()\label{classCCompletionTask_ac8fec26d8a1ee7ee5e9e97aea56d9c86}
+
+\item 
+virtual void {\bf OnExit} ()\label{classCCompletionTask_aed5ffa34885de5ab6df4fba2e3b53e38}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPath} {\bf m\_\-filename}\label{classCCompletionTask_a2b8ccc9ddc0362318c1d468d1e81a0c0}
+
+\item 
+{\bf CPath} {\bf m\_\-metPath}\label{classCCompletionTask_ad8f54113f38f066b16405a994150da84}
+
+\item 
+uint8 {\bf m\_\-category}\label{classCCompletionTask_a08f82806fcc608025df11bf435256425}
+
+\item 
+const {\bf CPartFile} $\ast$ {\bf m\_\-owner}\label{classCCompletionTask_a60166a0cbf9a8ea62f9940b589607583}
+
+\item 
+bool {\bf m\_\-error}\label{classCCompletionTask_a1d2ee5633753e4df2ff070565d1c1a84}
+
+\item 
+{\bf CPath} {\bf m\_\-newName}\label{classCCompletionTask_aee9103e0c21d106ae6156cf7c04a26f0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This task performs the final tasks on a complete download. This includes finding a usable destination filename, removing old data files and moving the part-\/file (potentially to a different partition). 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadTasks.h\item 
+src/ThreadTasks.cpp\end{DoxyCompactItemize}

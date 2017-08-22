@@ -1,0 +1,56 @@
+\section{CAllocateFileTask Class Reference}
+\label{classCAllocateFileTask}\index{CAllocateFileTask@{CAllocateFileTask}}
+
+
+This task preallocates space for a newly created partfile.  
+
+
+{\ttfamily \#include $<$ThreadTasks.h$>$}Inheritance diagram for CAllocateFileTask::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCAllocateFileTask}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAllocateFileTask} ({\bf CPartFile} $\ast$file, bool pause)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf Entry} ()\label{classCAllocateFileTask_a03b090460a948ecdd522fa50ceaf6cf8}
+
+\item 
+virtual void {\bf OnExit} ()\label{classCAllocateFileTask_abf55789dd62e67cf82f93794e984348a}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPartFile} $\ast$ {\bf m\_\-file}\label{classCAllocateFileTask_a8bbefd9a2007c46d7c96daf82637b913}
+
+\item 
+bool {\bf m\_\-pause}\label{classCAllocateFileTask_a0828fd81e5e0a17171dc04d31fb89196}
+
+\item 
+long {\bf m\_\-result}\label{classCAllocateFileTask_abab84ba97c2f2c988caf7e6e8f6cd531}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This task preallocates space for a newly created partfile. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CAllocateFileTask@{CAllocateFileTask}!CAllocateFileTask@{CAllocateFileTask}}
+\index{CAllocateFileTask@{CAllocateFileTask}!CAllocateFileTask@{CAllocateFileTask}}
+\subsubsection[{CAllocateFileTask}]{\setlength{\rightskip}{0pt plus 5cm}CAllocateFileTask::CAllocateFileTask ({\bf CPartFile} $\ast$ {\em file}, \/  bool {\em pause})}\label{classCAllocateFileTask_a8f9cbc99dbbbd032dbc3eb386bf2e7b6}
+
+
+Creates a thread that will allocate disk space for the full file. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadTasks.h\item 
+src/ThreadTasks.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\section{CCommandTree Class Reference}
+\label{classCCommandTree}\index{CCommandTree@{CCommandTree}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CCommandTree} ({\bf CaMuleExternalConnector} \&app)\label{classCCommandTree_a232375cc7454085f41116f6e366eb8f4}
+
+\item 
+{\bf CCommandTree} $\ast$ {\bfseries AddCommand} (const wxString \&command, int cmd\_\-id, const wxString \&shortDesc, const wxString \&longDesc, enum Params params=CMD\_\-PARAM\_\-OPTIONAL)\label{classCCommandTree_a1572754f175806d6462399958b2cacdb}
+
+\item 
+int {\bfseries FindCommandId} (const wxString \&command, wxString \&args, wxString \&cmdstr) const \label{classCCommandTree_a419516888ce5c3851a81589b1b3dd233}
+
+\item 
+wxString {\bfseries GetFullCommand} () const \label{classCCommandTree_aa13c14fba11aa89d49daff555daed2f6}
+
+\item 
+void {\bfseries PrintHelpFor} (const wxString \&command) const \label{classCCommandTree_a5763a9a9f079dbead01821e0ad19ea57}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CCommandTree} ({\bf CaMuleExternalConnector} \&app, const wxString \&command, int cmd\_\-id, const wxString \&shortDesc, const wxString \&longDesc, enum Params params)\label{classCCommandTree_aab7555a9f1892593b31f7f973d48ec9f}
+
+\item 
+{\bf CCommandTree} $\ast$ {\bfseries AddCommand} ({\bf CCommandTree} $\ast$cmdTree)\label{classCCommandTree_a0bc7ffdc100934e312fcc06cac12b9cc}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-command}\label{classCCommandTree_abc867d7942cb50d5baf82cafeb37bd57}
+
+\item 
+int {\bfseries m\_\-cmd\_\-id}\label{classCCommandTree_ab555f77a31995f3d638ff18a17f6c6ac}
+
+\item 
+wxString {\bfseries m\_\-short}\label{classCCommandTree_ac213c2ce3200fcc7abc2199b5b1ddcf8}
+
+\item 
+wxString {\bfseries m\_\-verbose}\label{classCCommandTree_ac167a9a75084f7d2e8796ecdd97c31e1}
+
+\item 
+enum Params {\bfseries m\_\-params}\label{classCCommandTree_abbd02b539eec7fa112f4042d44a4ec92}
+
+\item 
+const {\bf CCommandTree} $\ast$ {\bfseries m\_\-parent}\label{classCCommandTree_acad047112be5d4ac869fd8c188ca20d4}
+
+\item 
+{\bf CaMuleExternalConnector} \& {\bfseries m\_\-app}\label{classCCommandTree_aa59cc05c72415e8efdd8c613a7eeec35}
+
+\item 
+CmdList\_\-t {\bfseries m\_\-subcommands}\label{classCCommandTree_a5c8a08686dc7c1d6601dd53c6104879b}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConnector.h\item 
+src/ExternalConnector.cpp\end{DoxyCompactItemize}

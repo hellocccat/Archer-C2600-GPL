@@ -1,0 +1,104 @@
+\section{CScopedArray$<$ TYPE $>$ Class Template Reference}
+\label{classCScopedArray}\index{CScopedArray@{CScopedArray}}
+
+
+Similar to \doxyref{CScopedPtr}{p.}{classCScopedPtr}, except that an array is expected.  
+
+
+{\ttfamily \#include $<$ScopedPtr.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CScopedArray} (TYPE $\ast$ptr)
+\item 
+{\bf CScopedArray} (size\_\-t nr)
+\item 
+{\bf $\sim$CScopedArray} ()
+\item 
+TYPE \& {\bf operator[$\,$]} (unsigned i) const 
+\item 
+TYPE $\ast$ {\bf get} () const 
+\item 
+void {\bf reset} (TYPE $\ast$ptr=0)
+\item 
+void {\bf reset} (size\_\-t nr)\label{classCScopedArray_ae1d4166af43a7990954918518e706238}
+
+\item 
+TYPE $\ast$ {\bf release} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+{\bf CScopedArray} (const {\bf CScopedArray}$<$ TYPE $>$ \&)\label{classCScopedArray_a1bd774d4b660026d8c7333e9203aa44f}
+
+\item 
+{\bf CScopedArray}$<$ TYPE $>$ \& {\bfseries operator=} (const {\bf CScopedArray}$<$ TYPE $>$ \&)\label{classCScopedArray_a71badb8ee206371b757d31b22584eb97}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TYPE $\ast$ {\bfseries m\_\-ptr}\label{classCScopedArray_ab2e8634c0a54d5a19c3a15ebc2c14fce}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename TYPE$>$ class CScopedArray$<$ TYPE $>$}
+
+Similar to \doxyref{CScopedPtr}{p.}{classCScopedPtr}, except that an array is expected. \begin{DoxySeeAlso}{See also}
+\doxyref{CScopedPtr}{p.}{classCScopedPtr} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CScopedArray@{CScopedArray}!CScopedArray@{CScopedArray}}
+\index{CScopedArray@{CScopedArray}!CScopedArray@{CScopedArray}}
+\subsubsection[{CScopedArray}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ {\bf CScopedArray}$<$ TYPE $>$::{\bf CScopedArray} (TYPE $\ast$ {\em ptr})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedArray_a3ac980a38b056a12459bf5a9026558d2}
+
+
+Constructor. Note that \doxyref{CScopedArray}{p.}{classCScopedArray} takes ownership of the array. \index{CScopedArray@{CScopedArray}!CScopedArray@{CScopedArray}}
+\index{CScopedArray@{CScopedArray}!CScopedArray@{CScopedArray}}
+\subsubsection[{CScopedArray}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ {\bf CScopedArray}$<$ TYPE $>$::{\bf CScopedArray} (size\_\-t {\em nr})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedArray_a2d05d04bac346308d211c829a40c5b98}
+
+
+Constructor, allocating nr elements. \index{CScopedArray@{CScopedArray}!$\sim$CScopedArray@{$\sim$CScopedArray}}
+\index{$\sim$CScopedArray@{$\sim$CScopedArray}!CScopedArray@{CScopedArray}}
+\subsubsection[{$\sim$CScopedArray}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ {\bf CScopedArray}$<$ TYPE $>$::$\sim${\bf CScopedArray} ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedArray_ae485d49504af685ffef55ace0c7ccd98}
+
+
+Frees the array owned by this instance. 
+
+\subsection{Member Function Documentation}
+\index{CScopedArray@{CScopedArray}!get@{get}}
+\index{get@{get}!CScopedArray@{CScopedArray}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ TYPE$\ast$ {\bf CScopedArray}$<$ TYPE $>$::get () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedArray_aa88a17d2dae9be97c857b70a5aebceca}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CScopedPtr::get}{p.}{classCScopedPtr_a35dcc5e10151eda86d7a6a9edfa979ff} 
+\end{DoxySeeAlso}
+
+
+Referenced by CAICHSyncTask::ConvertToKnown2ToKnown264().\index{CScopedArray@{CScopedArray}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!CScopedArray@{CScopedArray}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ TYPE\& {\bf CScopedArray}$<$ TYPE $>$::operator[$\,$] (unsigned {\em i}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedArray_a715dafb13105548a544c82c4a8e304b1}
+
+
+Accessor. \index{CScopedArray@{CScopedArray}!release@{release}}
+\index{release@{release}!CScopedArray@{CScopedArray}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ TYPE$\ast$ {\bf CScopedArray}$<$ TYPE $>$::release ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedArray_ae82d8fcd8cdb5a5ada28cb965c902acb}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CScopedPtr::release}{p.}{classCScopedPtr_ae42e5bebddd86ca1d658638eb6d6edab} 
+\end{DoxySeeAlso}
+\index{CScopedArray@{CScopedArray}!reset@{reset}}
+\index{reset@{reset}!CScopedArray@{CScopedArray}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ void {\bf CScopedArray}$<$ TYPE $>$::reset (TYPE $\ast$ {\em ptr} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedArray_a789f72094d1d546b214d015ac513a5fa}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CScopedPtr::reset}{p.}{classCScopedPtr_a427761d39cc1e17ce82010beca3bef06} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ScopedPtr.h\end{DoxyCompactItemize}

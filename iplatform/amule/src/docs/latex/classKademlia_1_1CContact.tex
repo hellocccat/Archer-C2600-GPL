@@ -1,0 +1,152 @@
+\section{Kademlia::CContact Class Reference}
+\label{classKademlia_1_1CContact}\index{Kademlia::CContact@{Kademlia::CContact}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CContact} (const {\bf CUInt128} \&clientID, uint32\_\-t ip, uint16\_\-t udpPort, uint16\_\-t tcpPort, uint8\_\-t version, const {\bf CKadUDPKey} \&kadKey, bool ipVerified, const {\bf CUInt128} \&target=CKademlia::GetPrefs()-\/$>$GetKadID())\label{classKademlia_1_1CContact_ab288a5af8a19a5244f88fee89e1e7334}
+
+\item 
+{\bfseries CContact} (const {\bf CContact} \&k1)\label{classKademlia_1_1CContact_a4721f0dd11460af463695f48b6bfa896}
+
+\item 
+const {\bf CUInt128} \& {\bfseries GetClientID} () const   throw ()\label{classKademlia_1_1CContact_a632fd8a8873def2ae249cb2f08eb4126}
+
+\item 
+void {\bfseries SetClientID} (const {\bf CUInt128} \&clientID)  throw ()\label{classKademlia_1_1CContact_a27a6ed109fd48087bf287d34ac2f74d5}
+
+\item 
+const wxString {\bfseries GetClientIDString} () const \label{classKademlia_1_1CContact_a628731006602e630181825e172afca27}
+
+\item 
+const {\bf CUInt128} \& {\bfseries GetDistance} () const   throw ()\label{classKademlia_1_1CContact_aca65f7539dcc097396b966716200f719}
+
+\item 
+const wxString {\bfseries GetDistanceString} () const \label{classKademlia_1_1CContact_abc580720501d1490e4d53a7f463f13a3}
+
+\item 
+uint32\_\-t {\bfseries GetIPAddress} () const   throw ()\label{classKademlia_1_1CContact_a007ee30eb18472e9dd18a9f8e87f5229}
+
+\item 
+void {\bfseries SetIPAddress} (uint32\_\-t ip)  throw ()\label{classKademlia_1_1CContact_abd3da6c29749490a8db6ba7484514ffa}
+
+\item 
+uint16\_\-t {\bfseries GetTCPPort} () const   throw ()\label{classKademlia_1_1CContact_af0fe22abb87856a841acac41f1ecd6c4}
+
+\item 
+void {\bfseries SetTCPPort} (uint16\_\-t port)  throw ()\label{classKademlia_1_1CContact_a188a1b64996df70be183041fa6474ef2}
+
+\item 
+uint16\_\-t {\bfseries GetUDPPort} () const   throw ()\label{classKademlia_1_1CContact_af4e924ff8d65294ba7cca6ec4960055b}
+
+\item 
+void {\bfseries SetUDPPort} (uint16\_\-t port)  throw ()\label{classKademlia_1_1CContact_ad967a9ca769afd3c27ddc933425e5cc7}
+
+\item 
+uint8\_\-t {\bfseries GetType} () const   throw ()\label{classKademlia_1_1CContact_a6d9383e566eff919809df5fae3d15a0c}
+
+\item 
+void {\bfseries UpdateType} ()  throw ()\label{classKademlia_1_1CContact_a3f3b30ca51fd4a2516ca3bde2156de77}
+
+\item 
+void {\bfseries CheckingType} ()  throw ()\label{classKademlia_1_1CContact_a9133d10d2df193b445a9569ee7d53e60}
+
+\item 
+bool {\bfseries InUse} () const   throw ()\label{classKademlia_1_1CContact_a9f3f241f0186982a63e162730ed4bdd3}
+
+\item 
+void {\bfseries IncUse} ()  throw ()\label{classKademlia_1_1CContact_ac3ecc4f6421ba2ba8485be1cafac8221}
+
+\item 
+void {\bfseries DecUse} ()\label{classKademlia_1_1CContact_af70ebb86002524eec3e58eda00a74346}
+
+\item 
+time\_\-t {\bfseries GetCreatedTime} () const   throw ()\label{classKademlia_1_1CContact_aa42ce5bd3b289d84bf1be184834ae92c}
+
+\item 
+void {\bfseries SetExpireTime} (time\_\-t value)  throw ()\label{classKademlia_1_1CContact_ae07e8d59553aade6459feb5a76ad9e83}
+
+\item 
+time\_\-t {\bfseries GetExpireTime} () const   throw ()\label{classKademlia_1_1CContact_afe289e3e48ac1b311f421cee5b2bf34f}
+
+\item 
+time\_\-t {\bfseries GetLastTypeSet} () const   throw ()\label{classKademlia_1_1CContact_ad72c2ff3532316a48a8282dc014da35b}
+
+\item 
+time\_\-t {\bfseries GetLastSeen} () const   throw ()\label{classKademlia_1_1CContact_ac2820b261b028fe3bcac134ed10b3dc4}
+
+\item 
+uint8\_\-t {\bfseries GetVersion} () const   throw ()\label{classKademlia_1_1CContact_a2cee1cef932e993fcc8ca567614c7479}
+
+\item 
+void {\bfseries SetVersion} (uint8\_\-t value)  throw ()\label{classKademlia_1_1CContact_ae6e4f2cde3d277c312c5fae5673da504}
+
+\item 
+const {\bf CKadUDPKey} \& {\bfseries GetUDPKey} () const   throw ()\label{classKademlia_1_1CContact_a1d6267e953a39c7d01ca94d14098a028}
+
+\item 
+void {\bfseries SetUDPKey} (const {\bf CKadUDPKey} \&key)  throw ()\label{classKademlia_1_1CContact_a691e8ee8a9016c31231913a59452094b}
+
+\item 
+bool {\bfseries IsIPVerified} () const   throw ()\label{classKademlia_1_1CContact_acef900553668e23708c4efa5774fcb6f}
+
+\item 
+void {\bfseries SetIPVerified} (bool ipVerified)  throw ()\label{classKademlia_1_1CContact_a19caef54b82936896429e36a11be4c68}
+
+\item 
+bool {\bfseries GetReceivedHelloPacket} () const   throw ()\label{classKademlia_1_1CContact_adfbee994ac28404bb164bc5145b2c5dd}
+
+\item 
+void {\bfseries SetReceivedHelloPacket} ()  throw ()\label{classKademlia_1_1CContact_a7227029157640a6e39a35b08327c9286}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CUInt128} {\bfseries m\_\-clientID}\label{classKademlia_1_1CContact_ab34a1f325be3e90c3f6a0a1d1e365361}
+
+\item 
+{\bf CUInt128} {\bfseries m\_\-distance}\label{classKademlia_1_1CContact_a0cefe579cbdc1ed12ce597210b3bf767}
+
+\item 
+uint32\_\-t {\bfseries m\_\-ip}\label{classKademlia_1_1CContact_ada1b0117fc0b77321db27788fd14ad2b}
+
+\item 
+uint16\_\-t {\bfseries m\_\-tcpPort}\label{classKademlia_1_1CContact_afdf5ab6138649ca5fbf34b84b5b8910f}
+
+\item 
+uint16\_\-t {\bfseries m\_\-udpPort}\label{classKademlia_1_1CContact_a7877a8c50145e6261094c1f232c74c26}
+
+\item 
+uint8\_\-t {\bfseries m\_\-type}\label{classKademlia_1_1CContact_a948352dbe85f25b02a474c0997990c5a}
+
+\item 
+time\_\-t {\bfseries m\_\-lastTypeSet}\label{classKademlia_1_1CContact_a6ea369abbf6aa4163b4818e5841bba08}
+
+\item 
+time\_\-t {\bfseries m\_\-expires}\label{classKademlia_1_1CContact_aca44d77f1af82c959d259839844c6f84}
+
+\item 
+time\_\-t {\bfseries m\_\-created}\label{classKademlia_1_1CContact_a93d7a021c3e6d305292ca3686ad8022c}
+
+\item 
+uint32\_\-t {\bfseries m\_\-inUse}\label{classKademlia_1_1CContact_af6c9da6706f6369a1064aebda391b4ad}
+
+\item 
+uint8\_\-t {\bfseries m\_\-version}\label{classKademlia_1_1CContact_a94478ebd4262983daa921a45163bc38e}
+
+\item 
+bool {\bfseries m\_\-ipVerified}\label{classKademlia_1_1CContact_acfafe05469a05ba0fb3331eb362f7ebc}
+
+\item 
+bool {\bfseries m\_\-receivedHelloPacket}\label{classKademlia_1_1CContact_ad6bb64baa7aff21b610337617ef22ed6}
+
+\item 
+{\bf CKadUDPKey} {\bfseries m\_\-udpKey}\label{classKademlia_1_1CContact_a30a0bca358d91e8105f8547970266b38}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/routing/Contact.h\item 
+src/kademlia/routing/Contact.cpp\end{DoxyCompactItemize}

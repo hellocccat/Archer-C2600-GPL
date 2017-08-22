@@ -1,0 +1,104 @@
+\section{DownloadFile Class Reference}
+\label{classDownloadFile}\index{DownloadFile@{DownloadFile}}
+Inheritance diagram for DownloadFile::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classDownloadFile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries DownloadFile} ({\bf CEC\_\-PartFile\_\-Tag} $\ast$)\label{classDownloadFile_a267900a8014565f03838688c6c07f59d}
+
+\item 
+void {\bfseries ProcessUpdate} ({\bf CEC\_\-PartFile\_\-Tag} $\ast$)\label{classDownloadFile_a50218ea644b4231387b9c577808ab49b}
+
+\item 
+uint32 {\bfseries ID} ()\label{classDownloadFile_add59dc673cb8f0a2456143e8a5c20f4f}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static class {\bf DownloadFileInfo} $\ast$ {\bfseries GetContainerInstance} ()\label{classDownloadFile_ac6d98be83f62b6a18d456aa64c0b15cf}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries sFileName}\label{classDownloadFile_a0e5e72cffb9c05d9cf52d55c94a246ce}
+
+\item 
+uint8 {\bfseries nFileStatus}\label{classDownloadFile_a17d1978a291ee8680fb548525e2cadd9}
+
+\item 
+uint64 {\bfseries lFileSize}\label{classDownloadFile_a1a15635243d35cf2960bb52cef66889d}
+
+\item 
+uint64 {\bfseries lFileCompleted}\label{classDownloadFile_a80a1adf814addddf3cf994f7d8b8afd1}
+
+\item 
+uint64 {\bfseries lFileTransferred}\label{classDownloadFile_a5c407060134ad0becc2f0d8fad058500}
+
+\item 
+unsigned long {\bfseries lFileSpeed}\label{classDownloadFile_a06057a61733cb8453a5d5607eec950df}
+
+\item 
+long {\bfseries lSourceCount}\label{classDownloadFile_a76a1248d4a0ed451bdc203d5350be7d7}
+
+\item 
+long {\bfseries lNotCurrentSourceCount}\label{classDownloadFile_a9b294b57c787593e97da6c2298d68222}
+
+\item 
+long {\bfseries lTransferringSourceCount}\label{classDownloadFile_a1846c5f9d8fe1a35909ad5120f22ec3b}
+
+\item 
+long {\bfseries lSourceCountA4AF}\label{classDownloadFile_a5617fdc6838ca6f9fb062459b26f8689}
+
+\item 
+double {\bfseries fCompleted}\label{classDownloadFile_a6be384c0913096ad371717456ef94065}
+
+\item 
+uint32 {\bfseries lFilePrio}\label{classDownloadFile_a65e6522c1dd85063e9cd664d65193861}
+
+\item 
+bool {\bfseries bFileAutoPriority}\label{classDownloadFile_a88bd9f50b3ea19c67d2ddae5a6325400}
+
+\item 
+wxString {\bfseries sFileHash}\label{classDownloadFile_ab0ddb59766db53e829518cfafb98662f}
+
+\item 
+wxString {\bfseries sED2kLink}\label{classDownloadFile_a09c824387c92c21d72f6140da702d199}
+
+\item 
+uint8 {\bfseries nCat}\label{classDownloadFile_a24a5d3b434dcad0f5574f1193df003a0}
+
+\item 
+wxDateTime {\bfseries wxtLastSeenComplete}\label{classDownloadFile_a20dd2c363ff5de5998bcbcd353fe7fe2}
+
+\item 
+{\bf CMD4Hash} {\bfseries nHash}\label{classDownloadFile_a7cac1754411f985bf6d8d09c281d4d7e}
+
+\item 
+{\bf CProgressImage} $\ast$ {\bfseries m\_\-Image}\label{classDownloadFile_ab8289f639abd56929fd52708aa18ae44}
+
+\item 
+{\bf PartFileEncoderData} {\bfseries m\_\-Encoder}\label{classDownloadFile_aca27659f1385d2cead1031ec65297590}
+
+\item 
+ArrayOfUInts16 {\bfseries m\_\-PartInfo}\label{classDownloadFile_a17738141285adb8049705b5407341589}
+
+\item 
+std::vector$<$ {\bf Gap\_\-Struct} $>$ {\bfseries m\_\-ReqParts}\label{classDownloadFile_a7bba1c75201c759e12660c5637b404e1}
+
+\item 
+ArrayOfUInts64 {\bfseries m\_\-Gaps}\label{classDownloadFile_afab8055fb5ad0bc0cdb4a39d0141534d}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\item 
+src/webserver/src/WebServer.cpp\end{DoxyCompactItemize}

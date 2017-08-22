@@ -1,0 +1,35 @@
+\section{CDirIterator Class Reference}
+\label{classCDirIterator}\index{CDirIterator@{CDirIterator}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries FileType} \{ \par
+{\bfseries FileNoHidden} =  wxDIR\_\-FILES, 
+{\bfseries DirNoHidden} =  wxDIR\_\-DIRS, 
+{\bfseries File} =  wxDIR\_\-FILES $|$ wxDIR\_\-HIDDEN, 
+{\bfseries Dir} =  wxDIR\_\-DIRS $|$ wxDIR\_\-HIDDEN, 
+\par
+{\bfseries Any} =  wxDIR\_\-FILES $|$ wxDIR\_\-DIRS $|$ wxDIR\_\-HIDDEN
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CDirIterator} (const {\bf CPath} \&dir)\label{classCDirIterator_a2a2368b03cc928c131eb76443b8be179}
+
+\item 
+{\bf CPath} {\bfseries GetFirstFile} (FileType type, const wxString \&mask=wxEmptyString)\label{classCDirIterator_afb14ccaa1370ef03012d4b2bb5aad49b}
+
+\item 
+{\bf CPath} {\bfseries GetNextFile} ()\label{classCDirIterator_a6e546380eef033636e5f586eecd6499c}
+
+\item 
+bool {\bfseries HasSubDirs} (const wxString \&spec=wxEmptyString)\label{classCDirIterator_abec2fc66d90155cffb049e10f7e6a05a}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/common/FileFunctions.h\item 
+src/libs/common/FileFunctions.cpp\end{DoxyCompactItemize}

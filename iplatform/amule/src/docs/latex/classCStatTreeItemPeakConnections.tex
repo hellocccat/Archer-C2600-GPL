@@ -1,0 +1,71 @@
+\section{CStatTreeItemPeakConnections Class Reference}
+\label{classCStatTreeItemPeakConnections}\index{CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}}
+
+
+Stat tree item for Peak Connections.  
+
+
+{\ttfamily \#include $<$Statistics.h$>$}Inheritance diagram for CStatTreeItemPeakConnections::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCStatTreeItemPeakConnections}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemPeakConnections} (const wxString \&label)
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stat tree item for Peak Connections. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}!CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}}
+\index{CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}!CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}}
+\subsubsection[{CStatTreeItemPeakConnections}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemPeakConnections::CStatTreeItemPeakConnections (const wxString \& {\em label})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemPeakConnections_acff53576f6653736f9f9f6b4491b68fc}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemPeakConnections::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemPeakConnections_a75ed9da4893b62502ae931322b08eded}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+References CECTag::AddTag().\index{CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemPeakConnections@{CStatTreeItemPeakConnections}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemPeakConnections::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemPeakConnections_ae1eacfc8b5a274ab40d86e4c0043576b}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+References CStatTreeItemBase::m\_\-label.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Statistics.h\item 
+src/Statistics.cpp\end{DoxyCompactItemize}

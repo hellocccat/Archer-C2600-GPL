@@ -1,0 +1,105 @@
+\section{CGapList Class Reference}
+\label{classCGapList}\index{CGapList@{CGapList}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf const\_\-iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Init} (uint64 fileSize, bool empty)\label{classCGapList_ad6c7c4767c64e4de2df1181236fcb81b}
+
+\item 
+void {\bfseries AddGap} (uint64 gapstart, uint64 gapend)\label{classCGapList_a45d44037b47455a71c0e160925b2e645}
+
+\item 
+void {\bfseries AddGap} (uint16 part)\label{classCGapList_aa33f71e8bb31acd5c50d70a0613f0ed4}
+
+\item 
+void {\bfseries FillGap} (uint64 gapstart, uint64 gapend)\label{classCGapList_a1a6bdd4c618659ea7c81a1296d61a54e}
+
+\item 
+void {\bfseries FillGap} (uint16 part)\label{classCGapList_a2a702e46400f2335a89c71a0a2e4fc78}
+
+\item 
+bool {\bfseries IsComplete} (uint64 gapstart, uint64 gapend) const \label{classCGapList_a30259be6ca3102a5cd474c5e91fcb52c}
+
+\item 
+bool {\bfseries IsComplete} (uint16 part)\label{classCGapList_a42543bad12b54b408164c9fb61faf035}
+
+\item 
+bool {\bfseries IsComplete} () const \label{classCGapList_ae0fdcfbde483feba4e700c2ac0e7e3e2}
+
+\item 
+uint32 {\bfseries size} () const \label{classCGapList_ab0fd731900dac1923ab4c0526d3f9d6c}
+
+\item 
+bool {\bfseries empty} () const \label{classCGapList_a523e1ba374bb928adb701962e68ea587}
+
+\item 
+uint64 {\bfseries GetGapSize} ()\label{classCGapList_a9407a9419db983ad99ab4763ee1298ea}
+
+\item 
+uint32 {\bfseries GetGapSize} (uint16 part) const \label{classCGapList_a1c1079098d88b5bb4b70e3b1799bf25d}
+
+\item 
+{\bf const\_\-iterator} {\bfseries begin} () const \label{classCGapList_a97f24803be17e8e9a14978349ea7ee48}
+
+\item 
+{\bf const\_\-iterator} {\bfseries end} () const \label{classCGapList_a803bbeee8a361fe95dd3c518a7188e75}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ePartComplete} \{ {\bfseries complete}, 
+{\bfseries incomplete}, 
+{\bfseries unknown}
+ \}
+\item 
+typedef std::map$<$ uint64, uint64 $>$ {\bfseries ListType}\label{classCGapList_aa36dc5f8d4a6a6bdf13c769ad86ff6f8}
+
+\item 
+typedef ListType::iterator {\bfseries iterator}\label{classCGapList_a1dd257b3fb5997863f3d34a90bac56e8}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries GetPartSize} (uint16 part) const \label{classCGapList_aec281ea0cdcf0e60a5f3267860f58ebb}
+
+\item 
+bool {\bfseries ArgCheck} (uint64 gapstart, uint64 \&gapend) const \label{classCGapList_ac909a303dc3966774ec59fc1e94fbedc}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ListType {\bfseries m\_\-gaplist}\label{classCGapList_a8a5bda98dcc38b5aeafa1955334aaf78}
+
+\item 
+uint64 {\bfseries m\_\-filesize}\label{classCGapList_a1fa94367058810d9d4142f1ae734ebf0}
+
+\item 
+uint16 {\bfseries m\_\-iPartCount}\label{classCGapList_a1727e272eb9ec47a22ef1dd0e886fa01}
+
+\item 
+uint32 {\bfseries m\_\-sizeLastPart}\label{classCGapList_ac1adfd3747dc7653ef13a38df7051452}
+
+\item 
+uint64 {\bfseries m\_\-totalGapSize}\label{classCGapList_af8080cec35113abcc17e2ef0ceaaaffb}
+
+\item 
+bool {\bfseries m\_\-totalGapSizeValid}\label{classCGapList_a6932b80af00e3de9fd9e22140f325427}
+
+\item 
+std::vector$<$ byte $>$ {\bfseries m\_\-partsComplete}\label{classCGapList_a3a756e88df87f2ae3a30ca29adf50084}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/GapList.h\item 
+src/GapList.cpp\end{DoxyCompactItemize}

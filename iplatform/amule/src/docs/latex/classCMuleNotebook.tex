@@ -1,0 +1,118 @@
+\section{CMuleNotebook Class Reference}
+\label{classCMuleNotebook}\index{CMuleNotebook@{CMuleNotebook}}
+
+
+This is an NoteBook control which adds additional features above what is provided by the wxNoteBook widget.  
+
+
+{\ttfamily \#include $<$MuleNotebook.h$>$}Inheritance diagram for CMuleNotebook::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCMuleNotebook}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleNotebook} (wxWindow $\ast$parent, wxWindowID id, const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=0, const wxString \&name=wxT(\char`\"{}notebook\char`\"{}))
+\item 
+virtual {\bf $\sim$CMuleNotebook} ()\label{classCMuleNotebook_a7e25a574019813f874b4d487287ce10d}
+
+\item 
+virtual bool {\bf DeletePage} (int nPage)
+\item 
+virtual bool {\bf DeleteAllPages} ()\label{classCMuleNotebook_a19fb1788194a63d4648e1063662798e9}
+
+\item 
+void {\bf EnablePopup} (bool enable)
+\item 
+void {\bf SetPopupHandler} (wxWindow $\ast$widget)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnMouseLeftRelease} (wxMouseEvent \&event)\label{classCMuleNotebook_a418a7f6345aa6d1fcf689d794391c875}
+
+\item 
+void {\bf OnMouseMotion} (wxMouseEvent \&event)\label{classCMuleNotebook_ab1c1901acd682de87fafce68d0a52ff8}
+
+\item 
+void {\bf OnRMButton} (wxMouseEvent \&event)\label{classCMuleNotebook_ab00e9c42adc0725876590cc9f40feeb1}
+
+\item 
+void {\bf OnPopupClose} (wxCommandEvent \&evt)\label{classCMuleNotebook_a1521f281ea66344c14957986fa788190}
+
+\item 
+void {\bf OnPopupCloseAll} (wxCommandEvent \&evt)\label{classCMuleNotebook_a24e7c221b5c65c281da072f633772336}
+
+\item 
+void {\bf OnPopupCloseOthers} (wxCommandEvent \&evt)\label{classCMuleNotebook_a45a8f8a6e50dfc2d4cecf167fcb83acf}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\_\-popup\_\-enable}\label{classCMuleNotebook_a48dabc1cb5dd12168fa57f647397a058}
+
+\item 
+wxWindow $\ast$ {\bf m\_\-popup\_\-widget}\label{classCMuleNotebook_afa2031e32ab2dcf791f281f660545b48}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is an NoteBook control which adds additional features above what is provided by the wxNoteBook widget. Currently it includes:
+\begin{DoxyItemize}
+\item Use of images on the tabs for closing the pages.
+\item A popup-\/menu for closing one or more pages.
+\item Events triggered when pages are closed. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CMuleNotebook@{CMuleNotebook}!CMuleNotebook@{CMuleNotebook}}
+\index{CMuleNotebook@{CMuleNotebook}!CMuleNotebook@{CMuleNotebook}}
+\subsubsection[{CMuleNotebook}]{\setlength{\rightskip}{0pt plus 5cm}CMuleNotebook::CMuleNotebook (wxWindow $\ast$ {\em parent}, \/  wxWindowID {\em id}, \/  const wxPoint \& {\em pos} = {\ttfamily wxDefaultPosition}, \/  const wxSize \& {\em size} = {\ttfamily wxDefaultSize}, \/  long {\em style} = {\ttfamily 0}, \/  const wxString \& {\em name} = {\ttfamily wxT(\char`\"{}notebook\char`\"{})})}\label{classCMuleNotebook_ae1d863a261952e42c3008ac4dbb82233}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+wxNotebook::wxNotebook 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CMuleNotebook@{CMuleNotebook}!DeletePage@{DeletePage}}
+\index{DeletePage@{DeletePage}!CMuleNotebook@{CMuleNotebook}}
+\subsubsection[{DeletePage}]{\setlength{\rightskip}{0pt plus 5cm}bool CMuleNotebook::DeletePage (int {\em nPage})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleNotebook_a9e7ea84ef956dd262ab352588884288f}
+
+
+Deletes the page and triggers an event. 
+\begin{DoxyParams}{Parameters}
+\item[{\em nPage}]The page to be removed. \end{DoxyParams}
+
+
+Referenced by DeleteAllPages(), OnMouseLeftRelease(), OnPopupClose(), CChatWnd::OnPopupClose(), OnPopupCloseOthers(), and CChatWnd::OnPopupCloseOthers().\index{CMuleNotebook@{CMuleNotebook}!EnablePopup@{EnablePopup}}
+\index{EnablePopup@{EnablePopup}!CMuleNotebook@{CMuleNotebook}}
+\subsubsection[{EnablePopup}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleNotebook::EnablePopup (bool {\em enable})}\label{classCMuleNotebook_a9ef369f1011479443dbb7389c8d2f2d3}
+
+
+Enables or disables the displaying of a popup-\/menu. 
+\begin{DoxyParams}{Parameters}
+\item[{\em enabled}]The new setting. \end{DoxyParams}
+
+
+References m\_\-popup\_\-enable.\index{CMuleNotebook@{CMuleNotebook}!SetPopupHandler@{SetPopupHandler}}
+\index{SetPopupHandler@{SetPopupHandler}!CMuleNotebook@{CMuleNotebook}}
+\subsubsection[{SetPopupHandler}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleNotebook::SetPopupHandler (wxWindow $\ast$ {\em widget})}\label{classCMuleNotebook_a2d2c4a316536e3275b3bf90b8eb6052b}
+
+
+Sets an external widget to handle the popup-\/event. 
+\begin{DoxyParams}{Parameters}
+\item[{\em widget}]The widget which would recieve the event or NULL to disable.\end{DoxyParams}
+Setting the handler to a non-\/NULL pointer means that upon right-\/clicks, a right click event will be sent to that widget, so that it can create a popup-\/menu. The coordinates will be fixed to fit onto the specified widget, so no mapping is needed. 
+
+References m\_\-popup\_\-widget.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MuleNotebook.h\item 
+src/MuleNotebook.cpp\end{DoxyCompactItemize}

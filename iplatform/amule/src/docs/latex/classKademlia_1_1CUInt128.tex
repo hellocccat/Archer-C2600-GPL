@@ -1,0 +1,215 @@
+\section{Kademlia::CUInt128 Class Reference}
+\label{classKademlia_1_1CUInt128}\index{Kademlia::CUInt128@{Kademlia::CUInt128}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CUInt128} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_afa0f196aa71e02f8677d79ff7f6d72a1}
+
+\item 
+{\bfseries CUInt128} (bool fill=false)  throw ()\label{classKademlia_1_1CUInt128_af673b7a4d62e01a5d558b45b16b8844b}
+
+\item 
+{\bfseries CUInt128} (uint32\_\-t value)  throw ()\label{classKademlia_1_1CUInt128_af65064e0de42cc7dae2f60a4563f92d5}
+
+\item 
+{\bfseries CUInt128} (const uint8\_\-t $\ast$valueBE)  throw ()\label{classKademlia_1_1CUInt128_af313d5c3bdbc57cb071cad4dac148778}
+
+\item 
+{\bf CUInt128} (const {\bf CUInt128} \&value, uint32\_\-t numBits)
+\item 
+unsigned {\bf GetBitNumber} (unsigned bit) const   throw ()
+\item 
+int {\bfseries CompareTo} (const {\bf CUInt128} \&other) const   throw ()\label{classKademlia_1_1CUInt128_a1556d8c45e870ba19ee68126f26838c1}
+
+\item 
+int {\bfseries CompareTo} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a579044ae861fc61d7b99d2ab146a8137}
+
+\item 
+wxString {\bfseries ToHexString} () const \label{classKademlia_1_1CUInt128_a8e9fd37f7ce54102e6a9830867cd071c}
+
+\item 
+wxString {\bfseries ToBinaryString} (bool trim=false) const \label{classKademlia_1_1CUInt128_ab03c7901e2a5fb2dfbf3ac20f50863e3}
+
+\item 
+void {\bfseries ToByteArray} (uint8\_\-t $\ast$b) const \label{classKademlia_1_1CUInt128_a648556e8280ec9601cfd048fd5beba05}
+
+\item 
+uint32\_\-t {\bfseries Get32BitChunk} (unsigned val) const   throw ()\label{classKademlia_1_1CUInt128_a84ccf0d017b2853f5184b6c97e25b6b3}
+
+\item 
+void {\bfseries Set32BitChunk} (unsigned chunk, uint32\_\-t value)\label{classKademlia_1_1CUInt128_a603560d69a19c4156d5f87239deb220f}
+
+\item 
+{\bf CUInt128} \& {\bfseries SetValue} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_abeab5f5b6605f7db512dbe5a716cc473}
+
+\item 
+{\bf CUInt128} \& {\bfseries SetValue} (uint32\_\-t value)  throw ()\label{classKademlia_1_1CUInt128_a501e91f77bdffefe8bad533bc14bddc8}
+
+\item 
+{\bf CUInt128} \& {\bfseries SetValueBE} (const uint8\_\-t $\ast$valueBE)  throw ()\label{classKademlia_1_1CUInt128_a141c433aae6a3cc6b518f013428f9b11}
+
+\item 
+void {\bf StoreCryptValue} (uint8\_\-t $\ast$buf) const 
+\item 
+{\bf CUInt128} \& {\bf SetBitNumber} (unsigned bit, unsigned value)
+\item 
+{\bf CUInt128} \& {\bfseries ShiftLeft} (unsigned bits)  throw ()\label{classKademlia_1_1CUInt128_a23faf69253344824375dc6104a7c3d11}
+
+\item 
+{\bf CUInt128} \& {\bfseries Add} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_a92af5982bdb03ba12e0df869eb373973}
+
+\item 
+{\bf CUInt128} \& {\bfseries Add} (uint32\_\-t value)  throw ()\label{classKademlia_1_1CUInt128_a91df2909a2437cee37b38ff4de91bf4f}
+
+\item 
+{\bf CUInt128} \& {\bfseries Subtract} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_a8a2b11a689094a6ed012fd90816468e3}
+
+\item 
+{\bf CUInt128} \& {\bfseries Subtract} (uint32\_\-t value)  throw ()\label{classKademlia_1_1CUInt128_a40ce42c3eec0def437bd4a105653abcd}
+
+\item 
+{\bf CUInt128} \& {\bfseries XOR} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_a3cfb4ab69992274c2dca6e6b703c78aa}
+
+\item 
+{\bf CUInt128} \& {\bfseries XORBE} (const uint8\_\-t $\ast$valueBE)  throw ()\label{classKademlia_1_1CUInt128_a9cd9b9843fdf46db711908c33b69578e}
+
+\item 
+bool {\bfseries operator$<$} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_a0d8cadd5bc47cebfec4ebaa1f9e2cd57}
+
+\item 
+bool {\bfseries operator$>$} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_adbacef0f5c965bf2d0bc48805a9cbf69}
+
+\item 
+bool {\bfseries operator$<$=} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_a01c962940177895eb05c97c92f3a8130}
+
+\item 
+bool {\bfseries operator$>$=} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_aef2fd15c6c06a217c660e69f6e460458}
+
+\item 
+bool {\bfseries operator==} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_a6b8815e1b2a44e6fb6a227ea4f5113bb}
+
+\item 
+bool {\bfseries operator!=} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_a2595570d2d57592526694852ca7e3b98}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator=} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_ad991c96413c39e6839fb996dd68fcfb0}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator+=} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_a6589c0172c59f7e2390053abe0ff5050}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator-\/=} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_a7510ba3b4e77a5ebed1cc334034d082e}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator$^\wedge$=} (const {\bf CUInt128} \&value)  throw ()\label{classKademlia_1_1CUInt128_abc44d3488556b35cadac7bbc3a7959b0}
+
+\item 
+{\bf CUInt128} {\bfseries operator+} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_a5a00f8caae018385e7a6a91c7465140c}
+
+\item 
+{\bf CUInt128} {\bfseries operator-\/} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_ac8ee014fab2ebc5e67c9b0b9ed5d85a4}
+
+\item 
+{\bf CUInt128} {\bfseries operator$^\wedge$} (const {\bf CUInt128} \&value) const   throw ()\label{classKademlia_1_1CUInt128_ae8e1eefab9039f0614a889d5c3e497d9}
+
+\item 
+bool {\bfseries operator$<$} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a85ede02ff8947ea7df56cd204ed1945b}
+
+\item 
+bool {\bfseries operator$>$} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a61a6b34c2e9a8f2de2e882077fec3eb8}
+
+\item 
+bool {\bfseries operator$<$=} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_aae0c1bc768df492efa54e4645161aae4}
+
+\item 
+bool {\bfseries operator$>$=} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a71aead1e1550b6ce09d0600cc8a26122}
+
+\item 
+bool {\bfseries operator==} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a96ba12123aaaac9ad6d8ba8c02f4928b}
+
+\item 
+bool {\bfseries operator!=} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a5052f5d0d24b3c1c65243153c4a8fce4}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator=} (uint32\_\-t value)  throw ()\label{classKademlia_1_1CUInt128_a76de7cebc6ebd5b9f5046850d4a4476c}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator+=} (uint32\_\-t value)  throw ()\label{classKademlia_1_1CUInt128_a3c4bae283efa36c41590989257dadda2}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator-\/=} (uint32\_\-t value)  throw ()\label{classKademlia_1_1CUInt128_ad48700aac8c628c925e34398702f2418}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator$^\wedge$=} (uint32\_\-t value)  throw ()\label{classKademlia_1_1CUInt128_a25437b5c7d3503f6a1c1408923efaf53}
+
+\item 
+{\bf CUInt128} {\bfseries operator+} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a44e2d9a3e4969b3f7e1e1a058a01395e}
+
+\item 
+{\bf CUInt128} {\bfseries operator-\/} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a24d0323254c188d5cc93db5ba75ce399}
+
+\item 
+{\bf CUInt128} {\bfseries operator$^\wedge$} (uint32\_\-t value) const   throw ()\label{classKademlia_1_1CUInt128_a5d6eb07151f66287ba9b9d77f6217782}
+
+\item 
+{\bf CUInt128} {\bfseries operator$<$$<$} (uint32\_\-t bits) const   throw ()\label{classKademlia_1_1CUInt128_a15024e5c56ff44d9a65a24515bf4d12e}
+
+\item 
+{\bf CUInt128} \& {\bfseries operator$<$$<$=} (uint32\_\-t bits)  throw ()\label{classKademlia_1_1CUInt128_aa53dbcec69cb09662041ee0b166935f0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries IsZero} () const   throw ()\label{classKademlia_1_1CUInt128_ab77a9a3c1b74300a39a9a06e9bd4c0de}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries m\_\-data} [4]\label{classKademlia_1_1CUInt128_a58927dc65af01226e71bcf0badd32594}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Kademlia::CUInt128@{Kademlia::CUInt128}!CUInt128@{CUInt128}}
+\index{CUInt128@{CUInt128}!Kademlia::CUInt128@{Kademlia::CUInt128}}
+\subsubsection[{CUInt128}]{\setlength{\rightskip}{0pt plus 5cm}CUInt128::CUInt128 (const {\bf CUInt128} \& {\em value}, \/  uint32\_\-t {\em numBits})}\label{classKademlia_1_1CUInt128_aadcc67293c0fc59b9a4433b1cff44a90}
+
+
+Generates a new number, copying the most significant 'numBits' bits from 'value'. The remaining bits are randomly generated. 
+
+References GetBitNumber(), and SetBitNumber().
+
+\subsection{Member Function Documentation}
+\index{Kademlia::CUInt128@{Kademlia::CUInt128}!GetBitNumber@{GetBitNumber}}
+\index{GetBitNumber@{GetBitNumber}!Kademlia::CUInt128@{Kademlia::CUInt128}}
+\subsubsection[{GetBitNumber}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Kademlia::CUInt128::GetBitNumber (unsigned {\em bit}) const  throw ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classKademlia_1_1CUInt128_ae3636582f775caa8268b8e2c9f165d7b}
+
+
+Bit at level 0 being most significant. 
+
+Referenced by CUInt128().\index{Kademlia::CUInt128@{Kademlia::CUInt128}!SetBitNumber@{SetBitNumber}}
+\index{SetBitNumber@{SetBitNumber}!Kademlia::CUInt128@{Kademlia::CUInt128}}
+\subsubsection[{SetBitNumber}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CUInt128}\& Kademlia::CUInt128::SetBitNumber (unsigned {\em bit}, \/  unsigned {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classKademlia_1_1CUInt128_aaa950c54254deceab46863b68cff7f80}
+
+
+Bit at level 0 being most significant. 
+
+Referenced by CUInt128().\index{Kademlia::CUInt128@{Kademlia::CUInt128}!StoreCryptValue@{StoreCryptValue}}
+\index{StoreCryptValue@{StoreCryptValue}!Kademlia::CUInt128@{Kademlia::CUInt128}}
+\subsubsection[{StoreCryptValue}]{\setlength{\rightskip}{0pt plus 5cm}void CUInt128::StoreCryptValue (uint8\_\-t $\ast$ {\em buf}) const}\label{classKademlia_1_1CUInt128_aed4d0dc84ddb695abb48a84b2f968bbb}
+
+
+Stores value used by the crypt functions. Since eMule started to use the value as-\/is (four little-\/endian 32-\/bit integers in big-\/endian order), we have to reproduce that same representation on every platform.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buf}]Buffer to hold the value. Must be large enough to hold the data (16 bytes at least), and must not be NULL. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/utils/UInt128.h\item 
+src/kademlia/utils/UInt128.cpp\end{DoxyCompactItemize}

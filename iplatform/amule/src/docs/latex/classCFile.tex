@@ -1,0 +1,282 @@
+\section{CFile Class Reference}
+\label{classCFile}\index{CFile@{CFile}}
+
+
+This class is a modified version of the wxFile class.  
+
+
+{\ttfamily \#include $<$CFile.h$>$}Inheritance diagram for CFile::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCFile}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries fd\_\-invalid} =  -\/1, 
+{\bfseries fd\_\-stdin}, 
+{\bfseries fd\_\-stdout}, 
+{\bfseries fd\_\-stderr}
+ \}
+\item 
+enum {\bf OpenMode} \{ \par
+{\bfseries read}, 
+{\bfseries write}, 
+{\bfseries read\_\-write}, 
+{\bfseries write\_\-append}, 
+\par
+{\bfseries write\_\-excl}, 
+{\bfseries write\_\-safe}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CFile} ()\label{classCFile_a82635098055a4778bdc7ec056066c19f}
+
+\item 
+{\bf CFile} (const {\bf CPath} \&path, {\bf OpenMode} mode=read)
+\item 
+{\bfseries CFile} (const wxString \&path, {\bf OpenMode} mode=read)\label{classCFile_a5227a2c93143e86a68c858c7c41db167}
+
+\item 
+virtual {\bf $\sim$CFile} ()\label{classCFile_a146d61b38c752741357820a5f7e3f3b5}
+
+\item 
+bool {\bf Open} (const {\bf CPath} \&path, {\bf OpenMode} mode=read, int accessMode=wxS\_\-DEFAULT)
+\item 
+bool {\bfseries Open} (const wxString \&path, {\bf OpenMode} mode=read, int accessMode=wxS\_\-DEFAULT)\label{classCFile_a15e5923fde1a526eecd811625ce0f44f}
+
+\item 
+void {\bf Reopen} ({\bf OpenMode} mode)
+\item 
+bool {\bf Create} (const {\bf CPath} \&path, bool overwrite=false, int accessMode=wxS\_\-DEFAULT)
+\item 
+bool {\bfseries Create} (const wxString \&path, bool overwrite=false, int accessMode=wxS\_\-DEFAULT)\label{classCFile_afea12fe8db3e2eca5227efa099ebea3c}
+
+\item 
+bool {\bf Close} ()
+\item 
+int {\bf fd} () const 
+\item 
+bool {\bf Flush} ()
+\item 
+virtual uint64 {\bf GetLength} () const 
+\item 
+bool {\bf SetLength} (uint64 newLength)\label{classCFile_a861ecc760871c3de8611097f91f6b87f}
+
+\item 
+virtual uint64 {\bf GetPosition} () const 
+\item 
+virtual uint64 {\bf GetAvailable} () const 
+\item 
+const {\bf CPath} \& {\bf GetFilePath} () const \label{classCFile_a0e8d581cc64bc9078f0ebce22ae7ad43}
+
+\item 
+bool {\bf IsOpened} () const \label{classCFile_afa5ea8f22762fd9c5a45f17c81dcce22}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual sint64 {\bf doRead} (void $\ast$buffer, size\_\-t count) const 
+\item 
+virtual sint64 {\bf doWrite} (const void $\ast$buffer, size\_\-t count)
+\item 
+virtual sint64 {\bf doSeek} (sint64 offset) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+{\bf CFile} (const {\bf CFile} \&)\label{classCFile_a0809c2a0b6eae5d4a67b19fa1a53f826}
+
+\item 
+{\bf CFile} \& {\bfseries operator=} (const {\bf CFile} \&)\label{classCFile_aee2bd30f1e37c7686aa81b6245a1310a}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf m\_\-fd}\label{classCFile_afa049d32e3f2dbff218b6e343f3d6eff}
+
+\item 
+{\bf CPath} {\bf m\_\-filePath}\label{classCFile_a7f2229ea21f6e953e00534632c875eb7}
+
+\item 
+bool {\bf m\_\-safeWrite}\label{classCFile_a72991c6aa63a792e3f355dbc4b25f50b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a modified version of the wxFile class. In addition to implementing the \doxyref{CFileDataIO}{p.}{classCFileDataIO} interface, it offers improved support for UTF8 filenames and 64b file-\/IO on both windows and unix-\/like systems.
+
+\begin{DoxySeeAlso}{See also}
+wxFile 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Enumeration Documentation}
+\index{CFile@{CFile}!OpenMode@{OpenMode}}
+\index{OpenMode@{OpenMode}!CFile@{CFile}}
+\subsubsection[{OpenMode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CFile::OpenMode}}\label{classCFile_ae3d32843d7aec03b3ff5f73c57254010}
+\begin{DoxySeeAlso}{See also}
+wxFile::OpenMode 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CFile@{CFile}!CFile@{CFile}}
+\index{CFile@{CFile}!CFile@{CFile}}
+\subsubsection[{CFile}]{\setlength{\rightskip}{0pt plus 5cm}CFile::CFile (const {\bf CPath} \& {\em path}, \/  {\bf OpenMode} {\em mode} = {\ttfamily read})}\label{classCFile_af7a54ddfc5c9b1b79abca6ef16c95958}
+
+
+Constructor, calls Open on the specified file. To check if the file was successfully opened, a call to \doxyref{IsOpened()}{p.}{classCFile_afa5ea8f22762fd9c5a45f17c81dcce22} is required. 
+
+References Open().
+
+\subsection{Member Function Documentation}
+\index{CFile@{CFile}!Close@{Close}}
+\index{Close@{Close}!CFile@{CFile}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}bool CFile::Close ()}\label{classCFile_a5c87e3d354ac1d508f000390e7de2881}
+
+
+Closes the file. Note that calling Close on an closed file is an illegal operation. 
+
+References IsOpened(), m\_\-fd, m\_\-filePath, m\_\-safeWrite, CPath::RemoveExt(), and CPath::RenameFile().
+
+Referenced by CFileAutoClose::Close(), CAllocateFileTask::Entry(), CAICHSyncTask::Entry(), Open(), CFileAutoClose::Release(), and $\sim$CFile().\index{CFile@{CFile}!Create@{Create}}
+\index{Create@{Create}!CFile@{CFile}}
+\subsubsection[{Create}]{\setlength{\rightskip}{0pt plus 5cm}bool CFile::Create (const {\bf CPath} \& {\em path}, \/  bool {\em overwrite} = {\ttfamily false}, \/  int {\em accessMode} = {\ttfamily wxS\_\-DEFAULT})}\label{classCFile_a61c4b929b8667868398ccf5a25f258e9}
+
+
+Calling Create is equivilant of calling open with OpenMode 'write'. 
+\begin{DoxyParams}{Parameters}
+\item[{\em overwrite}]Specifies if the target file should be overwritten, in case that it already exists.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CFile::Open}{p.}{classCFile_a276f41388fbdd393dc446b02e1ba8ad0} 
+\end{DoxySeeAlso}
+
+
+References CPath::FileExists(), and Open().
+
+Referenced by CFileAutoClose::Create().\index{CFile@{CFile}!doRead@{doRead}}
+\index{doRead@{doRead}!CFile@{CFile}}
+\subsubsection[{doRead}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CFile::doRead (void $\ast$ {\em buffer}, \/  size\_\-t {\em count}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCFile_a196bbaa7720510c1b63c966666b7421f}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CFileDataIO::doRead}{p.}{classCFileDataIO_a675efe875eee7c667e2ff1cf01e2c49f} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO_a675efe875eee7c667e2ff1cf01e2c49f}.
+
+References CFileDataIO::Eof(), IsOpened(), and m\_\-fd.\index{CFile@{CFile}!doSeek@{doSeek}}
+\index{doSeek@{doSeek}!CFile@{CFile}}
+\subsubsection[{doSeek}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CFile::doSeek (sint64 {\em offset}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCFile_a882df4b2f143b5aa7bfac2504ddadf13}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CFileDataIO::doSeek}{p.}{classCFileDataIO_a82c6d4df3c99fd2838b4e3ec6d06f8d3} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO_a82c6d4df3c99fd2838b4e3ec6d06f8d3}.
+
+References IsOpened(), and m\_\-fd.\index{CFile@{CFile}!doWrite@{doWrite}}
+\index{doWrite@{doWrite}!CFile@{CFile}}
+\subsubsection[{doWrite}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CFile::doWrite (const void $\ast$ {\em buffer}, \/  size\_\-t {\em count})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCFile_a1917cf85e46c637ee94ca5e2c72d1888}
+\begin{DoxySeeAlso}{See also}
+CFileDataIO::doWrite 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO}.
+
+References IsOpened(), and m\_\-fd.\index{CFile@{CFile}!fd@{fd}}
+\index{fd@{fd}!CFile@{CFile}}
+\subsubsection[{fd}]{\setlength{\rightskip}{0pt plus 5cm}int CFile::fd () const}\label{classCFile_a651bb483670fa89cdf595f39b38d778f}
+
+
+Returns the file descriptior assosiated with the file. Note that direct manipulation of the descriptor should be avoided! That's what this class is for. 
+
+References m\_\-fd.
+
+Referenced by CAllocateFileTask::Entry(), and CFileAutoClose::fd().\index{CFile@{CFile}!Flush@{Flush}}
+\index{Flush@{Flush}!CFile@{CFile}}
+\subsubsection[{Flush}]{\setlength{\rightskip}{0pt plus 5cm}bool CFile::Flush ()}\label{classCFile_aba81ae13c448d201f301797fcd00aebb}
+
+
+Flushes data not yet written. Note that calling Flush on an closed file is an illegal operation. 
+
+References IsOpened(), m\_\-fd, and m\_\-filePath.
+
+Referenced by CAICHSyncTask::ConvertToKnown2ToKnown264().\index{CFile@{CFile}!GetAvailable@{GetAvailable}}
+\index{GetAvailable@{GetAvailable}!CFile@{CFile}}
+\subsubsection[{GetAvailable}]{\setlength{\rightskip}{0pt plus 5cm}uint64 CFile::GetAvailable () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFile_aacaa1a13154a471cb8a68eeaa758ac6a}
+
+
+Returns the current available bytes to read on the file before EOF. 
+
+References GetLength(), and GetPosition().\index{CFile@{CFile}!GetLength@{GetLength}}
+\index{GetLength@{GetLength}!CFile@{CFile}}
+\subsubsection[{GetLength}]{\setlength{\rightskip}{0pt plus 5cm}uint64 CFile::GetLength () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFile_ae0891cc30b0d0b7898201dbb02a9e5a0}
+\begin{DoxySeeAlso}{See also}
+CSafeFileIO::GetLength
+\end{DoxySeeAlso}
+Note that calling GetLength on a closed file is an illegal operation. 
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO_a7f54fcd57c88023b87f7e4535becab0a}.
+
+References IsOpened(), and m\_\-fd.
+
+Referenced by CAICHSyncTask::ConvertToKnown2ToKnown264(), CAICHSyncTask::Entry(), GetAvailable(), CFileAutoClose::GetLength(), and CFileAutoClose::Release().\index{CFile@{CFile}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!CFile@{CFile}}
+\subsubsection[{GetPosition}]{\setlength{\rightskip}{0pt plus 5cm}uint64 CFile::GetPosition () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFile_a3f7daa1de15d532cc9bb5f80dd217183}
+\begin{DoxySeeAlso}{See also}
+CSafeFileIO::GetPosition
+\end{DoxySeeAlso}
+Note that calling GetPosition on a closed file is an illegal operation. 
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO_a6b153f389378a4f72ac09c56a6a60230}.
+
+References IsOpened(), and m\_\-fd.
+
+Referenced by CAICHSyncTask::ConvertToKnown2ToKnown264(), CAICHSyncTask::Entry(), and GetAvailable().\index{CFile@{CFile}!Open@{Open}}
+\index{Open@{Open}!CFile@{CFile}}
+\subsubsection[{Open}]{\setlength{\rightskip}{0pt plus 5cm}bool CFile::Open (const {\bf CPath} \& {\em path}, \/  {\bf OpenMode} {\em mode} = {\ttfamily read}, \/  int {\em accessMode} = {\ttfamily wxS\_\-DEFAULT})}\label{classCFile_a276f41388fbdd393dc446b02e1ba8ad0}
+
+
+Opens a file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]The full or relative path to the file. \item[{\em mode}]The opening mode. \item[{\em accessMode}]The permissions in case a new file is created. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was opened, false otherwise.
+\end{DoxyReturn}
+Calling Open with the openmodes 'write' or 'write\_\-append' will create the specified file if it does not already exist.
+
+Calling Open with the openmode 'write\_\-safe' will append \char`\"{}.new\char`\"{} to the file name and otherwise work like 'write'. On close it will be renamed to the original name. \doxyref{Close()}{p.}{classCFile_a5c87e3d354ac1d508f000390e7de2881} has to be called manually -\/ destruct won't rename the file!
+
+If an accessMode is not explicitly specified, the accessmode specified via CPreferences::GetFilePermissions will be used. 
+
+References CPath::AppendExt(), Close(), CPath::FileExists(), CPath::GetRaw(), CPath::IsOk(), IsOpened(), m\_\-fd, m\_\-filePath, and m\_\-safeWrite.
+
+Referenced by CFile(), CAICHSyncTask::ConvertToKnown2ToKnown264(), CPreferences::CPreferences(), Create(), CAllocateFileTask::Entry(), CAICHSyncTask::Entry(), CFileAutoClose::Open(), and Reopen().\index{CFile@{CFile}!Reopen@{Reopen}}
+\index{Reopen@{Reopen}!CFile@{CFile}}
+\subsubsection[{Reopen}]{\setlength{\rightskip}{0pt plus 5cm}void CFile::Reopen ({\bf OpenMode} {\em mode})}\label{classCFile_ae13ccb26700c65c34ef9386c7eb89a6f}
+
+
+Reopens a file which was opened and closed before. 
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]The opening mode.\end{DoxyParams}
+The filename used for last open is used again. No return value -\/ function throws on failure. 
+
+References m\_\-filePath, and Open().
+
+Referenced by CAICHSyncTask::Entry(), and CFileAutoClose::Reopen().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/CFile.h\item 
+src/CFile.cpp\end{DoxyCompactItemize}

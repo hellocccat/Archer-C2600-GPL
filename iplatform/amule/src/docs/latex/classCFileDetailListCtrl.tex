@@ -1,0 +1,48 @@
+\section{CFileDetailListCtrl Class Reference}
+\label{classCFileDetailListCtrl}\index{CFileDetailListCtrl@{CFileDetailListCtrl}}
+Inheritance diagram for CFileDetailListCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCFileDetailListCtrl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf SourcenameItem}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CFileDetailListCtrl} (wxWindow $\ast$\&parent, int id, const wxPoint \&pos, wxSize siz, int flags)\label{classCFileDetailListCtrl_a2dc0eb9cd5192a53f16a57ee95cfe473}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnSelect} (wxListEvent \&event)\label{classCFileDetailListCtrl_a850f0a99c110d30b304ea75992b26578}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bf SortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CFileDetailListCtrl@{CFileDetailListCtrl}!SortProc@{SortProc}}
+\index{SortProc@{SortProc}!CFileDetailListCtrl@{CFileDetailListCtrl}}
+\subsubsection[{SortProc}]{\setlength{\rightskip}{0pt plus 5cm}int CFileDetailListCtrl::SortProc (wxUIntPtr {\em item1}, \/  wxUIntPtr {\em item2}, \/  long {\em sortData})\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCFileDetailListCtrl_af4b43bfd447928d132b3f4d331d78ce2}
+
+
+Wrapper around the user-\/provided sorter function. This function ensures that items are sorted in the order specified by clicking on column-\/headers, and also enforces that different entries are never considered equal. This is required for lists that make use of child-\/items, since otherwise, parents may not end up properly located in relation to child-\/items. 
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a9958ee438b116457a818ffb29b3c5864}.
+
+References CMuleListCtrl::COLUMN\_\-MASK, and CMuleListCtrl::SORT\_\-DES.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/FileDetailListCtrl.h\item 
+src/FileDetailListCtrl.cpp\end{DoxyCompactItemize}

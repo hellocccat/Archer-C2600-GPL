@@ -1,0 +1,38 @@
+\section{CParsedUrl Class Reference}
+\label{classCParsedUrl}\index{CParsedUrl@{CParsedUrl}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CParsedUrl} (const wxString \&url)\label{classCParsedUrl_a5d92be668962906375919274849b2281}
+
+\item 
+const wxString \& {\bfseries Path} ()\label{classCParsedUrl_aa13acc3bfe41b309efe2dc2b776a73e2}
+
+\item 
+const wxString \& {\bfseries File} ()\label{classCParsedUrl_a1f7a00e6d5af2993dbe42b57f98884de}
+
+\item 
+const wxString \& {\bfseries Param} (const wxString \&key)\label{classCParsedUrl_a52df0e76531e14d507afed16dc0a2879}
+
+\item 
+void {\bfseries ConvertParams} (std::map$<$ std::string, std::string $>$ \&)\label{classCParsedUrl_aa6b1a9f3da1e216dda4eb4dbadbc2814}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-path}\label{classCParsedUrl_a9cc9f86fef8cfa82f086b9b5524b1284}
+
+\item 
+wxString {\bfseries m\_\-file}\label{classCParsedUrl_a3eaba3682b8faeb02160587e3d89ac09}
+
+\item 
+std::map$<$ wxString, wxString $>$ {\bfseries m\_\-params}\label{classCParsedUrl_af376288b7d79f24d8080da5a9a640691}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\item 
+src/webserver/src/WebServer.cpp\end{DoxyCompactItemize}

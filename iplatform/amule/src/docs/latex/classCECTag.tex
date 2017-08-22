@@ -1,0 +1,593 @@
+\section{CECTag Class Reference}
+\label{classCECTag}\index{CECTag@{CECTag}}
+
+
+High level EC packet TAGs handler class.  
+
+
+{\ttfamily \#include $<$ECTag.h$>$}Inheritance diagram for CECTag::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12cm]{classCECTag}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef TagList::const\_\-iterator {\bfseries const\_\-iterator}\label{classCECTag_aab094efec085e748178addf4387de228}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CECTag} (ec\_\-tagname\_\-t name, unsigned int length, const void $\ast$data)
+\item 
+{\bf CECTag} (ec\_\-tagname\_\-t name, unsigned int length, void $\ast$$\ast$dataptr)
+\item 
+{\bf CECTag} (ec\_\-tagname\_\-t name, bool data)
+\item 
+{\bfseries CECTag} (ec\_\-tagname\_\-t name, uint8\_\-t data)\label{classCECTag_a89859fd35914a0d67b5269452ca2f405}
+
+\item 
+{\bfseries CECTag} (ec\_\-tagname\_\-t name, uint16\_\-t data)\label{classCECTag_a9861220eba4cc156f9e234d296e18181}
+
+\item 
+{\bfseries CECTag} (ec\_\-tagname\_\-t name, uint32\_\-t data)\label{classCECTag_a80a181aa3b120cc2fe2fc838d3e185e6}
+
+\item 
+{\bfseries CECTag} (ec\_\-tagname\_\-t name, uint64\_\-t data)\label{classCECTag_a9bcf027d438712e802463651633a18d2}
+
+\item 
+{\bf CECTag} (ec\_\-tagname\_\-t name, double data)
+\item 
+{\bf CECTag} (ec\_\-tagname\_\-t name, const std::string \&data)
+\item 
+{\bf CECTag} (ec\_\-tagname\_\-t name, const {\bf EC\_\-IPv4\_\-t} \&data)
+\item 
+{\bf CECTag} (ec\_\-tagname\_\-t name, const {\bf CMD4Hash} \&data)
+\item 
+{\bfseries CECTag} (ec\_\-tagname\_\-t name, const char $\ast$data)\label{classCECTag_aae5149e0f5937c609db284e0893ec6d1}
+
+\item 
+{\bf CECTag} ()
+\item 
+{\bf CECTag} (const {\bf CECTag} \&tag)\label{classCECTag_a2e5e617e9220701f6238d5777b1a837c}
+
+\item 
+{\bf $\sim$CECTag} (void)\label{classCECTag_aff24228992e010b5aea8b943f03e19f1}
+
+\item 
+{\bf CECTag} \& {\bf operator=} (const {\bf CECTag} \&rhs)
+\item 
+bool {\bf operator==} (const {\bf CECTag} \&tag) const \label{classCECTag_a0d003f229839b91df0ca111cbba65b5c}
+
+\item 
+bool {\bfseries operator!=} (const {\bf CECTag} \&tag) const \label{classCECTag_a9883b60fb9cee5325f313ab7f8aed11e}
+
+\item 
+bool {\bf AddTag} (const {\bf CECTag} \&tag, {\bf CValueMap} $\ast$valuemap=NULL)
+\item 
+void {\bfseries AddTag} (ec\_\-tagname\_\-t name, uint64\_\-t data, {\bf CValueMap} $\ast$valuemap=NULL)\label{classCECTag_a8d86a64264944f8db01b708fb99620e5}
+
+\item 
+void {\bfseries AddTag} (ec\_\-tagname\_\-t name, const {\bf CMD4Hash} \&data, {\bf CValueMap} $\ast$valuemap)\label{classCECTag_a955ad5598bad8b26b7b67f1a72792ffc}
+
+\item 
+const {\bf CECTag} $\ast$ {\bfseries GetFirstTagSafe} () const \label{classCECTag_a0c9ce05874865d99f977912059cadfe1}
+
+\item 
+const {\bf CECTag} $\ast$ {\bf GetTagByName} (ec\_\-tagname\_\-t name) const 
+\item 
+{\bf CECTag} $\ast$ {\bf GetTagByName} (ec\_\-tagname\_\-t name)
+\item 
+const {\bf CECTag} $\ast$ {\bf GetTagByNameSafe} (ec\_\-tagname\_\-t name) const 
+\item 
+size\_\-t {\bf GetTagCount} () const 
+\item 
+bool {\bfseries HasChildTags} () const \label{classCECTag_a6a308f078bcea0534034cc00bc8c5c7d}
+
+\item 
+const void $\ast$ {\bf GetTagData} () const 
+\item 
+uint16\_\-t {\bf GetTagDataLen} () const 
+\item 
+uint32\_\-t {\bf GetTagLen} () const 
+\item 
+ec\_\-tagname\_\-t {\bf GetTagName} () const 
+\item 
+uint64\_\-t {\bf GetInt} () const 
+\item 
+bool {\bfseries IsInt} () const \label{classCECTag_a29d88aac3219e6494e5de5fed8b93079}
+
+\item 
+double {\bf GetDoubleData} () const 
+\item 
+std::string {\bfseries GetStringDataSTL} () const \label{classCECTag_abcb77daa20bfa0759fe291b16a5ef9df}
+
+\item 
+bool {\bfseries IsString} () const \label{classCECTag_ae6083a2c304a847ad230d75284f3df2b}
+
+\item 
+{\bf EC\_\-IPv4\_\-t} {\bf GetIPv4Data} () const 
+\item 
+{\bf CMD4Hash} {\bf GetMD4Data} () const 
+\item 
+void {\bfseries DebugPrint} (int level, bool print\_\-empty) const \label{classCECTag_a5cb4cfdfb094fe0e81a33c4c99708130}
+
+\item 
+void {\bfseries swap} ({\bf CECTag} \&t)\label{classCECTag_a961f01e297db027f4f573352a0a5b7a2}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, bool $\ast$target) const \label{classCECTag_accf7bf3d8be640bb021657e8abcd48fc}
+
+\item 
+uint8\_\-t {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, uint8\_\-t $\ast$target) const \label{classCECTag_ab64df9145784005e05bd2c7a2b34c2a3}
+
+\item 
+uint16\_\-t {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, uint16\_\-t $\ast$target) const \label{classCECTag_ac7b56d2cfcba54fd3c06f7b3ffc07e61}
+
+\item 
+uint32\_\-t {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, uint32\_\-t $\ast$target) const \label{classCECTag_acfa36d3cb79ad07e0b3e1c4f0cbfed10}
+
+\item 
+uint64\_\-t {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, uint64\_\-t $\ast$target) const \label{classCECTag_a0f7915a8e3c917ce4e542db0bfea81c5}
+
+\item 
+time\_\-t {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, time\_\-t $\ast$target) const \label{classCECTag_a02441dc88c6b2b5c652838b143feead7}
+
+\item 
+double {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, double $\ast$target) const \label{classCECTag_a96a05fd7234013aceeae910992c07d18}
+
+\item 
+float {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, float $\ast$target) const \label{classCECTag_ac2d50134b801847429daee04d36d241c}
+
+\item 
+{\bf CMD4Hash} {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, {\bf CMD4Hash} $\ast$target) const \label{classCECTag_a183090742651c7c7ac70e9f245d49e68}
+
+\item 
+std::string {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, std::string $\ast$target) const \label{classCECTag_a4ebbaa668297103b4c8b4f67573c0598}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, bool \&target) const \label{classCECTag_a11b897f385f649aa0ff64ced0e3d0a0e}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, uint8\_\-t \&target) const \label{classCECTag_afd194d59642748bf6edb7dcbd0ccd8e6}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, uint16\_\-t \&target) const \label{classCECTag_a7d54acda43689c919a33c7906ad2c03e}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, uint32\_\-t \&target) const \label{classCECTag_aa0cbf0e3260d999d643613333d65d77e}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, uint64\_\-t \&target) const \label{classCECTag_a052be952598a7ef4e921c7accc732b85}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, time\_\-t \&target) const \label{classCECTag_a5932b35ba1cb4822ae223a106999086d}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, double \&target) const \label{classCECTag_a3642b0b2d3286086c2adfe78997b2b6e}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, float \&target) const \label{classCECTag_ac95ca1ca27ceca8d641c732ca08a0d94}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, {\bf CMD4Hash} \&target) const \label{classCECTag_a2762120bdf9673c89507ebb83a10a834}
+
+\item 
+bool {\bfseries AssignIfExist} (ec\_\-tagname\_\-t tagname, std::string \&target) const \label{classCECTag_a5957fc0bc24e9168a094ad48069cae79}
+
+\item 
+const\_\-iterator {\bfseries begin} () const \label{classCECTag_a1a037b937778fbeffc8d4a2f3b36e5a6}
+
+\item 
+const\_\-iterator {\bfseries end} () const \label{classCECTag_a5453e81896159b139090d266e7bd3ab1}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\_\-t {\bfseries GetType} () const \label{classCECTag_ad17006027808b7d1ccba7f3f6f37b678}
+
+\item 
+bool {\bfseries ReadFromSocket} ({\bf CECSocket} \&socket)\label{classCECTag_a6bc89e4a8b2e9bb99b71a866559ee4c2}
+
+\item 
+bool {\bfseries WriteTag} ({\bf CECSocket} \&socket) const \label{classCECTag_aa0807099c4e9cd43d4668ffd8b04e98f}
+
+\item 
+bool {\bfseries ReadChildren} ({\bf CECSocket} \&socket)\label{classCECTag_a7d5a840733c7aff021476374275a1bd2}
+
+\item 
+bool {\bfseries WriteChildren} ({\bf CECSocket} \&socket) const \label{classCECTag_a3e02dd3b33150e480e1fd358dedf3ded}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CECTag} $>$ {\bfseries TagList}\label{classCECTag_a5268efdb39f01f170b980c02536683dd}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries InitInt} (uint64\_\-t data)\label{classCECTag_ad804446e8896d09a1d764da53fee06e1}
+
+\item 
+void {\bfseries NewData} ()\label{classCECTag_a66f33a44b1dd5fbe0832066e24e169a5}
+
+\item 
+void {\bfseries ConstructStringTag} (ec\_\-tagname\_\-t name, const std::string \&data)\label{classCECTag_af5c3f66b161c86a98be153d15d701eb7}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ec\_\-tagname\_\-t {\bfseries m\_\-tagName}\label{classCECTag_a7eb683548ef7d4c17a74ed3767d3b7b7}
+
+\item 
+ec\_\-tagtype\_\-t {\bfseries m\_\-dataType}\label{classCECTag_aaacd1c4ef5ce61e0406f6862d1f95cf7}
+
+\item 
+ec\_\-taglen\_\-t {\bfseries m\_\-dataLen}\label{classCECTag_afd0706daab8a964bc71378b7d367707d}
+
+\item 
+char $\ast$ {\bfseries m\_\-tagData}\label{classCECTag_afab361fffe581a1deb7739fe09049027}
+
+\item 
+TagList {\bfseries m\_\-tagList}\label{classCECTag_a69247e5140bd8c6ef5363aa7bcc91993}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const {\bf CECTag} {\bf s\_\-theNullTag}\label{classCECTag_adbc7e55163da50bdbba654ff4e2c90c4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+High level EC packet TAGs handler class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\subsubsection[{CECTag}]{\setlength{\rightskip}{0pt plus 5cm}CECTag::CECTag (ec\_\-tagname\_\-t {\em name}, \/  unsigned int {\em length}, \/  const void $\ast$ {\em data})}\label{classCECTag_a693306c55e8e5b82e0ead714823b7b58}
+
+
+Creates a new \doxyref{CECTag}{p.}{classCECTag} instance from the given data. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name \item[{\em length}]length of data buffer \item[{\em data}]TAG data \end{DoxyParams}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\subsubsection[{CECTag}]{\setlength{\rightskip}{0pt plus 5cm}CECTag::CECTag (ec\_\-tagname\_\-t {\em name}, \/  unsigned int {\em length}, \/  void $\ast$$\ast$ {\em dataptr})}\label{classCECTag_afdb324705c0b97753d106a3c17108ed9}
+
+
+Creates a new \doxyref{CECTag}{p.}{classCECTag} instance for custom data. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name \item[{\em length}]length of data buffer that will be alloc'ed \item[{\em dataptr}]pointer to a void pointer which will be assigned the internal TAG data buffer\end{DoxyParams}
+\begin{DoxyNote}{Note}
+TAG data buffer has to be filled with valid data after the ctor 
+\end{DoxyNote}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\subsubsection[{CECTag}]{\setlength{\rightskip}{0pt plus 5cm}CECTag::CECTag (ec\_\-tagname\_\-t {\em name}, \/  bool {\em data})}\label{classCECTag_ae79310db885dbfb4da2b154ee36bcb4a}
+
+
+Creates a new \doxyref{CECTag}{p.}{classCECTag} instance, which contains an int value. This takes care of endianness problems with numbers.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name. \item[{\em data}]number.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{GetInt()}{p.}{classCECTag_a809f78846ed4433429e754f981a05987} 
+\end{DoxySeeAlso}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\subsubsection[{CECTag}]{\setlength{\rightskip}{0pt plus 5cm}CECTag::CECTag (ec\_\-tagname\_\-t {\em name}, \/  double {\em data})}\label{classCECTag_a69fc22ad7241a117486996446255add1}
+
+
+Creates a new \doxyref{CECTag}{p.}{classCECTag} instance, which contains a double precision floating point number. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name \item[{\em data}]double number\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The actual data is converted to string representation, because we have not found yet an effective and safe way to transmit floating point numbers.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxyref{GetDoubleData()}{p.}{classCECTag_aed3e375a146b85bc63743756341eb4f0} 
+\end{DoxySeeAlso}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\subsubsection[{CECTag}]{\setlength{\rightskip}{0pt plus 5cm}CECTag::CECTag (ec\_\-tagname\_\-t {\em name}, \/  const std::string \& {\em data})}\label{classCECTag_ad2151ac0ee2e8231d7715df28b37cd29}
+
+
+Creates a new \doxyref{CECTag}{p.}{classCECTag} instance, which contains a string. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name \item[{\em data}]wxString object, it's contents are converted to UTF-\/8.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+GetStringDataSTL() 
+\end{DoxySeeAlso}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\subsubsection[{CECTag}]{\setlength{\rightskip}{0pt plus 5cm}CECTag::CECTag (ec\_\-tagname\_\-t {\em name}, \/  const {\bf EC\_\-IPv4\_\-t} \& {\em data})}\label{classCECTag_abe263d17cd3af91b4567008bd68808cc}
+
+
+Creates a new \doxyref{CECTag}{p.}{classCECTag} instance, which contains an IPv4 address. This function takes care of the endianness of the port number.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name \item[{\em data}]The \doxyref{EC\_\-IPv4\_\-t}{p.}{classEC__IPv4__t} class containing the IPv4 address.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{GetIPv4Data()}{p.}{classCECTag_aeb0847eff029c1192cd26b6514e4f433} 
+\end{DoxySeeAlso}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\subsubsection[{CECTag}]{\setlength{\rightskip}{0pt plus 5cm}CECTag::CECTag (ec\_\-tagname\_\-t {\em name}, \/  const {\bf CMD4Hash} \& {\em data})}\label{classCECTag_a5e228685b0f90368737b50575f91327c}
+
+
+Creates a new \doxyref{CECTag}{p.}{classCECTag} instance, which contains a MD4 hash. This function takes care to store hash in network byte order.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name \item[{\em data}]The \doxyref{CMD4Hash}{p.}{classCMD4Hash} class containing the MD4 hash.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{GetMD4Data()}{p.}{classCECTag_a6d39258b7b6cb3bc02d3619167a41cd6} 
+\end{DoxySeeAlso}
+
+
+References CMD4Hash::GetHash().\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\index{CECTag@{CECTag}!CECTag@{CECTag}}
+\subsubsection[{CECTag}]{\setlength{\rightskip}{0pt plus 5cm}CECTag::CECTag ()}\label{classCECTag_a4729ee16eef218aa8bb844d24e0e6e46}
+
+
+Creates a new null-\/valued \doxyref{CECTag}{p.}{classCECTag} instance. \begin{DoxySeeAlso}{See also}
+\doxyref{s\_\-theNullTag}{p.}{classCECTag_adbc7e55163da50bdbba654ff4e2c90c4} 
+
+\doxyref{GetTagByNameSafe}{p.}{classCECTag_a7175e4f63b0969b6259734f3b9f73faf} 
+\end{DoxySeeAlso}
+
+
+Referenced by CECPacket::CECPacket().
+
+\subsection{Member Function Documentation}
+\index{CECTag@{CECTag}!AddTag@{AddTag}}
+\index{AddTag@{AddTag}!CECTag@{CECTag}}
+\subsubsection[{AddTag}]{\setlength{\rightskip}{0pt plus 5cm}bool CECTag::AddTag (const {\bf CECTag} \& {\em tag}, \/  {\bf CValueMap} $\ast$ {\em valuemap} = {\ttfamily NULL})}\label{classCECTag_ad2a4413128ac2b3097e44a60836276a3}
+
+
+Add a child tag to this one. The tag argument is reset to an empty tag.
+
+Be very careful that this method swallows the content of {\itshape tag\/}, leaving {\itshape tag\/} empty. Thus, the following code won't work as expected: 
+\begin{DoxyCode}
+ {
+    CECPacket *p = new CECPacket(whatever);
+    CECTag *t1 = new CECTag(whatever);
+    CECTag *t2 = new CECTag(whatever);
+    p->AddTag(*t1);
+    t1->AddTag(*t2);    // t2 won't be part of p !!!
+ }
+\end{DoxyCode}
+
+
+To get the desired results, the above should be replaced with something like:
+
+
+\begin{DoxyCode}
+ {
+    CECPacket *p = new CECPacket(whatever);
+    CECTag *t1 = new CECTag(whatever);
+    CECTag *t2 = new CECTag(whatever);
+    t1->AddTag(*t2);
+    delete t2;  // we can safely delete the now empty t2 here, because t1 holds i
+      ts content
+    p->AddTag(*t1);
+    delete t1;  // now p holds the content of both t1 and t2
+ }
+\end{DoxyCode}
+
+
+Then why copying? The answer is to enable simplifying the code like this:
+
+
+\begin{DoxyCode}
+ {
+    CECPacket *p = new CECPacket(whatever);
+    CECTag t1(whatever);
+    t1.AddTag(CECTag(whatever));    // t2 is now created on-the-fly
+    p->AddTag(t1);  // now p holds a copy of both t1 and t2
+ }
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]a \doxyref{CECTag}{p.}{classCECTag} class instance to add. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries true} if tag was really added, {\bfseries false} when it was omitted through valuemap. 
+\end{DoxyReturn}
+
+
+Referenced by CStatTreeItemTotalClients::AddECValues(), CStatTreeItemMaxConnLimitReached::AddECValues(), CStatTreeItemReconnects::AddECValues(), CStatTreeItemRatio::AddECValues(), CStatTreeItemAverageSpeed::AddECValues(), CStatTreeItemAverage::AddECValues(), CStatTreeItemTimer::AddECValues(), CStatTreeItemPacketTotals::AddECValues(), CStatTreeItemPackets::AddECValues(), CStatTreeItemCounterMax::AddECValues(), CStatTreeItemUlDlCounter::AddECValues(), CStatTreeItemCounterTmpl$<$ \_\-Tp $>$::AddECValues(), CStatTreeItemSimple::AddECValues(), CStatTreeItemPeakConnections::AddECValues(), CStatTreeItemRateCounter::AddECValues(), CamuleRemoteGuiApp::BootstrapKad(), CECPacket::CECPacket(), CStatTreeItemBase::CreateECTag(), UpdatableItemsContainer$<$ SearchFile, CEC\_\-SearchFile\_\-Tag, uint32 $>$::ProcessUpdate(), and CamuleRemoteGuiApp::UpdateNotesDat().\index{CECTag@{CECTag}!GetDoubleData@{GetDoubleData}}
+\index{GetDoubleData@{GetDoubleData}!CECTag@{CECTag}}
+\subsubsection[{GetDoubleData}]{\setlength{\rightskip}{0pt plus 5cm}double CECTag::GetDoubleData (void) const}\label{classCECTag_aed3e375a146b85bc63743756341eb4f0}
+
+
+Returns a double value. \begin{DoxyNote}{Note}
+The returned value is what we get by converting the string form of the number to a double.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The double value of the tag.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CECTag(ec\_\-tagname\_\-t, double)}{p.}{classCECTag_a69fc22ad7241a117486996446255add1} 
+\end{DoxySeeAlso}
+\index{CECTag@{CECTag}!GetInt@{GetInt}}
+\index{GetInt@{GetInt}!CECTag@{CECTag}}
+\subsubsection[{GetInt}]{\setlength{\rightskip}{0pt plus 5cm}uint64 CECTag::GetInt (void) const}\label{classCECTag_a809f78846ed4433429e754f981a05987}
+
+
+Returns the uint8 data of the tag. Returns the uint64 data of the tag.
+
+Returns the uint32 data of the tag.
+
+Returns the uint16 data of the tag.
+
+This function takes care of the endianness problems with numbers.
+
+\begin{DoxyReturn}{Returns}
+The uint8 data of the tag.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+CECTag(ec\_\-tagname\_\-t, uint8)
+\end{DoxySeeAlso}
+This function takes care of the endianness problems with numbers.
+
+\begin{DoxyReturn}{Returns}
+The uint16 data of the tag.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+CECTag(ec\_\-tagname\_\-t, uint16)
+\end{DoxySeeAlso}
+This function takes care of the endianness problems with numbers.
+
+\begin{DoxyReturn}{Returns}
+The uint32 data of the tag.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+CECTag(ec\_\-tagname\_\-t, uint32)
+\end{DoxySeeAlso}
+This function takes care of the endianness problems with numbers.
+
+\begin{DoxyReturn}{Returns}
+The uint64 data of the tag.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+CECTag(ec\_\-tagname\_\-t, uint64) 
+\end{DoxySeeAlso}
+
+
+Referenced by ServersInfo::ReQuery().\index{CECTag@{CECTag}!GetIPv4Data@{GetIPv4Data}}
+\index{GetIPv4Data@{GetIPv4Data}!CECTag@{CECTag}}
+\subsubsection[{GetIPv4Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf EC\_\-IPv4\_\-t} CECTag::GetIPv4Data () const}\label{classCECTag_aeb0847eff029c1192cd26b6514e4f433}
+
+
+Returns an \doxyref{EC\_\-IPv4\_\-t}{p.}{classEC__IPv4__t} class. This function takes care of the endianness of the port number.
+
+\begin{DoxyReturn}{Returns}
+\doxyref{EC\_\-IPv4\_\-t}{p.}{classEC__IPv4__t} class.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CECTag(ec\_\-tagname\_\-t, const EC\_\-IPv4\_\-t\&)}{p.}{classCECTag_abe263d17cd3af91b4567008bd68808cc} 
+\end{DoxySeeAlso}
+
+
+Referenced by ServersInfo::ReQuery().\index{CECTag@{CECTag}!GetMD4Data@{GetMD4Data}}
+\index{GetMD4Data@{GetMD4Data}!CECTag@{CECTag}}
+\subsubsection[{GetMD4Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CMD4Hash} CECTag::GetMD4Data (void) const}\label{classCECTag_a6d39258b7b6cb3bc02d3619167a41cd6}
+
+
+Returns a \doxyref{CMD4Hash}{p.}{classCMD4Hash} class. This function takes care of converting from MSB to LSB as necessary.
+
+\begin{DoxyReturn}{Returns}
+\doxyref{CMD4Hash}{p.}{classCMD4Hash} class.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CECTag(ec\_\-tagname\_\-t, const CMD4Hash\&)}{p.}{classCECTag_a5e228685b0f90368737b50575f91327c} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in {\bf CEC\_\-SharedFile\_\-Tag} \doxyref{}{p.}{classCEC__SharedFile__Tag_a0853860300c069c6fd2c25024d154289}, {\bf CEC\_\-UpDownClient\_\-Tag} \doxyref{}{p.}{classCEC__UpDownClient__Tag_a68ed48666b0a7c5ec8dd81b198e4c8a9}, and {\bf CEC\_\-SearchFile\_\-Tag} \doxyref{}{p.}{classCEC__SearchFile__Tag_a24918befb00b82907d05216f46e17533}.\index{CECTag@{CECTag}!GetTagByName@{GetTagByName}}
+\index{GetTagByName@{GetTagByName}!CECTag@{CECTag}}
+\subsubsection[{GetTagByName}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CECTag} $\ast$ CECTag::GetTagByName (ec\_\-tagname\_\-t {\em name})}\label{classCECTag_a1957b72c6627d611eabe3fa8ca2c1595}
+
+
+Finds the (first) child tag with given name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name to look for. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tag found, or NULL. 
+\end{DoxyReturn}
+\index{CECTag@{CECTag}!GetTagByName@{GetTagByName}}
+\index{GetTagByName@{GetTagByName}!CECTag@{CECTag}}
+\subsubsection[{GetTagByName}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CECTag} $\ast$ CECTag::GetTagByName (ec\_\-tagname\_\-t {\em name}) const}\label{classCECTag_aa8afada4e0755ad13ce7b535e2ffd013}
+
+
+Finds the (first) child tag with given name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name to look for. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tag found, or NULL. 
+\end{DoxyReturn}
+
+
+Referenced by GetTagByNameSafe().\index{CECTag@{CECTag}!GetTagByNameSafe@{GetTagByNameSafe}}
+\index{GetTagByNameSafe@{GetTagByNameSafe}!CECTag@{CECTag}}
+\subsubsection[{GetTagByNameSafe}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CECTag} $\ast$ CECTag::GetTagByNameSafe (ec\_\-tagname\_\-t {\em name}) const}\label{classCECTag_a7175e4f63b0969b6259734f3b9f73faf}
+
+
+Finds the (first) child tag with given name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]TAG name to look for. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tag found, or a special null-\/valued tag otherwise.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{s\_\-theNullTag}{p.}{classCECTag_adbc7e55163da50bdbba654ff4e2c90c4} 
+\end{DoxySeeAlso}
+
+
+References GetTagByName(), and s\_\-theNullTag.
+
+Referenced by ServersInfo::ReQuery().\index{CECTag@{CECTag}!GetTagCount@{GetTagCount}}
+\index{GetTagCount@{GetTagCount}!CECTag@{CECTag}}
+\subsubsection[{GetTagCount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t CECTag::GetTagCount (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCECTag_af6e89c4a06c4000e4ef58565298fb76a}
+
+
+Returns the number of child tags. \begin{DoxyReturn}{Returns}
+The number of child tags. 
+\end{DoxyReturn}
+\index{CECTag@{CECTag}!GetTagData@{GetTagData}}
+\index{GetTagData@{GetTagData}!CECTag@{CECTag}}
+\subsubsection[{GetTagData}]{\setlength{\rightskip}{0pt plus 5cm}const void $\ast$ CECTag::GetTagData (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCECTag_a1064468c67f3b0a973a9ac3a5e2a0255}
+
+
+Returns a pointer to the TAG DATA. \begin{DoxyReturn}{Returns}
+A pointer to the TAG DATA. (As specified with the data field of the constructor.) 
+\end{DoxyReturn}
+\index{CECTag@{CECTag}!GetTagDataLen@{GetTagDataLen}}
+\index{GetTagDataLen@{GetTagDataLen}!CECTag@{CECTag}}
+\subsubsection[{GetTagDataLen}]{\setlength{\rightskip}{0pt plus 5cm}uint16 CECTag::GetTagDataLen (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCECTag_a721d064056f03429458502a1f970c3cf}
+
+
+Returns the length of the data buffer. \begin{DoxyReturn}{Returns}
+The length of the data buffer. 
+\end{DoxyReturn}
+\index{CECTag@{CECTag}!GetTagLen@{GetTagLen}}
+\index{GetTagLen@{GetTagLen}!CECTag@{CECTag}}
+\subsubsection[{GetTagLen}]{\setlength{\rightskip}{0pt plus 5cm}uint32 CECTag::GetTagLen (void) const}\label{classCECTag_a5e9ad9ca572a383ae34949afbda36ed8}
+
+
+Query TAG length that is suitable for the TAGLEN field (i.e. without it's own header size). \begin{DoxyReturn}{Returns}
+Tag length, containing its childs' length. 
+\end{DoxyReturn}
+
+
+Referenced by CECPacket::GetPacketLength().\index{CECTag@{CECTag}!GetTagName@{GetTagName}}
+\index{GetTagName@{GetTagName}!CECTag@{CECTag}}
+\subsubsection[{GetTagName}]{\setlength{\rightskip}{0pt plus 5cm}ec\_\-tagname\_\-t CECTag::GetTagName (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCECTag_af38d7923920266f1548ab11dfe718b3d}
+
+
+Returns TAGNAME. \begin{DoxyReturn}{Returns}
+The name of the tag. 
+\end{DoxyReturn}
+\index{CECTag@{CECTag}!operator=@{operator=}}
+\index{operator=@{operator=}!CECTag@{CECTag}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CECTag} \& CECTag::operator= (const {\bf CECTag} \& {\em tag})}\label{classCECTag_aacbf4950d69a50c914ff4b672fb50d63}
+
+
+Copy assignment operator. std::vector uses this, but the compiler-\/supplied version wouldn't properly handle m\_\-dynamic and m\_\-tagData. This wouldn't be necessary if m\_\-tagData was a smart pointer (Hi, Kry!). 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECTag.h\item 
+src/libs/ec/cpp/ECTag.cpp\end{DoxyCompactItemize}

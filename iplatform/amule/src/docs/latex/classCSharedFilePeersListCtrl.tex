@@ -1,0 +1,71 @@
+\section{CSharedFilePeersListCtrl Class Reference}
+\label{classCSharedFilePeersListCtrl}\index{CSharedFilePeersListCtrl@{CSharedFilePeersListCtrl}}
+
+
+This class is responsible for representing the peers for a shared file.  
+
+
+{\ttfamily \#include $<$SharedFilePeersListCtrl.h$>$}Inheritance diagram for CSharedFilePeersListCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classCSharedFilePeersListCtrl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSharedFilePeersListCtrl} (wxWindow $\ast$parent, wxWindowID winid=-\/1, const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=wxLC\_\-ICON, const wxValidator \&validator=wxDefaultValidator, const wxString \&name=wxT(\char`\"{}peerslistctrl\char`\"{}))
+\item 
+virtual {\bf $\sim$CSharedFilePeersListCtrl} ()\label{classCSharedFilePeersListCtrl_a7d41038256e2c1faf714c88b581d1f92}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual CamuleDlg::DialogType {\bf GetParentDialog} ()
+\item 
+virtual void {\bf SetShowSources} ({\bf CKnownFile} $\ast$f, bool b) const \label{classCSharedFilePeersListCtrl_aa2811fbc8c14cab37b20d6f1d4088dfe}
+
+\item 
+bool {\bfseries IsShowingDownloadSources} () const \label{classCSharedFilePeersListCtrl_ab1ffed788a51408fb001181d7ec4ab55}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bfseries SourceSortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)\label{classCSharedFilePeersListCtrl_ae444a674a6bbc98c99bade80f97f4c6f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is responsible for representing the peers for a shared file. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CSharedFilePeersListCtrl@{CSharedFilePeersListCtrl}!CSharedFilePeersListCtrl@{CSharedFilePeersListCtrl}}
+\index{CSharedFilePeersListCtrl@{CSharedFilePeersListCtrl}!CSharedFilePeersListCtrl@{CSharedFilePeersListCtrl}}
+\subsubsection[{CSharedFilePeersListCtrl}]{\setlength{\rightskip}{0pt plus 5cm}CSharedFilePeersListCtrl::CSharedFilePeersListCtrl (wxWindow $\ast$ {\em parent}, \/  wxWindowID {\em winid} = {\ttfamily -\/1}, \/  const wxPoint \& {\em pos} = {\ttfamily wxDefaultPosition}, \/  const wxSize \& {\em size} = {\ttfamily wxDefaultSize}, \/  long {\em style} = {\ttfamily wxLC\_\-ICON}, \/  const wxValidator \& {\em validator} = {\ttfamily wxDefaultValidator}, \/  const wxString \& {\em name} = {\ttfamily wxT(\char`\"{}peerslistctrl\char`\"{})})}\label{classCSharedFilePeersListCtrl_a94167a89b80715ff459973fadc6e5eb1}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+\doxyref{CGenericClientListCtrl::CGenericClientListCtrl}{p.}{classCGenericClientListCtrl_a23958ed19e543ce1f22dc987d8364bab} for documentation of parameters. 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CSharedFilePeersListCtrl@{CSharedFilePeersListCtrl}!GetParentDialog@{GetParentDialog}}
+\index{GetParentDialog@{GetParentDialog}!CSharedFilePeersListCtrl@{CSharedFilePeersListCtrl}}
+\subsubsection[{GetParentDialog}]{\setlength{\rightskip}{0pt plus 5cm}virtual CamuleDlg::DialogType CSharedFilePeersListCtrl::GetParentDialog ()\hspace{0.3cm}{\ttfamily  [inline, private, virtual]}}\label{classCSharedFilePeersListCtrl_abfb077b080fd314df24a68d9c0af202b}
+
+
+Must be overriden by the derived class and return the dialog where this list is. \begin{DoxySeeAlso}{See also}
+CamuleDlg::DialogType 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CGenericClientListCtrl} \doxyref{}{p.}{classCGenericClientListCtrl_ac65ccf92c12d466b33fcc80c5696006c}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SharedFilePeersListCtrl.h\item 
+src/SharedFilePeersListCtrl.cpp\end{DoxyCompactItemize}

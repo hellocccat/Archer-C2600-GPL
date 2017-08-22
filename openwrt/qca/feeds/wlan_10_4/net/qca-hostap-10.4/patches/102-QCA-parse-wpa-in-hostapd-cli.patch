@@ -1,0 +1,19 @@
+diff --git a/hostapd/ctrl_iface.c b/hostapd/ctrl_iface.c
+index fc688e8..8de243e 100644
+--- a/hostapd/ctrl_iface.c
++++ b/hostapd/ctrl_iface.c
+@@ -1352,6 +1352,14 @@ static int hostapd_ctrl_iface_get_config(struct hostapd_data *hapd,
+ 		return pos - buf;
+ 	pos += ret;
+ 
++	if (hapd->conf->wps_state && hapd->conf->wpa) {
++		ret = os_snprintf(pos, end - pos, "wpa=%d\n",
++				  hapd->conf->wpa);
++		if (ret < 0 || ret >= end - pos)
++			return pos - buf;
++		pos += ret;
++	}
++
+ 	if (hapd->conf->wps_state && hapd->conf->wpa &&
+ 	    hapd->conf->ssid.wpa_passphrase) {
+ 		ret = os_snprintf(pos, end - pos, "passphrase=%s\n",

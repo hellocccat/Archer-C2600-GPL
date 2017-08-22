@@ -1,0 +1,214 @@
+\section{Kademlia::CSearch Class Reference}
+\label{classKademlia_1_1CSearch}\index{Kademlia::CSearch@{Kademlia::CSearch}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \par
+{\bfseries NODE}, 
+{\bfseries NODECOMPLETE}, 
+{\bfseries FILE}, 
+{\bfseries KEYWORD}, 
+\par
+{\bfseries NOTES}, 
+{\bfseries STOREFILE}, 
+{\bfseries STOREKEYWORD}, 
+{\bfseries STORENOTES}, 
+\par
+{\bfseries FINDBUDDY}, 
+{\bfseries FINDSOURCE}, 
+{\bfseries NODESPECIAL}, 
+{\bfseries NODEFWCHECKUDP}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries GetSearchID} () const   throw ()\label{classKademlia_1_1CSearch_a2999d6776fecb99589f1ad936df49eb2}
+
+\item 
+void {\bfseries SetSearchID} (uint32\_\-t id)  throw ()\label{classKademlia_1_1CSearch_ac947d2a41d649cf3b3cecbed2a997846}
+
+\item 
+uint32\_\-t {\bfseries GetSearchTypes} () const   throw ()\label{classKademlia_1_1CSearch_a7c06f5a08596c060575840abe48f6821}
+
+\item 
+void {\bfseries SetSearchTypes} (uint32\_\-t val)  throw ()\label{classKademlia_1_1CSearch_aeaf565e1de338668fc2f5092493e4592}
+
+\item 
+void {\bfseries SetTargetID} (const {\bf CUInt128} \&val)  throw ()\label{classKademlia_1_1CSearch_aa1e2c10762cf6ead6f90d71eea4614a0}
+
+\item 
+{\bf CUInt128} {\bfseries GetTarget} () const   throw ()\label{classKademlia_1_1CSearch_abb9c583c1c252e2025ae5b0f18f0bdca}
+
+\item 
+uint32\_\-t {\bfseries GetAnswers} () const   throw ()\label{classKademlia_1_1CSearch_ac475357f4fee3e9d08d7777f8226c7ad}
+
+\item 
+uint32\_\-t {\bfseries GetRequestAnswer} () const   throw ()\label{classKademlia_1_1CSearch_a1e18a09231c5aaa07ba183680f2a6c80}
+
+\item 
+const wxString \& {\bfseries GetFileName} (void) const   throw ()\label{classKademlia_1_1CSearch_a79ce9644b3cc03cec65a02cbfec3a9be}
+
+\item 
+void {\bfseries SetFileName} (const wxString \&fileName)  throw ()\label{classKademlia_1_1CSearch_abacb0ccee5f953129a7a74583ece8e17}
+
+\item 
+void {\bfseries AddFileID} (const {\bf CUInt128} \&id)\label{classKademlia_1_1CSearch_a6f778f51aa23a58d81a6ae9282fbb793}
+
+\item 
+void {\bfseries PreparePacketForTags} ({\bf CMemFile} $\ast$packet, {\bf CKnownFile} $\ast$file)\label{classKademlia_1_1CSearch_a16d61620187e6eb4dfe8b603c62acb1a}
+
+\item 
+bool {\bfseries Stopping} () const   throw ()\label{classKademlia_1_1CSearch_a15020857d84a83db19ef1a695ffc02e9}
+
+\item 
+uint32\_\-t {\bfseries GetNodeLoad} () const   throw ()\label{classKademlia_1_1CSearch_a60eff9fb92f1b37c49a272cfd7a84317}
+
+\item 
+uint32\_\-t {\bfseries GetNodeLoadResponse} () const   throw ()\label{classKademlia_1_1CSearch_a2b68c6df0ab820e9f7fe14b15d8f009b}
+
+\item 
+uint32\_\-t {\bfseries GetNodeLoadTotal} () const   throw ()\label{classKademlia_1_1CSearch_a2194bb7d634071a30f187392bd88b57d}
+
+\item 
+void {\bfseries UpdateNodeLoad} (uint8\_\-t load)  throw ()\label{classKademlia_1_1CSearch_a423673368aac90345c75c65eaf7b1b6d}
+
+\item 
+void {\bfseries SetSearchTermData} (uint32\_\-t searchTermsDataSize, const uint8\_\-t $\ast$searchTermsData)\label{classKademlia_1_1CSearch_a63f63f1e403da999e55973143ded53c5}
+
+\item 
+{\bf CKadClientSearcher} $\ast$ {\bfseries GetNodeSpecialSearchRequester} () const   throw ()\label{classKademlia_1_1CSearch_ac3402441d4a8b3f0d5c707ca31a72955}
+
+\item 
+void {\bfseries SetNodeSpecialSearchRequester} ({\bf CKadClientSearcher} $\ast$requester)  throw ()\label{classKademlia_1_1CSearch_a41206d30fa895d61e8f7e189f16b1a3b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ {\bf CUInt128}, bool $>$ {\bfseries RespondedMap}\label{classKademlia_1_1CSearch_af99fd332b85065e8e1fd0e224d5af34b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Go} ()\label{classKademlia_1_1CSearch_ac17451fe57bdda65a656f91298262294}
+
+\item 
+void {\bfseries ProcessResponse} (uint32 fromIP, uint16 fromPort, ContactList $\ast$results)\label{classKademlia_1_1CSearch_a299f570322fea4ad90d95e2792b79e80}
+
+\item 
+void {\bfseries ProcessResult} (const {\bf CUInt128} \&answer, TagPtrList $\ast$info)\label{classKademlia_1_1CSearch_af0a55adf1e4faedb7439197ed1318931}
+
+\item 
+void {\bfseries ProcessResultFile} (const {\bf CUInt128} \&answer, TagPtrList $\ast$info)\label{classKademlia_1_1CSearch_a7fa204053fef60da1aaa70d02c960eb3}
+
+\item 
+void {\bfseries ProcessResultKeyword} (const {\bf CUInt128} \&answer, TagPtrList $\ast$info)\label{classKademlia_1_1CSearch_a098a52ab6a8b6faa9ba50036a2b107c7}
+
+\item 
+void {\bfseries ProcessResultNotes} (const {\bf CUInt128} \&answer, TagPtrList $\ast$info)\label{classKademlia_1_1CSearch_a849a2cea434085c57fdefbbecb4f4ede}
+
+\item 
+void {\bfseries JumpStart} ()\label{classKademlia_1_1CSearch_a89290672e3460ae1eb53baeb26a315eb}
+
+\item 
+void {\bfseries SendFindValue} ({\bf CContact} $\ast$contact, bool reaskMore=false)\label{classKademlia_1_1CSearch_a77b5ea0fbe1be12e7840d40586cc5a71}
+
+\item 
+void {\bfseries PrepareToStop} ()  throw ()\label{classKademlia_1_1CSearch_a3b1365976d64a9969254c55e0408fc39}
+
+\item 
+void {\bfseries StorePacket} ()\label{classKademlia_1_1CSearch_aa89d0e28c6ba06dd4be1d7d99ceaa34e}
+
+\item 
+uint8\_\-t {\bfseries GetRequestContactCount} () const \label{classKademlia_1_1CSearch_aef7c906757b24aa9a4d9a040fc597cbd}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-stopping}\label{classKademlia_1_1CSearch_ae0e0c9cff8ad41d41901f0b382d1cd1e}
+
+\item 
+time\_\-t {\bfseries m\_\-created}\label{classKademlia_1_1CSearch_aaa8a7f65d55ab0181fe28b8980b87cad}
+
+\item 
+uint32\_\-t {\bfseries m\_\-type}\label{classKademlia_1_1CSearch_a19c4cf40f412fdb44c25aaf3a6eb7a5d}
+
+\item 
+uint32\_\-t {\bfseries m\_\-answers}\label{classKademlia_1_1CSearch_afc48041ad3d77869f718b0349ba80d59}
+
+\item 
+uint32\_\-t {\bfseries m\_\-totalRequestAnswers}\label{classKademlia_1_1CSearch_ab7732bbfd43dfa5f1fb8307825d34cbc}
+
+\item 
+uint32\_\-t {\bfseries m\_\-totalLoad}\label{classKademlia_1_1CSearch_aa243884b484b3fa01480010ad019f977}
+
+\item 
+uint32\_\-t {\bfseries m\_\-totalLoadResponses}\label{classKademlia_1_1CSearch_ae27c6499a4d7800ffe2e4ee761852c9d}
+
+\item 
+uint32\_\-t {\bfseries m\_\-lastResponse}\label{classKademlia_1_1CSearch_a04118e7c1c16a8f83cb1dfcd68a4c80e}
+
+\item 
+uint32\_\-t {\bfseries m\_\-searchID}\label{classKademlia_1_1CSearch_a35c407f0f4b9fe8f50e85fa77847dbac}
+
+\item 
+{\bf CUInt128} {\bfseries m\_\-target}\label{classKademlia_1_1CSearch_ae95687953838cb79378da8c5dbf1b8b7}
+
+\item 
+uint32\_\-t {\bfseries m\_\-searchTermsDataSize}\label{classKademlia_1_1CSearch_a875747c9564800836773ed652874f609}
+
+\item 
+uint8\_\-t $\ast$ {\bfseries m\_\-searchTermsData}\label{classKademlia_1_1CSearch_ad6ff95a37c9c29ef1ee7d9a145e8ddfa}
+
+\item 
+WordList {\bfseries m\_\-words}\label{classKademlia_1_1CSearch_af985d028879ed6243f4c0796c2ff83ac}
+
+\item 
+wxString {\bfseries m\_\-fileName}\label{classKademlia_1_1CSearch_a61d1cf24387ef6a2e61e48c02e25abc3}
+
+\item 
+UIntList {\bfseries m\_\-fileIDs}\label{classKademlia_1_1CSearch_a74e834eb6a3e55c0abfa5214eed6b6ee}
+
+\item 
+{\bf CKadClientSearcher} $\ast$ {\bfseries m\_\-nodeSpecialSearchRequester}\label{classKademlia_1_1CSearch_ae3f47402e51aedf7449ad9113a41220e}
+
+\item 
+ContactMap {\bfseries m\_\-possible}\label{classKademlia_1_1CSearch_a4bce0677747a2faee1c28cba117fa877}
+
+\item 
+ContactMap {\bfseries m\_\-tried}\label{classKademlia_1_1CSearch_a28a6bf330b73bca21dbcac62cfa5b658}
+
+\item 
+RespondedMap {\bfseries m\_\-responded}\label{classKademlia_1_1CSearch_a79f2589a5f5e460dafcbd47e60b8464a}
+
+\item 
+ContactMap {\bfseries m\_\-best}\label{classKademlia_1_1CSearch_a45d7bf9ca3afa6b24988c1e5bd10f2e9}
+
+\item 
+ContactList {\bfseries m\_\-delete}\label{classKademlia_1_1CSearch_a96cb124ad135bb583155e3a542fa4c01}
+
+\item 
+ContactMap {\bfseries m\_\-inUse}\label{classKademlia_1_1CSearch_aa1b4283ce70e10120e784b5575d41444}
+
+\item 
+{\bf CUInt128} {\bfseries m\_\-closestDistantFound}\label{classKademlia_1_1CSearch_ab28e6efd7cb0c5c1eedbf71de2691246}
+
+\item 
+{\bf CContact} $\ast$ {\bfseries m\_\-requestedMoreNodesContact}\label{classKademlia_1_1CSearch_ad06cef46aecd5f7132c40cec27d77930}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries CSearchManager}\label{classKademlia_1_1CSearch_a045377c2857a68ea782b0ac776d24e5f}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/kademlia/Search.h\item 
+src/kademlia/kademlia/Search.cpp\end{DoxyCompactItemize}

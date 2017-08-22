@@ -1,0 +1,56 @@
+\section{CDownQueueRem Class Reference}
+\label{classCDownQueueRem}\index{CDownQueueRem@{CDownQueueRem}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CDownQueueRem} ({\bf CRemoteConnect} $\ast$conn)\label{classCDownQueueRem_a54c2eb8c07156707972849b395f8b7f8}
+
+\item 
+{\bf CPartFile} $\ast$ {\bfseries GetFileByID} (uint32 id)\label{classCDownQueueRem_a8fbb6ed008dc5097bf9b0839dd56b4d5}
+
+\item 
+void {\bfseries Prio} ({\bf CPartFile} $\ast$file, uint8 prio)\label{classCDownQueueRem_a0ab7a561fc11fae55039e69f4fae74df}
+
+\item 
+void {\bfseries AutoPrio} ({\bf CPartFile} $\ast$file, bool flag)\label{classCDownQueueRem_ac3760065dc8a4a7a016650f1fb4be83f}
+
+\item 
+void {\bfseries Category} ({\bf CPartFile} $\ast$file, uint8 cat)\label{classCDownQueueRem_a5be3f6c43a3c694f4c4714f0a3d77eae}
+
+\item 
+void {\bfseries SendFileCommand} ({\bf CPartFile} $\ast$file, ec\_\-tagname\_\-t cmd)\label{classCDownQueueRem_a97a47fcfb803c029b03f211d0473a81f}
+
+\item 
+void {\bfseries StopUDPRequests} ()\label{classCDownQueueRem_a1253b80ad7475ac1d5cd279780cdad99}
+
+\item 
+void {\bfseries AddFileLinkToDownload} ({\bf CED2KFileLink} $\ast$, uint8)\label{classCDownQueueRem_abe0d0e6b7201f758d1ba4ad38cc8ec03}
+
+\item 
+bool {\bfseries AddLink} (const wxString \&link, uint8 category=0)\label{classCDownQueueRem_a1a764096ef84c06bfcec9886ce2cad7a}
+
+\item 
+void {\bfseries UnsetCompletedFilesExist} ()\label{classCDownQueueRem_a5ab0e24a1db51164a087c3eb1c5f6bf6}
+
+\item 
+void {\bfseries ResetCatParts} (int cat)\label{classCDownQueueRem_ab95349608fe9ca8e86daa8acf5396de3}
+
+\item 
+void {\bfseries AddSearchToDownload} ({\bf CSearchFile} $\ast$toadd, uint8 category)\label{classCDownQueueRem_a23ab482d969b7f84e075215ec7fa2f92}
+
+\item 
+void {\bfseries ClearCompleted} (const ListOfUInts32 \&ecids)\label{classCDownQueueRem_adf7cffb47d7b29a4a1fb8c91421e9116}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CRemoteConnect} $\ast$ {\bfseries m\_\-conn}\label{classCDownQueueRem_a2eb00604d38711794e9aae3c20fb5b5d}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

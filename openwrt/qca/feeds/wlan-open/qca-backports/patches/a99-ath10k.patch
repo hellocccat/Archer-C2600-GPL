@@ -1,0 +1,101 @@
+--- a/drivers/net/wireless/ath/ath10k/ce.c
++++ b/drivers/net/wireless/ath/ath10k/ce.c
+@@ -326,12 +326,9 @@ exit:
+ void __ath10k_ce_send_revert(struct ath10k_ce_pipe *pipe)
+ {
+ 	struct ath10k *ar = pipe->ar;
+-	struct ath10k_pci *ar_pci = ath10k_pci_priv(ar);
+ 	struct ath10k_ce_ring *src_ring = pipe->src_ring;
+ 	u32 ctrl_addr = pipe->ctrl_addr;
+ 
+-	lockdep_assert_held(&ar_pci->ce_lock);
+-
+ 	/*
+ 	 * This function must be called only if there is an incomplete
+ 	 * scatter-gather transfer (before index register is updated)
+@@ -386,22 +383,17 @@ int ath10k_ce_num_free_src_entries(struc
+ 
+ int __ath10k_ce_rx_num_free_bufs(struct ath10k_ce_pipe *pipe)
+ {
+-	struct ath10k *ar = pipe->ar;
+-	struct ath10k_pci *ar_pci = ath10k_pci_priv(ar);
+ 	struct ath10k_ce_ring *dest_ring = pipe->dest_ring;
+ 	unsigned int nentries_mask = dest_ring->nentries_mask;
+ 	unsigned int write_index = dest_ring->write_index;
+ 	unsigned int sw_index = dest_ring->sw_index;
+ 
+-	lockdep_assert_held(&ar_pci->ce_lock);
+-
+ 	return CE_RING_DELTA(nentries_mask, write_index, sw_index - 1);
+ }
+ 
+ int __ath10k_ce_rx_post_buf(struct ath10k_ce_pipe *pipe, void *ctx, u32 paddr)
+ {
+ 	struct ath10k *ar = pipe->ar;
+-	struct ath10k_pci *ar_pci = ath10k_pci_priv(ar);
+ 	struct ath10k_ce_ring *dest_ring = pipe->dest_ring;
+ 	unsigned int nentries_mask = dest_ring->nentries_mask;
+ 	unsigned int write_index = dest_ring->write_index;
+@@ -410,8 +402,6 @@ int __ath10k_ce_rx_post_buf(struct ath10
+ 	struct ce_desc *desc = CE_DEST_RING_TO_DESC(base, write_index);
+ 	u32 ctrl_addr = pipe->ctrl_addr;
+ 
+-	lockdep_assert_held(&ar_pci->ce_lock);
+-
+ 	if (CE_RING_DELTA(nentries_mask, write_index, sw_index - 1) == 0)
+ 		return -EIO;
+ 
+--- a/drivers/net/wireless/ath/ath10k/pci.c
++++ b/drivers/net/wireless/ath/ath10k/pci.c
+@@ -387,14 +387,11 @@ static inline const char *ath10k_pci_get
+ static int __ath10k_pci_rx_post_buf(struct ath10k_pci_pipe *pipe)
+ {
+ 	struct ath10k *ar = pipe->hif_ce_state;
+-	struct ath10k_pci *ar_pci = ath10k_pci_priv(ar);
+ 	struct ath10k_ce_pipe *ce_pipe = pipe->ce_hdl;
+ 	struct sk_buff *skb;
+ 	dma_addr_t paddr;
+ 	int ret;
+ 
+-	lockdep_assert_held(&ar_pci->ce_lock);
+-
+ 	skb = dev_alloc_skb(pipe->buf_sz);
+ 	if (!skb)
+ 		return -ENOMEM;
+--- a/net/mac80211/mlme.c
++++ b/net/mac80211/mlme.c
+@@ -1319,7 +1319,7 @@ static u32 ieee80211_handle_pwr_constr(s
+ {
+ 	bool has_80211h_pwr = false, has_cisco_pwr = false;
+ 	int chan_pwr = 0, pwr_reduction_80211h = 0;
+-	int pwr_level_cisco, pwr_level_80211h;
++	int pwr_level_cisco = 0, pwr_level_80211h;
+ 	int new_ap_level;
+ 	__le16 capab = mgmt->u.probe_resp.capab_info;
+ 
+--- a/drivers/net/wireless/ath/ath10k/p2p.c
++++ b/drivers/net/wireless/ath/ath10k/p2p.c
+@@ -81,10 +81,6 @@ static size_t ath10k_p2p_noa_ie_len_comp
+ static void ath10k_p2p_noa_ie_assign(struct ath10k_vif *arvif, void *ie,
+ 				     size_t len)
+ {
+-	struct ath10k *ar = arvif->ar;
+-
+-	lockdep_assert_held(&ar->data_lock);
+-
+ 	kfree(arvif->u.ap.noa_data);
+ 
+ 	arvif->u.ap.noa_data = ie;
+@@ -94,12 +90,9 @@ static void ath10k_p2p_noa_ie_assign(str
+ static void __ath10k_p2p_noa_update(struct ath10k_vif *arvif,
+ 				    const struct wmi_p2p_noa_info *noa)
+ {
+-	struct ath10k *ar = arvif->ar;
+ 	void *ie;
+ 	size_t len;
+ 
+-	lockdep_assert_held(&ar->data_lock);
+-
+ 	ath10k_p2p_noa_ie_assign(arvif, NULL, 0);
+ 
+ 	len = ath10k_p2p_noa_ie_len_compute(noa);

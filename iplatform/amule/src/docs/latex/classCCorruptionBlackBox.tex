@@ -1,0 +1,63 @@
+\section{CCorruptionBlackBox Class Reference}
+\label{classCCorruptionBlackBox}\index{CCorruptionBlackBox@{CCorruptionBlackBox}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CCBBClient}
+\item 
+class {\bf CCBBRecord}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Free} ()\label{classCCorruptionBlackBox_a155b069b6ba7f616609b2df574285e6e}
+
+\item 
+void {\bfseries TransferredData} (uint64 nStartPos, uint64 nEndPos, uint32 senderIP)\label{classCCorruptionBlackBox_a2735e6071679eb6324e7edf6bcff7952}
+
+\item 
+void {\bfseries VerifiedData} (bool ok, uint16 nPart, uint32 nRelStartPos, uint32 nRelEndPos)\label{classCCorruptionBlackBox_a158c5aa3cbc4dea075d815a6aef64c82}
+
+\item 
+void {\bfseries EvaluateData} ()\label{classCCorruptionBlackBox_a29c2d15f35bd4e248140480758bb1f3b}
+
+\item 
+void {\bfseries SetPartFileInfo} (const wxString \&name, const wxString \&nr)\label{classCCorruptionBlackBox_acff63251f0fbdf9ccf2471cde5b73f01}
+
+\item 
+void {\bfseries DumpAll} ()\label{classCCorruptionBlackBox_a170b8adce62b50857971b2634a2b5e75}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CCBBRecord} $>$ {\bfseries CRecordList}\label{classCCorruptionBlackBox_a64679e4162ef16a11928b3a96b6de86a}
+
+\item 
+typedef std::map$<$ uint32, {\bf CCBBClient} $>$ {\bfseries CCBBClientMap}\label{classCCorruptionBlackBox_a6a54a2050caf120644d58404c9b1f173}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ uint16, CRecordList $>$ {\bfseries m\_\-Records}\label{classCCorruptionBlackBox_ab7fb03b0ed148c1b6580e3c191baaf12}
+
+\item 
+CCBBClientMap {\bfseries m\_\-goodClients}\label{classCCorruptionBlackBox_ab02e29150f12eaabb58b5773c41345bb}
+
+\item 
+CCBBClientMap {\bfseries m\_\-badClients}\label{classCCorruptionBlackBox_a7a967b6e669cf681627e6aba690e7de7}
+
+\item 
+wxString {\bfseries m\_\-fileName}\label{classCCorruptionBlackBox_aa186f9a665e36350cf93124647134e34}
+
+\item 
+wxString {\bfseries m\_\-partNumber}\label{classCCorruptionBlackBox_a4c8448fad2ae0f0a5dc7e8470e954fd1}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/CorruptionBlackBox.h\item 
+src/CorruptionBlackBox.cpp\end{DoxyCompactItemize}

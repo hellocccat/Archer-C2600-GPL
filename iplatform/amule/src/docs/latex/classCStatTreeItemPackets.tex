@@ -1,0 +1,93 @@
+\section{CStatTreeItemPackets Class Reference}
+\label{classCStatTreeItemPackets}\index{CStatTreeItemPackets@{CStatTreeItemPackets}}
+
+
+Tree item for counting packets.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemPackets::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCStatTreeItemPackets}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemPackets} (const wxString \&label)
+\item 
+void {\bf operator+=} (long size)\label{classCStatTreeItemPackets_a170fe23837545ce731cea375e69fef0c}
+
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bf m\_\-packets}\label{classCStatTreeItemPackets_ac38f9732db9c3dae3d286206bee51f60}
+
+\item 
+uint64\_\-t {\bf m\_\-bytes}\label{classCStatTreeItemPackets_a291d66d33d622398b15456a3dd276fd0}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CStatTreeItemPacketTotals}\label{classCStatTreeItemPackets_a0b500266355041a7495185fe0852a56d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tree item for counting packets. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemPackets@{CStatTreeItemPackets}!CStatTreeItemPackets@{CStatTreeItemPackets}}
+\index{CStatTreeItemPackets@{CStatTreeItemPackets}!CStatTreeItemPackets@{CStatTreeItemPackets}}
+\subsubsection[{CStatTreeItemPackets}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemPackets::CStatTreeItemPackets (const wxString \& {\em label})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemPackets_acb65c31c5f929e1ee0f23041450ee29c}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemPackets@{CStatTreeItemPackets}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemPackets@{CStatTreeItemPackets}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemPackets::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemPackets_ada8cfd5a315e28216febc6df48d09a65}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+Reimplemented in {\bf CStatTreeItemPacketTotals} \doxyref{}{p.}{classCStatTreeItemPacketTotals_aaaba27b6c2e8c52940404b9a260d2b99}.
+
+References CECTag::AddTag(), m\_\-bytes, and m\_\-packets.\index{CStatTreeItemPackets@{CStatTreeItemPackets}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemPackets@{CStatTreeItemPackets}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemPackets::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemPackets_ac760a75a10a3ec0f4e88608b4b42449a}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+Reimplemented in {\bf CStatTreeItemPacketTotals} \doxyref{}{p.}{classCStatTreeItemPacketTotals_ad655638f42c8479bc422b22c2bfc95c2}.
+
+References m\_\-bytes, CStatTreeItemBase::m\_\-label, and m\_\-packets.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

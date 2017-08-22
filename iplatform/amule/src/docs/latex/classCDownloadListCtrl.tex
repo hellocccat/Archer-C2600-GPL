@@ -1,0 +1,264 @@
+\section{CDownloadListCtrl Class Reference}
+\label{classCDownloadListCtrl}\index{CDownloadListCtrl@{CDownloadListCtrl}}
+
+
+This class is responsible for representing the download queue.  
+
+
+{\ttfamily \#include $<$DownloadListCtrl.h$>$}Inheritance diagram for CDownloadListCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCDownloadListCtrl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CDownloadListCtrl} (wxWindow $\ast$parent, wxWindowID winid=-\/1, const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=wxLC\_\-ICON, const wxValidator \&validator=wxDefaultValidator, const wxString \&name=wxT(\char`\"{}downloadlistctrl\char`\"{}))
+\item 
+virtual {\bf $\sim$CDownloadListCtrl} ()\label{classCDownloadListCtrl_a33219b3df08bf92dbae56348ecbfb413}
+
+\item 
+void {\bf AddFile} ({\bf CPartFile} $\ast$file)
+\item 
+void {\bf RemoveFile} ({\bf CPartFile} $\ast$file)
+\item 
+void {\bf ShowFile} ({\bf CPartFile} $\ast$file, bool show)
+\item 
+void {\bf UpdateItem} (const void $\ast$toupdate)
+\item 
+uint8 {\bf GetCategory} () const \label{classCDownloadListCtrl_a99ebe0695e63a72e944e6e1522c2a5c9}
+
+\item 
+void {\bf ChangeCategory} (int newCategory)
+\item 
+void {\bf ClearCompleted} ()\label{classCDownloadListCtrl_af908c9a36ccc6b8c2085b0391def76f0}
+
+\item 
+void {\bf DoItemSelectionChanged} ()\label{classCDownloadListCtrl_a35f59ed787ccba799d75ba5d6177c7dd}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf GetOldColumnOrder} () const \label{classCDownloadListCtrl_a3be6d059988c69c069f79d0b165dc565}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::multimap$<$ const void $\ast$, {\bf FileCtrlItem\_\-Struct} $\ast$ $>$ {\bf ListItems}\label{classCDownloadListCtrl_a4812a79134ffc85fe54374f54e48ef6f}
+
+\item 
+typedef ListItems::value\_\-type {\bf ListItemsPair}\label{classCDownloadListCtrl_a28ca1321166d22506832ef8778c6cdf4}
+
+\item 
+typedef std::pair$<$ ListItems::iterator, ListItems::iterator $>$ {\bf ListIteratorPair}\label{classCDownloadListCtrl_aa42cc0fabfc546ea83c9a6c5b5025205}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ShowFilesCount} (int diff)\label{classCDownloadListCtrl_af7b60318aa14b8810e22cb3f5e2ee032}
+
+\item 
+virtual wxString {\bf GetTTSText} (unsigned item) const 
+\item 
+virtual void {\bf OnDrawItem} (int item, wxDC $\ast$dc, const wxRect \&rect, const wxRect \&rectHL, bool highlighted)\label{classCDownloadListCtrl_a0ff5570f903d685c111e7966edf0804c}
+
+\item 
+void {\bf DrawFileItem} (wxDC $\ast$dc, int nColumn, const wxRect \&rect, {\bf FileCtrlItem\_\-Struct} $\ast$item) const \label{classCDownloadListCtrl_aa1601f3631e323b1a11bde6bc2d7dbdb}
+
+\item 
+void {\bf DrawFileStatusBar} (const {\bf CPartFile} $\ast$file, wxDC $\ast$dc, const wxRect \&rect, bool bFlat) const \label{classCDownloadListCtrl_a455306bc7c0c4926512c8df2e541e56e}
+
+\item 
+void {\bfseries OnCancelFile} (wxCommandEvent \&event)\label{classCDownloadListCtrl_ac937a5dc0fa92045f78d29b5b357bb5f}
+
+\item 
+void {\bfseries OnSetPriority} (wxCommandEvent \&event)\label{classCDownloadListCtrl_ae900900397976e5b44e091ad12ca4212}
+
+\item 
+void {\bfseries OnSwapSources} (wxCommandEvent \&event)\label{classCDownloadListCtrl_a54f16b161d3ebfc234fd56326df8adae}
+
+\item 
+void {\bfseries OnSetCategory} (wxCommandEvent \&event)\label{classCDownloadListCtrl_a7c9bcd6e3fcaaff75d19e3fce0527bf5}
+
+\item 
+void {\bfseries OnSetStatus} (wxCommandEvent \&event)\label{classCDownloadListCtrl_a230fc55fb01d10a384ff1bf77eaa5968}
+
+\item 
+void {\bfseries OnClearCompleted} (wxCommandEvent \&event)\label{classCDownloadListCtrl_ae55bcc2f55a5db1455469fd4778ad5d6}
+
+\item 
+void {\bfseries OnGetLink} (wxCommandEvent \&event)\label{classCDownloadListCtrl_a632e1375da5db55b49775cf1a1aaf78d}
+
+\item 
+void {\bfseries OnGetFeedback} (wxCommandEvent \&event)\label{classCDownloadListCtrl_ab9503cec4348aa55e75f1b433a62e76d}
+
+\item 
+void {\bfseries OnViewFileInfo} (wxCommandEvent \&event)\label{classCDownloadListCtrl_a7040c7c17f4ce316b9f06c684597980e}
+
+\item 
+void {\bfseries OnViewFileComments} (wxCommandEvent \&event)\label{classCDownloadListCtrl_a691619c58ef9a9c53a43c90bc3f01544}
+
+\item 
+void {\bfseries OnPreviewFile} (wxCommandEvent \&event)\label{classCDownloadListCtrl_accbcb9fd2d4cfe3e6a048e57c8d765ef}
+
+\item 
+void {\bfseries OnItemActivated} (wxListEvent \&event)\label{classCDownloadListCtrl_ab4ab7c5d0e52d9efb1a4f1d3a3590bd7}
+
+\item 
+void {\bfseries OnMouseRightClick} (wxListEvent \&event)\label{classCDownloadListCtrl_ab25d625d25e7640781430872a1366ce6}
+
+\item 
+void {\bfseries OnMouseMiddleClick} (wxListEvent \&event)\label{classCDownloadListCtrl_a28d9e4a65cfb3129e5bf5cdf24462795}
+
+\item 
+void {\bfseries OnKeyPressed} (wxKeyEvent \&event)\label{classCDownloadListCtrl_a5c49cc257fb6b2a7f66a0eb0828fe274}
+
+\item 
+void {\bfseries OnItemSelectionChanged} (wxListEvent \&event)\label{classCDownloadListCtrl_aa8dcee897b2d39e919806bf75f74b92a}
+
+\item 
+void {\bfseries PreviewFile} ({\bf CPartFile} $\ast$file)\label{classCDownloadListCtrl_a1f4a0e95024dec5d085ca7464efcd28f}
+
+\item 
+void {\bf ShowFileDetailDialog} (long index)\label{classCDownloadListCtrl_abce1083adef3eb993233a46157289382}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bf SortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)
+\item 
+static int {\bfseries Compare} (const {\bf CPartFile} $\ast$file1, const {\bf CPartFile} $\ast$file2, long lParamSort)\label{classCDownloadListCtrl_aa252f1fd8850637306df19475d49cfc7}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ListItems} {\bf m\_\-ListItems}
+\item 
+wxMenu $\ast$ {\bf m\_\-menu}\label{classCDownloadListCtrl_ac71aa328f1c242d71e71c0ecfa5f116a}
+
+\item 
+wxBrush {\bf m\_\-hilightBrush}\label{classCDownloadListCtrl_a5337946ff3bfee8839fdf8baeea9dc76}
+
+\item 
+wxBrush {\bf m\_\-hilightUnfocusBrush}\label{classCDownloadListCtrl_aa8ed38165124440e0fd418ba4db5191b}
+
+\item 
+uint8 {\bf m\_\-category}\label{classCDownloadListCtrl_a0012373c7c39a8a9439cca0ec3756285}
+
+\item 
+bool {\bf m\_\-ItemSelectionChangePending}\label{classCDownloadListCtrl_ac7a6672e4aa67e0ccd6d38681ab94ecd}
+
+\item 
+int {\bf m\_\-filecount}\label{classCDownloadListCtrl_a7847a7f855039d4712c4c93776db3406}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is responsible for representing the download queue. The CDownlodListCtrl class is responsible for drawing files being downloaded. It is in many ways primary widget within the application, since it is here that users can inspect and manipulate their current downloads. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CDownloadListCtrl@{CDownloadListCtrl}!CDownloadListCtrl@{CDownloadListCtrl}}
+\index{CDownloadListCtrl@{CDownloadListCtrl}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{CDownloadListCtrl}]{\setlength{\rightskip}{0pt plus 5cm}CDownloadListCtrl::CDownloadListCtrl (wxWindow $\ast$ {\em parent}, \/  wxWindowID {\em winid} = {\ttfamily -\/1}, \/  const wxPoint \& {\em pos} = {\ttfamily wxDefaultPosition}, \/  const wxSize \& {\em size} = {\ttfamily wxDefaultSize}, \/  long {\em style} = {\ttfamily wxLC\_\-ICON}, \/  const wxValidator \& {\em validator} = {\ttfamily wxDefaultValidator}, \/  const wxString \& {\em name} = {\ttfamily wxT(\char`\"{}downloadlistctrl\char`\"{})})}\label{classCDownloadListCtrl_af9cd7f4c0641af2d76551d77eaf49839}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::CMuleListCtrl}{p.}{classCMuleListCtrl_a3d2c202974057d0de8a098344a16024d} for documentation of parameters. 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CDownloadListCtrl@{CDownloadListCtrl}!AddFile@{AddFile}}
+\index{AddFile@{AddFile}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{AddFile}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadListCtrl::AddFile ({\bf CPartFile} $\ast$ {\em file})}\label{classCDownloadListCtrl_a6363be7c6ded37a028e35ce1c5f3b542}
+
+
+Adds a file to the list, but it wont show unless it matches the current category. 
+\begin{DoxyParams}{Parameters}
+\item[{\em A}]valid pointer to a new partfile.\end{DoxyParams}
+Please note that duplicates wont be added. 
+
+References m\_\-category, m\_\-ListItems, ShowFile(), and CMuleListCtrl::SortList().\index{CDownloadListCtrl@{CDownloadListCtrl}!ChangeCategory@{ChangeCategory}}
+\index{ChangeCategory@{ChangeCategory}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{ChangeCategory}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadListCtrl::ChangeCategory (int {\em newCategory})}\label{classCDownloadListCtrl_a7cb5ba1a1fa9f3b33e586ec759b267ce}
+
+
+Changes the displayed category and updates the list of shown files. 
+\begin{DoxyParams}{Parameters}
+\item[{\em newCategory}]The new category to display. \end{DoxyParams}
+
+
+References m\_\-category, m\_\-ListItems, and ShowFile().
+
+Referenced by CTransferWnd::OnSetDefaultCat().\index{CDownloadListCtrl@{CDownloadListCtrl}!GetTTSText@{GetTTSText}}
+\index{GetTTSText@{GetTTSText}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{GetTTSText}]{\setlength{\rightskip}{0pt plus 5cm}wxString CDownloadListCtrl::GetTTSText (unsigned {\em item}) const\hspace{0.3cm}{\ttfamily  [private, virtual]}}\label{classCDownloadListCtrl_a291922edfb9f1b9184e2bfd7f42b20b7}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::GetTTSText}{p.}{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63}.\index{CDownloadListCtrl@{CDownloadListCtrl}!RemoveFile@{RemoveFile}}
+\index{RemoveFile@{RemoveFile}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{RemoveFile}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadListCtrl::RemoveFile ({\bf CPartFile} $\ast$ {\em file})}\label{classCDownloadListCtrl_a5706026b493b91f948cb95d8076fd89a}
+
+
+Removes the specified file from the list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]A valid pointer of the file to be removed.\end{DoxyParams}
+This function also removes any sources assosiated with the file. 
+
+References m\_\-ListItems, and ShowFile().\index{CDownloadListCtrl@{CDownloadListCtrl}!ShowFile@{ShowFile}}
+\index{ShowFile@{ShowFile}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{ShowFile}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadListCtrl::ShowFile ({\bf CPartFile} $\ast$ {\em file}, \/  bool {\em show})}\label{classCDownloadListCtrl_aea85fba3039f4fbbe8e74f570693b6e0}
+
+
+Shows or hides the sources of a specific file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]A valid pointer to the file to be shown/hidden. \item[{\em show}]Whenever or not to show the file.\end{DoxyParams}
+If the file is hidden, then its sources will also be hidden. 
+
+References m\_\-ListItems, and ShowFilesCount().
+
+Referenced by AddFile(), ChangeCategory(), RemoveFile(), and UpdateItem().\index{CDownloadListCtrl@{CDownloadListCtrl}!SortProc@{SortProc}}
+\index{SortProc@{SortProc}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{SortProc}]{\setlength{\rightskip}{0pt plus 5cm}int CDownloadListCtrl::SortProc (wxUIntPtr {\em item1}, \/  wxUIntPtr {\em item2}, \/  long {\em sortData})\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCDownloadListCtrl_a5b6cceb0e925646fefc08e412aa340c5}
+
+
+Wrapper around the user-\/provided sorter function. This function ensures that items are sorted in the order specified by clicking on column-\/headers, and also enforces that different entries are never considered equal. This is required for lists that make use of child-\/items, since otherwise, parents may not end up properly located in relation to child-\/items. 
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a9958ee438b116457a818ffb29b3c5864}.
+
+References CMuleListCtrl::COLUMN\_\-MASK, and CMuleListCtrl::SORT\_\-DES.\index{CDownloadListCtrl@{CDownloadListCtrl}!UpdateItem@{UpdateItem}}
+\index{UpdateItem@{UpdateItem}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{UpdateItem}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadListCtrl::UpdateItem (const void $\ast$ {\em toupdate})}\label{classCDownloadListCtrl_a272538cd84f30215e8e189582677267e}
+
+
+Updates the state of the specified item, possibly causing a redrawing. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toupdate}]The source or file to be updated.\end{DoxyParams}
+Calling this function with a file as the argument will ensure that the file is hidden/shown depending on its state and the currently selected category. 
+
+References m\_\-category, m\_\-ListItems, and ShowFile().
+
+\subsection{Member Data Documentation}
+\index{CDownloadListCtrl@{CDownloadListCtrl}!m\_\-ListItems@{m\_\-ListItems}}
+\index{m\_\-ListItems@{m\_\-ListItems}!CDownloadListCtrl@{CDownloadListCtrl}}
+\subsubsection[{m\_\-ListItems}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ListItems} {\bf CDownloadListCtrl::m\_\-ListItems}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCDownloadListCtrl_aad3e215d12b946860c0f4d14ff7e5b3e}
+
+
+This list contains everything shown on the list. Sources are only to be found on this list if they are being displayed, whereas files can always be found on this list, even if they are currently hidden. 
+
+Referenced by AddFile(), ChangeCategory(), ClearCompleted(), RemoveFile(), ShowFile(), UpdateItem(), and $\sim$CDownloadListCtrl().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/DownloadListCtrl.h\item 
+src/DownloadListCtrl.cpp\end{DoxyCompactItemize}

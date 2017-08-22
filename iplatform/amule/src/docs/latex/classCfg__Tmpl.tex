@@ -1,0 +1,95 @@
+\section{Cfg\_\-Tmpl$<$ TYPE $>$ Class Template Reference}
+\label{classCfg__Tmpl}\index{Cfg\_\-Tmpl@{Cfg\_\-Tmpl}}
+
+
+Template Cfg class for connecting with widgets.  
+Inheritance diagram for Cfg\_\-Tmpl$<$ TYPE $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCfg__Tmpl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cfg\_\-Tmpl} (const wxString \&keyname, TYPE \&value, const TYPE \&defaultVal)
+\item 
+virtual bool {\bf ConnectToWidget} (int id, wxWindow $\ast$parent=NULL)
+\item 
+virtual bool {\bf TransferFromWindow} ()
+\item 
+virtual bool {\bf TransferToWindow} ()
+\item 
+void {\bf SetDefault} (const TYPE \&defaultVal)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TYPE \& {\bf m\_\-value}\label{classCfg__Tmpl_a925de4ac80a2f95130189063e98698b8}
+
+\item 
+TYPE {\bf m\_\-default}\label{classCfg__Tmpl_a7e1d4e6b50e8e09210a3e292e24b0d42}
+
+\item 
+wxWindow $\ast$ {\bf m\_\-widget}\label{classCfg__Tmpl_ab8b729ce9dd0764b47be7815a3246a77}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename TYPE$>$ class Cfg\_\-Tmpl$<$ TYPE $>$}
+
+Template Cfg class for connecting with widgets. This template provides the base functionionality needed to syncronize a variable with a widget. However, please note that wxGenericValidator only supports a few types (int, wxString, bool and wxArrayInt), so this template can't always be used directly.
+
+\doxyref{Cfg\_\-Str}{p.}{classCfg__Str} and \doxyref{Cfg\_\-Bool}{p.}{classCfg__Bool} are able to use this template directly, whereas \doxyref{Cfg\_\-Int}{p.}{classCfg__Int} makes use of serveral workaround to enable it to be used with integers other than int. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cfg\_\-Tmpl@{Cfg\_\-Tmpl}!Cfg\_\-Tmpl@{Cfg\_\-Tmpl}}
+\index{Cfg\_\-Tmpl@{Cfg\_\-Tmpl}!Cfg_Tmpl@{Cfg\_\-Tmpl}}
+\subsubsection[{Cfg\_\-Tmpl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ {\bf Cfg\_\-Tmpl}$<$ TYPE $>$::{\bf Cfg\_\-Tmpl} (const wxString \& {\em keyname}, \/  TYPE \& {\em value}, \/  const TYPE \& {\em defaultVal})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCfg__Tmpl_a38987267edfe21f29c356b29bc923114}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em keyname}]\item[{\em value}]\item[{\em defaultVal}]\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Cfg\_\-Tmpl@{Cfg\_\-Tmpl}!ConnectToWidget@{ConnectToWidget}}
+\index{ConnectToWidget@{ConnectToWidget}!Cfg_Tmpl@{Cfg\_\-Tmpl}}
+\subsubsection[{ConnectToWidget}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ virtual bool {\bf Cfg\_\-Tmpl}$<$ TYPE $>$::ConnectToWidget (int {\em id}, \/  wxWindow $\ast$ {\em parent} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Tmpl_a7873f74fa4f0adc0268fa2eb2b1e94fb}
+
+
+Connects the Cfg to a widget. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]The ID of the widget to be connected. \item[{\em parent}]The parent of the widget. Use this to speed up searches.\end{DoxyParams}
+This function works by setting the wxValidator of the class. This however poses some restrictions on which variable types can be used for this template, as noted above. It also poses some limits on the widget types, refer to the wx documentation for those. 
+
+Reimplemented from {\bf Cfg\_\-Base} \doxyref{}{p.}{classCfg__Base_a9a35bb2cf49980a993c333724779845c}.\index{Cfg\_\-Tmpl@{Cfg\_\-Tmpl}!SetDefault@{SetDefault}}
+\index{SetDefault@{SetDefault}!Cfg_Tmpl@{Cfg\_\-Tmpl}}
+\subsubsection[{SetDefault}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ void {\bf Cfg\_\-Tmpl}$<$ TYPE $>$::SetDefault (const TYPE \& {\em defaultVal})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCfg__Tmpl_a1758977de88d06baea78dac7239adf52}
+
+
+Sets the default value. \index{Cfg\_\-Tmpl@{Cfg\_\-Tmpl}!TransferFromWindow@{TransferFromWindow}}
+\index{TransferFromWindow@{TransferFromWindow}!Cfg_Tmpl@{Cfg\_\-Tmpl}}
+\subsubsection[{TransferFromWindow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ virtual bool {\bf Cfg\_\-Tmpl}$<$ TYPE $>$::TransferFromWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}
+
+
+Updates the assosiated variable, returning true on success. 
+
+Reimplemented from {\bf Cfg\_\-Base} \doxyref{}{p.}{classCfg__Base_aa3caf9ca25dc21a68545ca97cc5306ec}.
+
+Reimplemented in {\bf Cfg\_\-Str\_\-Encrypted} \doxyref{}{p.}{classCfg__Str__Encrypted_aa2b128bc7eeea8945f3d3f3a43845b98}, {\bf Cfg\_\-Path} \doxyref{}{p.}{classCfg__Path_a0e6a255e323a02ace456bcd373286dc6}, {\bf Cfg\_\-Int$<$ TYPE $>$} \doxyref{}{p.}{classCfg__Int_a03844a2ba87bfe719362fe0175486de2}, {\bf Cfg\_\-Lang} \doxyref{}{p.}{classCfg__Lang_af7e18d9ba8bd0dcd367c93ec73951473}, {\bf Cfg\_\-Skin} \doxyref{}{p.}{classCfg__Skin_a4513dabfbfb487cfca8ad4748743e34e}, and {\bf Cfg\_\-Int$<$ int $>$} \doxyref{}{p.}{classCfg__Int_a03844a2ba87bfe719362fe0175486de2}.\index{Cfg\_\-Tmpl@{Cfg\_\-Tmpl}!TransferToWindow@{TransferToWindow}}
+\index{TransferToWindow@{TransferToWindow}!Cfg_Tmpl@{Cfg\_\-Tmpl}}
+\subsubsection[{TransferToWindow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ virtual bool {\bf Cfg\_\-Tmpl}$<$ TYPE $>$::TransferToWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}
+
+
+Updates the assosiated widget, returning true on success. 
+
+Reimplemented from {\bf Cfg\_\-Base} \doxyref{}{p.}{classCfg__Base_a8b67d1c10f8a90aa8b6b1a7fcf18500c}.
+
+Reimplemented in {\bf Cfg\_\-Path} \doxyref{}{p.}{classCfg__Path_a8c9b4197c6d841c286a473632ae1864c}, {\bf Cfg\_\-Int$<$ TYPE $>$} \doxyref{}{p.}{classCfg__Int_a9eabec1486d7225c8f3f4b62ef2833cd}, {\bf Cfg\_\-Lang} \doxyref{}{p.}{classCfg__Lang_a427939abc4a2c4003b1d5a36da8b0379}, {\bf Cfg\_\-Skin} \doxyref{}{p.}{classCfg__Skin_a9f292631347b2fec93dea26afab71b5d}, and {\bf Cfg\_\-Int$<$ int $>$} \doxyref{}{p.}{classCfg__Int_a9eabec1486d7225c8f3f4b62ef2833cd}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Preferences.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,193 @@
+\section{UploadBandwidthThrottler Class Reference}
+\label{classUploadBandwidthThrottler}\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf UploadBandwidthThrottler} ()\label{classUploadBandwidthThrottler_a667521c30c433daaf47bd2ad8dea9a88}
+
+\item 
+{\bf $\sim$UploadBandwidthThrottler} ()
+\item 
+uint64 {\bf GetNumberOfSentBytesSinceLastCallAndReset} ()
+\item 
+uint64 {\bf GetNumberOfSentBytesOverheadSinceLastCallAndReset} ()
+\item 
+void {\bf AddToStandardList} (uint32 index, {\bf ThrottledFileSocket} $\ast$socket)
+\item 
+bool {\bf RemoveFromStandardList} ({\bf ThrottledFileSocket} $\ast$socket)
+\item 
+void {\bf QueueForSendingControlPacket} ({\bf ThrottledControlSocket} $\ast$socket, bool hasSent=false)
+\item 
+void {\bfseries RemoveFromAllQueues} ({\bf ThrottledControlSocket} $\ast$socket)\label{classUploadBandwidthThrottler_a328a79e551604bb9b8b3c6503d953010}
+
+\item 
+void {\bfseries RemoveFromAllQueues} ({\bf ThrottledFileSocket} $\ast$socket)\label{classUploadBandwidthThrottler_a6c872c671a3584dd29909cb3f48a8867}
+
+\item 
+void {\bf EndThread} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::deque$<$ {\bf ThrottledControlSocket} $\ast$ $>$ {\bfseries SocketQueue}\label{classUploadBandwidthThrottler_ad5b10e225c648bd9ed0b93423aba6bc7}
+
+\item 
+typedef std::deque$<$ {\bf ThrottledFileSocket} $\ast$ $>$ {\bfseries FileSocketQueue}\label{classUploadBandwidthThrottler_a65ccadc0751bebd916140b0071da70c6}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf DoRemoveFromAllQueues} ({\bf ThrottledControlSocket} $\ast$socket)
+\item 
+bool {\bf RemoveFromStandardListNoLock} ({\bf ThrottledFileSocket} $\ast$socket)
+\item 
+void $\ast$ {\bf Entry} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-doRun}\label{classUploadBandwidthThrottler_a8ed62e79d5e2414acd010506e69f80f0}
+
+\item 
+wxMutex {\bfseries m\_\-sendLocker}\label{classUploadBandwidthThrottler_a54d2e499c2e3b3e1e6bc08ccd12494ee}
+
+\item 
+wxMutex {\bfseries m\_\-tempQueueLocker}\label{classUploadBandwidthThrottler_a8d6581d897053d13ca1b44c617726fd7}
+
+\item 
+SocketQueue {\bfseries m\_\-ControlQueue\_\-list}\label{classUploadBandwidthThrottler_a5a3815c9628e446e8ddca49c6c4092b7}
+
+\item 
+SocketQueue {\bfseries m\_\-ControlQueueFirst\_\-list}\label{classUploadBandwidthThrottler_a177839afc55d2ff6c94d932dd23073fb}
+
+\item 
+SocketQueue {\bfseries m\_\-TempControlQueue\_\-list}\label{classUploadBandwidthThrottler_ae615de3986c49d24c41aec75b80ea863}
+
+\item 
+SocketQueue {\bfseries m\_\-TempControlQueueFirst\_\-list}\label{classUploadBandwidthThrottler_a4946d2e956c1f930f6620f8bfecfa46c}
+
+\item 
+FileSocketQueue {\bfseries m\_\-StandardOrder\_\-list}\label{classUploadBandwidthThrottler_a19baf0bdd6932b5bd4b6e0db4e42fe6a}
+
+\item 
+uint64 {\bfseries m\_\-SentBytesSinceLastCall}\label{classUploadBandwidthThrottler_a86546137ffca9ffeda6b560b05dfe5e1}
+
+\item 
+uint64 {\bfseries m\_\-SentBytesSinceLastCallOverhead}\label{classUploadBandwidthThrottler_ae00cd5d3a9c4e21b6b16d5ea7bb1a384}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!$\sim$UploadBandwidthThrottler@{$\sim$UploadBandwidthThrottler}}
+\index{$\sim$UploadBandwidthThrottler@{$\sim$UploadBandwidthThrottler}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{$\sim$UploadBandwidthThrottler}]{\setlength{\rightskip}{0pt plus 5cm}UploadBandwidthThrottler::$\sim$UploadBandwidthThrottler ()}\label{classUploadBandwidthThrottler_aa1793f5950342873537b1c95a76e87f1}
+
+
+The destructor stops the thread. If the thread has already stoppped, destructor does nothing. 
+
+References EndThread().
+
+\subsection{Member Function Documentation}
+\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!AddToStandardList@{AddToStandardList}}
+\index{AddToStandardList@{AddToStandardList}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{AddToStandardList}]{\setlength{\rightskip}{0pt plus 5cm}void UploadBandwidthThrottler::AddToStandardList (uint32 {\em index}, \/  {\bf ThrottledFileSocket} $\ast$ {\em socket})}\label{classUploadBandwidthThrottler_a4543817d0ffdf9160e5bfebd39253f96}
+
+
+Add a socket to the list of sockets that have upload slots. The main thread will continously call send on these sockets, to give them chance to work off their queues. The sockets are called in the order they exist in the list, so the top socket (index 0) will be given a chance first to use bandwidth, and then the next socket (index 1) etc.
+
+It is possible to add a socket several times to the list without removing it inbetween, but that should be avoided.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]insert the socket at this place in the list. An index that is higher than the current number of sockets in the list will mean that the socket should be inserted last in the list.\item[{\em socket}]the address to the socket that should be added to the list. If the address is NULL, this method will do nothing. \end{DoxyParams}
+
+
+References RemoveFromStandardListNoLock().\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!DoRemoveFromAllQueues@{DoRemoveFromAllQueues}}
+\index{DoRemoveFromAllQueues@{DoRemoveFromAllQueues}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{DoRemoveFromAllQueues}]{\setlength{\rightskip}{0pt plus 5cm}void UploadBandwidthThrottler::DoRemoveFromAllQueues ({\bf ThrottledControlSocket} $\ast$ {\em socket})\hspace{0.3cm}{\ttfamily  [private]}}\label{classUploadBandwidthThrottler_a6c2191d293025fcb68d187071ec039e4}
+
+
+Remove the socket from all lists and queues. This will make it safe to erase/delete the socket. It will also cause the main thread to stop calling send() for the socket.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]address to the socket that should be removed \end{DoxyParams}
+\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!EndThread@{EndThread}}
+\index{EndThread@{EndThread}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{EndThread}]{\setlength{\rightskip}{0pt plus 5cm}void UploadBandwidthThrottler::EndThread ()}\label{classUploadBandwidthThrottler_ae3a606235cabf197c6e7d0def8391000}
+
+
+Make the thread exit. This method will not return until the thread has stopped looping. This guarantees that the thread will not access the CEMSockets after this call has exited. 
+
+Referenced by $\sim$UploadBandwidthThrottler().\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!Entry@{Entry}}
+\index{Entry@{Entry}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{Entry}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ UploadBandwidthThrottler::Entry ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classUploadBandwidthThrottler_a646fad8f57fe8cc645392ff98f6e50f9}
+
+
+The thread method that handles calling send for the individual sockets. Control packets will always be tried to be sent first. If there is any bandwidth leftover after that, send() for the upload slot sockets will be called in priority order until we have run out of available bandwidth for this loop. Upload slots will not be allowed to go without having sent called for more than a defined amount of time (i.e. two seconds).
+
+\begin{DoxyReturn}{Returns}
+always returns 0. 
+\end{DoxyReturn}
+\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!GetNumberOfSentBytesOverheadSinceLastCallAndReset@{GetNumberOfSentBytesOverheadSinceLastCallAndReset}}
+\index{GetNumberOfSentBytesOverheadSinceLastCallAndReset@{GetNumberOfSentBytesOverheadSinceLastCallAndReset}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{GetNumberOfSentBytesOverheadSinceLastCallAndReset}]{\setlength{\rightskip}{0pt plus 5cm}uint64 UploadBandwidthThrottler::GetNumberOfSentBytesOverheadSinceLastCallAndReset ()}\label{classUploadBandwidthThrottler_a1315a85eea9d3bd820eb7124f7d0ee0e}
+
+
+Find out how many bytes that has been put on the sockets since the last call to this method. Excludes overhead of control packets.
+
+\begin{DoxyReturn}{Returns}
+the number of bytes that has been put on the sockets since the last call 
+\end{DoxyReturn}
+\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!GetNumberOfSentBytesSinceLastCallAndReset@{GetNumberOfSentBytesSinceLastCallAndReset}}
+\index{GetNumberOfSentBytesSinceLastCallAndReset@{GetNumberOfSentBytesSinceLastCallAndReset}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{GetNumberOfSentBytesSinceLastCallAndReset}]{\setlength{\rightskip}{0pt plus 5cm}uint64 UploadBandwidthThrottler::GetNumberOfSentBytesSinceLastCallAndReset ()}\label{classUploadBandwidthThrottler_a5266715b61436eca207a2f4b99c98bcf}
+
+
+Find out how many bytes that has been put on the sockets since the last call to this method. Includes overhead of control packets.
+
+\begin{DoxyReturn}{Returns}
+the number of bytes that has been put on the sockets since the last call 
+\end{DoxyReturn}
+\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!QueueForSendingControlPacket@{QueueForSendingControlPacket}}
+\index{QueueForSendingControlPacket@{QueueForSendingControlPacket}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{QueueForSendingControlPacket}]{\setlength{\rightskip}{0pt plus 5cm}void UploadBandwidthThrottler::QueueForSendingControlPacket ({\bf ThrottledControlSocket} $\ast$ {\em socket}, \/  bool {\em hasSent} = {\ttfamily false})}\label{classUploadBandwidthThrottler_acfaa5803854e19e185f9408dce1707c6}
+
+
+Notifies the send thread that it should try to call controlpacket send for the supplied socket. It is allowed to call this method several times for the same socket, without having controlpacket send called for the socket first. The doublette entries are never filtered, since it is incurs less cpu overhead to simply call Send() in the socket for each double. Send() will already have done its work when the second Send() is called, and will just return with little cpu overhead.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]address to the socket that requests to have controlpacket send to be called on it \end{DoxyParams}
+\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!RemoveFromStandardList@{RemoveFromStandardList}}
+\index{RemoveFromStandardList@{RemoveFromStandardList}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{RemoveFromStandardList}]{\setlength{\rightskip}{0pt plus 5cm}bool UploadBandwidthThrottler::RemoveFromStandardList ({\bf ThrottledFileSocket} $\ast$ {\em socket})}\label{classUploadBandwidthThrottler_a0cdc4b9fc3a72811f292fa115ff74274}
+
+
+Remove a socket from the list of sockets that have upload slots. If the socket has mistakenly been added several times to the list, this method will return all of the entries for the socket.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]the address of the socket that should be removed from the list. If this socket does not exist in the list, this method will do nothing. \end{DoxyParams}
+
+
+References RemoveFromStandardListNoLock().\index{UploadBandwidthThrottler@{UploadBandwidthThrottler}!RemoveFromStandardListNoLock@{RemoveFromStandardListNoLock}}
+\index{RemoveFromStandardListNoLock@{RemoveFromStandardListNoLock}!UploadBandwidthThrottler@{UploadBandwidthThrottler}}
+\subsubsection[{RemoveFromStandardListNoLock}]{\setlength{\rightskip}{0pt plus 5cm}bool UploadBandwidthThrottler::RemoveFromStandardListNoLock ({\bf ThrottledFileSocket} $\ast$ {\em socket})\hspace{0.3cm}{\ttfamily  [private]}}\label{classUploadBandwidthThrottler_afc05f9903b53dbf9f777213b7f8e0e28}
+
+
+Remove a socket from the list of sockets that have upload slots. NOT THREADSAFE! This is an internal method that doesn't take the necessary lock before it removes the socket. This method should only be called when the current thread already owns the m\_\-sendLocker lock!
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]address of the socket that should be removed from the list. If this socket does not exist in the list, this method will do nothing. \end{DoxyParams}
+
+
+Referenced by AddToStandardList(), and RemoveFromStandardList().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/UploadBandwidthThrottler.h\item 
+src/UploadBandwidthThrottler.cpp\end{DoxyCompactItemize}

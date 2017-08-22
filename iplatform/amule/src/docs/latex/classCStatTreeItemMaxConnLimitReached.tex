@@ -1,0 +1,82 @@
+\section{CStatTreeItemMaxConnLimitReached Class Reference}
+\label{classCStatTreeItemMaxConnLimitReached}\index{CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}}
+
+
+Special item for Max Connection Limit Reached.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemMaxConnLimitReached::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCStatTreeItemMaxConnLimitReached}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemMaxConnLimitReached} (const wxString \&label)
+\item 
+void {\bf operator++} ()\label{classCStatTreeItemMaxConnLimitReached_aa6f9e978f72fc2d6c052ccc57a5088a9}
+
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bf m\_\-count}\label{classCStatTreeItemMaxConnLimitReached_a0d029abc3304b7885d98a961adbaf3e0}
+
+\item 
+wxDateTime {\bf m\_\-time}\label{classCStatTreeItemMaxConnLimitReached_abc19880746431f7b033eb93f28f2c72d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Special item for Max Connection Limit Reached. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}!CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}}
+\index{CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}!CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}}
+\subsubsection[{CStatTreeItemMaxConnLimitReached}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemMaxConnLimitReached::CStatTreeItemMaxConnLimitReached (const wxString \& {\em label})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemMaxConnLimitReached_a530cc70e7ad5dded6a09d19083a16cba}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemMaxConnLimitReached::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemMaxConnLimitReached_a93d9120fc6446c012ab28d7c4e255b9d}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+References CECTag::AddTag(), m\_\-count, and m\_\-time.\index{CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemMaxConnLimitReached@{CStatTreeItemMaxConnLimitReached}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemMaxConnLimitReached::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemMaxConnLimitReached_aeeee0ef99dd4ec75afaa0a2365bf5557}
+
+
+Returns a string to be displayed on GUI. For m\_\-count == 0 it will display \char`\"{}Never\char`\"{}, for other values it will display the counter value and the date \& time of the event. 
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+References m\_\-count, CStatTreeItemBase::m\_\-label, and m\_\-time.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

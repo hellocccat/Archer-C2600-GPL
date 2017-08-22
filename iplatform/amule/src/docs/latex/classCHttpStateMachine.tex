@@ -1,0 +1,71 @@
+\section{CHttpStateMachine Class Reference}
+\label{classCHttpStateMachine}\index{CHttpStateMachine@{CHttpStateMachine}}
+Inheritance diagram for CHttpStateMachine::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCHttpStateMachine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CHttpStateMachine} (const {\bf CProxyData} \&proxyData, CProxyCommand proxyCommand)\label{classCHttpStateMachine_abbd5daffe01d700f0106cfc6fd222436}
+
+\item 
+void {\bfseries process\_\-state} (t\_\-sm\_\-state state, bool entry)\label{classCHttpStateMachine_aa64e0cb0a61bf4282c3a610f72f2f5c1}
+
+\item 
+t\_\-sm\_\-state {\bfseries next\_\-state} (t\_\-sm\_\-event event)\label{classCHttpStateMachine_a8ffe9311beede60ef6d666d7ca31823d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries HttpState} \{ \par
+{\bfseries HTTP\_\-STATE\_\-START} =  PROXY\_\-STATE\_\-START, 
+{\bfseries HTTP\_\-STATE\_\-END} =  PROXY\_\-STATE\_\-END, 
+{\bfseries HTTP\_\-STATE\_\-SEND\_\-COMMAND\_\-REQUEST}, 
+{\bfseries HTTP\_\-STATE\_\-RECEIVE\_\-COMMAND\_\-REPLY}, 
+\par
+{\bfseries HTTP\_\-STATE\_\-PROCESS\_\-COMMAND\_\-REPLY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries process\_\-start} (bool entry)\label{classCHttpStateMachine_a6087f284d6277d76e1452a2db160616e}
+
+\item 
+void {\bfseries process\_\-send\_\-command\_\-request} (bool entry)\label{classCHttpStateMachine_acb72b0bf7901048136c65c2475914e0a}
+
+\item 
+void {\bfseries process\_\-receive\_\-command\_\-reply} (bool entry)\label{classCHttpStateMachine_a94e614e01c4fc60edc8c770b924087ef}
+
+\item 
+void {\bfseries process\_\-process\_\-command\_\-reply} (bool entry)\label{classCHttpStateMachine_a95a88de38bd16dcea4d7ed7e156d2131}
+
+\item 
+void {\bfseries process\_\-end} (bool entry)\label{classCHttpStateMachine_a07454d056fb2d8d73837afa8d8538989}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+HttpStateProcessor {\bfseries m\_\-process\_\-state} [HTTP\_\-MAX\_\-STATES]\label{classCHttpStateMachine_a62b4c75a951556a742efd81f0ff87fb7}
+
+\item 
+wxString {\bfseries m\_\-state\_\-name} [HTTP\_\-MAX\_\-STATES]\label{classCHttpStateMachine_a1e09512a76a0eda9ad6881b9632adaae}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries HTTP\_\-MAX\_\-STATES} = 5\label{classCHttpStateMachine_ab4e74cd39c9c85a8449b8b87811998be}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Proxy.h\item 
+src/Proxy.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\section{CECPacket Class Reference}
+\label{classCECPacket}\index{CECPacket@{CECPacket}}
+
+
+High level EC packet handler class.  
+
+
+{\ttfamily \#include $<$ECPacket.h$>$}Inheritance diagram for CECPacket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classCECPacket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CECPacket} (ec\_\-opcode\_\-t opCode, EC\_\-DETAIL\_\-LEVEL detail\_\-level=EC\_\-DETAIL\_\-FULL)\label{classCECPacket_a3aba08458a75540c023a5786cb3d64a5}
+
+\item 
+ec\_\-opcode\_\-t {\bf GetOpCode} (void) const 
+\item 
+uint32\_\-t {\bf GetPacketLength} (void) const 
+\item 
+EC\_\-DETAIL\_\-LEVEL {\bfseries GetDetailLevel} () const \label{classCECPacket_a33eb20503c6d3b6ba209dbbd01ebbdf9}
+
+\item 
+void {\bfseries DebugPrint} (bool incoming, uint32 trueSize=0) const \label{classCECPacket_a62556487c1023ee7457c646571ce6ed4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries ReadFromSocket} ({\bf CECSocket} \&socket)\label{classCECPacket_a09a940d5808b0f858cb0e115eef048dc}
+
+\item 
+bool {\bfseries WritePacket} ({\bf CECSocket} \&socket) const \label{classCECPacket_a4e13efc2fd9175b6c75e10d19fe6d061}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ec\_\-opcode\_\-t {\bfseries m\_\-opCode}\label{classCECPacket_ac5345c942d16f6f3a7c5b3cefb41b16e}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CECSocket}\label{classCECPacket_a6a1e30d03910fad6da0c77d42cbff7b4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+High level EC packet handler class. 
+
+\subsection{Member Function Documentation}
+\index{CECPacket@{CECPacket}!GetOpCode@{GetOpCode}}
+\index{GetOpCode@{GetOpCode}!CECPacket@{CECPacket}}
+\subsubsection[{GetOpCode}]{\setlength{\rightskip}{0pt plus 5cm}ec\_\-opcode\_\-t CECPacket::GetOpCode (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCECPacket_a758cad68f474c8cc2b62154ce5d43617}
+
+
+Returns OPCODE. \begin{DoxyReturn}{Returns}
+The OpCode of the packet. 
+\end{DoxyReturn}
+\index{CECPacket@{CECPacket}!GetPacketLength@{GetPacketLength}}
+\index{GetPacketLength@{GetPacketLength}!CECPacket@{CECPacket}}
+\subsubsection[{GetPacketLength}]{\setlength{\rightskip}{0pt plus 5cm}uint32 CECPacket::GetPacketLength (void) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCECPacket_ac57bcd383fb6b50780fe7abb281436c9}
+
+
+Returns the length of the packet. \begin{DoxyReturn}{Returns}
+The length of the packet. 
+\end{DoxyReturn}
+
+
+References CECTag::GetTagLen().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECPacket.h\item 
+src/libs/ec/cpp/ECPacket.cpp\end{DoxyCompactItemize}

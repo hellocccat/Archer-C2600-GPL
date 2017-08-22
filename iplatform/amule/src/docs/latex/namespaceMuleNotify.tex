@@ -1,0 +1,400 @@
+\section{MuleNotify Namespace Reference}
+\label{namespaceMuleNotify}\index{MuleNotify@{MuleNotify}}
+
+
+This namespaces contains a number of functions and classes related to defered function calls, allowing a notification call to be delayed till it can be initiated from the main thread.  
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CMuleNotiferBase}
+\begin{DoxyCompactList}\small\item\em The base class of the functions. \item\end{DoxyCompactList}\item 
+class {\bf CMuleNotifier0}
+\begin{DoxyCompactList}\small\item\em Notification functor for functions taking no arguments. \item\end{DoxyCompactList}\item 
+class {\bf CMuleNotifier1}
+\begin{DoxyCompactList}\small\item\em Notification functor for functions taking 1 arguments. \item\end{DoxyCompactList}\item 
+class {\bf CMuleNotifier2}
+\begin{DoxyCompactList}\small\item\em Notification functor for functions taking 2 arguments. \item\end{DoxyCompactList}\item 
+class {\bf CMuleNotifier3}
+\begin{DoxyCompactList}\small\item\em Notification functor for functions taking 3 arguments. \item\end{DoxyCompactList}\item 
+class {\bf CMuleGUIEvent}
+\begin{DoxyCompactList}\small\item\em This event is sent when a worker-\/thread makes use of a notify-\/macro. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf HandleNotification} (const {\bf CMuleNotiferBase} \&ntf)
+\item 
+void {\bf HandleNotificationAlways} (const {\bf CMuleNotiferBase} \&ntf)\label{namespaceMuleNotify_a294b3f8a6976e42638c983a9271c8e46}
+
+\item 
+void {\bfseries Search\_\-Add\_\-Download} ({\bf CSearchFile} $\ast$file, uint8 category)\label{namespaceMuleNotify_ad5c93dc7325cf59f7f8f3b1694885ae1}
+
+\item 
+void {\bfseries ShowUserCount} (wxString NOT\_\-ON\_\-DAEMON(str))\label{namespaceMuleNotify_a914020a3d249985f52759c527b11e73f}
+
+\item 
+void {\bfseries Search\_\-Update\_\-Progress} (uint32 NOT\_\-ON\_\-DAEMON(val))\label{namespaceMuleNotify_a8d59722294e80bda7cab993675a4bd13}
+
+\item 
+void {\bfseries DownloadCtrlUpdateItem} (const void $\ast$item)\label{namespaceMuleNotify_a5a0b2bb8bba0258669ca2ff4b2b8c272}
+
+\item 
+void {\bfseries DownloadCtrlDoItemSelectionChanged} ()\label{namespaceMuleNotify_aaa3c0ba581f325e3d71abd559d86d63a}
+
+\item 
+void {\bfseries NodesURLChanged} (wxString NOT\_\-ON\_\-DAEMON(url))\label{namespaceMuleNotify_a00eb24edb2d02e1d62f1fbb1bc934826}
+
+\item 
+void {\bfseries ServersURLChanged} (wxString NOT\_\-ON\_\-DAEMON(url))\label{namespaceMuleNotify_a9f59e9178b4097cb16c25782ce27c90a}
+
+\item 
+void {\bfseries ShowGUI} ()\label{namespaceMuleNotify_af2f719afd8b0b60a49fedae7db6ac74c}
+
+\item 
+void {\bfseries SourceCtrlUpdateSource} (uint32 NOT\_\-ON\_\-DAEMON(source), SourceItemType NOT\_\-ON\_\-DAEMON(type))\label{namespaceMuleNotify_a7195e9f363aa8841be2d619317ef7221}
+
+\item 
+void {\bfseries SourceCtrlAddSource} ({\bf CPartFile} $\ast$NOT\_\-ON\_\-DAEMON(owner), {\bf CClientRef} NOT\_\-ON\_\-DAEMON(source), SourceItemType NOT\_\-ON\_\-DAEMON(type))\label{namespaceMuleNotify_a3af056ada1002e47e1d16924d78cf8d4}
+
+\item 
+void {\bfseries SourceCtrlRemoveSource} (uint32 NOT\_\-ON\_\-DAEMON(source), const {\bf CPartFile} $\ast$NOT\_\-ON\_\-DAEMON(owner))\label{namespaceMuleNotify_a06ee422c6fecd1b76373c9021a24dc39}
+
+\item 
+void {\bfseries SharedCtrlAddClient} ({\bf CKnownFile} $\ast$NOT\_\-ON\_\-DAEMON(owner), {\bf CClientRef} NOT\_\-ON\_\-DAEMON(source), SourceItemType NOT\_\-ON\_\-DAEMON(type))\label{namespaceMuleNotify_ad976326caba6a40031e16191e7412c10}
+
+\item 
+void {\bfseries SharedCtrlRefreshClient} (uint32 NOT\_\-ON\_\-DAEMON(client), SourceItemType NOT\_\-ON\_\-DAEMON(type))\label{namespaceMuleNotify_a7e3b76442d28e924bef39bd04bc768b1}
+
+\item 
+void {\bfseries SharedCtrlRemoveClient} (uint32 NOT\_\-ON\_\-DAEMON(source), const {\bf CKnownFile} $\ast$NOT\_\-ON\_\-DAEMON(owner))\label{namespaceMuleNotify_a68ebc9c3a51d860093caa7cdde307f3e}
+
+\item 
+void {\bfseries ServerRefresh} ({\bf CServer} $\ast$NOT\_\-ON\_\-DAEMON(server))\label{namespaceMuleNotify_a4f5d0e88f49695a772148db471692218}
+
+\item 
+void {\bfseries ChatUpdateFriend} ({\bf CFriend} $\ast$NOT\_\-ON\_\-DAEMON(toupdate))\label{namespaceMuleNotify_a0fb1b4447e67479473a04f4f22414470}
+
+\item 
+void {\bfseries ChatRemoveFriend} ({\bf CFriend} $\ast$toremove)\label{namespaceMuleNotify_a2dd77c326ec129ed3dc456ae0173060e}
+
+\item 
+void {\bfseries SharedFilesShowFile} ({\bf CKnownFile} $\ast$NOT\_\-ON\_\-DAEMON(file))\label{namespaceMuleNotify_a17631f83273169f346b32799e80370fb}
+
+\item 
+void {\bfseries SharedFilesRemoveFile} ({\bf CKnownFile} $\ast$NOT\_\-ON\_\-DAEMON(file))\label{namespaceMuleNotify_a812365497b4ab93bb53c129fec4aa54d}
+
+\item 
+void {\bfseries SharedFilesRemoveAllFiles} ()\label{namespaceMuleNotify_aeebf017bd24613b9b1cc864843330563}
+
+\item 
+void {\bfseries SharedFilesShowFileList} ()\label{namespaceMuleNotify_a5e7e871c8c76115ef2866848f95a4b5c}
+
+\item 
+void {\bfseries SharedFilesUpdateItem} ({\bf CKnownFile} $\ast$NOT\_\-ON\_\-DAEMON(file))\label{namespaceMuleNotify_ad51f1c824f1852e11f8cc76882f62410}
+
+\item 
+void {\bfseries DownloadCtrlAddFile} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_ac4dc2f4588f7f131ddb4e16976829571}
+
+\item 
+void {\bfseries DownloadCtrlRemoveFile} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_ae291463f88ef680a8607eafb99065bb1}
+
+\item 
+void {\bfseries DownloadCtrlSort} ()\label{namespaceMuleNotify_a284c0dc307c43343a74f442f8a3e31d5}
+
+\item 
+void {\bfseries ServerAdd} ({\bf CServer} $\ast$NOT\_\-ON\_\-DAEMON(server))\label{namespaceMuleNotify_a566e5717d60146a93d91b111d679dda3}
+
+\item 
+void {\bfseries ServerRemove} ({\bf CServer} $\ast$NOT\_\-ON\_\-DAEMON(server))\label{namespaceMuleNotify_a0cc69a69ea7c530d3c7a8f59b49dfa45}
+
+\item 
+void {\bfseries ServerRemoveDead} ()\label{namespaceMuleNotify_a08b168583b0186ed1e69851874e747a5}
+
+\item 
+void {\bfseries ServerRemoveAll} ()\label{namespaceMuleNotify_a183563a6abdb150dc52ddc618e562117}
+
+\item 
+void {\bfseries ServerHighlight} ({\bf CServer} $\ast$NOT\_\-ON\_\-DAEMON(server), bool NOT\_\-ON\_\-DAEMON(highlight))\label{namespaceMuleNotify_a302fb55b47251f278d8829888708fd43}
+
+\item 
+void {\bfseries ServerFreeze} ()\label{namespaceMuleNotify_a3050969d5bcc1ff11c5273310ef36452}
+
+\item 
+void {\bfseries ServerThaw} ()\label{namespaceMuleNotify_a1febd2e6e05b77e655c575956110282f}
+
+\item 
+void {\bfseries ServerUpdateED2KInfo} ()\label{namespaceMuleNotify_aa5c3f21ac4ee49d5af61fc037a46c902}
+
+\item 
+void {\bfseries ServerUpdateKadKInfo} ()\label{namespaceMuleNotify_a898796816a50a0561edb00743512704d}
+
+\item 
+void {\bfseries SearchCancel} ()\label{namespaceMuleNotify_a14bc7b19e89ad9424756adc45008d976}
+
+\item 
+void {\bfseries SearchLocalEnd} ()\label{namespaceMuleNotify_a69d6060a4da6aeb2a20e5e0e1ee3172d}
+
+\item 
+void {\bfseries KadSearchEnd} (uint32 NOT\_\-ON\_\-DAEMON(id))\label{namespaceMuleNotify_afdbddcca5e084afe5c0fc0be87bd3ca9}
+
+\item 
+void {\bfseries Search\_\-Update\_\-Sources} ({\bf CSearchFile} $\ast$result)\label{namespaceMuleNotify_a710375fe784e4a407558880e82f296fb}
+
+\item 
+void {\bfseries Search\_\-Add\_\-Result} ({\bf CSearchFile} $\ast$NOT\_\-ON\_\-DAEMON(result))\label{namespaceMuleNotify_a1476f056901cd14ea4333f75ebf24121}
+
+\item 
+void {\bfseries ChatConnResult} (bool NOT\_\-ON\_\-DAEMON(success), uint64 NOT\_\-ON\_\-DAEMON(id), wxString NOT\_\-ON\_\-DAEMON(message))\label{namespaceMuleNotify_a06fa41607585575d6af9139b8931c8b5}
+
+\item 
+void {\bfseries ChatProcessMsg} (uint64 NOT\_\-ON\_\-DAEMON(sender), wxString NOT\_\-ON\_\-DAEMON(message))\label{namespaceMuleNotify_abce4737d3ee0ac0f190d0e1c504d08c0}
+
+\item 
+void {\bfseries ChatSendCaptcha} (wxString NOT\_\-ON\_\-DAEMON(captcha), uint64 NOT\_\-ON\_\-DAEMON(to\_\-id))\label{namespaceMuleNotify_a81c5f467271b7df33800304194fc0e26}
+
+\item 
+void {\bfseries ShowConnState} (long NOT\_\-ON\_\-DAEMON(forceUpdate))\label{namespaceMuleNotify_a74761621da92d0f578d31ad9aafc5586}
+
+\item 
+void {\bfseries ShowUpdateCatTabTitles} ()\label{namespaceMuleNotify_ad57a3165de7915d8f96df2a1f47d0144}
+
+\item 
+void {\bfseries CategoryAdded} ()\label{namespaceMuleNotify_a6cf043de8f02b724c6c9f3b5dbed895e}
+
+\item 
+void {\bfseries CategoryUpdate} (uint32 NOT\_\-ON\_\-DAEMON(cat))\label{namespaceMuleNotify_a7d27cac88f0b31b0f3239869fbc9bd21}
+
+\item 
+void {\bfseries CategoryDelete} (uint32 cat)\label{namespaceMuleNotify_aa741cf9959b8ba71425232a801ea8a67}
+
+\item 
+void {\bfseries PartFile\_\-Swap\_\-A4AF} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_aba2c44f1b0c641258cc57b457132cd3a}
+
+\item 
+void {\bfseries PartFile\_\-Swap\_\-A4AF\_\-Auto} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_a4ca90607ef0c5ad13fdbddd03ed2370a}
+
+\item 
+void {\bfseries PartFile\_\-Swap\_\-A4AF\_\-Others} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_a6a9546307fb60dcd09f83d074d90ac7f}
+
+\item 
+void {\bfseries PartFile\_\-Pause} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_a877bf3818076f141ad71f52e95720be5}
+
+\item 
+void {\bfseries PartFile\_\-Resume} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_a35ac691e5c55c9e0013772052c9229e2}
+
+\item 
+void {\bfseries PartFile\_\-Stop} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_a936065e75aa329171bb775460653a368}
+
+\item 
+void {\bfseries PartFile\_\-PrioAuto} ({\bf CPartFile} $\ast$file, bool val)\label{namespaceMuleNotify_ac4d8c5ac8a224e24af57cad446c82fd0}
+
+\item 
+void {\bfseries PartFile\_\-PrioSet} ({\bf CPartFile} $\ast$file, uint8 newDownPriority, bool bSave)\label{namespaceMuleNotify_a52fc30f7feb199dc8e0312e58ff54e71}
+
+\item 
+void {\bfseries PartFile\_\-Delete} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_a4244bdf530bf30894d5b5fa5482aa23d}
+
+\item 
+void {\bfseries PartFile\_\-SetCat} ({\bf CPartFile} $\ast$file, uint32 val)\label{namespaceMuleNotify_a7aab7e67a1ed7f486e316fac05ca0ef1}
+
+\item 
+void {\bfseries KnownFile\_\-Up\_\-Prio\_\-Set} ({\bf CKnownFile} $\ast$file, uint8 val)\label{namespaceMuleNotify_ae56ad9d8f1e4e2b4cdc37fec92bda496}
+
+\item 
+void {\bfseries KnownFile\_\-Up\_\-Prio\_\-Auto} ({\bf CKnownFile} $\ast$file)\label{namespaceMuleNotify_a9dcf75bd6fa9a3a7592b6daa0fe1e0f0}
+
+\item 
+void {\bfseries KnownFile\_\-Comment\_\-Set} ({\bf CKnownFile} $\ast$file, wxString comment, int8 rating)\label{namespaceMuleNotify_a16fb7dcd02684d7ca1b8b3156156eeae}
+
+\item 
+void {\bfseries Download\_\-Set\_\-Cat\_\-Prio} (uint8 cat, uint8 newprio)\label{namespaceMuleNotify_a019807ae3a42ae59468dce7832379884}
+
+\item 
+void {\bfseries Download\_\-Set\_\-Cat\_\-Status} (uint8 cat, int newstatus)\label{namespaceMuleNotify_a48c7e4caa8fca4b48489ac49f2faa223}
+
+\item 
+void {\bfseries Upload\_\-Resort\_\-Queue} ()\label{namespaceMuleNotify_ab06dc6acef3b5d7294138519d665185e}
+
+\item 
+void {\bfseries IPFilter\_\-Reload} ()\label{namespaceMuleNotify_ab6be609fc76ab1c4812b392999356684}
+
+\item 
+void {\bfseries IPFilter\_\-Update} (wxString url)\label{namespaceMuleNotify_a401ca6acc30a3c9b25db86250bd33a82}
+
+\item 
+void {\bfseries Client\_\-Delete} ({\bf CClientRef} client)\label{namespaceMuleNotify_affb2e0d3d0d138531d6b378de6cf691d}
+
+\item 
+void {\bfseries ConvertUpdateProgress} (float percent, wxString text, wxString header)\label{namespaceMuleNotify_a6d0b745c64a71c3d8768855c3f8d9505}
+
+\item 
+void {\bfseries ConvertUpdateJobInfo} ({\bf ConvertInfo} info)\label{namespaceMuleNotify_ae2ab14feac7f0990e31f07149ce350aa}
+
+\item 
+void {\bfseries ConvertRemoveJobInfo} (unsigned id)\label{namespaceMuleNotify_aab97d67c43d3f9e9872de1b77a836412}
+
+\item 
+void {\bfseries ConvertClearInfos} ()\label{namespaceMuleNotify_a3e8e107292b47c576ee4f83d2ccf4120}
+
+\item 
+void {\bfseries ConvertRemoveJob} (unsigned id)\label{namespaceMuleNotify_a8a26fa1ecc00e7f3cc8f1819a9a7863e}
+
+\item 
+void {\bfseries ConvertRetryJob} (unsigned id)\label{namespaceMuleNotify_a63ba13addbbed78695873a7a8a40ccdc}
+
+\item 
+void {\bfseries ConvertReaddAllJobs} ()\label{namespaceMuleNotify_a1a442efceeeeb37d1daa9bf7b8e1276b}
+
+\item 
+{\footnotesize template$<$class ValueType $>$ }\\ValueType {\bf DeepCopy} (const ValueType \&value)
+\item 
+wxString {\bf DeepCopy} (const wxString \&value)
+\item 
+void {\bfseries SharedFilesShowFile} ({\bf CKnownFile} $\ast$file)\label{namespaceMuleNotify_adeb07ad8fa61c92a93add93aa9e64c04}
+
+\item 
+void {\bfseries SharedFilesRemoveFile} ({\bf CKnownFile} $\ast$file)\label{namespaceMuleNotify_ac91dde2ad448d788134260092adb7ffd}
+
+\item 
+void {\bfseries SharedFilesUpdateItem} ({\bf CKnownFile} $\ast$file)\label{namespaceMuleNotify_ab1a225c6947210d07c29846af96ca112}
+
+\item 
+void {\bfseries SourceCtrlUpdateSource} (uint32 source, SourceItemType type)\label{namespaceMuleNotify_a9153b638f2b9f2daffbe6f5ae341a075}
+
+\item 
+void {\bfseries SourceCtrlAddSource} ({\bf CPartFile} $\ast$owner, {\bf CClientRef} source, SourceItemType type)\label{namespaceMuleNotify_a16859917091cb4f44588cc721cd0a7a3}
+
+\item 
+void {\bfseries SourceCtrlRemoveSource} (uint32 source, const {\bf CPartFile} $\ast$owner)\label{namespaceMuleNotify_a1b41975c1a5b728b63aca795a56cee2f}
+
+\item 
+void {\bfseries DownloadCtrlHideSource} ({\bf CPartFile} $\ast$file)\label{namespaceMuleNotify_a2cb9abfa2c1a967b7c2fae7804403ea9}
+
+\item 
+void {\bfseries SharedCtrlAddClient} ({\bf CKnownFile} $\ast$owner, {\bf CClientRef} client, SourceItemType type)\label{namespaceMuleNotify_a52e7c87c938e97fa6d1002fe57beef47}
+
+\item 
+void {\bfseries SharedCtrlRefreshClient} (uint32 client, SourceItemType type)\label{namespaceMuleNotify_ad09af07c500ee4ba7110f66e6706bcfb}
+
+\item 
+void {\bfseries SharedCtrlRemoveClient} (uint32 client, const {\bf CKnownFile} $\ast$owner)\label{namespaceMuleNotify_a75b61f0f4d623144ebe1afcffea48b4e}
+
+\item 
+void {\bfseries ServerAdd} ({\bf CServer} $\ast$server)\label{namespaceMuleNotify_a54b577e8dd1209fdf0f36469dc167a84}
+
+\item 
+void {\bfseries ServerRemove} ({\bf CServer} $\ast$server)\label{namespaceMuleNotify_a3cb5d64e2ed60d2f1e3cca36df91bebd}
+
+\item 
+void {\bfseries ServerHighlight} ({\bf CServer} $\ast$server, bool highlight)\label{namespaceMuleNotify_a2f4425a4074f854dc67a1a42b88180e4}
+
+\item 
+void {\bfseries ServerRefresh} ({\bf CServer} $\ast$server)\label{namespaceMuleNotify_a5a8a32bbdc0fa2be91006b8963db523d}
+
+\item 
+void {\bfseries KadSearchEnd} (uint32 id)\label{namespaceMuleNotify_a9eaca741f86d56bb6a66544d53982df0}
+
+\item 
+void {\bfseries Search\_\-Add\_\-Result} ({\bf CSearchFile} $\ast$result)\label{namespaceMuleNotify_ac975085da5f6e67c3b989c943e54a1d7}
+
+\item 
+void {\bfseries ChatUpdateFriend} ({\bf CFriend} $\ast$Friend)\label{namespaceMuleNotify_a698fd0f9661e21617046850e95b7fa67}
+
+\item 
+void {\bfseries ChatConnResult} (bool success, uint64 id, wxString message)\label{namespaceMuleNotify_a719c62c68170b74dc277c2b2b6c92c50}
+
+\item 
+void {\bfseries ChatProcessMsg} (uint64 sender, wxString message)\label{namespaceMuleNotify_ab90ecd4d19942941e506c3bdb76f5ad4}
+
+\item 
+void {\bfseries ChatSendCaptcha} (wxString captcha, uint64 to\_\-id)\label{namespaceMuleNotify_a662a101bb6847c39306bede9f67d4290}
+
+\item 
+void {\bfseries ShowConnState} (long state)\label{namespaceMuleNotify_a6c6c1f013d8a0924db5f9a01f516967f}
+
+\item 
+void {\bfseries ShowUserCount} (wxString str)\label{namespaceMuleNotify_a5dfadc8a7cbe2b00d5cf90c923de8d8c}
+
+\item 
+void {\bfseries CategoryUpdate} (uint32 cat)\label{namespaceMuleNotify_ad7821512e5b739a99e7b34cc9d86e707}
+
+\item 
+void {\bfseries NodesURLChanged} (wxString url)\label{namespaceMuleNotify_af960e59eb956f673833d9cb799b6a4b9}
+
+\item 
+void {\bfseries ServersURLChanged} (wxString url)\label{namespaceMuleNotify_ae27ae626f78899711b03b9c77e7ad336}
+
+\item 
+void {\bfseries Search\_\-Update\_\-Progress} (uint32 value)\label{namespaceMuleNotify_a22d2c5caa9cc685dc7c26d7df9486080}
+
+\item 
+void {\bfseries DoNotifyAlways} (void($\ast$func)())\label{namespaceMuleNotify_ac996b0459dc2e9131fe3f6af92ec6c94}
+
+\item 
+{\footnotesize template$<$typename A1A , typename A1B $>$ }\\void {\bfseries DoNotifyAlways} (void($\ast$func)(A1A), A1B arg1)\label{namespaceMuleNotify_a6d9315477990ab65798d5e900a542586}
+
+\item 
+{\footnotesize template$<$typename A1A , typename A1B , typename A2A , typename A2B $>$ }\\void {\bfseries DoNotifyAlways} (void($\ast$func)(A1A, A2A), A1B arg1, A2B arg2)\label{namespaceMuleNotify_aa1c7fec95b441e0abc541ce6aa9614d7}
+
+\item 
+{\footnotesize template$<$typename A1A , typename A1B , typename A2A , typename A2B , typename A3A , typename A3B $>$ }\\void {\bfseries DoNotifyAlways} (void($\ast$func)(A1A, A2A, A3A), A1B arg1, A2B arg2, A3B arg3)\label{namespaceMuleNotify_a60c7f55f865531160c23f8329d2a79e7}
+
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+void {\bf DoNotify} (void($\ast$func)())
+\item 
+{\footnotesize template$<$typename A1A , typename A1B $>$ }\\void {\bfseries DoNotify} (void($\ast$func)(A1A), A1B arg1)\label{namespaceMuleNotify_af72e00db907f4a109ac9261a329b384e}
+
+\item 
+{\footnotesize template$<$typename A1A , typename A1B , typename A2A , typename A2B $>$ }\\void {\bfseries DoNotify} (void($\ast$func)(A1A, A2A), A1B arg1, A2B arg2)\label{namespaceMuleNotify_acd7690c9337c179a67ab748e32d2c2d5}
+
+\item 
+{\footnotesize template$<$typename A1A , typename A1B , typename A2A , typename A2B , typename A3A , typename A3B $>$ }\\void {\bfseries DoNotify} (void($\ast$func)(A1A, A2A, A3A), A1B arg1, A2B arg2, A3B arg3)\label{namespaceMuleNotify_a3cab9262e92059800a76d6baa3bc4123}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+This namespaces contains a number of functions and classes related to defered function calls, allowing a notification call to be delayed till it can be initiated from the main thread. 
+
+\subsection{Function Documentation}
+\index{MuleNotify@{MuleNotify}!DeepCopy@{DeepCopy}}
+\index{DeepCopy@{DeepCopy}!MuleNotify@{MuleNotify}}
+\subsubsection[{DeepCopy}]{\setlength{\rightskip}{0pt plus 5cm}wxString MuleNotify::DeepCopy (const wxString \& {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceMuleNotify_a09d3e83712f2ef6e0b85e434cb211703}
+
+
+Special DeepCopy for wxString, which uses reference counting. 
+
+References DeepCopy().\index{MuleNotify@{MuleNotify}!DeepCopy@{DeepCopy}}
+\index{DeepCopy@{DeepCopy}!MuleNotify@{MuleNotify}}
+\subsubsection[{DeepCopy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class ValueType $>$ ValueType MuleNotify::DeepCopy (const ValueType \& {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceMuleNotify_a52becaa2fd47df78508791f3e136c9a0}
+
+
+Creates a deep copy of the object passed. Note that this function should be overwritten as needed. See the wxString version below. 
+
+References DeepCopy().
+
+Referenced by MuleNotify::CMuleNotifier1$<$ ARG $>$::CMuleNotifier1(), MuleNotify::CMuleNotifier2$<$ ARG\_\-1, ARG\_\-2 $>$::CMuleNotifier2(), MuleNotify::CMuleNotifier3$<$ ARG\_\-1, ARG\_\-2, ARG\_\-3 $>$::CMuleNotifier3(), and DeepCopy().\index{MuleNotify@{MuleNotify}!DoNotify@{DoNotify}}
+\index{DoNotify@{DoNotify}!MuleNotify@{MuleNotify}}
+\subsubsection[{DoNotify}]{\setlength{\rightskip}{0pt plus 5cm}void MuleNotify::DoNotify (void($\ast$)() {\em func})\hspace{0.3cm}{\ttfamily  [inline]}}\label{namespaceMuleNotify_a24cb75f403ae3553cbb327a3c84c87eb}
+
+
+These functions take a function pointer and a set of arguments, matching those of the function-\/pointer. A functor is created from these and either executed immediatly, or sent as an event in the case of non-\/main threads calling the functions.
+
+Note that the return-\/value of the function must be void.
+
+IMPORTANT: Note that the functions passed to DoNotify must not take arguments via references, since this causes the functors to store references to the arguments, rather than a copy and thus ends up with dangling references. 
+
+References DoNotify(), and HandleNotification().
+
+Referenced by DoNotify().\index{MuleNotify@{MuleNotify}!HandleNotification@{HandleNotification}}
+\index{HandleNotification@{HandleNotification}!MuleNotify@{MuleNotify}}
+\subsubsection[{HandleNotification}]{\setlength{\rightskip}{0pt plus 5cm}void MuleNotify::HandleNotification (const CMuleNotiferBase \& {\em ntf})}\label{namespaceMuleNotify_a302cb8a5fd33c95db44adbac3551cdca}
+
+
+This function will execute or queue a given notification functor. If the caller is the main thread, the functor is executed immediatly, thus acting like a regular function call. OTOH, if the caller is a worker thread, the functor is cloned and sent via an event to wxTheApp. 
+
+Referenced by DoNotify().

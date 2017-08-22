@@ -1,0 +1,164 @@
+\section{CaMuleExternalConnector Class Reference}
+\label{classCaMuleExternalConnector}\index{CaMuleExternalConnector@{CaMuleExternalConnector}}
+Inheritance diagram for CaMuleExternalConnector::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCaMuleExternalConnector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Pre\_\-Shell} ()\label{classCaMuleExternalConnector_ac70e83afccf850c34037a12d232e1518}
+
+\item 
+virtual void {\bfseries Post\_\-Shell} ()\label{classCaMuleExternalConnector_a6d415e59f1ddc5d4f72ccf02926772cd}
+
+\item 
+virtual int {\bfseries ProcessCommand} (int)\label{classCaMuleExternalConnector_ac107d0829d9494443b430aa3e44ea4ac}
+
+\item 
+virtual void {\bfseries TextShell} (const wxString \&prompt)\label{classCaMuleExternalConnector_a2f4066daabbaa1ed05164bf9c814c4ad}
+
+\item 
+virtual void {\bfseries LoadConfigFile} ()\label{classCaMuleExternalConnector_a49402484bcf4abe88741098bf76a6190}
+
+\item 
+virtual void {\bfseries SaveConfigFile} ()\label{classCaMuleExternalConnector_aee1670de0f40a40da9328902b57e313c}
+
+\item 
+virtual void {\bfseries LoadAmuleConfig} ({\bf CECFileConfig} \&cfg)\label{classCaMuleExternalConnector_aedee1a3e9e6e142c76831183d0a0caae}
+
+\item 
+virtual void {\bfseries OnInitCommandSet} ()\label{classCaMuleExternalConnector_a3ef53b63beb6435ba6f66355f34364f6}
+
+\item 
+virtual bool {\bfseries OnInit} ()\label{classCaMuleExternalConnector_aa20c064df7eae088104d78a45b0e37c5}
+
+\item 
+virtual const wxString {\bfseries GetGreetingTitle} ()=0\label{classCaMuleExternalConnector_a1b75079c43e6a0e340c655eb582fa6b2}
+
+\item 
+void {\bfseries Show} (const wxString \&s)\label{classCaMuleExternalConnector_a68bc38bdae2909d540d5622f2e598305}
+
+\item 
+void {\bfseries DebugShow} (const wxString \&s)\label{classCaMuleExternalConnector_a58458f3db2bfa6bdec74e1bc4a1f9023}
+
+\item 
+const wxString \& {\bfseries GetCmdArgs} () const \label{classCaMuleExternalConnector_af026b970ac969b634c3551d97a247ea6}
+
+\item 
+const wxString \& {\bfseries GetLastCmdStr} () const \label{classCaMuleExternalConnector_abbd607aa6ec90f0dcca3987a90fc5130}
+
+\item 
+int {\bfseries GetIDFromString} (const wxString \&buffer)\label{classCaMuleExternalConnector_a6b943f99e0a98787ef46c928b3645373}
+
+\item 
+void {\bfseries Process\_\-Answer} (const wxString \&answer)\label{classCaMuleExternalConnector_a0f9201c1ed4969224ab7bb894afd70e3}
+
+\item 
+bool {\bfseries Parse\_\-Command} (const wxString \&buffer)\label{classCaMuleExternalConnector_a48dd4c4741e89e497b3c81cbd161e836}
+
+\item 
+void {\bfseries GetCommand} (const wxString \&prompt, char $\ast$buffer, size\_\-t buffer\_\-size)\label{classCaMuleExternalConnector_a2a878ab95ecb7121ec771c7cabbca6a6}
+
+\item 
+const {\bf CECPacket} $\ast$ {\bfseries SendRecvMsg\_\-v2} (const {\bf CECPacket} $\ast$request)\label{classCaMuleExternalConnector_a8f5f3e0ddb2c826adfea4af8e9a6308f}
+
+\item 
+void {\bfseries SendPacket} (const {\bf CECPacket} $\ast$request)\label{classCaMuleExternalConnector_a63209481cac88250fba9664be256d1de}
+
+\item 
+void {\bfseries ConnectAndRun} (const wxString \&ProgName, const wxString \&ProgVersion)\label{classCaMuleExternalConnector_a1c3f106375c8b8dfa154e7b80d6bfcba}
+
+\item 
+void {\bfseries ShowGreet} ()\label{classCaMuleExternalConnector_ac7acb240a11173b3a7820f25f3a89a78}
+
+\item 
+void {\bfseries OnInitCmdLine} (wxCmdLineParser \&amuleweb\_\-parser, const char $\ast$appname)\label{classCaMuleExternalConnector_a8abc62dea7c00d15c28d95aa051053c9}
+
+\item 
+bool {\bfseries OnCmdLineParsed} (wxCmdLineParser \&parser)\label{classCaMuleExternalConnector_a898ca42da5c284417754fa9fdbb0c15b}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CECFileConfig} $\ast$ {\bfseries m\_\-configFile}\label{classCaMuleExternalConnector_a28cb647eea4ca19683e67782463f02ef}
+
+\item 
+wxString {\bfseries m\_\-configFileName}\label{classCaMuleExternalConnector_a312af9645d1001e20e77be4d5f53fdbc}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual wxString {\bfseries SetLocale} (const wxString \&language)\label{classCaMuleExternalConnector_ad40f637dc78e32c26955730513fd4276}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long {\bfseries m\_\-port}\label{classCaMuleExternalConnector_a87554b48f5ad377ec654e7b8fe3b6f92}
+
+\item 
+wxString {\bfseries m\_\-host}\label{classCaMuleExternalConnector_ab23a854697001db793d9eb2593517ec3}
+
+\item 
+{\bf CMD4Hash} {\bfseries m\_\-password}\label{classCaMuleExternalConnector_a486e31fc41cf9b16c941ba11295c4ee4}
+
+\item 
+bool {\bfseries m\_\-ZLIB}\label{classCaMuleExternalConnector_a56b616cbf52d42e1881d55b6a856762a}
+
+\item 
+bool {\bfseries m\_\-KeepQuiet}\label{classCaMuleExternalConnector_a595dbfee85da1d68791ad8654e9dc3ea}
+
+\item 
+bool {\bfseries m\_\-Verbose}\label{classCaMuleExternalConnector_a76b37e87256b2e8dcd8d6b67fb13d88a}
+
+\item 
+bool {\bfseries m\_\-interactive}\label{classCaMuleExternalConnector_a5a50bc80e853c5ad66712ec4ae474e93}
+
+\item 
+{\bf CCommandTree} {\bfseries m\_\-commands}\label{classCaMuleExternalConnector_af0982d24f88995377564cabbf125a797}
+
+\item 
+const char $\ast$ {\bfseries m\_\-appname}\label{classCaMuleExternalConnector_af103566f9c80f62a5afecab57638a94a}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-cmdargs}\label{classCaMuleExternalConnector_ad7a2ec202c067cb697715da28706bbae}
+
+\item 
+wxString {\bfseries m\_\-lastcmdstr}\label{classCaMuleExternalConnector_ab8fc6e8ba79a95deb6c5d03708d7f062}
+
+\item 
+{\bf CRemoteConnect} $\ast$ {\bfseries m\_\-ECClient}\label{classCaMuleExternalConnector_a423589561446c7be28ce7528236da313}
+
+\item 
+char $\ast$ {\bfseries m\_\-InputLine}\label{classCaMuleExternalConnector_aa52d32ce1bbf55b655d4043d6665db32}
+
+\item 
+bool {\bfseries m\_\-NeedsConfigSave}\label{classCaMuleExternalConnector_adabfde9b5f181f33a1d1845a85032eb6}
+
+\item 
+wxString {\bfseries m\_\-language}\label{classCaMuleExternalConnector_a73fd009243c2827ab8ec587ba07d01cc}
+
+\item 
+wxLocale $\ast$ {\bfseries m\_\-locale}\label{classCaMuleExternalConnector_a737cf4e2e8abe92441d67b33eaaf950e}
+
+\item 
+char $\ast$ {\bfseries m\_\-strFullVersion}\label{classCaMuleExternalConnector_a87ae102e094d9e8639052c944590d275}
+
+\item 
+char $\ast$ {\bfseries m\_\-strOSDescription}\label{classCaMuleExternalConnector_a1d7e52c54b2638f36f5e8041bf2e2145}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConnector.h\item 
+src/ExternalConnector.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,170 @@
+\section{CSharedFileList Class Reference}
+\label{classCSharedFileList}\index{CSharedFileList@{CSharedFileList}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CSharedFileList} ({\bf CKnownFileList} $\ast$in\_\-filelist)\label{classCSharedFileList_a458c5503715fe42769f282423c7671a1}
+
+\item 
+void {\bfseries Reload} ()\label{classCSharedFileList_a2766473e92f5e6b253f77a233389c131}
+
+\item 
+void {\bfseries SafeAddKFile} ({\bf CKnownFile} $\ast$toadd, bool bOnlyAdd=false)\label{classCSharedFileList_a5741830d5c5a8ef53887ac30843a36d7}
+
+\item 
+void {\bfseries RemoveFile} ({\bf CKnownFile} $\ast$toremove)\label{classCSharedFileList_a125fac1128ded167a3f2a327da7a3578}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries GetFileByID} (const {\bf CMD4Hash} \&filehash)\label{classCSharedFileList_a14881266b0f6090869ad599d5ceb2530}
+
+\item 
+short {\bfseries GetFilePriorityByID} (const {\bf CMD4Hash} \&filehash)\label{classCSharedFileList_acad6d7bbcda22a9742d9a91a76b54785}
+
+\item 
+const {\bf CKnownFile} $\ast$ {\bfseries GetFileByIndex} (unsigned int index) const \label{classCSharedFileList_a3e313b810d2082e9dc6b779bbd6b3f9c}
+
+\item 
+size\_\-t {\bfseries GetCount} ()\label{classCSharedFileList_af10931ef8728d8ed28ef37c2abcc4f42}
+
+\item 
+size\_\-t {\bfseries GetFileCount} ()\label{classCSharedFileList_a5bece25eb385a89253421299b213eba4}
+
+\item 
+void {\bfseries CopyFileList} (std::vector$<$ {\bf CKnownFile} $\ast$ $>$ \&out\_\-list) const \label{classCSharedFileList_a37f58ae6939f60aed6ef81cfbf30ef14}
+
+\item 
+void {\bfseries UpdateItem} ({\bf CKnownFile} $\ast$toupdate)\label{classCSharedFileList_aa057a959c0743df6ca93d2dc258f11b2}
+
+\item 
+void {\bfseries GetSharedFilesByDirectory} (const wxString \&directory, CKnownFilePtrList \&list)\label{classCSharedFileList_a716279e47aa152889d36f3f19d68f190}
+
+\item 
+void {\bfseries ClearED2KPublishInfo} ()\label{classCSharedFileList_a993b3a443cbf8ef4d881c0bc9250c7f1}
+
+\item 
+void {\bfseries RepublishFile} ({\bf CKnownFile} $\ast$pFile)\label{classCSharedFileList_afcb2e1299429285db8c21c9c95b3e366}
+
+\item 
+void {\bfseries Process} ()\label{classCSharedFileList_af4066ca68c9a495d5ff83f6729f003d5}
+
+\item 
+void {\bfseries PublishNextTurn} ()\label{classCSharedFileList_af170c158d64d27e8c90f8757b9e16b67}
+
+\item 
+bool {\bfseries RenameFile} ({\bf CKnownFile} $\ast$pFile, const {\bf CPath} \&newName)\label{classCSharedFileList_a856e375fa0479d9ad029d07124cd7adc}
+
+\item 
+wxString {\bf GetPublicSharedDirName} (const {\bf CPath} \&dir)
+\item 
+const {\bf CPath} $\ast$ {\bfseries GetDirForPublicSharedDirName} (const wxString \&strSharedDir) const \label{classCSharedFileList_a00ed317937b60893935e00fe8a3194eb}
+
+\item 
+bool {\bf IsShared} (const {\bf CPath} \&path) const \label{classCSharedFileList_ace0e9ad560260cb15278d991a64c86f7}
+
+\item 
+void {\bfseries Publish} ()\label{classCSharedFileList_a5adc9cf22436621677bfd2451b5722ad}
+
+\item 
+void {\bfseries AddKeywords} ({\bf CKnownFile} $\ast$pFile)\label{classCSharedFileList_adb598d0e117deccf3f7ef0975fb5d830}
+
+\item 
+void {\bfseries RemoveKeywords} ({\bf CKnownFile} $\ast$pFile)\label{classCSharedFileList_a31f8a4f0539f4ea34a6df89b43e7a0fb}
+
+\item 
+void {\bfseries ClearKadSourcePublishInfo} ()\label{classCSharedFileList_a9a526fdea0b9050089b38b89b134d225}
+
+\item 
+void {\bf CheckAICHHashes} (const std::list$<$ {\bf CAICHHash} $>$ \&hashes)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CThreadTask} $\ast$ $>$ {\bfseries TaskList}\label{classCSharedFileList_a041e656bfdfffca4ba649cf2eaafaf6f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries AddFile} ({\bf CKnownFile} $\ast$pFile)\label{classCSharedFileList_a99300f91d1079bdf6c681ee547deadd5}
+
+\item 
+unsigned {\bfseries AddFilesFromDirectory} (const {\bf CPath} \&directory, TaskList \&hashTasks)\label{classCSharedFileList_ad875784d254ce9de31be87a49a71abac}
+
+\item 
+void {\bfseries FindSharedFiles} ()\label{classCSharedFileList_ab132ad68180622c1cd01e6f349795efc}
+
+\item 
+void {\bfseries SendListToServer} ()\label{classCSharedFileList_a43f39b0452e30d02772659ddc6b9e943}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries reloading}\label{classCSharedFileList_ae49bc47d0e25abc29091ae41df3aba48}
+
+\item 
+uint32 {\bfseries m\_\-lastPublishED2K}\label{classCSharedFileList_a1d6105f09f18e939f29589603c6edc09}
+
+\item 
+bool {\bfseries m\_\-lastPublishED2KFlag}\label{classCSharedFileList_a210f6506e5606d2bfe02ce531a8b34cc}
+
+\item 
+{\bf CKnownFileList} $\ast$ {\bfseries filelist}\label{classCSharedFileList_addd565a1770c3c2d78bd00b8bb124bfb}
+
+\item 
+CKnownFileMap {\bfseries m\_\-Files\_\-map}\label{classCSharedFileList_af9567341bcebcaca773878516ada9075}
+
+\item 
+wxMutex {\bfseries list\_\-mut}\label{classCSharedFileList_a3618d4b6d6cb1e54b0f601a7f69f0dc6}
+
+\item 
+StringPathMap {\bfseries m\_\-PublicSharedDirNames}\label{classCSharedFileList_a554023d8228200cadff079ead269e759}
+
+\item 
+{\bf CPublishKeywordList} $\ast$ {\bf m\_\-keywords}\label{classCSharedFileList_ab7439fa9e98529e9d1229b609d1115f3}
+
+\item 
+unsigned int {\bfseries m\_\-currFileSrc}\label{classCSharedFileList_aff6a3dfac02bd99070e3189922b2ef03}
+
+\item 
+unsigned int {\bfseries m\_\-currFileNotes}\label{classCSharedFileList_a5196ff8057e96bbfc4f51e63f635929c}
+
+\item 
+unsigned int {\bfseries m\_\-currFileKey}\label{classCSharedFileList_a695bb2e67ae704aaf15fcee6b2b2aa65}
+
+\item 
+uint32 {\bfseries m\_\-lastPublishKadSrc}\label{classCSharedFileList_ac2611cca64fd481a39d3b6bab41a7654}
+
+\item 
+uint32 {\bfseries m\_\-lastPublishKadNotes}\label{classCSharedFileList_a05a0b06986b0d74de63f0d9f134da231}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CSharedFileList@{CSharedFileList}!CheckAICHHashes@{CheckAICHHashes}}
+\index{CheckAICHHashes@{CheckAICHHashes}!CSharedFileList@{CSharedFileList}}
+\subsubsection[{CheckAICHHashes}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFileList::CheckAICHHashes (const std::list$<$ {\bf CAICHHash} $>$ \& {\em hashes})}\label{classCSharedFileList_acc7ccf533d2faf87d354992d0aa41a7a}
+
+
+Checks for files which missing or wrong AICH hashes. Those that are found are scheduled for ACIH hashing. 
+
+References CThreadScheduler::AddTask().\index{CSharedFileList@{CSharedFileList}!GetPublicSharedDirName@{GetPublicSharedDirName}}
+\index{GetPublicSharedDirName@{GetPublicSharedDirName}!CSharedFileList@{CSharedFileList}}
+\subsubsection[{GetPublicSharedDirName}]{\setlength{\rightskip}{0pt plus 5cm}wxString CSharedFileList::GetPublicSharedDirName (const {\bf CPath} \& {\em dir})}\label{classCSharedFileList_acc3321816e362004753835dcdf906ab7}
+
+
+Returns the name of a folder visible to the public. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dir}]The full path to a shared directory. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The name of the shared directory that will be visible to the public.
+\end{DoxyReturn}
+This function is used to hide sensitive data considering the directory structure of the client. The returned public name consists of only subdirectories that are shared. Example: /ed2k/shared/games/tetris -\/$>$ \char`\"{}games/tetris\char`\"{} if /ed2k/shared are not marked as shared 
+
+References CPath::GetPrintable(), CPath::GetRaw(), and IsShared().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SharedFileList.h\item 
+src/SharedFileList.cpp\end{DoxyCompactItemize}

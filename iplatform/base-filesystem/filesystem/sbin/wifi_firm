@@ -1,0 +1,149 @@
+#!/bin/sh
+. /lib/functions.sh
+. /lib/wifi/qcawifi.sh
+
+STDOUT="/dev/null"
+DEV_NUM=2
+special_country="US"
+inc_mac(){
+	echo $1 | awk 'BEGIN{FS="-";add=1}{for(i=6;i>0;i--){j="0x"$i;\
+	if(i>3){if(j+add>255){j=j+add-256;add=1;}else{j=j+add;add=0;}}printf("%02x",j);printf "-"}}' \
+	| awk 'BEGIN{FS="-"}{for(i=6;i>0;i--){printf $i;if(i>1){printf "-"}}}'
+}
+
+dec_mac(){
+	echo $1 | awk 'BEGIN{FS="-";dec=1}{for(i=6;i>0;i--){j="0x"$i;\
+	if(i>3){if(j-dec<0){j=j-dec+256;dec=1;}else{j=j-dec;dec=0;}}printf("%02x",j);printf "-"}}' \
+	| awk 'BEGIN{FS="-"}{for(i=6;i>0;i--){printf $i;if(i>1){printf "-"}}}'
+}
+
+wifi_firm_info(){
+	local mac=""
+	local cfgMac=""
+	local change_flag=""
+	local wps_pin=""
+	local ssid=""
+	for i in $(seq $DEV_NUM); do
+		#if [ -z "$(config_get wifi$(($i-1)) macaddr)" ]; then
+		#	if [ -z "$mac" ]; then
+		#		mac="$(getfirm MAC)"
+		#	fi
+		#	mac=$(inc_mac $mac)
+		#	uci set wireless.wifi$(($i-1)).macaddr=$mac
+		#fi
+		if [ -z "$(config_get ath$(($i-1)) wps_pin)" ]; then
+			if [ -z "$wps_pin" ]; then
+				wps_pin="$(getfirm PIN)"
+			fi
+			if [ "$(config_get ath$(($i-1)) device)" = "wifi$(($i-1))" ]; then
+				uci set wireless.ath$(($i-1)).wps_pin="${wps_pin}"
+				uci set wireless.ath$(($i-1)).encryption="psk"
+				uci set wireless.ath$(($i-1)).psk_key="${wps_pin}"
+				uci set wireless.ath$(($i-1)).wps_state=2
+				change_flag="1"
+			fi
+			#default security of guest network is none.
+			if [ "$(config_get ath$(($i-1))1 device)" = "wifi$(($i-1))" ]; then
+				uci set wireless.ath$(($i-1))1.encryption="none"
+				change_flag="1"
+			fi
+		fi
+	done
+	
+	local idx=0
+	cd /sys/class/net/
+	[ -d wifi0 ] || load_qcawifi
+	local product_region="$(getfirm REGION)"
+	local support_country=$(uci get profile.@region[0].country -c /etc/profile.d)
+	support_country=$(echo "${support_country}" | sed 's/ /\n/g' |cut -f1 -d":")
+	local is_support_country=0
+	local is_special_country=0
+	for country in ${support_country}; do
+		if [ ${product_region} == ${country} ]; then
+			is_support_country=1
+			break
+		fi
+	done
+	#special country need to config country in every wifi init.    
+	for country in ${special_country}; do
+		if [ ${product_region} == ${country} ]; then
+			is_special_country=1
+			break
+		fi
+	done
+
+	for dev in $(ls -d wifi* 2>$STDOUT); do
+		case "$(cat ${dev}/hwcaps)" in
+			*11bgn) mode_11=bgn;band="2g";;
+			*11abgn) mode_11=bgn;band="2g";;
+			*11an) mode_11=an_5;band="5g";;
+			*11an/ac) mode_11=anac_5;band="5g";;
+			*11abgn/ac) mode_11=anac_5;band="5g";;
+		esac
+		if [ "${is_special_country}" == "1" ]; then
+			uci set wireless.wifi${idx}.country="${product_region}"
+		fi
+		cfgMac="$(config_get wifi${idx} macaddr)"
+		mac="$(getfirm MAC)"
+		case $band in
+			5g) mac=$(dec_mac $mac) ;;
+			*) ;;
+		esac
+		mac="$(echo $mac | tr 'a-f' 'A-F')"
+		if [ -z "${cfgMac}" ]; then
+			uci set wireless.wifi${idx}.macaddr="$mac"
+			if [ "${product_region}" == "US" -a "${band}" == "5g" ]; then
+				uci set wireless.wifi${idx}.channel=149
+			fi
+			change_flag="1"
+		elif [ "${mac}" != "${cfgMac}" ]; then
+			uci set wireless.wifi${idx}.macaddr="$mac"
+			change_flag="1"
+		else
+			:
+		fi
+		if [ -z "$(config_get wifi${idx} band)" -o "$(config_get wifi${idx} band)" != ${band} ]; then
+			uci set wireless.wifi${idx}.hwmode="${mode_11}"
+			uci set wireless.wifi${idx}.band="${band}"
+			change_flag="1"
+			if [ -z "$ssid" ]; then
+				ssid="$(getfirm SSID)"
+			fi
+			local suffix
+			#suffix=$(uci get wireless.wifi${idx}.macaddr|awk -F '-' '{printf $5$6}'|tr 'a-f' 'A-F')
+			suffix=$(getfirm MAC|awk -F '-' '{printf $5$6}'|tr 'a-f' 'A-F')
+			[ "$band" = "5g" ] && suffix="${suffix}_${band//g/G}"
+			
+			if [ "$(config_get ath${idx} device)" = "wifi${idx}" ]; then
+				uci set wireless.ath${idx}.ssid="${ssid}_${suffix}"
+				#uci set wireless.ath${idx}.ssid="${ssid}_HOME_${band//g/G}"
+			fi
+			if [ "$(config_get ath${idx}1 device)" = "wifi${idx}" ]; then
+				uci set wireless.ath${idx}1.ssid="${ssid}_Guest_${suffix}"
+				#uci set wireless.ath${idx}1.ssid="${ssid}_GUEST_${band//g/G}"
+			fi
+			if [ "${is_support_country}" == "1" ]; then
+				uci set wireless.wifi${idx}.country="${product_region}"
+			fi
+		fi
+		idx=$(($idx+1))
+	done
+	if [ -z "$(config_get wps model_name)" ]; then
+		local model="$(getfirm MODEL)"
+		uci set wireless.wps.model_name="${model}"
+		change_flag="1"
+	fi
+	if [ -z "$(config_get wps wps_manufacturer)" -o -z "$(config_get wps wps_manufacturer_url)" ]; then
+		local firm="$(getfirm FIRM)"
+		local website="$(getfirm WEBSITE)"
+		uci set wireless.wps.wps_manufacturer="${firm}"
+		uci set wireless.wps.wps_manufacturer_url="${website}"
+		change_flag="1"
+	fi
+	if [ "$change_flag" = "1" ]; then
+		uci commit
+	fi
+}
+
+config_load wireless
+wifi_firm_info

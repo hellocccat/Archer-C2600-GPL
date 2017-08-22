@@ -1,0 +1,40 @@
+\section{ECKnownFileMsgSource Class Reference}
+\label{classECKnownFileMsgSource}\index{ECKnownFileMsgSource@{ECKnownFileMsgSource}}
+Inheritance diagram for ECKnownFileMsgSource::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classECKnownFileMsgSource}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf KNOWNFILE\_\-STATUS}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries SetDirty} ({\bf CKnownFile} $\ast$file)\label{classECKnownFileMsgSource_adbe2ac4ff0f93566a661637237a97618}
+
+\item 
+void {\bfseries SetNew} ({\bf CKnownFile} $\ast$file)\label{classECKnownFileMsgSource_a2a10604484555e89fbbfaf7dc3c0c3c3}
+
+\item 
+void {\bfseries SetRemoved} ({\bf CKnownFile} $\ast$file)\label{classECKnownFileMsgSource_ab787e9c7e60fd5b9217f89879e79be79}
+
+\item 
+virtual {\bf CECPacket} $\ast$ {\bfseries GetNextPacket} ()\label{classECKnownFileMsgSource_aed7a0a053aa568b38ab533e0bb5f90e6}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ {\bf CMD4Hash}, {\bf KNOWNFILE\_\-STATUS} $>$ {\bfseries m\_\-dirty\_\-status}\label{classECKnownFileMsgSource_a8b1cae884b2fc373dad107073b9afcd3}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConn.h\item 
+src/ExternalConn.cpp\end{DoxyCompactItemize}

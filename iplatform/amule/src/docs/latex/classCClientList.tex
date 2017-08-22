@@ -1,0 +1,505 @@
+\section{CClientList Class Reference}
+\label{classCClientList}\index{CClientList@{CClientList}}
+
+
+This class takes care of managing existing clients.  
+
+
+{\ttfamily \#include $<$ClientList.h$>$}\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf IpAndTicks}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ uint32, uint32 $>$ {\bf ClientMap}\label{classCClientList_ae0a827c5d051b445ccf36f29fa201f07}
+
+\item 
+typedef std::deque$<$ {\bf CClientRef} $>$ {\bf SourceList}\label{classCClientList_aac59acebfd23fb6f7f49ab3332c86b7a}
+
+\item 
+typedef std::multimap$<$ uint32, {\bf CClientRef} $>$ {\bf IDMap}\label{classCClientList_a25771d35ad8e2466dbf2f5ef280039f1}
+
+\item 
+typedef std::pair$<$ uint32, {\bf CClientRef} $>$ {\bf IDMapPair}\label{classCClientList_a752808808d73754eb5b8850ed6f9825d}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CClientList} ()\label{classCClientList_ad98766f029922a03ff0586dbff6a5578}
+
+\item 
+{\bf $\sim$CClientList} ()\label{classCClientList_a2a6620b14d11610d55b4e2a97caba2f1}
+
+\item 
+void {\bf AddClient} ({\bf CUpDownClient} $\ast$toadd)
+\item 
+void {\bf RemoveClient} ({\bf CUpDownClient} $\ast$client)
+\item 
+void {\bf UpdateClientIP} ({\bf CUpDownClient} $\ast$client, uint32 newIP)
+\item 
+void {\bf UpdateClientID} ({\bf CUpDownClient} $\ast$client, uint32 newID)
+\item 
+void {\bf UpdateClientHash} ({\bf CUpDownClient} $\ast$client, const {\bf CMD4Hash} \&newHash)
+\item 
+uint32 {\bf GetClientCount} () const \label{classCClientList_a43241182072a8ed27a31727fb33f8423}
+
+\item 
+void {\bf DeleteAll} ()\label{classCClientList_a14020948f78228eeeb83f2c21216c0e2}
+
+\item 
+bool {\bf AttachToAlreadyKnown} ({\bf CUpDownClient} $\ast$$\ast$client, {\bf CClientTCPSocket} $\ast$sender)
+\item 
+{\bf CUpDownClient} $\ast$ {\bf FindClientByIP} (uint32 clientip, uint16 port)
+\item 
+{\bf CUpDownClient} $\ast$ {\bf FindClientByIP} (uint32 clientip)
+\item 
+{\bf CUpDownClient} $\ast$ {\bf FindClientByECID} (uint32 ecid) const 
+\item 
+void {\bf AddTrackClient} ({\bf CUpDownClient} $\ast$toadd)
+\item 
+uint16 {\bf GetClientsFromIP} (uint32 dwIP)
+\item 
+bool {\bf ComparePriorUserhash} (uint32 dwIP, uint16 nPort, void $\ast$pNewHash)
+\item 
+void {\bf AddBannedClient} (uint32 dwIP)
+\item 
+bool {\bf IsBannedClient} (uint32 dwIP)
+\item 
+void {\bf RemoveBannedClient} (uint32 dwIP)
+\item 
+void {\bf Process} ()
+\item 
+void {\bf FilterQueues} ()
+\item 
+{\bf SourceList} {\bf GetClientsByHash} (const {\bf CMD4Hash} \&hash)
+\item 
+{\bf SourceList} {\bf GetClientsByIP} (unsigned long ip)
+\item 
+const {\bf IDMap} \& {\bf GetClientList} ()
+\item 
+void {\bf AddDeadSource} (const {\bf CUpDownClient} $\ast$client)
+\item 
+bool {\bf IsDeadSource} (const {\bf CUpDownClient} $\ast$client)
+\item 
+bool {\bf SendChatMessage} (uint64 client\_\-id, const wxString \&message)
+\item 
+void {\bf SetChatState} (uint64 client\_\-id, uint8 state)\label{classCClientList_aff54de576913a94d806812df9a01a444}
+
+\item 
+uint8 {\bfseries GetBuddyStatus} () const \label{classCClientList_a2bcdf71c592bd9ff9658fb1b9d175b1c}
+
+\item 
+{\bf CUpDownClient} $\ast$ {\bfseries GetBuddy} ()\label{classCClientList_af5e86ace83738ba9e94d9c6a2b272fbd}
+
+\item 
+uint32 {\bfseries GetBuddyIP} ()\label{classCClientList_ac27ef74ac1fa318b2a853b235da5bcf0}
+
+\item 
+uint16 {\bfseries GetBuddyPort} ()\label{classCClientList_a09add5ba56882f1e1d42046bad23584e}
+
+\item 
+bool {\bfseries RequestTCP} ({\bf Kademlia::CContact} $\ast$contact, uint8\_\-t connectOptions)\label{classCClientList_a6145b45acc58054793f9470cb526091a}
+
+\item 
+void {\bfseries RequestBuddy} ({\bf Kademlia::CContact} $\ast$contact, uint8\_\-t connectOptions)\label{classCClientList_a08562542529d4e25855cd2aa5d0ecdac}
+
+\item 
+bool {\bfseries IncomingBuddy} ({\bf Kademlia::CContact} $\ast$contact, {\bf Kademlia::CUInt128} $\ast$buddyID)\label{classCClientList_aa1374d1612b2fcf320e85468795bdb30}
+
+\item 
+void {\bfseries RemoveFromKadList} ({\bf CUpDownClient} $\ast$torem)\label{classCClientList_aecfe513014a44be2e790dd33ebdca5dd}
+
+\item 
+void {\bfseries AddToKadList} ({\bf CUpDownClient} $\ast$toadd)\label{classCClientList_adad9ef01a5991a486e993fffec707825}
+
+\item 
+bool {\bfseries DoRequestFirewallCheckUDP} (const {\bf Kademlia::CContact} \&contact)\label{classCClientList_a5604f8f02c4138d5b791e5c7edcfedd6}
+
+\item 
+void {\bfseries AddKadFirewallRequest} (uint32 ip)\label{classCClientList_a7cadb3b8fa1578dea6a921f6643a0d0b}
+
+\item 
+bool {\bfseries IsKadFirewallCheckIP} (uint32 ip) const \label{classCClientList_af916774bfa08d558be99725cf1c41271}
+
+\item 
+void {\bfseries AddDirectCallbackClient} ({\bf CUpDownClient} $\ast$toAdd)\label{classCClientList_ab8d96977535c4f9ed4b4e0ce8d8e261c}
+
+\item 
+void {\bfseries RemoveDirectCallback} ({\bf CUpDownClient} $\ast$toRemove)\label{classCClientList_a175d62062b671b45b68b26763de8304d}
+
+\item 
+void {\bfseries AddTrackCallbackRequests} (uint32\_\-t ip)\label{classCClientList_a9ab3396e70df74f00c7a915704b0f56e}
+
+\item 
+bool {\bfseries AllowCallbackRequest} (uint32\_\-t ip) const \label{classCClientList_a3b33d1811c0c85fa6b1081a710de0098}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries CleanUpClientList} ()\label{classCClientList_a812aa65361bff7e31a206ee4a613df62}
+
+\item 
+void {\bfseries ProcessDirectCallbackList} ()\label{classCClientList_ae88a9846da1e5d01c01fd9a343a81924}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::multimap$<$ {\bf CMD4Hash}, {\bf CClientRef} $>$ {\bf HashMap}\label{classCClientList_a0b14c4eff3c2fafb7398f8d8bd4995ac}
+
+\item 
+typedef std::pair$<$ {\bf CMD4Hash}, {\bf CClientRef} $>$ {\bf HashMapPair}\label{classCClientList_a3052244b2a53e4a1320ca6489ad6119a}
+
+\item 
+typedef std::list$<$ {\bf IpAndTicks} $>$ {\bfseries IpAndTicksList}\label{classCClientList_a67348d099eff8cea29c2779b845e17af}
+
+\item 
+typedef CClientRefList {\bfseries DirectCallbackList}\label{classCClientList_a5e01d4855e3d0c55fa45f7da2703c0a4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CUpDownClient} $\ast$ {\bf FindMatchingClient} ({\bf CUpDownClient} $\ast$client)
+\item 
+bool {\bf IsIPAlreadyKnown} (uint32\_\-t ip)
+\item 
+void {\bf RemoveIPFromList} ({\bf CUpDownClient} $\ast$client)\label{classCClientList_af5d54ce9e1c2d9b0231da14a497990bb}
+
+\item 
+bool {\bf RemoveIDFromList} ({\bf CUpDownClient} $\ast$client)\label{classCClientList_a7ba2f1df380e131e84ae2ef364a05b46}
+
+\item 
+void {\bf RemoveHashFromList} ({\bf CUpDownClient} $\ast$client)\label{classCClientList_a32ab15da3ad4a642652f4fcf88e69989}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HashMap} {\bf m\_\-hashList}\label{classCClientList_af2e5a5fccb9eaef575d9b1b9b4091620}
+
+\item 
+{\bf IDMap} {\bf m\_\-ipList}\label{classCClientList_adbe8b71ff8344dc3a1ee08c1e3e0aa02}
+
+\item 
+{\bf IDMap} {\bf m\_\-clientList}\label{classCClientList_aebd3400f4e3146ed8287cbe7633116bf}
+
+\item 
+{\bf ClientMap} {\bf m\_\-bannedList}\label{classCClientList_a5caeed2543abfd89e9615e552a6ac60e}
+
+\item 
+uint32 {\bf m\_\-dwLastBannCleanUp}\label{classCClientList_a38050598be34127b69ab55cbb6d6902f}
+
+\item 
+std::map$<$ uint32, {\bf CDeletedClient} $\ast$ $>$ {\bf m\_\-trackedClientsList}\label{classCClientList_a347350415f699f160479dd45fb58617c}
+
+\item 
+uint32 {\bf m\_\-dwLastTrackedCleanUp}\label{classCClientList_a597b5d266fa642491bacfdc4ab9ac853}
+
+\item 
+uint32 {\bf m\_\-dwLastClientCleanUp}\label{classCClientList_a2f2e3898045af48ef361b747081e7211}
+
+\item 
+{\bf CDeadSourceList} {\bf m\_\-deadSources}\label{classCClientList_aa5bbf6f46533d6c4953f68858f30210c}
+
+\item 
+CClientRefSet {\bfseries m\_\-KadSources}\label{classCClientList_aac8125af096b977570942de5bb0e70f1}
+
+\item 
+{\bf CClientRef} {\bfseries m\_\-pBuddy}\label{classCClientList_a10e615dad8c9a09ed86dded1a81fdbeb}
+
+\item 
+uint8 {\bfseries m\_\-nBuddyStatus}\label{classCClientList_aaf550ffdf1d4df34f2fa6c62c5898544}
+
+\item 
+IpAndTicksList {\bfseries m\_\-firewallCheckRequests}\label{classCClientList_a9865f238aedbb4bed94de610ad1ffd05}
+
+\item 
+DirectCallbackList {\bfseries m\_\-currentDirectCallbacks}\label{classCClientList_a954500850177de6b9877adb76e0ec90a}
+
+\item 
+IpAndTicksList {\bfseries m\_\-directCallbackRequests}\label{classCClientList_a6cfa3f24c836d8607e405368c1d2ddeb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class takes care of managing existing clients. This class tracks a number of attributes related to existing and deleted clients. Among other things, it keeps track of existing, banned, dead and dying clients, as well as offers support for matching new client-\/instances against already exist clients to avoid duplicates. 
+
+\subsection{Member Function Documentation}
+\index{CClientList@{CClientList}!AddBannedClient@{AddBannedClient}}
+\index{AddBannedClient@{AddBannedClient}!CClientList@{CClientList}}
+\subsubsection[{AddBannedClient}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::AddBannedClient (uint32 {\em dwIP})}\label{classCClientList_a465fbc81988380e8f04cc625f759bfef}
+
+
+Bans an IP address for 2 hours. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dwIP}]The IP from which all clients will be banned. \end{DoxyParams}
+
+
+References m\_\-bannedList.\index{CClientList@{CClientList}!AddClient@{AddClient}}
+\index{AddClient@{AddClient}!CClientList@{CClientList}}
+\subsubsection[{AddClient}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::AddClient ({\bf CUpDownClient} $\ast$ {\em toadd})}\label{classCClientList_aa518e33fa91267eeb3330234c3f3377f}
+
+
+Adds a client to the global list of clients. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toadd}]The new client. \end{DoxyParams}
+
+
+References m\_\-clientList, m\_\-hashList, and m\_\-ipList.
+
+Referenced by SendChatMessage().\index{CClientList@{CClientList}!AddDeadSource@{AddDeadSource}}
+\index{AddDeadSource@{AddDeadSource}!CClientList@{CClientList}}
+\subsubsection[{AddDeadSource}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::AddDeadSource (const {\bf CUpDownClient} $\ast$ {\em client})}\label{classCClientList_abb77bcc6f9c2b5f40eb2a54dbc11d9ec}
+
+
+Adds a source to the list of dead sources. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The source to be recorded as dead. \end{DoxyParams}
+
+
+References CDeadSourceList::AddDeadSource(), and m\_\-deadSources.\index{CClientList@{CClientList}!AddTrackClient@{AddTrackClient}}
+\index{AddTrackClient@{AddTrackClient}!CClientList@{CClientList}}
+\subsubsection[{AddTrackClient}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::AddTrackClient ({\bf CUpDownClient} $\ast$ {\em toadd})}\label{classCClientList_a5c774394c8356a360a677f84217b7e5a}
+
+
+Adds a client to the list of tracked clients. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toadd}]The client to track.\end{DoxyParams}
+This function is used to keep track of clients after they have been deleted and makes it possible to spot port or hash changes. 
+
+References m\_\-trackedClientsList.\index{CClientList@{CClientList}!AttachToAlreadyKnown@{AttachToAlreadyKnown}}
+\index{AttachToAlreadyKnown@{AttachToAlreadyKnown}!CClientList@{CClientList}}
+\subsubsection[{AttachToAlreadyKnown}]{\setlength{\rightskip}{0pt plus 5cm}bool CClientList::AttachToAlreadyKnown ({\bf CUpDownClient} $\ast$$\ast$ {\em client}, \/  {\bf CClientTCPSocket} $\ast$ {\em sender})}\label{classCClientList_a66393750e0245bec771922e83b572da3}
+
+
+Replaces a new client-\/instance with the an already existing client, if one such exist. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]A pointer to the pointer of the new instance. \item[{\em sender}]The socket assosiated with the new instance.\end{DoxyParams}
+Call this function when a new client-\/instance has been created. This function will then compare it against all existing clients and see if we already have an instance matching the new one. If that is the case, it will delete the new instance and set the pointer to the existing one. 
+
+References FindMatchingClient(), CUpDownClient::GetSocket(), CUpDownClient::IsConnected(), CUpDownClient::Safe\_\-Delete(), and CUpDownClient::SetSocket().\index{CClientList@{CClientList}!ComparePriorUserhash@{ComparePriorUserhash}}
+\index{ComparePriorUserhash@{ComparePriorUserhash}!CClientList@{CClientList}}
+\subsubsection[{ComparePriorUserhash}]{\setlength{\rightskip}{0pt plus 5cm}bool CClientList::ComparePriorUserhash (uint32 {\em dwIP}, \/  uint16 {\em nPort}, \/  void $\ast$ {\em pNewHash})}\label{classCClientList_af1dfb11f80c114addc06e5a85abce6de}
+
+
+Checks if a client has changed its user-\/hash. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dwIP}]The IP of the client. \item[{\em nPort}]The port of the client. \item[{\em pNewHash}]The userhash assosiated with the client. \end{DoxyParams}
+
+
+References m\_\-trackedClientsList.\index{CClientList@{CClientList}!FilterQueues@{FilterQueues}}
+\index{FilterQueues@{FilterQueues}!CClientList@{CClientList}}
+\subsubsection[{FilterQueues}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::FilterQueues ()}\label{classCClientList_a8a03335796f5f6eb6eb48a3f336c2d39}
+
+
+This function removes all clients filtered by the current IPFilter. Call this function after changing the current IPFiler list, to ensure that no client-\/connections to illegal IPs exist. These would otherwise be allowed to exist, bypassing the IPFilter. 
+
+References m\_\-ipList, and CUpDownClient::Safe\_\-Delete().\index{CClientList@{CClientList}!FindClientByECID@{FindClientByECID}}
+\index{FindClientByECID@{FindClientByECID}!CClientList@{CClientList}}
+\subsubsection[{FindClientByECID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CUpDownClient} $\ast$ CClientList::FindClientByECID (uint32 {\em ecid}) const}\label{classCClientList_a84d985f0c654dd9ef63b75c07e92b4ec}
+
+
+Finds a client with the specified ECID. 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientip}]The IP of the client to find. \end{DoxyParams}
+
+
+References m\_\-clientList.\index{CClientList@{CClientList}!FindClientByIP@{FindClientByIP}}
+\index{FindClientByIP@{FindClientByIP}!CClientList@{CClientList}}
+\subsubsection[{FindClientByIP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CUpDownClient} $\ast$ CClientList::FindClientByIP (uint32 {\em clientip})}\label{classCClientList_af1325a826514e5cbdc8a5a20fadb87af}
+
+
+Finds a client with the specified ip. 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientip}]The IP of the client to find.\end{DoxyParams}
+Returns the first client found if there are several with same ip. 
+
+References m\_\-ipList.\index{CClientList@{CClientList}!FindClientByIP@{FindClientByIP}}
+\index{FindClientByIP@{FindClientByIP}!CClientList@{CClientList}}
+\subsubsection[{FindClientByIP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CUpDownClient} $\ast$ CClientList::FindClientByIP (uint32 {\em clientip}, \/  uint16 {\em port})}\label{classCClientList_ae498a3e10f9152a8ccf8d4e12f6c7a8a}
+
+
+Finds a client with the specified ip and port. 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientip}]The IP of the client to find. \item[{\em port}]The port used by the client. \end{DoxyParams}
+
+
+References m\_\-ipList.
+
+Referenced by SendChatMessage(), and SetChatState().\index{CClientList@{CClientList}!FindMatchingClient@{FindMatchingClient}}
+\index{FindMatchingClient@{FindMatchingClient}!CClientList@{CClientList}}
+\subsubsection[{FindMatchingClient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CUpDownClient} $\ast$ CClientList::FindMatchingClient ({\bf CUpDownClient} $\ast$ {\em client})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCClientList_a5e017bc52a9c516e8087a14838167026}
+
+
+Helperfunction which finds a client matching the specified client. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The client to search for. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matching client or NULL.
+\end{DoxyReturn}
+This functions searches through the list of clients and finds the first match using the same checks as CUpDownClient::Compare, but without the overhead. 
+
+References m\_\-clientList, m\_\-hashList, and m\_\-ipList.
+
+Referenced by AttachToAlreadyKnown().\index{CClientList@{CClientList}!GetClientList@{GetClientList}}
+\index{GetClientList@{GetClientList}!CClientList@{CClientList}}
+\subsubsection[{GetClientList}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CClientList::IDMap} \& CClientList::GetClientList ()}\label{classCClientList_a19bdd32a84036372c156f1f9d03278f0}
+
+
+Returns a list of all clients. \begin{DoxyReturn}{Returns}
+The complete list of clients. 
+\end{DoxyReturn}
+
+
+References m\_\-clientList.\index{CClientList@{CClientList}!GetClientsByHash@{GetClientsByHash}}
+\index{GetClientsByHash@{GetClientsByHash}!CClientList@{CClientList}}
+\subsubsection[{GetClientsByHash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CClientList::SourceList} CClientList::GetClientsByHash (const {\bf CMD4Hash} \& {\em hash})}\label{classCClientList_a82f400810424dae7f90b264acfbcea50}
+
+
+Returns a list of clients with the specified user-\/hash. 
+\begin{DoxyParams}{Parameters}
+\item[{\em hash}]The userhash to search for.\end{DoxyParams}
+This function will return a list of clients with the specified userhash, provided that the hash is a valid non-\/empty userhash. Empty hashes will simply result in nothing being found. 
+
+References m\_\-hashList.\index{CClientList@{CClientList}!GetClientsByIP@{GetClientsByIP}}
+\index{GetClientsByIP@{GetClientsByIP}!CClientList@{CClientList}}
+\subsubsection[{GetClientsByIP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CClientList::SourceList} CClientList::GetClientsByIP (unsigned long {\em ip})}\label{classCClientList_a5e9f338d6721c1f21b3ce3344cebbd2d}
+
+
+Returns a list of clients with the specified IP. 
+\begin{DoxyParams}{Parameters}
+\item[{\em ip}]The IP-\/address to search for.\end{DoxyParams}
+This function will return a list of clients with the specified IP, provided that the IP is a non-\/zero value. A value of zero will not result in any results. 
+
+References m\_\-ipList.\index{CClientList@{CClientList}!GetClientsFromIP@{GetClientsFromIP}}
+\index{GetClientsFromIP@{GetClientsFromIP}!CClientList@{CClientList}}
+\subsubsection[{GetClientsFromIP}]{\setlength{\rightskip}{0pt plus 5cm}uint16 CClientList::GetClientsFromIP (uint32 {\em dwIP})}\label{classCClientList_a0ababfa2107214d0830a021f1358a181}
+
+
+Returns the number of tracked client. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dwIP}]The IP-\/adress which of the clients. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of clients tracked at the specifed IP. 
+\end{DoxyReturn}
+
+
+References m\_\-trackedClientsList.\index{CClientList@{CClientList}!IsBannedClient@{IsBannedClient}}
+\index{IsBannedClient@{IsBannedClient}!CClientList@{CClientList}}
+\subsubsection[{IsBannedClient}]{\setlength{\rightskip}{0pt plus 5cm}bool CClientList::IsBannedClient (uint32 {\em dwIP})}\label{classCClientList_af5f8981b0835aaba1041f2a7fedb7e4f}
+
+
+Checks if a client has been banned. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dwIP}]The IP to check. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the IP is banned, false otherwise. 
+\end{DoxyReturn}
+
+
+References m\_\-bannedList, and RemoveBannedClient().\index{CClientList@{CClientList}!IsDeadSource@{IsDeadSource}}
+\index{IsDeadSource@{IsDeadSource}!CClientList@{CClientList}}
+\subsubsection[{IsDeadSource}]{\setlength{\rightskip}{0pt plus 5cm}bool CClientList::IsDeadSource (const {\bf CUpDownClient} $\ast$ {\em client})}\label{classCClientList_a7c4e833a432b220aff99135a2f3595f6}
+
+
+Checks if a source is recorded as being dead. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The client to evaluate. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if dead, false otherwise.
+\end{DoxyReturn}
+Sources that are dead are not to be considered valid sources and should not be added to partfiles. 
+
+References CDeadSourceList::IsDeadSource(), and m\_\-deadSources.\index{CClientList@{CClientList}!IsIPAlreadyKnown@{IsIPAlreadyKnown}}
+\index{IsIPAlreadyKnown@{IsIPAlreadyKnown}!CClientList@{CClientList}}
+\subsubsection[{IsIPAlreadyKnown}]{\setlength{\rightskip}{0pt plus 5cm}bool CClientList::IsIPAlreadyKnown (uint32\_\-t {\em ip})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCClientList_af76552216c1860a1107bf0e6397ca1f9}
+
+
+Check if we already know this IP. This function is used to determine if the given IP address is already known.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ip}]The IP address to check. \end{DoxyParams}
+
+
+References m\_\-ipList.\index{CClientList@{CClientList}!Process@{Process}}
+\index{Process@{Process}!CClientList@{CClientList}}
+\subsubsection[{Process}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::Process ()}\label{classCClientList_adea2031bd7b381157afc111d1ddf617b}
+
+
+Main loop. This function takes care of cleaning the various lists and deleting pending clients on the deletion-\/queue. 
+
+References CUpDownClient::IsConnected(), m\_\-bannedList, m\_\-dwLastBannCleanUp, m\_\-dwLastTrackedCleanUp, m\_\-trackedClientsList, and RemoveBannedClient().\index{CClientList@{CClientList}!RemoveBannedClient@{RemoveBannedClient}}
+\index{RemoveBannedClient@{RemoveBannedClient}!CClientList@{CClientList}}
+\subsubsection[{RemoveBannedClient}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::RemoveBannedClient (uint32 {\em dwIP})}\label{classCClientList_a7f56d4219d930644614d43166050d260}
+
+
+Unbans an IP address, if it has been banned. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dwIP}]The IP address to unban. \end{DoxyParams}
+
+
+References m\_\-bannedList.
+
+Referenced by IsBannedClient(), and Process().\index{CClientList@{CClientList}!RemoveClient@{RemoveClient}}
+\index{RemoveClient@{RemoveClient}!CClientList@{CClientList}}
+\subsubsection[{RemoveClient}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::RemoveClient ({\bf CUpDownClient} $\ast$ {\em client})}\label{classCClientList_a4842f1795d698b5efdd8854d3b00a3db}
+
+
+Removes a client from the client lists. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The client to be removed.\end{DoxyParams}
+To be called from \doxyref{CUpDownClient::Safe\_\-Delete}{p.}{classCUpDownClient_ab44d68f2a3ad0b3d133eae05c1ef7ad6} only. 
+
+References RemoveHashFromList(), RemoveIDFromList(), and RemoveIPFromList().\index{CClientList@{CClientList}!SendChatMessage@{SendChatMessage}}
+\index{SendChatMessage@{SendChatMessage}!CClientList@{CClientList}}
+\subsubsection[{SendChatMessage}]{\setlength{\rightskip}{0pt plus 5cm}bool CClientList::SendChatMessage (uint64 {\em client\_\-id}, \/  const wxString \& {\em message})}\label{classCClientList_a2847d6d820439203fbc0eaadda7cff2b}
+
+
+Sends a message to a client, identified by a GUI\_\-ID. \begin{DoxyReturn}{Returns}
+Success 
+\end{DoxyReturn}
+
+
+References AddClient(), FindClientByIP(), and CUpDownClient::SendChatMessage().\index{CClientList@{CClientList}!UpdateClientHash@{UpdateClientHash}}
+\index{UpdateClientHash@{UpdateClientHash}!CClientList@{CClientList}}
+\subsubsection[{UpdateClientHash}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::UpdateClientHash ({\bf CUpDownClient} $\ast$ {\em client}, \/  const {\bf CMD4Hash} \& {\em newHash})}\label{classCClientList_a01fd2a5ed3633435078bec036117b0d1}
+
+
+Updates the recorded hash of the specified client. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The client to have its entry updated. \item[{\em newHash}]The new user-\/hash.\end{DoxyParams}
+This function is to be called before the client actually changes its user-\/hash, and will update the old entry with the new value. There will only be added an entry if the new hash is valid. 
+
+References CMD4Hash::IsEmpty(), m\_\-hashList, and RemoveHashFromList().\index{CClientList@{CClientList}!UpdateClientID@{UpdateClientID}}
+\index{UpdateClientID@{UpdateClientID}!CClientList@{CClientList}}
+\subsubsection[{UpdateClientID}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::UpdateClientID ({\bf CUpDownClient} $\ast$ {\em client}, \/  uint32 {\em newID})}\label{classCClientList_a2869c846f4d5e189fb3709effc541e82}
+
+
+Updates the recorded ID of the specified client. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The client to have its entry updated. \item[{\em newID}]The new ID of the client.\end{DoxyParams}
+This function is to be called before the client actually changes its ID, and will update the old entry with the new value. Unlike the other two functions, this function will always ensure that there is an entry for the client, regardless of the value of newID. 
+
+References m\_\-clientList, and RemoveIDFromList().\index{CClientList@{CClientList}!UpdateClientIP@{UpdateClientIP}}
+\index{UpdateClientIP@{UpdateClientIP}!CClientList@{CClientList}}
+\subsubsection[{UpdateClientIP}]{\setlength{\rightskip}{0pt plus 5cm}void CClientList::UpdateClientIP ({\bf CUpDownClient} $\ast$ {\em client}, \/  uint32 {\em newIP})}\label{classCClientList_a54dd144048207674101d228597b25c5e}
+
+
+Updates the recorded IP of the specified client. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The client to have its entry updated. \item[{\em newIP}]The new IP adress of the client.\end{DoxyParams}
+This function is to be called before the client actually changes its IP-\/address, and will update the old entry with the new value. There will only be added an entry if the new IP isn't zero. 
+
+References m\_\-ipList, and RemoveIPFromList().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ClientList.h\item 
+src/ClientList.cpp\end{DoxyCompactItemize}

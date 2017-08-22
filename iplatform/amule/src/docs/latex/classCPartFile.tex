@@ -1,0 +1,624 @@
+\section{CPartFile Class Reference}
+\label{classCPartFile}\index{CPartFile@{CPartFile}}
+Inheritance diagram for CPartFile::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCPartFile}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf Requested\_\-Block\_\-Struct} $\ast$ $>$ {\bfseries CReqBlockPtrList}\label{classCPartFile_aeffb50d8b68dd418c679fad1cd60c047}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries SetFileName} (const {\bf CPath} \&filename)\label{classCPartFile_ad33eccee3bc1fcbab60f5c22cb6aa9cd}
+
+\item 
+{\bfseries CPartFile} ({\bf CSearchFile} $\ast$searchresult)\label{classCPartFile_a1d5043c8b58b7b1adc7aed26c90021e2}
+
+\item 
+{\bfseries CPartFile} (const {\bf CED2KFileLink} $\ast$fileLink)\label{classCPartFile_aa061e5d04011e2524825f96ecf4d0ad5}
+
+\item 
+virtual bool {\bfseries LoadFromFile} (const {\bf CFileDataIO} $\ast$file)\label{classCPartFile_ab58c2fc1d691f2c4614f458825e4f612}
+
+\item 
+bool {\bfseries WriteToFile} ({\bf CFileDataIO} $\ast$file)\label{classCPartFile_ac3c8d5797b00a45a6ad2035c52090080}
+
+\item 
+bool {\bfseries IsPartFile} () const \label{classCPartFile_a6989033527e32d253b79c894db365860}
+
+\item 
+bool {\bfseries IsCompleted} () const \label{classCPartFile_a20b3b0f8c3ad70cd1c38a39b67b55916}
+
+\item 
+bool {\bfseries IsCPartFile} () const \label{classCPartFile_a207bd893b32d4e773271383ebce6f383}
+
+\item 
+uint32 {\bfseries Process} (uint32 reducedownload, uint8 m\_\-icounter)\label{classCPartFile_abca263eb5b67386057681f5325e35968}
+
+\item 
+uint8 {\bfseries LoadPartFile} (const {\bf CPath} \&in\_\-directory, const {\bf CPath} \&filename, bool from\_\-backup=false, bool getsizeonly=false)\label{classCPartFile_aba54ff6ed0ce43679ac8aca699388a96}
+
+\item 
+bool {\bfseries SavePartFile} (bool Initial=false)\label{classCPartFile_aa51812829b2cd035920a197106d8be22}
+
+\item 
+void {\bfseries PartFileHashFinished} ({\bf CKnownFile} $\ast$result)\label{classCPartFile_ab3842ec99a59d8d7124f66bfd0073cfd}
+
+\item 
+bool {\bfseries HashSinglePart} (uint16 partnumber)\label{classCPartFile_a3f0361c5282a3d83872723ad56da82de}
+
+\item 
+bool {\bfseries CheckShowItemInGivenCat} (int inCategory)\label{classCPartFile_a4ca7cd88a1b786eaba642dd52ed01752}
+
+\item 
+bool {\bfseries IsComplete} (uint64 start, uint64 end)\label{classCPartFile_a232373fb49194625dd6dfb5a476cdd3d}
+
+\item 
+bool {\bfseries IsComplete} (uint16 part)\label{classCPartFile_a4fc1692a5b32b7d7b31dacda73d9e7d1}
+
+\item 
+void {\bfseries UpdateCompletedInfos} ()\label{classCPartFile_acc9011465a352278f67990c0838acdfb}
+
+\item 
+bool {\bfseries GetNextRequestedBlock} ({\bf CUpDownClient} $\ast$sender, std::vector$<$ {\bf Requested\_\-Block\_\-Struct} $\ast$ $>$ \&toadd, uint16 \&count)\label{classCPartFile_aa14e7cbcab1fff6ea6a3113b152fab9f}
+
+\item 
+void {\bfseries WritePartStatus} ({\bf CMemFile} $\ast$file)\label{classCPartFile_a09a38b4b3a265bc7a00a7a2f81666d5d}
+
+\item 
+void {\bfseries WriteCompleteSourcesCount} ({\bf CMemFile} $\ast$file)\label{classCPartFile_a4543313bd2c37b87a8088977a1b82bf1}
+
+\item 
+void {\bfseries AddSources} ({\bf CMemFile} \&sources, uint32 serverip, uint16 serverport, unsigned origin, bool bWithObfuscationAndHash)\label{classCPartFile_a055bd6e42585224e767d8f2edfa4f5d7}
+
+\item 
+uint8 {\bfseries GetStatus} (bool ignorepause=false) const \label{classCPartFile_ab650a1b1fdfac4773ac22092fcfd5f34}
+
+\item 
+virtual void {\bfseries UpdatePartsInfo} ()\label{classCPartFile_a3ba0e8306d6a4a5a515033ad230f5de0}
+
+\item 
+const {\bf CPath} \& {\bfseries GetPartMetFileName} () const \label{classCPartFile_a2712e3c7dda1dd735de149b7a18d5112}
+
+\item 
+uint16 {\bfseries GetPartMetNumber} () const \label{classCPartFile_ae19efa5b37c7bbbcd1f8c541f22ac54d}
+
+\item 
+uint64 {\bfseries GetTransferred} () const \label{classCPartFile_ab6243466ce6dd92bee11ed333018a8fa}
+
+\item 
+const {\bf CPath} \& {\bfseries GetFullName} () const \label{classCPartFile_a2d156b9d16b821b3d39a78b4ac06e8d4}
+
+\item 
+float {\bfseries GetKBpsDown} () const \label{classCPartFile_a0717723788c49dcf16cf325bb13b2ae7}
+
+\item 
+double {\bfseries GetPercentCompleted} () const \label{classCPartFile_af1952836cc82b16e3a25d172e586e83a}
+
+\item 
+uint16 {\bfseries GetSourceCount} () const \label{classCPartFile_a0fe8aa73a3bb056a90676dc0a61d9d13}
+
+\item 
+uint16 {\bfseries GetSrcA4AFCount} () const \label{classCPartFile_a2b5545a8ee3008ae33d5bb47defa7579}
+
+\item 
+uint16 {\bfseries GetTransferingSrcCount} () const \label{classCPartFile_a2971e036de05aaa1b323b127127b5614}
+
+\item 
+uint16 {\bfseries GetNotCurrentSourcesCount} () const \label{classCPartFile_a4355eac5a88302f6ce7a0ef6713aecb1}
+
+\item 
+uint16 {\bfseries GetValidSourcesCount} () const \label{classCPartFile_ad07ce5b33ef3034b54403061353a355d}
+
+\item 
+uint64 {\bfseries GetNeededSpace} ()\label{classCPartFile_acd16cd2064868a8a5b8a5eebfd259630}
+
+\item 
+virtual wxString {\bfseries GetFeedback} () const \label{classCPartFile_a4b791daae9a36e9130e15b77e3b5d7ce}
+
+\item 
+wxString {\bfseries getPartfileStatus} () const \label{classCPartFile_a3b0708cffd51a12a07a8b71ee328bf33}
+
+\item 
+sint32 {\bfseries getTimeRemaining} () const \label{classCPartFile_af00f28a0166887c0be95c2896a5e71c1}
+
+\item 
+int {\bfseries getPartfileStatusRang} () const \label{classCPartFile_a449bebbfa0383e6a1b33b417a6e48338}
+
+\item 
+uint32 {\bfseries WriteToBuffer} (uint32 transize, byte $\ast$data, uint64 start, uint64 end, {\bf Requested\_\-Block\_\-Struct} $\ast$block, const {\bf CUpDownClient} $\ast$client)\label{classCPartFile_a7c89949ae099bc9f1fc3e6a724b56f65}
+
+\item 
+void {\bfseries FlushBuffer} (bool fromAICHRecoveryDataAvailable=false)\label{classCPartFile_a11819946a055736da7a21ffd482aac25}
+
+\item 
+void {\bfseries RemoveAllRequestedBlocks} (void)\label{classCPartFile_a4422d31e08033b1561b50706b52cee57}
+
+\item 
+void {\bfseries RemoveBlockFromList} (uint64 start, uint64 end)\label{classCPartFile_a7fa80652118e77140cab3c57cf656a59}
+
+\item 
+void {\bfseries RemoveAllSources} (bool bTryToSwap)\label{classCPartFile_af13d5d5a2e51e8b3acf0fbabfd8b8843}
+
+\item 
+void {\bfseries Delete} ()\label{classCPartFile_aa014d3549ca998fcb40e33db787dae3b}
+
+\item 
+void {\bfseries StopFile} (bool bCancel=false)\label{classCPartFile_ab0ae986f45e536db2929580b46e79119}
+
+\item 
+void {\bfseries PauseFile} (bool bInsufficient=false)\label{classCPartFile_ad29886ec5526642cff58409a7dcd80b7}
+
+\item 
+void {\bfseries ResumeFile} ()\label{classCPartFile_aeb4ee025ee073170c46eb7ed25fd0d0d}
+
+\item 
+virtual {\bf CPacket} $\ast$ {\bfseries CreateSrcInfoPacket} (const {\bf CUpDownClient} $\ast$forClient, uint8 byRequestedVersion, uint16 nRequestedOptions)\label{classCPartFile_a3786f00d08590860f1c5365703babc8c}
+
+\item 
+void {\bfseries AddClientSources} ({\bf CMemFile} $\ast$sources, unsigned nSourceFrom, uint8 uClientSXVersion, bool bSourceExchange2, const {\bf CUpDownClient} $\ast$pClient=NULL)\label{classCPartFile_a334e84923599bdc6b67da6ab54e9faaf}
+
+\item 
+bool {\bfseries PreviewAvailable} ()\label{classCPartFile_ac517f9f2e6c87ee77d8b63b211f5bf45}
+
+\item 
+uint16 {\bfseries GetAvailablePartCount} () const \label{classCPartFile_a6980e16ca70f00f7e78ced4a254b7c87}
+
+\item 
+uint32 {\bfseries GetLastAnsweredTime} () const \label{classCPartFile_a99347f61870de0520992428bd32c3fd5}
+
+\item 
+void {\bfseries SetLastAnsweredTime} ()\label{classCPartFile_a83c7b108473bb502f39fbc0cea31bbcf}
+
+\item 
+void {\bfseries SetLastAnsweredTimeTimeout} ()\label{classCPartFile_a7248bd072648a1ad1a4766ada4dec23a}
+
+\item 
+uint64 {\bfseries GetLostDueToCorruption} () const \label{classCPartFile_ae47b7fe69fec24618e9880246e8d3c32}
+
+\item 
+uint64 {\bfseries GetGainDueToCompression} () const \label{classCPartFile_acb52666c9584c925e0449fad5cb177ed}
+
+\item 
+uint32 {\bfseries TotalPacketsSavedDueToICH} () const \label{classCPartFile_a8f7bceda80866e44f452835a39732233}
+
+\item 
+bool {\bfseries IsStopped} () const \label{classCPartFile_a9f430f7ddcd3f6899ff4cd8889e5a32d}
+
+\item 
+bool {\bfseries IsPaused} () const \label{classCPartFile_aa1d0ce43a029da0e2cc2a35a9f7c84b5}
+
+\item 
+void {\bfseries UpdateFileRatingCommentAvail} ()\label{classCPartFile_afc23c56924916b0b6faffc99df1f0bed}
+
+\item 
+int {\bfseries GetCommonFilePenalty} ()\label{classCPartFile_a75baddd679c9ce1a3ac6cf0f54c8f4f3}
+
+\item 
+void {\bfseries UpdateDisplayedInfo} (bool force=false)\label{classCPartFile_ac1ce7b246025dbe7446308cf498e7a0c}
+
+\item 
+uint8 {\bfseries GetCategory} () const \label{classCPartFile_a4b8bd926c965bc5ced481679293f322c}
+
+\item 
+void {\bfseries SetCategory} (uint8 cat)\label{classCPartFile_ace4fd5434e8fb0a2012cfa73a22f4176}
+
+\item 
+void {\bfseries RemoveCategory} (uint8 cat)\label{classCPartFile_aaeeabeb8496dfd5ce6d4dae77fc22fc8}
+
+\item 
+void {\bfseries SetDownPriority} (uint8 newDownPriority, bool bSave=true, bool bRefresh=true)\label{classCPartFile_a850325e91790309ab9218201c2405260}
+
+\item 
+bool {\bfseries IsAutoDownPriority} () const \label{classCPartFile_adbbe41f2dbf54b4b2691edba170b8bdd}
+
+\item 
+void {\bfseries SetAutoDownPriority} (bool flag)\label{classCPartFile_aa98b0c55ec078de806999a17887f77e2}
+
+\item 
+void {\bfseries UpdateAutoDownPriority} ()\label{classCPartFile_a89d649d63e07d001d3fd53ef9a95fc4c}
+
+\item 
+uint8 {\bfseries GetDownPriority} () const \label{classCPartFile_a1fdbc72974686e8973238fb5a0ac0656}
+
+\item 
+void {\bfseries SetActive} (bool bActive)\label{classCPartFile_a7a80ec4f444371d1d860df410aef46c8}
+
+\item 
+uint32 {\bfseries GetDlActiveTime} () const \label{classCPartFile_ad11f07ead2ae1692e8ba8127c54d51f4}
+
+\item 
+bool {\bfseries GetInsufficient} () const \label{classCPartFile_a589552bf48a23aac902c91725e6c2c5f}
+
+\item 
+void {\bfseries CompleteFileEnded} (bool errorOccured, const {\bf CPath} \&newname)\label{classCPartFile_af8e021263eb546fa31735754d167e8f5}
+
+\item 
+bool {\bfseries RemoveSource} ({\bf CUpDownClient} $\ast$toremove, bool updatewindow=true, bool bDoStatsUpdate=true)\label{classCPartFile_a2227b25ee477a56bf1b4a53ce9b5f4f1}
+
+\item 
+void {\bfseries RequestAICHRecovery} (uint16 nPart)\label{classCPartFile_a495fc6c4788ded57dd7f5bbd226384a5}
+
+\item 
+void {\bfseries AICHRecoveryDataAvailable} (uint16 nPart)\label{classCPartFile_ae0cfe1e57d6b201a75a2b21d99016fb5}
+
+\item 
+void {\bf ClientStateChanged} (int oldState, int newState)
+\item 
+bool {\bfseries AddSource} ({\bf CUpDownClient} $\ast$client)\label{classCPartFile_a0faf4c9ed9e6035d5ca527995ff4b002}
+
+\item 
+bool {\bfseries DelSource} ({\bf CUpDownClient} $\ast$client)\label{classCPartFile_a1383898c63e80868c8879e98f5b5553e}
+
+\item 
+void {\bf UpdatePartsFrequency} ({\bf CUpDownClient} $\ast$client, bool increment)
+\item 
+const SourceSet \& {\bfseries GetSourceList} () const \label{classCPartFile_aa1352ed08923531628da1d704063aaa3}
+
+\item 
+const SourceSet \& {\bfseries GetA4AFList} () const \label{classCPartFile_a260750476ebc4ff9039c8bcde8cfa265}
+
+\item 
+void {\bfseries ClearA4AFList} ()\label{classCPartFile_a7da16cb2f7a5d93478dec9af8d6a8380}
+
+\item 
+const CReqBlockPtrList {\bfseries GetRequestedBlockList} () const \label{classCPartFile_a90d97307e7a2171ca943b810f0f0e3e5}
+
+\item 
+const {\bf CGapList} \& {\bfseries GetGapList} () const \label{classCPartFile_a1a1c9bad00758acd0b2595f1d311672d}
+
+\item 
+void {\bf AddDeadSource} (const {\bf CUpDownClient} $\ast$client)
+\item 
+bool {\bf IsDeadSource} (const {\bf CUpDownClient} $\ast$client)
+\item 
+uint16 {\bfseries GetMaxSources} () const \label{classCPartFile_a0774e42e09651b388dde57b6b0c5bf76}
+
+\item 
+uint16 {\bfseries GetMaxSourcePerFileSoft} () const \label{classCPartFile_afe53da0dca8d1b5f63d82c9b5c02b723}
+
+\item 
+uint16 {\bfseries GetMaxSourcePerFileUDP} () const \label{classCPartFile_ad7aa1043901f0943703698b9249239c4}
+
+\item 
+void {\bfseries GetRatingAndComments} (FileRatingList \&list) const \label{classCPartFile_aa4ce24da80dc5af87818f4fbe489f6da}
+
+\item 
+void {\bfseries AllocationFinished} ()\label{classCPartFile_a34aa43bd17fda4da724c161ac667729e}
+
+\item 
+bool {\bfseries IsHashSetNeeded} () const \label{classCPartFile_a9cc5c4b1d9620f93859fb95df20dd2f0}
+
+\item 
+void {\bfseries SetHashSetNeeded} (bool value)\label{classCPartFile_ae61211a5e412f3d4b6a7c1add6359fec}
+
+\item 
+uint64 {\bfseries GetCompletedSize} () const \label{classCPartFile_aaed7f0eaddbc5afd43adf6c5826269ee}
+
+\item 
+void {\bfseries SetCompletedSize} (uint64 size)\label{classCPartFile_ae012b8ad535f88da448a49d2bd07d148}
+
+\item 
+bool {\bfseries IsLocalSrcRequestQueued} () const \label{classCPartFile_ae65ed58c3fce0272f154df581f4d85f1}
+
+\item 
+void {\bfseries SetLocalSrcRequestQueued} (bool value)\label{classCPartFile_a49c2591ff809008a36912fcb19ebc639}
+
+\item 
+void {\bfseries AddA4AFSource} ({\bf CUpDownClient} $\ast$src)\label{classCPartFile_adcca45b9c08dd158f8d27b5b6f356288}
+
+\item 
+bool {\bfseries RemoveA4AFSource} ({\bf CUpDownClient} $\ast$src)\label{classCPartFile_adfde0a05d6d3ffffa1dc21b46f56c3f7}
+
+\item 
+uint32 {\bfseries GetLastSearchTime} () const \label{classCPartFile_afbc15a3087822a3b2f0dfa615d777d02}
+
+\item 
+void {\bfseries SetLastSearchTime} (uint32 time)\label{classCPartFile_a7fa45becadb84c2c49b2ebf25b3488bd}
+
+\item 
+void {\bfseries AddDownloadingSource} ({\bf CUpDownClient} $\ast$client)\label{classCPartFile_ad715da0ede7dd712fc89d56ea5687374}
+
+\item 
+void {\bfseries RemoveDownloadingSource} ({\bf CUpDownClient} $\ast$client)\label{classCPartFile_a9bdf73571122dc9b21d054615fadc55f}
+
+\item 
+void {\bfseries SetStatus} (uint8 in)\label{classCPartFile_a954b05a7beb1419b3e44bff89aa0af27}
+
+\item 
+void {\bfseries StopPausedFile} ()\label{classCPartFile_af35b528dd5fdc337dca8dbc4d827f417}
+
+\item 
+void {\bfseries SetA4AFAuto} (bool in)\label{classCPartFile_ad2866db829fb532872f8f5058d63f009}
+
+\item 
+bool {\bfseries IsA4AFAuto} () const \label{classCPartFile_a2473c7a4f1cafb4228292c1a6824fca6}
+
+\item 
+void {\bfseries SaveSourceSeeds} ()\label{classCPartFile_a14418235ebc0f678890caba0c5a34839}
+
+\item 
+void {\bfseries LoadSourceSeeds} ()\label{classCPartFile_a436c64097ad5f6af8fd37d530054c0f2}
+
+\item 
+{\bf CUpDownClient} $\ast$ {\bfseries GetSlowerDownloadingClient} (uint32 speed, {\bf CUpDownClient} $\ast$caller)\label{classCPartFile_a084682af9c80fa91ae9c752bcc2a10ed}
+
+\item 
+bool {\bfseries ReadData} (class {\bf CFileArea} \&area, uint64 offset, uint32 toread)\label{classCPartFile_a27addfbd0bb72b7560ee8df185fbfb1d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries CanAddSource} (uint32 userid, uint16 port, uint32 serverip, uint16 serverport, uint8 $\ast$pdebug\_\-lowiddropped=NULL, bool ed2kID=true)\label{classCPartFile_a65cc6baa26865cca605990e01b6fe217}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+time\_\-t {\bfseries lastseencomplete}\label{classCPartFile_a7f867b60d7f233fef301eed660f6a4c4}
+
+\item 
+ArrayOfUInts16 {\bfseries m\_\-SrcpartFrequency}\label{classCPartFile_a9b72e8ab9e00a39af0d6afce6afa1e0e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries AddGap} (uint64 start, uint64 end)\label{classCPartFile_ad368719d3290faa419f8bab9e13e5f08}
+
+\item 
+void {\bfseries AddGap} (uint16 part)\label{classCPartFile_a22e62b209b8a3365aec52c13f0dd9776}
+
+\item 
+void {\bfseries FillGap} (uint64 start, uint64 end)\label{classCPartFile_a8b3a0b3550614ec2854b1782061308cc}
+
+\item 
+void {\bfseries FillGap} (uint16 part)\label{classCPartFile_a9dee3b0236f99c29e07cfad1397a2b36}
+
+\item 
+bool {\bfseries GetNextEmptyBlockInPart} (uint16 partnumber, {\bf Requested\_\-Block\_\-Struct} $\ast$result)\label{classCPartFile_ab233b5c411f3c7b01779a8c40f00446a}
+
+\item 
+bool {\bfseries IsAlreadyRequested} (uint64 start, uint64 end)\label{classCPartFile_a407c72031657dd3b4735df40027046ce}
+
+\item 
+void {\bfseries CompleteFile} (bool hashingdone)\label{classCPartFile_a3022ab8704e4b6561993c84b96b538b4}
+
+\item 
+void {\bfseries CreatePartFile} ()\label{classCPartFile_ad087e7eaeab682918da35abfcd8a51ec}
+
+\item 
+void {\bf Init} ()
+\item 
+bool {\bfseries CheckFreeDiskSpace} (uint64 neededSpace=0)\label{classCPartFile_a4087d039d6ad225242f0448aa0ca85c0}
+
+\item 
+bool {\bfseries IsCorruptedPart} (uint16 partnumber)\label{classCPartFile_a946614036913cdf791ff6902c1b47e4a}
+
+\item 
+void {\bfseries PerformFileComplete} ()\label{classCPartFile_a140c72066e1cbf96b4d64a25beb5e832}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CFileAutoClose} {\bfseries m\_\-hpartfile}\label{classCPartFile_a6f056b7bd9d45c1efd24d007e75b6b46}
+
+\item 
+{\bf CDeadSourceList} {\bf m\_\-deadSources}\label{classCPartFile_a1914eddb18d09dd26e58395587b9c503}
+
+\item 
+class {\bf CCorruptionBlackBox} $\ast$ {\bfseries m\_\-CorruptionBlackBox}\label{classCPartFile_a4cf1b5413baa2d69c4780d80d44cded0}
+
+\item 
+uint16 {\bfseries m\_\-notCurrentSources}\label{classCPartFile_ae32a0e1133901114016cb1de2639c3e9}
+
+\item 
+uint32 {\bfseries m\_\-validSources}\label{classCPartFile_ad51400f5f9575c32251f37b247769761}
+
+\item 
+uint32 {\bfseries m\_\-iLastPausePurge}\label{classCPartFile_a6c427f07d3f234aba332356bee90c84d}
+
+\item 
+uint16 {\bfseries m\_\-count}\label{classCPartFile_a2c9dab0365d21beeb2e5f736b956a59a}
+
+\item 
+uint16 {\bfseries transferingsrc}\label{classCPartFile_a8252c031eb39855d63f1a108c0aff836}
+
+\item 
+uint64 {\bfseries completedsize}\label{classCPartFile_a93f7a979bd09fa07b90da3bcd0a0a585}
+
+\item 
+uint64 {\bfseries transferred}\label{classCPartFile_a756d68f81c4bc54e1c61724f76791b09}
+
+\item 
+uint64 {\bfseries m\_\-iLostDueToCorruption}\label{classCPartFile_a2a55c964428e21dcffff521ef2b3182c}
+
+\item 
+uint64 {\bfseries m\_\-iGainDueToCompression}\label{classCPartFile_a9fcad70b369dfb0eb3a976719c2a4d7c}
+
+\item 
+uint32 {\bfseries m\_\-iTotalPacketsSavedDueToICH}\label{classCPartFile_a3bbc151f0db2062efd2d8aced013346e}
+
+\item 
+float {\bfseries kBpsDown}\label{classCPartFile_a8867cabd8f1cf0f3918919f0a5f73a0b}
+
+\item 
+{\bf CPath} {\bfseries m\_\-fullname}\label{classCPartFile_ae3021013d5ee9d5c370f68c8279637c5}
+
+\item 
+{\bf CPath} {\bfseries m\_\-partmetfilename}\label{classCPartFile_a7e768a962b043f143298044913608592}
+
+\item 
+{\bf CPath} {\bfseries m\_\-PartPath}\label{classCPartFile_adf5a31b737b73e0ffcc79d749d3c07c9}
+
+\item 
+bool {\bfseries m\_\-paused}\label{classCPartFile_a474fc37fc74911bae9ae05d21dce652c}
+
+\item 
+bool {\bfseries m\_\-stopped}\label{classCPartFile_a8005e2dcc9f4ae531e75416fb29378b4}
+
+\item 
+bool {\bfseries m\_\-insufficient}\label{classCPartFile_a58418ac6bf7ee2f100383607a4e4d726}
+
+\item 
+uint8 {\bfseries m\_\-iDownPriority}\label{classCPartFile_aaf62934a9954960839728b037d497983}
+
+\item 
+bool {\bfseries m\_\-bAutoDownPriority}\label{classCPartFile_aaa1c86739e91f2d8229b761f5fb7a824}
+
+\item 
+uint8 {\bfseries status}\label{classCPartFile_ae72650baca68b4480d185f5dd7039b5c}
+
+\item 
+uint32 {\bfseries lastpurgetime}\label{classCPartFile_abe3041eef0edd09977061d8249eb1ccb}
+
+\item 
+uint32 {\bfseries m\_\-LastNoNeededCheck}\label{classCPartFile_a65a56b27ab9b64dac428afb50975c2d3}
+
+\item 
+{\bf CGapList} {\bfseries m\_\-gaplist}\label{classCPartFile_a31c283a651a819ccf4730189079d2264}
+
+\item 
+CReqBlockPtrList {\bfseries m\_\-requestedblocks\_\-list}\label{classCPartFile_ac9f3db5019a78809ca3080bf0b558d73}
+
+\item 
+double {\bfseries percentcompleted}\label{classCPartFile_a30e97d9352b54594dfb9ce71adde2265}
+
+\item 
+std::list$<$ uint16 $>$ {\bfseries m\_\-corrupted\_\-list}\label{classCPartFile_af82320ea852902eecdc0345ffc75ebb8}
+
+\item 
+uint16 {\bfseries m\_\-availablePartsCount}\label{classCPartFile_ac1a74c569d6cc5b224af42562a7cd257}
+
+\item 
+uint32 {\bfseries m\_\-ClientSrcAnswered}\label{classCPartFile_aead97efc5220b2510925ab7cc92caacf}
+
+\item 
+bool {\bfseries m\_\-bPercentUpdated}\label{classCPartFile_a3e60b16ec48d465c9205981856cba466}
+
+\item 
+uint32 {\bfseries m\_\-lastRefreshedDLDisplay}\label{classCPartFile_a65bafd1937f2f1d817b0a0fa5266ba9a}
+
+\item 
+std::list$<$ class {\bf PartFileBufferedData} $\ast$ $>$ {\bfseries m\_\-BufferedData\_\-list}\label{classCPartFile_a98057fe048d48ddf5f439819a073ef2e}
+
+\item 
+uint32 {\bfseries m\_\-nTotalBufferData}\label{classCPartFile_a058e0adefc82bff7fa038bc176e9c142}
+
+\item 
+uint32 {\bfseries m\_\-nLastBufferFlushTime}\label{classCPartFile_a3cc0e75682a868e2b4c6743067f8292d}
+
+\item 
+uint8 {\bfseries m\_\-category}\label{classCPartFile_af8d5a853ce13206ebc585925e64a2fc7}
+
+\item 
+uint32 {\bfseries m\_\-nDlActiveTime}\label{classCPartFile_a5c471adb003aa7bec7ce26bd7cd26497}
+
+\item 
+time\_\-t {\bfseries m\_\-tActivated}\label{classCPartFile_a7ebc30d290e2e096db52a03c25b00a1d}
+
+\item 
+bool {\bfseries m\_\-is\_\-A4AF\_\-auto}\label{classCPartFile_a22d1349566a570c1b11b735424e68186}
+
+\item 
+SourceSet {\bfseries m\_\-SrcList}\label{classCPartFile_aee1de985b6049ac8193a7c757d8966df}
+
+\item 
+SourceSet {\bfseries m\_\-A4AFsrclist}\label{classCPartFile_a858c27074e12f593b7e66490be9df92f}
+
+\item 
+bool {\bfseries m\_\-hashsetneeded}\label{classCPartFile_ad5e16dc5a7c839315efa95ef3640eb09}
+
+\item 
+uint32 {\bfseries m\_\-lastsearchtime}\label{classCPartFile_aac4079a5c72b5bd5d3c74264f828226a}
+
+\item 
+bool {\bfseries m\_\-localSrcReqQueued}\label{classCPartFile_ac511365dbbf6ab62cfd335cbcba80a92}
+
+\item 
+CClientRefList {\bfseries m\_\-downloadingSourcesList}\label{classCPartFile_a0c381e60972807112fed484ab111e2d1}
+
+\item 
+uint32 {\bfseries m\_\-LastSearchTimeKad}\label{classCPartFile_a11b5d6ea96f147b65b76563d2b473bb7}
+
+\item 
+uint8 {\bfseries m\_\-TotalSearchesKad}\label{classCPartFile_a412e9a25a3c1e1af8f6ac40f5223083f}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CKnownFilesRem}\label{classCPartFile_aececa004c228e6d1c42c2b404385f7a2}
+
+\item 
+class {\bfseries CPartFileConvert}\label{classCPartFile_a442c5079bf62fb6b81adb8bbfb245cf5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CPartFile@{CPartFile}!AddDeadSource@{AddDeadSource}}
+\index{AddDeadSource@{AddDeadSource}!CPartFile@{CPartFile}}
+\subsubsection[{AddDeadSource}]{\setlength{\rightskip}{0pt plus 5cm}void CPartFile::AddDeadSource (const {\bf CUpDownClient} $\ast$ {\em client})}\label{classCPartFile_a24b816a92b7a5c915a1f57c06a4c0695}
+
+
+Adds a source to the list of dead sources. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The source to be recorded as dead for this file. \end{DoxyParams}
+
+
+References CDeadSourceList::AddDeadSource(), and m\_\-deadSources.\index{CPartFile@{CPartFile}!ClientStateChanged@{ClientStateChanged}}
+\index{ClientStateChanged@{ClientStateChanged}!CPartFile@{CPartFile}}
+\subsubsection[{ClientStateChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CPartFile::ClientStateChanged (int {\em oldState}, \/  int {\em newState})}\label{classCPartFile_a11a5c0f6a02097e12bc7b466c33e0c2f}
+
+
+This function is used to update source-\/counts. 
+\begin{DoxyParams}{Parameters}
+\item[{\em oldState}]The old state of the client, or -\/1 to ignore. \item[{\em newState}]The new state of the client, or -\/1 to ignore.\end{DoxyParams}
+Call this function for a client belonging to this file, which has changed its state. The value -\/1 can be used to make the function ignore one of the two states.
+
+AddSource and DelSource takes care of calling this function when a source is removed, so there's no need to call this function when calling either of those. \index{CPartFile@{CPartFile}!Init@{Init}}
+\index{Init@{Init}!CPartFile@{CPartFile}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void CPartFile::Init ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCPartFile_a041189da060e9f01e9c1698201e03c6b}
+
+
+Common initializations for constructors. 
+
+Reimplemented from {\bf CKnownFile} \doxyref{}{p.}{classCKnownFile_a46f2e1beb58feef600edf10b0d26f9eb}.\index{CPartFile@{CPartFile}!IsDeadSource@{IsDeadSource}}
+\index{IsDeadSource@{IsDeadSource}!CPartFile@{CPartFile}}
+\subsubsection[{IsDeadSource}]{\setlength{\rightskip}{0pt plus 5cm}bool CPartFile::IsDeadSource (const {\bf CUpDownClient} $\ast$ {\em client})}\label{classCPartFile_a59cd41a2fb17d3e37992ec6c88c03533}
+
+
+Checks if a source is recorded as being dead for this file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The client to evaluate. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if dead, false otherwise.
+\end{DoxyReturn}
+Sources that are dead are not to be considered valid sources and should not be added to the partfile. 
+
+References CDeadSourceList::IsDeadSource(), and m\_\-deadSources.
+
+Referenced by CDownloadQueue::CheckAndAddKnownSource(), and CDownloadQueue::CheckAndAddSource().\index{CPartFile@{CPartFile}!UpdatePartsFrequency@{UpdatePartsFrequency}}
+\index{UpdatePartsFrequency@{UpdatePartsFrequency}!CPartFile@{CPartFile}}
+\subsubsection[{UpdatePartsFrequency}]{\setlength{\rightskip}{0pt plus 5cm}void CPartFile::UpdatePartsFrequency ({\bf CUpDownClient} $\ast$ {\em client}, \/  bool {\em increment})}\label{classCPartFile_a8f3d773ef4bc52c10bd7a9c608a0925a}
+
+
+Updates the requency of avilable parts from with the data the client provides. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The clients whoose available parts should be considered. \item[{\em increment}]If true, the counts are incremented, otherwise they are decremented.\end{DoxyParams}
+This functions updates the frequency list of file-\/parts, using the clients parts-\/status. This function should be called by clients every time they update their parts-\/status, or when they are added or removed from the file. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/PartFile.h\item 
+src/amule-\/remote-\/gui.cpp\item 
+src/PartFile.cpp\end{DoxyCompactItemize}

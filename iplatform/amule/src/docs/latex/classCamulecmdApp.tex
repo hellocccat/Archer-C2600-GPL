@@ -1,0 +1,62 @@
+\section{CamulecmdApp Class Reference}
+\label{classCamulecmdApp}\index{CamulecmdApp@{CamulecmdApp}}
+Inheritance diagram for CamulecmdApp::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCamulecmdApp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const wxString {\bfseries GetGreetingTitle} ()\label{classCamulecmdApp_a58d4a50fd7b4d169b34b8d563e042e43}
+
+\item 
+int {\bfseries ProcessCommand} (int ID)\label{classCamulecmdApp_a37b60b684c7803d7ea5459b10cd3a24a}
+
+\item 
+void {\bfseries Process\_\-Answer\_\-v2} (const {\bf CECPacket} $\ast$reply)\label{classCamulecmdApp_a3a5ee95fc21e769fefa37aa04627dbaf}
+
+\item 
+void {\bfseries OnInitCommandSet} ()\label{classCamulecmdApp_aceb10818b76fbaf322be0fb40b67115c}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnInitCmdLine} (wxCmdLineParser \&amuleweb\_\-parser)\label{classCamulecmdApp_acb80d7b567394067611679a205b6b950}
+
+\item 
+bool {\bfseries OnCmdLineParsed} (wxCmdLineParser \&parser)\label{classCamulecmdApp_ab16ae2d6f5947f784e5b759807e79657}
+
+\item 
+void {\bfseries TextShell} (const wxString \&prompt)\label{classCamulecmdApp_a50be5d44e28025509d5aa5144e959f67}
+
+\item 
+void {\bfseries ShowResults} (CResultMap results\_\-map)\label{classCamulecmdApp_a33036a9cf9384240261f1afb677e55be}
+
+\item 
+virtual int {\bfseries OnRun} ()\label{classCamulecmdApp_a7b0e96c53efe689af3abdb1bac99bdbc}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-HasCmdOnCmdLine}\label{classCamulecmdApp_a14014c805e29ca06cb5b19f44b289f5e}
+
+\item 
+wxString {\bfseries m\_\-CmdString}\label{classCamulecmdApp_a9840868af10431fa50ac18a321b42050}
+
+\item 
+int {\bfseries m\_\-last\_\-cmd\_\-id}\label{classCamulecmdApp_a958facbdd3c35442e2cca0bf39ed88a6}
+
+\item 
+CResultMap {\bfseries m\_\-Results\_\-map}\label{classCamulecmdApp_a56fbef3c2ea094174983cd1aacf8c2de}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/TextClient.h\item 
+src/TextClient.cpp\end{DoxyCompactItemize}

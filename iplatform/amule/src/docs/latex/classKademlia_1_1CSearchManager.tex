@@ -1,0 +1,95 @@
+\section{Kademlia::CSearchManager Class Reference}
+\label{classKademlia_1_1CSearchManager}\index{Kademlia::CSearchManager@{Kademlia::CSearchManager}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries IsSearching} (uint32\_\-t searchID)  throw ()\label{classKademlia_1_1CSearchManager_a6da7b945f61b093c72d64557ca199d9f}
+
+\item 
+static void {\bfseries StopSearch} (uint32\_\-t searchID, bool delayDelete)\label{classKademlia_1_1CSearchManager_a5b6b6ea7fac895be9f6467bfae7443a5}
+
+\item 
+static void {\bfseries StopAllSearches} ()\label{classKademlia_1_1CSearchManager_aac794b5fa87512dac398d978d6b25d56}
+
+\item 
+static {\bf CSearch} $\ast$ {\bfseries PrepareLookup} (uint32\_\-t type, bool start, const {\bf CUInt128} \&id)\label{classKademlia_1_1CSearchManager_a17d18da9e8e182be50989fa608002939}
+
+\item 
+static {\bf CSearch} $\ast$ {\bfseries PrepareFindKeywords} (const wxString \&keyword, uint32\_\-t searchTermsDataSize, const uint8\_\-t $\ast$searchTermsData, uint32\_\-t searchid)\label{classKademlia_1_1CSearchManager_ad3bbcd8801e50088f27b46d1cdd7b81b}
+
+\item 
+static bool {\bfseries StartSearch} ({\bf CSearch} $\ast$search)\label{classKademlia_1_1CSearchManager_abafc1294843c43e69c66b5715c02c316}
+
+\item 
+static void {\bfseries ProcessResponse} (const {\bf CUInt128} \&target, uint32\_\-t fromIP, uint16\_\-t fromPort, ContactList $\ast$results)\label{classKademlia_1_1CSearchManager_a506f792e3c1f9991a1cf8f3ade9648f9}
+
+\item 
+static void {\bfseries ProcessResult} (const {\bf CUInt128} \&target, const {\bf CUInt128} \&answer, TagPtrList $\ast$info)\label{classKademlia_1_1CSearchManager_accf64ad301e031587c45dd9359e72202}
+
+\item 
+static void {\bfseries ProcessPublishResult} (const {\bf CUInt128} \&target, const uint8\_\-t load, const bool loadResponse)\label{classKademlia_1_1CSearchManager_abe4f081f5d8f072624c6b4eaf12d2a69}
+
+\item 
+static void {\bfseries GetWords} (const wxString \&str, WordList $\ast$words, bool allowDuplicates=false)\label{classKademlia_1_1CSearchManager_ab65ef94dcc84dd28ab3650acf7283e2a}
+
+\item 
+static void {\bfseries UpdateStats} ()  throw ()\label{classKademlia_1_1CSearchManager_af17bfe6ae65eba1b608bd41b8c37fd78}
+
+\item 
+static bool {\bfseries AlreadySearchingFor} (const {\bf CUInt128} \&target)  throw ()\label{classKademlia_1_1CSearchManager_ab9af49914b08fd42a815e74f9f5d39be}
+
+\item 
+static const wxChar $\ast$ {\bfseries GetInvalidKeywordChars} ()\label{classKademlia_1_1CSearchManager_aa4d4200413ef50371c6881bd671a9f81}
+
+\item 
+static void {\bfseries CancelNodeFWCheckUDPSearch} ()\label{classKademlia_1_1CSearchManager_a161fa6f9deaa2a913d6d0167a89729c4}
+
+\item 
+static bool {\bfseries FindNodeFWCheckUDP} ()\label{classKademlia_1_1CSearchManager_a0339eaf6ae724218605a30753bed903c}
+
+\item 
+static bool {\bfseries IsFWCheckUDPSearch} (const {\bf CUInt128} \&target)\label{classKademlia_1_1CSearchManager_a5cc4594a148b57e4a1410a4308865aa7}
+
+\item 
+static void {\bfseries SetNextSearchID} (uint32\_\-t nextID)  throw ()\label{classKademlia_1_1CSearchManager_af7f360f99bcfc3fe588d9f923d6266ba}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries FindNode} (const {\bf CUInt128} \&id, bool complete)\label{classKademlia_1_1CSearchManager_a6eeaa7d31da037a8d439cdb392094f89}
+
+\item 
+static bool {\bfseries FindNodeSpecial} (const {\bf CUInt128} \&id, {\bf CKadClientSearcher} $\ast$requester)\label{classKademlia_1_1CSearchManager_a080a7648729c362ccdfad2f95c0f2b27}
+
+\item 
+static void {\bfseries CancelNodeSpecial} ({\bf CKadClientSearcher} $\ast$requester)\label{classKademlia_1_1CSearchManager_a711faa9265a1f8f866ccbe82f2fe8895}
+
+\item 
+static void {\bfseries JumpStart} ()\label{classKademlia_1_1CSearchManager_a39ebbe7bdf7ad7d5495162d22020465c}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\_\-t {\bfseries m\_\-nextID} = 0\label{classKademlia_1_1CSearchManager_a6585bd75290ac07ccca7cf8b9c472b1c}
+
+\item 
+static SearchMap {\bfseries m\_\-searches}\label{classKademlia_1_1CSearchManager_ac00da3e11360ba987a9c08722e329ed9}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries CRoutingZone}\label{classKademlia_1_1CSearchManager_a565f90e6553418b810b84ff686ecd82f}
+
+\item 
+class {\bfseries CKademlia}\label{classKademlia_1_1CSearchManager_aae6fe0fc4b201e36eb06a5bcab7f0112}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/kademlia/SearchManager.h\item 
+src/kademlia/kademlia/SearchManager.cpp\end{DoxyCompactItemize}

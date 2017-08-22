@@ -1,0 +1,268 @@
+\section{CSearchList Class Reference}
+\label{classCSearchList}\index{CSearchList@{CSearchList}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf CSearchParams}
+\begin{DoxyCompactList}\small\item\em Structure used to pass search-\/parameters. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSearchList} ()
+\item 
+{\bf $\sim$CSearchList} ()
+\item 
+wxString {\bf StartNewSearch} (uint32 $\ast$searchID, SearchType type, const {\bf CSearchParams} \&params)
+\item 
+void {\bf StopSearch} (bool globalOnly=false)
+\item 
+uint32 {\bf GetSearchProgress} () const 
+\item 
+void {\bf LocalSearchEnd} ()
+\item 
+const CSearchResultList \& {\bf GetSearchResults} (long searchID) const 
+\item 
+void {\bf RemoveResults} (long searchID)
+\item 
+void {\bf AddFileToDownloadByHash} (const {\bf CMD4Hash} \&hash, uint8 category=0)
+\item 
+void {\bf ProcessSharedFileList} (const byte $\ast$packet, uint32 size, {\bf CUpDownClient} $\ast$sender, bool $\ast$moreResultsAvailable, const wxString \&directory)
+\item 
+void {\bf ProcessSearchAnswer} (const uint8\_\-t $\ast$packet, uint32\_\-t size, bool optUTF8, uint32\_\-t serverIP, uint16\_\-t serverPort)
+\item 
+void {\bf ProcessUDPSearchAnswer} (const {\bf CMemFile} \&packet, bool optUTF8, uint32 serverIP, uint16 serverPort)
+\item 
+void {\bf KademliaSearchKeyword} (uint32\_\-t searchID, const {\bf Kademlia::CUInt128} $\ast$fileID, const wxString \&name, uint64\_\-t size, const wxString \&type, uint32\_\-t kadPublishInfo, const TagPtrList \&taglist)
+\item 
+void {\bf UpdateSearchFileByHash} (const {\bf CMD4Hash} \&hash)\label{classCSearchList_aba9ecd267b5429ee865db85c4c6aec83}
+
+\item 
+void {\bf SetKadSearchFinished} ()\label{classCSearchList_aef815a16a205f6e949c89a89a198caaa}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::auto\_\-ptr$<$ {\bf CMemFile} $>$ {\bf CMemFilePtr}\label{classCSearchList_a510278b86bc23b2dda72cdb2f211276f}
+
+\item 
+typedef std::map$<$ long, CSearchResultList $>$ {\bf ResultMap}\label{classCSearchList_a401a395503a99dfe42df5aedbb4f98cf}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnGlobalSearchTimer} ({\bf CTimerEvent} \&evt)
+\item 
+bool {\bf AddToList} ({\bf CSearchFile} $\ast$toadd, bool clientResponse=false)
+\item 
+{\bf CMemFilePtr} {\bf CreateSearchData} (const {\bf CSearchParams} \&params, SearchType type, bool supports64bit, bool \&packetUsing64bit)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CTimer} {\bf m\_\-searchTimer}\label{classCSearchList_ae8bf477b82f322ace6f7e686773c3112}
+
+\item 
+SearchType {\bf m\_\-searchType}\label{classCSearchList_a757397e3132df26199b12c250647922b}
+
+\item 
+bool {\bf m\_\-searchInProgress}\label{classCSearchList_a055874b561d93aeb926fc330fb04659d}
+
+\item 
+long {\bf m\_\-currentSearch}\label{classCSearchList_a3d98906c4de57ed8f67ef97e5221bee4}
+
+\item 
+{\bf CPacket} $\ast$ {\bf m\_\-searchPacket}\label{classCSearchList_a6a10338ebb32c610bf4fff66a7c0a0ae}
+
+\item 
+bool {\bf m\_\-64bitSearchPacket}\label{classCSearchList_a252f135f097d52b1155c8f776015b826}
+
+\item 
+bool {\bf m\_\-KadSearchFinished}\label{classCSearchList_a3bf8536c20632e0abb8d28787316b39b}
+
+\item 
+{\bf CQueueObserver}$<$ {\bf CServer} $\ast$ $>$ {\bf m\_\-serverQueue}
+\item 
+{\bf ResultMap} {\bf m\_\-results}\label{classCSearchList_af58dcdb05f46f2501375df218dfd7651}
+
+\item 
+wxString {\bf m\_\-resultType}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CSearchList@{CSearchList}!CSearchList@{CSearchList}}
+\index{CSearchList@{CSearchList}!CSearchList@{CSearchList}}
+\subsubsection[{CSearchList}]{\setlength{\rightskip}{0pt plus 5cm}CSearchList::CSearchList ()}\label{classCSearchList_ae6aef234c7b855c7c3cac3a51c1f1942}
+
+
+Constructor. \index{CSearchList@{CSearchList}!$\sim$CSearchList@{$\sim$CSearchList}}
+\index{$\sim$CSearchList@{$\sim$CSearchList}!CSearchList@{CSearchList}}
+\subsubsection[{$\sim$CSearchList}]{\setlength{\rightskip}{0pt plus 5cm}CSearchList::$\sim$CSearchList ()}\label{classCSearchList_adbb1f58c09eed601d1b7684b541f78ba}
+
+
+Frees any remaining search-\/results. 
+
+References m\_\-results, RemoveResults(), and StopSearch().
+
+\subsection{Member Function Documentation}
+\index{CSearchList@{CSearchList}!AddFileToDownloadByHash@{AddFileToDownloadByHash}}
+\index{AddFileToDownloadByHash@{AddFileToDownloadByHash}!CSearchList@{CSearchList}}
+\subsubsection[{AddFileToDownloadByHash}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::AddFileToDownloadByHash (const {\bf CMD4Hash} \& {\em hash}, \/  uint8 {\em category} = {\ttfamily 0})}\label{classCSearchList_a0184f152c0b0cfc023bf77bd76764fb6}
+
+
+Finds the search-\/result (by hash) and downloads it in the given category. 
+
+References m\_\-results.\index{CSearchList@{CSearchList}!AddToList@{AddToList}}
+\index{AddToList@{AddToList}!CSearchList@{CSearchList}}
+\subsubsection[{AddToList}]{\setlength{\rightskip}{0pt plus 5cm}bool CSearchList::AddToList ({\bf CSearchFile} $\ast$ {\em toadd}, \/  bool {\em clientResponse} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSearchList_a93f14a2ea7a5f13bc33817b14fd4bbe2}
+
+
+Adds the specified file to the current search's results. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toadd}]The result to add. \item[{\em clientResponse}]Is the result sent by a client (shared-\/files list). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the results were added, false otherwise.
+\end{DoxyReturn}
+Note that this function takes ownership of the \doxyref{CSearchFile}{p.}{classCSearchFile} object, regardless of whenever or not it was actually added to the results list. 
+
+References CSearchFile::AddChild(), CSearchFile::GetSearchID(), m\_\-results, and m\_\-resultType.
+
+Referenced by KademliaSearchKeyword(), ProcessSearchAnswer(), ProcessSharedFileList(), and ProcessUDPSearchAnswer().\index{CSearchList@{CSearchList}!CreateSearchData@{CreateSearchData}}
+\index{CreateSearchData@{CreateSearchData}!CSearchList@{CSearchList}}
+\subsubsection[{CreateSearchData}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CSearchList::CMemFilePtr} CSearchList::CreateSearchData (const {\bf CSearchParams} \& {\em params}, \/  SearchType {\em type}, \/  bool {\em supports64bit}, \/  bool \& {\em packetUsing64bit})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSearchList_ab8c7071d5cce7b90221f89c4d572d4f9}
+
+
+Create a basic search-\/packet for the given search-\/type. 
+
+References CSearchList::CSearchParams::availability, CSearchList::CSearchParams::extension, CSearchList::CSearchParams::maxSize, CSearchList::CSearchParams::minSize, CSearchList::CSearchParams::searchString, and CSearchList::CSearchParams::typeText.
+
+Referenced by StartNewSearch().\index{CSearchList@{CSearchList}!GetSearchProgress@{GetSearchProgress}}
+\index{GetSearchProgress@{GetSearchProgress}!CSearchList@{CSearchList}}
+\subsubsection[{GetSearchProgress}]{\setlength{\rightskip}{0pt plus 5cm}uint32 CSearchList::GetSearchProgress () const}\label{classCSearchList_aa57ad724b3c507071928b1854df3f3c2}
+
+
+Returns the completion percentage of the current search. 
+
+References CQueueObserver$<$ ValueType $>$::GetRemaining(), m\_\-KadSearchFinished, m\_\-searchInProgress, m\_\-searchType, and m\_\-serverQueue.
+
+Referenced by OnGlobalSearchTimer().\index{CSearchList@{CSearchList}!GetSearchResults@{GetSearchResults}}
+\index{GetSearchResults@{GetSearchResults}!CSearchList@{CSearchList}}
+\subsubsection[{GetSearchResults}]{\setlength{\rightskip}{0pt plus 5cm}const CSearchResultList \& CSearchList::GetSearchResults (long {\em searchID}) const}\label{classCSearchList_a3840c7c90d9f0a35b70e63ed0f0e6dcc}
+
+
+Returns the list of results for the specified search. If the search is not valid, an empty list is returned. 
+
+References m\_\-results.\index{CSearchList@{CSearchList}!KademliaSearchKeyword@{KademliaSearchKeyword}}
+\index{KademliaSearchKeyword@{KademliaSearchKeyword}!CSearchList@{CSearchList}}
+\subsubsection[{KademliaSearchKeyword}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::KademliaSearchKeyword (uint32\_\-t {\em searchID}, \/  const {\bf Kademlia::CUInt128} $\ast$ {\em fileID}, \/  const wxString \& {\em name}, \/  uint64\_\-t {\em size}, \/  const wxString \& {\em type}, \/  uint32\_\-t {\em kadPublishInfo}, \/  const TagPtrList \& {\em taglist})}\label{classCSearchList_ae846f14c06247a95a098055414883cf4}
+
+
+Adds a result in the form of a kad search-\/keyword to the specified result-\/list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em searchID}]The search to which this result belongs. \item[{\em fileID}]The hash of the result-\/file. \item[{\em name}]The filename of the result. \item[{\em size}]The filesize of the result. \item[{\em type}]The filetype of the result (TODO: Not used?) \item[{\em kadPublishInfo}]The kademlia publish information of the result. \item[{\em taglist}]List of additional tags associated with the search-\/result. \end{DoxyParams}
+
+
+References AddToList(), CMemFile::GetPosition(), and CFileDataIO::Seek().\index{CSearchList@{CSearchList}!LocalSearchEnd@{LocalSearchEnd}}
+\index{LocalSearchEnd@{LocalSearchEnd}!CSearchList@{CSearchList}}
+\subsubsection[{LocalSearchEnd}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::LocalSearchEnd ()}\label{classCSearchList_af8aec4e1da67cf5bcd2b67060c9b4192}
+
+
+This function is called once the local (ed2k) search has ended. 
+
+References m\_\-searchInProgress, m\_\-searchPacket, m\_\-searchTimer, m\_\-searchType, m\_\-serverQueue, and CTimer::Start().\index{CSearchList@{CSearchList}!OnGlobalSearchTimer@{OnGlobalSearchTimer}}
+\index{OnGlobalSearchTimer@{OnGlobalSearchTimer}!CSearchList@{CSearchList}}
+\subsubsection[{OnGlobalSearchTimer}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::OnGlobalSearchTimer ({\bf CTimerEvent} \& {\em evt})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSearchList_a211326108f7dc53f84d9736a1b083ecd}
+
+
+Event-\/handler for global searches. 
+
+References CMemFile::GetLength(), CQueueObserver$<$ ValueType $>$::GetNext(), CQueueObserver$<$ ValueType $>$::GetRemaining(), GetSearchProgress(), CQueueObserver$<$ ValueType $>$::IsActive(), m\_\-64bitSearchPacket, m\_\-searchPacket, m\_\-serverQueue, and StopSearch().\index{CSearchList@{CSearchList}!ProcessSearchAnswer@{ProcessSearchAnswer}}
+\index{ProcessSearchAnswer@{ProcessSearchAnswer}!CSearchList@{CSearchList}}
+\subsubsection[{ProcessSearchAnswer}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::ProcessSearchAnswer (const uint8\_\-t $\ast$ {\em packet}, \/  uint32\_\-t {\em size}, \/  bool {\em optUTF8}, \/  uint32\_\-t {\em serverIP}, \/  uint16\_\-t {\em serverPort})}\label{classCSearchList_a3015a7186fe86637c13b832ee21283a6}
+
+
+Processes a search-\/result sent via TCP from the local server. All results are added.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The packet containing one or more search-\/results. \item[{\em size}]the length of the packet. \item[{\em optUTF8}]Specifies if the server supports UTF8. \item[{\em serverIP}]The IP of the server sending the results. \item[{\em serverPort}]The Port of the server sending the results. \end{DoxyParams}
+
+
+References AddToList(), and m\_\-currentSearch.\index{CSearchList@{CSearchList}!ProcessSharedFileList@{ProcessSharedFileList}}
+\index{ProcessSharedFileList@{ProcessSharedFileList}!CSearchList@{CSearchList}}
+\subsubsection[{ProcessSharedFileList}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::ProcessSharedFileList (const byte $\ast$ {\em packet}, \/  uint32 {\em size}, \/  {\bf CUpDownClient} $\ast$ {\em sender}, \/  bool $\ast$ {\em moreResultsAvailable}, \/  const wxString \& {\em directory})}\label{classCSearchList_ad8cfc4ba3bce4983d61b86d7f3a7cc6e}
+
+
+Processes a list of shared files from a client. 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The raw packet received from the client. \item[{\em size}]the length of the packet. \item[{\em sender}]The sender of the packet. \item[{\em moreResultsAvailable}]Set to a value specifying if more results are available. \item[{\em directory}]The directory containing the shared files. \end{DoxyParams}
+
+
+References AddToList(), CMemFile::GetLength(), CMemFile::GetPosition(), and CFileDataIO::ReadUInt8().\index{CSearchList@{CSearchList}!ProcessUDPSearchAnswer@{ProcessUDPSearchAnswer}}
+\index{ProcessUDPSearchAnswer@{ProcessUDPSearchAnswer}!CSearchList@{CSearchList}}
+\subsubsection[{ProcessUDPSearchAnswer}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::ProcessUDPSearchAnswer (const {\bf CMemFile} \& {\em packet}, \/  bool {\em optUTF8}, \/  uint32 {\em serverIP}, \/  uint16 {\em serverPort})}\label{classCSearchList_ac2bc4a312977953d29708ef32d6541f5}
+
+
+Processes a search-\/result sent via UDP. Only one result is read from the packet.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The packet containing one or more search-\/results. \item[{\em optUTF8}]Specifies if the server supports UTF8. \item[{\em serverIP}]The IP of the server sending the results. \item[{\em serverPort}]The Port of the server sending the results. \end{DoxyParams}
+
+
+References AddToList(), and m\_\-currentSearch.\index{CSearchList@{CSearchList}!RemoveResults@{RemoveResults}}
+\index{RemoveResults@{RemoveResults}!CSearchList@{CSearchList}}
+\subsubsection[{RemoveResults}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::RemoveResults (long {\em searchID})}\label{classCSearchList_a91d81d209467d2ac3082f0b2c0133188}
+
+
+Removes all results for the specified search. 
+
+References m\_\-results, and StopSearch().
+
+Referenced by $\sim$CSearchList().\index{CSearchList@{CSearchList}!StartNewSearch@{StartNewSearch}}
+\index{StartNewSearch@{StartNewSearch}!CSearchList@{CSearchList}}
+\subsubsection[{StartNewSearch}]{\setlength{\rightskip}{0pt plus 5cm}wxString CSearchList::StartNewSearch (uint32 $\ast$ {\em searchID}, \/  SearchType {\em type}, \/  const {\bf CSearchParams} \& {\em params})}\label{classCSearchList_a4bfffa3fc0ebb8b29b4b162600973cfc}
+
+
+Starts a new search. 
+\begin{DoxyParams}{Parameters}
+\item[{\em searchID}]The ID of the search, which may be modified. \item[{\em type}]The type of search, see SearchType. \item[{\em params}]The search parameters, see \doxyref{CSearchParams}{p.}{structCSearchList_1_1CSearchParams}. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An empty string on success, otherwise an error-\/message. 
+\end{DoxyReturn}
+
+
+References CreateSearchData(), m\_\-64bitSearchPacket, m\_\-currentSearch, m\_\-KadSearchFinished, m\_\-resultType, m\_\-searchInProgress, m\_\-searchPacket, m\_\-searchType, CSearchList::CSearchParams::searchString, StopSearch(), and CSearchList::CSearchParams::typeText.\index{CSearchList@{CSearchList}!StopSearch@{StopSearch}}
+\index{StopSearch@{StopSearch}!CSearchList@{CSearchList}}
+\subsubsection[{StopSearch}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchList::StopSearch (bool {\em globalOnly} = {\ttfamily false})}\label{classCSearchList_a508b1d1a72d74c337bff6150c2f09b97}
+
+
+Stops the current search (global or Kad), if any is in progress. 
+
+References m\_\-currentSearch, m\_\-searchInProgress, m\_\-searchPacket, m\_\-searchTimer, m\_\-searchType, and CTimer::Stop().
+
+Referenced by OnGlobalSearchTimer(), RemoveResults(), StartNewSearch(), and $\sim$CSearchList().
+
+\subsection{Member Data Documentation}
+\index{CSearchList@{CSearchList}!m\_\-resultType@{m\_\-resultType}}
+\index{m\_\-resultType@{m\_\-resultType}!CSearchList@{CSearchList}}
+\subsubsection[{m\_\-resultType}]{\setlength{\rightskip}{0pt plus 5cm}wxString {\bf CSearchList::m\_\-resultType}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSearchList_ae1ce5321a4d68fbdd4edb2f339853a9f}
+
+
+Contains the results type desired in the current search. If not empty, results of different types are filtered. 
+
+Referenced by AddToList(), and StartNewSearch().\index{CSearchList@{CSearchList}!m\_\-serverQueue@{m\_\-serverQueue}}
+\index{m\_\-serverQueue@{m\_\-serverQueue}!CSearchList@{CSearchList}}
+\subsubsection[{m\_\-serverQueue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CQueueObserver}$<${\bf CServer}$\ast$$>$ {\bf CSearchList::m\_\-serverQueue}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSearchList_a201ded6fe7f4a612e86c8070667e2d15}
+
+
+Queue of servers to ask when doing global searches. TODO: Replace with 'cookie' system. 
+
+Referenced by GetSearchProgress(), LocalSearchEnd(), and OnGlobalSearchTimer().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SearchList.h\item 
+src/SearchList.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,14 @@
+diff --git a/xl2tpd.c b/xl2tpd.c
+index 3fb6dd7..74be891 100644
+--- a/xl2tpd.c
++++ b/xl2tpd.c
+@@ -244,7 +244,8 @@ void child_handler (int signal)
+                         l2tp_log (LOG_DEBUG, "%s : pppd exited for call %d for unknown reason\n", __FUNCTION__,
+                          c->cid );
+                     }
+-                    c->needclose = -1;
++                    c->needclose = 0;
++                    c->closing = -1;
+                     /* 
+                      * OK...pppd died, we can go ahead and close the pty for
+                      * it

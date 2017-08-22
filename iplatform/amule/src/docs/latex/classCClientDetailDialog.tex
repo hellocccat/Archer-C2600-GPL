@@ -1,0 +1,72 @@
+\section{CClientDetailDialog Class Reference}
+\label{classCClientDetailDialog}\index{CClientDetailDialog@{CClientDetailDialog}}
+
+
+The ClientDetailDialog class is responsible for showing the info about a client.  
+
+
+{\ttfamily \#include $<$ClientDetailDialog.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CClientDetailDialog} (wxWindow $\ast$parent, const {\bf CClientRef} \&client)
+\item 
+virtual {\bf $\sim$CClientDetailDialog} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf OnInitDialog} ()
+\item 
+void {\bf OnBnClose} (wxCommandEvent \&evt)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CClientRef} {\bf m\_\-client}\label{classCClientDetailDialog_a5a1dda08c572524a7de1abe30fece5a1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The ClientDetailDialog class is responsible for showing the info about a client. It shows all releavant data about the client: ip, port, hash, name, client type and version, uploading/downloading data, credits, server... etc
+
+It's wxDialog, modal, with return value always '0'. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CClientDetailDialog@{CClientDetailDialog}!CClientDetailDialog@{CClientDetailDialog}}
+\index{CClientDetailDialog@{CClientDetailDialog}!CClientDetailDialog@{CClientDetailDialog}}
+\subsubsection[{CClientDetailDialog}]{\setlength{\rightskip}{0pt plus 5cm}CClientDetailDialog::CClientDetailDialog (wxWindow $\ast$ {\em parent}, \/  const {\bf CClientRef} \& {\em client})}\label{classCClientDetailDialog_afe0a198e8d11fc8ee989b5228696ac88}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em parent}]The window that created the dialog. \item[{\em client}]The client whose details we're showing. \end{DoxyParams}
+\index{CClientDetailDialog@{CClientDetailDialog}!$\sim$CClientDetailDialog@{$\sim$CClientDetailDialog}}
+\index{$\sim$CClientDetailDialog@{$\sim$CClientDetailDialog}!CClientDetailDialog@{CClientDetailDialog}}
+\subsubsection[{$\sim$CClientDetailDialog}]{\setlength{\rightskip}{0pt plus 5cm}CClientDetailDialog::$\sim$CClientDetailDialog ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCClientDetailDialog_ac1e10f1f66b43cccd83182b1acd38c8c}
+
+
+Destructor. Does nothing currently. 
+
+\subsection{Member Function Documentation}
+\index{CClientDetailDialog@{CClientDetailDialog}!OnBnClose@{OnBnClose}}
+\index{OnBnClose@{OnBnClose}!CClientDetailDialog@{CClientDetailDialog}}
+\subsubsection[{OnBnClose}]{\setlength{\rightskip}{0pt plus 5cm}void CClientDetailDialog::OnBnClose (wxCommandEvent \& {\em evt})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCClientDetailDialog_a49ad952d3cf4b0f35bdf65092a316c0a}
+
+
+Ends the dialog, calling EndModal with return value 0. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]The close event, unused right now \end{DoxyParams}
+\index{CClientDetailDialog@{CClientDetailDialog}!OnInitDialog@{OnInitDialog}}
+\index{OnInitDialog@{OnInitDialog}!CClientDetailDialog@{CClientDetailDialog}}
+\subsubsection[{OnInitDialog}]{\setlength{\rightskip}{0pt plus 5cm}bool CClientDetailDialog::OnInitDialog ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCClientDetailDialog_a5b8dc4fedf94b3543ce8792acb80bdbc}
+
+
+Creates all the data objects in the dialog, filling them accordingly. Called when the dialog object is created. 
+
+References CMD4Hash::IsEmpty(), m\_\-client, and CPath::TruncatePath().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ClientDetailDialog.h\item 
+src/ClientDetailDialog.cpp\end{DoxyCompactItemize}

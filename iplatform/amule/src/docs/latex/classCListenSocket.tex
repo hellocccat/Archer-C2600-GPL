@@ -1,0 +1,107 @@
+\section{CListenSocket Class Reference}
+\label{classCListenSocket}\index{CListenSocket@{CListenSocket}}
+Inheritance diagram for CListenSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCListenSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CListenSocket} (wxIPaddress \&addr, const {\bf CProxyData} $\ast$ProxyData=NULL)\label{classCListenSocket_abed8dde0fddd6f0c48259a9c8bffae27}
+
+\item 
+bool {\bfseries StartListening} ()\label{classCListenSocket_af6edfc4b70f7c8d63680f9de588972ee}
+
+\item 
+void {\bfseries StopListening} ()\label{classCListenSocket_aff25129b0e3073d23f49a2b51d41b777}
+
+\item 
+void {\bfseries OnAccept} (int nErrorCode)\label{classCListenSocket_a972791faffb049c20e29ae643c21fcd0}
+
+\item 
+void {\bfseries Process} ()\label{classCListenSocket_af2fb5ea16956bd7d7ecff0ac792000a0}
+
+\item 
+void {\bfseries RemoveSocket} ({\bf CClientTCPSocket} $\ast$todel)\label{classCListenSocket_ad973550ed7deb86a84c17569c974c24f}
+
+\item 
+void {\bfseries AddSocket} ({\bf CClientTCPSocket} $\ast$toadd)\label{classCListenSocket_ab43084c687c501f6371abae450719305}
+
+\item 
+uint32 {\bfseries GetOpenSockets} ()\label{classCListenSocket_a76d62bfe6f7da88fd51c75d3eeb905cc}
+
+\item 
+void {\bfseries KillAllSockets} ()\label{classCListenSocket_ae6cf87308b1eddbb21e802f17347f162}
+
+\item 
+bool {\bfseries TooManySockets} (bool bIgnoreInterval=false)\label{classCListenSocket_a941d953046dfcc55b33528f6c9d20faa}
+
+\item 
+bool {\bfseries IsValidSocket} ({\bf CClientTCPSocket} $\ast$totest)\label{classCListenSocket_ad606d8021065d7bb02a3fad8dea9c177}
+
+\item 
+void {\bfseries AddConnection} ()\label{classCListenSocket_a0a44f2499ea59f99c8a9a7fd8da3f8f8}
+
+\item 
+void {\bfseries RecalculateStats} ()\label{classCListenSocket_a4d921b1418aa9c87dafefb127e4a5030}
+
+\item 
+void {\bfseries ReStartListening} ()\label{classCListenSocket_add37d182638d4b57579c8e6736099c7d}
+
+\item 
+void {\bfseries UpdateConnectionsStatus} ()\label{classCListenSocket_a88e0ac5566c6ade9622434d272d4bf49}
+
+\item 
+float {\bfseries GetMaxConperFiveModifier} ()\label{classCListenSocket_a8a26ef69fe0c18358cc39b53f4d8f335}
+
+\item 
+uint32 {\bfseries GetTotalConnectionChecks} ()\label{classCListenSocket_a8b47c4c1868191529ad31904f33a6198}
+
+\item 
+float {\bfseries GetAverageConnections} ()\label{classCListenSocket_a6d0ca4852eafe5be924acfd4aa57695a}
+
+\item 
+bool {\bfseries OnShutdown} ()\label{classCListenSocket_ae43c78d2680696af61f283fd186a36bd}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::set$<$ {\bf CClientTCPSocket} $\ast$ $>$ {\bfseries SocketSet}\label{classCListenSocket_abfb21e84e95296234141d3a50d36a351}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SocketSet {\bfseries socket\_\-list}\label{classCListenSocket_a9ef9514b057ddb37e1cd4f5aac1f3dba}
+
+\item 
+bool {\bfseries bListening}\label{classCListenSocket_a7d52581efdbb621024b83c78ffbc1e33}
+
+\item 
+bool {\bfseries shutdown}\label{classCListenSocket_a601ef6db4db1b29c6fef4a3e6c42403b}
+
+\item 
+uint16 {\bfseries m\_\-OpenSocketsInterval}\label{classCListenSocket_a2c12abd1c7f4eb52bbda6a60c429c89c}
+
+\item 
+uint16 {\bfseries m\_\-ConnectionStates} [3]\label{classCListenSocket_ad552f68a06523742cb6c8551f1be4863}
+
+\item 
+uint16 {\bfseries m\_\-nPeningConnections}\label{classCListenSocket_a3281be80f5c7810132faba2646502565}
+
+\item 
+uint32 {\bfseries totalconnectionchecks}\label{classCListenSocket_a5404cbd780a30a9bd8f05198335dc66d}
+
+\item 
+float {\bfseries averageconnections}\label{classCListenSocket_a2a9a8ae7fb110a7a181b978437634774}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ListenSocket.h\item 
+src/ListenSocket.cpp\end{DoxyCompactItemize}

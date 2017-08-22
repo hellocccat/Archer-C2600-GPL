@@ -1,0 +1,79 @@
+\section{CWebSocket Class Reference}
+\label{classCWebSocket}\index{CWebSocket@{CWebSocket}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CChunk}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CWebSocket} ({\bf CWebServerBase} $\ast$parent)\label{classCWebSocket_acd8404c5226d9b27dab23a135c4243f5}
+
+\item 
+void {\bfseries OnError} ()\label{classCWebSocket_ab73038c4726acfcc345212bc7897fddb}
+
+\item 
+void {\bfseries OnLost} ()\label{classCWebSocket_ac472512ad26dbc48c0d9673dc11c9265}
+
+\item 
+void {\bfseries OnInput} ()\label{classCWebSocket_a462b55451392bb593b64dfe224a47668}
+
+\item 
+void {\bfseries OnOutput} ()\label{classCWebSocket_a70bed226aa305e0a5b22bdeb209a72b2}
+
+\item 
+void {\bfseries OnRequestReceived} (char $\ast$pHeader, char $\ast$pData, uint32 dwDataLen)\label{classCWebSocket_a505ece47a7485c2d6bb8046600088aa1}
+
+\item 
+void {\bfseries SendContent} (const char $\ast$szStdResponse, const void $\ast$pContent, uint32 dwContentSize)\label{classCWebSocket_ae3cec98945778ad18592e38f3f1dd202}
+
+\item 
+void {\bfseries SendData} (const void $\ast$pData, uint32 dwDataSize)\label{classCWebSocket_aa8bd098a24f98deee61ce4e659a22a30}
+
+\item 
+void {\bfseries SendHttpHeaders} (const char $\ast$szType, bool use\_\-gzip, uint32 content\_\-len, int session\_\-id)\label{classCWebSocket_a410163059c8bb1d0f60288b19aaf7c6f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CWebServerBase} $\ast$ {\bfseries m\_\-pParent}\label{classCWebSocket_aa7eddb5530d7e5777d057b257ecbe881}
+
+\item 
+{\bf CChunk} $\ast$ {\bfseries m\_\-pHead}\label{classCWebSocket_a235d4d00649c69fafbb7290bbba2ee8d}
+
+\item 
+{\bf CChunk} $\ast$ {\bfseries m\_\-pTail}\label{classCWebSocket_a047b5909e8873465cfd1633af3bb8d33}
+
+\item 
+bool {\bfseries m\_\-IsGet}\label{classCWebSocket_a0f0605fc569023b10873c3834e73a75f}
+
+\item 
+bool {\bfseries m\_\-IsPost}\label{classCWebSocket_abe16a8f7de4bfe81c81fbec4792a5536}
+
+\item 
+char $\ast$ {\bfseries m\_\-Cookie}\label{classCWebSocket_a1a68c62fd7969f1de48d00e244805c3e}
+
+\item 
+char $\ast$ {\bfseries m\_\-pBuf}\label{classCWebSocket_ab0babbd04b0e31bbd36d2b2bb2269e98}
+
+\item 
+uint32 {\bfseries m\_\-dwBufSize}\label{classCWebSocket_ac223a3a99e7bef45ca7f696ddf0b436c}
+
+\item 
+uint32 {\bfseries m\_\-dwRecv}\label{classCWebSocket_a970700ead9582940c978bfad519b04f8}
+
+\item 
+uint32 {\bfseries m\_\-dwHttpHeaderLen}\label{classCWebSocket_a1069604caac1a636aa93522e263efae6}
+
+\item 
+uint32 {\bfseries m\_\-dwHttpContentLen}\label{classCWebSocket_a5932995e28dc0022ec2a38a36d22ddeb}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebSocket.h\item 
+src/webserver/src/WebSocket.cpp\end{DoxyCompactItemize}

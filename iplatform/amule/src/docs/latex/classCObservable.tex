@@ -1,0 +1,128 @@
+\section{CObservable$<$ EventType $>$ Class Template Reference}
+\label{classCObservable}\index{CObservable@{CObservable}}
+
+
+This class implements the Observable part of the Observer/Observable pattern.  
+
+
+{\ttfamily \#include $<$Observable.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf CObserver}$<$ EventType $>$ {\bf ObserverType}\label{classCObservable_adc7d1236f990ed0ee7ef61f1d8a15174}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$CObservable} ()\label{classCObservable_ae5a0572fa2ab1da8ebcbedc217585c79}
+
+\item 
+bool {\bf AddObserver} ({\bf ObserverType} $\ast$o)
+\item 
+bool {\bf RemoveObserver} ({\bf ObserverType} $\ast$o)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf NotifyObservers} (const EventType \&e, {\bf ObserverType} $\ast$o=NULL)
+\item 
+void {\bf RemoveAllObservers} ()
+\item 
+virtual void {\bf ObserverAdded} ({\bf ObserverType} $\ast$)\label{classCObservable_a99256f5af7a380420df2615068e73506}
+
+\item 
+virtual void {\bf ObserverRemoved} ({\bf ObserverType} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::set$<$ {\bf ObserverType} $\ast$ $>$ {\bfseries ObserverSetType}\label{classCObservable_a5533e267b73a61aedeebea143a0db402}
+
+\item 
+typedef ObserverSetType::iterator {\bfseries myIteratorType}\label{classCObservable_a51d2d31ab5ecffeeec6c7efbaaff167a}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxMutex {\bf m\_\-mutex}\label{classCObservable_a6b003f2e54e66249cb4a0ed81ed239fb}
+
+\item 
+ObserverSetType {\bf m\_\-list}\label{classCObservable_a67774b6d5b6bbc0da9817ac7de6f1806}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CObserver$<$ EventType $>$}\label{classCObservable_aa392a499ab3536e0378e3ee953ed6d18}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename EventType$>$ class CObservable$<$ EventType $>$}
+
+This class implements the Observable part of the Observer/Observable pattern. 
+
+\subsection{Member Function Documentation}
+\index{CObservable@{CObservable}!AddObserver@{AddObserver}}
+\index{AddObserver@{AddObserver}!CObservable@{CObservable}}
+\subsubsection[{AddObserver}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename EventType$>$ bool {\bf CObservable}$<$ EventType $>$::AddObserver ({\bf ObserverType} $\ast$ {\em o})}\label{classCObservable_a5fc70bbb305c071d6e66c988a6dd0bf8}
+
+
+This function subscribes an observer to events from this observable. 
+\begin{DoxyParams}{Parameters}
+\item[{\em o}]The observer that wishes to observe this object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it succesfully subscribed, false otherwise.
+\end{DoxyReturn}
+If the subscription was succesful, \doxyref{ObserverAdded()}{p.}{classCObservable_a99256f5af7a380420df2615068e73506} will be called on \char`\"{}o\char`\"{}, allowing the subclass to initialize the the observer's state. 
+
+Referenced by CQueueObserver$<$ ValueType $>$::Reset().\index{CObservable@{CObservable}!NotifyObservers@{NotifyObservers}}
+\index{NotifyObservers@{NotifyObservers}!CObservable@{CObservable}}
+\subsubsection[{NotifyObservers}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename EventType$>$ void {\bf CObservable}$<$ EventType $>$::NotifyObservers (const EventType \& {\em e}, \/  {\bf ObserverType} $\ast$ {\em o} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCObservable_a15f6876f44512d3e2413da40807e812b}
+
+
+This function notifies all or an specific observer of an event. 
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]The event to be published. \item[{\em o}]A specific subscribing observer or NULL for all subscribers.\end{DoxyParams}
+The purpose of the second parameter is to allow notifications of specific observers when the \doxyref{ObserverAdded()}{p.}{classCObservable_a99256f5af7a380420df2615068e73506} or \doxyref{ObserverRemoved()}{p.}{classCObservable_a5050346da3c04efab7b7cbd5e0823521} functions are called and it should not be used outside of these functions. 
+
+References CObservable$<$ EventType $>$::m\_\-list, CObservable$<$ EventType $>$::m\_\-mutex, and CObserver$<$ EventType $>$::ReceiveNotification().\index{CObservable@{CObservable}!ObserverRemoved@{ObserverRemoved}}
+\index{ObserverRemoved@{ObserverRemoved}!CObservable@{CObservable}}
+\subsubsection[{ObserverRemoved}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename EventType$>$ virtual void {\bf CObservable}$<$ EventType $>$::ObserverRemoved ({\bf ObserverType} $\ast$)\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCObservable_a5050346da3c04efab7b7cbd5e0823521}
+
+
+This function is called when observers are removed from the observable. Exceptions to this are:
+\begin{DoxyItemize}
+\item When the Observable is being destroyed.
+\item When the Observer is being destroyed. 
+\end{DoxyItemize}
+
+Reimplemented in {\bf CObservableQueue$<$ CServer $\ast$ $>$} \doxyref{}{p.}{classCObservableQueue_a44ec0728fdb05d60d2c5a5cf77685a86}, and {\bf CObservableQueue$<$ CPartFile $\ast$ $>$} \doxyref{}{p.}{classCObservableQueue_a44ec0728fdb05d60d2c5a5cf77685a86}.
+
+Referenced by CObservable$<$ EventType $>$::RemoveAllObservers().\index{CObservable@{CObservable}!RemoveAllObservers@{RemoveAllObservers}}
+\index{RemoveAllObservers@{RemoveAllObservers}!CObservable@{CObservable}}
+\subsubsection[{RemoveAllObservers}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename EventType $>$ void {\bf CObservable}$<$ EventType $>$::RemoveAllObservers ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCObservable_a15e0c85c8c1c73db0b04407c897cdcea}
+
+
+This function removes all observers from this object. ObserverRemoved is called on each observer. 
+
+References CObserver$<$ EventType $>$::m\_\-list, CObservable$<$ EventType $>$::m\_\-list, CObserver$<$ EventType $>$::m\_\-mutex, CObservable$<$ EventType $>$::m\_\-mutex, and CObservable$<$ EventType $>$::ObserverRemoved().\index{CObservable@{CObservable}!RemoveObserver@{RemoveObserver}}
+\index{RemoveObserver@{RemoveObserver}!CObservable@{CObservable}}
+\subsubsection[{RemoveObserver}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename EventType$>$ bool {\bf CObservable}$<$ EventType $>$::RemoveObserver ({\bf ObserverType} $\ast$ {\em o})}\label{classCObservable_a642252ed76bc60650cc82a118dacd9c9}
+
+
+This function removes an observer from the list of subscribers. 
+\begin{DoxyParams}{Parameters}
+\item[{\em o}]The observer to unsubscribe from this observable. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the observer was removed, false otherwise.
+\end{DoxyReturn}
+\doxyref{ObserverRemoved()}{p.}{classCObservable_a5050346da3c04efab7b7cbd5e0823521} will be called for the observer \char`\"{}o\char`\"{}, allowing the subclass to take steps to avoid outdated data being kept. 
+
+Referenced by CQueueObserver$<$ ValueType $>$::Reset().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Observable.h\end{DoxyCompactItemize}

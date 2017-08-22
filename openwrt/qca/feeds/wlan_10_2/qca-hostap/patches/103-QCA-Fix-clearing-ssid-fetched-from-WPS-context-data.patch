@@ -1,0 +1,12 @@
+diff --git a/src/ap/wps_hostapd.c b/src/ap/wps_hostapd.c
+index 1af2eb3..3f733db 100644
+--- a/src/ap/wps_hostapd.c
++++ b/src/ap/wps_hostapd.c
+@@ -328,6 +328,7 @@ static int hapd_wps_cred_cb(struct hostapd_data *hapd, void *ctx)
+ 	if (hapd->conf->wps_cred_processing == 1)
+ 		return 0;
+ 
++	os_memset(hapd->wps->ssid, 0, sizeof(hapd->wps->ssid));
+ 	os_memcpy(hapd->wps->ssid, cred->ssid, cred->ssid_len);
+ 	hapd->wps->ssid_len = cred->ssid_len;
+ 	hapd->wps->encr_types = cred->encr_type;

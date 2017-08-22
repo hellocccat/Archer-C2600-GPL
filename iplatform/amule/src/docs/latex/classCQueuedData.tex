@@ -1,0 +1,62 @@
+\section{CQueuedData Class Reference}
+\label{classCQueuedData}\index{CQueuedData@{CQueuedData}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CQueuedData} (size\_\-t len)\label{classCQueuedData_aacf1b81da2a1557c939eeaaec53c6fbb}
+
+\item 
+void {\bfseries Rewind} ()\label{classCQueuedData_ab118bac1d1a5590ff132ad8ec292b6c0}
+
+\item 
+void {\bfseries Write} (const void $\ast$data, size\_\-t len)\label{classCQueuedData_afb17e0f6e31432e880afa10ddcd80661}
+
+\item 
+void {\bfseries WriteAt} (const void $\ast$data, size\_\-t len, size\_\-t off)\label{classCQueuedData_aeb12b1a931501268d14d1690d67bbcb5}
+
+\item 
+void {\bfseries Read} (void $\ast$data, size\_\-t len)\label{classCQueuedData_a83553698de396217b32f3664d8816d8e}
+
+\item 
+void {\bfseries ToZlib} (z\_\-stream \&m\_\-z)\label{classCQueuedData_aa8bbe563549686570dfb2ed4321400af}
+
+\item 
+void {\bfseries WriteToSocket} ({\bf CECSocket} $\ast$sock)\label{classCQueuedData_ad8a8c9b5b1fb0bf21b43743940119d49}
+
+\item 
+void {\bfseries ReadFromSocket} ({\bf CECSocket} $\ast$sock, size\_\-t len)\label{classCQueuedData_ac4809c64f7db0a03610c063af20b6e8a}
+
+\item 
+size\_\-t {\bfseries ReadFromSocketAll} ({\bf CECSocket} $\ast$sock, size\_\-t len)\label{classCQueuedData_a2d24ef468780cedf6c9a10e3eac0ed4d}
+
+\item 
+size\_\-t {\bfseries GetLength} () const \label{classCQueuedData_a8b4118c42087ed91e0648d649a22e868}
+
+\item 
+size\_\-t {\bfseries GetDataLength} () const \label{classCQueuedData_a3d912c6d9604f161934c5ede0e05f723}
+
+\item 
+size\_\-t {\bfseries GetRemLength} () const \label{classCQueuedData_a72ce623954f2cdc860fba1836758daa9}
+
+\item 
+size\_\-t {\bfseries GetUnreadDataLength} () const \label{classCQueuedData_ad61ee6699e7d1bd427cdbb22d6e161aa}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ unsigned char $>$ {\bfseries m\_\-data}\label{classCQueuedData_a03fa9ec6d9776966a37fc5e45afa227b}
+
+\item 
+unsigned char $\ast$ {\bfseries m\_\-rd\_\-ptr}\label{classCQueuedData_a7b037e049fff90276cffd9a8af79a5e2}
+
+\item 
+unsigned char $\ast$ {\bfseries m\_\-wr\_\-ptr}\label{classCQueuedData_a7473a159b16c14dd6abe7897e1772752}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECSocket.h\item 
+src/libs/ec/cpp/ECSocket.cpp\end{DoxyCompactItemize}

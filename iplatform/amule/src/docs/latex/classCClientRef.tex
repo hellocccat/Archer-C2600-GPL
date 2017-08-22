@@ -1,0 +1,240 @@
+\section{CClientRef Class Reference}
+\label{classCClientRef}\index{CClientRef@{CClientRef}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CClientRef} (const {\bf CClientRef} \&)\label{classCClientRef_a9eb242c44909debd76132a70f7e9fd59}
+
+\item 
+{\bfseries CClientRef} ({\bf CUpDownClient} $\ast$client LINKED\_\-FROM)\label{classCClientRef_a68496cf930bd2eef7ca845653dab4181}
+
+\item 
+{\bfseries CClientRef} (class {\bf CEC\_\-UpDownClient\_\-Tag} $\ast$)\label{classCClientRef_a25692213727c4c4801896158c59eef37}
+
+\item 
+{\bf CClientRef} \& {\bfseries operator=} (const {\bf CClientRef} \&ref)\label{classCClientRef_a121e06988be31a2c4f47e4d22a25d820}
+
+\item 
+bool {\bfseries operator$<$} (const {\bf CClientRef} \&other) const \label{classCClientRef_ad363722196cd8b57ff9b5b9652eea6e5}
+
+\item 
+bool {\bfseries operator==} (const {\bf CClientRef} \&other) const \label{classCClientRef_a0e14d69ee28a31deeed0c45d748b340c}
+
+\item 
+bool {\bfseries operator!=} (const {\bf CClientRef} \&other) const \label{classCClientRef_ade11a974d7078ba3423c5bf148e32688}
+
+\item 
+void {\bfseries swap} ({\bf CClientRef} \&other)\label{classCClientRef_a9ee06e67054f357d79047952069781eb}
+
+\item 
+void {\bfseries Link} ({\bf CUpDownClient} $\ast$client LINKED\_\-FROM)\label{classCClientRef_a1122bef6662dbc37a1fbc7e71b8c151e}
+
+\item 
+void {\bfseries Unlink} ()\label{classCClientRef_ab04b70de963449d1fe9a6946b3f51f29}
+
+\item 
+bool {\bfseries IsLinked} () const \label{classCClientRef_a159f901a99d853bc2da7d3a1d80c1b5f}
+
+\item 
+{\bf CUpDownClient} $\ast$ {\bfseries GetClient} () const \label{classCClientRef_a373aef3d92b8b921c668a9fee127f555}
+
+\item 
+{\bf CUpDownClient} $\ast$ {\bfseries GetClientChecked} ()\label{classCClientRef_a214da28b5a66d731befd1358d83d39bd}
+
+\item 
+{\bf CClientRef} \& {\bfseries GetRef} ()\label{classCClientRef_a33446c5b9450eee837886698996490e1}
+
+\item 
+void {\bfseries Safe\_\-Delete} ()\label{classCClientRef_a6cee2fc5ad53aa2a724f605f51d40ee2}
+
+\item 
+void {\bfseries ClearUploadFileID} () const \label{classCClientRef_ae9d34af34ea9d82bbcfa8c90df7c94d4}
+
+\item 
+uint32 {\bfseries ECID} () const \label{classCClientRef_a6b775d9b4e90b9ad92f9b568821dd04c}
+
+\item 
+bool {\bfseries ExtProtocolAvailable} () const \label{classCClientRef_a9ea99981d3237b71b1a5f321a35fe729}
+
+\item 
+uint16 {\bfseries GetAvailablePartCount} () const \label{classCClientRef_ae1c4382eed21227fdb41a093f154c0f6}
+
+\item 
+const wxString \& {\bfseries GetClientFilename} () const \label{classCClientRef_a679ff4c030fd3334ab87a20df72a5d28}
+
+\item 
+const wxString \& {\bfseries GetClientModString} () const \label{classCClientRef_a9bbf785aa7af817c0fed8ca684348354}
+
+\item 
+const wxString \& {\bfseries GetClientOSInfo} () const \label{classCClientRef_a7b726d941cd68bf41bec99551f7940f1}
+
+\item 
+uint8 {\bfseries GetClientSoft} () const \label{classCClientRef_af71ee15a765d30a8f1d9df434196b3df}
+
+\item 
+const wxString \& {\bfseries GetClientVerString} () const \label{classCClientRef_aad9b41392d7ac87912b97e22334b72e7}
+
+\item 
+uint64 {\bfseries GetDownloadedTotal} () const \label{classCClientRef_a00323bc5bb6c6ce34e6bb0df14b86eef}
+
+\item 
+uint8 {\bfseries GetDownloadState} () const \label{classCClientRef_ad64244f4d26c85db4f51b1463bfa4898}
+
+\item 
+{\bf CFriend} $\ast$ {\bfseries GetFriend} () const \label{classCClientRef_af04b9c8cf928423b15c0e908ed6225df}
+
+\item 
+bool {\bfseries GetFriendSlot} () const \label{classCClientRef_af335b65cd70e186b9b995ec210adc180}
+
+\item 
+wxString {\bfseries GetFullIP} () const \label{classCClientRef_a456c45fbe450e8c6b2e9bb8519b4525a}
+
+\item 
+uint16 {\bfseries GetKadPort} () const \label{classCClientRef_a46fa05e93fd0b459f0580945fefa6137}
+
+\item 
+float {\bfseries GetKBpsDown} () const \label{classCClientRef_aa0ae0132d2b56545d11364661662438a}
+
+\item 
+uint32 {\bfseries GetIP} () const \label{classCClientRef_ac875c51b38cdb6265b42a5683cbafbee}
+
+\item 
+uint16 {\bfseries GetLastDownloadingPart} () const \label{classCClientRef_a641df9ebf34a0e8188a57af3d2ba94db}
+
+\item 
+uint16 {\bfseries GetNextRequestedPart} () const \label{classCClientRef_ac534c0bcdfc0942683278889ab0f4136}
+
+\item 
+uint8 {\bfseries GetObfuscationStatus} () const \label{classCClientRef_a7ffda34a57e6500d9ec2ee70088400ac}
+
+\item 
+uint16 {\bfseries GetOldRemoteQueueRank} () const \label{classCClientRef_acdf33623a80d6a44f97f4de8a756b911}
+
+\item 
+const {\bf BitVector} \& {\bfseries GetPartStatus} () const \label{classCClientRef_ab4526bcfd902020f92f5c9c1933af3db}
+
+\item 
+uint16 {\bfseries GetRemoteQueueRank} () const \label{classCClientRef_a0400bb10bde5eb5602caec65d096f09e}
+
+\item 
+{\bf CPartFile} $\ast$ {\bfseries GetRequestFile} () const \label{classCClientRef_afa5a197225cb724b0ab60fa6b0da83a9}
+
+\item 
+uint32 {\bfseries GetScore} () const \label{classCClientRef_a48eeb7ddcc6735bbde8c104efbb6e5e6}
+
+\item 
+double {\bfseries GetScoreRatio} () const \label{classCClientRef_a033df43689bf559f8b34483bcef59cfa}
+
+\item 
+uint32 {\bfseries GetServerIP} () const \label{classCClientRef_a684edc1ca0ab4bedb4253da9b1e923bf}
+
+\item 
+const wxString {\bfseries GetServerName} () const \label{classCClientRef_a15c0dd534d0abb194eedeec64a80864c}
+
+\item 
+uint16 {\bfseries GetServerPort} () const \label{classCClientRef_aa635e311899c789639454b11dc06b6b0}
+
+\item 
+const wxString \& {\bfseries GetSoftStr} () const \label{classCClientRef_ab023428b1aa83e2532e722a868b01810}
+
+\item 
+const wxString \& {\bfseries GetSoftVerStr} () const \label{classCClientRef_a58b506a0cc79fb4058095558deae31f6}
+
+\item 
+int {\bfseries GetSourceFrom} () const \label{classCClientRef_a989157dc495c1c0653efc6282f4fa18a}
+
+\item 
+wxString {\bfseries GetSecureIdentTextStatus} () const \label{classCClientRef_adc6187c1b30f8546a9b35a85c19269ab}
+
+\item 
+uint64 {\bfseries GetTransferredDown} () const \label{classCClientRef_a2c83f643a9af727a6f53c03ceea8eccf}
+
+\item 
+uint64 {\bfseries GetTransferredUp} () const \label{classCClientRef_ac929854eb2325da4de714e617caccc0d}
+
+\item 
+uint16 {\bfseries GetUDPPort} () const \label{classCClientRef_a994a82482aa21515f7c3e4352a9febb6}
+
+\item 
+uint32 {\bfseries GetUploadDatarate} () const \label{classCClientRef_a05d40f1d9d12b590339d36d4cd4e37b4}
+
+\item 
+uint64 {\bfseries GetUploadedTotal} () const \label{classCClientRef_a55a4d3fd9ff5622ad1df3de18b44669a}
+
+\item 
+const {\bf CKnownFile} $\ast$ {\bfseries GetUploadFile} () const \label{classCClientRef_a4472c66c43710525bc99943a62a1bda8}
+
+\item 
+uint16 {\bfseries GetUploadQueueWaitingPosition} () const \label{classCClientRef_a79f72045e949f536a965a19c2f94ccbd}
+
+\item 
+uint8 {\bfseries GetUploadState} () const \label{classCClientRef_aae5c9acb7a967547fc387d40af8f4077}
+
+\item 
+size\_\-t {\bfseries GetUpPartCount} () const \label{classCClientRef_a1c8790448af40369fc25c236171c41e2}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetUserHash} () const \label{classCClientRef_ab13dd4095ad45c1344896906d66a0fbe}
+
+\item 
+uint32 {\bfseries GetUserIDHybrid} () const \label{classCClientRef_ab3df8bdf35c113f97cb380ba0eebd097}
+
+\item 
+const wxString \& {\bfseries GetUserName} () const \label{classCClientRef_af082069f7c1ea4fb5a6498139b46755f}
+
+\item 
+uint16\_\-t {\bfseries GetUserPort} () const \label{classCClientRef_af73d4386a5ed855cc0f81fc9dff6c2ea}
+
+\item 
+uint32 {\bfseries GetVersion} () const \label{classCClientRef_a5332c8f44c695a1c06b8bdf786e34402}
+
+\item 
+bool {\bfseries HasDisabledSharedFiles} () const \label{classCClientRef_a7095bf06f5f4e00be6ecfc8ad7ac3f64}
+
+\item 
+bool {\bfseries HasLowID} () const \label{classCClientRef_a7bdba5de2e9b5cdd77de82d9101859fa}
+
+\item 
+bool {\bfseries IsBadGuy} () const \label{classCClientRef_a5b8cdc5455063d956bab3879eb8484af}
+
+\item 
+bool {\bfseries IsFriend} () const \label{classCClientRef_a2d707e562472600a21f48be33535ffd6}
+
+\item 
+bool {\bfseries IsIdentified} () const \label{classCClientRef_a4b7e739afc92f8cc83a692e82f68a05d}
+
+\item 
+bool {\bfseries IsRemoteQueueFull} () const \label{classCClientRef_a905be2689eb60e1ed5ac96d1b24e6bde}
+
+\item 
+bool {\bfseries IsUpPartAvailable} (uint16 iPart) const \label{classCClientRef_a05fb88ea4e3f7a3a244fd591efe9591c}
+
+\item 
+void {\bfseries RequestSharedFileList} () const \label{classCClientRef_ae83ca836972cf644b5f86ec0732df9fc}
+
+\item 
+void {\bfseries SetCommentDirty} (bool bDirty=true) const \label{classCClientRef_ae0e74d55329a85decf62bc9b13bf4c61}
+
+\item 
+void {\bfseries SetFriend} ({\bf CFriend} $\ast$newfriend) const \label{classCClientRef_a92670535e2645f39bdfe47a382adbc32}
+
+\item 
+void {\bfseries SetFriendSlot} (bool bNV) const \label{classCClientRef_a479c05e4ede329eb90db340fe0e29218}
+
+\item 
+bool {\bfseries SwapToAnotherFile} (bool bIgnoreNoNeeded, bool ignoreSuspensions, bool bRemoveCompletely, {\bf CPartFile} $\ast$toFile=NULL) const \label{classCClientRef_ab148978a69bb8b2f27d7e3e7e1a6fb4a}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CUpDownClient} $\ast$ {\bfseries m\_\-client}\label{classCClientRef_a7b600fde8fa72f8e4a5fd8a5480e634d}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ClientRef.h\item 
+src/amule-\/remote-\/gui.cpp\item 
+src/ClientRef.cpp\end{DoxyCompactItemize}

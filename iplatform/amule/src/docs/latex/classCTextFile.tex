@@ -1,0 +1,160 @@
+\section{CTextFile Class Reference}
+\label{classCTextFile}\index{CTextFile@{CTextFile}}
+
+
+Text file class.  
+
+
+{\ttfamily \#include $<$TextFile.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf EOpenMode} \{ {\bf read}, 
+{\bf write}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf $\sim$CTextFile} ()
+\item 
+bool {\bf IsOpened} () const 
+\item 
+bool {\bf Eof} () const 
+\item 
+bool {\bf Close} ()
+\item 
+wxString {\bf GetNextLine} (EReadTextFile flags=txtReadAll, const wxMBConv \&conv=wxConvLibc, bool $\ast$result=NULL)
+\item 
+bool {\bf WriteLine} (const wxString \&line, const wxMBConv \&conv=wxConvLibc)
+\item 
+wxArrayString {\bf ReadLines} (EReadTextFile flags=txtReadDefault, const wxMBConv \&conv=wxConvLibc)
+\item 
+bool {\bf WriteLines} (const wxArrayString \&lines, const wxMBConv \&conv=wxConvLibc)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+bool {\bf Open} (const wxString \&path, {\bf EOpenMode} mode)
+\item 
+bool {\bfseries Open} (const {\bf CPath} \&path, {\bf EOpenMode} mode)\label{classCTextFile_a4587054cd46f702dcc8295904b74169c}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxFFile {\bf m\_\-file}\label{classCTextFile_af192a49095ab0f4fcbfa9153ad3d468b}
+
+\item 
+{\bf EOpenMode} {\bf m\_\-mode}\label{classCTextFile_ad0363a16f065f45e89afa39c19f34fc6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Text file class. This class is a wrapper around wxFFile, letting an text file be read or written line-\/by-\/line. The class provides transparent and automatic EOL-\/style handling.
+
+Note that it is not possible to seek in a \doxyref{CTextFile}{p.}{classCTextFile}, only sequential reading or writing is possible. Also note that the maximum length of a line is fixed (see \doxyref{CTextFile::GetNextLine}{p.}{classCTextFile_a33df174e11ab1ed87163ee33281caae8}), however this shouldn't be a problem, given the uses of this class. 
+
+\subsection{Member Enumeration Documentation}
+\index{CTextFile@{CTextFile}!EOpenMode@{EOpenMode}}
+\index{EOpenMode@{EOpenMode}!CTextFile@{CTextFile}}
+\subsubsection[{EOpenMode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CTextFile::EOpenMode}}\label{classCTextFile_aa66eb453b5f524c276254659a82f6527}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{read@{read}!CTextFile@{CTextFile}}\index{CTextFile@{CTextFile}!read@{read}}\item[{\em 
+read\label{classCTextFile_aa66eb453b5f524c276254659a82f6527a51cd4773178cf26502ae6f07991ba0f3}
+}]Opens the file for reading, if it exists. \index{write@{write}!CTextFile@{CTextFile}}\index{CTextFile@{CTextFile}!write@{write}}\item[{\em 
+write\label{classCTextFile_aa66eb453b5f524c276254659a82f6527aacd4cb9d6a762e6d5bf80921969a1f4d}
+}]Opens the file for writing, overwriting old contents. \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CTextFile@{CTextFile}!$\sim$CTextFile@{$\sim$CTextFile}}
+\index{$\sim$CTextFile@{$\sim$CTextFile}!CTextFile@{CTextFile}}
+\subsubsection[{$\sim$CTextFile}]{\setlength{\rightskip}{0pt plus 5cm}CTextFile::$\sim$CTextFile ()}\label{classCTextFile_ab62f77d53defc98a8849d079744de4f2}
+
+
+Destructor. Closes the file if still open. 
+
+\subsection{Member Function Documentation}
+\index{CTextFile@{CTextFile}!Close@{Close}}
+\index{Close@{Close}!CTextFile@{CTextFile}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}bool CTextFile::Close ()}\label{classCTextFile_ab0317d100771b8f7effdfb8f4c4439f6}
+
+
+Closes the file, returning true on success. 
+
+References m\_\-file.\index{CTextFile@{CTextFile}!Eof@{Eof}}
+\index{Eof@{Eof}!CTextFile@{CTextFile}}
+\subsubsection[{Eof}]{\setlength{\rightskip}{0pt plus 5cm}bool CTextFile::Eof () const}\label{classCTextFile_aebd6772ead533c023e82867d1c1261c7}
+
+
+Returns true if GetNextLine has reached the end of the file. 
+
+References m\_\-file.
+
+Referenced by ReadLines().\index{CTextFile@{CTextFile}!GetNextLine@{GetNextLine}}
+\index{GetNextLine@{GetNextLine}!CTextFile@{CTextFile}}
+\subsubsection[{GetNextLine}]{\setlength{\rightskip}{0pt plus 5cm}wxString CTextFile::GetNextLine (EReadTextFile {\em flags} = {\ttfamily txtReadAll}, \/  const wxMBConv \& {\em conv} = {\ttfamily wxConvLibc}, \/  bool $\ast$ {\em result} = {\ttfamily NULL})}\label{classCTextFile_a33df174e11ab1ed87163ee33281caae8}
+
+
+Returns the next line of a readable file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em conv}]The converter used to convert from multibyte to widechar.\end{DoxyParams}
+Note that GetNextLine will return an empty string if the file has reached EOF, or if the file is closed, or not readable. However, empty lines in the file will also be returned unless otherwise specified, so this cannot be used to test for EOF. Instead, use the function \doxyref{Eof()}{p.}{classCTextFile_aebd6772ead533c023e82867d1c1261c7}. 
+
+References m\_\-file, m\_\-mode, and read.
+
+Referenced by ReadLines().\index{CTextFile@{CTextFile}!IsOpened@{IsOpened}}
+\index{IsOpened@{IsOpened}!CTextFile@{CTextFile}}
+\subsubsection[{IsOpened}]{\setlength{\rightskip}{0pt plus 5cm}bool CTextFile::IsOpened () const}\label{classCTextFile_a515983252fda66918cd590ac3dadcab8}
+
+
+Returns true if the file is opened. 
+
+References m\_\-file.\index{CTextFile@{CTextFile}!Open@{Open}}
+\index{Open@{Open}!CTextFile@{CTextFile}}
+\subsubsection[{Open}]{\setlength{\rightskip}{0pt plus 5cm}bool CTextFile::Open (const wxString \& {\em path}, \/  {\bf EOpenMode} {\em mode})}\label{classCTextFile_a5339481b52a2b4141917263f1e86add1}
+
+
+Opens the specified file, returning true on success. 
+
+Referenced by CPreferences::CPreferences().\index{CTextFile@{CTextFile}!ReadLines@{ReadLines}}
+\index{ReadLines@{ReadLines}!CTextFile@{CTextFile}}
+\subsubsection[{ReadLines}]{\setlength{\rightskip}{0pt plus 5cm}wxArrayString CTextFile::ReadLines (EReadTextFile {\em flags} = {\ttfamily txtReadDefault}, \/  const wxMBConv \& {\em conv} = {\ttfamily wxConvLibc})}\label{classCTextFile_a44ef6c8316a08e3480f8ef4c6b2fe6f4}
+
+
+Reads and returns the contents of a text-\/file, using the specifed criteria and converter. 
+
+References Eof(), and GetNextLine().
+
+Referenced by CPreferences::CPreferences().\index{CTextFile@{CTextFile}!WriteLine@{WriteLine}}
+\index{WriteLine@{WriteLine}!CTextFile@{CTextFile}}
+\subsubsection[{WriteLine}]{\setlength{\rightskip}{0pt plus 5cm}bool CTextFile::WriteLine (const wxString \& {\em line}, \/  const wxMBConv \& {\em conv} = {\ttfamily wxConvLibc})}\label{classCTextFile_af7ff96d9664f74a33866e49adb01423a}
+
+
+Writes the line to a writable file, returning true on success. 
+\begin{DoxyParams}{Parameters}
+\item[{\em conv}]The converter used to convert from widechar to multibyte. \end{DoxyParams}
+
+
+References m\_\-file, m\_\-mode, and write.
+
+Referenced by WriteLines().\index{CTextFile@{CTextFile}!WriteLines@{WriteLines}}
+\index{WriteLines@{WriteLines}!CTextFile@{CTextFile}}
+\subsubsection[{WriteLines}]{\setlength{\rightskip}{0pt plus 5cm}bool CTextFile::WriteLines (const wxArrayString \& {\em lines}, \/  const wxMBConv \& {\em conv} = {\ttfamily wxConvLibc})}\label{classCTextFile_aa7d329161319773da3df96157a9ccd7f}
+
+
+Writes the lines to the file, using the given converter, returning true if no errors occured. 
+
+References WriteLine().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/common/TextFile.h\item 
+src/libs/common/TextFile.cpp\end{DoxyCompactItemize}

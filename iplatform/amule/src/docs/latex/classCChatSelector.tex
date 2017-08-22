@@ -1,0 +1,50 @@
+\section{CChatSelector Class Reference}
+\label{classCChatSelector}\index{CChatSelector@{CChatSelector}}
+Inheritance diagram for CChatSelector::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCChatSelector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CChatSelector} (wxWindow $\ast$parent, wxWindowID id, const wxPoint \&pos, wxSize siz, long style)\label{classCChatSelector_a90226d2db86f203cff5e95c7902b0def}
+
+\item 
+{\bf CChatSession} $\ast$ {\bfseries StartSession} (uint64 client\_\-id, const wxString \&client\_\-name, bool show=true)\label{classCChatSelector_a3e3bd6429dd458492a04ea6f62e9d65c}
+
+\item 
+void {\bfseries EndSession} (uint64 client\_\-id=0)\label{classCChatSelector_ac8a93e39d9fe3f4524cb98dac04aa150}
+
+\item 
+{\bf CChatSession} $\ast$ {\bfseries GetPageByClientID} (uint64 client\_\-id)\label{classCChatSelector_a555322d0114267cacd0f24cc3cd2ca21}
+
+\item 
+int {\bfseries GetTabByClientID} (uint64 client\_\-id)\label{classCChatSelector_a9d472aae485e3ef2555e0fbbb639e221}
+
+\item 
+bool {\bfseries ProcessMessage} (uint64 sender\_\-id, const wxString \&message)\label{classCChatSelector_adf9c5c2f2b72f7699c552aaf0f504bf3}
+
+\item 
+bool {\bfseries SendMessage} (const wxString \&message, const wxString \&client\_\-name=wxEmptyString, uint64 to\_\-id=0)\label{classCChatSelector_aad15eba1222d151218c2b73778ea1e62}
+
+\item 
+void {\bfseries ConnectionResult} (bool success, const wxString \&message, uint64 id)\label{classCChatSelector_a95252109f8b8988b2ecadef7970d1e7b}
+
+\item 
+void {\bfseries RefreshFriend} (uint64 toupdate\_\-id, const wxString \&new\_\-name)\label{classCChatSelector_a9dce271d3df1b991a6fd5c9e06146ca3}
+
+\item 
+void {\bfseries ShowCaptchaResult} (uint64 id, bool ok)\label{classCChatSelector_a2affdf7550fda934e96c17f9b5f78467}
+
+\item 
+bool {\bfseries GetCurrentClient} ({\bf CClientRef} \&) const \label{classCChatSelector_aec38d2f00be944abc1f8f1aa513454ce}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ChatSelector.h\item 
+src/ChatSelector.cpp\end{DoxyCompactItemize}

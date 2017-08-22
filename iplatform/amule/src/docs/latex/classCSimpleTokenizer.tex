@@ -1,0 +1,71 @@
+\section{CSimpleTokenizer Class Reference}
+\label{classCSimpleTokenizer}\index{CSimpleTokenizer@{CSimpleTokenizer}}
+
+
+This class provides a simple and fast tokenizer.  
+
+
+{\ttfamily \#include $<$StringFunctions.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSimpleTokenizer} (const wxString \&str, wxChar delim)
+\item 
+wxString {\bf next} ()
+\item 
+wxString {\bf remaining} () const 
+\item 
+size\_\-t {\bf tokenCount} () const \label{classCSimpleTokenizer_a49307b6f7406889fca5f71f7e841a959}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf m\_\-string}\label{classCSimpleTokenizer_af78ebe05f920ac86a8c7c272d254ecaf}
+
+\item 
+wxChar {\bf m\_\-delim}\label{classCSimpleTokenizer_a6ff4ac92c66fee6f8fabe3dbb35af607}
+
+\item 
+const wxChar $\ast$ {\bf m\_\-ptr}\label{classCSimpleTokenizer_aac29b47a02bcd51719efa2cd97983b9e}
+
+\item 
+size\_\-t {\bf m\_\-count}\label{classCSimpleTokenizer_af66235d3f242060ffdce2cbcc286e7af}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a simple and fast tokenizer. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CSimpleTokenizer@{CSimpleTokenizer}!CSimpleTokenizer@{CSimpleTokenizer}}
+\index{CSimpleTokenizer@{CSimpleTokenizer}!CSimpleTokenizer@{CSimpleTokenizer}}
+\subsubsection[{CSimpleTokenizer}]{\setlength{\rightskip}{0pt plus 5cm}CSimpleTokenizer::CSimpleTokenizer (const wxString \& {\em str}, \/  wxChar {\em delim})}\label{classCSimpleTokenizer_ad089b8518e5201817c275e19f46d62ef}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The string to tokenize. \item[{\em delim}]The delimiter used to split the string. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CSimpleTokenizer@{CSimpleTokenizer}!next@{next}}
+\index{next@{next}!CSimpleTokenizer@{CSimpleTokenizer}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}wxString CSimpleTokenizer::next ()}\label{classCSimpleTokenizer_a99cd17ed3fbb01825e2582493f641c2f}
+
+
+Returns the next part of the string separated by the given delimiter. When the entire string has been tokenized, an empty string is returned. Note that empty tokens are also returned. 
+
+References m\_\-count, m\_\-delim, m\_\-ptr, and m\_\-string.\index{CSimpleTokenizer@{CSimpleTokenizer}!remaining@{remaining}}
+\index{remaining@{remaining}!CSimpleTokenizer@{CSimpleTokenizer}}
+\subsubsection[{remaining}]{\setlength{\rightskip}{0pt plus 5cm}wxString CSimpleTokenizer::remaining () const}\label{classCSimpleTokenizer_a047b6b602e77c1531a9b14fc6a741e3b}
+
+
+Returns the remaining part of the string. The remaining part is defined as being the part after the last encountered token, or an empty string if the entire string has been tokenized.
+
+If \doxyref{next()}{p.}{classCSimpleTokenizer_a99cd17ed3fbb01825e2582493f641c2f} has yet to be called, the entire string will be returned. 
+
+References m\_\-ptr, and m\_\-string.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/common/StringFunctions.h\item 
+src/libs/common/StringFunctions.cpp\end{DoxyCompactItemize}

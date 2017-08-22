@@ -1,0 +1,38 @@
+\section{ServersInfo Class Reference}
+\label{classServersInfo}\index{ServersInfo@{ServersInfo}}
+Inheritance diagram for ServersInfo::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classServersInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries ServersInfo} ({\bf CamulewebApp} $\ast$webApp)\label{classServersInfo_a397cecd3d36cba1550dc33832b918beb}
+
+\item 
+virtual bool {\bf ReQuery} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf ServersInfo} $\ast$ {\bfseries m\_\-This} = 0\label{classServersInfo_a17fe62e0951be466c34158f1e269bf40}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{ServersInfo@{ServersInfo}!ReQuery@{ReQuery}}
+\index{ReQuery@{ReQuery}!ServersInfo@{ServersInfo}}
+\subsubsection[{ReQuery}]{\setlength{\rightskip}{0pt plus 5cm}bool ServersInfo::ReQuery ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classServersInfo_a44de14c9b4c8045f74500d07ec8c243b}
+Re-\/query server: refresh all dataset 
+
+Implements {\bf ItemsContainer$<$ ServerEntry $>$} \doxyref{}{p.}{classItemsContainer_a66b3954cd3f77947f5fe0e123903b77d}.
+
+References CECTag::GetInt(), CECTag::GetIPv4Data(), and CECTag::GetTagByNameSafe().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\item 
+src/webserver/src/WebServer.cpp\end{DoxyCompactItemize}

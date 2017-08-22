@@ -1,0 +1,73 @@
+\section{CEC\_\-SearchFile\_\-Tag Class Reference}
+\label{classCEC__SearchFile__Tag}\index{CEC\_\-SearchFile\_\-Tag@{CEC\_\-SearchFile\_\-Tag}}
+Inheritance diagram for CEC\_\-SearchFile\_\-Tag::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCEC__SearchFile__Tag}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CEC\_\-SearchFile\_\-Tag} ({\bf CSearchFile} $\ast$file, EC\_\-DETAIL\_\-LEVEL detail\_\-level, {\bf CValueMap} $\ast$valuemap=NULL)\label{classCEC__SearchFile__Tag_aa6b27e2e62647bf8cdee8eaaa19d6c2d}
+
+\item 
+uint32 {\bfseries ID} () const \label{classCEC__SearchFile__Tag_a6651085735db5b8d661b59f5b6932ac4}
+
+\item 
+uint32 {\bfseries ParentID} () const \label{classCEC__SearchFile__Tag_aa61631f17bc64c2c5c1aca7202539db7}
+
+\item 
+{\bf CMD4Hash} {\bfseries FileHash} () const \label{classCEC__SearchFile__Tag_a797a64c9cab4b305565a39b70ec70e9d}
+
+\item 
+wxString {\bfseries FileHashString} () const \label{classCEC__SearchFile__Tag_a189ad775b234a5ca89a27b7a9d500552}
+
+\item 
+wxString {\bfseries FileName} () const \label{classCEC__SearchFile__Tag_a591dbc16c4b8704fab35dabaf39ec218}
+
+\item 
+uint64 {\bfseries SizeFull} () const \label{classCEC__SearchFile__Tag_a5acdb2defe81363d3f6b1b6fdde4552c}
+
+\item 
+uint32 {\bfseries SourceCount} (uint32 $\ast$target=0) const \label{classCEC__SearchFile__Tag_a876681aacfd75ad217508794af386678}
+
+\item 
+uint32 {\bfseries CompleteSourceCount} (uint32 $\ast$target=0) const \label{classCEC__SearchFile__Tag_ae5d0b4ee10f0c0928c4a8c95198bf55a}
+
+\item 
+bool {\bfseries AlreadyHave} () const \label{classCEC__SearchFile__Tag_a8de89a4f41a2205352c517724aa4ac45}
+
+\item 
+uint32 {\bfseries DownloadStatus} (uint32 $\ast$target=0) const \label{classCEC__SearchFile__Tag_ac068e11a9bdf265344afc5b053a74317}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMD4Hash} {\bf GetMD4Data} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CEC\_\-SearchFile\_\-Tag@{CEC\_\-SearchFile\_\-Tag}!GetMD4Data@{GetMD4Data}}
+\index{GetMD4Data@{GetMD4Data}!CEC_SearchFile_Tag@{CEC\_\-SearchFile\_\-Tag}}
+\subsubsection[{GetMD4Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CMD4Hash} CEC\_\-SearchFile\_\-Tag::GetMD4Data (void)\hspace{0.3cm}{\ttfamily  [private]}}\label{classCEC__SearchFile__Tag_a24918befb00b82907d05216f46e17533}
+
+
+Returns a \doxyref{CMD4Hash}{p.}{classCMD4Hash} class. This function takes care of converting from MSB to LSB as necessary.
+
+\begin{DoxyReturn}{Returns}
+\doxyref{CMD4Hash}{p.}{classCMD4Hash} class.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CECTag(ec\_\-tagname\_\-t, const CMD4Hash\&)}{p.}{classCECTag_a5e228685b0f90368737b50575f91327c} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CECTag} \doxyref{}{p.}{classCECTag_a6d39258b7b6cb3bc02d3619167a41cd6}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECSpecialTags.h\item 
+src/ECSpecialCoreTags.cpp\end{DoxyCompactItemize}

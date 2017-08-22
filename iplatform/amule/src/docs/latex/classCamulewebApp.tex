@@ -1,0 +1,119 @@
+\section{CamulewebApp Class Reference}
+\label{classCamulewebApp}\index{CamulewebApp@{CamulewebApp}}
+Inheritance diagram for CamulewebApp::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCamulewebApp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxAppTraits $\ast$ {\bfseries CreateTraits} ()\label{classCamulewebApp_a290e68372a8635fd4366444517d42429}
+
+\item 
+const wxString {\bfseries GetGreetingTitle} ()\label{classCamulewebApp_ae69a752e963488d4f7c37678d06be0ae}
+
+\item 
+void {\bfseries Pre\_\-Shell} ()\label{classCamulewebApp_a4cae2a9c8646d160d3bb168efde17297}
+
+\item 
+void {\bfseries LoadConfigFile} ()\label{classCamulewebApp_a4574195d2ee0cbf97b87908fa0869053}
+
+\item 
+void {\bfseries SaveConfigFile} ()\label{classCamulewebApp_a46f8c72f710a2e6109243dc00e6c032f}
+
+\item 
+void {\bfseries LoadAmuleConfig} ({\bf CECFileConfig} \&cfg)\label{classCamulewebApp_a386b6dd09f3006c93778b3610300a78f}
+
+\item 
+bool {\bfseries GetTemplateDir} (const wxString \&templateName, wxString \&templateDir)\label{classCamulewebApp_ab995618442ed2c7b694ac8063c21c1d1}
+
+\item 
+bool {\bfseries CheckDirForTemplate} (wxString \&dir, const wxString \&tmpl)\label{classCamulewebApp_a585b8a06bd002846393c901ca4369e6d}
+
+\item 
+void {\bfseries OnInitCmdLine} (wxCmdLineParser \&amuleweb\_\-parser)\label{classCamulewebApp_a2943adb71247336f64c4b8df4087d2b6}
+
+\item 
+bool {\bfseries OnCmdLineParsed} (wxCmdLineParser \&parser)\label{classCamulewebApp_aa774b9201c39e212b1bb14deceb7d7b2}
+
+\item 
+virtual void {\bfseries Post\_\-Shell} ()\label{classCamulewebApp_a8446d445100974fee001f5132b0a117f}
+
+\item 
+void {\bfseries TextShell} (const wxString \&prompt)\label{classCamulewebApp_a87ce0e08d089d648066b313be3194373}
+
+\item 
+virtual wxString {\bfseries SetLocale} (const wxString \&language)\label{classCamulewebApp_aafaffe03ffb2e16af3a3be589195d7bb}
+
+\item 
+{\bfseries DECLARE\_\-EVENT\_\-TABLE} ()\label{classCamulewebApp_a8c465fa6333ccbfd62de8dd50af29e2b}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-TemplateName}\label{classCamulewebApp_a9435f3e5c4ee5190f1e380b3641f2c17}
+
+\item 
+wxString {\bfseries m\_\-TemplateDir}\label{classCamulewebApp_a4885dfcce0dc23d5a35cbc891fc77bff}
+
+\item 
+bool {\bfseries m\_\-UseGzip}\label{classCamulewebApp_a6b6999689f4c531e568b0a48cdbdcb27}
+
+\item 
+{\bf CMD4Hash} {\bfseries m\_\-AdminPass}\label{classCamulewebApp_a44ad5304a9c298974fa7667c26b91d09}
+
+\item 
+{\bf CMD4Hash} {\bfseries m\_\-GuestPass}\label{classCamulewebApp_ab786af7533e6974456fba28ff226180b}
+
+\item 
+bool {\bfseries m\_\-AllowGuest}\label{classCamulewebApp_a5bc42ec2f6cc69969fcf0979d416e9f0}
+
+\item 
+long {\bfseries m\_\-WebserverPort}\label{classCamulewebApp_aee657713cdf2ae5fb1efa716a92b7c98}
+
+\item 
+bool {\bfseries m\_\-UPnPWebServerEnabled}\label{classCamulewebApp_a65a500d8bd0f89df146b4fd2537c515e}
+
+\item 
+int {\bfseries m\_\-UPnPTCPPort}\label{classCamulewebApp_acb756b3462104d829a03451dc5f380fb}
+
+\item 
+unsigned int {\bfseries m\_\-PageRefresh}\label{classCamulewebApp_a3d16c05595d34933956fcfb052a11250}
+
+\item 
+bool {\bfseries m\_\-LoadSettingsFromAmule}\label{classCamulewebApp_a757a2dac2dca625b6891e6123c4707ed}
+
+\item 
+bool {\bfseries m\_\-TemplateOk}\label{classCamulewebApp_ae71ab2fd145f133528613143044dc89b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries OnInit} ()\label{classCamulewebApp_afcae1f60bd6659726d8b901b0af798fa}
+
+\item 
+virtual int {\bfseries OnRun} ()\label{classCamulewebApp_a1d82ea6430bb28a908a5c786557e8598}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CWebServerBase} $\ast$ {\bfseries m\_\-webserver}\label{classCamulewebApp_a474c070efccad9442d0deffe388cafb7}
+
+\item 
+class CWebserverGSocketFuncTable $\ast$ {\bfseries m\_\-table}\label{classCamulewebApp_a34a774ef419c4dee8cbb5e601c4a5cac}
+
+\item 
+bool {\bfseries m\_\-localTemplate}\label{classCamulewebApp_a6111641b69e918f2bdcd742ab54a2b58}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebInterface.h\item 
+src/webserver/src/WebInterface.cpp\end{DoxyCompactItemize}

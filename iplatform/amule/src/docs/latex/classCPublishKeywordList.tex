@@ -1,0 +1,70 @@
+\section{CPublishKeywordList Class Reference}
+\label{classCPublishKeywordList}\index{CPublishKeywordList@{CPublishKeywordList}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries AddKeyword} (const wxString \&keyword, {\bf CKnownFile} $\ast$file)\label{classCPublishKeywordList_ad4a286a483d8b13e8e2636b62946b25e}
+
+\item 
+void {\bfseries AddKeywords} ({\bf CKnownFile} $\ast$pFile)\label{classCPublishKeywordList_a72ddc2c541f233ea1a1cefb4e3c3d78b}
+
+\item 
+void {\bfseries RemoveKeyword} (const wxString \&keyword, {\bf CKnownFile} $\ast$file)\label{classCPublishKeywordList_ae66295aef9b7483d0d4048c22d3bcdac}
+
+\item 
+void {\bfseries RemoveKeywords} ({\bf CKnownFile} $\ast$pFile)\label{classCPublishKeywordList_a5ec9f7fb42bddbcd3f6a2d666bbd5b2f}
+
+\item 
+void {\bfseries RemoveAllKeywords} ()\label{classCPublishKeywordList_a862cd7ea8315ddeb83298eafd51524b6}
+
+\item 
+void {\bfseries RemoveAllKeywordReferences} ()\label{classCPublishKeywordList_a5bf74800df0cece8d4fc5929517522d3}
+
+\item 
+void {\bfseries PurgeUnreferencedKeywords} ()\label{classCPublishKeywordList_ab21c9cb6cd1890ad68df69673da67d0c}
+
+\item 
+int {\bfseries GetCount} () const \label{classCPublishKeywordList_a340311ddf49ae1bb1b3fcdd74612dc03}
+
+\item 
+{\bf CPublishKeyword} $\ast$ {\bfseries GetNextKeyword} ()\label{classCPublishKeywordList_a9a7ecaf1bce4721e8119b5476e708579}
+
+\item 
+void {\bfseries ResetNextKeyword} ()\label{classCPublishKeywordList_a4cc9236a76cb115fd2cf7ff98fb05e4a}
+
+\item 
+uint32 {\bfseries GetNextPublishTime} () const \label{classCPublishKeywordList_a851abd02846a48218071b41e7b226d6b}
+
+\item 
+void {\bfseries SetNextPublishTime} (uint32 tNextPublishKeywordTime)\label{classCPublishKeywordList_a6ed29f2abab5a737a8ae2d75d19e17c4}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CPublishKeyword} $\ast$ $>$ {\bfseries CKeyWordList}\label{classCPublishKeywordList_af0aaa8fad29ac55f685336d9cc9e0150}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPublishKeyword} $\ast$ {\bfseries FindKeyword} (const wxString \&rstrKeyword, CKeyWordList::iterator $\ast$ppos=NULL)\label{classCPublishKeywordList_a344e75e11d9a15338b0721ec80b09e10}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CKeyWordList {\bfseries m\_\-lstKeywords}\label{classCPublishKeywordList_afe84a4feb6b6a0f7abcefe7c30dfedb6}
+
+\item 
+CKeyWordList::iterator {\bfseries m\_\-posNextKeyword}\label{classCPublishKeywordList_a0c1bc5c4e837f00e30f61c4fb6297596}
+
+\item 
+uint32 {\bfseries m\_\-tNextPublishKeywordTime}\label{classCPublishKeywordList_acd4ae6dd1ab13341f1deae2289814c35}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/SharedFileList.cpp\end{DoxyCompactItemize}

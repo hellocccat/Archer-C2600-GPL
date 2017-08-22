@@ -1,0 +1,103 @@
+\section{CUPnPControlPoint Class Reference}
+\label{classCUPnPControlPoint}\index{CUPnPControlPoint@{CUPnPControlPoint}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CUPnPControlPoint} (unsigned short udpPort)\label{classCUPnPControlPoint_aa75c3f04daa58586196875ee71dddf8c}
+
+\item 
+void {\bfseries Subscribe} ({\bf CUPnPService} \&service)\label{classCUPnPControlPoint_ac05357aa682936bf1422ff4577cea912}
+
+\item 
+void {\bfseries Unsubscribe} ({\bf CUPnPService} \&service)\label{classCUPnPControlPoint_a90c83af7f3de0935292901112afef014}
+
+\item 
+bool {\bfseries AddPortMappings} (std::vector$<$ {\bf CUPnPPortMapping} $>$ \&upnpPortMapping)\label{classCUPnPControlPoint_af359f6974d3d3a009577fe0e32ac110e}
+
+\item 
+bool {\bfseries DeletePortMappings} (std::vector$<$ {\bf CUPnPPortMapping} $>$ \&upnpPortMapping)\label{classCUPnPControlPoint_aa3848f0020b37b81a2e6089de58ed0f6}
+
+\item 
+UpnpClient\_\-Handle {\bfseries GetUPnPClientHandle} () const \label{classCUPnPControlPoint_abb683d0a2c4a30eaf4db3b693080045d}
+
+\item 
+bool {\bfseries GetIGWDeviceDetected} () const \label{classCUPnPControlPoint_a2f9085963e1f5b2874c3486947d88d4d}
+
+\item 
+void {\bfseries SetIGWDeviceDetected} (bool b)\label{classCUPnPControlPoint_aa9f6df7f92eb57b70246bb2ed6f01e75}
+
+\item 
+bool {\bfseries WanServiceDetected} () const \label{classCUPnPControlPoint_a32b5f97872c1d114a16640780d172682}
+
+\item 
+void {\bfseries SetWanService} ({\bf CUPnPService} $\ast$service)\label{classCUPnPControlPoint_ab22bd105cc3f46ab68f3d6f6992b14b7}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries Callback} (Upnp\_\-EventType EventType, void $\ast$Event, void $\ast$Cookie)\label{classCUPnPControlPoint_aaed5e2683553eefab3db9670eeb8eb05}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnEventReceived} (const std::string \&Sid, int EventKey, IXML\_\-Document $\ast$ChangedVariables)\label{classCUPnPControlPoint_aebd9d414adf187b73833c46d2f2d1112}
+
+\item 
+void {\bfseries AddRootDevice} (IXML\_\-Element $\ast$rootDevice, const std::string \&urlBase, const char $\ast$location, int expires)\label{classCUPnPControlPoint_ab933c2239d7f51d1e8d142753f0467f5}
+
+\item 
+void {\bfseries RemoveRootDevice} (const char $\ast$udn)\label{classCUPnPControlPoint_afeb1fd98a797bf7b72101d8c2bb6825a}
+
+\item 
+void {\bfseries RefreshPortMappings} ()\label{classCUPnPControlPoint_ac47536bf13be8a5a533eec68388049d3}
+
+\item 
+bool {\bfseries PrivateAddPortMapping} ({\bf CUPnPPortMapping} \&upnpPortMapping)\label{classCUPnPControlPoint_a1181ef67e2e7f253622b23cfb8fc79f6}
+
+\item 
+bool {\bfseries PrivateDeletePortMapping} ({\bf CUPnPPortMapping} \&upnpPortMapping)\label{classCUPnPControlPoint_a8d2a45dd13fc75e628f8077b6035cfce}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CUPnPLib} {\bfseries m\_\-upnpLib}\label{classCUPnPControlPoint_af6386a4ba344efd8e67a50647810f38a}
+
+\item 
+UpnpClient\_\-Handle {\bfseries m\_\-UPnPClientHandle}\label{classCUPnPControlPoint_af695e661011f637274327f8478a4da51}
+
+\item 
+RootDeviceMap {\bfseries m\_\-RootDeviceMap}\label{classCUPnPControlPoint_a1d4c5aa61291a08d12049d482e6d48c1}
+
+\item 
+ServiceMap {\bfseries m\_\-ServiceMap}\label{classCUPnPControlPoint_a581bfc8b7e560df70d416f56c6b4d647}
+
+\item 
+PortMappingMap {\bfseries m\_\-ActivePortMappingsMap}\label{classCUPnPControlPoint_ae5146ebf1f06419ac79b98c9c0f98095}
+
+\item 
+CUPnPMutex {\bfseries m\_\-RootDeviceListMutex}\label{classCUPnPControlPoint_a054c1063bf9727939da51d5d91e04d47}
+
+\item 
+bool {\bfseries m\_\-IGWDeviceDetected}\label{classCUPnPControlPoint_ae51d4d63a6d063ef1e940e7ea0632471}
+
+\item 
+{\bf CUPnPService} $\ast$ {\bfseries m\_\-WanService}\label{classCUPnPControlPoint_a5b9657f91439c3c4004201830d39d6bf}
+
+\item 
+CUPnPMutex {\bfseries m\_\-WaitForSearchTimeoutMutex}\label{classCUPnPControlPoint_ae19440c6d5f5c798596b7c100ac709d0}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf CUPnPControlPoint} $\ast$ {\bfseries s\_\-CtrlPoint}\label{classCUPnPControlPoint_acbcacb8278c09f43ad9b1a6b30406842}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/UPnPBase.h\end{DoxyCompactItemize}

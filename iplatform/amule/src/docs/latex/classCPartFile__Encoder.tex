@@ -1,0 +1,65 @@
+\section{CPartFile\_\-Encoder Class Reference}
+\label{classCPartFile__Encoder}\index{CPartFile\_\-Encoder@{CPartFile\_\-Encoder}}
+Inheritance diagram for CPartFile\_\-Encoder::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCPartFile__Encoder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CPartFile\_\-Encoder} (const {\bf CPartFile} $\ast$file=0)\label{classCPartFile__Encoder_a718d12fe8c9266889f4c5aac0a8ea384}
+
+\item 
+virtual void {\bfseries Encode} ({\bf CECTag} $\ast$parent\_\-tag)\label{classCPartFile__Encoder_aae332e5cbcc71c5a3c87c21215a82825}
+
+\item 
+virtual void {\bfseries ResetEncoder} ()\label{classCPartFile__Encoder_a6c846df83c6e60c7107c68b7e8a4e288}
+
+\item 
+virtual void {\bfseries SetShared} ()\label{classCPartFile__Encoder_a379ba95c808fd1e19d434b5938a16249}
+
+\item 
+virtual bool {\bfseries IsShared} ()\label{classCPartFile__Encoder_ae0f741df14bd8d809438c4d70aa0a8ca}
+
+\item 
+virtual bool {\bfseries IsPartFile\_\-Encoder} ()\label{classCPartFile__Encoder_a99638e1877e282e51e16479838acefbb}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPartFile} $\ast$ {\bfseries m\_\-PartFile} ()\label{classCPartFile__Encoder_adac05f2f656d394e49ba695cd9cecd01}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RLE\_\-Data} {\bfseries m\_\-req\_\-status}\label{classCPartFile__Encoder_a4f0abf8d7847273e2b3580e3510cd332}
+
+\item 
+{\bf RLE\_\-Data} {\bfseries m\_\-gap\_\-status}\label{classCPartFile__Encoder_a7ab0331db4323a233efdabe739ec9e1a}
+
+\item 
+SourcenameItemMap {\bfseries m\_\-sourcenameItemMap}\label{classCPartFile__Encoder_a06d6cfb6a45c78ab064864062b132fcd}
+
+\item 
+int {\bfseries m\_\-sourcenameID}\label{classCPartFile__Encoder_aceacf00ccf49352df755934651f86a3a}
+
+\item 
+bool {\bfseries m\_\-shared}\label{classCPartFile__Encoder_a953b13b40d21c30560e1e60e6361a154}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+PartStatus strings and gap lists are quite long -\/ RLE encoding will help.
+
+Instead of sending each time full part-\/status string, send RLE encoded difference from previous one.
+
+\doxyref{PartFileEncoderData}{p.}{classPartFileEncoderData} class is used for decode only, while \doxyref{CPartFile\_\-Encoder}{p.}{classCPartFile__Encoder} is used for encode only. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConn.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,76 @@
+\section{CServerUDPSocket Class Reference}
+\label{classCServerUDPSocket}\index{CServerUDPSocket@{CServerUDPSocket}}
+Inheritance diagram for CServerUDPSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCServerUDPSocket}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ServerUDPPacket}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CServerUDPSocket} ({\bf amuleIPV4Address} \&addr, const {\bf CProxyData} $\ast$ProxyData=NULL)\label{classCServerUDPSocket_acefbcf62e4470377f8c723e1b340fdea}
+
+\item 
+void {\bfseries SendPacket} ({\bf CPacket} $\ast$packet, {\bf CServer} $\ast$host, bool delPacket, bool rawpacket, uint16 port\_\-offset)\label{classCServerUDPSocket_aebdf589d11abfad2171d5bd5a7ff76ec}
+
+\item 
+void {\bfseries OnHostnameResolved} (uint32 ip)\label{classCServerUDPSocket_a54afb68b2cf272690a08a880e9b5013b}
+
+\item 
+virtual void {\bf OnReceiveError} (int errorCode, uint32 ip, uint16 port)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf ServerUDPPacket} $>$ {\bfseries PacketList}\label{classCServerUDPSocket_a5a7b13d82e2bb39f876f08ebbbbb1594}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnPacketReceived} (uint32 ip, uint16 port, byte $\ast$buffer, size\_\-t length)
+\item 
+void {\bfseries ProcessPacket} ({\bf CMemFile} \&packet, uint8 opcode, uint32 ip, uint16 port)\label{classCServerUDPSocket_aa92c06f34bc39cf9e2b6a3d66aba9d0f}
+
+\item 
+void {\bfseries SendQueue} ()\label{classCServerUDPSocket_a7be196976708db946e92d9d84168d103}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+PacketList {\bf m\_\-queue}\label{classCServerUDPSocket_a52813753f68d5fd33ebd22bfb542c6be}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CServerUDPSocket@{CServerUDPSocket}!OnPacketReceived@{OnPacketReceived}}
+\index{OnPacketReceived@{OnPacketReceived}!CServerUDPSocket@{CServerUDPSocket}}
+\subsubsection[{OnPacketReceived}]{\setlength{\rightskip}{0pt plus 5cm}void CServerUDPSocket::OnPacketReceived (uint32 {\em ip}, \/  uint16 {\em port}, \/  byte $\ast$ {\em buffer}, \/  size\_\-t {\em length})\hspace{0.3cm}{\ttfamily  [private, virtual]}}\label{classCServerUDPSocket_a437e145226bf1280af448a3da703f400}
+
+
+This function is called when a packet has been received. 
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]The address from where data was received. \item[{\em buffer}]The data that has been received. \item[{\em length}]The length of the data buffer. \end{DoxyParams}
+
+
+Implements {\bf CMuleUDPSocket} \doxyref{}{p.}{classCMuleUDPSocket_a0edaf41d486ff86538a9325e26fae67b}.\index{CServerUDPSocket@{CServerUDPSocket}!OnReceiveError@{OnReceiveError}}
+\index{OnReceiveError@{OnReceiveError}!CServerUDPSocket@{CServerUDPSocket}}
+\subsubsection[{OnReceiveError}]{\setlength{\rightskip}{0pt plus 5cm}void CServerUDPSocket::OnReceiveError (int {\em errorCode}, \/  uint32 {\em ip}, \/  uint16 {\em port})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCServerUDPSocket_a4e2f5904406f068b341252deb8667aed}
+
+
+This function is called by aMule when there is an error while receiving. 
+
+Reimplemented from {\bf CMuleUDPSocket} \doxyref{}{p.}{classCMuleUDPSocket_afaa611e7682707cec51a328136ca9beb}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ServerUDPSocket.h\item 
+src/ServerUDPSocket.cpp\end{DoxyCompactItemize}

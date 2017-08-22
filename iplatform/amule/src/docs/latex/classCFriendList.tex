@@ -1,0 +1,73 @@
+\section{CFriendList Class Reference}
+\label{classCFriendList}\index{CFriendList@{CFriendList}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf const\_\-iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries IsAlreadyFriend} (uint32 dwLastUsedIP, uint32 nLastUsedPort)\label{classCFriendList_a962e1eaad4180120fedfba0b1eb770b2}
+
+\item 
+void {\bfseries SaveList} ()\label{classCFriendList_a4eaa4f709feb1a75edf67f1f9a93060d}
+
+\item 
+void {\bfseries LoadList} ()\label{classCFriendList_a56c457fa1526657d485418d52038d0cc}
+
+\item 
+{\bf CFriend} $\ast$ {\bfseries FindFriend} (const {\bf CMD4Hash} \&userhash, uint32 dwIP, uint16 nPort)\label{classCFriendList_a0c529a7857981521e7520e3c4dee42c2}
+
+\item 
+{\bf CFriend} $\ast$ {\bfseries FindFriend} (uint32 ecid)\label{classCFriendList_a6511bb238500392324b7d0f923c41908}
+
+\item 
+void {\bfseries AddFriend} ({\bf CFriend} $\ast$toadd, bool notify=true)\label{classCFriendList_aaac67445187e08afc156d0828099656d}
+
+\item 
+void {\bfseries AddFriend} (const {\bf CClientRef} \&toadd)\label{classCFriendList_ad16de5ae2f1aa85a63c6fb824d3f68b1}
+
+\item 
+void {\bfseries AddFriend} (const {\bf CMD4Hash} \&userhash, uint32 lastUsedIP, uint32 lastUsedPort, const wxString \&name, uint32 lastSeen=0, uint32 lastChatted=0)\label{classCFriendList_a38310e1c2f320c8cd2776531361cb843}
+
+\item 
+void {\bfseries RemoveFriend} ({\bf CFriend} $\ast$toremove)\label{classCFriendList_ac0b5359d86831c36cb95a7b7a7cea7d3}
+
+\item 
+void {\bfseries RequestSharedFileList} ({\bf CFriend} $\ast$Friend)\label{classCFriendList_a70d9303fd64936b9d744ec4e8bbba8cb}
+
+\item 
+void {\bfseries SetFriendSlot} ({\bf CFriend} $\ast$Friend, bool new\_\-state)\label{classCFriendList_a9a71f8447a3942a65486f40d32e07e78}
+
+\item 
+void {\bfseries StartChatSession} ({\bf CFriend} $\ast$Friend)\label{classCFriendList_a3a5e3349200a957e2dbecb2f622bc15e}
+
+\item 
+void {\bfseries RemoveAllFriendSlots} ()\label{classCFriendList_aba078baa828b9322a7208460f42f9e54}
+
+\item 
+{\bf const\_\-iterator} {\bfseries begin} () const \label{classCFriendList_a8fdc16f02c26bca807246a93df776d8e}
+
+\item 
+{\bf const\_\-iterator} {\bfseries end} () const \label{classCFriendList_a2396ddeb2c4edd2a154fe14919cf268f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CFriend} $\ast$ $>$ {\bfseries FriendList}\label{classCFriendList_afbbb6c77c63f51e881c42215d70458ef}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FriendList {\bfseries m\_\-FriendList}\label{classCFriendList_ae3cf895d81728bf71a7f8dce224ad1bf}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/FriendList.h\item 
+src/FriendList.cpp\end{DoxyCompactItemize}

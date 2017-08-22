@@ -1,0 +1,35 @@
+\section{CSocketClientProxy Class Reference}
+\label{classCSocketClientProxy}\index{CSocketClientProxy@{CSocketClientProxy}}
+Inheritance diagram for CSocketClientProxy::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5cm]{classCSocketClientProxy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CSocketClientProxy} (wxSocketFlags flags=wxSOCKET\_\-NONE, const {\bf CProxyData} $\ast$proxyData=NULL)\label{classCSocketClientProxy_ad69a066a9612ed325f99848dcc7627be}
+
+\item 
+bool {\bfseries Connect} (wxIPaddress \&address, bool wait)\label{classCSocketClientProxy_aaecbbb817faac58b712470e662f81c41}
+
+\item 
+{\bf CSocketClientProxy} \& {\bfseries Read} (void $\ast$buffer, wxUint32 nbytes)\label{classCSocketClientProxy_a276142cd14c4dffda9a353f831e1bd4f}
+
+\item 
+{\bf CSocketClientProxy} \& {\bfseries Write} (const void $\ast$buffer, wxUint32 nbytes)\label{classCSocketClientProxy_a101abf166689b2931f171deb94931c25}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxMutex {\bfseries m\_\-socketLocker}\label{classCSocketClientProxy_aedbb0cf0f706971c12a6519d9969f250}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Proxy.h\item 
+src/Proxy.cpp\end{DoxyCompactItemize}

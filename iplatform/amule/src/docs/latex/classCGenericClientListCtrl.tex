@@ -1,0 +1,276 @@
+\section{CGenericClientListCtrl Class Reference}
+\label{classCGenericClientListCtrl}\index{CGenericClientListCtrl@{CGenericClientListCtrl}}
+
+
+This class is responsible for representing clients in a generic way.  
+
+
+{\ttfamily \#include $<$GenericClientListCtrl.h$>$}Inheritance diagram for CGenericClientListCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classCGenericClientListCtrl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CGenericClientListCtrl} (const wxString \&tablename, wxWindow $\ast$parent, wxWindowID winid, const wxPoint \&pos, const wxSize \&size, long style, const wxValidator \&validator, const wxString \&name)
+\item 
+virtual {\bf $\sim$CGenericClientListCtrl} ()\label{classCGenericClientListCtrl_a184f80659b783f868088409edcae2621}
+
+\item 
+void {\bf InitColumnData} ()
+\item 
+void {\bf AddSource} ({\bf CKnownFile} $\ast$owner, const {\bf CClientRef} \&source, SourceItemType type)
+\item 
+void {\bf RemoveSource} (uint32 source, const {\bf CKnownFile} $\ast$owner)
+\item 
+void {\bf ShowSources} (const CKnownFileVector \&files)
+\item 
+void {\bf UpdateItem} (uint32 toupdate, SourceItemType type)
+\item 
+void {\bfseries SetShowing} (bool status)\label{classCGenericClientListCtrl_a1a9bdfba41b4e780e89ee727e674bf32}
+
+\item 
+bool {\bfseries GetShowing} () const \label{classCGenericClientListCtrl_a846c60a643573197eb83432d5a52cc3f}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bf SortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf GenericColumnInfo} {\bfseries m\_\-columndata}\label{classCGenericClientListCtrl_a3ed481dc3713347eeae16cd65a9cf86e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::multimap$<$ uint32, {\bf ClientCtrlItem\_\-Struct} $\ast$ $>$ {\bf ListItems}\label{classCGenericClientListCtrl_ae74971e21edf0c9dbc7794170ad347fc}
+
+\item 
+typedef ListItems::value\_\-type {\bf ListItemsPair}\label{classCGenericClientListCtrl_ac838a486326d53b63df554624e2603a7}
+
+\item 
+typedef std::pair$<$ ListItems::iterator, ListItems::iterator $>$ {\bf ListIteratorPair}\label{classCGenericClientListCtrl_a8321ecb62a32a76f835ffd649b708393}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual CamuleDlg::DialogType {\bf GetParentDialog} ()=0
+\item 
+void {\bf ShowSourcesCount} (int diff)\label{classCGenericClientListCtrl_ac74fdedec6e64cfec0523129596470eb}
+
+\item 
+virtual void {\bf OnDrawItem} (int item, wxDC $\ast$dc, const wxRect \&rect, const wxRect \&rectHL, bool highlighted)\label{classCGenericClientListCtrl_a5aeb870f7100472e902d482eb35dfade}
+
+\item 
+void {\bf DrawClientItem} (wxDC $\ast$dc, int nColumn, const wxRect \&rect, {\bf ClientCtrlItem\_\-Struct} $\ast$item, int iTextOffset, int iBitmapOffset, int iBitmapXSize) const \label{classCGenericClientListCtrl_a9bc1514c05facf746754d9a866059575}
+
+\item 
+void {\bf DrawSourceStatusBar} (const {\bf CClientRef} \&source, wxDC $\ast$dc, const wxRect \&rect, bool bFlat) const \label{classCGenericClientListCtrl_a935b8627a0104b2d07968c7a2d67f0d0}
+
+\item 
+void {\bf DrawStatusBar} (const {\bf CClientRef} \&client, wxDC $\ast$dc, const wxRect \&rect1) const \label{classCGenericClientListCtrl_a928de970bcd05e673255ed2c39f0ecdf}
+
+\item 
+virtual wxString {\bf GetTTSText} (unsigned) const 
+\item 
+virtual void {\bf SetShowSources} ({\bf CKnownFile} $\ast$, bool) const =0\label{classCGenericClientListCtrl_a39e1728d379c9ab6fc84d1b016c9649e}
+
+\item 
+wxString {\bf TranslateCIDToName} (GenericColumnEnum cid)
+\item 
+void {\bfseries OnSwapSource} (wxCommandEvent \&event)\label{classCGenericClientListCtrl_aa3bcca7b20805f2a7fea24152b9ae8c2}
+
+\item 
+void {\bfseries OnViewFiles} (wxCommandEvent \&event)\label{classCGenericClientListCtrl_a11d94694d4977fbc811ffcfdbc4463ea}
+
+\item 
+void {\bfseries OnAddFriend} (wxCommandEvent \&event)\label{classCGenericClientListCtrl_adbe55e9de30b560011f78db6992b733b}
+
+\item 
+void {\bfseries OnSetFriendslot} (wxCommandEvent \&event)\label{classCGenericClientListCtrl_a1260ff0ce18805363007d24491029fef}
+
+\item 
+void {\bfseries OnSendMessage} (wxCommandEvent \&event)\label{classCGenericClientListCtrl_a2dad38d0554d322777e43251cae0e822}
+
+\item 
+void {\bfseries OnViewClientInfo} (wxCommandEvent \&event)\label{classCGenericClientListCtrl_a25e6e89cbbc03fb819ce7c4d82cba61e}
+
+\item 
+void {\bfseries OnItemActivated} (wxListEvent \&event)\label{classCGenericClientListCtrl_a6680c09a14fa627d40018912951af138}
+
+\item 
+void {\bfseries OnMouseRightClick} (wxListEvent \&event)\label{classCGenericClientListCtrl_a1de4d140a21eb28af462883bad4c5d8d}
+
+\item 
+void {\bfseries OnMouseMiddleClick} (wxListEvent \&event)\label{classCGenericClientListCtrl_a1db307f28b38f019846e796dd6887b19}
+
+\item 
+void {\bfseries OnKeyPressed} (wxKeyEvent \&event)\label{classCGenericClientListCtrl_a544d54c850ff4dc78b76414ea12060e2}
+
+\item 
+void {\bfseries RawAddSource} ({\bf CKnownFile} $\ast$owner, {\bf CClientRef} source, SourceItemType type)\label{classCGenericClientListCtrl_a944c8eeff50a489c5a0ffa9569200587}
+
+\item 
+void {\bfseries RawRemoveSource} (ListItems::iterator \&it)\label{classCGenericClientListCtrl_a53f0c5e1c2e274cac301b9137fdf098f}
+
+\item 
+virtual bool {\bfseries IsShowingDownloadSources} () const =0\label{classCGenericClientListCtrl_ad4137af41bc33145924342d10392bbed}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries Compare} (const {\bf CClientRef} \&client1, const {\bf CClientRef} \&client2, long lParamColumnSort)\label{classCGenericClientListCtrl_a1217ba903a54e020a5b29ca15a8e9473}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ListItems} {\bf m\_\-ListItems}
+\item 
+wxMenu $\ast$ {\bf m\_\-menu}\label{classCGenericClientListCtrl_aa453ecfd2278a87d2745c5215e1dccc7}
+
+\item 
+wxBrush {\bf m\_\-hilightBrush}\label{classCGenericClientListCtrl_ac6cf70e891b7e31108d9e414c9e978aa}
+
+\item 
+wxBrush {\bf m\_\-hilightUnfocusBrush}\label{classCGenericClientListCtrl_ab3b98e13cd137951aeb947cd8bc4496c}
+
+\item 
+int {\bf m\_\-clientcount}\label{classCGenericClientListCtrl_aee6c7b60246232fe1eb5e2b333a1d930}
+
+\item 
+CKnownFileVector {\bf m\_\-knownfiles}\label{classCGenericClientListCtrl_a7dbdd69bd928b1ef221ed1c24dbc5f21}
+
+\item 
+bool {\bfseries m\_\-showing}\label{classCGenericClientListCtrl_a210315abe26cc1670658e3a238a562b8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is responsible for representing clients in a generic way. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CGenericClientListCtrl@{CGenericClientListCtrl}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\index{CGenericClientListCtrl@{CGenericClientListCtrl}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{CGenericClientListCtrl}]{\setlength{\rightskip}{0pt plus 5cm}CGenericClientListCtrl::CGenericClientListCtrl (const wxString \& {\em tablename}, \/  wxWindow $\ast$ {\em parent}, \/  wxWindowID {\em winid}, \/  const wxPoint \& {\em pos}, \/  const wxSize \& {\em size}, \/  long {\em style}, \/  const wxValidator \& {\em validator}, \/  const wxString \& {\em name})}\label{classCGenericClientListCtrl_a23958ed19e543ce1f22dc987d8364bab}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::CMuleListCtrl}{p.}{classCMuleListCtrl_a3d2c202974057d0de8a098344a16024d} for documentation of parameters. 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CGenericClientListCtrl@{CGenericClientListCtrl}!AddSource@{AddSource}}
+\index{AddSource@{AddSource}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{AddSource}]{\setlength{\rightskip}{0pt plus 5cm}void CGenericClientListCtrl::AddSource ({\bf CKnownFile} $\ast$ {\em owner}, \/  const {\bf CClientRef} \& {\em source}, \/  SourceItemType {\em type})}\label{classCGenericClientListCtrl_ab2ef79db4d5f087494af7b46a013b8b2}
+
+
+Adds a source belonging to the specified file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em owner}]The owner of this specific source-\/entry, must be a valid pointer. \item[{\em source}]The client object to be added, must be a valid pointer. \item[{\em type}]If the source is a current source, or a A4AF source.\end{DoxyParams}
+Please note that the specified client will only be added to the list if it's owner is shown, otherwise the source will simply be ignored. Duplicates wont be added. 
+
+References m\_\-knownfiles, m\_\-ListItems, and ShowSourcesCount().\index{CGenericClientListCtrl@{CGenericClientListCtrl}!GetParentDialog@{GetParentDialog}}
+\index{GetParentDialog@{GetParentDialog}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{GetParentDialog}]{\setlength{\rightskip}{0pt plus 5cm}virtual CamuleDlg::DialogType CGenericClientListCtrl::GetParentDialog ()\hspace{0.3cm}{\ttfamily  [private, pure virtual]}}\label{classCGenericClientListCtrl_ac65ccf92c12d466b33fcc80c5696006c}
+
+
+Must be overriden by the derived class and return the dialog where this list is. \begin{DoxySeeAlso}{See also}
+CamuleDlg::DialogType 
+\end{DoxySeeAlso}
+
+
+Implemented in {\bf CSharedFilePeersListCtrl} \doxyref{}{p.}{classCSharedFilePeersListCtrl_abfb077b080fd314df24a68d9c0af202b}, and {\bf CSourceListCtrl} \doxyref{}{p.}{classCSourceListCtrl_a24c20716e15f7f2de8a951b77dec42e6}.
+
+Referenced by OnDrawItem().\index{CGenericClientListCtrl@{CGenericClientListCtrl}!GetTTSText@{GetTTSText}}
+\index{GetTTSText@{GetTTSText}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{GetTTSText}]{\setlength{\rightskip}{0pt plus 5cm}virtual wxString CGenericClientListCtrl::GetTTSText (unsigned) const\hspace{0.3cm}{\ttfamily  [inline, private, virtual]}}\label{classCGenericClientListCtrl_a2ddfb8922f265b76390251a38f75a740}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::GetTTSText}{p.}{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63} Just a dummy 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63}.\index{CGenericClientListCtrl@{CGenericClientListCtrl}!InitColumnData@{InitColumnData}}
+\index{InitColumnData@{InitColumnData}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{InitColumnData}]{\setlength{\rightskip}{0pt plus 5cm}void CGenericClientListCtrl::InitColumnData ()}\label{classCGenericClientListCtrl_a47668b641de8935dbc491a23e0bf2ceb}
+
+
+Initializes the control. We need a 2-\/stage initialization so the derived class members can be called. 
+
+References CMuleListCtrl::InsertColumn(), CMuleListCtrl::LoadSettings(), and TranslateCIDToName().\index{CGenericClientListCtrl@{CGenericClientListCtrl}!RemoveSource@{RemoveSource}}
+\index{RemoveSource@{RemoveSource}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{RemoveSource}]{\setlength{\rightskip}{0pt plus 5cm}void CGenericClientListCtrl::RemoveSource (uint32 {\em source}, \/  const {\bf CKnownFile} $\ast$ {\em owner})}\label{classCGenericClientListCtrl_ac10c2cf8e84d9ef7f77cf0f901ed59a1}
+
+
+Removes a source from the list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]ID of the source to be removed. \item[{\em owner}]Either a specific file, or NULL to remove the source from all files. \end{DoxyParams}
+
+
+References m\_\-ListItems, and ShowSourcesCount().\index{CGenericClientListCtrl@{CGenericClientListCtrl}!ShowSources@{ShowSources}}
+\index{ShowSources@{ShowSources}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{ShowSources}]{\setlength{\rightskip}{0pt plus 5cm}void CGenericClientListCtrl::ShowSources (const CKnownFileVector \& {\em files})}\label{classCGenericClientListCtrl_a4eb3ed6d08fbbad16c520ac0abde3c79}
+
+
+Shows the clients of specific files. 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]A valid, sorted vector of files whose clients will be shown.\end{DoxyParams}
+WARNING: The received vector $\ast$MUST$\ast$ be odered with std::sort. 
+
+References m\_\-knownfiles, m\_\-ListItems, SetShowSources(), ShowSourcesCount(), and CMuleListCtrl::SortList().
+
+Referenced by CSharedFilesWnd::SelectionUpdated().\index{CGenericClientListCtrl@{CGenericClientListCtrl}!SortProc@{SortProc}}
+\index{SortProc@{SortProc}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{SortProc}]{\setlength{\rightskip}{0pt plus 5cm}int CGenericClientListCtrl::SortProc (wxUIntPtr {\em item1}, \/  wxUIntPtr {\em item2}, \/  long {\em sortData})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCGenericClientListCtrl_a80665bdd86796ffb1bd3d11915d8353d}
+
+
+Wrapper around the user-\/provided sorter function. This function ensures that items are sorted in the order specified by clicking on column-\/headers, and also enforces that different entries are never considered equal. This is required for lists that make use of child-\/items, since otherwise, parents may not end up properly located in relation to child-\/items. 
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a9958ee438b116457a818ffb29b3c5864}.
+
+References CMuleListCtrl::COLUMN\_\-MASK, and CMuleListCtrl::SORT\_\-DES.\index{CGenericClientListCtrl@{CGenericClientListCtrl}!TranslateCIDToName@{TranslateCIDToName}}
+\index{TranslateCIDToName@{TranslateCIDToName}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{TranslateCIDToName}]{\setlength{\rightskip}{0pt plus 5cm}wxString CGenericClientListCtrl::TranslateCIDToName (GenericColumnEnum {\em cid})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCGenericClientListCtrl_a7298c0874c143f7e80f6cba58ac02afa}
+
+
+Translate the CID to a unique string for saving column sizes. \begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::InsertColumn}{p.}{classCMuleListCtrl_a80b324a0bbf25f8c5ab838693e867178} 
+\end{DoxySeeAlso}
+
+
+Referenced by InitColumnData().\index{CGenericClientListCtrl@{CGenericClientListCtrl}!UpdateItem@{UpdateItem}}
+\index{UpdateItem@{UpdateItem}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{UpdateItem}]{\setlength{\rightskip}{0pt plus 5cm}void CGenericClientListCtrl::UpdateItem (uint32 {\em toupdate}, \/  SourceItemType {\em type})}\label{classCGenericClientListCtrl_a0ef905a891b5df9d79dfa08d8c7f2282}
+
+
+Updates the state of the specified item, possibly causing a redrawing. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toupdate}]ID of the client to be updated. \item[{\em type}]If the source is a current source, or a A4AF source. \end{DoxyParams}
+
+
+References m\_\-knownfiles, and m\_\-ListItems.
+
+\subsection{Member Data Documentation}
+\index{CGenericClientListCtrl@{CGenericClientListCtrl}!m\_\-ListItems@{m\_\-ListItems}}
+\index{m\_\-ListItems@{m\_\-ListItems}!CGenericClientListCtrl@{CGenericClientListCtrl}}
+\subsubsection[{m\_\-ListItems}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ListItems} {\bf CGenericClientListCtrl::m\_\-ListItems}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCGenericClientListCtrl_a35e9fc9cc6e8fd595a81c0d2bb6a7dc2}
+
+
+This list contains everything shown on the list. Sources are only to be found on this list if they are being displayed 
+
+Referenced by AddSource(), RemoveSource(), ShowSources(), UpdateItem(), and $\sim$CGenericClientListCtrl().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/GenericClientListCtrl.h\item 
+src/GenericClientListCtrl.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\section{Kademlia::CKadUDPKey Class Reference}
+\label{classKademlia_1_1CKadUDPKey}\index{Kademlia::CKadUDPKey@{Kademlia::CKadUDPKey}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CKadUDPKey} (uint32\_\-t WXUNUSED\_\-UNLESS\_\-DEBUG(zero)=0)\label{classKademlia_1_1CKadUDPKey_a7e4358e0384b6bfcd1502ea3d3420cec}
+
+\item 
+{\bfseries CKadUDPKey} (uint32\_\-t key, uint32\_\-t ip)  throw ()\label{classKademlia_1_1CKadUDPKey_a7d0e0d63c3e11a1e604547629f76f265}
+
+\item 
+{\bfseries CKadUDPKey} ({\bf CFileDataIO} \&file)\label{classKademlia_1_1CKadUDPKey_ad63d648f1231c12fdf7734831a5d50ba}
+
+\item 
+{\bf CKadUDPKey} \& {\bfseries operator=} (const {\bf CKadUDPKey} \&k1)  throw ()\label{classKademlia_1_1CKadUDPKey_a49ee48c9838a2b6fac0283e4b2b66304}
+
+\item 
+{\bf CKadUDPKey} \& {\bfseries operator=} (const uint32\_\-t WXUNUSED\_\-UNLESS\_\-DEBUG(zero))\label{classKademlia_1_1CKadUDPKey_a2c3e05c12fdff55dd7322bf7c48b1a5e}
+
+\item 
+uint32\_\-t {\bfseries GetKeyValue} (uint32\_\-t myIP) const   throw ()\label{classKademlia_1_1CKadUDPKey_a2954586ffce4a4025c3df7654653a782}
+
+\item 
+bool {\bfseries IsEmpty} () const   throw ()\label{classKademlia_1_1CKadUDPKey_a19d3990379278f18577436f4f2388346}
+
+\item 
+void {\bfseries StoreToFile} ({\bf CFileDataIO} \&file) const \label{classKademlia_1_1CKadUDPKey_a4287e2a01bdb2aa961e85cf9a8f87cc5}
+
+\item 
+void {\bfseries ReadFromFile} ({\bf CFileDataIO} \&file)\label{classKademlia_1_1CKadUDPKey_a35ca786ad4db8e4e382caf6a88aba5da}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries m\_\-key}\label{classKademlia_1_1CKadUDPKey_a5986308f144e15d67c7cf8238e3028c2}
+
+\item 
+uint32\_\-t {\bfseries m\_\-ip}\label{classKademlia_1_1CKadUDPKey_aadb970ba385ac0df4d0323d0ab0c472d}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries operator==} (const {\bf CKadUDPKey} \&k1, const {\bf CKadUDPKey} \&k2)  throw ()\label{classKademlia_1_1CKadUDPKey_ab668492667c5e7926d6cab2c9ca7ff20}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/utils/KadUDPKey.h\end{DoxyCompactItemize}

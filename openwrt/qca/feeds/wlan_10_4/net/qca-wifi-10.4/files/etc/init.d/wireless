@@ -1,0 +1,49 @@
+#!/bin/sh /etc/rc.common
+
+START=50
+STOP=90
+
+SERVICE_DAEMONIZE=1
+SERVICE_WRITE_PID=1
+
+start() {
+{
+	if [ "$(/sbin/is_cal)" = "true" ]; then
+		/sbin/wifi default &> /dev/null
+		/sbin/wifi_firm
+		/sbin/wifi
+	else
+		cd /usr/sbin/
+		/etc/init.d/qcmbr start
+		cd /
+	fi
+	local en=$(uci get ledctrl.GENERAL.enable)
+	local on_off=1
+	[ $en = "off" ] && on_off=0
+	echo $on_off > /proc/power_led_status
+	/etc/init.d/ledpm restart
+	return 0
+}&
+}
+
+restart() {
+	/sbin/wifi
+	return 0
+}
+
+shutdown() {
+	killall -9 hostapd
+	# do not call wifi down!
+	#/sbin/wifi down
+	return 0
+}
+
+stop() {
+	/sbin/wifi down
+	return 0
+}
+
+reload() {
+	/sbin/wifi reload
+	return 0
+}

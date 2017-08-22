@@ -1,0 +1,56 @@
+\section{CMagnetURI Class Reference}
+\label{classCMagnetURI}\index{CMagnetURI@{CMagnetURI}}
+Inheritance diagram for CMagnetURI::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCMagnetURI}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ STRING $>$ {\bfseries Value\_\-List}\label{classCMagnetURI_a44817a344b662b9ee5d260adba2702f3}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CMagnetURI} (const STRING \&uri)\label{classCMagnetURI_a3281593abbb2e526c0ca799ab57f2a18}
+
+\item 
+void {\bfseries AddField} (const STRING \&name, const STRING \&value)\label{classCMagnetURI_afb34ebe9af74f010fd09cfd467bcc732}
+
+\item 
+Value\_\-List {\bfseries GetField} (const STRING \&name) const \label{classCMagnetURI_aa1b2c415ed5f6d19826198ef1ba11bac}
+
+\item 
+void {\bfseries Clear} ()\label{classCMagnetURI_a7773180d183fabd42d3fe75bad48c167}
+
+\item 
+STRING {\bfseries GetLink} () const \label{classCMagnetURI_a41f432fd695125ac0f8e1bc47d9aec8a}
+
+\item 
+{\bfseries operator STRING} () const \label{classCMagnetURI_a4035bb7681644d610a4339a29bee66c6}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::pair$<$ STRING, STRING $>$ {\bfseries Field\_\-Type}\label{classCMagnetURI_a141a2daa5b94dd588e252fe1293c9a7b}
+
+\item 
+typedef std::list$<$ Field\_\-Type $>$ {\bfseries List\_\-Type}\label{classCMagnetURI_aceaa162ea73c056986ada1eb81a275cd}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List\_\-Type {\bfseries m\_\-fields}\label{classCMagnetURI_a90883083352c8be70a5ff3d0f4225542}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MagnetURI.h\item 
+src/MagnetURI.cpp\end{DoxyCompactItemize}

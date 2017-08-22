@@ -1,0 +1,71 @@
+\section{Kademlia::CPacketTracking Class Reference}
+\label{classKademlia_1_1CPacketTracking}\index{Kademlia::CPacketTracking@{Kademlia::CPacketTracking}}
+Inheritance diagram for Kademlia::CPacketTracking::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classKademlia_1_1CPacketTracking}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries AddTrackedOutPacket} (uint32\_\-t ip, uint8\_\-t opcode)\label{classKademlia_1_1CPacketTracking_a3733a18d8cbdc0601e12a130629a5ffe}
+
+\item 
+bool {\bfseries IsOnOutTrackList} (uint32\_\-t ip, uint8\_\-t opcode, bool dontRemove=false)\label{classKademlia_1_1CPacketTracking_a445ea2852888de625e1ecc228e65968c}
+
+\item 
+bool {\bfseries InTrackListIsAllowedPacket} (uint32\_\-t ip, uint8\_\-t opcode, bool validReceiverkey)\label{classKademlia_1_1CPacketTracking_ae368316411068ca52cabf2e742a104e5}
+
+\item 
+void {\bfseries InTrackListCleanup} ()\label{classKademlia_1_1CPacketTracking_a4319a635c45813c490fd865f5f02dc9b}
+
+\item 
+void {\bfseries AddLegacyChallenge} (const {\bf CUInt128} \&contactID, const {\bf CUInt128} \&challengeID, uint32\_\-t ip, uint8\_\-t opcode)\label{classKademlia_1_1CPacketTracking_ae80c075d84597150ba40f0a78c96620e}
+
+\item 
+bool {\bfseries IsLegacyChallenge} (const {\bf CUInt128} \&challengeID, uint32\_\-t ip, uint8\_\-t opcode, {\bf CUInt128} \&contactID)\label{classKademlia_1_1CPacketTracking_ae8179d4ab69facd5e9392b4f808713d8}
+
+\item 
+bool {\bfseries HasActiveLegacyChallenge} (uint32\_\-t ip) const \label{classKademlia_1_1CPacketTracking_aba1baa185db45ec4a59abe5c52f90139}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf TrackPackets\_\-Struct} $>$ {\bfseries TrackedPacketList}\label{classKademlia_1_1CPacketTracking_a451774586dc283ee3fb82d9a9b87eaa3}
+
+\item 
+typedef std::list$<$ {\bf TrackChallenge\_\-Struct} $>$ {\bfseries TrackChallengeList}\label{classKademlia_1_1CPacketTracking_aec85237940bb7f950de89c6a16f1cf43}
+
+\item 
+typedef std::map$<$ uint32\_\-t, {\bf TrackPacketsIn\_\-Struct} $\ast$ $>$ {\bfseries TrackedPacketInMap}\label{classKademlia_1_1CPacketTracking_a6fc3909ec77bee6d6ada460acda84598}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries IsTrackedOutListRequestPacket} (uint8\_\-t opcode)  throw ()\label{classKademlia_1_1CPacketTracking_a7f4ffae645ebb5a77e0a26b6cf300dbe}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TrackedPacketList {\bfseries listTrackedRequests}\label{classKademlia_1_1CPacketTracking_a906632373a09c10f3b2fbe052972bf52}
+
+\item 
+TrackChallengeList {\bfseries listChallengeRequests}\label{classKademlia_1_1CPacketTracking_a1b4817077e49397a339536702292e881}
+
+\item 
+TrackedPacketInMap {\bfseries m\_\-mapTrackPacketsIn}\label{classKademlia_1_1CPacketTracking_a43503a25bcb7b24245db1c5cdfec0b51}
+
+\item 
+uint32\_\-t {\bfseries lastTrackInCleanup}\label{classKademlia_1_1CPacketTracking_a8da5e21e59a0e159a441725e1eb5da71}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/net/PacketTracking.h\item 
+src/kademlia/net/PacketTracking.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,131 @@
+\section{CWebServerBase Class Reference}
+\label{classCWebServerBase}\index{CWebServerBase@{CWebServerBase}}
+Inheritance diagram for CWebServerBase::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCWebServerBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CWebServerBase} ({\bf CamulewebApp} $\ast$webApp, const wxString \&templateDir)\label{classCWebServerBase_aa10dfd5d638c457575b5452b93749722}
+
+\item 
+void {\bfseries Send\_\-Discard\_\-V2\_\-Request} ({\bf CECPacket} $\ast$request)\label{classCWebServerBase_af715dfef02319ae0a9cc2f583ca2816b}
+
+\item 
+void {\bfseries StartServer} ()\label{classCWebServerBase_a4e3d7d9eb8d2810b2a71d8d6314ce274}
+
+\item 
+void {\bfseries StopServer} ()\label{classCWebServerBase_a23e000923dec92f9c8d1594b0dd93b7e}
+
+\item 
+void {\bfseries Print} (const wxString \&s)\label{classCWebServerBase_a4158f03358cd2e28683ef57133c2e2d2}
+
+\item 
+long {\bfseries GetWSPrefs} ()\label{classCWebServerBase_a23ea63bf56f2996c3f83e9aef5bb0b86}
+
+\item 
+void {\bfseries Send\_\-ReloadSharedFile\_\-Cmd} ()\label{classCWebServerBase_a82d4f3f2f61fe045ddda85d49793aa60}
+
+\item 
+void {\bfseries Send\_\-SharedFile\_\-Cmd} (wxString file\_\-hash, wxString cmd, uint32 opt\_\-arg=0)\label{classCWebServerBase_a5ca9ffbd8a7b28c98d825e2f19e352bc}
+
+\item 
+void {\bfseries Send\_\-DownloadFile\_\-Cmd} (wxString file\_\-hash, wxString cmd, uint32 opt\_\-arg=0)\label{classCWebServerBase_a83c9972a8e2267412958c59b41da325d}
+
+\item 
+void {\bfseries Send\_\-DownloadSearchFile\_\-Cmd} (wxString file\_\-hash, uint8 cat)\label{classCWebServerBase_ac8e7feca50bef2147db5d3e72056fd2d}
+
+\item 
+void {\bfseries Send\_\-Server\_\-Cmd} (uint32 ip, uint16 port, wxString cmd)\label{classCWebServerBase_a046cf43dcfb32813af61d4b6802424b4}
+
+\item 
+void {\bfseries Send\_\-AddServer\_\-Cmd} (wxString addr, wxString port, wxString name)\label{classCWebServerBase_ad0e6cfc576f600bcc803849289f58630}
+
+\item 
+void {\bfseries Send\_\-Search\_\-Cmd} (wxString search, wxString extention, wxString type, EC\_\-SEARCH\_\-TYPE search\_\-type, uint32 avail, uint32 min\_\-size, uint32 max\_\-size)\label{classCWebServerBase_a81fb951eb6e3def9a896cf98e30ddbfd}
+
+\item 
+bool {\bfseries Send\_\-DownloadEd2k\_\-Cmd} (wxString link, uint8 cat)\label{classCWebServerBase_a5e8c7a9db7c528bbdaf6e068cc6a1574}
+
+\item 
+void {\bfseries Reload\_\-Stats} ()\label{classCWebServerBase_a84e41ef01c6c0d52c4662ee5564c1312}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CamulewebApp} $\ast$ {\bfseries webInterface}\label{classCWebServerBase_af14240159e68cc58896a7ff14316f502}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries ProcessURL} ({\bf ThreadData})=0\label{classCWebServerBase_a5ab0d93c349f76d16c2f352fe7a4d636}
+
+\item 
+virtual void {\bfseries ProcessImgFileReq} ({\bf ThreadData})=0\label{classCWebServerBase_a2a5c087c405df9662ad61cbf14723a66}
+
+\item 
+int {\bfseries GzipCompress} (Bytef $\ast$dest, uLongf $\ast$destLen, const Bytef $\ast$source, uLong sourceLen, int level)\label{classCWebServerBase_ae98c20bf2dcaf40364d10bc08e1fab25}
+
+\item 
+void {\bfseries OnWebSocketServerEvent} (wxSocketEvent \&event)\label{classCWebServerBase_ae5d6240aa159ca8f997569eb92c38983}
+
+\item 
+void {\bfseries OnWebSocketEvent} (wxSocketEvent \&event)\label{classCWebServerBase_a2f2342becbf00523706da0a5813cbe37}
+
+\item 
+{\bfseries DECLARE\_\-EVENT\_\-TABLE} ()\label{classCWebServerBase_a5bfd5a74470bb166174fd0161b30d850}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxSocketServer $\ast$ {\bfseries m\_\-webserver\_\-socket}\label{classCWebServerBase_a1f80b46a729278c8dd1c159ebb48ab6b}
+
+\item 
+{\bf ServersInfo} {\bfseries m\_\-ServersInfo}\label{classCWebServerBase_a5a4869cf9979d50427aca5fcfefd3d4a}
+
+\item 
+{\bf SharedFileInfo} {\bfseries m\_\-SharedFileInfo}\label{classCWebServerBase_a5e9afa778c37c512188202d1321b8f84}
+
+\item 
+{\bf DownloadFileInfo} {\bfseries m\_\-DownloadFileInfo}\label{classCWebServerBase_a2b2d20496015ea76a221020ca502eef0}
+
+\item 
+{\bf UploadsInfo} {\bfseries m\_\-UploadsInfo}\label{classCWebServerBase_aa1e03c06851af8637883446def44342b}
+
+\item 
+{\bf SearchInfo} {\bfseries m\_\-SearchInfo}\label{classCWebServerBase_acde2518ac2e9c42d0cf8e00bbc59e780}
+
+\item 
+{\bf CStatsCollection} {\bfseries m\_\-Stats}\label{classCWebServerBase_ac7df6c42397ca967d1a1e3154be409a2}
+
+\item 
+{\bf CImageLib} {\bfseries m\_\-ImageLib}\label{classCWebServerBase_a3c50242c1e05a7d32f6780f092e8f9c7}
+
+\item 
+bool {\bfseries m\_\-upnpEnabled}\label{classCWebServerBase_a302b5060976ebc2fa13f9b0d176f20a1}
+
+\item 
+int {\bfseries m\_\-upnpTCPPort}\label{classCWebServerBase_a8fb7f1201dc1ba7bc338cda70d465970}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CWebSocket}\label{classCWebServerBase_a573927b581ff7c43f3c58e712edaf456}
+
+\item 
+class {\bfseries CPhPLibContext}\label{classCWebServerBase_a281a6221aeb986b2361714a5695572f5}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\item 
+src/webserver/src/WebServer.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\section{CRC4EncryptableBuffer Class Reference}
+\label{classCRC4EncryptableBuffer}\index{CRC4EncryptableBuffer@{CRC4EncryptableBuffer}}
+Inheritance diagram for CRC4EncryptableBuffer::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCRC4EncryptableBuffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Append} (const uint8 $\ast$buffer, int n)\label{classCRC4EncryptableBuffer_a0ff982c03234c0e2e79f88d20fb601e2}
+
+\item 
+void {\bfseries SetKey} (const {\bf MD5Sum} \&keyhash, bool bSkipDiscard=false)\label{classCRC4EncryptableBuffer_a2d825f68c96916a7f36434115137e187}
+
+\item 
+void {\bfseries Encrypt} ()\label{classCRC4EncryptableBuffer_ab1b688256228565229498081eee4ba64}
+
+\item 
+void {\bfseries RC4Crypt} (const uint8 $\ast$pachIn, uint8 $\ast$pachOut, uint32 nLen)\label{classCRC4EncryptableBuffer_a8f818cfc6f2e407c6b62211807953813}
+
+\item 
+uint8 $\ast$ {\bfseries Detach} ()\label{classCRC4EncryptableBuffer_aa0eb688f20306f3d19fcd8fcf9bdad52}
+
+\item 
+void {\bf ResetData} ()\label{classCRC4EncryptableBuffer_a832167698e85ea5afe4e8e990fdd75a2}
+
+\item 
+void {\bfseries FullReset} ()\label{classCRC4EncryptableBuffer_a25191a7724abb30e6a94355215db158b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries RC4CreateKey} (const uint8 $\ast$pachKeyData, uint32 nLen, bool bSkipDiscard)\label{classCRC4EncryptableBuffer_ac91bb6e3665347c0d2a0b5cc8a21d623}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-encrypted}\label{classCRC4EncryptableBuffer_a003c019478a89abb541eeb20c31beb9f}
+
+\item 
+bool {\bfseries m\_\-hasKey}\label{classCRC4EncryptableBuffer_a89aba35ca70d15b502f9a1553efd4b45}
+
+\item 
+{\bf RC4\_\-Key\_\-Struct} {\bfseries m\_\-key}\label{classCRC4EncryptableBuffer_ad4db6627dc6332165e8ee916f0aecd61}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/RC4Encrypt.h\item 
+src/RC4Encrypt.cpp\end{DoxyCompactItemize}

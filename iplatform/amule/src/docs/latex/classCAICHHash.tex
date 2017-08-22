@@ -1,0 +1,71 @@
+\section{CAICHHash Class Reference}
+\label{classCAICHHash}\index{CAICHHash@{CAICHHash}}
+
+
+\doxyref{CAICHHash}{p.}{classCAICHHash}.  
+
+
+{\ttfamily \#include $<$SHAHashSet.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CAICHHash} ({\bf CFileDataIO} $\ast$file)\label{classCAICHHash_a30d083e17c71a96fd4d6a611413d38d0}
+
+\item 
+{\bfseries CAICHHash} (byte $\ast$data)\label{classCAICHHash_ae5e12e9bbc02b1abe1170997b27fcfea}
+
+\item 
+{\bfseries CAICHHash} (const {\bf CAICHHash} \&k1)\label{classCAICHHash_a45f4f5d5de77b80f14a69116ab233ead}
+
+\item 
+{\bf CAICHHash} \& {\bfseries operator=} (const {\bf CAICHHash} \&k1)\label{classCAICHHash_ae64ccf103f3c5868940cbd2cc469d7bc}
+
+\item 
+void {\bfseries Read} ({\bf CFileDataIO} $\ast$file)\label{classCAICHHash_a30ceb6798c84e8c556013a3864942a08}
+
+\item 
+void {\bfseries Write} ({\bf CFileDataIO} $\ast$file) const \label{classCAICHHash_a78546f9e8dda9b064f036d407e18b168}
+
+\item 
+void {\bfseries Read} (byte $\ast$data)\label{classCAICHHash_a347662ff4205e238f4ea443a09e95968}
+
+\item 
+wxString {\bf GetString} () const \label{classCAICHHash_ab337fc75d1b3e4cc83fd3e7fef690638}
+
+\item 
+byte $\ast$ {\bfseries GetRawHash} ()\label{classCAICHHash_ab34ad9e24c713c781f932a1e0bb2750c}
+
+\item 
+unsigned int {\bfseries DecodeBase32} (const wxString \&base32)\label{classCAICHHash_ad352d180184cd56268a891f7878dd1df}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32 {\bfseries GetHashSize} ()\label{classCAICHHash_a4de8ae54182e8cecb289b138ed29b3c3}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+byte {\bfseries m\_\-abyBuffer} [HASHSIZE]\label{classCAICHHash_a7b0352ac0b826f71164c3fc474adf765}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries operator==} (const {\bf CAICHHash} \&k1, const {\bf CAICHHash} \&k2)\label{classCAICHHash_a2948f08afd13864ded97d6cb61e9bef7}
+
+\item 
+bool {\bfseries operator!=} (const {\bf CAICHHash} \&k1, const {\bf CAICHHash} \&k2)\label{classCAICHHash_a10dbb6d215fc84de4f61f491c98a9ba5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{CAICHHash}{p.}{classCAICHHash}. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SHAHashSet.h\item 
+src/amule-\/remote-\/gui.cpp\item 
+src/SHAHashSet.cpp\end{DoxyCompactItemize}

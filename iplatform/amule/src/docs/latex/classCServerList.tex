@@ -1,0 +1,175 @@
+\section{CServerList Class Reference}
+\label{classCServerList}\index{CServerList@{CServerList}}
+Inheritance diagram for CServerList::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCServerList}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries Init} ()\label{classCServerList_a7bf635abecbb793b48939b5c1978205b}
+
+\item 
+bool {\bfseries AddServer} ({\bf CServer} $\ast$in\_\-server, bool fromUser=false)\label{classCServerList_a706430efa1c9ba6892cade533793be24}
+
+\item 
+void {\bfseries RemoveServer} ({\bf CServer} $\ast$in\_\-server)\label{classCServerList_aa76a76f65181b1ca7d41b691abf64e8b}
+
+\item 
+void {\bfseries RemoveAllServers} ()\label{classCServerList_aa7a705a157aa5bb02fcb5a3ace227131}
+
+\item 
+void {\bfseries RemoveDeadServers} ()\label{classCServerList_adb7cd56a0d08d98c904fa43729bd898c}
+
+\item 
+bool {\bfseries LoadServerMet} (const {\bf CPath} \&path)\label{classCServerList_abb770a11747338a146b52d1c07263e04}
+
+\item 
+bool {\bfseries SaveServerMet} ()\label{classCServerList_af874a3fe0ed819ed63271fb0360dfa8a}
+
+\item 
+void {\bfseries ServerStats} ()\label{classCServerList_a2e6d9fa9ba3c23d123e9b826195beb1f}
+
+\item 
+void {\bfseries ResetServerPos} ()\label{classCServerList_aa48250963383d95d3e255e1403336d31}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetNextServer} (bool bOnlyObfuscated=false)\label{classCServerList_a766d70911cb5063a21672c595fec7724}
+
+\item 
+size\_\-t {\bfseries GetServerCount} ()\label{classCServerList_a63a5758f03dfba4de674e33ba3e36ce3}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetServerByAddress} (const wxString \&address, uint16 port) const \label{classCServerList_acb1888734e94581722cd34e2fdb99298}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetServerByIP} (uint32 nIP) const \label{classCServerList_a27453179713ed32d07ffb9ab2469f3d4}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetServerByIPTCP} (uint32 nIP, uint16 nPort) const \label{classCServerList_a6dd3c4440f647fadab05b3ed86d41b06}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetServerByIPUDP} (uint32 nIP, uint16 nUDPPort, bool bObfuscationPorts=true) const \label{classCServerList_abd6f6bcee034d4dfb48ea9bea161741d}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetServerByECID} (uint32 ecid) const \label{classCServerList_af89bcb43fe9fc5f6c42ee4cf875ccffd}
+
+\item 
+void {\bfseries GetStatus} (uint32 \&failed, uint32 \&user, uint32 \&file, uint32 \&tuser, uint32 \&tfile, float \&occ)\label{classCServerList_afe8992512d4c1fed265dd14550ef212c}
+
+\item 
+void {\bfseries GetUserFileStatus} (uint32 \&user, uint32 \&file)\label{classCServerList_a3b83714c248a6d65230a310acc51028e}
+
+\item 
+bool {\bfseries IsInitialized} () const \label{classCServerList_a970eafa8dd76862ccb8f74a13a350889}
+
+\item 
+void {\bfseries Sort} ()\label{classCServerList_a635825293b9d5576baf8be67e5d9efb4}
+
+\item 
+void {\bfseries UpdateServerMetFromURL} (const wxString \&strURL)\label{classCServerList_a08f5cd3a79f9154b2b0466fe91b28e0c}
+
+\item 
+void {\bfseries DownloadFinished} (uint32 result)\label{classCServerList_a552e685444f12b8f14e451832061a006}
+
+\item 
+void {\bfseries AutoDownloadFinished} (uint32 result)\label{classCServerList_a5381e010c4253dec3f522f8c46197b0c}
+
+\item 
+uint32 {\bfseries GetAvgFile} () const \label{classCServerList_aff09c2aad7e8665b92bab90516adcb70}
+
+\item 
+std::vector$<$ const {\bf CServer} $\ast$ $>$ {\bfseries CopySnapshot} () const \label{classCServerList_a96955ffb85b6e21f207db185a5b3610e}
+
+\item 
+void {\bf FilterServers} ()
+\item 
+void {\bfseries CheckForExpiredUDPKeys} ()\label{classCServerList_a772ce8ffebfe1f72fa4dfcf7e6d091d0}
+
+\item 
+void {\bf SetStaticServer} ({\bf CServer} $\ast$server, bool isStatic)
+\item 
+void {\bfseries SetServerPrio} ({\bf CServer} $\ast$server, uint32 prio)\label{classCServerList_a0c77a4d3ff7fabda5054be723583d6d6}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CServer} $\ast$ $>$ {\bfseries CInternalList}\label{classCServerList_a721dc2fba03bfe2fa408fd0c8a41cf35}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf ObserverAdded} ({\bf ObserverType} $\ast$)\label{classCServerList_a3f0fe66b1078b318b730015bde47392b}
+
+\item 
+void {\bfseries AutoUpdate} ()\label{classCServerList_a0005ed40179224290c4b9fd96b76b19f}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetNextStatServer} ()\label{classCServerList_a7e6a8a7090fcde49db741a8b94b33c42}
+
+\item 
+void {\bfseries LoadStaticServers} ()\label{classCServerList_a82ddfceb8388a6d7a2dc88e518a9c6c9}
+
+\item 
+void {\bfseries SaveStaticServers} ()\label{classCServerList_a47b6d1fb2656edb0279acc84609ed9b5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-staticServersConfig}\label{classCServerList_abcb40012d1a9b982ee5b5b033356d4b8}
+
+\item 
+uint8 {\bfseries current\_\-url\_\-index}\label{classCServerList_a8d478f406cff832c945d8e5f3a235fed}
+
+\item 
+CInternalList {\bfseries m\_\-servers}\label{classCServerList_afbdd8bf67be1a404f8eeeeef4b386790}
+
+\item 
+CInternalList::const\_\-iterator {\bfseries m\_\-serverpos}\label{classCServerList_a54a8f66e477ed7cf1838c237106c8d1a}
+
+\item 
+CInternalList::const\_\-iterator {\bfseries m\_\-statserverpos}\label{classCServerList_ad4ae8d085d2015a2cee0b63569e275d2}
+
+\item 
+uint32 {\bfseries m\_\-nLastED2KServerLinkCheck}\label{classCServerList_a9dc7834ff46ea4c2f15fe8e56d82ab31}
+
+\item 
+wxString {\bfseries m\_\-URLUpdate}\label{classCServerList_ae915963abe24eaa64520af28666ea19d}
+
+\item 
+bool {\bfseries m\_\-initialized}\label{classCServerList_a0250e5d141432c8e055b7fbc099444d6}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CServerListCtrl}\label{classCServerList_a7c1360ef7ffe151b7936124f65ebdbef}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CServerList@{CServerList}!FilterServers@{FilterServers}}
+\index{FilterServers@{FilterServers}!CServerList@{CServerList}}
+\subsubsection[{FilterServers}]{\setlength{\rightskip}{0pt plus 5cm}void CServerList::FilterServers ()}\label{classCServerList_a44cbd766265e3bdcb17677365d1e9660}
+
+
+Refilters all servers though the IPFilter. \index{CServerList@{CServerList}!SetStaticServer@{SetStaticServer}}
+\index{SetStaticServer@{SetStaticServer}!CServerList@{CServerList}}
+\subsubsection[{SetStaticServer}]{\setlength{\rightskip}{0pt plus 5cm}void CServerList::SetStaticServer ({\bf CServer} $\ast$ {\em server}, \/  bool {\em isStatic})}\label{classCServerList_af2b4e04236174e8c57043eab0591c176}
+
+
+Marks the specified server as static or not. 
+\begin{DoxyParams}{Parameters}
+\item[{\em The}]server to be marked or unmarked as static. \item[{\em The}]new static state.\end{DoxyParams}
+Other than setting the static setting of the specified server, it also adds or removes the server from the static-\/list file. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ServerList.h\item 
+src/ServerList.cpp\end{DoxyCompactItemize}

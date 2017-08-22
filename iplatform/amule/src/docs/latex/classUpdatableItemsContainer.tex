@@ -1,0 +1,61 @@
+\section{UpdatableItemsContainer$<$ T, G, I $>$ Class Template Reference}
+\label{classUpdatableItemsContainer}\index{UpdatableItemsContainer@{UpdatableItemsContainer}}
+
+
+{\ttfamily \#include $<$WebServer.h$>$}Inheritance diagram for UpdatableItemsContainer$<$ T, G, I $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classUpdatableItemsContainer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UpdatableItemsContainer} ({\bf CamulewebApp} $\ast$webApp)\label{classUpdatableItemsContainer_a69252b2d05434ddf47a7c6817edfbc6b}
+
+\item 
+T $\ast$ {\bfseries AddItem} (T \&item)\label{classUpdatableItemsContainer_aa91a0316d7ca2263d5266792ce916f5d}
+
+\item 
+T $\ast$ {\bfseries GetByID} (I id)\label{classUpdatableItemsContainer_ab3cb7f7461a6f898ab42251286e8634c}
+
+\item 
+T $\ast$ {\bfseries GetByHash} (const {\bf CMD4Hash} \&fileHash)\label{classUpdatableItemsContainer_aa180319e39de34c38222e927a31ec8bb}
+
+\item 
+void {\bf ProcessUpdate} (const {\bf CECPacket} $\ast$reply, {\bf CECPacket} $\ast$full\_\-req, int req\_\-type)
+\item 
+void {\bfseries ProcessFull} (const {\bf CECPacket} $\ast$reply)\label{classUpdatableItemsContainer_a9eaebcc34c70df18023ac44e8fac1945}
+
+\item 
+bool {\bfseries DoRequery} (int cmd, int tag)\label{classUpdatableItemsContainer_a13cc960748bdffe071ef05e569fc9670}
+
+\item 
+virtual void {\bfseries ItemDeleted} (T $\ast$)\label{classUpdatableItemsContainer_ae1b3ed2fa2605f9be634a097efb8ba43}
+
+\item 
+virtual void {\bfseries ItemInserted} (T $\ast$)\label{classUpdatableItemsContainer_ad106e2fcdf4961864c33e8aa28916cf3}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ I, T $\ast$ $>$ {\bfseries m\_\-items\_\-hash}\label{classUpdatableItemsContainer_ab60f16af6535d9a4d373e904baad47a4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T, class G, class I$>$ class UpdatableItemsContainer$<$ T, G, I $>$}
+
+T -\/ type of items in container I -\/ type of item ID G -\/ type of tag in EC 
+
+\subsection{Member Function Documentation}
+\index{UpdatableItemsContainer@{UpdatableItemsContainer}!ProcessUpdate@{ProcessUpdate}}
+\index{ProcessUpdate@{ProcessUpdate}!UpdatableItemsContainer@{UpdatableItemsContainer}}
+\subsubsection[{ProcessUpdate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, class G, class I$>$ void {\bf UpdatableItemsContainer}$<$ T, G, I $>$::ProcessUpdate (const {\bf CECPacket} $\ast$ {\em reply}, \/  {\bf CECPacket} $\ast$ {\em full\_\-req}, \/  int {\em req\_\-type})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classUpdatableItemsContainer_a6e1ff374b98ec161361c812ce473855b}
+Process answer of update request, create list of new items for full request later. Also remove items that no longer exist in core 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\end{DoxyCompactItemize}

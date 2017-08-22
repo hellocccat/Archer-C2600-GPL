@@ -1,0 +1,366 @@
+\section{CRemoteConnect Class Reference}
+\label{classCRemoteConnect}\index{CRemoteConnect@{CRemoteConnect}}
+Inheritance diagram for CRemoteConnect::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCRemoteConnect}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CRemoteConnect} (wxEvtHandler $\ast$evt\_\-handler)
+\item 
+void {\bfseries SetCapabilities} (bool canZLIB, bool canUTF8numbers, bool canNotify)\label{classCRemoteConnect_aa261994e9c379072b5ed24ab4b55d896}
+
+\item 
+bool {\bfseries ConnectToCore} (const wxString \&host, int port, const wxString \&login, const wxString \&pass, const wxString \&client, const wxString \&version)\label{classCRemoteConnect_a1959f9c7d27fc4f2c932eb29b41feef4}
+
+\item 
+const wxString \& {\bfseries GetServerReply} () const \label{classCRemoteConnect_a551cf4b94d9c1667074ea8f0621bcc29}
+
+\item 
+bool {\bfseries RequestFifoFull} ()\label{classCRemoteConnect_a9bec5d0714c6e2d696d72b8b8be95298}
+
+\item 
+virtual void {\bf OnConnect} ()
+\item 
+virtual void {\bf OnLost} ()
+\item 
+void {\bfseries SendRequest} ({\bf CECPacketHandlerBase} $\ast$handler, const {\bf CECPacket} $\ast$request)\label{classCRemoteConnect_aaab36103d6508065e68c0a445a2cf782}
+
+\item 
+void {\bf SendPacket} (const {\bf CECPacket} $\ast$request)
+\item 
+void {\bfseries ShutDown} ()\label{classCRemoteConnect_ae364cd295f21da307137d8b9aecbeff7}
+
+\item 
+void {\bfseries Ed2kLink} (wxString $\ast$link)\label{classCRemoteConnect_a545de535f89a4f9c38b13747499bed17}
+
+\item 
+void {\bfseries StartKad} ()\label{classCRemoteConnect_a5984b15ee695e8648f280ff916eba955}
+
+\item 
+void {\bfseries StopKad} ()\label{classCRemoteConnect_a61ba4de4e236b041386cd7cec1b1b22c}
+
+\item 
+void {\bfseries ConnectED2K} (uint32 ip, uint16 port)\label{classCRemoteConnect_a34bf98071f162054e5e0684357bc2ee7}
+
+\item 
+void {\bfseries DisconnectED2K} ()\label{classCRemoteConnect_a4e8b32ab7e80705d62c6a32ae7918c5d}
+
+\item 
+void {\bfseries AddServer} (uint32 ip, uint16 port)\label{classCRemoteConnect_ae0ca39f89bc0f8e0aeabeee82818869e}
+
+\item 
+void {\bfseries RemoveServer} (uint32 ip, uint16 port)\label{classCRemoteConnect_a4cc50ce6786c3fd2d2a38481f0539128}
+
+\item 
+void {\bfseries GetServerList} ()\label{classCRemoteConnect_a4bbec6152e2c5d8df684b73ae51c04af}
+
+\item 
+void {\bfseries UpdateServerList} (wxString url)\label{classCRemoteConnect_ae3b0fcffbef5edf1dabafdb72528a878}
+
+\item 
+void {\bfseries StartSearch} ()\label{classCRemoteConnect_a3a31be754c5532d47633bcae42953fe7}
+
+\item 
+void {\bfseries StopSearch} ()\label{classCRemoteConnect_aad7d440232e2e1a07ba59638baf571a5}
+
+\item 
+void {\bfseries GetSearchProgress} ()\label{classCRemoteConnect_a88f94a877018bac37d89b93c15cf83ad}
+
+\item 
+void {\bfseries DownloadSearchResult} (uint32 $\ast$file)\label{classCRemoteConnect_a58b797670abc280fcfc447879571726d}
+
+\item 
+void {\bfseries GetStatistics} ()\label{classCRemoteConnect_a8226d02adb25c20428448355b6e2ae80}
+
+\item 
+void {\bfseries GetConnectionState} ()\label{classCRemoteConnect_a06101a139c36eded6982d74dec996cba}
+
+\item 
+void {\bfseries GetDlQueue} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_aabbb57af156e7f0a6190cbe2c50c0829}
+
+\item 
+void {\bfseries GetUpQueue} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_ad3e26f2bf8e886aa3f11f33dbdd02850}
+
+\item 
+void {\bfseries GetWtQueue} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_ac79a147397e9d80099dc237922a36479}
+
+\item 
+void {\bfseries DropNoNeededSources} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_a2c1e0fd51bb48eb3a41ea73d21d439e8}
+
+\item 
+void {\bfseries DropFullQueueSources} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_afc635f625f6fe5e2d3b7348a117ce8b6}
+
+\item 
+void {\bfseries DropHighQueueSources} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_a54d607c6ec11dfd50f1d74e63cf666b3}
+
+\item 
+void {\bfseries CleanUpSources} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_a895883be387dc965e129540f9ba7a5f4}
+
+\item 
+void {\bfseries SwapA4AFThis} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_adfe1ebd4d299bf001fc2aee2c9a8659f}
+
+\item 
+void {\bfseries SwapA4AFThisAuto} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_ada92b2dab3547ac313b6c52870f9aefd}
+
+\item 
+void {\bfseries SwapA4AFOthers} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_a98a51e9fc596f6ba4f9ebb61260c7a9c}
+
+\item 
+void {\bfseries Pause} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_a9f9283598d5c9b3301bc4b7de3c595f6}
+
+\item 
+void {\bfseries Resume} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_a6d25eda2368de648030962abaa2ed6af}
+
+\item 
+void {\bfseries Stop} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_ac5d1c5b2716867ff039fe55d2080aaaf}
+
+\item 
+void {\bfseries SetPriority} ({\bf CMD4Hash} $\ast$file, uint8 priority)\label{classCRemoteConnect_a0d87959f24d6610361328da4ea0a9210}
+
+\item 
+void {\bfseries Delete} ({\bf CMD4Hash} $\ast$file)\label{classCRemoteConnect_ad14fea3b28276f55de60e5e6a8544ff2}
+
+\item 
+void {\bfseries SetCategory} ({\bf CMD4Hash} $\ast$file, wxString category)\label{classCRemoteConnect_a4a57ca7a4a39a72a4fde8c5ddad5dce8}
+
+\item 
+void {\bfseries GetSharedFiles} ()\label{classCRemoteConnect_ab98a56b8830475a8cc96abb909fec644}
+
+\item 
+void {\bfseries SetSharedPriority} ({\bf CMD4Hash} $\ast$file, uint8 priority)\label{classCRemoteConnect_a170e39999831d3a8067f9027b0b267cc}
+
+\item 
+void {\bfseries ReloadSharedFiles} ()\label{classCRemoteConnect_ab1fdcfa788834560eed97edc8f28d3eb}
+
+\item 
+void {\bfseries AddDirectoryToSharedFiles} (wxString dir)\label{classCRemoteConnect_a51364169bdf2291169f64b2fd3aa79fc}
+
+\item 
+void {\bfseries RenameFile} ({\bf CMD4Hash} file, wxString name)\label{classCRemoteConnect_a53710a64fb5b5f064ebf9eb92e94666a}
+
+\item 
+void {\bfseries AddLogline} ()\label{classCRemoteConnect_a85747aadd8df3e1677bef6e2189c2fda}
+
+\item 
+void {\bfseries AddDebugLogLine} ()\label{classCRemoteConnect_a431e565c655d1ab0e2006038e3f564de}
+
+\item 
+void {\bfseries GetLog} ()\label{classCRemoteConnect_ae5adcf441b2c284ee61e4cc1a3aca8e6}
+
+\item 
+void {\bfseries GetLastLogLine} ()\label{classCRemoteConnect_aa7c0b10ece5fd8d82702a2203aac66a8}
+
+\item 
+void {\bfseries GetDebugLog} ()\label{classCRemoteConnect_a23d8a622b89da784209972514d02de5b}
+
+\item 
+void {\bfseries GetServerInfo} ()\label{classCRemoteConnect_aad51b85f7fd685068a93bf603fe986fe}
+
+\item 
+void {\bfseries ClearLog} ()\label{classCRemoteConnect_a9e61822da08f3454d9e5313557427d7b}
+
+\item 
+void {\bfseries ClearDebugLog} ()\label{classCRemoteConnect_a0abdd368cfb6077ec2ab9bb407600911}
+
+\item 
+void {\bfseries ClearServerInfo} ()\label{classCRemoteConnect_a2aa736a44f94525c64bb09faade908ce}
+
+\item 
+void {\bfseries GetPreferences} ()\label{classCRemoteConnect_a7453b555ea84cd01254b9676530214bb}
+
+\item 
+void {\bfseries SetPreferencesCategories} ()\label{classCRemoteConnect_a119d074434c282ecb82f2f21330e77c8}
+
+\item 
+void {\bfseries SetPreferencesGeneral} (wxString userNick, {\bf CMD4Hash} userHash)\label{classCRemoteConnect_a3b9140fb893a50043595db79257407c5}
+
+\item 
+void {\bfseries SetPreferencesConnections} (uint32 LineDownloadCapacity, uint32 LineUploadCapacity, uint16 MaxDownloadSpeed, uint16 MaxUploadSpeed, uint16 UploadSlotAllocation, uint16 TCPPort, uint16 UDPPort, bool DisableUDP, uint16 MaxSourcesPerFile, uint16 MaxConnections, bool EnableAutoConnect, bool EnableReconnect, bool EnableNetworkED2K, bool EnableNetworkKademlia)\label{classCRemoteConnect_aaa49a71044cc62694c310d6aece11da5}
+
+\item 
+void {\bfseries SetPreferencesMessageFilter} (bool Enabled, bool FilterAll, bool AllowFromFriends, bool FilterFromUnknownClients, bool FilterByKeyword, wxString Keywords)\label{classCRemoteConnect_a3e65ee2db43e335402b002e0e1c21a3a}
+
+\item 
+void {\bfseries SetPreferencesRemoteCrtl} (bool RunOnStartup, uint16 Port, bool Guest, {\bf CMD4Hash} GuestPasswdHash, bool UseGzip, uint32 RefreshInterval, wxString Template)\label{classCRemoteConnect_abdee37e937113090b888296434cd3ba7}
+
+\item 
+void {\bfseries SetPreferencesOnlineSig} (bool Enabled)\label{classCRemoteConnect_acee0816660d472c341d0f4786e4f68c1}
+
+\item 
+void {\bfseries SetPreferencesServers} (bool RemoveDeadServers, uint16 RetriesDeadServers, bool AutoUpdate, bool AddFromServer, bool AddFromClient, bool UsePrioritySystem, bool SmartLowIDCheck, bool SafeServerConnection, bool AutoConnectStaticOnly, bool ManualHighPriority)\label{classCRemoteConnect_a98fd1d530d371993233fcff3cc210435}
+
+\item 
+void {\bfseries SetPreferencesFiles} (bool ICHEnabled, bool AIHCTrust, bool NewPaused, bool NewDownloadAutoPriority, bool PreviewPriority, bool NewAutoULPriotiry, bool UploadFullChunks, bool StartNextPaused, bool ResumeSameCategory, bool SaveSources, bool ExtractMetadata, bool AllocateFullChunks, bool AllocateFullSize, bool CheckFreeSpace, uint32 MinFreeSpace)\label{classCRemoteConnect_a9e01a1e0bbdac40e919265100b5d1e11}
+
+\item 
+void {\bfseries SetPreferencesSrcDrop} (uint8 NoNeeded, bool DropFQS, bool DropHQRS, uint16 HQRSValue, uint16 AutodropTimer)\label{classCRemoteConnect_a3a5def04b94447567f3c35756a4b3cdb}
+
+\item 
+void {\bfseries SetPreferencesDirectories} ()\label{classCRemoteConnect_a5bf1996d6147bcf84ddc10f09cfde8dd}
+
+\item 
+void {\bfseries SetPreferencesStatistics} ()\label{classCRemoteConnect_a547bf495573d474ac6fce8889ab64d56}
+
+\item 
+void {\bfseries SetPreferencesSecurity} (uint8 CanSeeShares, uint32 FilePermissions, uint32 DirPermissions, bool IPFilterEnabled, bool IPFilterAutoUpdate, wxString IPFilterUpdateURL, uint8 IPFilterLevel, bool IPFilterFilterLAN, bool UseSecIdent)\label{classCRemoteConnect_a9024b934212cb2979ee3ab158ae0efd6}
+
+\item 
+void {\bfseries SetPreferencesCoreTweaks} (uint16 MaxConnectionsPerFive, bool Verbose, uint32 FileBuffer, uint32 ULQueue, uint32 SRVKeepAliveTimeout)\label{classCRemoteConnect_a25bd079eb9b96a941ba1fcb20c615baa}
+
+\item 
+void {\bfseries CreateCategory} (uint32 category, wxString title, wxString folder, wxString comment, uint32 color, uint8 priority)\label{classCRemoteConnect_a808bb4faf26cb03e66a44f9523c90755}
+
+\item 
+void {\bfseries UpdateCategory} (uint32 category, wxString title, wxString folder, wxString comment, uint32 color, uint8 priority)\label{classCRemoteConnect_a7048da178b8325a5b954a2cb008a9e34}
+
+\item 
+void {\bfseries DeleteCategory} (uint32 category)\label{classCRemoteConnect_a5fe0dbaa1fc1b76c0d069a937bed5040}
+
+\item 
+void {\bfseries GetStatsGraphs} ()\label{classCRemoteConnect_a6876555da3080ce558aea9d53f054e04}
+
+\item 
+void {\bfseries GetStatsTree} ()\label{classCRemoteConnect_ac0426be7c584cd6dd6566f0eccbee219}
+
+\item 
+bool {\bfseries IsConnectedToLocalHost} ()\label{classCRemoteConnect_aa97e6fb7da650c83fe73720057d78752}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \par
+{\bfseries EC\_\-INIT}, 
+{\bfseries EC\_\-CONNECT\_\-SENT}, 
+{\bfseries EC\_\-REQ\_\-SENT}, 
+{\bfseries EC\_\-SALT\_\-RECEIVED}, 
+\par
+{\bfseries EC\_\-PASSWD\_\-SENT}, 
+{\bfseries EC\_\-OK}, 
+{\bfseries EC\_\-FAIL}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries WriteDoneAndQueueEmpty} ()\label{classCRemoteConnect_ad2b3d61a29e42ac52fab938fa10c86f6}
+
+\item 
+virtual const {\bf CECPacket} $\ast$ {\bf OnPacketReceived} (const {\bf CECPacket} $\ast$packet, uint32 trueSize)
+\item 
+bool {\bfseries ProcessAuthPacket} (const {\bf CECPacket} $\ast$reply)\label{classCRemoteConnect_a27fbbb01fc0ab979199b1647d40156d2}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum CRemoteConnect:: \{ ... \}  {\bfseries m\_\-ec\_\-state}\label{classCRemoteConnect_a74c25a3dc2defec4f5e63231deb153b9}
+
+\item 
+std::list$<$ {\bf CECPacketHandlerBase} $\ast$ $>$ {\bfseries m\_\-req\_\-fifo}\label{classCRemoteConnect_a25ee48a92a2515e2c43bf9be91561a88}
+
+\item 
+int {\bfseries m\_\-req\_\-count}\label{classCRemoteConnect_add5738d953b17fa1ecbc5f839462ccf4}
+
+\item 
+int {\bfseries m\_\-req\_\-fifo\_\-thr}\label{classCRemoteConnect_a6a48af216becdf3c5fa51971356e4342}
+
+\item 
+wxEvtHandler $\ast$ {\bfseries m\_\-notifier}\label{classCRemoteConnect_a289873709b07ae25a44b85e21183aa20}
+
+\item 
+wxString {\bfseries m\_\-connectionPassword}\label{classCRemoteConnect_a4694047346fbdca57a5c08fa867a8acc}
+
+\item 
+wxString {\bfseries m\_\-server\_\-reply}\label{classCRemoteConnect_a5b83e4bb615265c39ffc2a02989c89c7}
+
+\item 
+wxString {\bfseries m\_\-client}\label{classCRemoteConnect_a0a9932c490a19e68e209cb7bd9fcdce6}
+
+\item 
+wxString {\bfseries m\_\-version}\label{classCRemoteConnect_a851278bd8e1e1ba954333546a8326d95}
+
+\item 
+bool {\bfseries m\_\-canZLIB}\label{classCRemoteConnect_ae5be3ef046b3f04e2ab3f95efb3eb0cd}
+
+\item 
+bool {\bfseries m\_\-canUTF8numbers}\label{classCRemoteConnect_ae506e41f899d62efa50d4bcd265b4195}
+
+\item 
+bool {\bfseries m\_\-canNotify}\label{classCRemoteConnect_a65892418c3314f430e096e3baeb025ae}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CRemoteConnect@{CRemoteConnect}!CRemoteConnect@{CRemoteConnect}}
+\index{CRemoteConnect@{CRemoteConnect}!CRemoteConnect@{CRemoteConnect}}
+\subsubsection[{CRemoteConnect}]{\setlength{\rightskip}{0pt plus 5cm}CRemoteConnect::CRemoteConnect (wxEvtHandler $\ast$ {\em evt\_\-handler})}\label{classCRemoteConnect_a434b16804e34dccff86d3fabef87e17c}
+Connection to remote core 
+
+\subsection{Member Function Documentation}
+\index{CRemoteConnect@{CRemoteConnect}!OnConnect@{OnConnect}}
+\index{OnConnect@{OnConnect}!CRemoteConnect@{CRemoteConnect}}
+\subsubsection[{OnConnect}]{\setlength{\rightskip}{0pt plus 5cm}void CRemoteConnect::OnConnect ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCRemoteConnect_acdd5946ff6651fae851be49e9d2d7dc5}
+
+
+Event handler for connection events. This function is called when a connection attempt succeeds. 
+
+Reimplemented from {\bf CECSocket} \doxyref{}{p.}{classCECSocket_a594e4c41c8dcaf3c5469e9a01ffd86b8}.
+
+References SendPacket().\index{CRemoteConnect@{CRemoteConnect}!OnLost@{OnLost}}
+\index{OnLost@{OnLost}!CRemoteConnect@{CRemoteConnect}}
+\subsubsection[{OnLost}]{\setlength{\rightskip}{0pt plus 5cm}void CRemoteConnect::OnLost ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCRemoteConnect_a1bc6de5e0960a3069a01568f7f5f3add}
+
+
+Socket lost event handler. This function is called when the socket is lost (either because of a network failure or because the remote end closed the socket gracefully).
+
+The default handler destroys the socket. 
+
+Reimplemented from {\bf CECSocket} \doxyref{}{p.}{classCECSocket_aa1245e93fc1a8f8ad6f1ac0e50c51d97}.\index{CRemoteConnect@{CRemoteConnect}!OnPacketReceived@{OnPacketReceived}}
+\index{OnPacketReceived@{OnPacketReceived}!CRemoteConnect@{CRemoteConnect}}
+\subsubsection[{OnPacketReceived}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CECPacket} $\ast$ CRemoteConnect::OnPacketReceived (const {\bf CECPacket} $\ast$ {\em packet}, \/  uint32 {\em trueSize})\hspace{0.3cm}{\ttfamily  [private, virtual]}}\label{classCRemoteConnect_af2e8318ab1de92d3f8d1b5c85bd99a2c}
+
+
+Event handler function called when a new packet is received. 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The packet that has been received. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reply packet or {\ttfamily NULL} if no reply needed.
+\end{DoxyReturn}
+In this function the application should process the received packet, and create a reply if necessary. The reply must be allocated on the heap with {\ttfamily new}. If no reply is necessary, the return value of the function should be {\ttfamily NULL}. The library will {\ttfamily delete} both packets.
+
+\begin{DoxyNote}{Note}
+This function won't be called for packets received via the \doxyref{SendRecvPacket()}{p.}{classCECSocket_aaee01cc0fb0b37fb44ddf8b363cfdbd5} function. 
+\end{DoxyNote}
+
+
+Reimplemented from {\bf CECSocket} \doxyref{}{p.}{classCECSocket_a4026f260f7839bf95a02f1c178bf2d52}.
+
+References SendPacket().\index{CRemoteConnect@{CRemoteConnect}!SendPacket@{SendPacket}}
+\index{SendPacket@{SendPacket}!CRemoteConnect@{CRemoteConnect}}
+\subsubsection[{SendPacket}]{\setlength{\rightskip}{0pt plus 5cm}void CRemoteConnect::SendPacket (const {\bf CECPacket} $\ast$ {\em packet})}\label{classCRemoteConnect_aea090f8a0b2dd3475f8bb8795af0f517}
+
+
+Sends an EC packet and returns immediately. 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The \doxyref{CECPacket}{p.}{classCECPacket} packet to be sent.\end{DoxyParams}
+This is an asynchronous call, the function returns immediately and the packet is sent on idle time.
+
+\begin{DoxyNote}{Note}
+It's the caller's responsibilty to {\ttfamily delete} the {\itshape packet\/}. 
+\end{DoxyNote}
+
+
+Reimplemented from {\bf CECSocket} \doxyref{}{p.}{classCECSocket_ad399e6f57eebdf868b20612d6dab14a1}.
+
+Referenced by CamuleRemoteGuiApp::BootstrapKad(), OnConnect(), OnPacketReceived(), and CamuleRemoteGuiApp::UpdateNotesDat().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/RemoteConnect.h\item 
+src/libs/ec/cpp/RemoteConnect.cpp\end{DoxyCompactItemize}

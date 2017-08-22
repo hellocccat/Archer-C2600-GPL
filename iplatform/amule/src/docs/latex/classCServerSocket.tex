@@ -1,0 +1,135 @@
+\section{CServerSocket Class Reference}
+\label{classCServerSocket}\index{CServerSocket@{CServerSocket}}
+Inheritance diagram for CServerSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5cm]{classCServerSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CServerSocket} ({\bf CServerConnect} $\ast$in\_\-serverconnect, const {\bf CProxyData} $\ast$ProxyData=NULL)\label{classCServerSocket_a8fca065132858e7f4ab7d109a9b32a0a}
+
+\item 
+void {\bfseries ConnectToServer} ({\bf CServer} $\ast$server, bool bNoCrypt=false)\label{classCServerSocket_ac6b898e0b60f89a90339eb6eb07a117e}
+
+\item 
+sint8 {\bfseries GetConnectionState} () const \label{classCServerSocket_a165e8d8a5a771b4e7ea9507c58b42e2d}
+
+\item 
+uint32 {\bfseries GetLastTransmission} () const \label{classCServerSocket_a951202f359e440f60d1ffeae927239ed}
+
+\item 
+void {\bfseries OnClose} (wxSocketError nErrorCode)\label{classCServerSocket_a981a90655deba912dfa5ce315c1e5cdd}
+
+\item 
+void {\bfseries OnConnect} (wxSocketError nErrorCode)\label{classCServerSocket_a19645062931310e4057a73377eadb89b}
+
+\item 
+void {\bfseries OnReceive} (wxSocketError nErrorCode)\label{classCServerSocket_a8163e8c87d5802aa91e1ff76d91bdc0d}
+
+\item 
+void {\bfseries OnError} (wxSocketError nErrorCode)\label{classCServerSocket_a6d0530b8393513a111c4c217866f5021}
+
+\item 
+bool {\bfseries PacketReceived} ({\bf CPacket} $\ast$packet)\label{classCServerSocket_a31b05820b1fcade779640a8a9af7063f}
+
+\item 
+void {\bf SendPacket} ({\bf CPacket} $\ast$packet, bool delpacket=true, bool controlpacket=true, uint32 actualPayloadSize=0)
+\item 
+bool {\bfseries IsSolving} () const \label{classCServerSocket_afc3f39e8b0528dc863a093a9e3a0fd45}
+
+\item 
+void {\bfseries OnHostnameResolved} (uint32 ip)\label{classCServerSocket_a8aa4a0ef29d3f9bf39f95a7038c047f7}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetServerConnected} () const \label{classCServerSocket_a1cbc5c14987fa760f0329981123165d9}
+
+\item 
+uint32 {\bfseries GetServerIP} () const \label{classCServerSocket_a5ef2eb30bc0009bacf39001401714134}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries info}\label{classCServerSocket_a4252e90ad29f96aae2089fe98001efc2}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries ProcessPacket} (const byte $\ast$packet, uint32 size, int8 opcode)\label{classCServerSocket_a1b7e7d65d9df9896cabeeee7d1616a95}
+
+\item 
+void {\bfseries SetConnectionState} (sint8 newstate)\label{classCServerSocket_a4f88598a8b46040d0cb9c76268b97ee4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CServerConnect} $\ast$ {\bfseries serverconnect}\label{classCServerSocket_a74d0e894752f0d90895362f357f3077b}
+
+\item 
+sint8 {\bfseries connectionstate}\label{classCServerSocket_a24d298cf39f830af9a0bf487b57a9a3c}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries cur\_\-server}\label{classCServerSocket_ae9c43181cda6500c58c934fb75444622}
+
+\item 
+bool {\bfseries m\_\-bNoCrypt}\label{classCServerSocket_a94863f3cbbe8738b9525a9e4a3caa514}
+
+\item 
+bool {\bfseries headercomplete}\label{classCServerSocket_a36c7de6ae203d48e5372a13a2fa96a12}
+
+\item 
+int32 {\bfseries sizetoget}\label{classCServerSocket_a36fe83ac8c26de14c4f1ce2bae5a0b0c}
+
+\item 
+int32 {\bfseries sizereceived}\label{classCServerSocket_abd5fd90e9028bf4adbdf536223bef9df}
+
+\item 
+char $\ast$ {\bfseries rbuffer}\label{classCServerSocket_a0ea27b5e0a7abfb927088e7ef3cba72a}
+
+\item 
+bool {\bfseries m\_\-bIsDeleting}\label{classCServerSocket_acdf3010d76dd4111e53deb8ad0f97dd1}
+
+\item 
+uint32 {\bfseries m\_\-dwLastTransmission}\label{classCServerSocket_ab62d2dd2fd84d6cba3b525629a643142}
+
+\item 
+bool {\bfseries m\_\-IsSolving}\label{classCServerSocket_a378e26a1deefddf7e33673f18422739e}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CServerConnect}\label{classCServerSocket_a28e5e515e657d2f8581c28ee9e06d537}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CServerSocket@{CServerSocket}!SendPacket@{SendPacket}}
+\index{SendPacket@{SendPacket}!CServerSocket@{CServerSocket}}
+\subsubsection[{SendPacket}]{\setlength{\rightskip}{0pt plus 5cm}void CServerSocket::SendPacket ({\bf CPacket} $\ast$ {\em packet}, \/  bool {\em delpacket} = {\ttfamily true}, \/  bool {\em controlpacket} = {\ttfamily true}, \/  uint32 {\em actualPayloadSize} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCServerSocket_a0f6a39e240dfffbf7673d76f1eeba377}
+
+
+Queues up the packet to be sent. Another thread will actually send the packet.
+
+If the packet is not a control packet, and if the socket decides that its queue is full and forceAdd is false, then the socket is allowed to refuse to add the packet to its queue. It will then return false and it is up to the calling thread to try to call SendPacket for that packet again at a later time.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]address to the packet that should be added to the queue\item[{\em delpacket}]if true, the responsibility for deleting the packet after it has been sent has been transferred to this object. If false, don't delete the packet after it has been sent.\item[{\em controlpacket}]the packet is a controlpacket\item[{\em forceAdd}]this packet must be added to the queue, even if it is full. If this flag is true then the method can not refuse to add the packet, and therefore not return false.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the packet was added to the queue, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf CEMSocket} \doxyref{}{p.}{classCEMSocket_ab410d8113285acfaac0ac268f455d06c}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ServerSocket.h\item 
+src/ServerSocket.cpp\end{DoxyCompactItemize}

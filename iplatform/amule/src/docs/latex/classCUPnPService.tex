@@ -1,0 +1,109 @@
+\section{CUPnPService Class Reference}
+\label{classCUPnPService}\index{CUPnPService@{CUPnPService}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CUPnPService} (const {\bf CUPnPControlPoint} \&upnpControlPoint, {\bf CUPnPLib} \&upnpLib, IXML\_\-Element $\ast$service, const std::string \&URLBase)\label{classCUPnPService_a4b15ba5785f65cbd5a5a3d81797d5dd4}
+
+\item 
+const std::string \& {\bfseries GetServiceType} () const \label{classCUPnPService_a807897cccc47953af0c9a8b6d91fa091}
+
+\item 
+const std::string \& {\bfseries GetServiceId} () const \label{classCUPnPService_aa1cb46d876498f920b7aefb6321e3ecd}
+
+\item 
+const std::string \& {\bfseries GetSCPDURL} () const \label{classCUPnPService_aa418f408ebdb5123a6510e298df66bd6}
+
+\item 
+const std::string \& {\bfseries GetAbsSCPDURL} () const \label{classCUPnPService_a1bd650b269f1171c4eda160fa93db90a}
+
+\item 
+const std::string \& {\bfseries GetControlURL} () const \label{classCUPnPService_a6489bd9428e7f693d093f33971a5d324}
+
+\item 
+const std::string \& {\bfseries GetEventSubURL} () const \label{classCUPnPService_a7191934e588bf098f2d030d658bbe636}
+
+\item 
+const std::string \& {\bfseries GetAbsControlURL} () const \label{classCUPnPService_ad6dd04300a5915895b6464f6c41957f2}
+
+\item 
+const std::string \& {\bfseries GetAbsEventSubURL} () const \label{classCUPnPService_a8cf733916ce4520e42fcb327e248b173}
+
+\item 
+int {\bfseries GetTimeout} () const \label{classCUPnPService_a096768e24d0593847a4779f1c6e72e6f}
+
+\item 
+void {\bfseries SetTimeout} (int t)\label{classCUPnPService_a65a646363b7cfe9362b081fe6829bab4}
+
+\item 
+int $\ast$ {\bfseries GetTimeoutAddr} ()\label{classCUPnPService_a43134efccc53871b6e713bf211322b6d}
+
+\item 
+char $\ast$ {\bfseries GetSID} ()\label{classCUPnPService_a944667ce2e6406a37fd9ddffc068e560}
+
+\item 
+void {\bfseries SetSID} (const char $\ast$s)\label{classCUPnPService_acef262d1fed13cbf7c5affc5f0ea1892}
+
+\item 
+const std::string \& {\bfseries GetKey} () const \label{classCUPnPService_adb0f4d2003773b8eb499c0ef2847940a}
+
+\item 
+bool {\bfseries IsSubscribed} () const \label{classCUPnPService_a110e38d151c5d8dcdb7ea4b24a9c749e}
+
+\item 
+void {\bfseries SetSCPD} ({\bf CUPnPSCPD} $\ast$SCPD)\label{classCUPnPService_aef719279193fb87380f156fec36fb23b}
+
+\item 
+bool {\bfseries Execute} (const std::string \&ActionName, const std::vector$<$ {\bf CUPnPArgumentValue} $>$ \&ArgValue) const \label{classCUPnPService_aacd89aad08802b1722268527a8145524}
+
+\item 
+const std::string {\bfseries GetStateVariable} (const std::string \&stateVariableName) const \label{classCUPnPService_a6bbd862c00fae8e5bc1a72aa95242929}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CUPnPControlPoint} \& {\bfseries m\_\-UPnPControlPoint}\label{classCUPnPService_a6e30549bf4dbfca54dd64a967701ff3d}
+
+\item 
+{\bf CUPnPLib} \& {\bfseries m\_\-upnpLib}\label{classCUPnPService_ad28d6e0adcc9dad3771d0219dba2550b}
+
+\item 
+const std::string {\bfseries m\_\-serviceType}\label{classCUPnPService_afa0d9a7b8c7c84e0295fe0f696001183}
+
+\item 
+const std::string {\bfseries m\_\-serviceId}\label{classCUPnPService_a364e1f71781f1cffd5c9b22d2af50c99}
+
+\item 
+const std::string {\bfseries m\_\-SCPDURL}\label{classCUPnPService_a3ce1f6eb9bf6113bddc01f7498f33d9a}
+
+\item 
+const std::string {\bfseries m\_\-controlURL}\label{classCUPnPService_a50546d827f0c16126c7517a132bb5856}
+
+\item 
+const std::string {\bfseries m\_\-eventSubURL}\label{classCUPnPService_a069fa8086808851e73cd824046e30310}
+
+\item 
+std::string {\bfseries m\_\-absSCPDURL}\label{classCUPnPService_aa297859adb221fe9dbb53267b8f09a0a}
+
+\item 
+std::string {\bfseries m\_\-absControlURL}\label{classCUPnPService_aa4e89036f6fd5e1aa9e7f12d34014784}
+
+\item 
+std::string {\bfseries m\_\-absEventSubURL}\label{classCUPnPService_a66987f9641c09df649105e210eedd0aa}
+
+\item 
+int {\bfseries m\_\-timeout}\label{classCUPnPService_a604582603caed07b824c2c4879492450}
+
+\item 
+Upnp\_\-SID {\bfseries m\_\-SID}\label{classCUPnPService_a5cae69ef313bacf78d1742d427d4e601}
+
+\item 
+std::auto\_\-ptr$<$ {\bf CUPnPSCPD} $>$ {\bfseries m\_\-SCPD}\label{classCUPnPService_ac7fd82c2e71368afd239f628faf85ac4}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/UPnPBase.h\end{DoxyCompactItemize}

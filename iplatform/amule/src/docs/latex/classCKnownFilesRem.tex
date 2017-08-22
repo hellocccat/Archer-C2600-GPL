@@ -1,0 +1,71 @@
+\section{CKnownFilesRem Class Reference}
+\label{classCKnownFilesRem}\index{CKnownFilesRem@{CKnownFilesRem}}
+Inheritance diagram for CKnownFilesRem::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCKnownFilesRem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CKnownFilesRem} ({\bf CRemoteConnect} $\ast$conn)\label{classCKnownFilesRem_a1b06230ceab38bd52fae07b22278914f}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries FindKnownFileByID} (uint32 id)\label{classCKnownFilesRem_a05215723a36ff065aa8464c1b142ac6f}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries CreateItem} ({\bf CEC\_\-SharedFile\_\-Tag} $\ast$)\label{classCKnownFilesRem_a3ea04ea09d28204fbe08eebeef72b3a0}
+
+\item 
+void {\bfseries DeleteItem} ({\bf CKnownFile} $\ast$)\label{classCKnownFilesRem_a32509ca42507b628f25d8ad44f05fa91}
+
+\item 
+uint32 {\bfseries GetItemID} ({\bf CKnownFile} $\ast$)\label{classCKnownFilesRem_aab62a9ca6653259d117ee8fec0463bcd}
+
+\item 
+void {\bfseries ProcessItemUpdate} ({\bf CEC\_\-SharedFile\_\-Tag} $\ast$, {\bf CKnownFile} $\ast$)\label{classCKnownFilesRem_abab6022f3afda0d4e2d490b7ca7517d6}
+
+\item 
+bool {\bfseries Phase1Done} (const {\bf CECPacket} $\ast$)\label{classCKnownFilesRem_a90aeb28abe0e583bb936928e78e007ae}
+
+\item 
+void {\bfseries ProcessUpdate} (const {\bf CECTag} $\ast$reply, {\bf CECPacket} $\ast$full\_\-req, int req\_\-type)\label{classCKnownFilesRem_a6826c9ebd84b412c71fe8afc8652e5d4}
+
+\item 
+void {\bfseries ProcessItemUpdatePartfile} ({\bf CEC\_\-PartFile\_\-Tag} $\ast$, {\bf CPartFile} $\ast$)\label{classCKnownFilesRem_a97e474e9f97687e73d8ef0b41929d5e2}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16 {\bfseries requested}\label{classCKnownFilesRem_ae2ae3164ccbd0fbed950ba879fad7602}
+
+\item 
+uint32 {\bfseries transferred}\label{classCKnownFilesRem_a99ed989c9a25507ef0ea4ce20354544e}
+
+\item 
+uint16 {\bfseries accepted}\label{classCKnownFilesRem_a7d9ea6ca326e30942cfdf035537985d3}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries CreateKnownFile} ({\bf CEC\_\-SharedFile\_\-Tag} $\ast$tag, {\bf CKnownFile} $\ast$file=NULL)\label{classCKnownFilesRem_a401d39d29d6fab143b0a78c2aa8e28ba}
+
+\item 
+{\bf CPartFile} $\ast$ {\bfseries CreatePartFile} ({\bf CEC\_\-PartFile\_\-Tag} $\ast$tag)\label{classCKnownFilesRem_a318e4e2dfd04ac5bad4c00605fd94c9e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-initialUpdate}\label{classCKnownFilesRem_ade34a3856ecb9018da98c400e499a258}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

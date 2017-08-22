@@ -1,0 +1,490 @@
+\section{CPath Class Reference}
+\label{classCPath}\index{CPath@{CPath}}
+
+
+This class wraps a path/filename, serving a purpose much like wxFileName.  
+
+
+{\ttfamily \#include $<$Path.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf EAccess} \{ {\bf exists}, 
+{\bf readable}, 
+{\bf writable}, 
+{\bf readwritable} =  readable $|$ writable
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPath} ()
+\item 
+{\bf CPath} (const wxString \&path)
+\item 
+{\bf CPath} (const {\bf CPath} \&other)
+\item 
+{\bf CPath} \& {\bf operator=} (const {\bf CPath} \&other)
+\item 
+bool {\bf operator$<$} (const {\bf CPath} \&other) const 
+\item 
+bool {\bf operator==} (const {\bf CPath} \&other) const 
+\item 
+bool {\bf operator!=} (const {\bf CPath} \&other) const 
+\item 
+bool {\bf IsOk} () const 
+\item 
+bool {\bf FileExists} () const 
+\item 
+bool {\bf DirExists} () const 
+\item 
+bool {\bf IsDir} ({\bf EAccess} mode) const 
+\item 
+bool {\bf IsFile} ({\bf EAccess} mode) const 
+\item 
+wxString {\bf GetRaw} () const 
+\item 
+wxString {\bf GetPrintable} () const 
+\item 
+wxString {\bf GetExt} () const 
+\item 
+{\bf CPath} {\bf GetPath} () const 
+\item 
+{\bf CPath} {\bf GetFullName} () const 
+\item 
+sint64 {\bf GetFileSize} () const 
+\item 
+bool {\bf IsSameDir} (const {\bf CPath} \&other) const 
+\item 
+{\bf CPath} {\bf JoinPaths} (const {\bf CPath} \&other) const 
+\item 
+{\bf CPath} {\bf Cleanup} (bool keepSpaces=true, bool isFAT32=false) const 
+\item 
+{\bf CPath} {\bf AddPostfix} (const wxString \&postfix) const 
+\item 
+{\bf CPath} {\bf AppendExt} (const wxString \&ext) const 
+\item 
+{\bf CPath} {\bf RemoveExt} () const 
+\item 
+{\bf CPath} {\bf RemoveAllExt} () const 
+\item 
+bool {\bf StartsWith} (const {\bf CPath} \&other) const 
+\item 
+wxString {\bf TruncatePath} (size\_\-t length, bool isFilePath=false) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf CPath} {\bf FromUniv} (const wxString \&path)
+\item 
+static wxString {\bf ToUniv} (const {\bf CPath} \&path)
+\item 
+static bool {\bf RenameFile} (const {\bf CPath} \&src, const {\bf CPath} \&dst, bool overwrite=false)
+\item 
+static bool {\bf CloneFile} (const {\bf CPath} \&src, const {\bf CPath} \&dst, bool overwrite=false)
+\item 
+static bool {\bf BackupFile} (const {\bf CPath} \&src, const wxString \&appendix)\label{classCPath_ae7ce2f832f2357c83d3e9fedb14bfda7}
+
+\item 
+static bool {\bf RemoveFile} (const {\bf CPath} \&file)
+\item 
+static bool {\bf RemoveDir} (const {\bf CPath} \&file)
+\item 
+static bool {\bf MakeDir} (const {\bf CPath} \&file)
+\item 
+static bool {\bf FileExists} (const wxString \&file)
+\item 
+static bool {\bf DirExists} (const wxString \&path)
+\item 
+static sint64 {\bf GetFileSize} (const wxString \&file)
+\item 
+static time\_\-t {\bf GetModificationTime} (const {\bf CPath} \&file)
+\item 
+static sint64 {\bf GetFreeSpaceAt} (const {\bf CPath} \&path)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf m\_\-printable}\label{classCPath_a59faa0fea931e803b56b1750eac649be}
+
+\item 
+wxString {\bf m\_\-filesystem}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries CmpAny} (const {\bf CPath} \&ArgA, const {\bf CPath} \&ArgB)\label{classCPath_ae1bb0d09ab35b75faab83e9efa4d5eb5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class wraps a path/filename, serving a purpose much like wxFileName. But in addition \doxyref{CPath}{p.}{classCPath} serves to enable the handling of \char`\"{}broken\char`\"{} filenames, allowing these to be printed in a meaningful manner, while still allowing access to the actual files in the filesystem.
+
+This class is thread-\/safe, in that the class is read-\/only, and any function that returns wxStrings or \doxyref{CPath}{p.}{classCPath} objects, ensure that an entirely new wxString object is created to circumvent the thread-\/unsafe reference counting of that class.
+
+This class, and its static functions should be used in preference of wxFileName, for the above reason, and so that cross-\/platform issues can be worked around in a single place. 
+
+\subsection{Member Enumeration Documentation}
+\index{CPath@{CPath}!EAccess@{EAccess}}
+\index{EAccess@{EAccess}!CPath@{CPath}}
+\subsubsection[{EAccess}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CPath::EAccess}}\label{classCPath_a5d8bdac3ea45238e15cc236ed96b534a}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{exists@{exists}!CPath@{CPath}}\index{CPath@{CPath}!exists@{exists}}\item[{\em 
+exists\label{classCPath_a5d8bdac3ea45238e15cc236ed96b534aae251a67de9967e291f9bb8dd0fa9c0a4}
+}]Only check of the file or dir exists. \index{readable@{readable}!CPath@{CPath}}\index{CPath@{CPath}!readable@{readable}}\item[{\em 
+readable\label{classCPath_a5d8bdac3ea45238e15cc236ed96b534aa3acb0c5012886660646b8868fe08db6b}
+}]If set, checks if a file is readable, or if a dir can be accessed. \index{writable@{writable}!CPath@{CPath}}\index{CPath@{CPath}!writable@{writable}}\item[{\em 
+writable\label{classCPath_a5d8bdac3ea45238e15cc236ed96b534aae18c214d707c043461765db8c013520c}
+}]If set, checks if a file or directory can be written to,. \index{readwritable@{readwritable}!CPath@{CPath}}\index{CPath@{CPath}!readwritable@{readwritable}}\item[{\em 
+readwritable\label{classCPath_a5d8bdac3ea45238e15cc236ed96b534aa813e184fc051fb62dab377f34f48c7c0}
+}]Combination of the two checks above. \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CPath@{CPath}!CPath@{CPath}}
+\index{CPath@{CPath}!CPath@{CPath}}
+\subsubsection[{CPath}]{\setlength{\rightskip}{0pt plus 5cm}CPath::CPath ()}\label{classCPath_a26b6e34c8019d440136848f809c13897}
+
+
+Default constructor. 
+
+Referenced by BackupFile(), DirExists(), FileExists(), FromUniv(), GetFileSize(), and JoinPaths().\index{CPath@{CPath}!CPath@{CPath}}
+\index{CPath@{CPath}!CPath@{CPath}}
+\subsubsection[{CPath}]{\setlength{\rightskip}{0pt plus 5cm}CPath::CPath (const wxString \& {\em path})\hspace{0.3cm}{\ttfamily  [explicit]}}\label{classCPath_ab5f5123b5f23f47919ba6dc3cdc6f752}
+
+
+Constuctor. 
+
+References m\_\-filesystem, and m\_\-printable.\index{CPath@{CPath}!CPath@{CPath}}
+\index{CPath@{CPath}!CPath@{CPath}}
+\subsubsection[{CPath}]{\setlength{\rightskip}{0pt plus 5cm}CPath::CPath (const {\bf CPath} \& {\em other})}\label{classCPath_a1b0606cde6de9005d198a6fb5f4ffc7b}
+
+
+Copy constructor. Creates a deep-\/copy of the passed object. 
+
+\subsection{Member Function Documentation}
+\index{CPath@{CPath}!AddPostfix@{AddPostfix}}
+\index{AddPostfix@{AddPostfix}!CPath@{CPath}}
+\subsubsection[{AddPostfix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::AddPostfix (const wxString \& {\em postfix}) const}\label{classCPath_aa342d19ede4501ed44b60af7d8d056a6}
+
+
+Returns a \doxyref{CPath}{p.}{classCPath} with a postfix before the file-\/extension. Must be ASCII. 
+
+References m\_\-filesystem, and m\_\-printable.
+
+Referenced by CCompletionTask::Entry().\index{CPath@{CPath}!AppendExt@{AppendExt}}
+\index{AppendExt@{AppendExt}!CPath@{CPath}}
+\subsubsection[{AppendExt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::AppendExt (const wxString \& {\em ext}) const}\label{classCPath_a05e9242a61df0d2825bad98facb49a47}
+
+
+Returns a \doxyref{CPath}{p.}{classCPath} object with the extension appended. Empty strings are ignored. 
+
+References m\_\-filesystem, and m\_\-printable.
+
+Referenced by CCompletionTask::Entry(), and CFile::Open().\index{CPath@{CPath}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!CPath@{CPath}}
+\subsubsection[{Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::Cleanup (bool {\em keepSpaces} = {\ttfamily true}, \/  bool {\em isFAT32} = {\ttfamily false}) const}\label{classCPath_a77240b928749dba3ddf682f71bc4e062}
+
+
+Returns a \doxyref{CPath}{p.}{classCPath} with invalid chars removed, and spaces escaped if specified. 
+
+References m\_\-filesystem, and m\_\-printable.
+
+Referenced by CCompletionTask::Entry().\index{CPath@{CPath}!CloneFile@{CloneFile}}
+\index{CloneFile@{CloneFile}!CPath@{CPath}}
+\subsubsection[{CloneFile}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::CloneFile (const {\bf CPath} \& {\em src}, \/  const {\bf CPath} \& {\em dst}, \/  bool {\em overwrite} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_aab39d3b9a93e0e619243d21ddf5e245a}
+
+
+Copies the file 'src' to the file 'dst', overwriting if specified. The silly name is used to avoid conflicts with the define CopyFile, which is set on MSW. 
+
+References m\_\-filesystem.
+
+Referenced by BackupFile(), and CCompletionTask::Entry().\index{CPath@{CPath}!DirExists@{DirExists}}
+\index{DirExists@{DirExists}!CPath@{CPath}}
+\subsubsection[{DirExists}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::DirExists (const wxString \& {\em path})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_ab5689a66b0e7e4e744e89b46a0bbfbc1}
+
+
+Returns true if the path exists, and is a directory. 
+
+References CPath().\index{CPath@{CPath}!DirExists@{DirExists}}
+\index{DirExists@{DirExists}!CPath@{CPath}}
+\subsubsection[{DirExists}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::DirExists () const}\label{classCPath_abedf3f12a8572f8c86767095a0d21351}
+
+
+Returns true if the path exists and is a directory, false otherwise. 
+
+References m\_\-filesystem.
+
+Referenced by CCompletionTask::Entry(), and CCatDialog::OnBnClickedOk().\index{CPath@{CPath}!FileExists@{FileExists}}
+\index{FileExists@{FileExists}!CPath@{CPath}}
+\subsubsection[{FileExists}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::FileExists (const wxString \& {\em file})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_aa8d1c377ee0889b90a75ea0fff02c71f}
+
+
+Returns true if the path exists, and is a file. 
+
+References CPath().\index{CPath@{CPath}!FileExists@{FileExists}}
+\index{FileExists@{FileExists}!CPath@{CPath}}
+\subsubsection[{FileExists}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::FileExists () const}\label{classCPath_a2508a1ce6e29f37739e70f8b75887cd9}
+
+
+Returns true if the path exists and is a file, false otherwise. 
+
+References m\_\-filesystem.
+
+Referenced by CAICHSyncTask::ConvertToKnown2ToKnown264(), CFile::Create(), CCompletionTask::Entry(), CAICHSyncTask::Entry(), GetFileSize(), CDownloadQueue::IsFileExisting(), CIPFilterTask::LoadFromFile(), and CFile::Open().\index{CPath@{CPath}!FromUniv@{FromUniv}}
+\index{FromUniv@{FromUniv}!CPath@{CPath}}
+\subsubsection[{FromUniv}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::FromUniv (const wxString \& {\em path})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_a810829fcee0a809afc8397e84a8ce18c}
+
+
+Creates a path from one saved in the 'universal' format. These are to be used when the filenames/paths are saved to the local machine, and ensure that locale-\/changes does not affect our ability to find previously known files. This should not be used when sending filenames to other clients or (currently) the core/gui. 
+
+References CPath().
+
+Referenced by Cfg\_\-Path::LoadFromFile().\index{CPath@{CPath}!GetExt@{GetExt}}
+\index{GetExt@{GetExt}!CPath@{CPath}}
+\subsubsection[{GetExt}]{\setlength{\rightskip}{0pt plus 5cm}wxString CPath::GetExt () const}\label{classCPath_ab0db3cf9aaf110dafe525e427c00b561}
+
+
+Returns the (raw) last extension, empty if none is found. 
+
+References m\_\-filesystem.
+
+Referenced by CSharedFilesCtrl::OnRightClick(), and CSearchListCtrl::SortProc().\index{CPath@{CPath}!GetFileSize@{GetFileSize}}
+\index{GetFileSize@{GetFileSize}!CPath@{CPath}}
+\subsubsection[{GetFileSize}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CPath::GetFileSize (const wxString \& {\em file})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_afc34d8e817742fad52d11dce25e1d7a0}
+
+
+Returns the size of the specified file, or wxInvalidOffset on failure. 
+
+References CPath().\index{CPath@{CPath}!GetFileSize@{GetFileSize}}
+\index{GetFileSize@{GetFileSize}!CPath@{CPath}}
+\subsubsection[{GetFileSize}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CPath::GetFileSize () const}\label{classCPath_a2f5a3d71faa552c9832b9a0cb988a237}
+
+
+Returns the size of the specified file, or wxInvalidSize on failure. 
+
+References FileExists(), and m\_\-filesystem.\index{CPath@{CPath}!GetFreeSpaceAt@{GetFreeSpaceAt}}
+\index{GetFreeSpaceAt@{GetFreeSpaceAt}!CPath@{CPath}}
+\subsubsection[{GetFreeSpaceAt}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CPath::GetFreeSpaceAt (const {\bf CPath} \& {\em path})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_acc10c4d900ad52747f77a70246dd2eea}
+
+
+Returns the free diskspace at the specified path, or wxInvalidOffset on failure. 
+
+References m\_\-filesystem.
+
+Referenced by CDownloadQueue::CheckDiskspace(), and CAllocateFileTask::Entry().\index{CPath@{CPath}!GetFullName@{GetFullName}}
+\index{GetFullName@{GetFullName}!CPath@{CPath}}
+\subsubsection[{GetFullName}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::GetFullName () const}\label{classCPath_a5054b723f38b3bb4f8b50094fb1f483f}
+
+
+Returns the full filename, excluding the path. 
+
+References m\_\-filesystem, and m\_\-printable.
+
+Referenced by CCompletionTask::Entry(), and CDownloadQueue::LoadMetFiles().\index{CPath@{CPath}!GetModificationTime@{GetModificationTime}}
+\index{GetModificationTime@{GetModificationTime}!CPath@{CPath}}
+\subsubsection[{GetModificationTime}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t CPath::GetModificationTime (const {\bf CPath} \& {\em file})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_ad0f90958dbccd1694cacdea94011a2da}
+
+
+Returns the modification time the specified file, or (time\_\-t)-\/1 on failure. 
+
+References m\_\-filesystem.
+
+Referenced by CHashingTask::Entry().\index{CPath@{CPath}!GetPath@{GetPath}}
+\index{GetPath@{GetPath}!CPath@{CPath}}
+\subsubsection[{GetPath}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::GetPath () const}\label{classCPath_a4aeac5ea889232348e1ac8cb0ec21ea3}
+
+
+Returns the full path, exluding the filename. 
+
+References m\_\-filesystem, and m\_\-printable.\index{CPath@{CPath}!GetPrintable@{GetPrintable}}
+\index{GetPrintable@{GetPrintable}!CPath@{CPath}}
+\subsubsection[{GetPrintable}]{\setlength{\rightskip}{0pt plus 5cm}wxString CPath::GetPrintable () const}\label{classCPath_a7a314d62092d7ad40a4ee562feafd20a}
+
+
+Returns the contents of the object in a form suitable for use in the UI. 
+
+References m\_\-printable.
+
+Referenced by CSearchListCtrl::AddResult(), CGenericClientListCtrl::DrawClientItem(), CSharedFileList::GetPublicSharedDirName(), CSearchListCtrl::IsFiltered(), CDownloadQueue::LoadMetFiles(), CSharedFilesCtrl::OnDrawItem(), CSharedFilesCtrl::OnRename(), TruncatePath(), and CSearchListCtrl::UpdateResult().\index{CPath@{CPath}!GetRaw@{GetRaw}}
+\index{GetRaw@{GetRaw}!CPath@{CPath}}
+\subsubsection[{GetRaw}]{\setlength{\rightskip}{0pt plus 5cm}wxString CPath::GetRaw () const}\label{classCPath_a39de0f0f6a17096f591a0ec0afa61e07}
+
+
+Returns the contents of the object in a form suitable for use with wx system-\/calls. 
+
+References m\_\-filesystem.
+
+Referenced by CSharedFileList::GetPublicSharedDirName(), CIPFilterTask::LoadFromFile(), CFile::Open(), and Cfg\_\-Path::TransferToWindow().\index{CPath@{CPath}!IsDir@{IsDir}}
+\index{IsDir@{IsDir}!CPath@{CPath}}
+\subsubsection[{IsDir}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::IsDir ({\bf EAccess} {\em mode}) const}\label{classCPath_ae22dbb45d8795369f806b471ea85cb13}
+
+
+Returns if if the path is a dir, and the checks were positive. 
+
+References m\_\-filesystem, readable, and writable.
+
+Referenced by CSharedFileList::IsShared().\index{CPath@{CPath}!IsFile@{IsFile}}
+\index{IsFile@{IsFile}!CPath@{CPath}}
+\subsubsection[{IsFile}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::IsFile ({\bf EAccess} {\em mode}) const}\label{classCPath_a78f250ecebc0ad04c77aa498c53a52ea}
+
+
+Returns if if the path is a dir, and the checks were positive. 
+
+References m\_\-filesystem, readable, and writable.\index{CPath@{CPath}!IsOk@{IsOk}}
+\index{IsOk@{IsOk}!CPath@{CPath}}
+\subsubsection[{IsOk}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::IsOk () const}\label{classCPath_a72a2b22f86b11e0cac613494d99149cb}
+
+
+Returns true if the filename is valid, false otherwise. 
+
+References m\_\-filesystem, and m\_\-printable.
+
+Referenced by CCompletionTask::CCompletionTask(), CGenericClientListCtrl::DrawClientItem(), CCompletionTask::Entry(), JoinPaths(), CDownloadQueue::LoadMetFiles(), CCatDialog::OnBnClickedOk(), CFile::Open(), and StartsWith().\index{CPath@{CPath}!IsSameDir@{IsSameDir}}
+\index{IsSameDir@{IsSameDir}!CPath@{CPath}}
+\subsubsection[{IsSameDir}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::IsSameDir (const {\bf CPath} \& {\em other}) const}\label{classCPath_a2e55b03648bcd1a59263fa97e7c1a55e}
+
+
+Compares under the assumption that both objects are dirs, even if one or the other lacks a terminal directory-\/seperator. However, an empty \doxyref{CPath}{p.}{classCPath} object will not be considered equal to a path to the root. 
+
+References m\_\-filesystem.
+
+Referenced by CSharedFileList::IsShared().\index{CPath@{CPath}!JoinPaths@{JoinPaths}}
+\index{JoinPaths@{JoinPaths}!CPath@{CPath}}
+\subsubsection[{JoinPaths}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::JoinPaths (const {\bf CPath} \& {\em other}) const}\label{classCPath_aad53200285e0a1c70a8f090680aede31}
+
+
+Returns a \doxyref{CPath}{p.}{classCPath} created from joining the two objects. 
+
+References CPath(), IsOk(), m\_\-filesystem, and m\_\-printable.
+
+Referenced by CCompletionTask::Entry(), CHashingTask::Entry(), CDownloadQueue::LoadMetFiles(), CSharedFilesCtrl::OnAddCollection(), and TruncatePath().\index{CPath@{CPath}!MakeDir@{MakeDir}}
+\index{MakeDir@{MakeDir}!CPath@{CPath}}
+\subsubsection[{MakeDir}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::MakeDir (const {\bf CPath} \& {\em file})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_ab67cb2c978d0b17eb4c5389200827b88}
+
+
+Creates the specified directory, returning true on success. 
+
+References m\_\-filesystem.
+
+Referenced by CCatDialog::OnBnClickedOk().\index{CPath@{CPath}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!CPath@{CPath}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::operator!= (const {\bf CPath} \& {\em other}) const}\label{classCPath_ac5bb6a4c785b2ff214d5ba4001837095}
+
+
+Note that only exact matches are considered equal, see IsSameDir. \index{CPath@{CPath}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!CPath@{CPath}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::operator$<$ (const {\bf CPath} \& {\em other}) const}\label{classCPath_aac7ed07f4e21f0f9dda7c3ab9ace6d96}
+
+
+Less-\/than operator. 
+
+References m\_\-filesystem.\index{CPath@{CPath}!operator=@{operator=}}
+\index{operator=@{operator=}!CPath@{CPath}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} \& CPath::operator= (const {\bf CPath} \& {\em other})}\label{classCPath_a90262c64095ddc2b73a65885cfc49aed}
+
+
+Assignment operator. 
+
+References m\_\-filesystem, and m\_\-printable.\index{CPath@{CPath}!operator==@{operator==}}
+\index{operator==@{operator==}!CPath@{CPath}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::operator== (const {\bf CPath} \& {\em other}) const}\label{classCPath_ac6d7980e162d3347aab36417d590214d}
+
+
+Note that only exact matches are considered equal, see IsSameDir. 
+
+References m\_\-filesystem.\index{CPath@{CPath}!RemoveAllExt@{RemoveAllExt}}
+\index{RemoveAllExt@{RemoveAllExt}!CPath@{CPath}}
+\subsubsection[{RemoveAllExt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::RemoveAllExt () const}\label{classCPath_a431165b597a3bff422670e6609e60396}
+
+
+Returns a \doxyref{CPath}{p.}{classCPath} object with all extensions removed. 
+
+References RemoveExt().\index{CPath@{CPath}!RemoveDir@{RemoveDir}}
+\index{RemoveDir@{RemoveDir}!CPath@{CPath}}
+\subsubsection[{RemoveDir}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::RemoveDir (const {\bf CPath} \& {\em file})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_a6ddd786e8283b5226c6fd872f89da834}
+
+
+Deletes the specified directory, returning true on success. 
+
+References m\_\-filesystem.\index{CPath@{CPath}!RemoveExt@{RemoveExt}}
+\index{RemoveExt@{RemoveExt}!CPath@{CPath}}
+\subsubsection[{RemoveExt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPath} CPath::RemoveExt () const}\label{classCPath_ade29bcb0719465039c3739bb2daec192}
+
+
+Returns a \doxyref{CPath}{p.}{classCPath} with the (last, if multiple) extension removed. 
+
+References m\_\-filesystem, and m\_\-printable.
+
+Referenced by CFile::Close(), CAllocateFileTask::Entry(), CCompletionTask::Entry(), and RemoveAllExt().\index{CPath@{CPath}!RemoveFile@{RemoveFile}}
+\index{RemoveFile@{RemoveFile}!CPath@{CPath}}
+\subsubsection[{RemoveFile}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::RemoveFile (const {\bf CPath} \& {\em file})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_a960ef346022d85087b5a00da3687a915}
+
+
+Deletes the specified file, returning true on success. 
+
+References m\_\-filesystem.
+
+Referenced by CCompletionTask::Entry().\index{CPath@{CPath}!RenameFile@{RenameFile}}
+\index{RenameFile@{RenameFile}!CPath@{CPath}}
+\subsubsection[{RenameFile}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::RenameFile (const {\bf CPath} \& {\em src}, \/  const {\bf CPath} \& {\em dst}, \/  bool {\em overwrite} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_a2582d5332974e869d5ca1efde2388dfe}
+
+
+Renames the file 'src' to the file 'dst', overwriting if specified. Note that renaming cannot be done across volumes. For that CopyFile is required. 
+
+References m\_\-filesystem.
+
+Referenced by CFile::Close(), and CCompletionTask::Entry().\index{CPath@{CPath}!StartsWith@{StartsWith}}
+\index{StartsWith@{StartsWith}!CPath@{CPath}}
+\subsubsection[{StartsWith}]{\setlength{\rightskip}{0pt plus 5cm}bool CPath::StartsWith (const {\bf CPath} \& {\em other}) const}\label{classCPath_aef6bfab3221d0b8df32f5b28a3cf6a49}
+
+
+Returns true if the the passed path makes up an prefix of this object. 
+
+References IsOk(), and m\_\-filesystem.\index{CPath@{CPath}!ToUniv@{ToUniv}}
+\index{ToUniv@{ToUniv}!CPath@{CPath}}
+\subsubsection[{ToUniv}]{\setlength{\rightskip}{0pt plus 5cm}wxString CPath::ToUniv (const {\bf CPath} \& {\em path})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCPath_a80462f12f86fee56f45993461b8d7461}
+
+
+Creates an 'universal' path from the specified \doxyref{CPath}{p.}{classCPath}. 
+
+References m\_\-filesystem.
+
+Referenced by Cfg\_\-Path::SaveToFile().\index{CPath@{CPath}!TruncatePath@{TruncatePath}}
+\index{TruncatePath@{TruncatePath}!CPath@{CPath}}
+\subsubsection[{TruncatePath}]{\setlength{\rightskip}{0pt plus 5cm}wxString CPath::TruncatePath (size\_\-t {\em length}, \/  bool {\em isFilePath} = {\ttfamily false}) const}\label{classCPath_aa637e8521295bb674076d8c1b5cebab3}
+
+
+Get truncated path. \begin{DoxyNote}{Note}
+This function truncates the {\itshape name\/} of the file, not the file itself.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em length}]The truncated path should not exceed this length. \item[{\em isFilePath}]Indicates whether the last part of the path (the file name) should be kept or not, if possible. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The truncated path, at most {\itshape length\/} long. 
+\end{DoxyReturn}
+
+
+References GetPrintable(), and JoinPaths().
+
+Referenced by CClientDetailDialog::OnInitDialog().
+
+\subsection{Member Data Documentation}
+\index{CPath@{CPath}!m\_\-filesystem@{m\_\-filesystem}}
+\index{m\_\-filesystem@{m\_\-filesystem}!CPath@{CPath}}
+\subsubsection[{m\_\-filesystem}]{\setlength{\rightskip}{0pt plus 5cm}wxString {\bf CPath::m\_\-filesystem}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCPath_ab16e902d1d4114d61714c86193ccbf59}
+
+
+Contains the \char`\"{}raw\char`\"{} filename, for use in system-\/calls, as well as in wxWidgets file functions. 
+
+Referenced by AddPostfix(), AppendExt(), BackupFile(), Cleanup(), CloneFile(), CPath(), DirExists(), FileExists(), GetExt(), GetFileSize(), GetFreeSpaceAt(), GetFullName(), GetModificationTime(), GetPath(), GetRaw(), IsDir(), IsFile(), IsOk(), IsSameDir(), JoinPaths(), MakeDir(), operator$<$(), operator=(), operator==(), RemoveDir(), RemoveExt(), RemoveFile(), RenameFile(), StartsWith(), and ToUniv().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/common/Path.h\item 
+src/libs/common/Path.cpp\end{DoxyCompactItemize}

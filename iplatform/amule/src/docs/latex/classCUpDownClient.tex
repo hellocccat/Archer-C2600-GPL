@@ -1,0 +1,1682 @@
+\section{CUpDownClient Class Reference}
+\label{classCUpDownClient}\index{CUpDownClient@{CUpDownClient}}
+Inheritance diagram for CUpDownClient::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCUpDownClient}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf A4AFStamp}
+\begin{DoxyCompactList}\small\item\em This struct is used to keep track of CPartFiles which this source shares. \item\end{DoxyCompactList}\item 
+struct {\bf TransferredData}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CUpDownClient} ({\bf CClientTCPSocket} $\ast$sender=0)\label{classCUpDownClient_a285c6df634a55d95639812b6d16208ed}
+
+\item 
+{\bfseries CUpDownClient} (uint16 in\_\-port, uint32 in\_\-userid, uint32 in\_\-serverup, uint16 in\_\-serverport, {\bf CPartFile} $\ast$in\_\-reqfile, bool ed2kID, bool checkfriend)\label{classCUpDownClient_a9727d471f5d510119b28e4619c5c2797}
+
+\item 
+void {\bf Safe\_\-Delete} ()
+\item 
+bool {\bf HasBeenDeleted} ()
+\item 
+ClientState {\bfseries GetClientState} ()\label{classCUpDownClient_a2b80257a34ab1a0e864831da54abe67f}
+
+\item 
+bool {\bfseries Disconnected} (const wxString \&strReason, bool bFromSocket=false)\label{classCUpDownClient_a128c98645d8a8ca5a6b056cc788bc247}
+
+\item 
+bool {\bfseries TryToConnect} (bool bIgnoreMaxCon=false)\label{classCUpDownClient_a58869125356979050673bc1bea2a7719}
+
+\item 
+bool {\bfseries Connect} ()\label{classCUpDownClient_aa36ff1077169149d5e072959306cb206}
+
+\item 
+void {\bfseries ConnectionEstablished} ()\label{classCUpDownClient_ab737622d4b344336873583778c4fe57d}
+
+\item 
+const wxString \& {\bfseries GetUserName} () const \label{classCUpDownClient_a2a2963092fa5ed73a485e7753dd1c107}
+
+\item 
+void {\bfseries SetIP} (uint32 val)\label{classCUpDownClient_a70be2dfe167734572f1722ebd3453a04}
+
+\item 
+uint32 {\bfseries GetIP} () const \label{classCUpDownClient_aa0b2af03217e5b6390256ba499339f26}
+
+\item 
+bool {\bfseries HasLowID} () const \label{classCUpDownClient_a63db96ab150593255ba9c2d2ef2184cc}
+
+\item 
+wxString {\bfseries GetFullIP} () const \label{classCUpDownClient_aca1d303f0f5836063e44876417629465}
+
+\item 
+uint32 {\bfseries GetConnectIP} () const \label{classCUpDownClient_ac4d0b927f19fb796694942f0ff8ada0f}
+
+\item 
+uint32 {\bfseries GetUserIDHybrid} () const \label{classCUpDownClient_a654ffc41cc457bca4ec82ca1bb2e81d8}
+
+\item 
+void {\bfseries SetUserIDHybrid} (uint32 val)\label{classCUpDownClient_a8b8b464272f8d2fa1bdb77ddbd2b0ebf}
+
+\item 
+uint16\_\-t {\bfseries GetUserPort} () const \label{classCUpDownClient_a437051568b34018f2cba9929414f30ee}
+
+\item 
+void {\bfseries SetUserPort} (uint16\_\-t port)\label{classCUpDownClient_a7abbddf782ac581640cf72444f4b0ade}
+
+\item 
+uint64 {\bfseries GetTransferredDown} () const \label{classCUpDownClient_ae513e008e848192fb629bc38da4c026d}
+
+\item 
+uint32 {\bfseries GetServerIP} () const \label{classCUpDownClient_a4586cde3501eb30718dc07c851554767}
+
+\item 
+void {\bfseries SetServerIP} (uint32 nIP)\label{classCUpDownClient_a09184823b2ae924e5b703573c4b4e39e}
+
+\item 
+uint16 {\bfseries GetServerPort} () const \label{classCUpDownClient_a1a68b31d257bda3577fc4a45804896b4}
+
+\item 
+void {\bfseries SetServerPort} (uint16 nPort)\label{classCUpDownClient_a9dc6cfcaa94b603335bf406dbd01ebd2}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetUserHash} () const \label{classCUpDownClient_a892fd29df08dc2dc1ac7fb6e6497455e}
+
+\item 
+void {\bfseries SetUserHash} (const {\bf CMD4Hash} \&userhash)\label{classCUpDownClient_a61e57ab3f775beae10debf4b02b93161}
+
+\item 
+void {\bfseries ValidateHash} ()\label{classCUpDownClient_a036b81416d6c2f69883a1578f77d33fa}
+
+\item 
+bool {\bfseries HasValidHash} () const \label{classCUpDownClient_a28c513ef94d4b10ce8ce62aab8ada6fd}
+
+\item 
+uint32 {\bfseries GetVersion} () const \label{classCUpDownClient_af39e9325dc40fe0a06ab114b50528c94}
+
+\item 
+uint8 {\bfseries GetMuleVersion} () const \label{classCUpDownClient_ac146eaa1772a0d6824d619a3682248ca}
+
+\item 
+bool {\bfseries ExtProtocolAvailable} () const \label{classCUpDownClient_ab3dd5ea9dbf20c3d30a33825543e8570}
+
+\item 
+bool {\bfseries IsEmuleClient} () const \label{classCUpDownClient_aa1b3c443b7430d83a50ca9e786b53056}
+
+\item 
+bool {\bfseries IsBanned} () const \label{classCUpDownClient_ac722818c4b52d3aca5904d0068712a84}
+
+\item 
+const wxString \& {\bfseries GetClientFilename} () const \label{classCUpDownClient_a3ca59013297564d71b4cd6015656f9d1}
+
+\item 
+uint16 {\bfseries GetUDPPort} () const \label{classCUpDownClient_af78cfce543c77134483674d83f3b7f21}
+
+\item 
+void {\bfseries SetUDPPort} (uint16 nPort)\label{classCUpDownClient_a288974445fb776d5853665756e565164}
+
+\item 
+uint8 {\bfseries GetUDPVersion} () const \label{classCUpDownClient_a0b3646fdd76a72af2f43aaef62be648e}
+
+\item 
+uint8 {\bfseries GetExtendedRequestsVersion} () const \label{classCUpDownClient_ac45aaf0be503754243b9dc1bae7945ba}
+
+\item 
+bool {\bfseries IsFriend} () const \label{classCUpDownClient_afcfab2e747a38f17b1c4d490a833edec}
+
+\item 
+bool {\bfseries IsML} () const \label{classCUpDownClient_a26595fa60581e88b8d824d1e91457a52}
+
+\item 
+bool {\bfseries IsHybrid} () const \label{classCUpDownClient_a79cf0c44dc14cb76d8e5b710806c8613}
+
+\item 
+uint32 {\bfseries GetCompatibleClient} () const \label{classCUpDownClient_a6ed774672e4814a5d9c77ed23ba67d2e}
+
+\item 
+void {\bfseries ClearDownloadBlockRequests} ()\label{classCUpDownClient_a9c2541b50508b5ee8732e2010219333f}
+
+\item 
+void {\bfseries RequestSharedFileList} ()\label{classCUpDownClient_a53780b7296378a96923d299a33d2a4ab}
+
+\item 
+void {\bfseries ProcessSharedFileList} (const byte $\ast$pachPacket, uint32 nSize, wxString \&pszDirectory)\label{classCUpDownClient_a291ebd7148b4a3ceaae6d70082f4805c}
+
+\item 
+void {\bfseries SendSharedDirectories} ()\label{classCUpDownClient_abf54e2ed8c9b81cc9eaf1e8c8bb3dc1d}
+
+\item 
+void {\bfseries SendSharedFilesOfDirectory} (const wxString \&strReqDir)\label{classCUpDownClient_a3f37651070f2b49e6c6b7f74ad84b7a0}
+
+\item 
+wxString {\bfseries GetUploadFileInfo} ()\label{classCUpDownClient_a13bcafacb41b68cf912c992e3ee24772}
+
+\item 
+void {\bfseries SetUserName} (const wxString \&NewName)\label{classCUpDownClient_a9af9fba20245f0cea2338110667a908a}
+
+\item 
+uint8 {\bfseries GetClientSoft} () const \label{classCUpDownClient_ae2164ddfcd5856573daa686fd21bf1ff}
+
+\item 
+void {\bfseries ReGetClientSoft} ()\label{classCUpDownClient_ac5b77cb17226acefe7579eafeafa1df8}
+
+\item 
+bool {\bfseries ProcessHelloAnswer} (const byte $\ast$pachPacket, uint32 nSize)\label{classCUpDownClient_aef3e153e3bcbf2ec889b551071cd28e4}
+
+\item 
+bool {\bfseries ProcessHelloPacket} (const byte $\ast$pachPacket, uint32 nSize)\label{classCUpDownClient_aa5dbdce165e9bb23bdf4eee73f647f57}
+
+\item 
+void {\bfseries SendHelloAnswer} ()\label{classCUpDownClient_a1133bd7a989d186abdb97051ddfd8287}
+
+\item 
+bool {\bfseries SendHelloPacket} ()\label{classCUpDownClient_ab536b156c51e57a1b447f493b3dd6d4f}
+
+\item 
+void {\bfseries SendMuleInfoPacket} (bool bAnswer, bool OSInfo=false)\label{classCUpDownClient_a5c58a24d00f6540a6ac50928faafbf3f}
+
+\item 
+bool {\bfseries ProcessMuleInfoPacket} (const byte $\ast$pachPacket, uint32 nSize)\label{classCUpDownClient_afe338694119fd6afc988c0c9f82396a9}
+
+\item 
+void {\bfseries ProcessMuleCommentPacket} (const byte $\ast$pachPacket, uint32 nSize)\label{classCUpDownClient_ad00007fccfdc0ccefe8556aaa15b7a9a}
+
+\item 
+bool {\bfseries Compare} (const {\bf CUpDownClient} $\ast$tocomp, bool bIgnoreUserhash=false) const \label{classCUpDownClient_ad80b5397979515e3993d85016c415847}
+
+\item 
+void {\bfseries SetLastSrcReqTime} ()\label{classCUpDownClient_a829bc482034512ee4f413242a75ced19}
+
+\item 
+void {\bfseries SetLastSrcAnswerTime} ()\label{classCUpDownClient_af86998d6543c03ff449706f6dec5970f}
+
+\item 
+void {\bfseries SetLastAskedForSources} ()\label{classCUpDownClient_a04a6e82728a6fbca2ebf1601afe752cd}
+
+\item 
+uint32 {\bfseries GetLastSrcReqTime} () const \label{classCUpDownClient_af4ab13617fbcb7523da0ade65af9da6c}
+
+\item 
+uint32 {\bfseries GetLastSrcAnswerTime} () const \label{classCUpDownClient_ad89b00b67ea5c8021daaf772dea4f1f8}
+
+\item 
+uint32 {\bfseries GetLastAskedForSources} () const \label{classCUpDownClient_ad7948798d5c87b814df0d5b51cc461f7}
+
+\item 
+bool {\bfseries GetFriendSlot} () const \label{classCUpDownClient_ae400edcd6d331de85e369bf42e9334f8}
+
+\item 
+void {\bfseries SetFriendSlot} (bool bNV)\label{classCUpDownClient_a52e5905fda2be08e1952d94d086a9e8b}
+
+\item 
+void {\bfseries SetCommentDirty} (bool bDirty=true)\label{classCUpDownClient_a818981b86352ab82be997fa232f1917f}
+
+\item 
+uint8 {\bfseries GetSourceExchange1Version} () const \label{classCUpDownClient_abf17468ad2b26a1a73c2d432177f88f5}
+
+\item 
+bool {\bfseries SupportsSourceExchange2} () const \label{classCUpDownClient_a863dcade2dfa2277e28bca146c613df2}
+
+\item 
+bool {\bfseries SafeSendPacket} ({\bf CPacket} $\ast$packet)\label{classCUpDownClient_a2be932cb055c6763f3a6b78539dadb92}
+
+\item 
+void {\bfseries ProcessRequestPartsPacket} (const byte $\ast$pachPacket, uint32 nSize, bool largeblocks)\label{classCUpDownClient_a0c7b6fb192734ccb23b14fc8546dd254}
+
+\item 
+void {\bfseries ProcessRequestPartsPacketv2} (const {\bf CMemFile} \&data)\label{classCUpDownClient_ab308f1dc12770a1877fccb84da21818a}
+
+\item 
+void {\bfseries SendPublicKeyPacket} ()\label{classCUpDownClient_a136ae7554b452e85540f976498ca1081}
+
+\item 
+void {\bfseries SendSignaturePacket} ()\label{classCUpDownClient_a80a0238a7747ad275dbc94c76665931f}
+
+\item 
+void {\bfseries ProcessPublicKeyPacket} (const byte $\ast$pachPacket, uint32 nSize)\label{classCUpDownClient_af9e5c0a126d31dd94ffff648ed914175}
+
+\item 
+void {\bfseries ProcessSignaturePacket} (const byte $\ast$pachPacket, uint32 nSize)\label{classCUpDownClient_ac23e4360c1ef0fc9bb0471557f5fd370}
+
+\item 
+uint8 {\bfseries GetSecureIdentState} ()\label{classCUpDownClient_ab4472bc85f05bb38bdaefa763ae8524b}
+
+\item 
+void {\bfseries SendSecIdentStatePacket} ()\label{classCUpDownClient_a0df948964e25c2908e29e60c010e0510}
+
+\item 
+void {\bfseries ProcessSecIdentStatePacket} (const byte $\ast$pachPacket, uint32 nSize)\label{classCUpDownClient_adc5a1b7903ba6a555f3311c4ac163668}
+
+\item 
+uint8 {\bfseries GetInfoPacketsReceived} () const \label{classCUpDownClient_acac86ba23b681488b47e0e0c07befff4}
+
+\item 
+void {\bfseries InfoPacketsReceived} ()\label{classCUpDownClient_a9578443401dd79334896858dbc67fc9a}
+
+\item 
+uint8 {\bfseries GetUploadState} () const \label{classCUpDownClient_afbbeab4b0aed79020142d4f287db2b9a}
+
+\item 
+void {\bfseries SetUploadState} (uint8 news)\label{classCUpDownClient_ae3b23f5681de58df3001f27c836bbd91}
+
+\item 
+uint64 {\bfseries GetTransferredUp} () const \label{classCUpDownClient_ab1f3dedeba23cea47a888ca29a36d5f0}
+
+\item 
+uint64 {\bfseries GetSessionUp} () const \label{classCUpDownClient_a2dfabf674dfd949cff36237c2d351660}
+
+\item 
+void {\bfseries ResetSessionUp} ()\label{classCUpDownClient_a5fd44e41bbe3ec14657b518b8e61d3b7}
+
+\item 
+uint32 {\bfseries GetUploadDatarate} () const \label{classCUpDownClient_ab738842df66df3aef898adc1d4ccb2f2}
+
+\item 
+uint32 {\bfseries GetUpStartTimeDelay} () const \label{classCUpDownClient_a3b0a4ef230a28e757eb2e74402e10253}
+
+\item 
+uint32 {\bfseries GetWaitStartTime} () const \label{classCUpDownClient_a96a48e4f49968ac13c26e30a6050f860}
+
+\item 
+bool {\bfseries IsDownloading} () const \label{classCUpDownClient_a2837a88b7cb42c5169fccb3b63b97efb}
+
+\item 
+uint32 {\bfseries GetScore} () const \label{classCUpDownClient_aa046aafacf4317d415603d806a8e06c8}
+
+\item 
+uint32 {\bfseries CalculateScore} ()\label{classCUpDownClient_a337907e0480153814c322db8bfa3b594}
+
+\item 
+void {\bfseries ClearScore} ()\label{classCUpDownClient_a8c03faf09b62c9ea88848da640926a88}
+
+\item 
+uint16 {\bfseries GetUploadQueueWaitingPosition} () const \label{classCUpDownClient_a3089f3d984d13a7b1c2429c3777d6d34}
+
+\item 
+void {\bfseries SetUploadQueueWaitingPosition} (uint16 pos)\label{classCUpDownClient_abaca1c38933113f94550cea8f095eeaf}
+
+\item 
+uint8 {\bfseries GetObfuscationStatus} () const \label{classCUpDownClient_aa04cad9525b35362a55dc9e82779a021}
+
+\item 
+uint16 {\bfseries GetNextRequestedPart} () const \label{classCUpDownClient_a4d4b9618840054fec7d80689e162f008}
+
+\item 
+void {\bfseries AddReqBlock} ({\bf Requested\_\-Block\_\-Struct} $\ast$reqblock)\label{classCUpDownClient_a7899ebf0a8ae3ab1961e26e57c0ba62a}
+
+\item 
+void {\bfseries CreateNextBlockPackage} ()\label{classCUpDownClient_a0942e7524351564c3ec552b360f27cbb}
+
+\item 
+void {\bfseries SetUpStartTime} ()\label{classCUpDownClient_a3040c142f47be022f26a1c2cffb3470c}
+
+\item 
+void {\bfseries SetWaitStartTime} ()\label{classCUpDownClient_aba063937b19bebf64102f1d22edd3626}
+
+\item 
+void {\bfseries ClearWaitStartTime} ()\label{classCUpDownClient_a33d9e224052e37771000909d51beba6f}
+
+\item 
+void {\bfseries SendHashsetPacket} (const {\bf CMD4Hash} \&forfileid)\label{classCUpDownClient_ae322c6980b6167312b8e3e946e5d0783}
+
+\item 
+bool {\bfseries SupportMultiPacket} () const \label{classCUpDownClient_ac5a5c8836f541ba16dc08235dd60257b}
+
+\item 
+bool {\bfseries SupportExtMultiPacket} () const \label{classCUpDownClient_a48423c65ead4660d1626b7f861f241f5}
+
+\item 
+void {\bfseries SetUploadFileID} ({\bf CKnownFile} $\ast$newreqfile)\label{classCUpDownClient_a174e5ff633a65da3c53ffc6f0a25150e}
+
+\item 
+const {\bf CKnownFile} $\ast$ {\bf GetUploadFile} () const 
+\item 
+void {\bfseries SendOutOfPartReqsAndAddToWaitingQueue} ()\label{classCUpDownClient_aab471e5e99f572886b470c470c5f991c}
+
+\item 
+void {\bfseries ProcessExtendedInfo} (const {\bf CMemFile} $\ast$data, {\bf CKnownFile} $\ast$tempreqfile)\label{classCUpDownClient_a4b91468763766d55db9176d82d597dbf}
+
+\item 
+void {\bfseries ProcessFileInfo} (const {\bf CMemFile} $\ast$data, const {\bf CPartFile} $\ast$file)\label{classCUpDownClient_a239a3604ec3c191a808a4831faea1b3d}
+
+\item 
+void {\bfseries ProcessFileStatus} (bool bUdpPacket, const {\bf CMemFile} $\ast$data, const {\bf CPartFile} $\ast$file)\label{classCUpDownClient_a7e0600643f9e5a7827ebf2ef5c5fb6e4}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetUploadFileID} () const \label{classCUpDownClient_a2b94a5f9009ec94ace7379df1cfbe02d}
+
+\item 
+void {\bfseries SetUploadFileID} (const {\bf CMD4Hash} \&new\_\-id)\label{classCUpDownClient_aeac2d9f93d0202dee6cc928534de7f11}
+
+\item 
+void {\bfseries ClearUploadFileID} ()\label{classCUpDownClient_a258ea32287c1cca43a1da2dde0a87666}
+
+\item 
+uint32 {\bfseries SendBlockData} ()\label{classCUpDownClient_af0c80bd88d8e2ab6696f11f089ac8d75}
+
+\item 
+void {\bfseries ClearUploadBlockRequests} ()\label{classCUpDownClient_a54a4abe53fcd55dbdc5d618e8a0b33ef}
+
+\item 
+void {\bfseries SendRankingInfo} ()\label{classCUpDownClient_a517915b65641fc4bc43fb165ab81223a}
+
+\item 
+void {\bfseries SendCommentInfo} ({\bf CKnownFile} $\ast$file)\label{classCUpDownClient_aa0e076292ed8ab6e4e2e4aefcdf28074}
+
+\item 
+bool {\bfseries IsDifferentPartBlock} () const \label{classCUpDownClient_a644082ddf66e557799fed01072fe65f3}
+
+\item 
+void {\bfseries UnBan} ()\label{classCUpDownClient_ad1df33057c304b230e792ddcd851b48a}
+
+\item 
+void {\bfseries Ban} ()\label{classCUpDownClient_abe204a8eff62bd8cfbb6855bf05512a1}
+
+\item 
+uint32 {\bfseries GetAskedCount} () const \label{classCUpDownClient_af982003a55645bf101d99ac4fee1c4ab}
+
+\item 
+void {\bfseries AddAskedCount} ()\label{classCUpDownClient_a528651a78cb8a33bd5221380d18425dc}
+
+\item 
+void {\bfseries ClearAskedCount} ()\label{classCUpDownClient_a44ba396d613c82c9aa60fc7d4be8c313}
+
+\item 
+void {\bf FlushSendBlocks} ()\label{classCUpDownClient_a932a9ff0fedc77968438b99a48558cae}
+
+\item 
+void {\bfseries SetLastUpRequest} ()\label{classCUpDownClient_a76fba19350acd5ea644b3cd9998e416d}
+
+\item 
+uint32 {\bfseries GetLastUpRequest} () const \label{classCUpDownClient_ae8111157e67f3177ac88190a5b488bb4}
+
+\item 
+size\_\-t {\bfseries GetUpPartCount} () const \label{classCUpDownClient_a3d8438a4df410c6d744f763719024464}
+
+\item 
+void {\bfseries SetRequestFile} ({\bf CPartFile} $\ast$reqfile)\label{classCUpDownClient_a2c541b00aac763dcfeee842d1e0c2d6c}
+
+\item 
+{\bf CPartFile} $\ast$ {\bfseries GetRequestFile} () const \label{classCUpDownClient_af32c0f7a36fe5693d001262d0a089078}
+
+\item 
+uint8 {\bfseries GetDownloadState} () const \label{classCUpDownClient_a10d514a12ea8122bb4b6a17471a528ac}
+
+\item 
+void {\bfseries SetDownloadState} (uint8 byNewState)\label{classCUpDownClient_a73c867bc6732e858c9bd4cfdbf26f8fb}
+
+\item 
+uint32 {\bfseries GetLastAskedTime} () const \label{classCUpDownClient_a8e1b0a7fc3f0495d5e15d1f018adfaf8}
+
+\item 
+void {\bfseries ResetLastAskedTime} ()\label{classCUpDownClient_a0d87c5a7dce9180d103698be7554af78}
+
+\item 
+bool {\bfseries IsPartAvailable} (uint16 iPart) const \label{classCUpDownClient_aa5ff75a551d293cd0df62cd5fc0b1a81}
+
+\item 
+bool {\bfseries IsUpPartAvailable} (uint16 iPart) const \label{classCUpDownClient_a665aec8a8fd99d52408f5091927ef6ed}
+
+\item 
+const {\bf BitVector} \& {\bfseries GetPartStatus} () const \label{classCUpDownClient_a739698dc4780927f235e3dafa6310d10}
+
+\item 
+const {\bf BitVector} \& {\bfseries GetUpPartStatus} () const \label{classCUpDownClient_ad0f8337022beb8ca4d2a4704f1aa287a}
+
+\item 
+float {\bfseries GetKBpsDown} () const \label{classCUpDownClient_a6fa7841dabe5c5cf812831ce77946cc5}
+
+\item 
+float {\bfseries CalculateKBpsDown} ()\label{classCUpDownClient_a3b1bf0f5d423980962c1d4bc644acaf8}
+
+\item 
+uint16 {\bfseries GetRemoteQueueRank} () const \label{classCUpDownClient_a4a084e15a50898d378e3ec51f20d740f}
+
+\item 
+uint16 {\bfseries GetOldRemoteQueueRank} () const \label{classCUpDownClient_ab4a6358122318a875384011b8274ebbc}
+
+\item 
+void {\bfseries SetRemoteQueueFull} (bool flag)\label{classCUpDownClient_a50b88512bf7381a76d17b899b4e95408}
+
+\item 
+bool {\bfseries IsRemoteQueueFull} () const \label{classCUpDownClient_a617fa8069346ff46c2253aff2df00115}
+
+\item 
+void {\bfseries SetRemoteQueueRank} (uint16 nr)\label{classCUpDownClient_ab12f2e2618e6a91597e235863c38afe0}
+
+\item 
+bool {\bfseries AskForDownload} ()\label{classCUpDownClient_aefc6f3a0cf603152eb57c826a9471595}
+
+\item 
+void {\bfseries SendStartupLoadReq} ()\label{classCUpDownClient_ae214273c295e130a63cf7f772a3f9fed}
+
+\item 
+void {\bfseries SendFileRequest} ()\label{classCUpDownClient_aa1e79639c10802902958d3d27b59827c}
+
+\item 
+void {\bfseries ProcessHashSet} (const byte $\ast$packet, uint32 size)\label{classCUpDownClient_ab61241c8567a4b61647bc760ddb68c3a}
+
+\item 
+bool {\bfseries AddRequestForAnotherFile} ({\bf CPartFile} $\ast$file)\label{classCUpDownClient_ab077ba8a897ad8f615e00c31632c5f0b}
+
+\item 
+bool {\bfseries DeleteFileRequest} ({\bf CPartFile} $\ast$file)\label{classCUpDownClient_a6e0b4cd2ba883a35a203c398e80ac020}
+
+\item 
+void {\bfseries DeleteAllFileRequests} ()\label{classCUpDownClient_a9971f3509d8a2c6fdd984e203f187230}
+
+\item 
+void {\bfseries SendBlockRequests} ()\label{classCUpDownClient_a68594221e7808e7c8f86cc7385e669ae}
+
+\item 
+void {\bfseries ProcessBlockPacket} (const byte $\ast$packet, uint32 size, bool packed, bool largeblocks)\label{classCUpDownClient_a6a0c0be9ce5ba5969f6ae316cb06742e}
+
+\item 
+uint16 {\bfseries GetAvailablePartCount} () const \label{classCUpDownClient_a979a1bc33384927334d13648f39ce986}
+
+\item 
+bool {\bfseries SwapToAnotherFile} (bool bIgnoreNoNeeded, bool ignoreSuspensions, bool bRemoveCompletely, {\bf CPartFile} $\ast$toFile=NULL)\label{classCUpDownClient_a51f727cda219501b77939c430513ea1f}
+
+\item 
+void {\bfseries UDPReaskACK} (uint16 nNewQR)\label{classCUpDownClient_ac03a9e284c35ce2c27c4bf5a56be61d1}
+
+\item 
+void {\bfseries UDPReaskFNF} ()\label{classCUpDownClient_a84302f22760725a643262def1c42f503}
+
+\item 
+void {\bfseries UDPReaskForDownload} ()\label{classCUpDownClient_a31211fda4852f5d88409d450e954e45b}
+
+\item 
+bool {\bfseries IsSourceRequestAllowed} ()\label{classCUpDownClient_a74394656eb8e908d84e0f9ba05339fe1}
+
+\item 
+uint16 {\bfseries GetUpCompleteSourcesCount} () const \label{classCUpDownClient_aa2369c8d0f28f13f7c6a3d20b0b8a6e9}
+
+\item 
+void {\bfseries SetUpCompleteSourcesCount} (uint16 n)\label{classCUpDownClient_ae56a91cfa8bff0b0c618e2f306cdcedd}
+
+\item 
+uint8 {\bfseries GetChatState} ()\label{classCUpDownClient_a2b34fd06217cabf2d8963a024dbc9fad}
+
+\item 
+void {\bfseries SetChatState} (uint8 nNewS)\label{classCUpDownClient_a80a98dc2675e785f78465397e08f706b}
+
+\item 
+EChatCaptchaState {\bfseries GetChatCaptchaState} () const \label{classCUpDownClient_a0028003faaa8848bbf86715c7152bd46}
+
+\item 
+void {\bfseries ProcessCaptchaRequest} ({\bf CMemFile} $\ast$data)\label{classCUpDownClient_a192d4fce141b596ff1f0407d66926e1b}
+
+\item 
+void {\bfseries ProcessCaptchaReqRes} (uint8 nStatus)\label{classCUpDownClient_a37e8304b0b5b7aefbfdd21f5fc837fe4}
+
+\item 
+void {\bfseries ProcessChatMessage} (wxString message)\label{classCUpDownClient_abb64023599fcb53d613cce6a7dc46b42}
+
+\item 
+uint8 {\bfseries GetMessagesReceived} () const \label{classCUpDownClient_aa0277df19a3baa25d05017582ed41db3}
+
+\item 
+void {\bfseries IncMessagesReceived} ()\label{classCUpDownClient_a90880e63297486f78cbbc27dae81099c}
+
+\item 
+uint8 {\bfseries GetMessagesSent} () const \label{classCUpDownClient_a11eeae513e857471a48eaad52602e587}
+
+\item 
+void {\bfseries IncMessagesSent} ()\label{classCUpDownClient_a37c7c5e344fa15275a6fe16082c7e423}
+
+\item 
+bool {\bfseries IsSpammer} () const \label{classCUpDownClient_af5dd93103eb1763b2e67e0035d4aec84}
+
+\item 
+void {\bfseries SetSpammer} (bool bVal)\label{classCUpDownClient_a1668815ef678bcacf289382090bee24b}
+
+\item 
+bool {\bfseries IsMessageFiltered} (const wxString \&message)\label{classCUpDownClient_aee2c75469da5ac8e431513ed1f0f2062}
+
+\item 
+const wxString \& {\bfseries GetFileComment} () const \label{classCUpDownClient_a5853fcad8b0f02ee171405e53230b00a}
+
+\item 
+uint8 {\bfseries GetFileRating} () const \label{classCUpDownClient_a98b9c3f100c9393b4572d79474775352}
+
+\item 
+const wxString \& {\bfseries GetSoftStr} () const \label{classCUpDownClient_a6b0e9f7453c43690f2756f670a408924}
+
+\item 
+const wxString \& {\bfseries GetSoftVerStr} () const \label{classCUpDownClient_a69ad6d0c883476dee9a98820a9a4ef82}
+
+\item 
+const wxString {\bfseries GetServerName} () const \label{classCUpDownClient_a4ac35023d2b0079ab0713fc3363ee121}
+
+\item 
+uint16 {\bfseries GetKadPort} () const \label{classCUpDownClient_ac87f767451b50714aadcf59606ed68f3}
+
+\item 
+void {\bfseries SetKadPort} (uint16 nPort)\label{classCUpDownClient_af892911b40ecbd93427c714d3615464e}
+
+\item 
+void {\bfseries SetReqFileAICHHash} ({\bf CAICHHash} $\ast$val)\label{classCUpDownClient_a41ed83cdd1d3a2e2af0689631e4e0122}
+
+\item 
+{\bf CAICHHash} $\ast$ {\bfseries GetReqFileAICHHash} () const \label{classCUpDownClient_abb7a59512c03e8ac5d39ec478ddd604b}
+
+\item 
+bool {\bfseries IsSupportingAICH} () const \label{classCUpDownClient_a77715f176352049252dd53c9d0e2401a}
+
+\item 
+void {\bfseries SendAICHRequest} ({\bf CPartFile} $\ast$pForFile, uint16 nPart)\label{classCUpDownClient_ab4c93a89aba444cc52431b977afadea1}
+
+\item 
+bool {\bfseries IsAICHReqPending} () const \label{classCUpDownClient_aabd8336ce579416b97f6e259e2655d80}
+
+\item 
+void {\bfseries ProcessAICHAnswer} (const byte $\ast$packet, uint32 size)\label{classCUpDownClient_a13109403032e97ceb6cabafaf63a8e4c}
+
+\item 
+void {\bfseries ProcessAICHRequest} (const byte $\ast$packet, uint32 size)\label{classCUpDownClient_aff9930465a07f2ae0afa05acd6a55072}
+
+\item 
+void {\bfseries ProcessAICHFileHash} ({\bf CMemFile} $\ast$data, const {\bf CPartFile} $\ast$file)\label{classCUpDownClient_ab12f6031e1c459475ad98a68350fde5d}
+
+\item 
+EUtf8Str {\bfseries GetUnicodeSupport} () const \label{classCUpDownClient_a6056488d8ed6584638e3e246b545056c}
+
+\item 
+int {\bfseries unzip} ({\bf Pending\_\-Block\_\-Struct} $\ast$block, byte $\ast$zipped, uint32 lenZipped, byte $\ast$$\ast$unzipped, uint32 $\ast$lenUnzipped, int iRecursion=0)\label{classCUpDownClient_ac6051480c19357b5872b42f54ded22c3}
+
+\item 
+void {\bfseries UpdateDisplayedInfo} (bool force=false)\label{classCUpDownClient_abafc1e3f133cdfea14722d5baee148bf}
+
+\item 
+int {\bfseries GetFileListRequested} () const \label{classCUpDownClient_ac01f4c5cb83fe5d86781ac1b082f7998}
+
+\item 
+void {\bfseries SetFileListRequested} (int iFileListRequested)\label{classCUpDownClient_ab7e87ecfc8956f25ef378e1d9374e0f1}
+
+\item 
+void {\bfseries ResetFileStatusInfo} ()\label{classCUpDownClient_a53ebc6fbcbc95be53b563e60bc3e1f25}
+
+\item 
+bool {\bfseries CheckHandshakeFinished} () const \label{classCUpDownClient_a30908cb8d20fad9bc113d81291a6944e}
+
+\item 
+bool {\bfseries GetSentCancelTransfer} () const \label{classCUpDownClient_a9e0c246bf7eacd845c8f6ea4493759f1}
+
+\item 
+void {\bfseries SetSentCancelTransfer} (bool bVal)\label{classCUpDownClient_a138eba970af502c97851a7354804cd23}
+
+\item 
+wxString {\bfseries GetClientFullInfo} ()\label{classCUpDownClient_a838e6ae48979dc03c492d5221a213c3f}
+
+\item 
+wxString {\bfseries GetClientShortInfo} ()\label{classCUpDownClient_a694411d6120ff2a9ac2a41f4834b53c4}
+
+\item 
+const wxString \& {\bfseries GetClientOSInfo} () const \label{classCUpDownClient_a6e93c7fa6097a88e518aa8bc76bae31c}
+
+\item 
+void {\bfseries ProcessPublicIPAnswer} (const byte $\ast$pbyData, uint32 uSize)\label{classCUpDownClient_ae2122682c8512de77909dbc215c26720}
+
+\item 
+void {\bfseries SendPublicIPRequest} ()\label{classCUpDownClient_aa16c29b4152470b415030953df1fe347}
+
+\item 
+void {\bf SetSocket} ({\bf CClientTCPSocket} $\ast$socket)
+\item 
+{\bf CClientTCPSocket} $\ast$ {\bf GetSocket} () const 
+\item 
+bool {\bf IsConnected} () const 
+\item 
+bool {\bf SendPacket} ({\bf CPacket} $\ast$packet, bool delpacket=true, bool controlpacket=true)
+\item 
+float {\bf SetDownloadLimit} (uint32 reducedownload)
+\item 
+bool {\bf SendChatMessage} (const wxString \&message)
+\item 
+bool {\bfseries HasBlocks} () const \label{classCUpDownClient_aaf77dd315aa9d50781b214c078abbd2a}
+
+\item 
+ESourceFrom {\bfseries GetSourceFrom} () const \label{classCUpDownClient_adbe32e0e9d58076a8844bc90c2b7ad3e}
+
+\item 
+void {\bfseries SetSourceFrom} (ESourceFrom val)\label{classCUpDownClient_a3eb4ba4c09a199fabf630fbbd6028673}
+
+\item 
+const byte $\ast$ {\bfseries GetBuddyID} () const \label{classCUpDownClient_a736743c9d8dc2d2545e508635bef45af}
+
+\item 
+void {\bfseries SetBuddyID} (const byte $\ast$m\_\-achTempBuddyID)\label{classCUpDownClient_a97caef6ff9c242d427b9d37d0b119b90}
+
+\item 
+bool {\bfseries HasValidBuddyID} () const \label{classCUpDownClient_a3b984ba57c1d62ab08759c82df171453}
+
+\item 
+void {\bfseries SetBuddyIP} (uint32 val)\label{classCUpDownClient_abf29a61cf470ffa3cb004080854f0b22}
+
+\item 
+uint32 {\bfseries GetBuddyIP} () const \label{classCUpDownClient_ab9c9a401fd1ecb116ecba165994f8f54}
+
+\item 
+void {\bfseries SetBuddyPort} (uint16 val)\label{classCUpDownClient_aaca347e378744acf86300c9924399740}
+
+\item 
+uint16 {\bfseries GetBuddyPort} () const \label{classCUpDownClient_aa83e0d30e64a46bceac9f3552e853393}
+
+\item 
+bool {\bfseries SendBuddyPingPong} ()\label{classCUpDownClient_a57d8dbda10ac16564896950fb340b424}
+
+\item 
+bool {\bfseries AllowIncomeingBuddyPingPong} ()\label{classCUpDownClient_a0677d0f150ee6c56d1dd95a50139be5a}
+
+\item 
+void {\bfseries SetLastBuddyPingPongTime} ()\label{classCUpDownClient_aed572e61c5d36ac3ea27ab875037a48d}
+
+\item 
+EKadState {\bfseries GetKadState} () const \label{classCUpDownClient_a6d281ad5152c56e914a7aaa535ceaff1}
+
+\item 
+void {\bfseries SetKadState} (EKadState nNewS)\label{classCUpDownClient_afae94e19c3e1a38e7922eb18f8f9c4df}
+
+\item 
+uint8 {\bfseries GetKadVersion} ()\label{classCUpDownClient_a57209bc21a2cdbff147b4988d1e114a8}
+
+\item 
+void {\bfseries ProcessFirewallCheckUDPRequest} ({\bf CMemFile} $\ast$data)\label{classCUpDownClient_a642e093d9f5902afbdaf584442d63640}
+
+\item 
+bool {\bfseries SendBuddyPing} ()\label{classCUpDownClient_af483bbd12b8d42dfa255e27bfc221941}
+
+\item 
+int {\bfseries GetHashType} () const \label{classCUpDownClient_a9af42285ce822044bb2ce7b3e92fbc8d}
+
+\item 
+void {\bf CheckForAggressive} ()
+\item 
+const wxString \& {\bfseries GetClientModString} () const \label{classCUpDownClient_a918ec91b4ba50ec321f2f996509846e5}
+
+\item 
+const wxString \& {\bfseries GetClientVerString} () const \label{classCUpDownClient_a56cdd1f82b6fca58c1cb2b2b4c631f22}
+
+\item 
+const wxString \& {\bfseries GetVersionString} () const \label{classCUpDownClient_a0d50fd766d90aaf4557750e779084df5}
+
+\item 
+void {\bfseries UpdateStats} ()\label{classCUpDownClient_a7236f79da9bb20e1701cc487b59e0dc7}
+
+\item 
+void $\ast$ {\bfseries GetCreditsHash} () const \label{classCUpDownClient_a39e6aa95a8b4d3601ad1f5f2207b6dc1}
+
+\item 
+uint16 {\bfseries GetLastDownloadingPart} () const \label{classCUpDownClient_a22cf799944dd0ff9b01b9064986be6ae}
+
+\item 
+bool {\bfseries GetOSInfoSupport} () const \label{classCUpDownClient_ab8139cc754b8652a6930fc18f0e6222a}
+
+\item 
+bool {\bfseries GetVBTTags} () const \label{classCUpDownClient_a9ca64fd336badc4a3e7d05894e3ce435}
+
+\item 
+uint16 {\bfseries GetLastPartAsked} () const \label{classCUpDownClient_a4d9df7fa880d7332950793f6399e7875}
+
+\item 
+void {\bfseries SetLastPartAsked} (uint16 nPart)\label{classCUpDownClient_ad862d70835f324810698ae5868bc0505}
+
+\item 
+{\bf CFriend} $\ast$ {\bfseries GetFriend} () const \label{classCUpDownClient_a357050e3af473145a3905f9243d7eb2b}
+
+\item 
+void {\bfseries SetFriend} ({\bf CFriend} $\ast$newfriend)\label{classCUpDownClient_aab3999aa8931f7acba06a3c08e8f5cde}
+
+\item 
+bool {\bfseries IsIdentified} () const \label{classCUpDownClient_a6450a72585b37e7f219d4c7f2f12574e}
+
+\item 
+bool {\bfseries IsBadGuy} () const \label{classCUpDownClient_a0b1447261e21ce96d574ad3c49c1a16e}
+
+\item 
+bool {\bfseries SUIFailed} () const \label{classCUpDownClient_a7c5b3f0c2fad36fde92bf8e541103881}
+
+\item 
+bool {\bfseries SUINeeded} () const \label{classCUpDownClient_a87853f1a5d99c6fd871dc973bf153ad3}
+
+\item 
+bool {\bfseries SUINotSupported} () const \label{classCUpDownClient_aeb3393ac92646df1085e9f0ee0378e05}
+
+\item 
+uint64 {\bfseries GetDownloadedTotal} () const \label{classCUpDownClient_a24a285d86d65d57b2f568b63855ef2bc}
+
+\item 
+uint64 {\bfseries GetUploadedTotal} () const \label{classCUpDownClient_a0769f66456e49a80bc0ccd3226c79462}
+
+\item 
+double {\bfseries GetScoreRatio} () const \label{classCUpDownClient_a7f162729c2acc591ad3b7afaf8494711}
+
+\item 
+uint32 {\bfseries GetCreationTime} () const \label{classCUpDownClient_a611600f5ee4e4d19fa23964a0ab19a9a}
+
+\item 
+bool {\bfseries SupportsLargeFiles} () const \label{classCUpDownClient_a6cfbec6e45a4a0811583ee703397385b}
+
+\item 
+EIdentState {\bfseries GetCurrentIdentState} () const \label{classCUpDownClient_a4e3ee19fe2170d86af6a7df05fd05c04}
+
+\item 
+bool {\bfseries SupportsCryptLayer} () const \label{classCUpDownClient_aa63a141ee0bedce493a82d401a577373}
+
+\item 
+bool {\bfseries RequestsCryptLayer} () const \label{classCUpDownClient_a6959462efab149b1e58899c57873e01c}
+
+\item 
+bool {\bfseries RequiresCryptLayer} () const \label{classCUpDownClient_a0ff67019d76854bcdce2f3cb28ce9d07}
+
+\item 
+bool {\bfseries SupportsDirectUDPCallback} () const \label{classCUpDownClient_a466716b22f27f3b8db967334537999e9}
+
+\item 
+uint32\_\-t {\bfseries GetDirectCallbackTimeout} () const \label{classCUpDownClient_afd789449feb2f99473e77e3792788da4}
+
+\item 
+bool {\bfseries HasObfuscatedConnectionBeenEstablished} () const \label{classCUpDownClient_a069a9fdb5941f73c2c7647a70bcca143}
+
+\item 
+void {\bfseries SetCryptLayerSupport} (bool bVal)\label{classCUpDownClient_a126b28c82fec1cd943427aed55423509}
+
+\item 
+void {\bfseries SetCryptLayerRequest} (bool bVal)\label{classCUpDownClient_a894567394f8c73d205a02b1c462e5325}
+
+\item 
+void {\bfseries SetCryptLayerRequires} (bool bVal)\label{classCUpDownClient_ad6408cf1e41f17e7f5d17a36b2093cbe}
+
+\item 
+void {\bfseries SetDirectUDPCallbackSupport} (bool bVal)\label{classCUpDownClient_a2475c496ddff8f959b3008fab8e1f8e8}
+
+\item 
+void {\bfseries SetConnectOptions} (uint8\_\-t options, bool encryption=true, bool callback=true)\label{classCUpDownClient_a69c0936267e37a915a7090c7d8fa4f4e}
+
+\item 
+bool {\bfseries ShouldReceiveCryptUDPPackets} () const \label{classCUpDownClient_a040860c09511af35a5a2287e87051aca}
+
+\item 
+bool {\bfseries HasDisabledSharedFiles} () const \label{classCUpDownClient_a34596bbfabf70860be3cf57a06c7bec5}
+
+\item 
+{\bfseries CUpDownClient} (class {\bf CEC\_\-UpDownClient\_\-Tag} $\ast$)\label{classCUpDownClient_ad2ea29e20b0e78e3b96436692cb0db05}
+
+\item 
+void {\bfseries RequestSharedFileList} ()\label{classCUpDownClient_a53780b7296378a96923d299a33d2a4ab}
+
+\item 
+bool {\bfseries ExtProtocolAvailable} () const \label{classCUpDownClient_ab3dd5ea9dbf20c3d30a33825543e8570}
+
+\item 
+uint16 {\bfseries GetAvailablePartCount} () const \label{classCUpDownClient_a979a1bc33384927334d13648f39ce986}
+
+\item 
+const wxString \& {\bfseries GetClientFilename} () const \label{classCUpDownClient_a3ca59013297564d71b4cd6015656f9d1}
+
+\item 
+const wxString \& {\bfseries GetClientModString} () const \label{classCUpDownClient_a918ec91b4ba50ec321f2f996509846e5}
+
+\item 
+const wxString \& {\bfseries GetClientOSInfo} () const \label{classCUpDownClient_a6e93c7fa6097a88e518aa8bc76bae31c}
+
+\item 
+uint8 {\bfseries GetClientSoft} () const \label{classCUpDownClient_ae2164ddfcd5856573daa686fd21bf1ff}
+
+\item 
+const wxString \& {\bfseries GetClientVerString} () const \label{classCUpDownClient_a56cdd1f82b6fca58c1cb2b2b4c631f22}
+
+\item 
+uint64 {\bfseries GetDownloadedTotal} () const \label{classCUpDownClient_a24a285d86d65d57b2f568b63855ef2bc}
+
+\item 
+uint8 {\bfseries GetDownloadState} () const \label{classCUpDownClient_a10d514a12ea8122bb4b6a17471a528ac}
+
+\item 
+{\bf CFriend} $\ast$ {\bfseries GetFriend} () const \label{classCUpDownClient_a357050e3af473145a3905f9243d7eb2b}
+
+\item 
+bool {\bfseries GetFriendSlot} () const \label{classCUpDownClient_ae400edcd6d331de85e369bf42e9334f8}
+
+\item 
+wxString {\bfseries GetFullIP} () const \label{classCUpDownClient_aca1d303f0f5836063e44876417629465}
+
+\item 
+uint16 {\bfseries GetKadPort} () const \label{classCUpDownClient_ac87f767451b50714aadcf59606ed68f3}
+
+\item 
+float {\bfseries GetKBpsDown} () const \label{classCUpDownClient_a6fa7841dabe5c5cf812831ce77946cc5}
+
+\item 
+uint32 {\bfseries GetIP} () const \label{classCUpDownClient_aa0b2af03217e5b6390256ba499339f26}
+
+\item 
+uint16 {\bfseries GetLastDownloadingPart} () const \label{classCUpDownClient_a22cf799944dd0ff9b01b9064986be6ae}
+
+\item 
+uint16 {\bfseries GetNextRequestedPart} () const \label{classCUpDownClient_a4d4b9618840054fec7d80689e162f008}
+
+\item 
+uint8 {\bfseries GetObfuscationStatus} () const \label{classCUpDownClient_aa04cad9525b35362a55dc9e82779a021}
+
+\item 
+uint16 {\bfseries GetOldRemoteQueueRank} () const \label{classCUpDownClient_ab4a6358122318a875384011b8274ebbc}
+
+\item 
+const {\bf BitVector} \& {\bfseries GetPartStatus} () const \label{classCUpDownClient_a739698dc4780927f235e3dafa6310d10}
+
+\item 
+uint16 {\bfseries GetRemoteQueueRank} () const \label{classCUpDownClient_a4a084e15a50898d378e3ec51f20d740f}
+
+\item 
+{\bf CPartFile} $\ast$ {\bfseries GetRequestFile} () const \label{classCUpDownClient_af32c0f7a36fe5693d001262d0a089078}
+
+\item 
+uint32 {\bfseries GetScore} () const \label{classCUpDownClient_aa046aafacf4317d415603d806a8e06c8}
+
+\item 
+double {\bfseries GetScoreRatio} () const \label{classCUpDownClient_a7f162729c2acc591ad3b7afaf8494711}
+
+\item 
+uint32 {\bfseries GetServerIP} () const \label{classCUpDownClient_a4586cde3501eb30718dc07c851554767}
+
+\item 
+const wxString {\bfseries GetServerName} () const \label{classCUpDownClient_a4ac35023d2b0079ab0713fc3363ee121}
+
+\item 
+uint16 {\bfseries GetServerPort} () const \label{classCUpDownClient_a1a68b31d257bda3577fc4a45804896b4}
+
+\item 
+const wxString \& {\bfseries GetSoftStr} () const \label{classCUpDownClient_a6b0e9f7453c43690f2756f670a408924}
+
+\item 
+const wxString \& {\bfseries GetSoftVerStr} () const \label{classCUpDownClient_a69ad6d0c883476dee9a98820a9a4ef82}
+
+\item 
+ESourceFrom {\bfseries GetSourceFrom} () const \label{classCUpDownClient_adbe32e0e9d58076a8844bc90c2b7ad3e}
+
+\item 
+uint64 {\bfseries GetTransferredDown} () const \label{classCUpDownClient_ae513e008e848192fb629bc38da4c026d}
+
+\item 
+uint64 {\bfseries GetTransferredUp} () const \label{classCUpDownClient_ab1f3dedeba23cea47a888ca29a36d5f0}
+
+\item 
+uint32 {\bfseries GetUploadDatarate} () const \label{classCUpDownClient_ab738842df66df3aef898adc1d4ccb2f2}
+
+\item 
+uint64 {\bfseries GetUploadedTotal} () const \label{classCUpDownClient_a0769f66456e49a80bc0ccd3226c79462}
+
+\item 
+const {\bf CKnownFile} $\ast$ {\bfseries GetUploadFile} () const \label{classCUpDownClient_a156accc9e395bc921e5def488dfb65fb}
+
+\item 
+uint16 {\bfseries GetUploadQueueWaitingPosition} () const \label{classCUpDownClient_a3089f3d984d13a7b1c2429c3777d6d34}
+
+\item 
+uint8 {\bfseries GetUploadState} () const \label{classCUpDownClient_afbbeab4b0aed79020142d4f287db2b9a}
+
+\item 
+size\_\-t {\bfseries GetUpPartCount} () const \label{classCUpDownClient_a3d8438a4df410c6d744f763719024464}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetUserHash} () const \label{classCUpDownClient_a892fd29df08dc2dc1ac7fb6e6497455e}
+
+\item 
+uint32 {\bfseries GetUserIDHybrid} () const \label{classCUpDownClient_a654ffc41cc457bca4ec82ca1bb2e81d8}
+
+\item 
+const wxString \& {\bfseries GetUserName} () const \label{classCUpDownClient_a2a2963092fa5ed73a485e7753dd1c107}
+
+\item 
+uint16 {\bfseries GetUserPort} () const \label{classCUpDownClient_a678861309c6b907c3c7a3264d825e093}
+
+\item 
+uint32 {\bfseries GetVersion} () const \label{classCUpDownClient_af39e9325dc40fe0a06ab114b50528c94}
+
+\item 
+bool {\bfseries HasDisabledSharedFiles} () const \label{classCUpDownClient_a34596bbfabf70860be3cf57a06c7bec5}
+
+\item 
+bool {\bfseries HasLowID} () const \label{classCUpDownClient_a63db96ab150593255ba9c2d2ef2184cc}
+
+\item 
+bool {\bfseries IsBadGuy} () const \label{classCUpDownClient_a0b1447261e21ce96d574ad3c49c1a16e}
+
+\item 
+bool {\bfseries IsFriend} () const \label{classCUpDownClient_afcfab2e747a38f17b1c4d490a833edec}
+
+\item 
+bool {\bfseries IsIdentified} () const \label{classCUpDownClient_a6450a72585b37e7f219d4c7f2f12574e}
+
+\item 
+bool {\bfseries IsRemoteQueueFull} () const \label{classCUpDownClient_a617fa8069346ff46c2253aff2df00115}
+
+\item 
+bool {\bfseries IsUpPartAvailable} (uint16 iPart) const \label{classCUpDownClient_a665aec8a8fd99d52408f5091927ef6ed}
+
+\item 
+void {\bfseries RequestSharedFileList} () const \label{classCUpDownClient_a8c33769233afee7745d4e0963edf83d2}
+
+\item 
+void {\bfseries SetFriend} ({\bf CFriend} $\ast$newfriend)\label{classCUpDownClient_aab3999aa8931f7acba06a3c08e8f5cde}
+
+\item 
+void {\bfseries SetFriendSlot} (bool bNV)\label{classCUpDownClient_a52e5905fda2be08e1952d94d086a9e8b}
+
+\item 
+bool {\bfseries SUIFailed} () const \label{classCUpDownClient_a7c5b3f0c2fad36fde92bf8e541103881}
+
+\item 
+bool {\bfseries SUINeeded} () const \label{classCUpDownClient_a87853f1a5d99c6fd871dc973bf153ad3}
+
+\item 
+bool {\bfseries SUINotSupported} () const \label{classCUpDownClient_aeb3393ac92646df1085e9f0ee0378e05}
+
+\item 
+bool {\bfseries SwapToAnotherFile} (bool bIgnoreNoNeeded, bool ignoreSuspensions, bool bRemoveCompletely, {\bf CPartFile} $\ast$toFile=NULL)\label{classCUpDownClient_a51f727cda219501b77939c430513ea1f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-bAddNextConnect}\label{classCUpDownClient_a701bfb903bf151f8d7bf407fae4899d5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ {\bf CPartFile} $\ast$, {\bf A4AFStamp} $>$ {\bf A4AFList}\label{classCUpDownClient_a1e5303c4520368fac06925054aae879f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf $\sim$CUpDownClient} ()
+\item 
+void {\bfseries Link} ()\label{classCUpDownClient_a36f32e8c1ba4e400b18ec126f76da3f3}
+
+\item 
+void {\bfseries Unlink} ()\label{classCUpDownClient_ae17568b8d9fa0a049f0ceedeb1514864}
+
+\item 
+bool {\bf IsValidSwapTarget} (A4AFList::iterator it, bool ignorenoneeded=false, bool ignoresuspended=false)
+\item 
+void {\bfseries Init} ()\label{classCUpDownClient_abc0ae982aac4c5b6f8b6145c03a0db17}
+
+\item 
+bool {\bfseries ProcessHelloTypePacket} (const {\bf CMemFile} \&data)\label{classCUpDownClient_a381589e57ba8a683d36fc50fbac609ed}
+
+\item 
+void {\bfseries SendHelloTypePacket} ({\bf CMemFile} $\ast$data)\label{classCUpDownClient_af53e675aaa4927df7bb424aa78337d33}
+
+\item 
+void {\bfseries SendFirewallCheckUDPRequest} ()\label{classCUpDownClient_a96aa66212171c3045d1d195209b3f8a3}
+
+\item 
+void {\bfseries ClearHelloProperties} ()\label{classCUpDownClient_a0e82ec0aadf7b5628c0894d375f9f096}
+
+\item 
+void {\bfseries CreateStandardPackets} (const unsigned char $\ast$data, uint32 togo, {\bf Requested\_\-Block\_\-Struct} $\ast$currentblock)\label{classCUpDownClient_a406872e515f07e0e9d7c027e398d03f0}
+
+\item 
+void {\bfseries CreatePackedPackets} (const unsigned char $\ast$data, uint32 togo, {\bf Requested\_\-Block\_\-Struct} $\ast$currentblock)\label{classCUpDownClient_ae17d52e24a50222cba64735dd1d53c1d}
+
+\item 
+uint32 {\bfseries CalculateScoreInternal} ()\label{classCUpDownClient_a46ac665db66a05ee5040a556cfae4369}
+
+\item 
+{\bf $\sim$CUpDownClient} ()\label{classCUpDownClient_a9d82ca85e75fe8e70ef4d9847cdc1a0d}
+
+\item 
+void {\bfseries Link} ()\label{classCUpDownClient_a36f32e8c1ba4e400b18ec126f76da3f3}
+
+\item 
+void {\bfseries Unlink} ()\label{classCUpDownClient_ae17568b8d9fa0a049f0ceedeb1514864}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16 {\bf m\_\-linked}
+\item 
+{\bf CClientCredits} $\ast$ {\bfseries credits}\label{classCUpDownClient_a4af673575621eddbdd7edbf50b44ca1d}
+
+\item 
+{\bf CFriend} $\ast$ {\bfseries m\_\-Friend}\label{classCUpDownClient_a490b777a6593cd1048b14114e65ce69c}
+
+\item 
+uint64 {\bfseries m\_\-nTransferredUp}\label{classCUpDownClient_a5419565c1d866a8e3347de67a0210a97}
+
+\item 
+sint64 {\bfseries m\_\-nCurQueueSessionPayloadUp}\label{classCUpDownClient_a58db0364eacd26b1e6ce2ca5e3e06635}
+
+\item 
+sint64 {\bfseries m\_\-addedPayloadQueueSession}\label{classCUpDownClient_a7b1519dff6beb9cb8e94903c1d1607ca}
+
+\item 
+uint32 {\bfseries m\_\-nUpDatarate}\label{classCUpDownClient_a37ee0b699a99a1c1b740b12d1396831d}
+
+\item 
+uint32 {\bfseries m\_\-nSumForAvgUpDataRate}\label{classCUpDownClient_af445cd6d47497bd4502b7da524b81ca8}
+
+\item 
+std::list$<$ {\bf TransferredData} $>$ {\bfseries m\_\-AvarageUDR\_\-list}\label{classCUpDownClient_a532102b19f9493833b54895186a9c377}
+
+\item 
+{\bf A4AFList} {\bf m\_\-A4AF\_\-list}\label{classCUpDownClient_a4597df3986342e9fc966138daccae552}
+
+\item 
+{\bf CPartFile} $\ast$ {\bfseries m\_\-reqfile}\label{classCUpDownClient_ac93ae423c2d1e9e2fbb539f7599a370b}
+
+\item 
+uint32 {\bfseries m\_\-dwUserIP}\label{classCUpDownClient_a52c5b86ab7cad7d7bd33d695942f263e}
+
+\item 
+uint32 {\bfseries m\_\-nConnectIP}\label{classCUpDownClient_a68ab7d53116663406c9f72a45ab75d60}
+
+\item 
+uint32 {\bfseries m\_\-dwServerIP}\label{classCUpDownClient_aa91cf77f70b49f0d82920824c8feb81b}
+
+\item 
+uint32 {\bfseries m\_\-nUserIDHybrid}\label{classCUpDownClient_a5c5ac9f1ef18ab655a4b7cdc0fa6c29a}
+
+\item 
+uint16\_\-t {\bfseries m\_\-nUserPort}\label{classCUpDownClient_a505759ca7a927a645037b5cf1e3243e5}
+
+\item 
+int16 {\bfseries m\_\-nServerPort}\label{classCUpDownClient_a6dd31673892b8b133ba5e3cd9c4347b5}
+
+\item 
+uint32 {\bfseries m\_\-nClientVersion}\label{classCUpDownClient_a2e89ba63aa34f4618327ddb3bc2515f4}
+
+\item 
+uint32 {\bfseries m\_\-cSendblock}\label{classCUpDownClient_abdb38b6f7fd71ca8f021802f33f4f87a}
+
+\item 
+uint8 {\bfseries m\_\-byEmuleVersion}\label{classCUpDownClient_ada406a3d7c47374768ea8bded9be9c0a}
+
+\item 
+uint8 {\bfseries m\_\-byDataCompVer}\label{classCUpDownClient_aa39f7c5948eaad1b4badb7aad7f86883}
+
+\item 
+bool {\bfseries m\_\-bEmuleProtocol}\label{classCUpDownClient_a3e2408599bb8a22371c85c1fb6c36c7f}
+
+\item 
+wxString {\bfseries m\_\-Username}\label{classCUpDownClient_a82f9429fd4cc0ad41515682f9570092e}
+
+\item 
+uint32 {\bfseries m\_\-FullUserIP}\label{classCUpDownClient_aab472497f8742a8e9a38317a2db7464b}
+
+\item 
+{\bf CMD4Hash} {\bfseries m\_\-UserHash}\label{classCUpDownClient_acb5797b2a924cf182a533e51bb0b474e}
+
+\item 
+bool {\bfseries m\_\-HasValidHash}\label{classCUpDownClient_aab41c64386d8ca4e4f37b24834d171ba}
+
+\item 
+uint16 {\bfseries m\_\-nUDPPort}\label{classCUpDownClient_a2b813a1657ff3d07c896d641f1b4c11a}
+
+\item 
+uint8 {\bfseries m\_\-byUDPVer}\label{classCUpDownClient_a8752bc7c1da996df56972e47e7c398f8}
+
+\item 
+uint8 {\bfseries m\_\-bySourceExchange1Ver}\label{classCUpDownClient_aaa4e9fd90072f1f5e990dd47899c2744}
+
+\item 
+uint8 {\bfseries m\_\-byAcceptCommentVer}\label{classCUpDownClient_a6c1a4cb4db1ab39ae413b480667b27b0}
+
+\item 
+uint8 {\bfseries m\_\-byExtendedRequestsVer}\label{classCUpDownClient_aee0f8b46cc05e8f040ec48c070d0e739}
+
+\item 
+uint8 {\bfseries m\_\-clientSoft}\label{classCUpDownClient_add81c02fa736b9dcea2ce3a56ba80f6b}
+
+\item 
+uint32 {\bfseries m\_\-dwLastSourceRequest}\label{classCUpDownClient_af24a878eff7c1333a59107e46af4c36e}
+
+\item 
+uint32 {\bfseries m\_\-dwLastSourceAnswer}\label{classCUpDownClient_a8f4e5a7c92685d33a1946499c46a494a}
+
+\item 
+uint32 {\bfseries m\_\-dwLastAskedForSources}\label{classCUpDownClient_a8224bff63b86061e13a49ed68b9e702c}
+
+\item 
+int {\bfseries m\_\-iFileListRequested}\label{classCUpDownClient_a5560168f67ae3b1f00b502d5ab44bc4e}
+
+\item 
+bool {\bfseries m\_\-bFriendSlot}\label{classCUpDownClient_acb4587582ca056845bb42be6e94eb81c}
+
+\item 
+bool {\bfseries m\_\-bCommentDirty}\label{classCUpDownClient_aca0eb779524fdf20d3e3879e44974e5d}
+
+\item 
+bool {\bfseries m\_\-bIsHybrid}\label{classCUpDownClient_a6ab578e9e6c8d309a60bfc1d7c00efca}
+
+\item 
+bool {\bfseries m\_\-bIsML}\label{classCUpDownClient_a2ca7c054ebae4c34700587cb2cba574b}
+
+\item 
+bool {\bfseries m\_\-bSupportsPreview}\label{classCUpDownClient_a3479a0b7c5c0d5948dd374e0ca078be5}
+
+\item 
+bool {\bfseries m\_\-bUnicodeSupport}\label{classCUpDownClient_a57bb5afd16134fee35732fd071d2bda0}
+
+\item 
+uint16 {\bfseries m\_\-nKadPort}\label{classCUpDownClient_a0200e2e7b27bf2c083cf1d367b3d70a8}
+
+\item 
+bool {\bfseries m\_\-bMultiPacket}\label{classCUpDownClient_a1491800e6b0c2de489ffe1212d8d2a8f}
+
+\item 
+ClientState {\bfseries m\_\-clientState}\label{classCUpDownClient_ace20fbd7769ebbfb10781984e873ff8e}
+
+\item 
+{\bf CClientTCPSocket} $\ast$ {\bfseries m\_\-socket}\label{classCUpDownClient_ae816a2af9b34032e6c991fa2d3e549ba}
+
+\item 
+bool {\bfseries m\_\-fNeedOurPublicIP}\label{classCUpDownClient_ac52be5202ae7a491fe8e3ac977ffd681}
+
+\item 
+ESecureIdentState {\bfseries m\_\-SecureIdentState}\label{classCUpDownClient_a3038c3536aca23f42d8109bfebddd592}
+
+\item 
+uint8 {\bfseries m\_\-byInfopacketsReceived}\label{classCUpDownClient_acc4b950ed07dbe109e8e9522666e0971}
+
+\item 
+uint32 {\bfseries m\_\-dwLastSignatureIP}\label{classCUpDownClient_a54682f7ba610267a2f6baa6459c534d3}
+
+\item 
+uint8 {\bfseries m\_\-bySupportSecIdent}\label{classCUpDownClient_abca84791f9fbd76d8916247b155fdeb2}
+
+\item 
+uint32 {\bfseries m\_\-byCompatibleClient}\label{classCUpDownClient_af4f0336f070ea0932f8c85da8cd50ebe}
+
+\item 
+std::list$<$ {\bf CPacket} $\ast$ $>$ {\bfseries m\_\-WaitingPackets\_\-list}\label{classCUpDownClient_a915dbfbc5d0b569a0312c0de2dba2a5b}
+
+\item 
+uint32 {\bfseries m\_\-lastRefreshedDLDisplay}\label{classCUpDownClient_aea9433e479074823d6af923c8ddc1744}
+
+\item 
+uint8 {\bfseries m\_\-nUploadState}\label{classCUpDownClient_a0175a2f467a54bc5fd957da212c5e796}
+
+\item 
+uint32 {\bfseries m\_\-dwUploadTime}\label{classCUpDownClient_af9b7762b757a5b2369b3cff5484392d6}
+
+\item 
+uint32 {\bfseries m\_\-cAsked}\label{classCUpDownClient_ad4ba522fea5d6231e6ef0a08d3d7a072}
+
+\item 
+uint32 {\bfseries m\_\-dwLastUpRequest}\label{classCUpDownClient_a934c0e29c1b83f113ff95cbf329e5e1a}
+
+\item 
+uint32 {\bfseries m\_\-nCurSessionUp}\label{classCUpDownClient_a65921ad6151c378a81096a22d728e4fc}
+
+\item 
+uint16 {\bfseries m\_\-nUpPartCount}\label{classCUpDownClient_a87d9fbe87405b3df6ed7207aa8995fd5}
+
+\item 
+{\bf CMD4Hash} {\bfseries m\_\-requpfileid}\label{classCUpDownClient_aa24c1ef101cb520981d277a8a9e28914}
+
+\item 
+uint16 {\bfseries m\_\-nUpCompleteSourcesCount}\label{classCUpDownClient_a8dac96ff2176cdddf339c9bcc266ce84}
+
+\item 
+uint32 {\bfseries m\_\-score}\label{classCUpDownClient_aee8bff5388b42da5f84be0d7d56d863e}
+
+\item 
+uint16 {\bfseries m\_\-waitingPosition}\label{classCUpDownClient_a516c1adf71ae3e2660c240766a984b3c}
+
+\item 
+{\bf BitVector} {\bf m\_\-upPartStatus}
+\item 
+uint16 {\bfseries m\_\-lastPartAsked}\label{classCUpDownClient_a7139b55f9b3a87aeedfa6f725c1792ff}
+
+\item 
+wxString {\bfseries m\_\-strModVersion}\label{classCUpDownClient_a0650d2989ae3cb3ec541d9466e7863f5}
+
+\item 
+std::list$<$ {\bf Requested\_\-Block\_\-Struct} $\ast$ $>$ {\bfseries m\_\-BlockRequests\_\-queue}\label{classCUpDownClient_ad703b85c3651b2c8f6b6b8bbccac6dbb}
+
+\item 
+std::list$<$ {\bf Requested\_\-Block\_\-Struct} $\ast$ $>$ {\bfseries m\_\-DoneBlocks\_\-list}\label{classCUpDownClient_a87dbc2e3307c25260a55909286e9a189}
+
+\item 
+bool {\bfseries m\_\-bRemoteQueueFull}\label{classCUpDownClient_adf9b27590dc0f5d37da30af83d0066bf}
+
+\item 
+uint8 {\bfseries m\_\-nDownloadState}\label{classCUpDownClient_a4e6c637bce0efd43b73e245506371290}
+
+\item 
+uint16 {\bfseries m\_\-nPartCount}\label{classCUpDownClient_ab1b5fee88b4ba448ce9744ef8628ce02}
+
+\item 
+uint32 {\bfseries m\_\-dwLastAskedTime}\label{classCUpDownClient_a6048dc4842be5469f833408d7504bdd6}
+
+\item 
+wxString {\bfseries m\_\-clientFilename}\label{classCUpDownClient_a237bb5c7cfc071a7d5c10796cf7a70f8}
+
+\item 
+uint64 {\bfseries m\_\-nTransferredDown}\label{classCUpDownClient_a24543eee49e402f0708456e3db1660b5}
+
+\item 
+uint16 {\bfseries m\_\-lastDownloadingPart}\label{classCUpDownClient_a82f0e54c65002f1cfa675a46ba4ac8d7}
+
+\item 
+uint16 {\bfseries m\_\-cShowDR}\label{classCUpDownClient_a0ed0f53ff17582de8d0a39126631b98f}
+
+\item 
+uint32 {\bfseries m\_\-dwLastBlockReceived}\label{classCUpDownClient_a25c06ba5c640186f91e9ca5540a6fbb4}
+
+\item 
+uint16 {\bfseries m\_\-nRemoteQueueRank}\label{classCUpDownClient_ab8347cb45c2b1cff4e82648fb0d10d08}
+
+\item 
+uint16 {\bfseries m\_\-nOldRemoteQueueRank}\label{classCUpDownClient_a706c9552401ee58a626d6ad6e631a2ae}
+
+\item 
+bool {\bfseries m\_\-bCompleteSource}\label{classCUpDownClient_a8d4bd2221ef5b25a5932f7a495d846b6}
+
+\item 
+bool {\bfseries m\_\-bReaskPending}\label{classCUpDownClient_a4050d55c24eab236d482c5b185aa127e}
+
+\item 
+bool {\bfseries m\_\-bUDPPending}\label{classCUpDownClient_a5b614da24455a3ca506e0f15693b0638}
+
+\item 
+bool {\bfseries m\_\-bHashsetRequested}\label{classCUpDownClient_a18ebb1c2359550132fb0d32daa64b489}
+
+\item 
+std::list$<$ {\bf Pending\_\-Block\_\-Struct} $\ast$ $>$ {\bfseries m\_\-PendingBlocks\_\-list}\label{classCUpDownClient_a5ab9cac9b84e5010da1df122a011228c}
+
+\item 
+std::list$<$ {\bf Requested\_\-Block\_\-Struct} $\ast$ $>$ {\bfseries m\_\-DownloadBlocks\_\-list}\label{classCUpDownClient_a4d3514c4b853163ffce94cb73f5cd304}
+
+\item 
+float {\bfseries kBpsDown}\label{classCUpDownClient_af9ca2f7ceac318c78979116b78f22c7c}
+
+\item 
+uint32 {\bfseries msReceivedPrev}\label{classCUpDownClient_a149666f66a71e32d0e1887dedb1bda5a}
+
+\item 
+uint32 {\bfseries bytesReceivedCycle}\label{classCUpDownClient_a6b4327abfd6bd305c89d4560d464146c}
+
+\item 
+wxString {\bfseries m\_\-strComment}\label{classCUpDownClient_aebf1b59e812838f43850c3a39483112a}
+
+\item 
+uint8 {\bfseries m\_\-byChatstate}\label{classCUpDownClient_af6405bb0bde2242544e546b5c5572175}
+
+\item 
+uint8 {\bfseries m\_\-nChatCaptchaState}\label{classCUpDownClient_a0626d6cacda54542210c0a7d3e0b156f}
+
+\item 
+uint8 {\bfseries m\_\-cCaptchasSent}\label{classCUpDownClient_ad0c50904a0a78b442f78ecc31ec1fab6}
+
+\item 
+int8 {\bfseries m\_\-iRating}\label{classCUpDownClient_a4f0e08ad940137874d5b4771888253e8}
+
+\item 
+uint8 {\bfseries m\_\-cMessagesReceived}\label{classCUpDownClient_ad451624bfa6ddf3a3051c872dae6b2db}
+
+\item 
+uint8 {\bfseries m\_\-cMessagesSent}\label{classCUpDownClient_afc9e98ae32818e29ed9c187435df4a06}
+
+\item 
+wxString {\bfseries m\_\-strCaptchaChallenge}\label{classCUpDownClient_a2fcc9cf2405a2bcbac917ec0c951e5e2}
+
+\item 
+wxString {\bfseries m\_\-strCaptchaPendingMsg}\label{classCUpDownClient_af84b59379b1caafa22c02c02c555623d}
+
+\item 
+unsigned int {\bfseries m\_\-fHashsetRequesting}: 1\label{classCUpDownClient_a8c10a066e8c38db7c1c10f4e0f645886}
+
+\item 
+unsigned int {\bfseries m\_\-fNoViewSharedFiles}: 1\label{classCUpDownClient_a8b9e1bc701ce546386230c114ee7f037}
+
+\item 
+unsigned int {\bfseries m\_\-fSupportsPreview}: 1\label{classCUpDownClient_aa481996ef0ab23778d7d4204b0d11762}
+
+\item 
+unsigned int {\bfseries m\_\-fIsSpammer}: 1\label{classCUpDownClient_a3f0af4ab93a588fb87cdc37f807e8820}
+
+\item 
+unsigned int {\bfseries m\_\-fSentCancelTransfer}: 1\label{classCUpDownClient_af7fc687e1bdda71c41cd786724e7bd39}
+
+\item 
+unsigned int {\bfseries m\_\-fSharedDirectories}: 1\label{classCUpDownClient_ab0be13706f568581b9e7aa95e7512850}
+
+\item 
+unsigned int {\bfseries m\_\-fSupportsAICH}: 3\label{classCUpDownClient_af76c21cf1702b4ec3337fd98d151967f}
+
+\item 
+unsigned int {\bfseries m\_\-fAICHRequested}: 1\label{classCUpDownClient_a82dcfe152d25338174a165744a696cca}
+
+\item 
+unsigned int {\bfseries m\_\-fSupportsLargeFiles}: 1\label{classCUpDownClient_a1d05ff3bf5680f888311f3c4ecf84c98}
+
+\item 
+unsigned int {\bfseries m\_\-fSentOutOfPartReqs}: 1\label{classCUpDownClient_a3633c34060646400ea3e0c627c2e8b5c}
+
+\item 
+unsigned int {\bfseries m\_\-fExtMultiPacket}: 1\label{classCUpDownClient_ab05fa4e5bd91f08121a69478bec63919}
+
+\item 
+unsigned int {\bfseries m\_\-fRequestsCryptLayer}: 1\label{classCUpDownClient_add28ab4abae7900a6c280987ff366e2c}
+
+\item 
+unsigned int {\bfseries m\_\-fSupportsCryptLayer}: 1\label{classCUpDownClient_a09ddfd4d813d5e6f7d1440fd10ea74d8}
+
+\item 
+unsigned int {\bfseries m\_\-fRequiresCryptLayer}: 1\label{classCUpDownClient_ae5b71707595db6d1ecc5c7f139c23121}
+
+\item 
+unsigned int {\bfseries m\_\-fSupportsSourceEx2}: 1\label{classCUpDownClient_a010304ff69806d1e1ca6f26412ac7e79}
+
+\item 
+unsigned int {\bfseries m\_\-fSupportsCaptcha}: 1\label{classCUpDownClient_a643144f5e1fabfc9e3ae7fcbeb231f74}
+
+\item 
+unsigned int {\bfseries m\_\-fDirectUDPCallback}: 1\label{classCUpDownClient_aa504344e50e35abab46aa4239ddfae35}
+
+\item 
+unsigned int {\bfseries m\_\-fOsInfoSupport}: 1\label{classCUpDownClient_a75bcdb358a955bf09811b80206cb9b62}
+
+\item 
+unsigned int {\bfseries m\_\-fValueBasedTypeTags}: 1\label{classCUpDownClient_a14b593f137cfb4c29813bd231910bb41}
+
+\item 
+bool {\bfseries m\_\-bHelloAnswerPending}\label{classCUpDownClient_addb7e838551f8910ce6690e95d2328e9}
+
+\item 
+{\bf BitVector} {\bf m\_\-downPartStatus}
+\item 
+{\bf CAICHHash} $\ast$ {\bfseries m\_\-pReqFileAICHHash}\label{classCUpDownClient_ae4e08b21752aee42e2da29d72ff8e140}
+
+\item 
+ESourceFrom {\bfseries m\_\-nSourceFrom}\label{classCUpDownClient_af8885d15e47ff4ccfd700f5359061d9d}
+
+\item 
+byte {\bfseries m\_\-achBuddyID} [16]\label{classCUpDownClient_a633ed436696f92382781ab851c84dc18}
+
+\item 
+bool {\bfseries m\_\-bBuddyIDValid}\label{classCUpDownClient_aaf1c9c1f031051f887af68dd7a67392c}
+
+\item 
+uint32 {\bfseries m\_\-nBuddyIP}\label{classCUpDownClient_a22c0d947acceac3af49db1f326751bab}
+
+\item 
+uint16 {\bfseries m\_\-nBuddyPort}\label{classCUpDownClient_a53192748d4d1f13cd80a99e9864309cb}
+
+\item 
+EKadState {\bfseries m\_\-nKadState}\label{classCUpDownClient_a762c58adeb299677c79c012bd472e010}
+
+\item 
+uint8 {\bfseries m\_\-byKadVersion}\label{classCUpDownClient_adf87990297319ba33c7354cc4c909b12}
+
+\item 
+uint32 {\bfseries m\_\-dwLastBuddyPingPongTime}\label{classCUpDownClient_a352365c8f67f56eca854d2df411f3817}
+
+\item 
+uint32\_\-t {\bfseries m\_\-dwDirectCallbackTimeout}\label{classCUpDownClient_af218e131b0b99e9d727ec533a03572eb}
+
+\item 
+uint16 {\bf m\_\-Aggressiveness}\label{classCUpDownClient_a00fbf0c2dbe43654aab3bf68b332d5e2}
+
+\item 
+uint32 {\bf m\_\-LastFileRequest}\label{classCUpDownClient_a6f92ff8a2f6acc3c3261cbf8960132da}
+
+\item 
+bool {\bfseries m\_\-OSInfo\_\-sent}\label{classCUpDownClient_a5b3c3ced74dbbfa98848740176ed339a}
+
+\item 
+wxString {\bfseries m\_\-clientSoftString}\label{classCUpDownClient_a36c47b7630205b8f2eb1a99686598db0}
+
+\item 
+wxString {\bfseries m\_\-clientVerString}\label{classCUpDownClient_acd9258da5aa6e6bc996eb4d5d1728f70}
+
+\item 
+wxString {\bfseries m\_\-clientVersionString}\label{classCUpDownClient_ae6cfb7e80bf31401587c5fcf1708490e}
+
+\item 
+wxString {\bfseries m\_\-fullClientVerString}\label{classCUpDownClient_a819524cf1e63453da4bab1723cc63ef4}
+
+\item 
+wxString {\bfseries m\_\-sClientOSInfo}\label{classCUpDownClient_a55b2e884ec8c4eabf04a4b15bd7bfcfc}
+
+\item 
+wxString {\bfseries m\_\-pendingMessage}\label{classCUpDownClient_a4015b58191daddaaa2851b8fc1b2e683}
+
+\item 
+int {\bfseries SecIdentSupRec}\label{classCUpDownClient_a6cab8c1021924b0593301ae3efd680b4}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries m\_\-uploadingfile}\label{classCUpDownClient_adfde92d537d8305ee83509febc0ca0c2}
+
+\item 
+uint8 {\bfseries m\_\-MaxBlockRequests}\label{classCUpDownClient_ad1f5093120bd1501789c45bf3bdd4e57}
+
+\item 
+uint32 {\bfseries m\_\-lastClientSoft}\label{classCUpDownClient_a20ebbcc77ce63bf3f1f106014537ac0a}
+
+\item 
+uint32 {\bfseries m\_\-lastClientVersion}\label{classCUpDownClient_a6a0eb4ecc0f5bafd09d1efc3abd25d70}
+
+\item 
+wxString {\bfseries m\_\-lastOSInfo}\label{classCUpDownClient_ac989c34460407e1625348fdc35de54cf}
+
+\item 
+uint32 {\bfseries m\_\-nCreationTime}\label{classCUpDownClient_abfb52657f176b93755ea6a0d192ea43a}
+
+\item 
+uint32 {\bfseries m\_\-lastaverage}\label{classCUpDownClient_a3ae5934ef24366eda01f61fcad1d9dff}
+
+\item 
+uint32 {\bfseries m\_\-last\_\-block\_\-start}\label{classCUpDownClient_a8c2ed12db5a074779a8552999b05eaae}
+
+\item 
+bool {\bfseries m\_\-hasbeenobfuscatinglately}\label{classCUpDownClient_a66df59ee1a1e7308103da21eef8cfebb}
+
+\item 
+uint16 {\bfseries m\_\-AvailPartCount}\label{classCUpDownClient_ada9a916a50ac2167aa01f44b72abac92}
+
+\item 
+float {\bfseries m\_\-kBpsDown}\label{classCUpDownClient_a84df707ffaf8a025ab80b76cfa9da127}
+
+\item 
+uint16 {\bfseries m\_\-nextRequestedPart}\label{classCUpDownClient_a8d055a91fbc48647ecbe119e9352a53d}
+
+\item 
+uint8 {\bfseries m\_\-obfuscationStatus}\label{classCUpDownClient_aa454b3f914cecc93eff2180066265c42}
+
+\item 
+wxString {\bfseries m\_\-ServerName}\label{classCUpDownClient_a8a0ca36aea37466b43d86721e38e41e6}
+
+\item 
+uint16 {\bfseries m\_\-nServerPort}\label{classCUpDownClient_a701752e4913414e716249664a32a72db}
+
+\item 
+uint16 {\bfseries m\_\-nUserPort}\label{classCUpDownClient_a3b94954da70c56f7a8dad838bd428d2b}
+
+\item 
+bool {\bfseries m\_\-fNoViewSharedFiles}\label{classCUpDownClient_a67afceb65c814319443f27853d63166c}
+
+\item 
+EIdentState {\bfseries m\_\-identState}\label{classCUpDownClient_a2536d9ee2231edd0eb456bc0683e196d}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CClientList}\label{classCUpDownClient_aa2e64c4d2cd9e4dc36e8d8660d2c4dc0}
+
+\item 
+class {\bf CClientRef}\label{classCUpDownClient_a8cb1a31cdff85d3fc4a9aec212b1fff7}
+
+\item 
+class {\bf CUpDownClientListRem}\label{classCUpDownClient_a1613ad6c37af2b8604002c40201b6b46}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CUpDownClient@{CUpDownClient}!$\sim$CUpDownClient@{$\sim$CUpDownClient}}
+\index{$\sim$CUpDownClient@{$\sim$CUpDownClient}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{$\sim$CUpDownClient}]{\setlength{\rightskip}{0pt plus 5cm}CUpDownClient::$\sim$CUpDownClient ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCUpDownClient_a9d82ca85e75fe8e70ef4d9847cdc1a0d}
+
+
+Please note that only the ClientList is allowed to delete the clients. To schedule a client for deletion, call the CClientList::AddToDeleteQueue funtion, which will safely remove dead clients once every second. 
+
+\subsection{Member Function Documentation}
+\index{CUpDownClient@{CUpDownClient}!CheckForAggressive@{CheckForAggressive}}
+\index{CheckForAggressive@{CheckForAggressive}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{CheckForAggressive}]{\setlength{\rightskip}{0pt plus 5cm}void CUpDownClient::CheckForAggressive ()}\label{classCUpDownClient_af79ac45d6f4286e31c5772cd34befa1b}
+
+
+Checks that a client isn't aggressively re-\/asking for files. Call this when a file is requested. If the time since the last request is less than MIN\_\-REQUESTTIME, 3 is added to the m\_\-Aggressiveness variable. If the time since the last request is $>$= MIN\_\-REQUESTTIME, the variable is decremented by 1. The client is banned if the variable reaches 10 or above.
+
+To check if a client is aggressive use the IsClientAggressive() function.
+
+Currently this function is called when the following packets are received:
+\begin{DoxyItemize}
+\item OP\_\-STARTUPLOADREQ
+\item OP\_\-REASKFILEPING 
+\end{DoxyItemize}
+
+References m\_\-Aggressiveness, and m\_\-LastFileRequest.\index{CUpDownClient@{CUpDownClient}!GetSocket@{GetSocket}}
+\index{GetSocket@{GetSocket}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{GetSocket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CClientTCPSocket}$\ast$ CUpDownClient::GetSocket () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCUpDownClient_aa07839eba7afc2ead03fbb8c35bf9e63}
+
+
+Function for accessing the socket owned by a client. \begin{DoxyReturn}{Returns}
+The pointer (can be NULL) to the socket used by this client.
+\end{DoxyReturn}
+Please note that the socket object is quite volatile and can be removed from one function call to the next, therefore, you should normally use the safer functions below, which all check if the socket is valid before deferring it. 
+
+Referenced by CClientList::AttachToAlreadyKnown().\index{CUpDownClient@{CUpDownClient}!GetUploadFile@{GetUploadFile}}
+\index{GetUploadFile@{GetUploadFile}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{GetUploadFile}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CKnownFile}$\ast$ CUpDownClient::GetUploadFile () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCUpDownClient_a156accc9e395bc921e5def488dfb65fb}
+
+
+Gets the file actually on upload. \index{CUpDownClient@{CUpDownClient}!HasBeenDeleted@{HasBeenDeleted}}
+\index{HasBeenDeleted@{HasBeenDeleted}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{HasBeenDeleted}]{\setlength{\rightskip}{0pt plus 5cm}bool CUpDownClient::HasBeenDeleted ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCUpDownClient_a68e94c1137ce8c64319eced59e191a52}
+
+
+Specifies if the client has been queued for deletion. \begin{DoxyReturn}{Returns}
+True if Safe\_\-Delete has been called, false otherwise. 
+\end{DoxyReturn}
+\index{CUpDownClient@{CUpDownClient}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{IsConnected}]{\setlength{\rightskip}{0pt plus 5cm}bool CUpDownClient::IsConnected () const}\label{classCUpDownClient_a608737cb6770dbbc67e723ba3191ab6f}
+
+
+Safe function for checking if the socket is connected. \begin{DoxyReturn}{Returns}
+True if the socket exists and is connected, false otherwise. 
+\end{DoxyReturn}
+
+
+Referenced by CClientList::AttachToAlreadyKnown(), CClientList::Process(), and SendChatMessage().\index{CUpDownClient@{CUpDownClient}!IsValidSwapTarget@{IsValidSwapTarget}}
+\index{IsValidSwapTarget@{IsValidSwapTarget}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{IsValidSwapTarget}]{\setlength{\rightskip}{0pt plus 5cm}bool CUpDownClient::IsValidSwapTarget (A4AFList::iterator {\em it}, \/  bool {\em ignorenoneeded} = {\ttfamily false}, \/  bool {\em ignoresuspended} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCUpDownClient_ae7de1d08e872dd3c28e480e4a9d64737}
+
+
+Helper function used by SwapToAnotherFile(). 
+\begin{DoxyParams}{Parameters}
+\item[{\em it}]The iterator of the PartFile to be examined. \item[{\em ignorenoneeded}]Do not check for the status NoNeededParts when checking the file. \item[{\em ignoresuspended}]Do not check the timestamp when checking the file. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file is a viable target, false otherwise.
+\end{DoxyReturn}
+This function is used to perform checks to see if we should consider this file a viable target for A4AF swapping. Unless ignoresuspended is true, it will examine the timestamp of the file and reset it if needed. 
+
+References m\_\-A4AF\_\-list.\index{CUpDownClient@{CUpDownClient}!Safe\_\-Delete@{Safe\_\-Delete}}
+\index{Safe\_\-Delete@{Safe\_\-Delete}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{Safe\_\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}void CUpDownClient::Safe\_\-Delete ()}\label{classCUpDownClient_ab44d68f2a3ad0b3d133eae05c1ef7ad6}
+
+
+This function is to be called when the client object is to be deleted. It'll close the socket of the client and remove it from various lists that can own it.
+
+The client will really be deleted only after thelast reference to it is unlinked; 
+
+References m\_\-linked, and SetSocket().
+
+Referenced by CClientList::AttachToAlreadyKnown(), CDownloadQueue::CheckAndAddSource(), and CClientList::FilterQueues().\index{CUpDownClient@{CUpDownClient}!SendChatMessage@{SendChatMessage}}
+\index{SendChatMessage@{SendChatMessage}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{SendChatMessage}]{\setlength{\rightskip}{0pt plus 5cm}bool CUpDownClient::SendChatMessage (const wxString \& {\em message})}\label{classCUpDownClient_ad91edefc3f2ae1fda1f95e1ef5ed3fa1}
+
+
+Sends a message to a client. \begin{DoxyReturn}{Returns}
+True if sent, false if connecting 
+\end{DoxyReturn}
+
+
+References IsConnected(), SendPacket(), and CFileDataIO::WriteString().
+
+Referenced by CClientList::SendChatMessage().\index{CUpDownClient@{CUpDownClient}!SendPacket@{SendPacket}}
+\index{SendPacket@{SendPacket}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{SendPacket}]{\setlength{\rightskip}{0pt plus 5cm}bool CUpDownClient::SendPacket ({\bf CPacket} $\ast$ {\em packet}, \/  bool {\em delpacket} = {\ttfamily true}, \/  bool {\em controlpacket} = {\ttfamily true})}\label{classCUpDownClient_aababc3a17fe49535294f6a938ef4b33e}
+
+
+Safe function for sending packets. \begin{DoxyReturn}{Returns}
+True if the socket exists and the packet was sent, false otherwise. 
+\end{DoxyReturn}
+
+
+References CClientTCPSocket::SendPacket().
+
+Referenced by SendChatMessage().\index{CUpDownClient@{CUpDownClient}!SetDownloadLimit@{SetDownloadLimit}}
+\index{SetDownloadLimit@{SetDownloadLimit}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{SetDownloadLimit}]{\setlength{\rightskip}{0pt plus 5cm}float CUpDownClient::SetDownloadLimit (uint32 {\em reducedownload})}\label{classCUpDownClient_a8ebdad2d1975f0714552b067c038c4ab}
+
+
+Safe function for setting the download limit of the socket. \begin{DoxyReturn}{Returns}
+Current download speed of the client. 
+\end{DoxyReturn}
+\index{CUpDownClient@{CUpDownClient}!SetSocket@{SetSocket}}
+\index{SetSocket@{SetSocket}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{SetSocket}]{\setlength{\rightskip}{0pt plus 5cm}void CUpDownClient::SetSocket ({\bf CClientTCPSocket} $\ast$ {\em socket})}\label{classCUpDownClient_a6585f519474a29da989df4b4fc051a69}
+
+
+Sets the current socket of the client. 
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]The pointer to the new socket, can be NULL.\end{DoxyParams}
+Please note that this function DOES NOT delete the old socket. 
+
+Referenced by CClientList::AttachToAlreadyKnown(), and Safe\_\-Delete().
+
+\subsection{Member Data Documentation}
+\index{CUpDownClient@{CUpDownClient}!m\_\-downPartStatus@{m\_\-downPartStatus}}
+\index{m\_\-downPartStatus@{m\_\-downPartStatus}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{m\_\-downPartStatus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BitVector} {\bf CUpDownClient::m\_\-downPartStatus}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCUpDownClient_af1c0d8e7fe354f57869d01d6616dcc0b}
+
+
+This vector contains the avilability of parts for the file we requested from this user. When changing it, be sure to call \doxyref{CPartFile::UpdatePartsFrequency}{p.}{classCPartFile_a8f3d773ef4bc52c10bd7a9c608a0925a} so that the files know the actual availability of parts. \index{CUpDownClient@{CUpDownClient}!m\_\-linked@{m\_\-linked}}
+\index{m\_\-linked@{m\_\-linked}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{m\_\-linked}]{\setlength{\rightskip}{0pt plus 5cm}uint16 {\bf CUpDownClient::m\_\-linked}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCUpDownClient_ac34a0dc8f07f32a2749cccc62f1a5872}
+
+
+Reference count which is increased whenever client is linked to a clientref. Clients are to be stored only by ClientRefs, \doxyref{CUpDownClient}{p.}{classCUpDownClient} $\ast$ are for temporary use only. Linking is done only by \doxyref{CClientRef}{p.}{classCClientRef} which is friend, so methods are private. 
+
+Referenced by Safe\_\-Delete().\index{CUpDownClient@{CUpDownClient}!m\_\-upPartStatus@{m\_\-upPartStatus}}
+\index{m\_\-upPartStatus@{m\_\-upPartStatus}!CUpDownClient@{CUpDownClient}}
+\subsubsection[{m\_\-upPartStatus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BitVector} {\bf CUpDownClient::m\_\-upPartStatus}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCUpDownClient_a2f3847020066e1fd55e9e88b6b3277b1}
+
+
+This vector contains the avilability of parts for the file that the user is requesting. When changing it, be sure to call CKnownFile::UpdatePartsFrequency so that the files know the actual availability of parts. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/updownclient.h\item 
+src/UpDownClientEC.h\item 
+src/amule-\/remote-\/gui.cpp\item 
+src/BaseClient.cpp\item 
+src/DownloadClient.cpp\item 
+src/UploadClient.cpp\end{DoxyCompactItemize}

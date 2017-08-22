@@ -1,0 +1,162 @@
+\section{CServerListCtrl Class Reference}
+\label{classCServerListCtrl}\index{CServerListCtrl@{CServerListCtrl}}
+
+
+The \doxyref{CServerListCtrl}{p.}{classCServerListCtrl} is used to display the list of servers which the user can connect to and which we request sources from.  
+
+
+{\ttfamily \#include $<$ServerListCtrl.h$>$}Inheritance diagram for CServerListCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCServerListCtrl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CServerListCtrl} (wxWindow $\ast$parent, wxWindowID winid=-\/1, const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=wxLC\_\-ICON, const wxValidator \&validator=wxDefaultValidator, const wxString \&name=wxT(\char`\"{}mulelistctrl\char`\"{}))
+\item 
+virtual {\bf $\sim$CServerListCtrl} ()\label{classCServerListCtrl_a883d87cefd2440f973ec878786a5d7d7}
+
+\item 
+void {\bf AddServer} ({\bf CServer} $\ast$toadd)
+\item 
+void {\bf RemoveServer} ({\bf CServer} $\ast$server)\label{classCServerListCtrl_a2b64c37da699b86bfc03d872ce20be92}
+
+\item 
+void {\bf RemoveAllServers} (int state=wxLIST\_\-STATE\_\-DONTCARE)
+\item 
+void {\bf RefreshServer} ({\bf CServer} $\ast$server)
+\item 
+void {\bf HighlightServer} (const {\bf CServer} $\ast$server, bool highlight)
+\item 
+void {\bf ShowServerCount} ()\label{classCServerListCtrl_a64e93af8fa4071e5840af6b7f5ca8c03}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf GetOldColumnOrder} () const \label{classCServerListCtrl_a480dfe4788588452a20344e46a755d4e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnItemActivated} (wxListEvent \&event)\label{classCServerListCtrl_a0c8177e7cfa3ee0a0cb948d1e1eb2913}
+
+\item 
+void {\bf OnItemRightClicked} (wxListEvent \&event)\label{classCServerListCtrl_ae308306cd2f692b824bbae1514f295f4}
+
+\item 
+void {\bf OnPriorityChange} (wxCommandEvent \&event)\label{classCServerListCtrl_a76edbb0c3d91902e378e1f7f19012733}
+
+\item 
+void {\bf OnStaticChange} (wxCommandEvent \&event)\label{classCServerListCtrl_a4daeb5dda20d1de51d4b1f1ba465131d}
+
+\item 
+void {\bf OnConnectToServer} (wxCommandEvent \&event)\label{classCServerListCtrl_a440b986aecf03b13bfee4e2ac177b30c}
+
+\item 
+void {\bf OnGetED2kURL} (wxCommandEvent \&event)\label{classCServerListCtrl_a7e46534bd2f07bf3e979a4a8612a798e}
+
+\item 
+void {\bf OnRemoveServers} (wxCommandEvent \&event)\label{classCServerListCtrl_ab3190fba62771b1deaf4becd4044dcdc}
+
+\item 
+void {\bf OnKeyPressed} (wxKeyEvent \&event)\label{classCServerListCtrl_ac413bd9a2cb6738e9776a19f6e4ef885}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bf SortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CServer} $\ast$ {\bf m\_\-connected}\label{classCServerListCtrl_a34310b5ec17bbbe12317ccc399ea70cd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \doxyref{CServerListCtrl}{p.}{classCServerListCtrl} is used to display the list of servers which the user can connect to and which we request sources from. It is a permanently sorted list in that it always ensure that the items are sorted in the correct order. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CServerListCtrl@{CServerListCtrl}!CServerListCtrl@{CServerListCtrl}}
+\index{CServerListCtrl@{CServerListCtrl}!CServerListCtrl@{CServerListCtrl}}
+\subsubsection[{CServerListCtrl}]{\setlength{\rightskip}{0pt plus 5cm}CServerListCtrl::CServerListCtrl (wxWindow $\ast$ {\em parent}, \/  wxWindowID {\em winid} = {\ttfamily -\/1}, \/  const wxPoint \& {\em pos} = {\ttfamily wxDefaultPosition}, \/  const wxSize \& {\em size} = {\ttfamily wxDefaultSize}, \/  long {\em style} = {\ttfamily wxLC\_\-ICON}, \/  const wxValidator \& {\em validator} = {\ttfamily wxDefaultValidator}, \/  const wxString \& {\em name} = {\ttfamily wxT(\char`\"{}mulelistctrl\char`\"{})})}\label{classCServerListCtrl_a2bbe26cd934a341b4647055594ddad35}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::CMuleListCtrl}{p.}{classCMuleListCtrl_a3d2c202974057d0de8a098344a16024d} 
+\end{DoxySeeAlso}
+
+
+References CMuleListCtrl::InsertColumn(), CMuleListCtrl::LoadSettings(), m\_\-connected, CMuleListCtrl::SetSortFunc(), CMuleListCtrl::SetTableName(), and SortProc().
+
+\subsection{Member Function Documentation}
+\index{CServerListCtrl@{CServerListCtrl}!AddServer@{AddServer}}
+\index{AddServer@{AddServer}!CServerListCtrl@{CServerListCtrl}}
+\subsubsection[{AddServer}]{\setlength{\rightskip}{0pt plus 5cm}void CServerListCtrl::AddServer ({\bf CServer} $\ast$ {\em toadd})}\label{classCServerListCtrl_a43da5dbf809057ab3f10f94687e3623a}
+
+
+Adds a server to the list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em A}]pointer to the new server.\end{DoxyParams}
+Internally this function calls RefreshServer and ShowServerCount, with the result that it is legal to add servers already in the list, though not recommended. 
+
+References RefreshServer(), and ShowServerCount().\index{CServerListCtrl@{CServerListCtrl}!HighlightServer@{HighlightServer}}
+\index{HighlightServer@{HighlightServer}!CServerListCtrl@{CServerListCtrl}}
+\subsubsection[{HighlightServer}]{\setlength{\rightskip}{0pt plus 5cm}void CServerListCtrl::HighlightServer (const {\bf CServer} $\ast$ {\em server}, \/  bool {\em highlight})}\label{classCServerListCtrl_a6b26c3942db2f6df1e3c31c740d73de7}
+
+
+Sets the highlighting of the specified server. 
+\begin{DoxyParams}{Parameters}
+\item[{\em server}]The server to have its highlighting set. \item[{\em highlight}]The new highlighting state.\end{DoxyParams}
+Please note that only \_\-one\_\- item is allowed to be highlighted at any one time, so calling this function while another item is already highlighted will result in the old item not being highlighted any more. 
+
+References m\_\-connected.\index{CServerListCtrl@{CServerListCtrl}!RefreshServer@{RefreshServer}}
+\index{RefreshServer@{RefreshServer}!CServerListCtrl@{CServerListCtrl}}
+\subsubsection[{RefreshServer}]{\setlength{\rightskip}{0pt plus 5cm}void CServerListCtrl::RefreshServer ({\bf CServer} $\ast$ {\em server})}\label{classCServerListCtrl_a62724038ad68110fc1bea896251b8c8a}
+
+
+Updates the displayed information on a server. 
+\begin{DoxyParams}{Parameters}
+\item[{\em server}]The server to be updated.\end{DoxyParams}
+This function will not only update the displayed information, it will also reposition the item should it be nescecarry to enforce the current sorting. Also note that this function does not require that the server actually is on the list already, since AddServer makes use of it, but this should generally be avoided, since it will result in the server-\/count getting skewed until the next AddServer call. 
+
+References CMuleListCtrl::GetInsertPos(), CMuleListCtrl::IsItemSorted(), and CMuleListCtrl::SortList().
+
+Referenced by AddServer().\index{CServerListCtrl@{CServerListCtrl}!RemoveAllServers@{RemoveAllServers}}
+\index{RemoveAllServers@{RemoveAllServers}!CServerListCtrl@{CServerListCtrl}}
+\subsubsection[{RemoveAllServers}]{\setlength{\rightskip}{0pt plus 5cm}void CServerListCtrl::RemoveAllServers (int {\em state} = {\ttfamily wxLIST\_\-STATE\_\-DONTCARE})}\label{classCServerListCtrl_a5bb411e09921f47d356641d49a2ea425}
+
+
+Removes all servers with the specified state. 
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]All items with this state will be removed, default being all. \end{DoxyParams}
+
+
+References m\_\-connected, and ShowServerCount().
+
+Referenced by OnRemoveServers().\index{CServerListCtrl@{CServerListCtrl}!SortProc@{SortProc}}
+\index{SortProc@{SortProc}!CServerListCtrl@{CServerListCtrl}}
+\subsubsection[{SortProc}]{\setlength{\rightskip}{0pt plus 5cm}int CServerListCtrl::SortProc (wxUIntPtr {\em item1}, \/  wxUIntPtr {\em item2}, \/  long {\em sortData})\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCServerListCtrl_aebb5c10f1dc947d8dac6576cc277d109}
+
+
+Sorter function. \begin{DoxySeeAlso}{See also}
+wxListCtrl::SortItems 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a9958ee438b116457a818ffb29b3c5864}.
+
+References CMuleListCtrl::COLUMN\_\-MASK, and CMuleListCtrl::SORT\_\-DES.
+
+Referenced by CServerListCtrl().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ServerListCtrl.h\item 
+src/ServerListCtrl.cpp\end{DoxyCompactItemize}

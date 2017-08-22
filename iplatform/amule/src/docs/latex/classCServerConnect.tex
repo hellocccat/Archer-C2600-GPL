@@ -1,0 +1,150 @@
+\section{CServerConnect Class Reference}
+\label{classCServerConnect}\index{CServerConnect@{CServerConnect}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CServerConnect} ({\bf CServerList} $\ast$in\_\-serverlist, {\bf amuleIPV4Address} \&address)\label{classCServerConnect_a06fb82c1e60fe52a3ffd653ce35ae2d0}
+
+\item 
+void {\bfseries ConnectionFailed} ({\bf CServerSocket} $\ast$sender)\label{classCServerConnect_a6ca2b3fb1b5c12829c682a022d66b5ad}
+
+\item 
+void {\bfseries ConnectionEstablished} ({\bf CServerSocket} $\ast$sender)\label{classCServerConnect_a0704cd768cbe55874390c24b78912b40}
+
+\item 
+void {\bfseries ConnectToAnyServer} (bool prioSort=true, bool bNoCrypt=false)\label{classCServerConnect_a2a430e7be6a68ecbb8cb5c187070f9d5}
+
+\item 
+void {\bfseries ConnectToServer} ({\bf CServer} $\ast$toconnect, bool multiconnect=false, bool bNoCrypt=false)\label{classCServerConnect_a4f5fe75b41056ede8174a8c95777445e}
+
+\item 
+void {\bfseries StopConnectionTry} ()\label{classCServerConnect_aaafe50e090c3b6e722f7b75ef356942b}
+
+\item 
+void {\bfseries CheckForTimeout} ()\label{classCServerConnect_aa4cb398a604d52c1ca5662529f806346}
+
+\item 
+void {\bfseries DestroySocket} ({\bf CServerSocket} $\ast$pSck)\label{classCServerConnect_ab23d5c3708b7ac7766d5203711ceeee5}
+
+\item 
+bool {\bfseries SendPacket} ({\bf CPacket} $\ast$packet, bool delpacket=true, {\bf CServerSocket} $\ast$to=0)\label{classCServerConnect_a71052d64c6304ad89b203270bb348e41}
+
+\item 
+bool {\bfseries IsUDPSocketAvailable} () const \label{classCServerConnect_a75a443792fb4075a18946cf35d62e251}
+
+\item 
+bool {\bfseries SendUDPPacket} ({\bf CPacket} $\ast$packet, {\bf CServer} $\ast$host, bool delpacket, bool rawpacket=false, uint16 port\_\-offset=4)\label{classCServerConnect_a2091993f2e78eafaa6882b235421f1ee}
+
+\item 
+bool {\bfseries Disconnect} ()\label{classCServerConnect_ad96eb40f3370e43c79b3660aca94bdc0}
+
+\item 
+bool {\bfseries IsConnecting} ()\label{classCServerConnect_a4659610363c1436bf98be2cd6de43013}
+
+\item 
+bool {\bfseries IsConnected} ()\label{classCServerConnect_a80a21f1e2616ff1286dccee19011563f}
+
+\item 
+uint32 {\bfseries GetClientID} ()\label{classCServerConnect_abe72c0d215de3ef7ee6063365cd6f1e0}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetCurrentServer} ()\label{classCServerConnect_ac50aea2ccc4293afbe9b9e15fb6722bd}
+
+\item 
+bool {\bfseries IsLowID} ()\label{classCServerConnect_a890ab920b1c8ba4cd0d2cc037f382c52}
+
+\item 
+void {\bfseries SetClientID} (uint32 newid)\label{classCServerConnect_a5b1e29c28f55831cb82ecc8ba418acb1}
+
+\item 
+bool {\bfseries IsLocalServer} (uint32 dwIP, uint16 nPort)\label{classCServerConnect_ab82556251807e44ef68c98b8bac801ba}
+
+\item 
+void {\bfseries TryAnotherConnectionrequest} ()\label{classCServerConnect_ae654f82ff869ce6ec02b108b335a0e6b}
+
+\item 
+bool {\bfseries IsSingleConnect} ()\label{classCServerConnect_ab86502f4718b80132da0dcbf26281057}
+
+\item 
+void {\bfseries KeepConnectionAlive} ()\label{classCServerConnect_a556547dc22856d1d3969d605238c6d82}
+
+\item 
+bool {\bfseries AwaitingTestFromIP} (uint32 ip)\label{classCServerConnect_a4e46058526cf84d65bca046b26c2d5b3}
+
+\item 
+bool {\bfseries IsConnectedObfuscated} () const \label{classCServerConnect_a95cf0b2b8cc4aade24e2de95904ef704}
+
+\item 
+void {\bf OnServerHostnameResolved} (void $\ast$socket, uint32 ip)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries clientid}\label{classCServerConnect_a2da6a69e602fe07399e8d50e67315319}
+
+\item 
+uint8 {\bfseries pendingConnects}\label{classCServerConnect_ac70dacfe7f7829fdf7de7a6c7b76b9af}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CServerSocket} $\ast$ $>$ {\bfseries SocketsList}\label{classCServerConnect_a934f75dee921dcfdbb054d54010d35d5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries connecting}\label{classCServerConnect_a42d05be2ab5cea482d33c3b2f809c404}
+
+\item 
+bool {\bfseries singleconnecting}\label{classCServerConnect_a7f5d8aaf2b1c1ba4ac4b77af9f23b95d}
+
+\item 
+bool {\bfseries connected}\label{classCServerConnect_a5ac88f9d1e1c057cd9db19af715c6ad6}
+
+\item 
+int8 {\bfseries max\_\-simcons}\label{classCServerConnect_aa13f89f12875eb676572108b16532ce1}
+
+\item 
+bool {\bfseries m\_\-bTryObfuscated}\label{classCServerConnect_aaee4623cb9afbeac698114c3d58aeb43}
+
+\item 
+bool {\bfseries m\_\-recurseTryAnotherConnectionrequest}\label{classCServerConnect_ad1b52267679944c1ec5106b4383a0498}
+
+\item 
+{\bf CServerSocket} $\ast$ {\bfseries connectedsocket}\label{classCServerConnect_abb178d79b66328e41d7b37e18dc2d4f7}
+
+\item 
+{\bf CServerList} $\ast$ {\bfseries used\_\-list}\label{classCServerConnect_a3e1bed5e7e1b1ddff4b9e3fc21c40b1c}
+
+\item 
+{\bf CServerUDPSocket} $\ast$ {\bfseries serverudpsocket}\label{classCServerConnect_a4a4983c4b26681c5682f41725bbc877e}
+
+\item 
+SocketsList {\bfseries m\_\-lstOpenSockets}\label{classCServerConnect_aef7697d33f89a2c3fc2cbc46d23eefd9}
+
+\item 
+{\bf CTimer} {\bfseries m\_\-idRetryTimer}\label{classCServerConnect_a0e177c55180ecc2d810603c14de35f09}
+
+\item 
+ServerSocketMap {\bfseries connectionattemps}\label{classCServerConnect_a9b5253f2f458701ab2882aa74ec8e46b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CServerConnect@{CServerConnect}!OnServerHostnameResolved@{OnServerHostnameResolved}}
+\index{OnServerHostnameResolved@{OnServerHostnameResolved}!CServerConnect@{CServerConnect}}
+\subsubsection[{OnServerHostnameResolved}]{\setlength{\rightskip}{0pt plus 5cm}void CServerConnect::OnServerHostnameResolved (void $\ast$ {\em socket}, \/  uint32 {\em ip})}\label{classCServerConnect_ac4c4d3192b6fc3cc006d15187d997864}
+
+
+Called when a socket has been DNS resolved. 
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]The socket object requesting DNS resolution. \item[{\em ip}]The found IP, or zero on error.\end{DoxyParams}
+Note that 'socket' may or may not refer to an valid object, and should be checked before being used. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ServerConnect.h\item 
+src/ServerConnect.cpp\end{DoxyCompactItemize}

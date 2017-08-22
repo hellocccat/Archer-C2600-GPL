@@ -1,0 +1,65 @@
+\section{CTimer Class Reference}
+\label{classCTimer}\index{CTimer@{CTimer}}
+
+
+Replacement for wxTimer as it doesn't work on non-\/X builds.  
+
+
+{\ttfamily \#include $<$Timer.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CTimer} (wxEvtHandler $\ast$owner, int timerid=-\/1)\label{classCTimer_afa82f0b33dd6b7de68899da3fe999078}
+
+\item 
+bool {\bf Start} (int millisecs, bool oneShot=false)
+\item 
+bool {\bf IsRunning} () const \label{classCTimer_a0afb7b2e8a9e6bd268d601a93a066a68}
+
+\item 
+void {\bf Stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CTimerThread} $\ast$ {\bfseries m\_\-thread}\label{classCTimer_a4fa00153d88b21ab7f79c0796caec132}
+
+\item 
+wxEvtHandler $\ast$ {\bfseries m\_\-owner}\label{classCTimer_aea085bb7c42fb73d55d6f1c1a8568ee1}
+
+\item 
+int {\bfseries m\_\-id}\label{classCTimer_a01b725c49d2a9129bc465b6f92e39402}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Replacement for wxTimer as it doesn't work on non-\/X builds. 
+
+\subsection{Member Function Documentation}
+\index{CTimer@{CTimer}!Start@{Start}}
+\index{Start@{Start}!CTimer@{CTimer}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}bool CTimer::Start (int {\em millisecs}, \/  bool {\em oneShot} = {\ttfamily false})}\label{classCTimer_a5a4c96a780bce76147f55629c440f563}
+
+
+Starts the timer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em millisecs}]The frequency of events. \item[{\em oneShot}]Specifies if only one event should be produced. \end{DoxyParams}
+
+
+References CMuleThread::Stop(), and Stop().
+
+Referenced by CSearchList::LocalSearchEnd().\index{CTimer@{CTimer}!Stop@{Stop}}
+\index{Stop@{Stop}!CTimer@{CTimer}}
+\subsubsection[{Stop}]{\setlength{\rightskip}{0pt plus 5cm}void CTimer::Stop ()}\label{classCTimer_a7fe9ad152f641589251afdabebd60572}
+
+
+Stops the timer. Note that this does not delete the actual thread immediatly, but no new events will be queued after calling this function. 
+
+References CMuleThread::Stop().
+
+Referenced by Start(), and CSearchList::StopSearch().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Timer.h\item 
+src/Timer.cpp\end{DoxyCompactItemize}

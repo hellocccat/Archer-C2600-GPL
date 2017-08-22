@@ -1,0 +1,89 @@
+\section{CKnownFileList Class Reference}
+\label{classCKnownFileList}\index{CKnownFileList@{CKnownFileList}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries SafeAddKFile} ({\bf CKnownFile} $\ast$toadd, bool afterHashing=false)\label{classCKnownFileList_a5142a1bac3539b92275ed81e3ab48cca}
+
+\item 
+bool {\bfseries Init} ()\label{classCKnownFileList_a0e053d99262c4a7112540f6166ce32c1}
+
+\item 
+void {\bfseries Save} ()\label{classCKnownFileList_afe7c9799bda3246c27f172e2fea1d584}
+
+\item 
+void {\bfseries Clear} ()\label{classCKnownFileList_a9aef9e7f576717897754f2ad1e6aab45}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries FindKnownFile} (const {\bf CPath} \&filename, time\_\-t in\_\-date, uint64 in\_\-size)\label{classCKnownFileList_a6d5ef01539339b1206b01ba48b5d8e59}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries FindKnownFileByID} (const {\bf CMD4Hash} \&hash)\label{classCKnownFileList_aae75a8121e65592ffe1559a17941fe96}
+
+\item 
+void {\bfseries PrepareIndex} ()\label{classCKnownFileList_ab2727097a84dabff8ef6a23553c2b8a7}
+
+\item 
+void {\bfseries ReleaseIndex} ()\label{classCKnownFileList_a847aab7ad6032c9f2e86f2390e97cfe1}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16 {\bfseries requested}\label{classCKnownFileList_a287be5fd5394753fd019047332160981}
+
+\item 
+uint32 {\bfseries transferred}\label{classCKnownFileList_a24c7034a0a0e1bc99a4706960f30b921}
+
+\item 
+uint16 {\bfseries accepted}\label{classCKnownFileList_a080a603663e4109bd876739a2cf97304}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CKnownFile} $\ast$ $>$ {\bfseries KnownFileList}\label{classCKnownFileList_a4cb07b5d2f0df325d2d117ed1b5fe55e}
+
+\item 
+typedef std::multimap$<$ uint32, {\bf CKnownFile} $\ast$ $>$ {\bfseries KnownFileSizeMap}\label{classCKnownFileList_aa92427032a4d1398146b1369036d2e99}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries Append} ({\bf CKnownFile} $\ast$, bool afterHashing=false)\label{classCKnownFileList_ad6149d257521c9d2c07a13d9d06bc2a1}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries IsOnDuplicates} (const {\bf CPath} \&filename, uint32 in\_\-date, uint64 in\_\-size) const \label{classCKnownFileList_a854bab40da2114c3abee453c4a921d62}
+
+\item 
+bool {\bfseries KnownFileMatches} ({\bf CKnownFile} $\ast$knownFile, const {\bf CPath} \&filename, uint32 in\_\-date, uint64 in\_\-size) const \label{classCKnownFileList_a097d682d1c4ac860b30ad873e438faef}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxMutex {\bfseries list\_\-mut}\label{classCKnownFileList_a3dfd8bb875ac77a5723c731266e1b610}
+
+\item 
+KnownFileList {\bfseries m\_\-duplicateFileList}\label{classCKnownFileList_ade2dfbad20ceac68f6794cb628ac93bf}
+
+\item 
+CKnownFileMap {\bfseries m\_\-knownFileMap}\label{classCKnownFileList_a73f61977bac871919fc284749b167ddd}
+
+\item 
+wxString {\bfseries m\_\-filename}\label{classCKnownFileList_adfd74ec5b7e791dad256f2c7ddc60710}
+
+\item 
+KnownFileSizeMap $\ast$ {\bfseries m\_\-knownSizeMap}\label{classCKnownFileList_a87d0a281ce5ae4a816d32e220367b0b7}
+
+\item 
+KnownFileSizeMap $\ast$ {\bfseries m\_\-duplicateSizeMap}\label{classCKnownFileList_a3929137142c6ada7757af42f461152fb}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/KnownFileList.h\item 
+src/KnownFileList.cpp\end{DoxyCompactItemize}

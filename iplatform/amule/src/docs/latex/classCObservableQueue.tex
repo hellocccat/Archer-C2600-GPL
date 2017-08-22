@@ -1,0 +1,65 @@
+\section{CObservableQueue$<$ ValueType $>$ Class Template Reference}
+\label{classCObservableQueue}\index{CObservableQueue@{CObservableQueue}}
+
+
+This class forms the superclass for observable queues or lists.  
+
+
+{\ttfamily \#include $<$ObservableQueue.h$>$}Inheritance diagram for CObservableQueue$<$ ValueType $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCObservableQueue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$CObservableQueue} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf CQueueEvent}$<$ ValueType $>$ {\bfseries EventType}\label{classCObservableQueue_ab986d14d6649add751187439e2be9442}
+
+\item 
+typedef {\bf CObserver}$<$ {\bf EventType} $>$ {\bf ObserverType}\label{classCObservableQueue_a1530cdfdd19631f1f9630c784a35c5c9}
+
+\item 
+typedef {\bf EventType::ValueList} {\bfseries ValueList}\label{classCObservableQueue_abe23eee73107f51fefc64cb14eac56f4}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf ObserverAdded} ({\bf ObserverType} $\ast$)\label{classCObservableQueue_ae5bca41329aefb97ab0ea94b48a25fb5}
+
+\item 
+virtual void {\bf ObserverRemoved} ({\bf ObserverType} $\ast$)\label{classCObservableQueue_a44ec0728fdb05d60d2c5a5cf77685a86}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename ValueType$>$ class CObservableQueue$<$ ValueType $>$}
+
+This class forms the superclass for observable queues or lists. The protocol defined above is used (\doxyref{CQueueEvent}{p.}{classCQueueEvent}).
+
+By subclassing this class, a container object can ensure that classes observing it are able to keep in sync with the changes made to the contents, with a few limits.
+
+For one thing, the value is assumed to be both key and value, so multimaps cannot be used with this class, since it will only pass the key. Nor can lists that rely on a specific order be used, since neither insertion nor deletion operations specify a specific object or position, instead just a \char`\"{}add/remove one of these\char`\"{} rule.
+
+The main purpose of this class is to allow another class to follow a list or queue, regardles of changes in actual order of the items and regardles of changes to the contents. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CObservableQueue@{CObservableQueue}!$\sim$CObservableQueue@{$\sim$CObservableQueue}}
+\index{$\sim$CObservableQueue@{$\sim$CObservableQueue}!CObservableQueue@{CObservableQueue}}
+\subsubsection[{$\sim$CObservableQueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename ValueType $>$ {\bf CObservableQueue}$<$ ValueType $>$::$\sim${\bf CObservableQueue} ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCObservableQueue_abf554ae4189bf5797572dac1d60d23f5}
+
+
+Destructor. Sends STOPPING to all observers. 
+
+References CObservable$<$ CQueueEvent$<$ ValueType $>$ $>$::RemoveAllObservers().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ObservableQueue.h\end{DoxyCompactItemize}

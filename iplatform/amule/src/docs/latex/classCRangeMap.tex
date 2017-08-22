@@ -1,0 +1,218 @@
+\section{CRangeMap$<$ VALUE, KEYTYPE $>$ Class Template Reference}
+\label{classCRangeMap}\index{CRangeMap@{CRangeMap}}
+
+
+This class represents a map of non-\/overlapping ranges.  
+
+
+{\ttfamily \#include $<$RangeMap.h$>$}\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf iterator\_\-base}
+\begin{DoxyCompactList}\small\item\em This class provides a wrapper around the raw iterators used by \doxyref{CRangeMap}{p.}{classCRangeMap}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf iterator\_\-base}$<$ {\bf RangeIterator}, ValueRef, ValuePtr $>$ {\bfseries iterator}\label{classCRangeMap_a1f3fae501be50d7aee7794acd0c0a9e7}
+
+\item 
+typedef {\bf iterator\_\-base}$<$ ConstRangeIterator, ConstValueRef, ConstValuePtr $>$ {\bfseries const\_\-iterator}\label{classCRangeMap_ad873a69c0949e8bf9b71eeec859f0577}
+
+\item 
+typedef RangeMap::size\_\-type {\bf size\_\-type}\label{classCRangeMap_aa63be8b20deb0792b0a52b10cc92fa8b}
+
+\item 
+typedef VALUE {\bf value\_\-type}\label{classCRangeMap_ac88bedc48a633b427f2bc867ac422f6b}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CRangeMap} ()\label{classCRangeMap_aa98fcee863e6a6f94f2120ecf0665c24}
+
+\item 
+{\bf CRangeMap} (const {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$ \&other)\label{classCRangeMap_abee3830b9f996a20039ed71c4fa85848}
+
+\item 
+{\bf CRangeMap} \& {\bf operator=} (const {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$ \&other)\label{classCRangeMap_a67282499ecf8f578a8a6fd421ecf2314}
+
+\item 
+void {\bf swap} ({\bf CRangeMap}$<$ VALUE, KEYTYPE $>$ \&other)\label{classCRangeMap_a15627ad0cb5bdde31e3b50ae10897cec}
+
+\item 
+bool {\bf operator==} (const {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$ \&other) const 
+\item 
+{\bf iterator} {\bf begin} ()\label{classCRangeMap_a6b154c87bf3fe484691d98ff36d05550}
+
+\item 
+{\bf iterator} {\bf end} ()\label{classCRangeMap_a992865fc1f8966d7eb8fcff7fa59a6da}
+
+\item 
+{\bf const\_\-iterator} {\bf begin} () const \label{classCRangeMap_a1e08fd3f4173e36761f252009ee9dab8}
+
+\item 
+{\bf const\_\-iterator} {\bf end} () const \label{classCRangeMap_a9a475ae293840ec371c2b245308d2b23}
+
+\item 
+{\bf iterator} {\bf erase} ({\bf iterator} pos)
+\item 
+{\bf size\_\-type} {\bf size} () const \label{classCRangeMap_a83439238521b9ec160bd106f3d227f8b}
+
+\item 
+bool {\bf empty} () const \label{classCRangeMap_a7b9fb523a8c4121ca4d57cb8b62215cc}
+
+\item 
+void {\bf clear} ()\label{classCRangeMap_a7eb73fbedc5ad9bcc017b4789a349027}
+
+\item 
+{\bf iterator} {\bf find\_\-range} (KEYTYPE key)
+\item 
+void {\bfseries erase\_\-range} (KEYTYPE startPos, KEYTYPE endPos)\label{classCRangeMap_a3081dc97bf7b943ee5eb04f4809ddc18}
+
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+{\bf iterator} {\bf insert} (KEYTYPE startPos, KEYTYPE endPos)
+\item 
+{\footnotesize template$<$typename TYPE $>$ }\\{\bf iterator} {\bfseries insert} (KEYTYPE startPos, KEYTYPE endPos, const TYPE \&value)\label{classCRangeMap_a05e02b022ecc91459090714034c74132}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf iterator} {\bf do\_\-insert} (KEYTYPE start, {\bf HELPER} entry, bool merge=true)
+\item 
+{\bf RangeIterator} {\bf get\_\-insert\_\-it} (KEYTYPE start)
+\item 
+{\bf RangeIterator} {\bf resize} (KEYTYPE startPos, KEYTYPE endPos, {\bf RangeIterator} it)\label{classCRangeMap_ade03a7d3a1b0f07c802de62fa44af442}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf CRangeMapHelper}$<$ VALUE, KEYTYPE $>$ {\bfseries HELPER}\label{classCRangeMap_adb63ac1de47f750c398db05f8bb6b675}
+
+\item 
+typedef std::map$<$ KEYTYPE, {\bf HELPER} $>$ {\bf RangeMap}\label{classCRangeMap_ab3e36f70b7115de0ba6391fb0b5f86f9}
+
+\item 
+typedef std::pair$<$ KEYTYPE, {\bf HELPER} $>$ {\bf RangePair}\label{classCRangeMap_aa4ed83b8bc577e8309bc28a0afb82238}
+
+\item 
+typedef RangeMap::iterator {\bf RangeIterator}\label{classCRangeMap_aed3f96ed03dc0de758357921048026e8}
+
+\item 
+typedef RangeMap::const\_\-iterator {\bfseries ConstRangeIterator}\label{classCRangeMap_a23dc7b3dde3ac7643f336ec53a85962d}
+
+\item 
+typedef {\bf HELPER::ValueRef} {\bfseries ValueRef}\label{classCRangeMap_ab0ae7d54c4ca9be843602784d2443cc6}
+
+\item 
+typedef {\bf HELPER::ValuePtr} {\bfseries ValuePtr}\label{classCRangeMap_a353bbd91a031dc41d8247a3061290b67}
+
+\item 
+typedef {\bf HELPER::ConstValueRef} {\bfseries ConstValueRef}\label{classCRangeMap_acad14c3463f6b0260573bd411a34c8f7}
+
+\item 
+typedef {\bf HELPER::ConstValuePtr} {\bfseries ConstValuePtr}\label{classCRangeMap_a142022b14053eb9b4bf9801e4a74ae05}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RangeMap} {\bf m\_\-ranges}\label{classCRangeMap_a9fc72f65957fd1f6ae68ffa9b8075ff0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename VALUE, typename KEYTYPE = uint64$>$ class CRangeMap$<$ VALUE, KEYTYPE $>$}
+
+This class represents a map of non-\/overlapping ranges. Each range has a user-\/specified value associated. The map supports quick lookup of which range covers a particular key-\/value, and will merge or split existing ranges when new ranges are added.
+
+The decision on whenever to split/resize a range or to merge the two ranges involved is based on equality of the user-\/specified value, using the equality operator. Thus if two ranges with the same user-\/value are placed adjacent to each other or partially overlapping each other, then they will be merged into a single range. If the user-\/values of the two ranges are different, then the old range will be either resized or split, based on the position of the new range.
+
+In cases where ranges are split into two parts, copies will be made of the user-\/specified value, such that each new part contains the same user-\/value.
+
+It is currently not possible to manipulate existing ranges by hand, other than by erasing and then re-\/inserting them.
+
+A specialization of this class exists (typedef'd as CRangeSet), which does not assosiate a value with each range.
+
+NOTE: KEYTYPE is assumed to be an unsigned integer type! 
+
+\subsection{Member Function Documentation}
+\index{CRangeMap@{CRangeMap}!do\_\-insert@{do\_\-insert}}
+\index{do\_\-insert@{do\_\-insert}!CRangeMap@{CRangeMap}}
+\subsubsection[{do\_\-insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VALUE, typename KEYTYPE = uint64$>$ {\bf iterator} {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$::do\_\-insert (KEYTYPE {\em start}, \/  {\bf HELPER} {\em entry}, \/  bool {\em merge} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCRangeMap_ab354a828292694fe0a5edb176635425b}
+
+
+Inserts the specified range. 
+\begin{DoxyParams}{Parameters}
+\item[{\em start}]The starting position of the range. \item[{\em entry}]A helper-\/struct, containing the end position and possibly user-\/data. \item[{\em merge}]Specifies if ranges should be merged when possible. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator pointing to the range covering at least the specified range. 
+\end{DoxyReturn}
+
+
+Referenced by CRangeMap$<$ rangeObject, uint32 $>$::insert().\index{CRangeMap@{CRangeMap}!erase@{erase}}
+\index{erase@{erase}!CRangeMap@{CRangeMap}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VALUE, typename KEYTYPE = uint64$>$ {\bf iterator} {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$::erase ({\bf iterator} {\em pos})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCRangeMap_aa5416cfd3931b88e0ba9862a60316151}
+
+
+Erases the specified range and returns the range next to it. 
+\begin{DoxyParams}{Parameters}
+\item[{\em pos}]The iterator of the range to be erased. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The iterator of the range after the erased range.
+\end{DoxyReturn}
+Attempting to erase the \doxyref{end()}{p.}{classCRangeMap_a992865fc1f8966d7eb8fcff7fa59a6da} iterator is an invalid operation. \index{CRangeMap@{CRangeMap}!find\_\-range@{find\_\-range}}
+\index{find\_\-range@{find\_\-range}!CRangeMap@{CRangeMap}}
+\subsubsection[{find\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VALUE, typename KEYTYPE = uint64$>$ {\bf iterator} {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$::find\_\-range (KEYTYPE {\em key})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCRangeMap_a80f76ff31d3d7d654f8af000e6a969ef}
+
+
+Returns the range covering the specified key-\/value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]A value that may or may not be covered by a range. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{end()}{p.}{classCRangeMap_a992865fc1f8966d7eb8fcff7fa59a6da} or the iterator of the range covering key.
+\end{DoxyReturn}
+A range is considered to cover a value if the value is greather than or equal to the start-\/key and less than or equal to the end-\/key. \index{CRangeMap@{CRangeMap}!get\_\-insert\_\-it@{get\_\-insert\_\-it}}
+\index{get\_\-insert\_\-it@{get\_\-insert\_\-it}!CRangeMap@{CRangeMap}}
+\subsubsection[{get\_\-insert\_\-it}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VALUE, typename KEYTYPE = uint64$>$ {\bf RangeIterator} {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$::get\_\-insert\_\-it (KEYTYPE {\em start})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCRangeMap_a9f87c3502c420aa041a1500fd2b9e275}
+
+
+Finds the optimal location to start looking for insertion points. This is the first range whose start comes after the new start. We check the last element first, since sequential insertions are commen. 
+
+Referenced by CRangeMap$<$ rangeObject, uint32 $>$::do\_\-insert().\index{CRangeMap@{CRangeMap}!insert@{insert}}
+\index{insert@{insert}!CRangeMap@{CRangeMap}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VALUE, typename KEYTYPE = uint64$>$ {\bf iterator} {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$::insert (KEYTYPE {\em startPos}, \/  KEYTYPE {\em endPos})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCRangeMap_a6f80ffed59f822dc0666c53ea4f2f502}
+
+
+Inserts a new range into the map, potentially erasing/changing old ranges. 
+\begin{DoxyParams}{Parameters}
+\item[{\em startPos}]The start position of the range, also considered part of the range. \item[{\em endPos}]The end position of the range, also considered part of the range. \item[{\em object}]The user-\/data to be assosiated with the range. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator pointing to the resulting range, covering at least the specified range.
+\end{DoxyReturn}
+This function inserts the specified range into the map, while overwriting or resizing existing ranges if there is any conflict. Ranges might also be merged, if the object of each evaluates to being equal, in which case the old range will be removed and the new extended to include the old range. This also includes ranges placed directly after or in front of each other, which will also be merged if their type is the same.
+
+This has the result that the iterator returned can point to a range quite different from what was originally specified. If this is not desired, then the VALUE type should simply be made to return false on all equality tests. Otherwise, the only promise that is made is that the resulting range has the same user-\/data (based on the equality operator) as the what was specified.
+
+Note that the start position must be smaller than or equal to the end-\/position. 
+
+Referenced by CIPFilterTask::AddIPRange().\index{CRangeMap@{CRangeMap}!operator==@{operator==}}
+\index{operator==@{operator==}!CRangeMap@{CRangeMap}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename VALUE, typename KEYTYPE = uint64$>$ bool {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$::operator== (const {\bf CRangeMap}$<$ VALUE, KEYTYPE $>$ \& {\em other}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCRangeMap_a2fa7ca9981cf0dfdadb3974f4feb6a8a}
+
+
+Equality operator for two ranges. \begin{DoxyReturn}{Returns}
+True if both ranges contain the same ranges and values. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/RangeMap.h\end{DoxyCompactItemize}

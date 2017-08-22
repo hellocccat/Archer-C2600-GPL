@@ -1,0 +1,88 @@
+\section{CMuleColour Class Reference}
+\label{classCMuleColour}\index{CMuleColour@{CMuleColour}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ColourComponent} \{ {\bfseries COLOUR\_\-R} =  1, 
+{\bfseries COLOUR\_\-G} =  2, 
+{\bfseries COLOUR\_\-B} =  4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CMuleColour} (const wxColour \&colour)\label{classCMuleColour_a666bad4399c5d98c9690908d9b312f50}
+
+\item 
+{\bfseries CMuleColour} (byte r, byte g, byte b)\label{classCMuleColour_adfa0f07d37a889b7136ca1cd857d6b72}
+
+\item 
+{\bfseries CMuleColour} (unsigned long rgb)\label{classCMuleColour_a3024dba921fa88b77025b87da34c456c}
+
+\item 
+{\bfseries CMuleColour} (wxSystemColour colour)\label{classCMuleColour_a80a4f23f55980b3fa3aca96d8709d480}
+
+\item 
+void {\bfseries Init} ()\label{classCMuleColour_a7941d1b8610925544c7128b9f5b5802c}
+
+\item 
+void {\bfseries Set} (byte red, byte green, byte blue)\label{classCMuleColour_af4672ffeb259a74e62845896f8844e11}
+
+\item 
+byte {\bfseries Red} () const \label{classCMuleColour_a856eb1dec209ff54f0a9a05681a1e664}
+
+\item 
+byte {\bfseries Green} () const \label{classCMuleColour_a39f6b66453cba925075dee66c116b254}
+
+\item 
+byte {\bfseries Blue} () const \label{classCMuleColour_a1dd00d7320520011c3446fc497800db0}
+
+\item 
+const {\bf CMuleColour} \& {\bfseries Blend} (byte percentage, ColourComponent flags=(ColourComponent)(COLOUR\_\-R$|$COLOUR\_\-G$|$COLOUR\_\-B))\label{classCMuleColour_a75ed7758d6f8e1865238bcd2fad05867}
+
+\item 
+const {\bf CMuleColour} \& {\bfseries BlendWith} (const {\bf CMuleColour} \&colour, double covered)\label{classCMuleColour_a2875428955dbe9241bd705956d7647fa}
+
+\item 
+unsigned long {\bfseries GetULong} () const \label{classCMuleColour_a51639fc01ffad192f4f567441a7d7578}
+
+\item 
+bool {\bfseries IsBlack} () const \label{classCMuleColour_aa060c550dd7c20ac709ddfaeb933052a}
+
+\item 
+bool {\bfseries IsSameAs} (const {\bf CMuleColour} \&colour) const \label{classCMuleColour_a72dc2a0ca571aeb16548735852b6797f}
+
+\item 
+{\bfseries operator wxColour} () const \label{classCMuleColour_a81f026c56d5179f151541bed4fa4a42c}
+
+\item 
+const wxPen \& {\bfseries GetPen} (int width=1, int style=wxSOLID) const \label{classCMuleColour_a6ee7ed0dfc5f3d834a8c6bc691478f60}
+
+\item 
+const wxBrush \& {\bfseries GetBrush} (int style=wxSOLID) const \label{classCMuleColour_af3142e740386a4ddd3bfc94a2f63dbf5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+byte {\bfseries m\_\-red}\label{classCMuleColour_a64d6f467e786bb32707aa6edc874a02a}
+
+\item 
+byte {\bfseries m\_\-green}\label{classCMuleColour_a4892ec3cd58d2bfc878ce75dceed03ee}
+
+\item 
+byte {\bfseries m\_\-blue}\label{classCMuleColour_a6358592a26987aa0e9fb3a6beb43126f}
+
+\item 
+wxPen $\ast$ {\bfseries m\_\-cachedpen}\label{classCMuleColour_a58bd56ded0504399ad9dd268e20be968}
+
+\item 
+wxBrush $\ast$ {\bfseries m\_\-cachedbrush}\label{classCMuleColour_a58a437c63edbbde3f022828e5310ac16}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MuleColour.h\item 
+src/MuleColour.cpp\end{DoxyCompactItemize}

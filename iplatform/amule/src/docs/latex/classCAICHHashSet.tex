@@ -1,0 +1,115 @@
+\section{CAICHHashSet Class Reference}
+\label{classCAICHHashSet}\index{CAICHHashSet@{CAICHHashSet}}
+
+
+\doxyref{CAICHHashSet}{p.}{classCAICHHashSet}.  
+
+
+{\ttfamily \#include $<$SHAHashSet.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAICHHashSet} ({\bf CKnownFile} $\ast$pOwner)\label{classCAICHHashSet_aa92a7a18e904886b90bef240fa1b47cd}
+
+\item 
+bool {\bfseries CreatePartRecoveryData} (uint64 nPartStartPos, {\bf CFileDataIO} $\ast$fileDataOut, bool bDbgDontLoad=false)\label{classCAICHHashSet_a5684f0d0f2687e4b38e7f06715a29b90}
+
+\item 
+bool {\bfseries ReadRecoveryData} (uint64 nPartStartPos, {\bf CMemFile} $\ast$fileDataIn)\label{classCAICHHashSet_a9b0afb2bbd159282d8f7fc224c153495}
+
+\item 
+bool {\bfseries ReCalculateHash} (bool bDontReplace=false)\label{classCAICHHashSet_a2d41b61d927fca009d1350730a89f911}
+
+\item 
+bool {\bfseries VerifyHashTree} (bool bDeleteBadTrees)\label{classCAICHHashSet_a4f83406c90a10f8a05a8c3e32de7dbb2}
+
+\item 
+void {\bfseries UntrustedHashReceived} (const {\bf CAICHHash} \&Hash, uint32 dwFromIP)\label{classCAICHHashSet_aae7f55e0ae27ce6413211ab02231e354}
+
+\item 
+bool {\bfseries IsPartDataAvailable} (uint64 nPartStartPos)\label{classCAICHHashSet_ad90cf10c6c6ff32bfd480b205859f86a}
+
+\item 
+void {\bfseries SetStatus} (EAICHStatus bNewValue)\label{classCAICHHashSet_a5bdc182b05a398f5258fc31d96f3fb3a}
+
+\item 
+EAICHStatus {\bfseries GetStatus} () const \label{classCAICHHashSet_afcbde6f7490ae20b8909b14d5d6ecf87}
+
+\item 
+void {\bfseries FreeHashSet} ()\label{classCAICHHashSet_ae4db3acaa60e4ec275c8e0a0ce48eef0}
+
+\item 
+void {\bfseries SetFileSize} (uint64 nSize)\label{classCAICHHashSet_a4b6465bfc34f633fd1d3e7c4dedafc9c}
+
+\item 
+{\bf CAICHHash} \& {\bfseries GetMasterHash} ()\label{classCAICHHashSet_a74b3bc56374c532e21ee54a43685ec8e}
+
+\item 
+void {\bfseries SetMasterHash} (const {\bf CAICHHash} \&Hash, EAICHStatus eNewStatus)\label{classCAICHHashSet_a0eea63c960baf19e8110d8ea36b608fe}
+
+\item 
+bool {\bfseries HasValidMasterHash} ()\label{classCAICHHashSet_a49a26e03717b53e8d8df6b6a4b89bc79}
+
+\item 
+bool {\bfseries SaveHashSet} ()\label{classCAICHHashSet_a59fda8f8919b66fc0435a9d51515cec0}
+
+\item 
+bool {\bfseries LoadHashSet} ()\label{classCAICHHashSet_a0500968702591b340e1cfe225caddac6}
+
+\item 
+void {\bfseries DbgTest} ()\label{classCAICHHashSet_a1037562537804e785a9cb5e0646bb61f}
+
+\item 
+void {\bfseries SetOwner} ({\bf CKnownFile} $\ast$owner)\label{classCAICHHashSet_a37cb4632e357274bac1a625b9eee7ec7}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf CAICHHashAlgo} $\ast$ {\bfseries GetNewHashAlgo} ()\label{classCAICHHashSet_a848d34c1faa2f9bbfba88f7ab8ccffff}
+
+\item 
+static void {\bfseries ClientAICHRequestFailed} ({\bf CUpDownClient} $\ast$pClient)\label{classCAICHHashSet_aa51bdd0805d8fac0913b4fc4953d9b5b}
+
+\item 
+static void {\bfseries RemoveClientAICHRequest} (const {\bf CUpDownClient} $\ast$pClient)\label{classCAICHHashSet_ae6f0461452446707e96590846c153fe0}
+
+\item 
+static bool {\bfseries IsClientRequestPending} (const {\bf CPartFile} $\ast$pForFile, uint16 nPart)\label{classCAICHHashSet_a8941dc8fd095791110c575b0a0de1885}
+
+\item 
+static {\bf CAICHRequestedData} {\bfseries GetAICHReqDetails} (const {\bf CUpDownClient} $\ast$pClient)\label{classCAICHHashSet_a3721505ded47f0c7278a98c22b0192c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAICHHashTree} {\bfseries m\_\-pHashTree}\label{classCAICHHashSet_ae136faf8aaa48509c7aea3dc55c64234}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static CAICHRequestedDataList {\bfseries m\_\-liRequestedData}\label{classCAICHHashSet_a7681ee6d34def1ecb93a8a911d23b06c}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries m\_\-pOwner}\label{classCAICHHashSet_a384f8ac1f9c97feba860f0a3ff75aa23}
+
+\item 
+EAICHStatus {\bfseries m\_\-eStatus}\label{classCAICHHashSet_a666a8a4b9b9a46b2137986b0566db948}
+
+\item 
+deque$<$ {\bf CAICHUntrustedHash} $>$ {\bfseries m\_\-aUntrustedHashs}\label{classCAICHHashSet_a27dbee9e34358c92e2557910e18f7676}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{CAICHHashSet}{p.}{classCAICHHashSet}. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SHAHashSet.h\item 
+src/SHAHashSet.cpp\end{DoxyCompactItemize}

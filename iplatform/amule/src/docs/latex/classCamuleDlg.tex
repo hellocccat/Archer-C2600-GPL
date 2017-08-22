@@ -1,0 +1,287 @@
+\section{CamuleDlg Class Reference}
+\label{classCamuleDlg}\index{CamuleDlg@{CamuleDlg}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries DialogType} \{ \par
+{\bfseries DT\_\-TRANSFER\_\-WND}, 
+{\bfseries DT\_\-NETWORKS\_\-WND}, 
+{\bfseries DT\_\-SEARCH\_\-WND}, 
+{\bfseries DT\_\-SHARED\_\-WND}, 
+\par
+{\bfseries DT\_\-CHAT\_\-WND}, 
+{\bfseries DT\_\-STATS\_\-WND}, 
+{\bfseries DT\_\-KAD\_\-WND}
+ \}
+\item 
+enum {\bf WebSearch} \{ {\bfseries WS\_\-FILEHASH}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CamuleDlg} (wxWindow $\ast$pParent=NULL, const wxString \&title=wxEmptyString, wxPoint where=wxDefaultPosition, wxSize dlg\_\-size=wxSize(DEFAULT\_\-SIZE\_\-X, DEFAULT\_\-SIZE\_\-Y))\label{classCamuleDlg_a4482434d60519e56a994867fd5f9203a}
+
+\item 
+void {\bfseries AddLogLine} (const wxString \&line)\label{classCamuleDlg_a1025e864a57e995c58d0449e23388806}
+
+\item 
+void {\bfseries AddServerMessageLine} (wxString \&message)\label{classCamuleDlg_a27f8d9ec8e998c6449e9c867be782f23}
+
+\item 
+void {\bfseries ResetLog} (int id)\label{classCamuleDlg_a7990c9f019d9a32d180ad5ca8af12e2e}
+
+\item 
+void {\bfseries ShowUserCount} (const wxString \&info=wxEmptyString)\label{classCamuleDlg_a4427e9baf2e81fecf0e796fa76fca434}
+
+\item 
+void {\bfseries ShowConnectionState} (bool skinChanged=false)\label{classCamuleDlg_a812f17a1a121a35b1fda032731900ad4}
+
+\item 
+void {\bfseries ShowTransferRate} ()\label{classCamuleDlg_af1d4f31408c0f55ec12c207cb8431fa7}
+
+\item 
+bool {\bfseries StatisticsWindowActive} ()\label{classCamuleDlg_ad14f4eb8977fd6e6505c80f8b890d78e}
+
+\item 
+DialogType {\bfseries GetActiveDialog} ()\label{classCamuleDlg_a61e1994998d85f49b62dc4f4a1227a09}
+
+\item 
+void {\bfseries SetActiveDialog} (DialogType type, wxWindow $\ast$dlg)\label{classCamuleDlg_ae719ad31db1ca438edfd3aab558285c5}
+
+\item 
+bool {\bf IsDialogVisible} (DialogType dlg)
+\item 
+void {\bfseries ShowED2KLinksHandler} (bool show)\label{classCamuleDlg_aba9f1ab0fc789a3e9ee675cb7d19be23}
+
+\item 
+void {\bfseries DlgShutDown} ()\label{classCamuleDlg_ac92b06857ad1499a6992cbeea4c968dc}
+
+\item 
+void {\bfseries OnClose} (wxCloseEvent \&evt)\label{classCamuleDlg_a4dd3ae918f73f048a42b0453526e4b00}
+
+\item 
+void {\bfseries OnBnConnect} (wxCommandEvent \&evt)\label{classCamuleDlg_a366c13bbbc596163f7cf8c8a3461190f}
+
+\item 
+void {\bfseries DoIconize} (bool iconize)\label{classCamuleDlg_ae81dece09b8fa1fb1609c7ea3e58f2fa}
+
+\item 
+bool {\bfseries SafeState} ()\label{classCamuleDlg_a1b148db0f035598d9a1c631bea3c73a6}
+
+\item 
+void {\bfseries LaunchUrl} (const wxString \&url)\label{classCamuleDlg_a6158c7e2c76f1f503a61d5176a2123f7}
+
+\item 
+wxString {\bfseries GenWebSearchUrl} (const wxString \&filename, {\bf WebSearch} provider)\label{classCamuleDlg_a2c22f42f500f6507f64be77f8e0c5eb3}
+
+\item 
+void {\bfseries CreateSystray} ()\label{classCamuleDlg_a2a8d6699066e5ce568038a84af58ed51}
+
+\item 
+void {\bfseries RemoveSystray} ()\label{classCamuleDlg_a7068a5b4f824c71e92b5b69777d7e5cd}
+
+\item 
+void {\bfseries StartGuiTimer} ()\label{classCamuleDlg_ac7c463621860d7200ff801d0b6f1867b}
+
+\item 
+void {\bfseries StopGuiTimer} ()\label{classCamuleDlg_a6dd49b9508e724cb5337f0f3fd616e57}
+
+\item 
+void {\bf InitSort} ()\label{classCamuleDlg_a4efae5fc25a5c78c0bc03c857f29c012}
+
+\item 
+void {\bfseries SetMessageBlink} (bool state)\label{classCamuleDlg_a274a129f16b1ad53241c53d907cb29ea}
+
+\item 
+void {\bfseries Create\_\-Toolbar} (bool orientation)\label{classCamuleDlg_add10fd057f091e3467d01dee38bdbcd1}
+
+\item 
+void {\bfseries DoNetworkRearrange} ()\label{classCamuleDlg_a0a6f788cf9c3a94dc40e739ba299b8c0}
+
+\item 
+void {\bfseries IP2CountryDownloadFinished} (uint32 result)\label{classCamuleDlg_a95a127c28201ef33b93848dcd63d9fa1}
+
+\item 
+void {\bfseries EnableIP2Country} ()\label{classCamuleDlg_aeef723191670bc91ed58aa65a0b33535}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CIP2Country} $\ast$ {\bfseries m\_\-IP2Country}\label{classCamuleDlg_af3772d07bacf8b076a11a6edd0bb2605}
+
+\item 
+wxWindow $\ast$ {\bfseries m\_\-activewnd}\label{classCamuleDlg_a77c14a36160b8d29d6c4db9d52b5a8d7}
+
+\item 
+{\bf CTransferWnd} $\ast$ {\bfseries m\_\-transferwnd}\label{classCamuleDlg_a255cc12207fe4093a86539d03d470543}
+
+\item 
+{\bf CServerWnd} $\ast$ {\bfseries m\_\-serverwnd}\label{classCamuleDlg_ae14ecd63ccdb0d5b1ca5c3d613a0d538}
+
+\item 
+{\bf CSharedFilesWnd} $\ast$ {\bfseries m\_\-sharedfileswnd}\label{classCamuleDlg_a6acc0b94466aa528a0aa2a0cbe73a1b0}
+
+\item 
+{\bf CSearchDlg} $\ast$ {\bfseries m\_\-searchwnd}\label{classCamuleDlg_ae68da5c00a3b6dee05a72d00d3d03405}
+
+\item 
+{\bf CChatWnd} $\ast$ {\bfseries m\_\-chatwnd}\label{classCamuleDlg_a918788805dd7bf5b0484419ef294d63b}
+
+\item 
+{\bf CStatisticsDlg} $\ast$ {\bfseries m\_\-statisticswnd}\label{classCamuleDlg_a71d4fc4ce65280f25fbe456d64a0c0a0}
+
+\item 
+{\bf CKadDlg} $\ast$ {\bfseries m\_\-kademliawnd}\label{classCamuleDlg_af8d25919a2c1431910247c07d573af71}
+
+\item 
+{\bf PrefsUnifiedDlg} $\ast$ {\bf m\_\-prefsDialog}\label{classCamuleDlg_a1258138da2e768085739525e03fc90a5}
+
+\item 
+int {\bfseries m\_\-srv\_\-split\_\-pos}\label{classCamuleDlg_afef13d5c027fc3b60bab1f97907a3b6f}
+
+\item 
+wxImageList {\bfseries m\_\-imagelist}\label{classCamuleDlg_a819c96cce61344d031f2450d02e1d65f}
+
+\item 
+wxImageList {\bfseries m\_\-tblist}\label{classCamuleDlg_af6ba167dcc6bbf4ae6cbd10a36b3c5ee}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnToolBarButton} (wxCommandEvent \&ev)\label{classCamuleDlg_a3ef753b3cc706678cbb85ef2fbe2a361}
+
+\item 
+void {\bfseries OnAboutButton} (wxCommandEvent \&ev)\label{classCamuleDlg_a9b3aec1da9f8c6922cc71c717451abe6}
+
+\item 
+void {\bfseries OnPrefButton} (wxCommandEvent \&ev)\label{classCamuleDlg_ac2b163be510d34f846b9fbe5b69e55ab}
+
+\item 
+void {\bfseries OnImportButton} (wxCommandEvent \&ev)\label{classCamuleDlg_a6a38461fdec4cbbedbe2568dd9df56b0}
+
+\item 
+void {\bfseries OnMinimize} (wxIconizeEvent \&evt)\label{classCamuleDlg_a7dd916e29dbe3515536329f4b1933f9f}
+
+\item 
+void {\bfseries OnBnClickedFast} (wxCommandEvent \&evt)\label{classCamuleDlg_aa1f6588d67594543810e0941b29efde4}
+
+\item 
+void {\bfseries OnGUITimer} (wxTimerEvent \&evt)\label{classCamuleDlg_ab28dad415c6f18370a5e9eafc0607e35}
+
+\item 
+void {\bfseries OnMainGUISizeChange} (wxSizeEvent \&evt)\label{classCamuleDlg_a347fce1464de6bdbaa7964bf3a84df85}
+
+\item 
+void {\bfseries OnExit} (wxCommandEvent \&evt)\label{classCamuleDlg_a2afa9eeb3a129ad2ce8c8807c1224d47}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries WX\_\-DECLARE\_\-STRING\_\-HASH\_\-MAP} (wxZipEntry $\ast$, ZipCatalog)\label{classCamuleDlg_a1cc3bf546cb1171dcf915c6c967104c5}
+
+\item 
+bool {\bfseries LoadGUIPrefs} (bool override\_\-pos, bool override\_\-size)\label{classCamuleDlg_aec191b6c0bb27ef2b795c295a55dbc58}
+
+\item 
+bool {\bfseries SaveGUIPrefs} ()\label{classCamuleDlg_abbf45ffeddb214d9e1abd15002cee9e4}
+
+\item 
+void {\bfseries UpdateTrayIcon} (int percent)\label{classCamuleDlg_a98230d582cba2bf4d15f262dac89ed50}
+
+\item 
+void {\bfseries Apply\_\-Clients\_\-Skin} ()\label{classCamuleDlg_a637bccd3c5b540fc4cfc0df0c5944ada}
+
+\item 
+void {\bfseries Apply\_\-Toolbar\_\-Skin} (wxToolBar $\ast$wndToolbar)\label{classCamuleDlg_ad5ae053a5555c345b51f61692bfac8a5}
+
+\item 
+bool {\bfseries Check\_\-and\_\-Init\_\-Skin} ()\label{classCamuleDlg_a06dd518b17efeb9dca021b387c8e6f2a}
+
+\item 
+void {\bfseries Add\_\-Skin\_\-Icon} (const wxString \&iconName, const wxBitmap \&stdIcon, bool useSkins)\label{classCamuleDlg_a7a29febf89918ef72db379e24c738b20}
+
+\item 
+void {\bfseries ToogleED2KLinksHandler} ()\label{classCamuleDlg_aee60c7f6ee6515b465e81254687c253c}
+
+\item 
+void {\bfseries SetMessagesTool} ()\label{classCamuleDlg_a6c26d4a4d3c7a9714b9f9464c79c009e}
+
+\item 
+void {\bfseries OnKeyPressed} (wxKeyEvent \&evt)\label{classCamuleDlg_aa38c4bec9caa9fe0da4dc4e79f37395a}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\_\-prefsVisible}\label{classCamuleDlg_af3bbc9c73c830aa7d66ac0d1eafa9088}
+
+\item 
+wxToolBar $\ast$ {\bfseries m\_\-wndToolbar}\label{classCamuleDlg_a1753b161799a5634cc61fa2a26a05097}
+
+\item 
+wxTimer $\ast$ {\bfseries gui\_\-timer}\label{classCamuleDlg_a3a61b6d03076fadcfe9bdfe394e51512}
+
+\item 
+{\bf CMuleTrayIcon} $\ast$ {\bfseries m\_\-wndTaskbarNotifier}\label{classCamuleDlg_a9d826e3315790503f9cbf57ddf9eb794}
+
+\item 
+DialogType {\bfseries m\_\-nActiveDialog}\label{classCamuleDlg_a089b44fb04272b1516e1e845945d667a}
+
+\item 
+bool {\bfseries m\_\-is\_\-safe\_\-state}\label{classCamuleDlg_a375e48a3d3d33d42b62444faed412e74}
+
+\item 
+bool {\bfseries m\_\-BlinkMessages}\label{classCamuleDlg_a79f9e0373ede81bb2ef8516eb789f5b5}
+
+\item 
+int {\bfseries m\_\-CurrentBlinkBitmap}\label{classCamuleDlg_a70a3ae008f6f6b046274489bfbcb3324}
+
+\item 
+uint32 {\bfseries m\_\-last\_\-iconizing}\label{classCamuleDlg_a7622aae398ee4fe3130b8dc3d80d8362}
+
+\item 
+wxFileName {\bfseries m\_\-skinFileName}\label{classCamuleDlg_a7620e2560d84f8638277b7552a292fca}
+
+\item 
+std::vector$<$ wxString $>$ {\bfseries m\_\-clientSkinNames}\label{classCamuleDlg_a10165f7e63b889a48aa6ec05ae9e4fad}
+
+\item 
+bool {\bfseries m\_\-GeoIPavailable}\label{classCamuleDlg_a3603a734ab3d93c855439ad6c4ccd965}
+
+\item 
+ZipCatalog::iterator {\bfseries it}\label{classCamuleDlg_a2a074d8782ace071087e8e4d945b3848}
+
+\item 
+wxZipEntry $\ast$ {\bfseries entry}\label{classCamuleDlg_a86174a10c4233e283962261c794487f9}
+
+\item 
+ZipCatalog {\bfseries cat}\label{classCamuleDlg_ab3720de62ceaf22e08797f8bb99a72f8}
+
+\item 
+{\bf PageType} {\bfseries m\_\-logpages} [4]\label{classCamuleDlg_a40e0773a6092a888e0d973d0780e2697}
+
+\item 
+{\bf PageType} {\bfseries m\_\-networkpages} [2]\label{classCamuleDlg_a8d8c77cd404a38870c6617b064b67b54}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CamuleDlg@{CamuleDlg}!IsDialogVisible@{IsDialogVisible}}
+\index{IsDialogVisible@{IsDialogVisible}!CamuleDlg@{CamuleDlg}}
+\subsubsection[{IsDialogVisible}]{\setlength{\rightskip}{0pt plus 5cm}bool CamuleDlg::IsDialogVisible (DialogType {\em dlg})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCamuleDlg_a99bc13bc854fd1b4c1faa4e1cfcce2c5}
+
+
+Helper function for deciding if a certian dlg is visible. \begin{DoxyReturn}{Returns}
+True if the dialog is visible to the user, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amuleDlg.h\item 
+src/amuleDlg.cpp\end{DoxyCompactItemize}

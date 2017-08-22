@@ -1,0 +1,78 @@
+\section{ECNotifier Class Reference}
+\label{classECNotifier}\index{ECNotifier@{ECNotifier}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Add\_\-EC\_\-Client} ({\bf CECServerSocket} $\ast$sock)\label{classECNotifier_abfeb1082918beef7032f1f4d7d87d24e}
+
+\item 
+void {\bfseries Remove\_\-EC\_\-Client} ({\bf CECServerSocket} $\ast$sock)\label{classECNotifier_aff6f29f38fd330a0f4a4735f850feb06}
+
+\item 
+{\bf CECPacket} $\ast$ {\bfseries GetNextPacket} ({\bf CECServerSocket} $\ast$sock)\label{classECNotifier_a85a36cf8d3406e1e009d55b103c4f4c5}
+
+\item 
+void {\bfseries DownloadFile\_\-SetDirty} ({\bf CPartFile} $\ast$file)\label{classECNotifier_af70b416aea9caf2819b74e46ce061e21}
+
+\item 
+void {\bfseries DownloadFile\_\-RemoveFile} ({\bf CPartFile} $\ast$file)\label{classECNotifier_a83b26e5da3fff686a8b9e586fbfc7e7e}
+
+\item 
+void {\bfseries DownloadFile\_\-RemoveSource} ({\bf CPartFile} $\ast$file)\label{classECNotifier_aebc3718975e53c99c829ece33b3ef3e4}
+
+\item 
+void {\bfseries DownloadFile\_\-AddFile} ({\bf CPartFile} $\ast$file)\label{classECNotifier_a3fbedb4b7aef73b94055dcea3085987f}
+
+\item 
+void {\bfseries DownloadFile\_\-AddSource} ({\bf CPartFile} $\ast$file)\label{classECNotifier_afa8ca4272206d945fd9cda1be073af90}
+
+\item 
+void {\bfseries SharedFile\_\-AddFile} ({\bf CKnownFile} $\ast$file)\label{classECNotifier_aed94e651b44090ef1e0a107ec022ee88}
+
+\item 
+void {\bfseries SharedFile\_\-RemoveFile} ({\bf CKnownFile} $\ast$file)\label{classECNotifier_a5fff17ce7c89336fb6d0171b9cfd1119}
+
+\item 
+void {\bfseries SharedFile\_\-RemoveAllFiles} ()\label{classECNotifier_a350a8021abdd9f8edbe1bdff5ed54902}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EC\_\-SOURCE\_\-PRIO} \{ \par
+{\bfseries EC\_\-PARTFILE} =  0, 
+{\bfseries EC\_\-SEARCH}, 
+{\bfseries EC\_\-CLIENT}, 
+{\bfseries EC\_\-STATUS}, 
+\par
+{\bfseries EC\_\-KNOWN}, 
+{\bfseries EC\_\-STATUS\_\-LAST\_\-PRIO}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries NextPacketToSocket} ()\label{classECNotifier_a825f61b40c2cb7944281d0455597006b}
+
+\item 
+{\bf CECPacket} $\ast$ {\bfseries GetNextPacket} ({\bf ECUpdateMsgSource} $\ast$msg\_\-source\_\-array[$\,$])\label{classECNotifier_a6b89b71a870b0b948858fc94e20ea6e7}
+
+\item 
+void {\bfseries operator=} (const {\bf ECNotifier} \&)\label{classECNotifier_a4ba8d6c29d971bc64d3d53bc02d359d9}
+
+\item 
+{\bfseries ECNotifier} (const {\bf ECNotifier} \&)\label{classECNotifier_a3c3ac804dbc5fe5553fa5d867428288b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ {\bf CECServerSocket} $\ast$, {\bf ECUpdateMsgSource} $\ast$$\ast$ $>$ {\bfseries m\_\-msg\_\-source}\label{classECNotifier_a1c3cb28ae80f1d9bdb2b8769d6497950}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConn.h\item 
+src/ExternalConn.cpp\end{DoxyCompactItemize}

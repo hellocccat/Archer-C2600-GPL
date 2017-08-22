@@ -1,0 +1,333 @@
+\section{CamuleApp Class Reference}
+\label{classCamuleApp}\index{CamuleApp@{CamuleApp}}
+Inheritance diagram for CamuleApp::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCamuleApp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries OnInit} ()\label{classCamuleApp_a86799f1fb2e952e2fc8dbee1a595002a}
+
+\item 
+int {\bfseries OnExit} ()\label{classCamuleApp_aded5cbe20d0a3b27de7893cac45a7914}
+
+\item 
+bool {\bfseries ReinitializeNetwork} (wxString $\ast$msg)\label{classCamuleApp_ad653c8ee215b2ecd96d456e3d014f067}
+
+\item 
+virtual int {\bfseries InitGui} (bool geometry\_\-enable, wxString \&geometry\_\-string)\label{classCamuleApp_acd84d67229351bc843985134ba6206a6}
+
+\item 
+void {\bfseries ListenSocketHandler} (wxSocketEvent \&event)\label{classCamuleApp_ac6061b38228eb9b74f33d1d3d13b2b2f}
+
+\item 
+void {\bfseries ServerSocketHandler} (wxSocketEvent \&event)\label{classCamuleApp_a5f5d73a05839bd5264385d158dd82ccf}
+
+\item 
+void {\bfseries UDPSocketHandler} (wxSocketEvent \&event)\label{classCamuleApp_a34b92105ef9bbbc5cdfb307c4a98dfe9}
+
+\item 
+virtual int {\bfseries ShowAlert} (wxString msg, wxString title, int flags)=0\label{classCamuleApp_aec7d0abb5beddd3e7d1bbf361d443b2c}
+
+\item 
+bool {\bfseries IsRunning} () const \label{classCamuleApp_a955a82c41b7b86d8a91cfe7d31eab5e6}
+
+\item 
+bool {\bfseries IsOnShutDown} () const \label{classCamuleApp_ad7200fea0f77f95e329ae7c08ee4a6b5}
+
+\item 
+bool {\bfseries IsFirewalled} () const \label{classCamuleApp_a6e1375c9d4b0c3962fe70905badfc651}
+
+\item 
+bool {\bfseries IsConnected} () const \label{classCamuleApp_a85d2f9bd41b6f9757b5b4e79afb0a3d2}
+
+\item 
+bool {\bfseries IsConnectedED2K} () const \label{classCamuleApp_add0f06306c6526571ef32c74684e6695}
+
+\item 
+bool {\bfseries IsKadRunning} () const \label{classCamuleApp_a47f0a480c82546a5b05837d142723d5b}
+
+\item 
+bool {\bfseries IsConnectedKad} () const \label{classCamuleApp_a1b6750f67fa8c391e42b6cf15a31bbb3}
+
+\item 
+bool {\bfseries IsFirewalledKad} () const \label{classCamuleApp_a5b5fbaac2d62e28ba288f3333be3577c}
+
+\item 
+bool {\bfseries IsFirewalledKadUDP} () const \label{classCamuleApp_abda76811a6e3337d831878486cf60c0a}
+
+\item 
+bool {\bfseries IsKadRunningInLanMode} () const \label{classCamuleApp_a2de47e13d1f323302c33f6874e5e09d2}
+
+\item 
+uint32 {\bfseries GetKadUsers} () const \label{classCamuleApp_afb279ef0b80c8ff77cedc0c4310702c5}
+
+\item 
+uint32 {\bfseries GetKadFiles} () const \label{classCamuleApp_a5f8a11b3ba9d8c238521cf2dcdf5bcbf}
+
+\item 
+uint32 {\bfseries GetKadIndexedSources} () const \label{classCamuleApp_a8e854617e1637018e136485675d239a8}
+
+\item 
+uint32 {\bfseries GetKadIndexedKeywords} () const \label{classCamuleApp_aabe7ca8abd94933df81c6d70fe6c42a2}
+
+\item 
+uint32 {\bfseries GetKadIndexedNotes} () const \label{classCamuleApp_af09b8093856cdbc710187811f265fefe}
+
+\item 
+uint32 {\bfseries GetKadIndexedLoad} () const \label{classCamuleApp_abc42c50dd8824b055bf722538c24690c}
+
+\item 
+uint32 {\bfseries GetKadIPAdress} () const \label{classCamuleApp_aba957123f7d1b85e1a594596e7a87ac3}
+
+\item 
+uint8 {\bfseries GetBuddyStatus} () const \label{classCamuleApp_ae20b5e96b8a800990759c136b753182d}
+
+\item 
+uint32 {\bfseries GetBuddyIP} () const \label{classCamuleApp_a5f8e1b82f113c7fc87f38abb34a8df40}
+
+\item 
+uint32 {\bfseries GetBuddyPort} () const \label{classCamuleApp_a3c8e8cf3b1e41cb93b52e62b4e7b4461}
+
+\item 
+bool {\bfseries CanDoCallback} (uint32 clientServerIP, uint16 clientServerPort)\label{classCamuleApp_aae59ddb96c26b12d82218c3480322adb}
+
+\item 
+void {\bfseries OnlineSig} (bool zero=false)\label{classCamuleApp_a8a1ac7f0d839d0c9283162f114173a96}
+
+\item 
+void {\bfseries Localize\_\-mule} ()\label{classCamuleApp_aaf0adec0ba6d4794d42d21d50a2924c3}
+
+\item 
+void {\bfseries Trigger\_\-New\_\-version} (wxString newMule)\label{classCamuleApp_a0ae7f40aace2550da5835ada449ca046}
+
+\item 
+uint32 {\bfseries GetPublicIP} (bool ignorelocal=false) const \label{classCamuleApp_ad8b4ed8c731426af1e56d26f65409460}
+
+\item 
+void {\bfseries SetPublicIP} (const uint32 dwIP)\label{classCamuleApp_afb1c66018b0310b1e320751936e8d587}
+
+\item 
+uint32 {\bfseries GetED2KID} () const \label{classCamuleApp_a743514ad9b45d3b04c9adcf3d415bf35}
+
+\item 
+uint32 {\bfseries GetID} () const \label{classCamuleApp_ab2d1388a902652cb279f4bdb03dc8801}
+
+\item 
+void {\bfseries ShutDown} ()\label{classCamuleApp_a60f376e8cf971cad36c4232b517d8204}
+
+\item 
+wxString {\bfseries GetLog} (bool reset=false)\label{classCamuleApp_a78cf2186c359a0bb288534217a41a9a5}
+
+\item 
+wxString {\bfseries GetServerLog} (bool reset=false)\label{classCamuleApp_aeee2bfccd24c0652753867195fdb8618}
+
+\item 
+wxString {\bfseries GetDebugLog} (bool reset=false)\label{classCamuleApp_acc0b1b818d5855b99734ed95b7eca837}
+
+\item 
+bool {\bfseries AddServer} ({\bf CServer} $\ast$srv, bool fromUser=false)\label{classCamuleApp_a53d0853af9d54c2db15e5907cd10dccd}
+
+\item 
+void {\bfseries AddServerMessageLine} (wxString \&msg)\label{classCamuleApp_aa7b6f28c7b9380c9c4e9d92e2c6db332}
+
+\item 
+void {\bfseries SetOSFiles} (const wxString new\_\-path)\label{classCamuleApp_abe4572b5e111216a01e4dc0cd1762f47}
+
+\item 
+const wxString \& {\bfseries GetOSType} () const \label{classCamuleApp_affcfcf2136d4cb76bce171c797d108a2}
+
+\item 
+void {\bfseries ShowUserCount} ()\label{classCamuleApp_a3cec99db2b6a5efcd696431723358984}
+
+\item 
+void {\bfseries ShowConnectionState} (bool forceUpdate=false)\label{classCamuleApp_a246a250d75cf2fce6b67133765c4c8ee}
+
+\item 
+void {\bfseries StartKad} ()\label{classCamuleApp_a98c31b78d806a65a8638c64b40a92dc6}
+
+\item 
+void {\bfseries StopKad} ()\label{classCamuleApp_a38d5f628d5805331c269e9dff48fdfa9}
+
+\item 
+void {\bf BootstrapKad} (uint32 ip, uint16 port)
+\item 
+void {\bf UpdateNotesDat} (const wxString \&str)
+\item 
+void {\bfseries DisconnectED2K} ()\label{classCamuleApp_af640a1e26f6d752b1b9eed9de36941a3}
+
+\item 
+bool {\bfseries CryptoAvailable} () const \label{classCamuleApp_a23ff7817439fcaf56278ac3a3e915344}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExternalConn} $\ast$ {\bfseries ECServerHandler}\label{classCamuleApp_a8654010b1374b16542eb1ef49af7ecbe}
+
+\item 
+{\bf CPreferences} $\ast$ {\bfseries glob\_\-prefs}\label{classCamuleApp_acf79fdbc41b89b2b8cb8847e2c48789d}
+
+\item 
+{\bf CDownloadQueue} $\ast$ {\bfseries downloadqueue}\label{classCamuleApp_a00febd946b20be975950483073cfe76f}
+
+\item 
+{\bf CUploadQueue} $\ast$ {\bfseries uploadqueue}\label{classCamuleApp_a3840925803b0d51b81e8afcf8cb04afd}
+
+\item 
+{\bf CServerConnect} $\ast$ {\bfseries serverconnect}\label{classCamuleApp_ad52ad8dc34d9cdec0504301def33fbd0}
+
+\item 
+{\bf CSharedFileList} $\ast$ {\bfseries sharedfiles}\label{classCamuleApp_a0b2fa58ae3dd6fe93ba6552a2df6c389}
+
+\item 
+{\bf CServerList} $\ast$ {\bfseries serverlist}\label{classCamuleApp_a22816d0243e2b5c6e02de475c029d4ca}
+
+\item 
+{\bf CListenSocket} $\ast$ {\bfseries listensocket}\label{classCamuleApp_a2491e769ba680c4187491e5036c68ab8}
+
+\item 
+{\bf CClientList} $\ast$ {\bfseries clientlist}\label{classCamuleApp_a4b1cb6beaaea8791837cd7890a4e62e3}
+
+\item 
+{\bf CKnownFileList} $\ast$ {\bfseries knownfiles}\label{classCamuleApp_a116b10cc75f8269944bc088545875555}
+
+\item 
+{\bf CCanceledFileList} $\ast$ {\bfseries canceledfiles}\label{classCamuleApp_ae6aea7a63992ef19b1935e030182cf5c}
+
+\item 
+{\bf CSearchList} $\ast$ {\bfseries searchlist}\label{classCamuleApp_a99f12de8ed19df5525dfb6d1a9f7c1d7}
+
+\item 
+{\bf CClientCreditsList} $\ast$ {\bfseries clientcredits}\label{classCamuleApp_a8e1d9153cd1ea7d9c70365dd55641b6a}
+
+\item 
+{\bf CFriendList} $\ast$ {\bfseries friendlist}\label{classCamuleApp_a441d86264e1741b2fea31b1d80024f32}
+
+\item 
+{\bf CClientUDPSocket} $\ast$ {\bfseries clientudp}\label{classCamuleApp_a44f89a53a46d6eaf80d097f57b388362}
+
+\item 
+{\bf CStatistics} $\ast$ {\bfseries m\_\-statistics}\label{classCamuleApp_a16af2c1f918a53ef62f31c91640f54c7}
+
+\item 
+{\bf CIPFilter} $\ast$ {\bfseries ipfilter}\label{classCamuleApp_aeb5b1bbad4b3b7dc897b6f7ff330d9b9}
+
+\item 
+{\bf UploadBandwidthThrottler} $\ast$ {\bfseries uploadBandwidthThrottler}\label{classCamuleApp_aa90fbfe0e8d07a259d5b095be09a1430}
+
+\item 
+wxLocale {\bfseries m\_\-locale}\label{classCamuleApp_acfd5de07aab3c203771a4fca2a3732b8}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnUDPDnsDone} ({\bf CMuleInternalEvent} \&evt)\label{classCamuleApp_ad39271142a01f1f872dbe178cc442cd1}
+
+\item 
+void {\bfseries OnSourceDnsDone} ({\bf CMuleInternalEvent} \&evt)\label{classCamuleApp_a48debcbc4ca4edbf22440caf29c5262a}
+
+\item 
+void {\bfseries OnServerDnsDone} ({\bf CMuleInternalEvent} \&evt)\label{classCamuleApp_a76ad96cc1f3737239d2056b7e23c9b37}
+
+\item 
+void {\bfseries OnTCPTimer} ({\bf CTimerEvent} \&evt)\label{classCamuleApp_ab24b6594328680e1a5dbe98df8dc5719}
+
+\item 
+void {\bfseries OnCoreTimer} ({\bf CTimerEvent} \&evt)\label{classCamuleApp_a1149a9ba66319b4fc8fca1661e5b9dda}
+
+\item 
+void {\bfseries OnFinishedHashing} ({\bf CHashingEvent} \&evt)\label{classCamuleApp_aab33884f97bca67e434874d8781df539}
+
+\item 
+void {\bfseries OnFinishedAICHHashing} ({\bf CHashingEvent} \&evt)\label{classCamuleApp_af3518c1e08b296ca946796161b928230}
+
+\item 
+void {\bfseries OnFinishedCompletion} ({\bf CCompletionEvent} \&evt)\label{classCamuleApp_a8adf561e25c99e848134118a4b0cb103}
+
+\item 
+void {\bfseries OnFinishedAllocation} ({\bf CAllocFinishedEvent} \&evt)\label{classCamuleApp_a4ef10f63f51006b69873eab0a80d7326}
+
+\item 
+void {\bfseries OnFinishedHTTPDownload} ({\bf CMuleInternalEvent} \&evt)\label{classCamuleApp_a8b70b2a544dd0851d344bc86426353ca}
+
+\item 
+void {\bfseries OnHashingShutdown} ({\bf CMuleInternalEvent} \&)\label{classCamuleApp_a54740e7086e611ab33c40eea507e9181}
+
+\item 
+void {\bfseries OnNotifyEvent} ({\bf CMuleGUIEvent} \&evt)\label{classCamuleApp_afff5d17a240e9e2e7c598e7796a67c35}
+
+\item 
+void {\bfseries SetTimeOnTransfer} ()\label{classCamuleApp_a63b0a9168e2670f0d84664243d3a260b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+APPState {\bfseries m\_\-app\_\-state}\label{classCamuleApp_a56f7cd10b28d38a2e7c046f33714dfb2}
+
+\item 
+wxString {\bfseries m\_\-emulesig\_\-path}\label{classCamuleApp_a24c0af592d0828565c069c4716b30835}
+
+\item 
+wxString {\bfseries m\_\-amulesig\_\-path}\label{classCamuleApp_a7d7f5830f2338ea9199959b05d8b2a58}
+
+\item 
+uint32 {\bfseries m\_\-dwPublicIP}\label{classCamuleApp_a57a619cf1aa54429fe8e5dec8f60da53}
+
+\item 
+long {\bfseries webserver\_\-pid}\label{classCamuleApp_a0d27f829e99a791adc3d5528117747a4}
+
+\item 
+wxString {\bfseries server\_\-msg}\label{classCamuleApp_ace8f3848945fd84c45dd64b256d80f4c}
+
+\item 
+{\bf CTimer} $\ast$ {\bfseries core\_\-timer}\label{classCamuleApp_af973a856830e968dbf93db01e9c70a30}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries APPState} \{ {\bfseries APP\_\-STATE\_\-RUNNING} =  0, 
+{\bfseries APP\_\-STATE\_\-SHUTTINGDOWN}, 
+{\bfseries APP\_\-STATE\_\-STARTING}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries OnUnhandledException} ()\label{classCamuleApp_a6f008d970cb2232ce7038a17748c0b35}
+
+\item 
+void {\bfseries CheckNewVersion} (uint32 result)\label{classCamuleApp_a23063eee5c285773332cf06678b06cbc}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries m\_\-localip}\label{classCamuleApp_a213109bac9e1f34a52e9cc2084c70400}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CamuleApp@{CamuleApp}!BootstrapKad@{BootstrapKad}}
+\index{BootstrapKad@{BootstrapKad}!CamuleApp@{CamuleApp}}
+\subsubsection[{BootstrapKad}]{\setlength{\rightskip}{0pt plus 5cm}void CamuleApp::BootstrapKad (uint32 {\em ip}, \/  uint16 {\em port})}\label{classCamuleApp_a2db6a00c17f7ceb8f30a81bb74439e72}
+
+
+Bootstraps kad from the specified IP (must be in hostorder). \index{CamuleApp@{CamuleApp}!UpdateNotesDat@{UpdateNotesDat}}
+\index{UpdateNotesDat@{UpdateNotesDat}!CamuleApp@{CamuleApp}}
+\subsubsection[{UpdateNotesDat}]{\setlength{\rightskip}{0pt plus 5cm}void CamuleApp::UpdateNotesDat (const wxString \& {\em str})}\label{classCamuleApp_a53eca5c2052b392bbcef967cc13a9e2f}
+
+
+Updates the nodes.dat file from the specified url. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule.h\item 
+src/amule.cpp\end{DoxyCompactItemize}

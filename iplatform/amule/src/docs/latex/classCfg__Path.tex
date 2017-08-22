@@ -1,0 +1,92 @@
+\section{Cfg\_\-Path Class Reference}
+\label{classCfg__Path}\index{Cfg\_\-Path@{Cfg\_\-Path}}
+
+
+Cfg class for \doxyref{CPath}{p.}{classCPath}.  
+Inheritance diagram for Cfg\_\-Path::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classCfg__Path}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cfg\_\-Path} (const wxString \&keyname, {\bf CPath} \&value, const wxString \&defaultVal=EmptyString)
+\item 
+virtual void {\bf LoadFromFile} (wxConfigBase $\ast$cfg)
+\item 
+virtual void {\bf SaveToFile} (wxConfigBase $\ast$cfg)
+\item 
+virtual bool {\bf TransferToWindow} ()
+\item 
+virtual bool {\bf TransferFromWindow} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-temp\_\-path}\label{classCfg__Path_a7fa862a2ac611f1e60c2b9c2a0c178a6}
+
+\item 
+{\bf CPath} \& {\bfseries m\_\-real\_\-path}\label{classCfg__Path_ab0b3bcc1389901d13b0c2ecadb731c48}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cfg class for \doxyref{CPath}{p.}{classCPath}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cfg\_\-Path@{Cfg\_\-Path}!Cfg\_\-Path@{Cfg\_\-Path}}
+\index{Cfg\_\-Path@{Cfg\_\-Path}!Cfg_Path@{Cfg\_\-Path}}
+\subsubsection[{Cfg\_\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Cfg\_\-Path::Cfg\_\-Path (const wxString \& {\em keyname}, \/  {\bf CPath} \& {\em value}, \/  const wxString \& {\em defaultVal} = {\ttfamily EmptyString})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCfg__Path_a99c064b84f08c6dedcef695ce7b5f2b9}
+
+
+Constructor. 
+
+\subsection{Member Function Documentation}
+\index{Cfg\_\-Path@{Cfg\_\-Path}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!Cfg_Path@{Cfg\_\-Path}}
+\subsubsection[{LoadFromFile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Cfg\_\-Path::LoadFromFile (wxConfigBase $\ast$ {\em cfg})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Path_ae6f898187d218f6483e88a07a3718407}
+\begin{DoxySeeAlso}{See also}
+\doxyref{Cfg\_\-Str::LoadFromFile}{p.}{classCfg__Str_aa4e4fc102cd6935ebd24b3b19a3dbff4}. 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf Cfg\_\-Str} \doxyref{}{p.}{classCfg__Str_aa4e4fc102cd6935ebd24b3b19a3dbff4}.
+
+References CPath::FromUniv().\index{Cfg\_\-Path@{Cfg\_\-Path}!SaveToFile@{SaveToFile}}
+\index{SaveToFile@{SaveToFile}!Cfg_Path@{Cfg\_\-Path}}
+\subsubsection[{SaveToFile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Cfg\_\-Path::SaveToFile (wxConfigBase $\ast$ {\em cfg})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Path_a09f65b495aed4ddc9496c0cdda0ad2bd}
+\begin{DoxySeeAlso}{See also}
+\doxyref{Cfg\_\-Str::SaveToFile}{p.}{classCfg__Str_a1b1daf97ce5f88b0ee79c9f72af721e5}. 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf Cfg\_\-Str} \doxyref{}{p.}{classCfg__Str_a1b1daf97ce5f88b0ee79c9f72af721e5}.
+
+References CPath::ToUniv().\index{Cfg\_\-Path@{Cfg\_\-Path}!TransferFromWindow@{TransferFromWindow}}
+\index{TransferFromWindow@{TransferFromWindow}!Cfg_Path@{Cfg\_\-Path}}
+\subsubsection[{TransferFromWindow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Path::TransferFromWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Path_a0e6a255e323a02ace456bcd373286dc6}
+\begin{DoxySeeAlso}{See also}
+\doxyref{Cfg\_\-Tmpl::TransferFromWindow}{p.}{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}. 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf Cfg\_\-Tmpl$<$ wxString $>$} \doxyref{}{p.}{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}.
+
+References Cfg\_\-Tmpl$<$ wxString $>$::TransferFromWindow().\index{Cfg\_\-Path@{Cfg\_\-Path}!TransferToWindow@{TransferToWindow}}
+\index{TransferToWindow@{TransferToWindow}!Cfg_Path@{Cfg\_\-Path}}
+\subsubsection[{TransferToWindow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Path::TransferToWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Path_a8c9b4197c6d841c286a473632ae1864c}
+\begin{DoxySeeAlso}{See also}
+\doxyref{Cfg\_\-Tmpl::TransferToWindow}{p.}{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}. 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf Cfg\_\-Tmpl$<$ wxString $>$} \doxyref{}{p.}{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}.
+
+References CPath::GetRaw().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Preferences.cpp\end{DoxyCompactItemize}

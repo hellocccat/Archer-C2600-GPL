@@ -1,0 +1,96 @@
+\section{CQueueObserver$<$ ValueType $>$ Class Template Reference}
+\label{classCQueueObserver}\index{CQueueObserver@{CQueueObserver}}
+
+
+This class is an automatically synchronized queue connected with an ObservableQueue.  
+
+
+{\ttfamily \#include $<$ObservableQueue.h$>$}Inheritance diagram for CQueueObserver$<$ ValueType $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCQueueObserver}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf CQueueEvent}$<$ ValueType $>$ {\bfseries EventType}\label{classCQueueObserver_a27ebb4bac0dae757c381c0c17907fb8c}
+
+\item 
+typedef {\bf CObserver}$<$ {\bf EventType} $>$::{\bf ObservableType} {\bfseries ObservableType}\label{classCQueueObserver_a39cc33d5689deb15fb1f08f3934c3684}
+
+\item 
+typedef {\bf EventType::ValueList} {\bfseries ValueList}\label{classCQueueObserver_ae671bd120e3254036c9d8b7948349946}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CQueueObserver} ()\label{classCQueueObserver_ad009b07a84f081d6d8e37f55c1e3f653}
+
+\item 
+virtual void {\bf ReceiveNotification} (const {\bf ObservableType} $\ast$, const {\bf EventType} \&e)\label{classCQueueObserver_a061d3aa88f8b18bf846c193d57aee303}
+
+\item 
+ValueType {\bf GetNext} ()
+\item 
+size\_\-t {\bf GetRemaining} () const \label{classCQueueObserver_a6c77bf338cfad2faf14d992f331e128a}
+
+\item 
+bool {\bf IsActive} () const \label{classCQueueObserver_a09b2f1c5e21cea14f1ea7cf4a636c647}
+
+\item 
+void {\bf Reset} ()\label{classCQueueObserver_a322152ddd10050677eafd751405cf3c0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::multiset$<$ ValueType $>$ {\bfseries Queue}\label{classCQueueObserver_a6436327bced25fb2ad6b653d2ba098d5}
+
+\item 
+typedef Queue::iterator {\bfseries QueueIterator}\label{classCQueueObserver_a88f1c18a7ffb766d5a6c1f8f7d61fffe}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxMutex {\bf m\_\-mutex}\label{classCQueueObserver_a342ff6ab3b680d33883d2f67dfa184a7}
+
+\item 
+Queue {\bf m\_\-queue}\label{classCQueueObserver_a0c9e45f97c4927841a579def501a4bac}
+
+\item 
+const {\bf ObservableType} $\ast$ {\bf m\_\-owner}\label{classCQueueObserver_ab014c2f8cc464015397a8ae7d329786e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename ValueType$>$ class CQueueObserver$<$ ValueType $>$}
+
+This class is an automatically synchronized queue connected with an ObservableQueue. Note that this observer can only be assigned to ONE observable at a time!
+
+This class implements a queue (out-\/order not specified) that allows an ObservableQueue object to be object to be used as a queue without making by another object in a safe manner. Changes to the contents of the original queue are propagated to this queue, such that it will never contain values not found in the original queue and such that it will add new values added to the original queue.
+
+This allows the contents to be accessed safely, when for instance it is needed to iterate over the contents over a period of time, where one cannot be certain of the current state of the actual contents of the original lists.
+
+This class supersedes such broken solutions such as remembering the last used position in the original list, since no changes made to the original list will result in items being skipped or treated twice$\ast$.
+
+$\ast$ With the exception of the same item being removed and then re-\/added, in which case the \doxyref{CQueueObserver}{p.}{classCQueueObserver} class will consider it a new item. 
+
+\subsection{Member Function Documentation}
+\index{CQueueObserver@{CQueueObserver}!GetNext@{GetNext}}
+\index{GetNext@{GetNext}!CQueueObserver@{CQueueObserver}}
+\subsubsection[{GetNext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename ValueType $>$ ValueType {\bf CQueueObserver}$<$ ValueType $>$::GetNext ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCQueueObserver_a16a0e26dabd14056c7e8f28d4c5f5b91}
+
+
+Returns the next element from the queue. Note: Objects will not be returned in the same order as they were found in the original observable. Also, note that calling \doxyref{GetNext()}{p.}{classCQueueObserver_a16a0e26dabd14056c7e8f28d4c5f5b91} on an empty queue should only be done if the default contructed value does not match a valid object and can be used to check for End of Queue. 
+
+References CQueueObserver$<$ ValueType $>$::m\_\-mutex, and CQueueObserver$<$ ValueType $>$::m\_\-queue.
+
+Referenced by CSearchList::OnGlobalSearchTimer().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ObservableQueue.h\end{DoxyCompactItemize}

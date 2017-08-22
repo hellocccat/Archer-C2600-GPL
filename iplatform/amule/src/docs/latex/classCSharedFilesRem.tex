@@ -1,0 +1,38 @@
+\section{CSharedFilesRem Class Reference}
+\label{classCSharedFilesRem}\index{CSharedFilesRem@{CSharedFilesRem}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CSharedFilesRem} ({\bf CRemoteConnect} $\ast$conn)\label{classCSharedFilesRem_a2bd8d0faf792d9d4cfdf0d9ea9601de3}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries GetFileByID} (uint32 id)\label{classCSharedFilesRem_a5bfbb7a410f3663100aeaad4c85c0d2a}
+
+\item 
+void {\bfseries SetFilePrio} ({\bf CKnownFile} $\ast$file, uint8 prio)\label{classCSharedFilesRem_a98dcb943cd98582a6fad4709af6d145e}
+
+\item 
+void {\bfseries Reload} (bool sendtoserver=true, bool firstload=false)\label{classCSharedFilesRem_a91b42cdcf5056f94eed45437f7c8494f}
+
+\item 
+bool {\bfseries RenameFile} ({\bf CKnownFile} $\ast$file, const {\bf CPath} \&newName)\label{classCSharedFilesRem_a30a767b41917afb8857c35d3d569b694}
+
+\item 
+void {\bfseries SetFileCommentRating} ({\bf CKnownFile} $\ast$file, const wxString \&newComment, int8 newRating)\label{classCSharedFilesRem_add0aedd5aa7d80836a32bd7195ae3799}
+
+\item 
+void {\bfseries CopyFileList} (std::vector$<$ {\bf CKnownFile} $\ast$ $>$ \&out\_\-list) const \label{classCSharedFilesRem_af7077e90532e4cc7535f46f21d866b50}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CRemoteConnect} $\ast$ {\bfseries m\_\-conn}\label{classCSharedFilesRem_a1b7a08a646f8200ecf20301a8076bed8}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

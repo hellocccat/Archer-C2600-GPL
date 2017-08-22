@@ -1,0 +1,394 @@
+\section{CDownloadQueue Class Reference}
+\label{classCDownloadQueue}\index{CDownloadQueue@{CDownloadQueue}}
+
+
+The download queue houses all active downloads.  
+
+
+{\ttfamily \#include $<$DownloadQueue.h$>$}Inheritance diagram for CDownloadQueue::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCDownloadQueue}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Hostname\_\-Entry}
+\begin{DoxyCompactList}\small\item\em Structure used to store sources with dynamic hostnames. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CDownloadQueue} ()\label{classCDownloadQueue_a535b1da6bf45937c074861f453375a7f}
+
+\item 
+{\bf $\sim$CDownloadQueue} ()\label{classCDownloadQueue_a61d1eeaee70e0dc4be19460fd82fc544}
+
+\item 
+void {\bf LoadMetFiles} (const {\bf CPath} \&path)
+\item 
+void {\bf Process} ()\label{classCDownloadQueue_a8657754c2d6afcfd89375b4a4e857192}
+
+\item 
+{\bf CPartFile} $\ast$ {\bf GetFileByID} (const {\bf CMD4Hash} \&filehash) const 
+\item 
+{\bf CPartFile} $\ast$ {\bf GetFileByIndex} (unsigned int idx) const 
+\item 
+bool {\bf IsFileExisting} (const {\bf CMD4Hash} \&fileid) const \label{classCDownloadQueue_a69b08bfefe72205168ab14bf04e83690}
+
+\item 
+bool {\bf IsPartFile} (const {\bf CKnownFile} $\ast$file) const \label{classCDownloadQueue_a7ced3914956072120a4f1ce93aee2c05}
+
+\item 
+void {\bf OnConnectionState} (bool bConnected)\label{classCDownloadQueue_a066f4891c40f5f84a7ce5b90ddc48815}
+
+\item 
+void {\bf AddSearchToDownload} ({\bf CSearchFile} $\ast$toadd, uint8 category)
+\item 
+void {\bf AddDownload} ({\bf CPartFile} $\ast$newfile, bool paused, uint8 category)
+\item 
+void {\bf RemoveFile} ({\bf CPartFile} $\ast$toremove, bool keepAsCompleted=false)
+\item 
+void {\bf SaveSourceSeeds} ()\label{classCDownloadQueue_a5d0cba092b1ad93a9408df017c318046}
+
+\item 
+void {\bf LoadSourceSeeds} ()\label{classCDownloadQueue_ab7c309806762279f18f5f27b2762cabc}
+
+\item 
+void {\bf CheckAndAddSource} ({\bf CPartFile} $\ast$sender, {\bf CUpDownClient} $\ast$source)
+\item 
+void {\bf CheckAndAddKnownSource} ({\bf CPartFile} $\ast$sender, {\bf CUpDownClient} $\ast$source)
+\item 
+bool {\bf RemoveSource} ({\bf CUpDownClient} $\ast$toremove, bool updatewindow=true, bool bDoStatsUpdate=true)
+\item 
+{\bf CUpDownClient} $\ast$ {\bf GetDownloadClientByIP\_\-UDP} (uint32 dwIP, uint16 nUDPPort) const 
+\item 
+void {\bf SendLocalSrcRequest} ({\bf CPartFile} $\ast$sender)\label{classCDownloadQueue_a7107266ac67ab16fc698da12234ec208}
+
+\item 
+void {\bf RemoveLocalServerRequest} ({\bf CPartFile} $\ast$pFile)\label{classCDownloadQueue_ae5f0a490fb97ca80ab7bdce4f19d4061}
+
+\item 
+void {\bf ResetLocalServerRequests} ()\label{classCDownloadQueue_a04932e62ed208305df22509d5b9b5a3f}
+
+\item 
+void {\bf StartNextFile} ({\bf CPartFile} $\ast$oldfile)
+\item 
+void {\bf ResetCatParts} (uint8 cat)\label{classCDownloadQueue_a7b20bda119d3d274e6a62a998e8cd66e}
+
+\item 
+void {\bf SetCatPrio} (uint8 cat, uint8 newprio)\label{classCDownloadQueue_a19f92465551dd9eb3033326a579b1bf9}
+
+\item 
+void {\bf SetCatStatus} (uint8 cat, int newstatus)\label{classCDownloadQueue_ad8b0b99302ebd970b65e082d74a43ed1}
+
+\item 
+uint16 {\bf GetFileCount} () const \label{classCDownloadQueue_a4afdaa4a0005b6a409eb9156ba770c60}
+
+\item 
+void {\bf CopyFileList} (std::vector$<$ {\bf CPartFile} $\ast$ $>$ \&out\_\-list, bool includeCompleted=false) const \label{classCDownloadQueue_af416cfa4702c432171f2e0acfd0d055e}
+
+\item 
+uint16 {\bf GetDownloadingFileCount} () const \label{classCDownloadQueue_a8a3ede3222b2b2a8ef91d6a1bad4d9c7}
+
+\item 
+uint16 {\bf GetPausedFileCount} () const \label{classCDownloadQueue_a852e350315ba3dbb7084583337cef1ec}
+
+\item 
+void {\bf OnHostnameResolved} (uint32 ip)\label{classCDownloadQueue_aa307bb211a7bc6874c5b5302dc4a6443}
+
+\item 
+bool {\bf AddLink} (const wxString \&link, uint8 category=0)\label{classCDownloadQueue_a5e97c6ab258cf32577d23813f1b55a05}
+
+\item 
+bool {\bfseries AddED2KLink} (const wxString \&link, uint8 category=0)\label{classCDownloadQueue_a47b40e92db60a570f05107df4561926f}
+
+\item 
+bool {\bfseries AddED2KLink} (const {\bf CED2KLink} $\ast$link, uint8 category=0)\label{classCDownloadQueue_a6fa618f5be7a1417fb6a7b5c30dab0af}
+
+\item 
+bool {\bfseries AddED2KLink} (const {\bf CED2KFileLink} $\ast$link, uint8 category=0)\label{classCDownloadQueue_aa5b9ec1336befdb50af2276a211ba3bc}
+
+\item 
+bool {\bfseries AddED2KLink} (const {\bf CED2KServerLink} $\ast$link)\label{classCDownloadQueue_ac96e29b620024601bd50ad8848585fc1}
+
+\item 
+bool {\bfseries AddED2KLink} (const {\bf CED2KServerListLink} $\ast$link)\label{classCDownloadQueue_a5e201512f91fa4b85dafad118dda3dee}
+
+\item 
+{\bf CServer} $\ast$ {\bf GetUDPServer} () const \label{classCDownloadQueue_a0a384df23ba8e9c428f1018b057057ed}
+
+\item 
+void {\bf SetUDPServer} ({\bf CServer} $\ast$server)\label{classCDownloadQueue_ab83f2fd149fd24af359cb46976bedb64}
+
+\item 
+void {\bf StopUDPRequests} ()\label{classCDownloadQueue_a8fdebf5825fc616ba8f937e0f634b4ad}
+
+\item 
+void {\bf KademliaSearchFile} (uint32\_\-t searchID, const {\bf Kademlia::CUInt128} $\ast$pcontactID, const {\bf Kademlia::CUInt128} $\ast$pkadID, uint8\_\-t type, uint32\_\-t ip, uint16\_\-t tcp, uint16\_\-t udp, uint32\_\-t buddyip, uint16\_\-t buddyport, uint8\_\-t byCryptOptions)\label{classCDownloadQueue_a418f5a92095e039bf3d308b76c037472}
+
+\item 
+{\bf CPartFile} $\ast$ {\bfseries GetFileByKadFileSearchID} (uint32 id) const \label{classCDownloadQueue_a9ae57a959c3a3612ebab19a3b8f025ef}
+
+\item 
+bool {\bfseries DoKademliaFileRequest} ()\label{classCDownloadQueue_af0efcc4e72b91563a8b853e4782495a2}
+
+\item 
+void {\bfseries SetLastKademliaFileRequest} ()\label{classCDownloadQueue_a2c51372e735cc87f22fd37c9ae176d20}
+
+\item 
+uint32 {\bfseries GetRareFileThreshold} () const \label{classCDownloadQueue_aad21042258a3215d0e9c377338cd199d}
+
+\item 
+uint32 {\bfseries GetCommonFileThreshold} () const \label{classCDownloadQueue_af34fbf31ae55da0f3bd89d4cb1b384c9}
+
+\item 
+void {\bf ClearCompleted} (const ListOfUInts32 \&ecids)\label{classCDownloadQueue_a1abb30d2257f28ecc1b408d60d723faa}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::deque$<$ {\bf CPartFile} $\ast$ $>$ {\bfseries FileQueue}\label{classCDownloadQueue_ab1e133d165eebf05dbac45723d55d645}
+
+\item 
+typedef std::list$<$ {\bf CPartFile} $\ast$ $>$ {\bfseries FileList}\label{classCDownloadQueue_a8f4e19d9b060b6d0b9a7fb271243d1ce}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf ObserverAdded} ({\bf ObserverType} $\ast$o)\label{classCDownloadQueue_a72c94d8e90868ec08d83a79c00aa0ab9}
+
+\item 
+void {\bf DoSortByPriority} ()\label{classCDownloadQueue_a2d77d536e249056f22e38dca197af8a1}
+
+\item 
+void {\bf CheckDiskspace} (const {\bf CPath} \&path)
+\item 
+void {\bf DoStopUDPRequests} ()\label{classCDownloadQueue_a432abdd07e9e1cd352775426f8a8b5f4}
+
+\item 
+void {\bfseries ProcessLocalRequests} ()\label{classCDownloadQueue_afb648acfb20fe680d764db0c9fec61a1}
+
+\item 
+bool {\bfseries SendNextUDPPacket} ()\label{classCDownloadQueue_a539923aac2e697f2e00968d1debf94d4}
+
+\item 
+int {\bfseries GetMaxFilesPerUDPServerPacket} () const \label{classCDownloadQueue_a4b02fc8d81229a932be9c414869012f9}
+
+\item 
+bool {\bfseries SendGlobGetSourcesUDPPacket} ({\bf CMemFile} \&data)\label{classCDownloadQueue_a9e13a0d5550d00ec719c49b6b69758ee}
+
+\item 
+void {\bfseries AddToResolve} (const {\bf CMD4Hash} \&fileid, const wxString \&pszHostname, uint16 port, const wxString \&hash, uint8 cryptoptions)\label{classCDownloadQueue_a25b2a3d00bb3a1bf5f528d198c76b740}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxMutex {\bf m\_\-mutex}\label{classCDownloadQueue_a015ae83ec6c131dbaca7c4486573a453}
+
+\item 
+uint32 {\bfseries m\_\-datarate}\label{classCDownloadQueue_a1a40cc6b02b8d3a4db76a3d3d70eb562}
+
+\item 
+uint32 {\bfseries m\_\-lastDiskCheck}\label{classCDownloadQueue_a73ed21c3f7d081a777042edde51205ad}
+
+\item 
+uint32 {\bfseries m\_\-lastudpsearchtime}\label{classCDownloadQueue_a125e501960c589252a5ddd8a7a41080e}
+
+\item 
+uint32 {\bfseries m\_\-lastsorttime}\label{classCDownloadQueue_a2663496ab39445e0b060e1df97e030b0}
+
+\item 
+uint32 {\bfseries m\_\-lastudpstattime}\label{classCDownloadQueue_a43f99ae867bff68b82399e27299d5839}
+
+\item 
+uint32 {\bfseries m\_\-nLastED2KLinkCheck}\label{classCDownloadQueue_a0787f5ecc74f6a1d647c0698f7422e93}
+
+\item 
+uint8 {\bfseries m\_\-cRequestsSentToServer}\label{classCDownloadQueue_ab98c054fbe31b02e2fe716d999bf787f}
+
+\item 
+uint32 {\bfseries m\_\-dwNextTCPSrcReq}\label{classCDownloadQueue_a2d7086422ead3e8922be314fb5a6f0a0}
+
+\item 
+uint8 {\bfseries m\_\-udcounter}\label{classCDownloadQueue_a48a0c5e8ea21764725209595c63680cc}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries m\_\-udpserver}\label{classCDownloadQueue_a74b1577d1cd010a64b62381814c1b362}
+
+\item 
+std::deque$<$ {\bf Hostname\_\-Entry} $>$ {\bfseries m\_\-toresolve}\label{classCDownloadQueue_a5ac90959ff4cca4bf41a12429fb59893}
+
+\item 
+FileQueue {\bfseries m\_\-filelist}\label{classCDownloadQueue_af2c472b222f7d8214d4979f4d2dc7d8e}
+
+\item 
+FileList {\bfseries m\_\-localServerReqQueue}\label{classCDownloadQueue_a92718bed8243fa3ed352f5c4dcc37546}
+
+\item 
+FileList {\bf m\_\-completedDownloads}\label{classCDownloadQueue_a9b9d788af3a1e621fa7e963c5088cbe2}
+
+\item 
+{\bf CQueueObserver}$<$ {\bf CServer} $\ast$ $>$ {\bf m\_\-queueServers}\label{classCDownloadQueue_ae8944a7069097ea35e5b3bceca14cbda}
+
+\item 
+{\bf CQueueObserver}$<$ {\bf CPartFile} $\ast$ $>$ {\bf m\_\-queueFiles}\label{classCDownloadQueue_ae0d15dd85e2079d760a010249bca16e5}
+
+\item 
+uint32 {\bfseries lastkademliafilerequest}\label{classCDownloadQueue_a2c628c6759f88d571401f8223657d10b}
+
+\item 
+uint32 {\bf m\_\-rareFileThreshold}\label{classCDownloadQueue_a0bcf63482507f7f1bb479a9a5a951f33}
+
+\item 
+uint32 {\bf m\_\-commonFileThreshold}\label{classCDownloadQueue_a29e4fbf1c95eede560b4b9dede801769}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The download queue houses all active downloads. This class should be thread-\/safe. 
+
+\subsection{Member Function Documentation}
+\index{CDownloadQueue@{CDownloadQueue}!AddDownload@{AddDownload}}
+\index{AddDownload@{AddDownload}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{AddDownload}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadQueue::AddDownload ({\bf CPartFile} $\ast$ {\em newfile}, \/  bool {\em paused}, \/  uint8 {\em category})}\label{classCDownloadQueue_ab6cec8c090865ec4e431fb51ff7d87fc}
+
+
+Adds an existing partfile to the queue. 
+\begin{DoxyParams}{Parameters}
+\item[{\em newfile}]The file to add. \item[{\em paused}]If the file should be stopped when added. \item[{\em category}]The category to assign to the file. \end{DoxyParams}
+
+
+References DoSortByPriority(), GetFileCount(), CQueueEvent$<$ ValueType $>$::INSERTED, IsFileExisting(), m\_\-mutex, and CObservable$<$ CQueueEvent$<$ CPartFile $\ast$ $>$ $>$::NotifyObservers().
+
+Referenced by AddSearchToDownload().\index{CDownloadQueue@{CDownloadQueue}!AddSearchToDownload@{AddSearchToDownload}}
+\index{AddSearchToDownload@{AddSearchToDownload}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{AddSearchToDownload}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadQueue::AddSearchToDownload ({\bf CSearchFile} $\ast$ {\em toadd}, \/  uint8 {\em category})}\label{classCDownloadQueue_af31a136ab20fdf1b4a16009f8b6283f6}
+
+
+Starts a new download based on the specified search-\/result. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toadd}]The search-\/result to add. \item[{\em category}]The category to assign to the new download.\end{DoxyParams}
+The download will only be started if no identical files are either being downloaded or shared currently. 
+
+References AddDownload(), IsFileExisting(), CMemFile::Reset(), and CFileDataIO::WriteUInt8().\index{CDownloadQueue@{CDownloadQueue}!CheckAndAddKnownSource@{CheckAndAddKnownSource}}
+\index{CheckAndAddKnownSource@{CheckAndAddKnownSource}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{CheckAndAddKnownSource}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadQueue::CheckAndAddKnownSource ({\bf CPartFile} $\ast$ {\em sender}, \/  {\bf CUpDownClient} $\ast$ {\em source})}\label{classCDownloadQueue_abc3acf6acf68639bf30972616dbfdba0}
+
+
+This function adds already known source to the specified file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em sender}]The owner fo the new source. \item[{\em source}]The client in question.\end{DoxyParams}
+This function acts like CheckAndAddSource, with the exception that no checks are made to see if the client is a duplicate. It is assumed that it is in fact a valid client. 
+
+References CPartFile::IsDeadSource().\index{CDownloadQueue@{CDownloadQueue}!CheckAndAddSource@{CheckAndAddSource}}
+\index{CheckAndAddSource@{CheckAndAddSource}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{CheckAndAddSource}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadQueue::CheckAndAddSource ({\bf CPartFile} $\ast$ {\em sender}, \/  {\bf CUpDownClient} $\ast$ {\em source})}\label{classCDownloadQueue_aec828dff750b3c73b48fd6315f5c91bd}
+
+
+Adds a potiential new client to the specified file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em sender}]The owner of the new source. \item[{\em source}]The client in question, might be deleted!\end{DoxyParams}
+This function will check the new client against the already existing clients. The source will then be queued as is appropriate, or deleted if it is duplicate of an existing client. 
+
+References CPartFile::IsDeadSource(), and CUpDownClient::Safe\_\-Delete().
+
+Referenced by KademliaSearchFile().\index{CDownloadQueue@{CDownloadQueue}!CheckDiskspace@{CheckDiskspace}}
+\index{CheckDiskspace@{CheckDiskspace}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{CheckDiskspace}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadQueue::CheckDiskspace (const {\bf CPath} \& {\em path})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCDownloadQueue_a0c0544c0709d17e5fa565d0442fa5656}
+
+
+Checks that there is enough free spaces for temp-\/files at that specified path. 
+
+References CPath::GetFreeSpaceAt(), and CUserEvents::ProcessEvent().
+
+Referenced by LoadMetFiles(), and Process().\index{CDownloadQueue@{CDownloadQueue}!GetDownloadClientByIP\_\-UDP@{GetDownloadClientByIP\_\-UDP}}
+\index{GetDownloadClientByIP\_\-UDP@{GetDownloadClientByIP\_\-UDP}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{GetDownloadClientByIP\_\-UDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CUpDownClient} $\ast$ CDownloadQueue::GetDownloadClientByIP\_\-UDP (uint32 {\em dwIP}, \/  uint16 {\em nUDPPort}) const}\label{classCDownloadQueue_acb08ffb35ca10a5789a988085ee574c9}
+
+
+Finds the queued client by IP and UDP-\/port, by looking at file-\/sources. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dwIP}]The IP-\/address of the client. \item[{\em nUDPPort}]The UDP-\/port of the client. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matching client or NULL if none was found. 
+\end{DoxyReturn}
+
+
+References m\_\-mutex.\index{CDownloadQueue@{CDownloadQueue}!GetFileByID@{GetFileByID}}
+\index{GetFileByID@{GetFileByID}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{GetFileByID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPartFile} $\ast$ CDownloadQueue::GetFileByID (const {\bf CMD4Hash} \& {\em filehash}) const}\label{classCDownloadQueue_a3613b7e4b35a207a2aa7042e34f5c9f4}
+
+
+Returns a pointer to the file with the specified hash, or NULL. 
+\begin{DoxyParams}{Parameters}
+\item[{\em filehash}]The hash to search for. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding file or NULL. 
+\end{DoxyReturn}
+
+
+References m\_\-completedDownloads, and m\_\-mutex.
+
+Referenced by IsFileExisting(), and OnHostnameResolved().\index{CDownloadQueue@{CDownloadQueue}!GetFileByIndex@{GetFileByIndex}}
+\index{GetFileByIndex@{GetFileByIndex}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{GetFileByIndex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPartFile} $\ast$ CDownloadQueue::GetFileByIndex (unsigned int {\em idx}) const}\label{classCDownloadQueue_aab959e5772c45a300f591638db1b93da}
+
+
+Returns the file at the specified position in the file-\/list, or NULL if invalid. 
+\begin{DoxyParams}{Parameters}
+\item[{\em A}]valid position in the file-\/list. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A valid pointer or NULL if the index was invalid. 
+\end{DoxyReturn}
+
+
+References m\_\-mutex.
+
+Referenced by LoadSourceSeeds(), RemoveSource(), SaveSourceSeeds(), and SetCatPrio().\index{CDownloadQueue@{CDownloadQueue}!LoadMetFiles@{LoadMetFiles}}
+\index{LoadMetFiles@{LoadMetFiles}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{LoadMetFiles}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadQueue::LoadMetFiles (const {\bf CPath} \& {\em path})}\label{classCDownloadQueue_a122349774932a2db46ab23e3e134cd4f}
+
+
+Loads met-\/files from the specified directory. 
+
+References CheckDiskspace(), DoSortByPriority(), GetFileCount(), CPath::GetFullName(), CPath::GetPrintable(), CQueueEvent$<$ ValueType $>$::INSERTED, IsFileExisting(), CPath::IsOk(), CPath::JoinPaths(), m\_\-mutex, and CObservable$<$ CQueueEvent$<$ CPartFile $\ast$ $>$ $>$::NotifyObservers().\index{CDownloadQueue@{CDownloadQueue}!RemoveFile@{RemoveFile}}
+\index{RemoveFile@{RemoveFile}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{RemoveFile}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadQueue::RemoveFile ({\bf CPartFile} $\ast$ {\em toremove}, \/  bool {\em keepAsCompleted} = {\ttfamily false})}\label{classCDownloadQueue_a70203682ccc5df6a45c55c1d9c809cc2}
+
+
+Removes the specified file from the queue. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toremove}]A pointer to the file object to be removed. \item[{\em keepAsCompleted}]If true add the removed file to the list of completed files. \end{DoxyParams}
+
+
+References m\_\-completedDownloads, m\_\-mutex, CObservable$<$ CQueueEvent$<$ CPartFile $\ast$ $>$ $>$::NotifyObservers(), CQueueEvent$<$ ValueType $>$::REMOVED, and RemoveLocalServerRequest().\index{CDownloadQueue@{CDownloadQueue}!RemoveSource@{RemoveSource}}
+\index{RemoveSource@{RemoveSource}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{RemoveSource}]{\setlength{\rightskip}{0pt plus 5cm}bool CDownloadQueue::RemoveSource ({\bf CUpDownClient} $\ast$ {\em toremove}, \/  bool {\em updatewindow} = {\ttfamily true}, \/  bool {\em bDoStatsUpdate} = {\ttfamily true})}\label{classCDownloadQueue_a4faa385ebab56cfadb5273365998b323}
+
+
+Removes the specified client completly. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toremove}]The client to be removed. \item[{\em updatewindow}]NOT USED! \item[{\em bDoStatsUdpate}]Specifies if the affected files should update their statistics. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the sources was found and removed.
+\end{DoxyReturn}
+This function will remove the specified source from both normal source lists, A4AF lists and the downloadqueue-\/widget. The requestfile of the source is also reset. 
+
+References GetFileByIndex(), and GetFileCount().\index{CDownloadQueue@{CDownloadQueue}!StartNextFile@{StartNextFile}}
+\index{StartNextFile@{StartNextFile}!CDownloadQueue@{CDownloadQueue}}
+\subsubsection[{StartNextFile}]{\setlength{\rightskip}{0pt plus 5cm}void CDownloadQueue::StartNextFile ({\bf CPartFile} $\ast$ {\em oldfile})}\label{classCDownloadQueue_a456551034265541eea0ceece9f526df4}
+
+
+Starts the next paused file on the queue, going after priority. Also checks for categories if enabled on preferences. 
+
+References SFindBestPF::m\_\-category, m\_\-mutex, and SFindBestPF::m\_\-result.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/DownloadQueue.h\item 
+src/DownloadQueue.cpp\end{DoxyCompactItemize}

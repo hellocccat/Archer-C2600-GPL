@@ -1,0 +1,83 @@
+\section{CCompletionEvent Class Reference}
+\label{classCCompletionEvent}\index{CCompletionEvent@{CCompletionEvent}}
+
+
+This event is sent when a part-\/file has been completed.  
+
+
+{\ttfamily \#include $<$ThreadTasks.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CCompletionEvent} (bool errorOccured, const {\bf CPartFile} $\ast$owner, const {\bf CPath} \&fullPath)
+\item 
+virtual wxEvent $\ast$ {\bf Clone} () const 
+\item 
+bool {\bf ErrorOccured} () const 
+\item 
+const {\bf CPartFile} $\ast$ {\bf GetOwner} () const 
+\item 
+const {\bf CPath} \& {\bf GetFullPath} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPath} {\bf m\_\-fullPath}\label{classCCompletionEvent_a78a9bfbe83a3c080c877b08d6a10c3f9}
+
+\item 
+const {\bf CPartFile} $\ast$ {\bf m\_\-owner}\label{classCCompletionEvent_a29bb22341dddb080446d1a70cb7074ae}
+
+\item 
+bool {\bf m\_\-error}\label{classCCompletionEvent_a159c8e18a84c1d16c1d23ca840792a37}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This event is sent when a part-\/file has been completed. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CCompletionEvent@{CCompletionEvent}!CCompletionEvent@{CCompletionEvent}}
+\index{CCompletionEvent@{CCompletionEvent}!CCompletionEvent@{CCompletionEvent}}
+\subsubsection[{CCompletionEvent}]{\setlength{\rightskip}{0pt plus 5cm}CCompletionEvent::CCompletionEvent (bool {\em errorOccured}, \/  const {\bf CPartFile} $\ast$ {\em owner}, \/  const {\bf CPath} \& {\em fullPath})}\label{classCCompletionEvent_a46a785b9b6748c21089552de1b5783fd}
+
+
+Constructor, see getter funtion for description of parameters. 
+
+Referenced by Clone().
+
+\subsection{Member Function Documentation}
+\index{CCompletionEvent@{CCompletionEvent}!Clone@{Clone}}
+\index{Clone@{Clone}!CCompletionEvent@{CCompletionEvent}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}wxEvent $\ast$ CCompletionEvent::Clone (void) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCCompletionEvent_ab68d806593d6ddc8c1c3fcca8bbe1c58}
+\begin{DoxySeeAlso}{See also}
+wxEvent::Clone 
+\end{DoxySeeAlso}
+
+
+References CCompletionEvent(), m\_\-error, m\_\-fullPath, and m\_\-owner.\index{CCompletionEvent@{CCompletionEvent}!ErrorOccured@{ErrorOccured}}
+\index{ErrorOccured@{ErrorOccured}!CCompletionEvent@{CCompletionEvent}}
+\subsubsection[{ErrorOccured}]{\setlength{\rightskip}{0pt plus 5cm}bool CCompletionEvent::ErrorOccured () const}\label{classCCompletionEvent_a72b8fc02a00384d3575258e93ca0e039}
+
+
+Returns true if completion failed. 
+
+References m\_\-error.\index{CCompletionEvent@{CCompletionEvent}!GetFullPath@{GetFullPath}}
+\index{GetFullPath@{GetFullPath}!CCompletionEvent@{CCompletionEvent}}
+\subsubsection[{GetFullPath}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CPath} \& CCompletionEvent::GetFullPath () const}\label{classCCompletionEvent_add634b6ed9e57b07224dbc7338e3c5b6}
+
+
+Returns the full path to the completed file (empty on failure). 
+
+References m\_\-fullPath.\index{CCompletionEvent@{CCompletionEvent}!GetOwner@{GetOwner}}
+\index{GetOwner@{GetOwner}!CCompletionEvent@{CCompletionEvent}}
+\subsubsection[{GetOwner}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CPartFile} $\ast$ CCompletionEvent::GetOwner () const}\label{classCCompletionEvent_a53cffbd6600eac346c3b40bc4a11cc48}
+
+
+Returns the owner of the file that was being completed. 
+
+References m\_\-owner.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadTasks.h\item 
+src/ThreadTasks.cpp\end{DoxyCompactItemize}

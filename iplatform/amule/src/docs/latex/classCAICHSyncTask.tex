@@ -1,0 +1,42 @@
+\section{CAICHSyncTask Class Reference}
+\label{classCAICHSyncTask}\index{CAICHSyncTask@{CAICHSyncTask}}
+
+
+This task synchronizes the AICH hashlist.  
+
+
+{\ttfamily \#include $<$ThreadTasks.h$>$}Inheritance diagram for CAICHSyncTask::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCAICHSyncTask}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf Entry} ()\label{classCAICHSyncTask_a38afe2abf7b4911a886a90ccef0d3c85}
+
+\item 
+bool {\bf ConvertToKnown2ToKnown264} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This task synchronizes the AICH hashlist. Shared files that are lacking a AICH-\/hash are scheduled for hashing. 
+
+\subsection{Member Function Documentation}
+\index{CAICHSyncTask@{CAICHSyncTask}!ConvertToKnown2ToKnown264@{ConvertToKnown2ToKnown264}}
+\index{ConvertToKnown2ToKnown264@{ConvertToKnown2ToKnown264}!CAICHSyncTask@{CAICHSyncTask}}
+\subsubsection[{ConvertToKnown2ToKnown264}]{\setlength{\rightskip}{0pt plus 5cm}bool CAICHSyncTask::ConvertToKnown2ToKnown264 ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCAICHSyncTask_a65db98819236f5d731833ec3ef8a8ee7}
+
+
+Converts old known2.met files to known2\_\-64.met files. 
+
+References CPath::FileExists(), CFile::Flush(), CScopedArray$<$ TYPE $>$::get(), CFile::GetLength(), CFile::GetPosition(), CFile::Open(), CFileDataIO::Read(), CFileDataIO::Write(), and CFileDataIO::WriteUInt8().
+
+Referenced by Entry().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadTasks.h\item 
+src/ThreadTasks.cpp\end{DoxyCompactItemize}

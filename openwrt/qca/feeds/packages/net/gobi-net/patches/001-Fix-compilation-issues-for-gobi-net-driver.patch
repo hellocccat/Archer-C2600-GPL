@@ -1,0 +1,29 @@
+diff --git a/GobiUSBNet.c b/GobiUSBNet.c
+index ff741ce..c320530 100644
+--- a/GobiUSBNet.c
++++ b/GobiUSBNet.c
+@@ -1246,10 +1246,10 @@ MODULE_LICENSE("Dual BSD/GPL");
+ #undef bool
+ #endif
+
+-module_param( debug, bool, S_IRUGO | S_IWUSR );
++module_param( debug, int, S_IRUGO | S_IWUSR );
+ MODULE_PARM_DESC( debug, "Debuging enabled or not" );
+
+-module_param( interruptible, bool, S_IRUGO | S_IWUSR );
++module_param( interruptible, int, S_IRUGO | S_IWUSR );
+ MODULE_PARM_DESC( interruptible, "Listen for and return on user interrupt" );
+
+ module_param( txQueueLength, int, S_IRUGO | S_IWUSR );
+diff --git a/Structs.h b/Structs.h
+index f2bb83c..d4d98bf 100644
+--- a/Structs.h
++++ b/Structs.h
+@@ -52,6 +52,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ #include <linux/cdev.h>
+ #include <linux/kthread.h>
+ #include <linux/poll.h>
++#include <linux/module.h>
+
+ #if (LINUX_VERSION_CODE <= KERNEL_VERSION( 2,6,24 ))
+    #include "usbnet.h"

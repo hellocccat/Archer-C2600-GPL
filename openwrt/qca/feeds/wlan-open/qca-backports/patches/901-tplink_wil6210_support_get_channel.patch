@@ -1,0 +1,61 @@
+diff -pur a/drivers/net/wireless/ath/wil6210/cfg80211.c b/drivers/net/wireless/ath/wil6210/cfg80211.c
+--- a/drivers/net/wireless/ath/wil6210/cfg80211.c	2015-07-17 11:55:13.386704252 +0800
++++ b/drivers/net/wireless/ath/wil6210/cfg80211.c	2015-07-17 11:56:43.162707902 +0800
+@@ -1173,6 +1173,38 @@ static int wil_cfg80211_change_bss(struc
+ 	return 0;
+ }
+ 
++static int wil_cfg80211_get_channel(struct wiphy             *wiphy,
++		                    struct wireless_dev      *wdev,
++		                    struct cfg80211_chan_def *chandef)
++{
++	struct wil6210_priv *wil = wiphy_to_wil(wiphy);
++	int channel;
++	int i, rc;
++
++	rc = wmi_get_channel(wil, &channel);
++	if (rc) {
++		wil_err(wil, "Get channel failed\n");
++		return -ENOMEM;
++	}
++
++	if (wdev->iftype != NL80211_IFTYPE_AP) {
++		return -EOPNOTSUPP;
++	}
++
++	for (i = 0; i < ARRAY_SIZE(wil_60ghz_channels); ++i) {
++		if (channel == wil_60ghz_channels[i].hw_value) {
++			chandef->chan = wil_60ghz_channels + i;
++			chandef->width = 2160; // FIXME: should be NL80211_CHAN_WIDTH_2160
++			chandef->center_freq1 = wil_60ghz_channels[i].center_freq;
++			chandef->center_freq2 = 0;
++			return 0;
++		}
++	}
++	return -ENOENT;
++}
++
++
++
+ static struct cfg80211_ops wil_cfg80211_ops = {
+ 	.scan = wil_cfg80211_scan,
+ 	.connect = wil_cfg80211_connect,
+@@ -1187,6 +1219,7 @@ static struct cfg80211_ops wil_cfg80211_
+ 	.add_key = wil_cfg80211_add_key,
+ 	.del_key = wil_cfg80211_del_key,
+ 	.set_default_key = wil_cfg80211_set_default_key,
++	.get_channel = wil_cfg80211_get_channel,
+ 	/* AP mode */
+ 	.change_beacon = wil_cfg80211_change_beacon,
+ 	.start_ap = wil_cfg80211_start_ap,
+diff -pur a/net/wireless/chan.c b/net/wireless/chan.c
+--- a/net/wireless/chan.c	2015-07-07 12:59:02.000000000 +0800
++++ b/net/wireless/chan.c	2015-07-17 11:54:06.710701541 +0800
+@@ -59,6 +59,7 @@ bool cfg80211_chandef_valid(const struct
+ 	case NL80211_CHAN_WIDTH_10:
+ 	case NL80211_CHAN_WIDTH_20:
+ 	case NL80211_CHAN_WIDTH_20_NOHT:
++	case 2160: // FIXME: should be NL80211_CHAN_WIDTH_2160
+ 		if (chandef->center_freq1 != control_freq)
+ 			return false;
+ 		if (chandef->center_freq2)

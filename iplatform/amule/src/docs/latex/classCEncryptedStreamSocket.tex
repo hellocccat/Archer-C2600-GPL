@@ -1,0 +1,122 @@
+\section{CEncryptedStreamSocket Class Reference}
+\label{classCEncryptedStreamSocket}\index{CEncryptedStreamSocket@{CEncryptedStreamSocket}}
+Inheritance diagram for CEncryptedStreamSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5cm]{classCEncryptedStreamSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CEncryptedStreamSocket} (wxSocketFlags flags=wxSOCKET\_\-NONE, const {\bf CProxyData} $\ast$proxyData=NULL)\label{classCEncryptedStreamSocket_ab1e99f49826aed1e3e6e1357fde2baea}
+
+\item 
+void {\bfseries SetConnectionEncryption} (bool bEnabled, const uint8\_\-t $\ast$pTargetClientHash, bool bServerConnection)\label{classCEncryptedStreamSocket_a8c5a412c9d75b9ae729c3db3cba861c8}
+
+\item 
+uint32\_\-t {\bf GetRealReceivedBytes} () const \label{classCEncryptedStreamSocket_abe211b5bcb6b79f83c61f1d1f3b91bd7}
+
+\item 
+bool {\bfseries IsObfusicating} () const \label{classCEncryptedStreamSocket_a47c26d725e57a9f54297b0cb68755943}
+
+\item 
+bool {\bfseries IsServerCryptEnabledConnection} () const \label{classCEncryptedStreamSocket_a6ebfb241b8b702655dac010e87b3d814}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\_\-t {\bfseries m\_\-dbgbyEncryptionSupported}\label{classCEncryptedStreamSocket_a48f00e70fc57395fa34e2e6872e3640d}
+
+\item 
+uint8\_\-t {\bfseries m\_\-dbgbyEncryptionRequested}\label{classCEncryptedStreamSocket_a225a2ae8990f409a4031caa0a69e7061}
+
+\item 
+uint8\_\-t {\bfseries m\_\-dbgbyEncryptionMethodSet}\label{classCEncryptedStreamSocket_aac47d3fc918b1a32c436e0274a60c083}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Write} (const void $\ast$lpBuf, uint32\_\-t nBufLen)\label{classCEncryptedStreamSocket_af0a3ff54d5d392bf3deaf60b08d83aed}
+
+\item 
+int {\bfseries Read} (void $\ast$lpBuf, uint32\_\-t nBufLen)\label{classCEncryptedStreamSocket_a4b8b7d29f3059a9f63c53b76ca082523}
+
+\item 
+virtual void {\bfseries OnError} (int)\label{classCEncryptedStreamSocket_abfbfd572de4089b5564054a9fd569bed}
+
+\item 
+virtual void {\bfseries OnSend} (int nErrorCode)\label{classCEncryptedStreamSocket_a6d7fea1d07b944cbaeab0b6a05caca98}
+
+\item 
+wxString {\bfseries DbgGetIPString} ()\label{classCEncryptedStreamSocket_aa3a6e8983a311d862f157010c6cabaf1}
+
+\item 
+void {\bfseries CryptPrepareSendData} (uint8\_\-t $\ast$pBuffer, uint32\_\-t nLen)\label{classCEncryptedStreamSocket_a6905eb0e87345c955a6c1a05b94cdadc}
+
+\item 
+bool {\bfseries IsEncryptionLayerReady} ()\label{classCEncryptedStreamSocket_a496b1710e6b4b734729511e4e77747b3}
+
+\item 
+uint8\_\-t {\bfseries GetSemiRandomNotProtocolMarker} () const \label{classCEncryptedStreamSocket_ad68730757e34a1c02bbe19fc911b3079}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries m\_\-nObfusicationBytesReceived}\label{classCEncryptedStreamSocket_a3baa8ac3308fa6cce554b18b55289ccf}
+
+\item 
+EStreamCryptState {\bfseries m\_\-StreamCryptState}\label{classCEncryptedStreamSocket_a41e2e94edcdbff4f51aed0f15e686d39}
+
+\item 
+EEncryptionMethods {\bfseries m\_\-EncryptionMethod}\label{classCEncryptedStreamSocket_a2923bf978640a5224d695b0ff5384ba2}
+
+\item 
+bool {\bfseries m\_\-bFullReceive}\label{classCEncryptedStreamSocket_ab01e1a22496de1dab1936410a9c799c8}
+
+\item 
+bool {\bfseries m\_\-bServerCrypt}\label{classCEncryptedStreamSocket_a4f0def0592f066212929e81ee3359ba4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Negotiate} (const uint8\_\-t $\ast$pBuffer, uint32\_\-t nLen)\label{classCEncryptedStreamSocket_a339e8b613784be05f2adfa5d68ddb216}
+
+\item 
+void {\bfseries StartNegotiation} (bool bOutgoing)\label{classCEncryptedStreamSocket_afb9887a93df6053bae5c838e4746dab7}
+
+\item 
+int {\bfseries SendNegotiatingData} (const void $\ast$lpBuf, uint32\_\-t nBufLen, uint32\_\-t nStartCryptFromByte=0, bool bDelaySend=false)\label{classCEncryptedStreamSocket_a2191fb0e862afe741a06b5e78406fc13}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ENegotiatingState {\bfseries m\_\-NegotiatingState}\label{classCEncryptedStreamSocket_a4dce66e31cbe2cc390df26a07fa9d24e}
+
+\item 
+{\bf CRC4EncryptableBuffer} {\bfseries m\_\-pfiReceiveBuffer}\label{classCEncryptedStreamSocket_a539facae7574ff6893cec98db863d6df}
+
+\item 
+uint32\_\-t {\bfseries m\_\-nReceiveBytesWanted}\label{classCEncryptedStreamSocket_a641b5098c0bcac64d74fc363ade23d44}
+
+\item 
+{\bf CRC4EncryptableBuffer} {\bfseries m\_\-pfiSendBuffer}\label{classCEncryptedStreamSocket_ab17644f5f11901caae2b4c08d4a4a37c}
+
+\item 
+uint32\_\-t {\bfseries m\_\-nRandomKeyPart}\label{classCEncryptedStreamSocket_aaa37c68677dcc4154cf44739dbabd1b2}
+
+\item 
+CryptoPP::Integer {\bfseries m\_\-cryptDHA}\label{classCEncryptedStreamSocket_a689741325df2f2daaf607becbbaba735}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/EncryptedStreamSocket.h\item 
+src/EncryptedStreamSocket.cpp\end{DoxyCompactItemize}

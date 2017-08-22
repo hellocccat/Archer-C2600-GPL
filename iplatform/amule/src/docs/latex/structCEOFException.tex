@@ -1,0 +1,28 @@
+\section{CEOFException Struct Reference}
+\label{structCEOFException}\index{CEOFException@{CEOFException}}
+
+
+This exception is thrown when attempts are made at reading past the end of the file.  
+
+
+{\ttfamily \#include $<$SafeFile.h$>$}Inheritance diagram for CEOFException::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{structCEOFException}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CEOFException} (const wxString \&desc)\label{structCEOFException_a83e46ef554ffa31597835238e4ed0bfa}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This exception is thrown when attempts are made at reading past the end of the file. This typically happens when a invalid packet is received that is shorter than expected and is not fatal. 
+
+The documentation for this struct was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SafeFile.h\item 
+src/SafeFile.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+--- a/rngd.c
++++ b/rngd.c
+@@ -91,9 +91,13 @@
+ 
+ 	{ "timeout", 't', "nnn", 0,
+ 	  "Interval written to random-device when the entropy pool is full, in seconds (default: 60)" },
++
+ 	{ "no-tpm", 'n', "1|0", 0,
+ 	  "do not use tpm as a source of random number input (default: 0)" },
+ 
++	{ "maxwrites", 'm', "n" , 0,
++	  "Rate limit writes to random-device to a maximum of x writes/second (1 <= x <= 1000). Setting this ignores the timeout option." },
++
+ 	{ 0 },
+ };
+ 
+@@ -104,6 +108,7 @@
+ 	.fill_watermark	= 2048,
+ 	.daemon		= 1,
+ 	.enable_tpm	= 1,
++	.maxwrites	= 0,
+ };
+ struct arguments *arguments = &default_arguments;
+ 
+@@ -172,7 +177,14 @@
+ 			arguments->enable_tpm = 0;
+ 		break;
+ 	}
+-
++	case 'm': {
++		int n;
++		if ((sscanf(arg,"%i", &n) == 0) || (n < 1) || (n > 1000))
++			argp_usage(state);
++		else
++			arguments->maxwrites = n;
++		break;
++	}
+ 	default:
+ 		return ARGP_ERR_UNKNOWN;
+ 	}
+@@ -184,7 +196,7 @@
+ 
+ 
+ static int update_kernel_random(int random_step, double poll_timeout,
+-	unsigned char *buf, fips_ctx_t *fipsctx)
++	unsigned char *buf, fips_ctx_t *fipsctx, unsigned int interval)
+ {
+ 	unsigned char *p;
+ 	int fips;
+@@ -198,15 +210,22 @@
+ 	for (p = buf; p + random_step <= &buf[FIPS_RNG_BUFFER_SIZE];
+ 		 p += random_step) {
+ 		random_add_entropy(p, random_step);
+-		random_sleep(poll_timeout);
++		if (!interval)
++			random_sleep(poll_timeout);
++		else
++			usleep(interval);
+ 	}
+ 	return 0;
+ }
+ 
+-static void do_loop(int random_step, double poll_timeout)
++static void do_loop(int random_step, double poll_timeout, unsigned int maxwrites)
+ {
+ 	unsigned char buf[FIPS_RNG_BUFFER_SIZE];
+ 	int retval;
++	unsigned int interval = 0;
++
++	if (maxwrites)
++		interval = 1000000 / maxwrites;
+ 
+ 	for (;;) {
+ 		struct rng *iter;
+@@ -216,7 +235,7 @@
+ 			if (retval == 0)
+ 				update_kernel_random(random_step,
+ 						     poll_timeout, buf,
+-						     iter->fipsctx);
++						     iter->fipsctx, interval);
+ 		}
+ 	}
+ }
+@@ -258,7 +277,8 @@
+ 	}
+ 
+ 	do_loop(arguments->random_step,
+-		arguments->poll_timeout ? : -1.0);
++		arguments->poll_timeout ? : -1.0,
++		arguments->maxwrites);
+ 
+ 	return 0;
+ }
+--- a/rngd.h
++++ b/rngd.h
+@@ -42,6 +42,7 @@
+ 
+ 	int daemon;
+ 	int enable_tpm;
++	int maxwrites;
+ };
+ extern struct arguments *arguments;
+

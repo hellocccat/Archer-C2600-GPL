@@ -1,0 +1,97 @@
+\section{Kademlia::CKeyEntry Class Reference}
+\label{classKademlia_1_1CKeyEntry}\index{Kademlia::CKeyEntry@{Kademlia::CKeyEntry}}
+Inheritance diagram for Kademlia::CKeyEntry::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classKademlia_1_1CKeyEntry}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf sPublishingIP}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf CEntry} $\ast$ {\bfseries Copy} () const \label{classKademlia_1_1CKeyEntry_a1d283ddd8a20b343cbc72e57157dbb71}
+
+\item 
+virtual bool {\bfseries IsKeyEntry} () const   throw ()\label{classKademlia_1_1CKeyEntry_a7d586355bf69bee2c27266bb99dfb14e}
+
+\item 
+bool {\bfseries SearchTermsMatch} (const {\bf SSearchTerm} $\ast$searchTerm) const \label{classKademlia_1_1CKeyEntry_a9b171d7d628e8cc30a5b48ed17cb5b94}
+
+\item 
+void {\bfseries MergeIPsAndFilenames} ({\bf CKeyEntry} $\ast$fromEntry)\label{classKademlia_1_1CKeyEntry_a2f2dd231eb996f870fa68d141a266f0d}
+
+\item 
+void {\bfseries CleanUpTrackedPublishers} ()\label{classKademlia_1_1CKeyEntry_a83b97b976db657a888f4e3292838b2e8}
+
+\item 
+double {\bfseries GetTrustValue} ()\label{classKademlia_1_1CKeyEntry_a9560b486ef5e726dea1206b43a5c38bf}
+
+\item 
+void {\bfseries WritePublishTrackingDataToFile} ({\bf CFileDataIO} $\ast$data)\label{classKademlia_1_1CKeyEntry_a4c1835bc4da4702c742233eab173741e}
+
+\item 
+void {\bfseries ReadPublishTrackingDataFromFile} ({\bf CFileDataIO} $\ast$data)\label{classKademlia_1_1CKeyEntry_a86d630fdc9152634e8606336168d8fc4}
+
+\item 
+void {\bfseries DirtyDeletePublishData} ()\label{classKademlia_1_1CKeyEntry_a225a153c0c5a1333ee14bcdc669fa2f0}
+
+\item 
+void {\bfseries WriteTagListWithPublishInfo} ({\bf CFileDataIO} $\ast$data)\label{classKademlia_1_1CKeyEntry_a66ad04ed348ebf6d4934660a2581795b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries ResetGlobalTrackingMap} ()\label{classKademlia_1_1CKeyEntry_a705a72aafb66a6b093df1d0745eb877c}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf sPublishingIP} $>$ {\bfseries PublishingIPList}\label{classKademlia_1_1CKeyEntry_ade53e3d7636fc00b1e75e2f16de98703}
+
+\item 
+typedef std::map$<$ uint32\_\-t, uint32\_\-t $>$ {\bfseries GlobalPublishIPMap}\label{classKademlia_1_1CKeyEntry_acafc1a760af407d805139e679a011500}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries ReCalculateTrustValue} ()\label{classKademlia_1_1CKeyEntry_a29c9b2e9dc3f7d5c3ba9008a2cc2f51d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries AdjustGlobalPublishTracking} (uint32\_\-t ip, bool increase, const wxString \&dbgReason)\label{classKademlia_1_1CKeyEntry_ab85b0732f3001a7507f93c243f9382a1}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries m\_\-lastTrustValueCalc}\label{classKademlia_1_1CKeyEntry_a43f48f827d43ef9cb45953b884d4ffed}
+
+\item 
+double {\bfseries m\_\-trustValue}\label{classKademlia_1_1CKeyEntry_ae665dd64ec6bfd091e9b6dfdd5bcfcca}
+
+\item 
+PublishingIPList $\ast$ {\bfseries m\_\-publishingIPs}\label{classKademlia_1_1CKeyEntry_ae413aa6a744d003b3e07a667943ccbc0}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static GlobalPublishIPMap {\bfseries s\_\-globalPublishIPs}\label{classKademlia_1_1CKeyEntry_a2e103edfa8e26c5f25a08d209bf118fb}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/kademlia/Entry.h\item 
+src/kademlia/kademlia/Entry.cpp\end{DoxyCompactItemize}

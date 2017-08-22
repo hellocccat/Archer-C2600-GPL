@@ -1,0 +1,1458 @@
+diff -purNbB a/drivers/net/wireless/ath/wil6210/cfg80211.c b/drivers/net/wireless/ath/wil6210/cfg80211.c
+--- a/drivers/net/wireless/ath/wil6210/cfg80211.c	2015-07-02 01:06:09.752100300 +0800
++++ b/drivers/net/wireless/ath/wil6210/cfg80211.c	2015-07-06 03:39:41.847860400 +0800
+@@ -979,7 +979,7 @@ static void wil_wiphy_init(struct wiphy 
+ 	/* TODO: enable P2P when integrated with supplicant:
+ 	 * BIT(NL80211_IFTYPE_P2P_CLIENT) | BIT(NL80211_IFTYPE_P2P_GO)
+ 	 */
+-	wiphy->flags |= WIPHY_FLAG_HAVE_AP_SME |
++	wiphy->flags |= WIPHY_FLAG_HAVE_AP_SME | WIPHY_FLAG_4ADDR_STATION |WIPHY_FLAG_4ADDR_AP |
+ 			WIPHY_FLAG_AP_PROBE_RESP_OFFLOAD;
+ 	dev_dbg(wiphy_dev(wiphy), "%s : flags = 0x%08x\n",
+ 		__func__, wiphy->flags);
+diff -purNbB a/drivers/net/wireless/ath/wil6210/main.c b/drivers/net/wireless/ath/wil6210/main.c
+--- a/drivers/net/wireless/ath/wil6210/main.c	2015-07-02 01:06:08.400100400 +0800
++++ b/drivers/net/wireless/ath/wil6210/main.c	2015-07-06 08:58:28.496179000 +0800
+@@ -37,6 +37,9 @@ module_param(rx_ring_overflow_thrsh, ush
+ MODULE_PARM_DESC(rx_ring_overflow_thrsh,
+ 		 " RX ring overflow threshold in descriptors.");
+ 
++int wil_extap_attach(struct wil6210_priv *wil);
++int wil_extap_detach(struct wil6210_priv *wil);
++
+ /* We allow allocation of more than 1 page buffers to support large packets.
+  * It is suboptimal behavior performance wise in case MTU above page size.
+  */
+@@ -392,6 +395,7 @@ int wil_priv_init(struct wil6210_priv *w
+ 	uint i;
+ 
+ 	wil_dbg_misc(wil, "%s()\n", __func__);
++	wil_extap_attach(wil);
+ 
+ 	memset(wil->sta, 0, sizeof(wil->sta));
+ 	for (i = 0; i < WIL6210_MAX_CID; i++)
+@@ -471,6 +475,7 @@ void wil6210_disconnect(struct wil6210_p
+ void wil_priv_deinit(struct wil6210_priv *wil)
+ {
+ 	wil_dbg_misc(wil, "%s()\n", __func__);
++	wil_extap_detach(wil);
+ 
+ 	wil_set_recovery_state(wil, fw_recovery_idle);
+ 	del_timer_sync(&wil->scan_timer);
+@@ -673,7 +678,8 @@ static int wil_get_bl_info(struct wil621
+ 
+ 	if (!is_valid_ether_addr(bl.mac_address)) {
+ 		wil_err(wil, "BL: Invalid MAC %pM\n", bl.mac_address);
+-		return -EINVAL;
++		random_ether_addr(bl.mac_address);
++		//return -EINVAL;
+ 	}
+ 
+ 	ether_addr_copy(ndev->perm_addr, bl.mac_address);
+diff -purNbB a/drivers/net/wireless/ath/wil6210/txrx.c b/drivers/net/wireless/ath/wil6210/txrx.c
+--- a/drivers/net/wireless/ath/wil6210/txrx.c	2015-07-02 01:06:09.296100300 +0800
++++ b/drivers/net/wireless/ath/wil6210/txrx.c	2015-07-06 08:56:45.722122600 +0800
+@@ -40,6 +40,1334 @@ bool rx_align_2 = 1;
+ module_param(rx_align_2, bool, S_IRUGO);
+ MODULE_PARM_DESC(rx_align_2, " align Rx buffers on 4*n+2, default - no");
+ 
++/**********************************************************************************************************************/
++#define MI_POOL_SIZE_NODE	512
++#define MI_AGEING_NODE	600
++
++#define ATH_MITBL_IPV4 4
++#define ATH_MITBL_IPV6 6
++
++#define mi_add(a,b...)   mi_tbl_add_safe((mi_node_t **)a,##b)
++#define mi_del(a,b...)   mi_tbl_del_safe((mi_node_t **)a,##b)
++#define mi_lkup(a,b...)  mi_tbl_lkup_safe((mi_node_t *)a,##b)
++
++#define IEEE80211_ADDR_COPY(d,s)  memcpy(d,s,ETH_ALEN)
++#define IEEE80211_ADDR_EQ(d,s)    !memcmp(d,s,ETH_ALEN)
++
++#define DHCP_INFORM                0x08
++#define DHCP_MESSAGE_TYPE         0x35
++#define DHCPDISCOVER               0x01
++#define BOOTREQUEST			    0x01
++#define DHCP_AUTO_CONFIGURATION  116
++#define DHCP_CLIENT_ID            61
++#define DHCP_TYPE_ETHERNET        1
++#define DHCP_HOST_NAME            12
++#define DHCP_END                   0xff
++#define DHCP_PADDING_SIZE         4
++
++#define DHCP_DETECT_BUF_LEN (sizeof(struct ethhdr) + sizeof(struct iphdr) \
++        + sizeof(struct udphdr) + sizeof(struct dhcp_header))
++#define DHCP_PKT_MIN_LEN (DHCP_DETECT_BUF_LEN - DHCP_DFLTOPTLEN)
++
++#if defined(__LITTLE_ENDIAN_BITFIELD)
++#	define DHCP_SERVER_PORT        0x4300
++#	define DHCP_CLIENT_PORT        0x4400
++#	define DHCP_BROADCAST_FLAG     0x0080
++#	define DHCP_MAGIC              0x63538263
++#	define DHCP_TRANS_ID           0x42547eb7
++#	define ARP_PROTOCOL            0x0608         /* ethType: ARP */
++#	define IP_PROTOCOL             0x0008         /* arpProtocalType: IP  */
++#	define ARP_HW_ETHER            0x0100         /* arpHardwareType: ethernet */
++#	define ARP_OP_REQUEST          0x0100         /* arpOp: ARP Request  */
++#	define ARP_OP_RESPONSE         0x0200         /* arpOp: ARP Response */
++#else	/* _BIG_ENDIAN */
++#	define DHCP_SERVER_PORT        0x0043
++#	define DHCP_CLIENT_PORT        0x0044
++#	define DHCP_BROADCAST_FLAG     0x8000
++#	define DHCP_MAGIC              0x63825363
++#	define DHCP_TRANS_ID           0xb77e5442
++#	define ARP_PROTOCOL            0x0806         /* ethType: ARP */
++#	define IP_PROTOCOL             0x0800         /* arpProtocalType: IP  */
++#	define ARP_HW_ETHER            0x0001         /* arpHardwareType: ethernet */
++#	define ARP_OP_REQUEST          0x0001         /* arpOp: ARP Request  */
++#	define ARP_OP_RESPONSE         0x0002         /* arpOp: ARP Response */
++#endif
++
++/* add for support dhcp in extap mode*/
++#define DHCP_MAX_HLEN       16
++#define DHCP_MAX_SNAME      64
++#define DHCP_MAX_FILE       128 
++#define DHCP_DFLTOPTLEN     318
++
++struct dhcp_header {
++    uint8_t        op;				/* packet type */
++    uint8_t        htype;			/* Link-level interface address type */
++    uint8_t        hlen;			/* Link-level interface address length */
++    uint8_t        hops;			/* Hops through DHCP relay agents */
++    uint32_t       xid;			/* transaction ID */
++    uint16_t       secs;			/* seconds since lease negotiation started */
++    uint16_t       flags;
++    uint32_t       ciaddr;			/* Client's current IP address */
++    uint32_t       yiaddr;			/* Client's assigned IP address */
++    uint32_t       siaddr;			/* Address of (tftp) server */
++    uint32_t       giaddr;			/* Address of relay agent */
++    uint8_t        chaddr [DHCP_MAX_HLEN];		/* Client's hardware address */
++    uint8_t        sname [DHCP_MAX_SNAME];		/* Host name of DHCP server */
++    uint8_t        file [DHCP_MAX_FILE];		/* File name of boot image */
++    uint32_t       cookie;                     /* DHCP magic number */
++    uint8_t        options [DHCP_DFLTOPTLEN];	/* DHCP message options */
++};
++
++typedef struct {
++	unsigned short	ar_hrd,	/* format of hardware address */
++			ar_pro;	/* format of protocol address */
++	unsigned char	ar_hln,	/* length of hardware address */
++			ar_pln;	/* length of protocol address */
++	unsigned short	ar_op;	/* ARP opcode (command) */
++	unsigned char	ar_sha[ETH_ALEN],	/* sender hardware address */
++			ar_sip[4],		/* sender IP address */
++			ar_tha[ETH_ALEN],	/* target hardware address */
++			ar_tip[4];		/* target IP address */
++} eth_arphdr_t;
++
++typedef struct {
++	unsigned char	type,
++			len,
++			addr[ETH_ALEN];	/* hardware address */
++} eth_icmp6_lladdr_t;
++
++typedef void (*timer_func)(void*);
++
++typedef struct mi_node { /* MAC - IP Node */
++	struct mi_node	*parent, *left, *right;
++	uint8_t	h_dest[ETH_ALEN], len, ip_ver, ip[16];	/* v4 or v6 ip addr */
++} mi_node_t;
++
++typedef struct base_node {
++	struct	base_node *prev;
++	struct	base_node *next;
++	unsigned long ticket;
++	uint32_t data[0];
++} base_node_t;
++
++typedef struct base_node_pool
++{
++	uint32_t used;
++	uint32_t time;
++	uint32_t pool_size;
++	uint32_t node_size;
++	uint32_t interval;
++	uint32_t refcount;
++	void* root;
++	struct timer_list  timer;
++	timer_func agingFunc;	
++	spinlock_t lock;
++    
++	base_node_t *all_nodes;
++	base_node_t *tail_node;
++	base_node_t *free_nodes;
++	base_node_t *busy_nodes;
++}base_node_pool_t;
++
++
++static base_node_pool_t *mi_node_pool = NULL;
++
++#define NODE_POOL mi_node_pool
++
++#define node_pool_lock(p) spin_lock(&(p->lock))
++#define node_pool_unlock(p) spin_unlock(&(p->lock))
++#define node_to_base(p,n) ((n)?((base_node_t*)(((char*)(n)) - sizeof(base_node_t))):NULL)
++#define base_to_node(n) ((n)?((void*)((n)->data)):NULL) 
++#define mi_node_free(n) base_node_free(NODE_POOL, node_to_base(NODE_POOL, n))
++#define mi_node_update(n) base_node_update(NODE_POOL, n)
++#define mi_node_inter(n) base_node_as_inter(NODE_POOL, n)
++
++static int base_node_pool_init(base_node_pool_t** p_pool, 
++						void** root,
++						uint32_t pool_size, 
++						uint32_t node_size, 
++						uint32_t aging, 
++						timer_func agingFunc, 
++						uint32_t interval)
++{
++    uint32_t i = 0;
++    uint32_t size = 0;
++    uint8_t* buffer_ptr = NULL;
++    base_node_pool_t* pool = NULL;
++
++    if (p_pool == NULL)
++        return -1;
++
++    if (*p_pool != NULL) {
++        if (*root != &((*p_pool)->root)) {
++            (*p_pool)->refcount++;
++            *root = &((*p_pool)->root);
++        }
++        return 0;
++    }
++
++    pool = kmalloc(sizeof(base_node_pool_t), GFP_KERNEL);
++    if (!pool)
++        return -1;
++
++    *p_pool = pool;
++    memset(pool, 0, sizeof(base_node_pool_t));
++
++    node_size = ((node_size + 7) & (~7));
++    size = node_size + sizeof(base_node_t);
++    pool->node_size = node_size;
++    pool->pool_size = pool_size;
++    pool->used = 0;
++    pool->root = NULL;
++    pool->time = aging * 1000;
++    pool->interval = interval * 1000;
++    buffer_ptr = kmalloc(pool_size * size, GFP_KERNEL);
++    pool->all_nodes = (base_node_t*)buffer_ptr;
++    pool->refcount = 1;
++    if (buffer_ptr == NULL)
++    {
++    	goto no_mem;
++    }
++    pool->tail_node = NULL;
++    pool->busy_nodes = NULL;
++    pool->free_nodes = pool->all_nodes;
++
++    memset(pool->free_nodes, 0, pool_size * size);
++    for (i = 0; i < pool_size - 1; i ++) {
++    	((base_node_t*)buffer_ptr)->next = (base_node_t*)(buffer_ptr + size);
++    	buffer_ptr += size;
++    }
++    ((base_node_t*)buffer_ptr)->next = NULL;
++    spin_lock_init(&pool->lock);
++    init_timer(&pool->timer);
++    pool->timer.function = (void*)agingFunc;
++    pool->timer.data = (unsigned long)pool;
++    if (pool->time > 0) {
++        pool->timer.expires = jiffies + msecs_to_jiffies(pool->time);
++        add_timer(&pool->timer);
++    }
++    *root = &(pool->root);
++
++    return 0;
++
++no_mem:
++    return -1;
++}
++
++static int base_node_pool_destory(base_node_pool_t** p_pool, void**root)
++{
++    base_node_pool_t* pool = NULL;
++    if (p_pool == NULL || root == NULL || *p_pool == NULL)
++        return -1;
++
++    pool = *p_pool;
++
++    if (*root != &(pool->root)) {
++        return 0;
++    }
++
++    *root = NULL;
++
++    if (--pool->refcount > 0)
++        return 0;
++
++    del_timer(&(pool->timer));
++
++    if (pool->all_nodes != NULL)
++        kfree(pool->all_nodes);
++
++    pool->pool_size = 0;
++    pool->node_size = 0;
++    pool->used = 0;
++    pool->all_nodes = NULL;
++    pool->tail_node = NULL;
++    pool->busy_nodes = NULL;
++    pool->free_nodes = NULL;
++    *p_pool = NULL;
++
++    return 0;
++}
++
++static void * base_node_alloc(base_node_pool_t* pool)
++{
++	base_node_t *fn = NULL;
++	
++	if (pool->free_nodes) {
++		fn = pool->free_nodes;
++		/* remove from free list */
++		pool->free_nodes = fn->next;
++		
++		memset(fn, 0, pool->node_size);
++		fn->ticket = jiffies;
++		
++		/* insert to busy list head */
++		if (pool->busy_nodes) {
++			fn->next = pool->busy_nodes;
++			fn->next->prev = fn;
++			if (pool->tail_node == NULL) {
++				pool->tail_node = fn; /* init value */
++			}
++		} else {
++			fn->next = NULL;
++			pool->tail_node = fn; /* init value */
++		}
++		pool->busy_nodes = fn;
++		pool->used++;
++	}
++
++	return base_to_node(fn);
++}
++
++static void base_node_free(base_node_pool_t* pool, base_node_t* fn)
++{
++	/* remove from busy list */
++	if (fn->prev) {
++		if ((fn->prev->next = fn->next) != NULL) {
++			fn->next->prev = fn->prev;
++		}
++	} else {
++		if ((pool->busy_nodes = fn->next) != NULL) {
++			fn->next->prev = fn->prev;
++		}
++	}
++	/* insert to free list head */
++	if (pool->tail_node == fn) {
++		pool->tail_node = fn->prev; /* move forward */
++	}
++	fn->next = pool->free_nodes;
++	pool->free_nodes = fn;
++	pool->used--;
++}
++static void base_node_as_inter(base_node_pool_t* pool, void* node)
++{
++	base_node_t* fn = node_to_base(pool, node);
++	
++	fn->ticket = 0;
++	/* if not newest node */
++	if (fn->next) {
++		if (fn != pool->tail_node) {
++			/* remove from busy list */
++			if ((fn->next->prev = fn->prev) != NULL) {
++				fn->prev->next = fn->next;
++			}
++			/* append to busy list tail */
++			fn->prev = pool->tail_node;
++			if ((fn->next = fn->prev->next) != NULL) {
++				fn->next->prev = fn;
++			}
++			fn->prev->next = fn;
++		} else {
++			pool->tail_node = fn->prev; /* move forward */
++		}
++	}
++}
++static void base_node_update(base_node_pool_t* pool, void* node)
++{
++	base_node_t* fn = node_to_base(pool, node);
++	
++	fn->ticket = jiffies;
++	/* if not newest node */
++	if (fn->prev) {
++		/* remove from busy list */
++		if ((fn->prev->next = fn->next) != NULL) {
++			fn->next->prev = fn->prev;
++		}
++		if (pool->tail_node == fn) {
++			pool->tail_node = fn->prev; /* move forward */
++		}
++		/* insert to busy head */
++		fn->prev = NULL;
++		fn->next = pool->busy_nodes;
++		fn->next->prev = fn;
++		pool->busy_nodes = fn;
++	}
++}
++
++static __inline__ mi_node_t *mi_node_alloc(void) {
++    return (mi_node_t*)base_node_alloc(NODE_POOL);
++}
++
++static void mi_node_pool_check(void)
++{
++	uint32_t count = 0;
++	mi_node_t *fn, *in, *ln;
++    base_node_pool_t* pool = NODE_POOL;
++	
++	if (!pool->free_nodes || !pool->free_nodes->next) {
++		while ((fn = base_to_node(pool->tail_node)) && (count < 10)) {
++			/* not root nor root's son */
++			if ((in = fn->parent) && (in->parent)) {
++				if (in->right == fn) {
++					ln = in->left;
++				} else {
++					ln = in->right;
++				}
++				ln->parent = in->parent;
++				if ((in->parent)->left == in) {
++					(in->parent)->left = ln;
++				} else {
++					(in->parent)->right = ln;
++				}
++				mi_node_free(in);
++				mi_node_free(fn);
++			} else {
++				pool->tail_node = node_to_base(pool, fn)->prev;
++			}
++			count ++;
++		}
++		printk("%2d mi_node entries forced aged out.\n", count);
++	}
++}
++
++
++static int mi_pool_dump(int type, int show)
++{
++	base_node_t *fn = NULL;
++	uint32_t now = jiffies;
++	uint32_t i = 0, a=0, b=0, c=0;
++	base_node_pool_t* pool = (type==1||type==4)?(NODE_POOL):
++                                 NULL;//((type==2||type==5)?(PPPOE_POOL): (UID_POOL));
++	if (!pool||!pool->all_nodes) {
++		printk("error: not in extap mode!\n");
++		return -1;
++	}
++
++ 	if (show && type <= 3) {
++		printk("===================busy nodes===================\n");
++	}
++
++	node_pool_lock(pool);
++	fn = pool->busy_nodes;
++	i = 0;
++	while (fn) {
++		if (show)
++		{
++			switch (type)
++			{
++            case 4:
++			case 5:
++			case 6:
++                fn->ticket = now - jiffies_to_msecs(pool->time);
++                break;
++			case 1:
++			{
++				mi_node_t*node = base_to_node(fn);
++                if (node->ip_ver == ATH_MITBL_IPV4)
++    				printk("%03d.%03d.%03d.%03d", node->ip[0], node->ip[1], node->ip[2], node->ip[3]);
++                else
++    				printk("%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x:%02x%02x",
++                        node->ip[0], node->ip[1], node->ip[2], node->ip[3],
++                        node->ip[4], node->ip[5], node->ip[6], node->ip[7],
++                        node->ip[8], node->ip[9], node->ip[10], node->ip[11],
++                        node->ip[12], node->ip[13], node->ip[14], node->ip[15]);
++                printk("  %02X:%02X:%02X:%02X:%02X:%02X %u\n",
++					node->h_dest[0], node->h_dest[1], node->h_dest[2], 
++					node->h_dest[3], node->h_dest[4], node->h_dest[5],
++					jiffies_to_msecs(now - fn->ticket));
++				break;
++			}
++#if 0
++            case 2:
++			{
++				mi_pppoe_t*node = base_to_node(fn);
++				printk("0x%04X  %02X:%02X:%02X:%02X:%02X:%02X  %02X:%02X:%02X:%02X:%02X:%02X %u\n",
++					node->session_id,
++					node->servmac[0], node->servmac[1], node->servmac[2], 
++					node->servmac[3], node->servmac[4], node->servmac[5],
++					node->peermac[0], node->peermac[1], node->peermac[2], 
++					node->peermac[3], node->peermac[4], node->peermac[5],
++					CONVERT_SYSTEM_TIME_TO_MS(now - fn->ticket));
++				break;
++			}
++            case 3:
++			default:
++			{
++				mi_uid_t*node = base_to_node(fn);
++				printk("%d %d  %02X%02X%02X%02X%02X%02X  %02X:%02X:%02X:%02X:%02X:%02X %u\n",
++					node->is_server, node->id_add_by_driver, 
++					node->id_str[0], node->id_str[1], node->id_str[2], 
++					node->id_str[3], node->id_str[4], node->id_str[5],
++					node->peermac[0], node->peermac[1], node->peermac[2], 
++					node->peermac[3], node->peermac[4], node->peermac[5],
++					CONVERT_SYSTEM_TIME_TO_MS(now - fn->ticket));
++				break;
++			}
++#endif
++			}
++		}
++        i++;
++		if (fn == pool->tail_node) {
++			a = i;
++			i = 0;
++			show = 0;
++		}
++		fn = fn->next;
++	}
++	b = i;
++	i = 0;
++	fn = pool->free_nodes;
++	while (fn) {
++		fn = fn->next;
++		i++;
++	}
++	c = i;
++	i = 0;
++
++	if (type > 3)
++		{
++            pool->timer.expires = jiffies + msecs_to_jiffies(500);
++            add_timer(&pool->timer);
++        }
++	else 
++		printk("===================pool stat====================\n"
++    			"busy: %d tail: %d free: %d used: %d total: %d\n",
++    			a, b, c, pool->used, pool->pool_size);
++	node_pool_unlock(pool);
++
++	return a;
++}
++
++
++static void mi_node_tbl_aging(void*timer_arg)
++{
++	uint32_t count = 0;
++	mi_node_t *fn, *in, *ln;
++	base_node_pool_t* pool =  (base_node_pool_t*)(timer_arg);
++	unsigned long age_time = 0;
++	age_time = jiffies - jiffies_to_msecs(pool->time);
++
++	node_pool_lock(pool);
++	while ((fn = (mi_node_t *)base_to_node(pool->tail_node))
++		&& time_before(pool->tail_node->ticket, age_time)/* aged */
++		&& (count < 64))					 	/* no more than 64 entris once */
++	{
++		/* not root nor root's sun */
++		if ((in = fn->parent) != NULL) {
++			if (in->right == fn) {
++				ln = in->left;
++			} else {
++				ln = in->right;
++			}
++			if ((ln->parent = in->parent) != NULL) {
++				if ((in->parent)->left == in) {
++					(in->parent)->left = ln;
++				} else {
++					(in->parent)->right = ln;
++				}
++			} else {
++				pool->root = ln;
++			}
++			mi_node_free(in);
++			mi_node_free(fn);
++		} else {
++			mi_node_free(fn);
++			pool->root = NULL;
++		}
++		count ++;
++	}
++	node_pool_unlock(pool);
++    if (count>=64) {
++        pool->timer.expires = jiffies + msecs_to_jiffies((pool->interval/2));
++    } else {
++        pool->timer.expires = jiffies + msecs_to_jiffies(pool->interval);
++    }
++	add_timer(&pool->timer);
++}
++
++
++static void
++mi_set_key(mi_node_t *node, uint8_t *ipaddr, int bit, u_int8_t *h_dest, int ip_ver)
++{
++	int i;
++
++	if (h_dest == NULL) {	/* Intermediate Node */
++		for (i = 0; i < (bit / 8); i++) {
++			node->ip[i] = ipaddr[i];
++		}
++		if (bit % 8) {
++			node->ip[i] =
++			    (ipaddr[i] >> (8 - (bit % 8))) <<
++			    (8 - (bit % 8));
++		}
++		node->len = bit;
++	} else {
++		if (ip_ver == ATH_MITBL_IPV4) {
++			for (i = 0; i < 16; i++) {
++				if (i < 4) {
++					node->ip[i] = ipaddr[i];
++				} else {
++					node->ip[i] = 0;
++				}
++			}
++			node->len = 32;
++		} else if (ip_ver == ATH_MITBL_IPV6) {
++			for (i = 0; i < 16; i++) {
++				node->ip[i] = ipaddr[i];
++			}
++			node->len = 128;
++		}
++
++		for (i = 0; i < ETH_ALEN; i++) {
++			node->h_dest[i] = h_dest[i];
++		}
++	}
++	node->ip_ver = ip_ver;
++
++}
++
++static int
++mi_prefix_match(uint8_t *key, uint8_t *ipaddr, int ip_ver)
++{
++	int i, j, bit = 0;
++
++	if (ip_ver == ATH_MITBL_IPV4) {
++		for (i = 0; i < 4; i++) {
++			if (key[i] == ipaddr[i]) {
++				bit = bit + 8;
++			} else {
++				break;
++			}
++		}
++
++		/* Same ip addr exists in the tree */
++		if (bit == 32)
++			return bit;
++
++		for (j = 1; j < 8; j++) {
++
++			if ((key[i] &
++			     ((unsigned char) ((0xFF >> j) << j))) ==
++			    (ipaddr[i] &
++			     ((unsigned char) ((0xFF >> j) << j)))) {
++				bit = bit + (8 - j);
++				return bit;
++			}
++		}
++	} else if (ip_ver == ATH_MITBL_IPV6) {
++		for (i = 0; i < 16; i++) {
++			if (key[i] == ipaddr[i]) {
++				bit = bit + 8;
++			} else {
++				break;
++			}
++		}
++
++		/* Already the same ip addr exist in the tree */
++		if (bit == 128)
++			return bit;
++
++		for (j = 1; j < 8; j++) {
++			if ((key[i] & ((unsigned char) ((0xFF >> j) << j))) ==
++			    (ipaddr[i] & ((unsigned char) ((0xFF >> j) << j)))) {
++				bit = bit + (8 - j);
++				return bit;
++			}
++
++		}
++	}
++	return bit;
++}
++
++
++mi_node_t *
++mi_tbl_add(mi_node_t **root, uint8_t *ipaddr, uint8_t *h_dest, int ip_ver)
++{
++
++	mi_node_t *fn, *in, *ln;
++	int bit = 0, i;
++
++	/* insert node in tree */
++
++	if (ip_ver == ATH_MITBL_IPV4) {
++		for (i = 0; i < 4; i++) {
++			if (ipaddr[i] != 0) {
++				break;
++			}
++		}
++		if (i == 4) {
++			return NULL;
++		}
++	} else if (ip_ver == ATH_MITBL_IPV6) {
++		for (i = 0; i < 16; i++) {
++			if (ipaddr[i] != 0) {
++				break;
++			}
++		}
++		if (i == 16) {
++			return NULL;
++		}
++	}
++
++	mi_node_pool_check();
++	if (*root == NULL) {
++		*root = mi_node_alloc();
++		/* Modify for static analysis, prevent *root is NULL */
++		if (*root == NULL)
++		{
++			return NULL;
++		}
++		
++		for (i = 0; i < 6; i++)
++			(*root)->h_dest[i] = h_dest[i];
++		(*root)->left = NULL;
++		(*root)->right = NULL;
++		(*root)->parent = NULL;
++		(*root)->ip_ver = ip_ver;
++		if ((*root)->ip_ver == ATH_MITBL_IPV4) {
++			for (i = 0; i < 4; i++)
++				(*root)->ip[i] = ipaddr[i];
++			(*root)->len = 32;
++		} else if ((*root)->ip_ver == ATH_MITBL_IPV6) {
++			for (i = 0; i < 16; i++)
++				(*root)->ip[i] = ipaddr[i];
++			(*root)->len = 128;
++		}
++		return (*root);
++	}
++
++	fn = *root;
++
++	do {
++		/*
++		 *      Prefix match returns no. of bits matched with the key
++		 */
++		if (fn->ip_ver && (fn->ip_ver != ip_ver)) {
++			bit = 0;
++			/* create a new child node and intermediate node */
++			in = mi_node_alloc();
++			ln = mi_node_alloc();
++			/* Modify for static analysis, prevent in/ln is NULL */
++			if ((in == NULL) || (ln == NULL))
++			{
++				if (in) mi_node_free(in);
++				if (ln) mi_node_free(ln);
++				return NULL;
++			}
++			fn->parent = in;
++			ln->parent = in;
++			in->parent = NULL;
++			if (ip_ver == ATH_MITBL_IPV4) {
++				in->left = ln;
++				in->right = fn;
++			} else if (ip_ver == ATH_MITBL_IPV6) {
++				in->left = fn;
++				in->right = ln;
++			}
++			ln->left = NULL;
++			ln->right = NULL;
++			mi_node_inter(in);
++			mi_set_key(ln, ipaddr, 0, h_dest, ip_ver);
++			*root = in;
++			return ln;
++		} else if (!(fn->ip_ver) && !(fn->len)) {	/* Handle ip4 and IPV6 . Root node will have fn->len=0 and fn->ip_ver=0   */
++			if (ip_ver == ATH_MITBL_IPV4) {
++				fn = fn->left;
++			} else if (ip_ver == ATH_MITBL_IPV6) {
++				fn = fn->right;
++			}
++			continue;
++		} else {
++			bit = mi_prefix_match(fn->ip, ipaddr, ip_ver);
++			if (bit > (fn->len)) {
++				bit = fn->len;
++			}
++		}
++
++		if (bit == fn->len) {
++			if (ip_ver == ATH_MITBL_IPV4) {
++				if (bit == 32) {
++					/*
++					 * EV #98259, overwrite as the mac address
++					 * might have changed.
++					 */
++					for (i = 0; i < ETH_ALEN; i++)
++						fn->h_dest[i] = h_dest[i];
++					mi_node_update(fn);
++					break;
++				}
++
++				if (ipaddr[(bit / 8)] &
++				    ((0x80) >> (bit % 8))) {
++					fn = fn->right;
++				} else {
++					fn = fn->left;
++				}
++			}
++			if (ip_ver == ATH_MITBL_IPV6) {
++				if (bit == 128) {
++
++					/*
++					 * EV #98259, overwrite as the mac address
++					 * might have changed.
++					 */
++					for (i = 0; i < ETH_ALEN; i++)
++						fn->h_dest[i] = h_dest[i];
++					mi_node_update(fn);
++					break;
++				}
++
++				if (ipaddr[(bit / 8)] &
++				    ((0x80) >> (bit % 8))) {
++					fn = fn->right;
++				} else {
++					fn = fn->left;
++				}
++			}
++
++			continue;
++		} else {
++			/* create a new child node and intermediate node */
++			in = mi_node_alloc();
++			ln = mi_node_alloc();
++
++			in->parent = fn->parent;
++			//in->ip_ver = 0;
++			fn->parent = in;
++			ln->parent = in;
++
++			if ((in->parent) != NULL) {
++				if (((in->parent)->left) == fn) {
++					(in->parent)->left = in;
++				} else {
++					(in->parent)->right = in;
++				}
++			} else {
++				*root = in;
++			}
++
++			if (ip_ver == ATH_MITBL_IPV4) {
++				if (ipaddr[(bit / 8)] &
++				    ((0x80) >> (bit % 8))) {
++					in->right = ln;
++					in->left = fn;
++				} else {
++					in->left = ln;
++					in->right = fn;
++				}
++			} else if (ip_ver == ATH_MITBL_IPV6) {
++				if (ipaddr[(bit / 8)] &
++				    ((0x80) >> (bit % 8))) {
++					in->right = ln;
++					in->left = fn;
++				} else {
++					in->left = ln;
++					in->right = fn;
++				}
++			}
++
++			ln->left = NULL;
++			ln->right = NULL;
++
++			/* Need to set the key for in and ln */
++
++			mi_node_inter(in);
++			mi_set_key(in, ipaddr, bit, NULL, ip_ver);
++			mi_set_key(ln, ipaddr, 0, h_dest, ip_ver);
++
++			return ln;
++		}
++	} while (fn);
++
++	return NULL;
++}
++
++static int
++mi_addr_bit_set(uint8_t *ipaddr, int len, int ip_ver)
++{
++	if (ip_ver == ATH_MITBL_IPV4) {
++		return (ipaddr[(len / 8)] & ((0x80) >> (len % 8)));
++	} else if (ip_ver == ATH_MITBL_IPV6) {
++		return (ipaddr[(len / 8)] & ((0x80) >> (len % 8)));
++	}
++	return 0;
++}
++
++static void
++mi_tbl_del(mi_node_t **root, uint8_t *ipaddr, int ip_ver)
++{
++
++	mi_node_t *fn, *in, *ln, *next;
++	int dir = 0, bit = 0;
++
++	/*
++	 *      Descend on a tree
++	 */
++
++	if (*root == NULL) {
++		return;
++	}
++	fn = *root;
++
++	for (;;) {
++		if (fn->right && fn->left) {
++			if (!fn->len && !fn->ip_ver) {
++				if (ip_ver == ATH_MITBL_IPV4) {
++					dir = 0;
++				} else if (ip_ver == ATH_MITBL_IPV6) {
++					dir = 1;
++				}
++			} else {
++				dir = mi_addr_bit_set(ipaddr, fn->len, ip_ver);	// return 0 for left
++			}
++			next = dir ? fn->right : fn->left;
++			fn = next;
++			continue;
++		} else {
++			/* To identify no match found */
++			bit = mi_prefix_match(fn->ip, ipaddr, ip_ver);
++			if ((ip_ver == ATH_MITBL_IPV4) && (bit != 32)) {
++				return;
++			} else if ((ip_ver == ATH_MITBL_IPV6) && (bit != 128)) {
++				return;
++			} else {
++				in = fn->parent;
++
++				if (in == NULL) {	// Tree has only 1 entry
++					mi_node_free(fn);
++					*root = NULL;
++					return;
++				}
++
++				if (in->right == fn) {
++					ln = in->left;
++				} else {
++					ln = in->right;
++				}
++
++				ln->parent = in->parent;
++
++				if ((in->parent) != NULL) {
++					if ((in->parent)->left == in) {
++						(in->parent)->left = ln;
++					} else {
++						(in->parent)->right = ln;
++					}
++				} else {
++					*root = ln;
++				}
++
++				mi_node_free(in);
++				mi_node_free(fn);
++				return;
++			}
++		}
++
++	}
++
++}
++
++static uint8_t *
++mi_tbl_lkup(mi_node_t *root, uint8_t *ipaddr, int ip_ver)
++{
++	mi_node_t *fn, *next;
++	int dir = 0,  bit;
++
++
++	/*
++	 *      Descend on a tree
++	 */
++	if (root == NULL) {
++		return NULL;
++	}
++
++	fn = root;
++	next = root;
++
++	for (;;) {
++		if (fn->right && fn->left) {
++			if (!fn->len && !fn->ip_ver) {
++				if (ip_ver == ATH_MITBL_IPV4) {
++					dir = 0;
++				} else if (ip_ver == ATH_MITBL_IPV6) {
++					dir = 1;
++				}
++			} else {
++				dir = mi_addr_bit_set(ipaddr, fn->len, ip_ver);
++			}
++			next = dir ? fn->right : fn->left;
++			fn = next;
++			continue;
++		} else {
++			bit = mi_prefix_match(fn->ip, ipaddr, ip_ver);
++			if ((ip_ver == ATH_MITBL_IPV4) && (bit != 32)) {
++				return NULL;
++			} else if ((ip_ver == ATH_MITBL_IPV6) && (bit != 128)) {
++				return NULL;
++			}
++
++			mi_node_update(next);
++			return next->h_dest;
++		}
++	}
++
++	return NULL;
++
++}
++
++static mi_node_t *mi_tbl_add_safe(mi_node_t **node, uint8_t *ip, uint8_t *ha, int type)
++{
++    mi_node_t * p = NULL;
++    node_pool_lock(NODE_POOL);
++    p = mi_tbl_add(node, ip, ha, type);
++    node_pool_unlock(NODE_POOL);
++    return p;
++}
++
++static uint8_t *mi_tbl_lkup_safe(mi_node_t *node, uint8_t *ip, int type)
++{
++    uint8_t *ha = NULL;
++    node_pool_lock(NODE_POOL);
++    ha = mi_tbl_lkup(node, ip, type);
++    node_pool_unlock(NODE_POOL);
++    return ha;
++}
++
++static void mi_tbl_del_safe(mi_node_t **node, uint8_t *ip, int type)
++{
++    node_pool_lock(NODE_POOL);
++    mi_tbl_del(node, ip, type);
++    node_pool_unlock(NODE_POOL);
++}
++
++static uint32_t
++wil_extap_get_mask(struct wil6210_priv *wil)
++{
++#if 0
++	struct net_device *ndev = wil_to_ndev(wil);
++	struct net_bridge_port *port = br_port_get_rcu(ndev);
++
++	if (port && port->br && port->br->dev) {
++        struct in_device *in_dev = port->br->dev->ip_ptr;
++    	if (in_dev && in_dev->ifa_list) {
++			return in_dev->ifa_list->ifa_mask;
++    	}
++    }
++#endif
++    return 0xFFFFFF00;
++}
++
++static int
++wil_extap_detect_arp(struct wil6210_priv *wil, struct sk_buff *skb)
++{
++    int len = sizeof(eth_arphdr_t) + sizeof(struct ethhdr);
++	struct ethhdr *eth = (void *)skb->data;
++    struct iphdr *iphdr = (struct iphdr *)(eth + 1);
++
++    uint32_t mask = wil_extap_get_mask(wil);
++
++    if (mask && ((iphdr->saddr & mask) == (iphdr->daddr & mask))
++        && ((iphdr->daddr & ~(mask)) != ~(mask))
++        && (skb->len >= len)) {
++
++        eth_arphdr_t arphdr = {
++            ARP_HW_ETHER,                           /* arpHardwareType: 0x0001 */
++            IP_PROTOCOL,                            /* arpProtocalType: 0x0800 */
++            ETH_ALEN,                         /* arpHardwareSize */
++            sizeof(uint32_t),                       /* arpProtocalSize */
++            ARP_OP_REQUEST,                         /* arpOp: 0x0001 */       
++            {0xff, 0xff, 0xff, 0xff, 0xff, 0xff},   /* senderMac */
++            {0, 0, 0, 0},                           /* senderIp */
++            {0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   /* targetMac */
++            {0, 0, 0, 0},                           /* targetIp */
++        };
++
++        skb_trim(skb, len);
++        eth->h_proto = ARP_PROTOCOL;
++        memcpy(&eth->h_dest, &arphdr.ar_sha, arphdr.ar_hln);
++        memcpy(&arphdr.ar_sha, &eth->h_source, arphdr.ar_hln);
++        memcpy(&arphdr.ar_sip, &iphdr->saddr, arphdr.ar_pln);
++        memcpy(&arphdr.ar_tip, &iphdr->daddr, arphdr.ar_pln);
++        memcpy(iphdr, &arphdr, sizeof(arphdr));
++
++        return 1;
++    }
++
++    return 0;
++}
++
++static int
++wil_extap_out_dhcp(struct wil6210_priv *wil, struct sk_buff *skb)
++{
++	struct ethhdr *eth = (void *)skb->data;
++    struct iphdr *ip_hdr = (struct iphdr *)(eth + 1);
++    struct udphdr *udp_hdr = (struct udphdr*)(ip_hdr + 1);
++    struct dhcp_header *dhcp_hdr = (struct dhcp_header *)(udp_hdr +1);
++
++    if (skb->len >= DHCP_PKT_MIN_LEN
++        && ip_hdr->protocol == IPPROTO_UDP
++        && udp_hdr->source == DHCP_CLIENT_PORT
++        && udp_hdr->dest == DHCP_SERVER_PORT
++        && dhcp_hdr->cookie == DHCP_MAGIC) {
++
++        /* drop dhcp info packet */
++        if (dhcp_hdr->options[0] == DHCP_MESSAGE_TYPE
++            && dhcp_hdr->options[1] == 0x01 /* len=1 */
++            && dhcp_hdr->options[2] == DHCP_INFORM) {
++            return 1;
++        }
++
++        /* change flags from unicast to broadcast */
++        if (!(dhcp_hdr->flags & DHCP_BROADCAST_FLAG)) {
++            dhcp_hdr->flags |= DHCP_BROADCAST_FLAG;
++            udp_hdr->check = 0;
++        }
++    }
++
++    return 0;
++}
++
++static int
++wil_extap_input(struct wil6210_priv *wil, struct sk_buff *skb)
++{
++	uint8_t	*mac;
++	uint8_t	*sip, *dip;
++	struct iphdr	*iphdr = NULL;
++    struct ipv6hdr *ip6hdr = NULL;
++	eth_arphdr_t	*arp = NULL;
++	struct net_device *ndev = wil_to_ndev(wil);
++	struct ethhdr *eth = (void *)skb->data;
++
++    if (IEEE80211_ADDR_EQ(ndev->dev_addr, eth->h_source)) {
++        return 2;
++    }
++
++	switch (ntohs(eth->h_proto)) {
++	case ETH_P_IP:
++		iphdr = (struct iphdr *)(eth + 1);
++		sip = (uint8_t *)&iphdr->saddr;
++		dip = (uint8_t *)&iphdr->daddr;
++		if (ipv4_is_multicast(iphdr->daddr)) {
++			if (!is_multicast_ether_addr(eth->h_dest)) {
++				eth->h_dest[0] = 0x01;
++				eth->h_dest[1] = 0x00;
++				eth->h_dest[2] = 0x5e;
++				eth->h_dest[3] = (dip[1] & 0x7f);
++				eth->h_dest[4] = dip[2];
++				eth->h_dest[5] = dip[3];
++			}
++			return 0;
++		}
++		break;
++
++	case ETH_P_ARP:
++		arp = (eth_arphdr_t *)(eth + 1);
++		if (arp->ar_op == htons(ARPOP_REQUEST) ||
++	    	    arp->ar_op == htons(ARPOP_RREQUEST)) {
++			if (!is_multicast_ether_addr(eth->h_dest)) {
++				mac = mi_lkup(NODE_POOL->root, arp->ar_tip, ATH_MITBL_IPV4);
++				if (mac) {
++					IEEE80211_ADDR_COPY(eth->h_dest, mac);
++					IEEE80211_ADDR_COPY(arp->ar_tha, mac);
++				} else {
++					memset(eth->h_dest, 0xFF, ETH_ALEN);
++					memset(arp->ar_tha, 0x00, ETH_ALEN);
++				}
++			}
++			return 0;
++		}
++		mac = mi_lkup(NODE_POOL->root, arp->ar_tip, ATH_MITBL_IPV4);
++		if (mac) IEEE80211_ADDR_COPY(arp->ar_tha, mac);
++		sip = arp->ar_sip;
++		dip = arp->ar_tip;
++		break;
++
++	case ETH_P_PAE:
++		IEEE80211_ADDR_COPY(eth->h_dest, ndev->dev_addr);
++		return 0;
++
++    case ETH_P_IPV6:
++        ip6hdr = (struct ipv6hdr *)(eth + 1);
++        
++        if (!ipv6_addr_is_multicast(&ip6hdr->daddr)) {
++            mac = mi_lkup(NODE_POOL->root, ip6hdr->daddr.s6_addr, ATH_MITBL_IPV6);
++            if (mac) {
++                IEEE80211_ADDR_COPY(eth->h_dest, mac);
++            } else {
++                /* xxx: send ipv6 arp ? */
++            }
++        }
++
++        return 0;
++
++	default:
++		return 0;
++	}
++
++    /* These are for ipv4/arp. */
++	mac = mi_lkup(NODE_POOL->root, dip, ATH_MITBL_IPV4);
++	if (mac) {
++		IEEE80211_ADDR_COPY(eth->h_dest, mac);
++	} else {
++		if ( iphdr != NULL ) {
++			return wil_extap_detect_arp(wil, skb);
++		}
++	}
++	return 0;
++}
++
++static int
++wil_extap_out_arp(struct wil6210_priv *wil, struct ethhdr *eth)
++{
++	eth_arphdr_t *arp = (eth_arphdr_t *)(eth + 1);
++	struct net_device *ndev = wil_to_ndev(wil);
++
++	/* For ARP requests, note down the sender's details */
++	mi_add(&NODE_POOL->root, arp->ar_sip, arp->ar_sha, ATH_MITBL_IPV4);
++
++	/* Modify eth frame as if we sent */
++	IEEE80211_ADDR_COPY(eth->h_source, ndev->dev_addr);
++
++	/* Modify ARP content as if we initiated the req */
++	IEEE80211_ADDR_COPY(arp->ar_sha, ndev->dev_addr);
++
++	return 0;
++}
++
++static void
++wil_extap_out_ipv4(struct wil6210_priv *wil,  struct ethhdr *eth)
++{
++	struct iphdr	*iphdr = (struct iphdr *)(eth + 1);
++	struct net_device *ndev = wil_to_ndev(wil);
++	uint8_t	*mac, *ip;
++
++	ip = (uint8_t *)&iphdr->saddr;
++	mac = eth->h_source;
++	mi_add(&NODE_POOL->root, ip, mac, ATH_MITBL_IPV4);
++
++	IEEE80211_ADDR_COPY(eth->h_source, ndev->dev_addr);
++}
++
++static int
++wil_extap_out_ipv6(struct wil6210_priv *wil,  struct ethhdr *eth)
++{
++	struct ipv6hdr	*ip6hdr = (struct ipv6hdr *)(eth + 1);
++	struct net_device *ndev = wil_to_ndev(wil);
++	uint8_t		*mac, *ip;
++
++	if (ip6hdr->nexthdr == NEXTHDR_ICMP) {
++		struct nd_msg	*nd = (struct nd_msg *)(ip6hdr + 1);
++		eth_icmp6_lladdr_t	*ha;
++		uint32_t len = ntohs(ip6hdr->payload_len);
++		uint32_t optlen = (len - sizeof(struct nd_msg)) / 8;
++
++		/* learn the source address */
++		mi_add(&NODE_POOL->root, ip6hdr->saddr.s6_addr, eth->h_source, ATH_MITBL_IPV6);
++
++		/* Modify eth frame as if we sent */
++		IEEE80211_ADDR_COPY(eth->h_source, ndev->dev_addr);
++
++		switch(nd->icmph.icmp6_type) {
++		case NDISC_NEIGHBOUR_SOLICITATION:	/* ARP Request */
++			ha = (eth_icmp6_lladdr_t *)nd->opt;
++			while (ha->len && optlen >= ha->len) {
++				if (ha->type == 1) {
++					/* save source ip */
++					mi_add(&NODE_POOL->root, ip6hdr->saddr.s6_addr, ha->addr, ATH_MITBL_IPV6);
++					IEEE80211_ADDR_COPY(ha->addr, ndev->dev_addr);
++        
++					nd->icmph.icmp6_cksum = 0;
++					nd->icmph.icmp6_cksum =
++					csum_ipv6_magic(&ip6hdr->saddr, &ip6hdr->daddr,
++						len, IPPROTO_ICMPV6,
++						csum_partial((__u8 *) nd, len, 0));
++					break;
++				}
++				optlen -= ha->len;
++				ha = (eth_icmp6_lladdr_t *)((uint8_t*)(nd) + ha->len * 8);
++			}
++			break;
++		case NDISC_NEIGHBOUR_ADVERTISEMENT:	/* ARP Response */
++			ha = (eth_icmp6_lladdr_t *)nd->opt;
++			while (ha->len && optlen >= ha->len) {
++				if (ha->type == 2) {
++ 					/* save target ip */
++					mi_add(&NODE_POOL->root, nd->target.s6_addr, ha->addr, ATH_MITBL_IPV6);
++					IEEE80211_ADDR_COPY(ha->addr, ndev->dev_addr);
++
++					nd->icmph.icmp6_cksum = 0;
++					nd->icmph.icmp6_cksum =
++					csum_ipv6_magic(&ip6hdr->saddr, &ip6hdr->daddr,
++						len, IPPROTO_ICMPV6,
++						csum_partial((__u8 *) nd, len, 0));
++					break;
++				}
++				optlen -= ha->len;
++				ha = (eth_icmp6_lladdr_t *)((uint8_t*)(nd) + ha->len * 8);
++			}
++			break;
++		case NDISC_ROUTER_SOLICITATION:
++		case NDISC_ROUTER_ADVERTISEMENT:
++		default:
++            break;
++			/* Don't know what to do */
++		}
++		return 0;
++	}
++
++	ip = ip6hdr->saddr.s6_addr;
++	mac = eth->h_source;
++	mi_add(&NODE_POOL->root, ip, mac, ATH_MITBL_IPV6);
++	IEEE80211_ADDR_COPY(eth->h_source, ndev->dev_addr);
++
++	return 0;
++}
++
++static int
++wil_extap_output(struct wil6210_priv *wil, struct sk_buff *skb)
++{
++	struct ethhdr *eth = (void *)skb->data;
++	struct net_device *ndev = wil_to_ndev(wil);
++
++	switch(ntohs(eth->h_proto)) {
++	case ETH_P_ARP:
++		return wil_extap_out_arp(wil, eth);
++
++	case ETH_P_IP:
++		wil_extap_out_ipv4(wil, eth);
++		return wil_extap_out_dhcp(wil, skb);
++		break;
++    
++	case ETH_P_PAE:
++		IEEE80211_ADDR_COPY(eth->h_source, ndev->dev_addr);
++		break;
++
++    case ETH_P_IPV6:
++        return wil_extap_out_ipv6(wil, eth);
++
++	default:
++		return 1;
++	}
++
++	return 0;
++}
++
++int wil_extap_attach(struct wil6210_priv *wil)
++{
++	void *p = NULL;
++	base_node_pool_init(&NODE_POOL, (void**)&p,
++		1 + 2*MI_POOL_SIZE_NODE, sizeof(mi_node_t),
++		MI_AGEING_NODE,	mi_node_tbl_aging, 11);
++	return 0;
++}
++
++int wil_extap_detach(struct wil6210_priv *wil)
++{
++	void *p = NULL;
++	base_node_pool_destory(&NODE_POOL, (void**)&p);
++	return 0;
++}
++
++int wil_extap_dump(int type)
++{
++	mi_pool_dump(type, 1);
++	return 0;
++}
++EXPORT_SYMBOL(wil_extap_attach);
++EXPORT_SYMBOL(wil_extap_detach);
++EXPORT_SYMBOL(wil_extap_dump);
++
++
++/**********************************************************************************************************************/
+ static inline uint wil_rx_snaplen(void)
+ {
+ 	return rx_align_2 ? 6 : 0;
+@@ -578,6 +1906,18 @@ void wil_netif_rx_any(struct sk_buff *sk
+ 		dev_queue_xmit(xmit_skb);
+ 	}
+ 
++    if (wdev->iftype == NL80211_IFTYPE_STATION) {
++        switch (wil_extap_input(wil, skb)) {
++        case 0:
++        case 1:
++            break;
++        default:
++            dev_kfree_skb(skb);
++            rc = GRO_DROP;
++            skb = NULL;
++        }
++    }
++
+ 	if (skb) { /* deliver to local stack */
+ 		skb->protocol = eth_type_trans(skb, ndev);
+ #if defined(WIL_USE_NSS)
+@@ -622,6 +1962,14 @@ void wil_netif_rx_any(struct sk_buff *sk
+  *
+  * Safe to call from NAPI poll, i.e. softirq with interrupts enabled
+  */
++static uint64_t stat_recv_byte = 0;
++static uint64_t stat_recv_speed = 0;
++static uint64_t current_recv_byte = 0;
++static unsigned long delay = 0; 
++static int speedtestad=0;
++void speedtestset(int x){speedtestad=x;}
++EXPORT_SYMBOL(speedtestset);
++
+ void wil_rx_handle(struct wil6210_priv *wil, int *quota)
+ {
+ 	struct net_device *ndev = wil_to_ndev(wil);
+@@ -636,6 +1984,19 @@ void wil_rx_handle(struct wil6210_priv *
+ 	while ((*quota > 0) && (NULL != (skb = wil_vring_reap_rx(wil, v)))) {
+ 		(*quota)--;
+ 
++        if (speedtestad) {
++            stat_recv_byte += skb->len;
++            if (time_after(jiffies, delay)||!delay) {
++                delay = jiffies + HZ;
++                stat_recv_speed = stat_recv_byte - current_recv_byte;
++                current_recv_byte = stat_recv_byte;
++                printk("recv_in_bridge recv_byte %lldMB speed %uMbps\n", stat_recv_byte, ((unsigned long)stat_recv_speed)/125);        
++            }
++        
++            dev_kfree_skb_any(skb);
++            continue;
++        }
++
+ 		if (wil->wdev->iftype == NL80211_IFTYPE_MONITOR) {
+ 			skb->dev = ndev;
+ 			skb_reset_mac_header(skb);
+@@ -1170,6 +2531,14 @@ netdev_tx_t wil_start_xmit(struct sk_buf
+ 
+ 	/* find vring */
+ 	if (wil->wdev->iftype == NL80211_IFTYPE_STATION) {
++        skb = skb_unshare(skb, GFP_ATOMIC);
++        if (skb == NULL) {
++            ndev->stats.tx_dropped++;
++            return NET_XMIT_DROP;
++        }
++        if (wil_extap_output(wil, skb)) {
++            goto drop;
++        }
+ 		/* in STA mode (ESS), all to same VRING */
+ 		vring = wil_find_tx_vring_sta(wil, skb);
+ 	} else { /* direct communication, find matching VRING */

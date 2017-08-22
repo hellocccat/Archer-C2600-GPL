@@ -1,0 +1,83 @@
+\section{CFileStatistic Class Reference}
+\label{classCFileStatistic}\index{CFileStatistic@{CFileStatistic}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries AddRequest} ()\label{classCFileStatistic_ac41d86b5584dcab1659ab46cdedeb753}
+
+\item 
+void {\bfseries AddAccepted} ()\label{classCFileStatistic_a38bd2d1ff2f5ad24f7f9d1ef7ad0e531}
+
+\item 
+void {\bfseries AddTransferred} (uint64 bytes)\label{classCFileStatistic_a17ca56b5d8e43527f74ff0fb98d5e056}
+
+\item 
+uint16 {\bfseries GetRequests} () const \label{classCFileStatistic_a477e10ff32abee7d7c6255a875e31bbb}
+
+\item 
+uint16 {\bfseries GetAccepts} () const \label{classCFileStatistic_af285b3b9756d8719bdf167a68716249e}
+
+\item 
+uint64 {\bfseries GetTransferred} () const \label{classCFileStatistic_a671a7e7694993817b410c8786093b932}
+
+\item 
+uint32 {\bfseries GetAllTimeRequests} () const \label{classCFileStatistic_a6efc8bbe912ecbba8b1b179238cd9a64}
+
+\item 
+void {\bfseries SetAllTimeRequests} (uint32 new\_\-value)\label{classCFileStatistic_a231e0446020f744aff94eca118b3dd7f}
+
+\item 
+uint32 {\bfseries GetAllTimeAccepts} () const \label{classCFileStatistic_aa2b44fab7da2ff4917a4fa336f137338}
+
+\item 
+void {\bfseries SetAllTimeAccepts} (uint32 new\_\-value)\label{classCFileStatistic_a19c6b731850e2aeed63183e0889482b5}
+
+\item 
+uint64 {\bfseries GetAllTimeTransferred} () const \label{classCFileStatistic_a8188478e9b6898806af98a496445d9e1}
+
+\item 
+void {\bfseries SetAllTimeTransferred} (uint64 new\_\-value)\label{classCFileStatistic_a3a47156947f47c97e44777856924829a}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries fileParent}\label{classCFileStatistic_ae4c8096b677c1af3cc93c5f939837610}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16 {\bfseries requested}\label{classCFileStatistic_a799d8ff8b91eec557f8c699517a76e87}
+
+\item 
+uint64 {\bfseries transferred}\label{classCFileStatistic_ac82c215cc6b227f4e41e4e82c0997f1c}
+
+\item 
+uint16 {\bfseries accepted}\label{classCFileStatistic_ae11e2019a966d1639f1c94b18c104e28}
+
+\item 
+uint32 {\bfseries alltimerequested}\label{classCFileStatistic_ac9bbcd115e330410d0ad0fa8a418332f}
+
+\item 
+uint64 {\bfseries alltimetransferred}\label{classCFileStatistic_a50b74f405bcc3ebe9e7408b0dfcb3b76}
+
+\item 
+uint32 {\bfseries alltimeaccepted}\label{classCFileStatistic_a11e4f0c5446f476d2ca1a72fee521672}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CKnownFile}\label{classCFileStatistic_a6dde6c7f3c9e194043690e790fd52338}
+
+\item 
+class {\bf CKnownFilesRem}\label{classCFileStatistic_aececa004c228e6d1c42c2b404385f7a2}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/KnownFile.h\item 
+src/KnownFile.cpp\end{DoxyCompactItemize}

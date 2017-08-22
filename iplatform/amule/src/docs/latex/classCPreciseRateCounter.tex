@@ -1,0 +1,119 @@
+\section{CPreciseRateCounter Class Reference}
+\label{classCPreciseRateCounter}\index{CPreciseRateCounter@{CPreciseRateCounter}}
+
+
+Counts precise rate/average on added bytes/values.  
+
+
+{\ttfamily \#include $<$Statistics.h$>$}Inheritance diagram for CPreciseRateCounter::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCPreciseRateCounter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPreciseRateCounter} (uint32\_\-t timespan, bool count\_\-average=false)
+\item 
+void {\bf CalculateRate} (uint64\_\-t now)
+\item 
+double {\bf GetRate} ()
+\item 
+double {\bf GetMaxRate} ()
+\item 
+void {\bf SetTimespan} (uint32\_\-t timespan)
+\item 
+void {\bf operator+=} (uint32\_\-t bytes)\label{classCPreciseRateCounter_a19876de2e6216d037d49994bc9bd03d1}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::deque$<$ uint32 $>$ {\bfseries m\_\-byte\_\-history}\label{classCPreciseRateCounter_aa63ba8a8b43f5fa845b77bccd6dbafaf}
+
+\item 
+std::deque$<$ uint64 $>$ {\bfseries m\_\-tick\_\-history}\label{classCPreciseRateCounter_abf40f2e2b13cb517828d8500833b4797}
+
+\item 
+uint32\_\-t {\bfseries m\_\-timespan}\label{classCPreciseRateCounter_a4a16efab7437091165d7f400ed9bbd4a}
+
+\item 
+uint32\_\-t {\bfseries m\_\-total}\label{classCPreciseRateCounter_ab8a2529e67cb46a5bfc096069b6bdafc}
+
+\item 
+double {\bfseries m\_\-rate}\label{classCPreciseRateCounter_abfd12f1ee6b22ab6a1f90fe27e47d617}
+
+\item 
+double {\bfseries m\_\-max\_\-rate}\label{classCPreciseRateCounter_a5362dc82cf56d5ee1a9a4bb7cad8c952}
+
+\item 
+uint32\_\-t {\bfseries m\_\-tmp\_\-sum}\label{classCPreciseRateCounter_a41b9c5127d3aa56a2e59b96c358ff0a7}
+
+\item 
+wxMutex {\bfseries m\_\-mutex}\label{classCPreciseRateCounter_aace2419b92b0f22c71aabb6a2bd589ba}
+
+\item 
+bool {\bfseries m\_\-count\_\-average}\label{classCPreciseRateCounter_abc5f6c4b84f2eb7e3a8ab422f96dba25}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CStatistics}\label{classCPreciseRateCounter_aa9c6e39ed43cb9206d8c131ee333ca5a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Counts precise rate/average on added bytes/values. \begin{DoxyNote}{Note}
+This class is MT-\/safe. 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CPreciseRateCounter@{CPreciseRateCounter}!CPreciseRateCounter@{CPreciseRateCounter}}
+\index{CPreciseRateCounter@{CPreciseRateCounter}!CPreciseRateCounter@{CPreciseRateCounter}}
+\subsubsection[{CPreciseRateCounter}]{\setlength{\rightskip}{0pt plus 5cm}CPreciseRateCounter::CPreciseRateCounter (uint32\_\-t {\em timespan}, \/  bool {\em count\_\-average} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCPreciseRateCounter_a47a104a2d2dc3f19238088d35f072a09}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em timespan}]Desired timespan for rate calculations. \item[{\em count\_\-average}]Counts average instead of rate. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CPreciseRateCounter@{CPreciseRateCounter}!CalculateRate@{CalculateRate}}
+\index{CalculateRate@{CalculateRate}!CPreciseRateCounter@{CPreciseRateCounter}}
+\subsubsection[{CalculateRate}]{\setlength{\rightskip}{0pt plus 5cm}void CPreciseRateCounter::CalculateRate (uint64\_\-t {\em now})}\label{classCPreciseRateCounter_ac9827a5e5d40535b415a55f6d7c41932}
+
+
+Calculate current rate. This function should be called reasonably often, to keep rates up-\/to-\/date, and prevent history growing to the skies. \index{CPreciseRateCounter@{CPreciseRateCounter}!GetMaxRate@{GetMaxRate}}
+\index{GetMaxRate@{GetMaxRate}!CPreciseRateCounter@{CPreciseRateCounter}}
+\subsubsection[{GetMaxRate}]{\setlength{\rightskip}{0pt plus 5cm}double CPreciseRateCounter::GetMaxRate ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCPreciseRateCounter_ac91de7ac3b4bd0c41153d180357b6cd7}
+
+
+Gets ever seen maximal rate. \begin{DoxyReturn}{Returns}
+The maximal rate which occured. 
+\end{DoxyReturn}
+\index{CPreciseRateCounter@{CPreciseRateCounter}!GetRate@{GetRate}}
+\index{GetRate@{GetRate}!CPreciseRateCounter@{CPreciseRateCounter}}
+\subsubsection[{GetRate}]{\setlength{\rightskip}{0pt plus 5cm}double CPreciseRateCounter::GetRate ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCPreciseRateCounter_a066b83fa244fc740a4096fecbb36c797}
+
+
+Get current rate. \begin{DoxyReturn}{Returns}
+Current rate in bytes/second. 
+\end{DoxyReturn}
+\index{CPreciseRateCounter@{CPreciseRateCounter}!SetTimespan@{SetTimespan}}
+\index{SetTimespan@{SetTimespan}!CPreciseRateCounter@{CPreciseRateCounter}}
+\subsubsection[{SetTimespan}]{\setlength{\rightskip}{0pt plus 5cm}void CPreciseRateCounter::SetTimespan (uint32\_\-t {\em timespan})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCPreciseRateCounter_af696df568067519f269b63decf1d4c04}
+
+
+Sets desired timespan for rate calculations. If new timespan is greater than the old was, then the change takes effect with time. The exact time needed for the change to take effect is new minus old value of the timespan.
+
+If the new timespan is lower than the old, the change takes effect immediately at the next call to \doxyref{CalculateRate()}{p.}{classCPreciseRateCounter_ac9827a5e5d40535b415a55f6d7c41932}. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Statistics.h\item 
+src/Statistics.cpp\end{DoxyCompactItemize}

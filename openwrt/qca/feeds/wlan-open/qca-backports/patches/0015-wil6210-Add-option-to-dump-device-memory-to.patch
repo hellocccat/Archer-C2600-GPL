@@ -1,0 +1,125 @@
+--- a/drivers/net/wireless/ath/wil6210/Makefile
++++ b/drivers/net/wireless/ath/wil6210/Makefile
+@@ -16,6 +16,7 @@ wil6210-y += pmc.o
+ wil6210-$(CONFIG_WIL6210_TRACING) += trace.o
+ wil6210-y += wil_platform.o
+ wil6210-y += ethtool.o
++wil6210-y += wil_crash_dump.o
+ 
+ # for tracing framework to find trace.h
+ CFLAGS_trace.o := -I$(src)
+--- a/drivers/net/wireless/ath/wil6210/main.c
++++ b/drivers/net/wireless/ath/wil6210/main.c
+@@ -312,6 +312,8 @@ static void wil_fw_error_worker(struct work_struct *work)
+ 		return;
+ 	}
+ 
++	wil_fw_crash_dump(wil);
++
+ 	/* increment @recovery_count if less then WIL6210_FW_RECOVERY_TO
+ 	 * passed since last recovery attempt
+ 	 */
+--- a/drivers/net/wireless/ath/wil6210/wil6210.h
++++ b/drivers/net/wireless/ath/wil6210/wil6210.h
+@@ -799,4 +799,6 @@ int wil_iftype_nl2wmi(enum nl80211_iftype type);
+ int wil_ioctl(struct wil6210_priv *wil, void __user *data, int cmd);
+ int wil_request_firmware(struct wil6210_priv *wil, const char *name);
+ 
++void wil_fw_crash_dump(struct wil6210_priv *wil);
++
+ #endif /* __WIL6210_H__ */
+--- /dev/null
++++ b/drivers/net/wireless/ath/wil6210/wil_crash_dump.c
+@@ -0,0 +1,91 @@
++/*
++ * Copyright (c) 2015 Qualcomm Atheros, Inc.
++ *
++ * Permission to use, copy, modify, and/or distribute this software for any
++ * purpose with or without fee is hereby granted, provided that the above
++ * copyright notice and this permission notice appear in all copies.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++ */
++
++#include <linux/moduleparam.h>
++#include "wil6210.h"
++
++#define FW_DUMP_MEM_ADDR	0x44400000
++#define FW_DUMP_MAX_SIZE	(2 << 20)	/* 2M */
++
++static bool crash_on_fw_err;
++module_param(crash_on_fw_err, bool, S_IRUGO | S_IWUSR);
++MODULE_PARM_DESC(crash_on_fw_err, " Crash host on FW assertions.");
++
++static unsigned int crash_dump_mem_addr = FW_DUMP_MEM_ADDR;
++module_param(crash_dump_mem_addr, uint, S_IRUGO | S_IWUSR);
++MODULE_PARM_DESC(crash_dump_mem_addr, " Address in dram to which FW dump is saved.");
++
++static unsigned int crash_dump_mem_size = FW_DUMP_MAX_SIZE;
++module_param(crash_dump_mem_size, uint, S_IRUGO | S_IWUSR);
++MODULE_PARM_DESC(crash_dump_mem_size, " Size of buffer in dram to which FW dump is saved.");
++
++void wil_fw_crash_dump(struct wil6210_priv *wil)
++{
++	int i;
++	void *data;
++	unsigned int size;
++	unsigned int offset = 0;
++	void __iomem *fw_dump_buff;
++	const struct fw_map *map;
++
++	if (!crash_on_fw_err) {
++		wil_info(wil,
++			 "%s() - crash_on_fw_err is not enabled\n", __func__);
++		return;
++	}
++
++	wil_info(wil, "%s- going to dump to address 0x%X size 0x%X and crash\n",
++		 __func__, crash_dump_mem_addr, crash_dump_mem_size);
++
++	fw_dump_buff = ioremap(crash_dump_mem_addr, crash_dump_mem_size);
++	if (!fw_dump_buff) {
++		wil_err(wil,
++			"%s: failed to map memory 0x%X, size 0x%X, for FW dump buffer\n",
++			__func__, crash_dump_mem_addr, crash_dump_mem_size);
++		return;
++	}
++
++	for (i = 0; i < ARRAY_SIZE(fw_mapping); i++) {
++		map = &fw_mapping[i];
++
++		data = (void * __force)wil->csr + HOSTADDR(map->host);
++		size = map->to - map->from;
++
++		if ((offset + size) > crash_dump_mem_size) {
++			wil_err(wil,
++				"%s() - warning - size %u larger exceeds max allocated in dram %u\n",
++				__func__, size + offset, crash_dump_mem_size);
++			size = crash_dump_mem_size - offset;
++		}
++
++		if (!size)
++			break;
++
++		wil_info(wil, "%s() - dump %s, size %d, offset %d\n",
++			 __func__, fw_mapping[i].name, size, offset);
++
++		wil_memcpy_fromio_32((void * __force)(fw_dump_buff + offset),
++				     (const volatile void __iomem * __force)data, size);
++
++		offset += size;
++	}
++
++	iounmap(fw_dump_buff);
++
++	wil_err(wil, "WIGIG: Asserting Host...\n");
++	BUG();
++}
++
+

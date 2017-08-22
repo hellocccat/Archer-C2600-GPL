@@ -1,0 +1,69 @@
+\section{CAnyImage Class Reference}
+\label{classCAnyImage}\index{CAnyImage@{CAnyImage}}
+Inheritance diagram for CAnyImage::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCAnyImage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAnyImage} (int size)
+\item 
+{\bfseries CAnyImage} (int width, int height)\label{classCAnyImage_ad8404a3e416a731c2a5384d9c7290de9}
+
+\item 
+const wxString \& {\bfseries GetHTTP} () const \label{classCAnyImage_a801a94c5727ff7843ad0eea4a40ba4d5}
+
+\item 
+virtual unsigned char $\ast$ {\bfseries RequestData} (int \&size)\label{classCAnyImage_a5b68277e2fd8a041487cfe57bb36628c}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Realloc} (int size)\label{classCAnyImage_a62e795c33ce471543ceb7696e170b1f6}
+
+\item 
+void {\bfseries SetHttpType} (wxString ext)\label{classCAnyImage_a8c270760ef36bb7cb9cb80d993501732}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char $\ast$ {\bfseries m\_\-data}\label{classCAnyImage_a08085391ba86fb8d7fb5a55a0332604f}
+
+\item 
+int {\bfseries m\_\-width}\label{classCAnyImage_ab0b4951ef1bf96827791fe387417d281}
+
+\item 
+int {\bfseries m\_\-height}\label{classCAnyImage_aad1740850d3d70ec66ebff08e4453827}
+
+\item 
+wxString {\bfseries m\_\-name}\label{classCAnyImage_a3296f9194cc9753ef49363fa8fea7b7a}
+
+\item 
+int {\bfseries m\_\-size}\label{classCAnyImage_a9846d1868077e9df7d9ab07236bb4d9a}
+
+\item 
+int {\bfseries m\_\-alloc\_\-size}\label{classCAnyImage_a33c89aefdccd8ab8018ae9046c80bc12}
+
+\item 
+wxString {\bfseries m\_\-Http}\label{classCAnyImage_a580c71fade7f96205f53108c029356e3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CAnyImage@{CAnyImage}!CAnyImage@{CAnyImage}}
+\index{CAnyImage@{CAnyImage}!CAnyImage@{CAnyImage}}
+\subsubsection[{CAnyImage}]{\setlength{\rightskip}{0pt plus 5cm}CAnyImage::CAnyImage (int {\em size})}\label{classCAnyImage_ad15629621a6f4c4b8b21be8236553fb5}
+Image classes:
+
+\doxyref{CFileImage}{p.}{classCFileImage}: simply represent local file \doxyref{CDynProgressImage}{p.}{classCDynProgressImage}: dynamically generated from gap info 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\item 
+src/webserver/src/WebServer.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,72 @@
+#!/bin/sh /etc/rc.common
+#
+# Copyright (c) 2014 The Linux Foundation. All rights reserved.
+#
+# The shebang above has an extra space intentially to avoid having
+# openwrt build scripts automatically enable this package starting
+# at boot.
+
+START=70
+
+load_ecm() {
+	[ -d /sys/module/ecm ] || insmod ecm
+
+	sysctl -w net.bridge.bridge-nf-call-ip6tables=1
+	sysctl -w net.bridge.bridge-nf-call-iptables=1
+}
+
+unload_ecm() {
+	[ -d /sys/module/ecm ] && rmmod ecm
+
+	sysctl -w net.bridge.bridge-nf-call-ip6tables=0
+	sysctl -w net.bridge.bridge-nf-call-iptables=0
+}
+
+__start() {
+	load_ecm
+
+	echo 'net.bridge.bridge-nf-call-ip6tables=1' >> /etc/sysctl.d/qca-nss-ecm.conf
+	echo 'net.bridge.bridge-nf-call-iptables=1' >> /etc/sysctl.d/qca-nss-ecm.conf
+}
+
+stop() {
+	unload_ecm
+
+	sed '/net.bridge.bridge-nf-call-ip6tables=1/d' -i /etc/sysctl.d/qca-nss-ecm.conf
+	sed '/net.bridge.bridge-nf-call-iptables=1/d' -i /etc/sysctl.d/qca-nss-ecm.conf
+}
+
+reload() {
+	local wan_is_l2tppptp
+	local wanv6_is_passthrough
+	local qos_is_enabled
+
+	config_load network
+	config_get wantype "wan" "wan_type"
+	config_get wanv6type "wanv6" "wan_type"
+	if [[ "$wantype" == "l2tp" -o "$wantype" == "pptp" ]]; then
+		wan_is_l2tppptp="1"
+	fi
+	if [[ "$wanv6type" == "passthrough" ]]; then
+		wanv6_is_passthrough="1"
+	fi
+	config_clear
+
+	config_load qos
+	config_get qosenable "settings" "enable"
+	if [[ "$qosenable" == "on" ]]; then
+		qos_is_enabled="1"
+	fi
+	config_clear
+
+	if [[ -n "$wan_is_l2tppptp" -o -n "$wanv6_is_passthrough" -o -n "$qos_is_enabled" ]]; then
+		stop
+	else
+		__start
+	fi		
+}
+
+start() {
+	reload
+}
+

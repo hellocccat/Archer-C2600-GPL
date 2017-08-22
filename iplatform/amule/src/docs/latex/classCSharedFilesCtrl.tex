@@ -1,0 +1,203 @@
+\section{CSharedFilesCtrl Class Reference}
+\label{classCSharedFilesCtrl}\index{CSharedFilesCtrl@{CSharedFilesCtrl}}
+
+
+This class represents the widget used to list shared files.  
+
+
+{\ttfamily \#include $<$SharedFilesCtrl.h$>$}Inheritance diagram for CSharedFilesCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCSharedFilesCtrl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSharedFilesCtrl} (wxWindow $\ast$parent, int id, const wxPoint \&pos, wxSize size, int flags)
+\item 
+{\bf $\sim$CSharedFilesCtrl} ()\label{classCSharedFilesCtrl_aaffe7a2b8c31dd64b2f856d819b33f14}
+
+\item 
+void {\bf ShowFileList} ()
+\item 
+void {\bf ShowFile} ({\bf CKnownFile} $\ast$file)
+\item 
+void {\bf RemoveFile} ({\bf CKnownFile} $\ast$toremove)
+\item 
+void {\bf UpdateItem} ({\bf CKnownFile} $\ast$toupdate)
+\item 
+void {\bf ShowFilesCount} ()\label{classCSharedFilesCtrl_aac479d98a301fd70307c8c9a9eb7f7eb}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf GetOldColumnOrder} () const \label{classCSharedFilesCtrl_a01f52afa7f00b7bf51555c853fd04eb1}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf DoShowFile} ({\bf CKnownFile} $\ast$file, bool batch)
+\item 
+void {\bf DrawAvailabilityBar} ({\bf CKnownFile} $\ast$file, wxDC $\ast$dc, const wxRect \&rect) const 
+\item 
+virtual void {\bf OnDrawItem} (int item, wxDC $\ast$dc, const wxRect \&rect, const wxRect \&rectHL, bool highlighted)\label{classCSharedFilesCtrl_a506386edd128898a495eff9422aa70b0}
+
+\item 
+virtual wxString {\bf GetTTSText} (unsigned item) const 
+\item 
+virtual bool {\bf AltSortAllowed} (unsigned column) const 
+\item 
+void {\bf OnRightClick} (wxListEvent \&event)\label{classCSharedFilesCtrl_a2b3f88ae476937467996da0a449ab99e}
+
+\item 
+void {\bf OnGetFeedback} (wxCommandEvent \&event)\label{classCSharedFilesCtrl_a971d740f7d51cab16293f36f41dd89ae}
+
+\item 
+void {\bf OnSetPriority} (wxCommandEvent \&event)\label{classCSharedFilesCtrl_a1504f486cadb6e3e6a239e674b11e175}
+
+\item 
+void {\bf OnSetPriorityAuto} (wxCommandEvent \&event)\label{classCSharedFilesCtrl_a197bd0293f1f2864adf2775938e80491}
+
+\item 
+void {\bf OnCreateURI} (wxCommandEvent \&event)\label{classCSharedFilesCtrl_a4eb8e0e9f985dba3baf45f0072982e26}
+
+\item 
+void {\bf OnEditComment} (wxCommandEvent \&event)\label{classCSharedFilesCtrl_a78cf83daa8196cf163f3e884c7626fcd}
+
+\item 
+void {\bf OnRename} (wxCommandEvent \&event)\label{classCSharedFilesCtrl_af4a019ef706e8bf6773bedad39ee07ed}
+
+\item 
+void {\bf OnKeyPressed} (wxKeyEvent \&event)\label{classCSharedFilesCtrl_aeff825cc48783f2b3a4782092ae5d3d8}
+
+\item 
+void {\bf OnAddCollection} (wxCommandEvent \&evt)\label{classCSharedFilesCtrl_af3cf6b8a6c1718c3ce75639488a9face}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bf SortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxMenu $\ast$ {\bf m\_\-menu}\label{classCSharedFilesCtrl_a64b025a731948546e40076a3a91bba1f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the widget used to list shared files. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CSharedFilesCtrl@{CSharedFilesCtrl}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\index{CSharedFilesCtrl@{CSharedFilesCtrl}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{CSharedFilesCtrl}]{\setlength{\rightskip}{0pt plus 5cm}CSharedFilesCtrl::CSharedFilesCtrl (wxWindow $\ast$ {\em parent}, \/  int {\em id}, \/  const wxPoint \& {\em pos}, \/  wxSize {\em size}, \/  int {\em flags})}\label{classCSharedFilesCtrl_aaf5cca9a1e0f458431b91c54b4bbd215}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::CMuleListCtrl}{p.}{classCMuleListCtrl_a3d2c202974057d0de8a098344a16024d} 
+\end{DoxySeeAlso}
+
+
+References CMuleListCtrl::InsertColumn(), CMuleListCtrl::LoadSettings(), m\_\-menu, CMuleListCtrl::SetSortFunc(), CMuleListCtrl::SetTableName(), and SortProc().
+
+\subsection{Member Function Documentation}
+\index{CSharedFilesCtrl@{CSharedFilesCtrl}!AltSortAllowed@{AltSortAllowed}}
+\index{AltSortAllowed@{AltSortAllowed}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{AltSortAllowed}]{\setlength{\rightskip}{0pt plus 5cm}bool CSharedFilesCtrl::AltSortAllowed (unsigned {\em column}) const\hspace{0.3cm}{\ttfamily  [private, virtual]}}\label{classCSharedFilesCtrl_a754f337b7e7aa58af3dcc436fd3303ab}
+
+
+Function that specifies which columns have alternate sorting. \begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::AltSortAllowed}{p.}{classCMuleListCtrl_a399b991679c1de1dbd72219ad68377f6} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a399b991679c1de1dbd72219ad68377f6}.\index{CSharedFilesCtrl@{CSharedFilesCtrl}!DoShowFile@{DoShowFile}}
+\index{DoShowFile@{DoShowFile}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{DoShowFile}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFilesCtrl::DoShowFile ({\bf CKnownFile} $\ast$ {\em file}, \/  bool {\em batch})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSharedFilesCtrl_a58cda4012e51240c1a2e2d3ef8798460}
+
+
+Adds the specified file to the list. If 'batch' is true, the item will be inserted last, and the files-\/count will not be updated, nor is the list checked for dupes. 
+
+References CMuleListCtrl::GetInsertPos(), and ShowFilesCount().
+
+Referenced by ShowFile(), and ShowFileList().\index{CSharedFilesCtrl@{CSharedFilesCtrl}!DrawAvailabilityBar@{DrawAvailabilityBar}}
+\index{DrawAvailabilityBar@{DrawAvailabilityBar}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{DrawAvailabilityBar}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFilesCtrl::DrawAvailabilityBar ({\bf CKnownFile} $\ast$ {\em file}, \/  wxDC $\ast$ {\em dc}, \/  const wxRect \& {\em rect}) const\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSharedFilesCtrl_a2c9a340c44242b6919be90f985e9be6c}
+
+
+Draws the graph of file-\/part availability. 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]The file to make a graph over. \item[{\em dc}]The wcDC to draw on. \item[{\em rect}]The drawing area.\end{DoxyParams}
+This function draws a barspan showing the availability of the parts of a file, for both Part-\/files and Known-\/files. Availability for Part-\/files is determined using the currently known sources, while availability for Known-\/files is determined using the sources requesting that file. 
+
+References CBarShader::Draw(), CBarShader::FillRange(), CBarShader::Set3dDepth(), CBarShader::SetFileSize(), CBarShader::SetHeight(), and CBarShader::SetWidth().
+
+Referenced by OnDrawItem().\index{CSharedFilesCtrl@{CSharedFilesCtrl}!GetTTSText@{GetTTSText}}
+\index{GetTTSText@{GetTTSText}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{GetTTSText}]{\setlength{\rightskip}{0pt plus 5cm}wxString CSharedFilesCtrl::GetTTSText (unsigned {\em item}) const\hspace{0.3cm}{\ttfamily  [private, virtual]}}\label{classCSharedFilesCtrl_a635ab043ebc4897fcfd92f28f41f0cb9}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::GetTTSText}{p.}{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63}.\index{CSharedFilesCtrl@{CSharedFilesCtrl}!RemoveFile@{RemoveFile}}
+\index{RemoveFile@{RemoveFile}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{RemoveFile}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFilesCtrl::RemoveFile ({\bf CKnownFile} $\ast$ {\em toremove})}\label{classCSharedFilesCtrl_aa150f1c60f7d3a5c635545a636d1a9ce}
+
+
+Removes a file from the list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toremove}]The file to be removed. \end{DoxyParams}
+
+
+References ShowFilesCount().\index{CSharedFilesCtrl@{CSharedFilesCtrl}!ShowFile@{ShowFile}}
+\index{ShowFile@{ShowFile}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{ShowFile}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFilesCtrl::ShowFile ({\bf CKnownFile} $\ast$ {\em file})}\label{classCSharedFilesCtrl_a267d67354004a7702330767fe52eedff}
+
+
+Adds the specified file to the list, updating filecount and more. 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]The new file to be shown.\end{DoxyParams}
+Note that the item is inserted in sorted order. 
+
+References DoShowFile().\index{CSharedFilesCtrl@{CSharedFilesCtrl}!ShowFileList@{ShowFileList}}
+\index{ShowFileList@{ShowFileList}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{ShowFileList}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFilesCtrl::ShowFileList ()}\label{classCSharedFilesCtrl_a7a690aad3a0dfa291b8e160d8334a274}
+
+
+Reloads the list of shared files. 
+
+References DoShowFile(), ShowFilesCount(), and CMuleListCtrl::SortList().\index{CSharedFilesCtrl@{CSharedFilesCtrl}!SortProc@{SortProc}}
+\index{SortProc@{SortProc}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{SortProc}]{\setlength{\rightskip}{0pt plus 5cm}int CSharedFilesCtrl::SortProc (wxUIntPtr {\em item1}, \/  wxUIntPtr {\em item2}, \/  long {\em sortData})\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCSharedFilesCtrl_a05faee3f5b100371c6b0c73ebadd9f4f}
+
+
+Sorter-\/function. \begin{DoxySeeAlso}{See also}
+wxListCtrl::SortItems 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a9958ee438b116457a818ffb29b3c5864}.
+
+References CMuleListCtrl::COLUMN\_\-MASK, CMuleListCtrl::SORT\_\-ALT, and CMuleListCtrl::SORT\_\-DES.
+
+Referenced by CSharedFilesCtrl().\index{CSharedFilesCtrl@{CSharedFilesCtrl}!UpdateItem@{UpdateItem}}
+\index{UpdateItem@{UpdateItem}!CSharedFilesCtrl@{CSharedFilesCtrl}}
+\subsubsection[{UpdateItem}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFilesCtrl::UpdateItem ({\bf CKnownFile} $\ast$ {\em toupdate})}\label{classCSharedFilesCtrl_a03d256e062ecad7d24c9d000e2f7a919}
+
+
+Updates a file on the list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em toupdate}]The file to be updated. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SharedFilesCtrl.h\item 
+src/SharedFilesCtrl.cpp\end{DoxyCompactItemize}

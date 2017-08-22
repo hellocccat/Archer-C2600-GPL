@@ -1,0 +1,71 @@
+\section{Cfg\_\-Int$<$ TYPE $>$ Class Template Reference}
+\label{classCfg__Int}\index{Cfg\_\-Int@{Cfg\_\-Int}}
+
+
+Cfg class that takes care of integer types.  
+Inheritance diagram for Cfg\_\-Int$<$ TYPE $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCfg__Int}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Cfg\_\-Int} (const wxString \&keyname, TYPE \&value, int defaultVal=0)\label{classCfg__Int_a5779b3a021e4660a6589f08bffdd6dc5}
+
+\item 
+virtual void {\bf LoadFromFile} (wxConfigBase $\ast$cfg)\label{classCfg__Int_a65bc8b575376fb96a79f40d02a6cec33}
+
+\item 
+virtual void {\bf SaveToFile} (wxConfigBase $\ast$cfg)\label{classCfg__Int_ae1d6e1829cb56ae290342b4da11f347b}
+
+\item 
+virtual bool {\bf TransferFromWindow} ()
+\item 
+virtual bool {\bf TransferToWindow} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TYPE \& {\bfseries m\_\-real\_\-value}\label{classCfg__Int_a8277efb5d08b2ad72ca01af11657982c}
+
+\item 
+int {\bfseries m\_\-temp\_\-value}\label{classCfg__Int_a59a273bdd9c5db6bf10b126a1c501ac5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename TYPE$>$ class Cfg\_\-Int$<$ TYPE $>$}
+
+Cfg class that takes care of integer types. This template is needed since wxValidator only supports normals ints, and wxConfig for the matter only supports longs, thus some worksarounds are needed.
+
+There are two work-\/arounds: 1) wxValidator only supports int$\ast$, so we need a immediate variable to act as a storage. Thus we use \doxyref{Cfg\_\-Tmpl$<$int$>$}{p.}{classCfg__Tmpl} as base class. Thus this class contains a integer which we use to pass the value back and forth between the widgets.
+
+2) wxConfig uses longs to save and read values, thus we need an immediate stage when loading and saving the value. 
+
+\subsection{Member Function Documentation}
+\index{Cfg\_\-Int@{Cfg\_\-Int}!TransferFromWindow@{TransferFromWindow}}
+\index{TransferFromWindow@{TransferFromWindow}!Cfg_Int@{Cfg\_\-Int}}
+\subsubsection[{TransferFromWindow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ virtual bool {\bf Cfg\_\-Int}$<$ TYPE $>$::TransferFromWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Int_a03844a2ba87bfe719362fe0175486de2}
+
+
+Updates the assosiated variable, returning true on success. 
+
+Reimplemented from {\bf Cfg\_\-Tmpl$<$ int $>$} \doxyref{}{p.}{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}.
+
+Reimplemented in {\bf Cfg\_\-Lang} \doxyref{}{p.}{classCfg__Lang_af7e18d9ba8bd0dcd367c93ec73951473}.\index{Cfg\_\-Int@{Cfg\_\-Int}!TransferToWindow@{TransferToWindow}}
+\index{TransferToWindow@{TransferToWindow}!Cfg_Int@{Cfg\_\-Int}}
+\subsubsection[{TransferToWindow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TYPE$>$ virtual bool {\bf Cfg\_\-Int}$<$ TYPE $>$::TransferToWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Int_a9eabec1486d7225c8f3f4b62ef2833cd}
+
+
+Updates the assosiated widget, returning true on success. 
+
+Reimplemented from {\bf Cfg\_\-Tmpl$<$ int $>$} \doxyref{}{p.}{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}.
+
+Reimplemented in {\bf Cfg\_\-Lang} \doxyref{}{p.}{classCfg__Lang_a427939abc4a2c4003b1d5a36da8b0379}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Preferences.cpp\end{DoxyCompactItemize}

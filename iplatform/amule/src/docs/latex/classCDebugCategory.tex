@@ -1,0 +1,55 @@
+\section{CDebugCategory Class Reference}
+\label{classCDebugCategory}\index{CDebugCategory@{CDebugCategory}}
+
+
+Container-\/class for the debugging categories.  
+
+
+{\ttfamily \#include $<$Logger.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CDebugCategory} (DebugType type, const wxString \&name)
+\item 
+bool {\bf IsEnabled} () const \label{classCDebugCategory_af9a2ccf49812519d4618542d82043e72}
+
+\item 
+void {\bf SetEnabled} (bool enabled)\label{classCDebugCategory_a2effdc20204b47e4c4fdf267a9557aaf}
+
+\item 
+const wxString \& {\bf GetName} () const \label{classCDebugCategory_a78e1c65d8e571896eb64b0ce293cb1a7}
+
+\item 
+DebugType {\bf GetType} () const \label{classCDebugCategory_a08ba35d0df947daebfd70fb7bfd46869}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf m\_\-name}\label{classCDebugCategory_a6388128c8cd674ae93a0fbf773974275}
+
+\item 
+DebugType {\bf m\_\-type}\label{classCDebugCategory_a5dc117afe17f8402e11a5f3e66047d6e}
+
+\item 
+bool {\bf m\_\-enabled}\label{classCDebugCategory_a30fdf6d6864ad6d7b0f10c55b86f496c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container-\/class for the debugging categories. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CDebugCategory@{CDebugCategory}!CDebugCategory@{CDebugCategory}}
+\index{CDebugCategory@{CDebugCategory}!CDebugCategory@{CDebugCategory}}
+\subsubsection[{CDebugCategory}]{\setlength{\rightskip}{0pt plus 5cm}CDebugCategory::CDebugCategory (DebugType {\em type}, \/  const wxString \& {\em name})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCDebugCategory_a0823321aa12352bd18ca67296ac6d6a2}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]The actual debug-\/category type. \item[{\em name}]The user-\/readable name. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Logger.h\end{DoxyCompactItemize}

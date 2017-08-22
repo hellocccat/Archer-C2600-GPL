@@ -1,0 +1,245 @@
+\section{CamuleRemoteGuiApp Class Reference}
+\label{classCamuleRemoteGuiApp}\index{CamuleRemoteGuiApp@{CamuleRemoteGuiApp}}
+Inheritance diagram for CamuleRemoteGuiApp::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCamuleRemoteGuiApp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Startup} ()\label{classCamuleRemoteGuiApp_a9c51a628b40f36e3d75c52c98c226891}
+
+\item 
+bool {\bfseries ShowConnectionDialog} ()\label{classCamuleRemoteGuiApp_adab5b30299bdddab5a74dd77be5cb39f}
+
+\item 
+bool {\bfseries CopyTextToClipboard} (wxString strText)\label{classCamuleRemoteGuiApp_afd4f82501852cba3bc3eeb0d5f9d0c51}
+
+\item 
+virtual int {\bfseries ShowAlert} (wxString msg, wxString title, int flags)\label{classCamuleRemoteGuiApp_a20bb9077bc419328bbc030b816d9691f}
+
+\item 
+void {\bfseries ShutDown} (wxCloseEvent \&evt)\label{classCamuleRemoteGuiApp_ad94094e0bd988f1f4831fb32efb11c7d}
+
+\item 
+bool {\bfseries AddServer} ({\bf CServer} $\ast$srv, bool fromUser=false)\label{classCamuleRemoteGuiApp_a5ddb783dea8ce4a76f5868ab31898e47}
+
+\item 
+uint32 {\bfseries GetPublicIP} ()\label{classCamuleRemoteGuiApp_a042465df8599360cfdcd67ecdca07706}
+
+\item 
+wxString {\bfseries GetLog} (bool reset=false)\label{classCamuleRemoteGuiApp_a28f769ccf27902e7a19d70ca60ed9739}
+
+\item 
+wxString {\bfseries GetServerLog} (bool reset=false)\label{classCamuleRemoteGuiApp_ad88d544404b847e6bcb5b2507470f911}
+
+\item 
+void {\bfseries AddServerMessageLine} (wxString \&msg)\label{classCamuleRemoteGuiApp_aa218958c639af3717654fc50c06aaf5e}
+
+\item 
+void {\bfseries AddRemoteLogLine} (const wxString \&line)\label{classCamuleRemoteGuiApp_ae09d24a41e30358b702b7d22b7fd9c18}
+
+\item 
+void {\bfseries SetOSFiles} (wxString)\label{classCamuleRemoteGuiApp_acdd6120e42b4c6d69829a7a3872b5b1a}
+
+\item 
+bool {\bfseries IsConnected} () const \label{classCamuleRemoteGuiApp_acd82972b4937f522cac362b8e29dc7ad}
+
+\item 
+bool {\bfseries IsFirewalled} () const \label{classCamuleRemoteGuiApp_a73821b1a646408e1e674e3517073e1eb}
+
+\item 
+bool {\bfseries IsConnectedED2K} () const \label{classCamuleRemoteGuiApp_a298b6317fc2f15b825baa31749d3452f}
+
+\item 
+bool {\bfseries IsConnectedKad} () const \label{classCamuleRemoteGuiApp_acbf0bd187975ea706e86ba34de28e675}
+
+\item 
+bool {\bfseries IsFirewalledKad} () const \label{classCamuleRemoteGuiApp_a1f72f9faf87436ef685d201d1abe1fdf}
+
+\item 
+bool {\bfseries IsKadRunning} () const \label{classCamuleRemoteGuiApp_a08445d02c414c4a3576442261d4e007c}
+
+\item 
+bool {\bfseries IsFirewalledKadUDP} () const \label{classCamuleRemoteGuiApp_a71ba6e17bd7de6b746169eb4b858b2c6}
+
+\item 
+bool {\bfseries IsKadRunningInLanMode} () const \label{classCamuleRemoteGuiApp_a97070828e0e127dcf873270edb6b1061}
+
+\item 
+uint32 {\bfseries GetKadUsers} () const \label{classCamuleRemoteGuiApp_a7c96f066f63a1571150fd21cfa566cb8}
+
+\item 
+uint32 {\bfseries GetKadFiles} () const \label{classCamuleRemoteGuiApp_a26da0c8aaa80c75d989071cf2cfce81f}
+
+\item 
+uint32 {\bfseries GetKadIndexedSources} () const \label{classCamuleRemoteGuiApp_aaa1edb4bd4f4ace1caa9971280e1a481}
+
+\item 
+uint32 {\bfseries GetKadIndexedKeywords} () const \label{classCamuleRemoteGuiApp_aa7e7f934fed9cdb9030702b190904d0f}
+
+\item 
+uint32 {\bfseries GetKadIndexedNotes} () const \label{classCamuleRemoteGuiApp_a084c2625c08c7ec500e4b109fa446132}
+
+\item 
+uint32 {\bfseries GetKadIndexedLoad} () const \label{classCamuleRemoteGuiApp_a0241548e774ad9022db74d9b0e746826}
+
+\item 
+uint32 {\bfseries GetKadIPAdress} () const \label{classCamuleRemoteGuiApp_a57ca40d3f8221a2af97387c296ace23d}
+
+\item 
+uint8 {\bfseries GetBuddyStatus} () const \label{classCamuleRemoteGuiApp_af6e0219260b138339a3255c7375f3e43}
+
+\item 
+uint32 {\bfseries GetBuddyIP} () const \label{classCamuleRemoteGuiApp_ad63926a74108bdb1338082aafdfbe17a}
+
+\item 
+uint32 {\bfseries GetBuddyPort} () const \label{classCamuleRemoteGuiApp_abe4cc9253d4dfda0b4ef5b61be6d2f64}
+
+\item 
+void {\bfseries StartKad} ()\label{classCamuleRemoteGuiApp_a569a5d1d5f749b86152c9ed57fb4bdb4}
+
+\item 
+void {\bfseries StopKad} ()\label{classCamuleRemoteGuiApp_a9885c2427384597b157b830944527f8c}
+
+\item 
+void {\bf BootstrapKad} (uint32 ip, uint16 port)
+\item 
+void {\bf UpdateNotesDat} (const wxString \&str)
+\item 
+void {\bfseries DisconnectED2K} ()\label{classCamuleRemoteGuiApp_a4e8870a9fe70f6909ac799eef7c67813}
+
+\item 
+bool {\bfseries CryptoAvailable} () const \label{classCamuleRemoteGuiApp_a66ac568e9a7e784b84e864f671653eb5}
+
+\item 
+uint32 {\bfseries GetED2KID} () const \label{classCamuleRemoteGuiApp_a96cbe9e875790bb9131447b08d0f35b7}
+
+\item 
+uint32 {\bfseries GetID} () const \label{classCamuleRemoteGuiApp_acf59a77a67b2b494e70f166b9ab4076f}
+
+\item 
+void {\bfseries ShowUserCount} ()\label{classCamuleRemoteGuiApp_a90d0f99b4ea5cb36c337a8646d0b6494}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CRemoteConnect} $\ast$ {\bfseries m\_\-connect}\label{classCamuleRemoteGuiApp_a5e934aba2fb9c4e405799d4b0112fb7c}
+
+\item 
+{\bf CEConnectDlg} $\ast$ {\bfseries dialog}\label{classCamuleRemoteGuiApp_adb80b46828f8a10ad70b5fb9eb627beb}
+
+\item 
+{\bf CPreferencesRem} $\ast$ {\bfseries glob\_\-prefs}\label{classCamuleRemoteGuiApp_a03596f409f39e9107b6177e66f9755ca}
+
+\item 
+{\bf CServerConnectRem} $\ast$ {\bfseries serverconnect}\label{classCamuleRemoteGuiApp_a54404efab8987d111f852c136bfe0244}
+
+\item 
+{\bf CServerListRem} $\ast$ {\bfseries serverlist}\label{classCamuleRemoteGuiApp_ac0a372fcd823bea68ee9473480953c33}
+
+\item 
+{\bf CDownQueueRem} $\ast$ {\bfseries downloadqueue}\label{classCamuleRemoteGuiApp_a4647ccd5d12efe6217bf5558feabf97f}
+
+\item 
+{\bf CSharedFilesRem} $\ast$ {\bfseries sharedfiles}\label{classCamuleRemoteGuiApp_aa05fd5916ec655f97e688d56234b4ad5}
+
+\item 
+{\bf CKnownFilesRem} $\ast$ {\bfseries knownfiles}\label{classCamuleRemoteGuiApp_a17c906e037867c3705b27071c70a25f8}
+
+\item 
+{\bf CUpDownClientListRem} $\ast$ {\bfseries clientlist}\label{classCamuleRemoteGuiApp_ac643d2162eaf411fd3b985951642a325}
+
+\item 
+{\bf CIPFilterRem} $\ast$ {\bfseries ipfilter}\label{classCamuleRemoteGuiApp_a61b99f7b3d1e4f87a061537d1a592b25}
+
+\item 
+{\bf CSearchListRem} $\ast$ {\bfseries searchlist}\label{classCamuleRemoteGuiApp_ad9c84b5d4a7fa26fbad842b0c781236a}
+
+\item 
+{\bf CFriendListRem} $\ast$ {\bfseries friendlist}\label{classCamuleRemoteGuiApp_ae91d4220eb6cdfbed2f370b547d3a321}
+
+\item 
+{\bf CListenSocketRem} $\ast$ {\bfseries listensocket}\label{classCamuleRemoteGuiApp_a3fe260680071818cf2a9aec51cfdcb2f}
+
+\item 
+{\bf CStatTreeRem} $\ast$ {\bfseries stattree}\label{classCamuleRemoteGuiApp_ab5023a6b6287903ffe5a1ce106e8ed0d}
+
+\item 
+{\bf CStatistics} $\ast$ {\bfseries m\_\-statistics}\label{classCamuleRemoteGuiApp_a5a3a519edff2a3b9533cf26d31f3e775}
+
+\item 
+uint8 {\bfseries m\_\-ConnState}\label{classCamuleRemoteGuiApp_a9e764f5301cf17908a8a5e117e8fbf6a}
+
+\item 
+uint32 {\bfseries m\_\-clientID}\label{classCamuleRemoteGuiApp_a9d03f7615c680e9a0e688579ba1acc21}
+
+\item 
+wxLocale {\bfseries m\_\-locale}\label{classCamuleRemoteGuiApp_a496dcf8f6c98bc85c756d79143f7b3a8}
+
+\item 
+{\bf CKnownFile} $\ast$ {\bfseries m\_\-allUploadingKnownFile}\label{classCamuleRemoteGuiApp_a203c043060261d8cccd526fc5399fd2f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries InitGui} (bool geometry\_\-enable, wxString \&geometry\_\-string)\label{classCamuleRemoteGuiApp_ad0fc24f50f199c1ca6fc20ceba749360}
+
+\item 
+bool {\bfseries OnInit} ()\label{classCamuleRemoteGuiApp_ab8046d31f190d64a5222b95331f33b8e}
+
+\item 
+int {\bfseries OnExit} ()\label{classCamuleRemoteGuiApp_a8c32f20e3e675b600ec2a3841a9f3964}
+
+\item 
+void {\bfseries OnPollTimer} (wxTimerEvent \&evt)\label{classCamuleRemoteGuiApp_a314d92a1781358ccf443c0b4d6f4b308}
+
+\item 
+void {\bfseries OnECConnection} (wxEvent \&event)\label{classCamuleRemoteGuiApp_aa564ecfa9a32ff614f61970bec678177}
+
+\item 
+void {\bfseries OnECInitDone} (wxEvent \&event)\label{classCamuleRemoteGuiApp_ada32ab0298991b8bc83cc6ffd0473128}
+
+\item 
+void {\bfseries OnNotifyEvent} (CMuleGUIEvent \&evt)\label{classCamuleRemoteGuiApp_aa00cb6a3d04a1e0dcec51688d004b3d1}
+
+\item 
+void {\bfseries OnFinishedHTTPDownload} ({\bf CMuleInternalEvent} \&event)\label{classCamuleRemoteGuiApp_a5a320a6899fa525ef7453de7849bf7d6}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxTimer $\ast$ {\bfseries poll\_\-timer}\label{classCamuleRemoteGuiApp_a85b963c4f7e4ff61ea98d4db1784cc36}
+
+\item 
+{\bf CStatsUpdaterRem} {\bfseries m\_\-stats\_\-updater}\label{classCamuleRemoteGuiApp_aa4d0775cee38229292162cd24ccf7b1a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CamuleRemoteGuiApp@{CamuleRemoteGuiApp}!BootstrapKad@{BootstrapKad}}
+\index{BootstrapKad@{BootstrapKad}!CamuleRemoteGuiApp@{CamuleRemoteGuiApp}}
+\subsubsection[{BootstrapKad}]{\setlength{\rightskip}{0pt plus 5cm}void CamuleRemoteGuiApp::BootstrapKad (uint32 {\em ip}, \/  uint16 {\em port})}\label{classCamuleRemoteGuiApp_a77cd711dfbdc53c9716fe108103e4dd8}
+
+
+Bootstraps kad from the specified IP (must be in hostorder). 
+
+References CECTag::AddTag(), and CRemoteConnect::SendPacket().\index{CamuleRemoteGuiApp@{CamuleRemoteGuiApp}!UpdateNotesDat@{UpdateNotesDat}}
+\index{UpdateNotesDat@{UpdateNotesDat}!CamuleRemoteGuiApp@{CamuleRemoteGuiApp}}
+\subsubsection[{UpdateNotesDat}]{\setlength{\rightskip}{0pt plus 5cm}void CamuleRemoteGuiApp::UpdateNotesDat (const wxString \& {\em str})}\label{classCamuleRemoteGuiApp_ae496afde6f18148caaa88270bf6ade53}
+
+
+Updates the nodes.dat file from the specified url. 
+
+References CECTag::AddTag(), and CRemoteConnect::SendPacket().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

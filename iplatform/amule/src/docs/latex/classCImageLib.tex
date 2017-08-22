@@ -1,0 +1,38 @@
+\section{CImageLib Class Reference}
+\label{classCImageLib}\index{CImageLib@{CImageLib}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CImageLib} (wxString image\_\-dir)\label{classCImageLib_ae92c8a502476d531992fb16098bfa39e}
+
+\item 
+{\bf CAnyImage} $\ast$ {\bfseries GetImage} (const wxString \&name)\label{classCImageLib_adcb292badf644b96f636ed3359365c31}
+
+\item 
+void {\bfseries AddImage} ({\bf CAnyImage} $\ast$img, const wxString \&name)\label{classCImageLib_a24483f6089c032609505ed62bd9c9145}
+
+\item 
+void {\bfseries RemoveImage} (const wxString \&name)\label{classCImageLib_a1c6533ebad94170b1693b28f1a8926c0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ wxString, {\bf CAnyImage} $\ast$ $>$ {\bfseries ImageMap}\label{classCImageLib_a97cf3aee55f9b6bec58806237ef47d1f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ImageMap {\bfseries m\_\-image\_\-map}\label{classCImageLib_a1dfcd078546eca6f48886ffb0d29fb4f}
+
+\item 
+wxString {\bfseries m\_\-image\_\-dir}\label{classCImageLib_a334007e2eb39b838a754da050b2b60af}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\item 
+src/webserver/src/WebServer.cpp\end{DoxyCompactItemize}

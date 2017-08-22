@@ -1,0 +1,134 @@
+\section{CPacket Class Reference}
+\label{classCPacket}\index{CPacket@{CPacket}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CPacket} ({\bf CPacket} \&p)\label{classCPacket_ab0962f6733f088d304c8b8f25505a617}
+
+\item 
+{\bfseries CPacket} (uint8 protocol)\label{classCPacket_a02f015001355333b9a4c04d77cfe621c}
+
+\item 
+{\bfseries CPacket} (byte $\ast$header, byte $\ast$buf)\label{classCPacket_a14cfca8b31ed3051abfe1e519accb7d9}
+
+\item 
+{\bfseries CPacket} (const {\bf CMemFile} \&datafile, uint8 protocol, uint8 ucOpcode)\label{classCPacket_aebab2c7f9290abcd5ef4474e6eeaa73b}
+
+\item 
+{\bfseries CPacket} (int8 in\_\-opcode, uint32 in\_\-size, uint8 protocol, bool bFromPF=true)\label{classCPacket_aaec002dbf9e73fff4f4f1e3bac3e38d3}
+
+\item 
+{\bfseries CPacket} (byte $\ast$pPacketPart, uint32 nSize, bool bLast, bool bFromPF=true)\label{classCPacket_a37d1389a3efd52b89b75c1497178765c}
+
+\item 
+byte $\ast$ {\bfseries GetHeader} ()\label{classCPacket_ac8b2d8a37523660b617f502c4b12ce09}
+
+\item 
+byte $\ast$ {\bfseries GetUDPHeader} ()\label{classCPacket_a2c60d4c90be664db43af8e47d4f3e274}
+
+\item 
+byte $\ast$ {\bfseries GetPacket} ()\label{classCPacket_ac653af576f8088c0a7240139e3f1ed9f}
+
+\item 
+byte $\ast$ {\bfseries DetachPacket} ()\label{classCPacket_a4c46cf749182885115c9120867e10a6f}
+
+\item 
+uint32 {\bfseries GetRealPacketSize} () const \label{classCPacket_ac08cb887db3e55f65b5d01addb5f5a87}
+
+\item 
+bool {\bfseries IsSplitted} ()\label{classCPacket_a349ae079d5177cfe9be36b8a18d23346}
+
+\item 
+bool {\bfseries IsLastSplitted} ()\label{classCPacket_a6c139a901aeeaf7bf0a2cdd2857895b3}
+
+\item 
+void {\bfseries PackPacket} ()\label{classCPacket_a1c52d4829626f9d0e0da9b235d47bf82}
+
+\item 
+bool {\bfseries UnPackPacket} (uint32 uMaxDecompressedSize=50000)\label{classCPacket_a6e29f1705f6e549874aea1caf1b4fcfe}
+
+\item 
+bool {\bfseries IsFromPF} ()\label{classCPacket_a79a25c2aa547a0841fe01a625271474e}
+
+\item 
+uint8 {\bfseries GetOpCode} () const \label{classCPacket_a448fa44f3fb21f2918092e9014885522}
+
+\item 
+void {\bfseries SetOpCode} (uint8 oc)\label{classCPacket_a6db96567ab2d9a4b7ec952e901ebe304}
+
+\item 
+uint32 {\bfseries GetPacketSize} () const \label{classCPacket_aa93f45774c409dbbd14a14be0cd4a605}
+
+\item 
+uint8 {\bfseries GetProtocol} () const \label{classCPacket_ac5fdc550d95f30582a6922f7c1f88ee3}
+
+\item 
+void {\bfseries SetProtocol} (uint8 p)\label{classCPacket_aeedd45eb501dc40dd6a07277c5b84891}
+
+\item 
+const byte $\ast$ {\bfseries GetDataBuffer} (void) const \label{classCPacket_a9c1eeaaa24340edc1fa7803d66f7dc35}
+
+\item 
+void {\bfseries Copy16ToDataBuffer} (const void $\ast$data)\label{classCPacket_a162073976a9b87f801506aa562a4c609}
+
+\item 
+void {\bfseries CopyToDataBuffer} (unsigned int offset, const byte $\ast$data, unsigned int n)\label{classCPacket_a93dee374997c34a166eaa3504d6c848d}
+
+\item 
+void {\bfseries CopyUInt32ToDataBuffer} (uint32 data, unsigned int offset=0)\label{classCPacket_a403c3db73c731cc860fc13a52749d30c}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32 {\bfseries GetPacketSizeFromHeader} (const byte $\ast$rawHeader)\label{classCPacket_a5d5cf519636999024b073b2f7561bd20}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPacket} \& {\bf operator=} (const {\bf CPacket} \&)\label{classCPacket_abdfba5feebd2712bdf5f2691a800107b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries size}\label{classCPacket_acbffdfd1a59233f4d1f02da817b9ecae}
+
+\item 
+uint8 {\bfseries opcode}\label{classCPacket_aae8e1b94f86be2d636d3fbf001401300}
+
+\item 
+uint8 {\bfseries prot}\label{classCPacket_ac859f9f52d227cab919eab809350a1a7}
+
+\item 
+bool {\bfseries m\_\-bSplitted}\label{classCPacket_a1a6a9ff336c2595fba2b57730b954ffb}
+
+\item 
+bool {\bfseries m\_\-bLastSplitted}\label{classCPacket_a81a864df41db88501e4b66326b216464}
+
+\item 
+bool {\bfseries m\_\-bPacked}\label{classCPacket_abb0ef4464d6558b646b12de0ca57351d}
+
+\item 
+bool {\bfseries m\_\-bFromPF}\label{classCPacket_ab77c08e62b5663944daf6208ab575038}
+
+\item 
+byte {\bfseries head} [6]\label{classCPacket_adec453ca0fb2aa6dd54fa8a331b848ca}
+
+\item 
+byte $\ast$ {\bfseries tempbuffer}\label{classCPacket_ab5d0425e42d31babd4b9446ccf7060c4}
+
+\item 
+byte $\ast$ {\bfseries completebuffer}\label{classCPacket_ab4b66839f03d61be009d52a0ccadeaec}
+
+\item 
+byte $\ast$ {\bfseries pBuffer}\label{classCPacket_a9979fb6b44a0c497e3c7d309b74ebc87}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Packet.h\item 
+src/Packet.cpp\end{DoxyCompactItemize}

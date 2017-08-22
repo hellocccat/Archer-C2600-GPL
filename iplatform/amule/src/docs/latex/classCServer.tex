@@ -1,0 +1,384 @@
+\section{CServer Class Reference}
+\label{classCServer}\index{CServer@{CServer}}
+Inheritance diagram for CServer::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCServer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CServer} ({\bf ServerMet\_\-Struct} $\ast$in\_\-data)\label{classCServer_afd485d17ad0c87421d561d1c48cd59eb}
+
+\item 
+{\bfseries CServer} (uint16 in\_\-port, const wxString i\_\-addr)\label{classCServer_a8754505cfb68d2ff96e22fb0a9197a42}
+
+\item 
+{\bfseries CServer} ({\bf CServer} $\ast$pOld)\label{classCServer_ac8218c0ea4ce297d4366d07834a44dfc}
+
+\item 
+{\bfseries CServer} (class {\bf CEC\_\-Server\_\-Tag} $\ast$)\label{classCServer_ac5086d2140ee4cd68fea2910e9f291e8}
+
+\item 
+void {\bfseries AddTag} ({\bf CTag} $\ast$in\_\-tag)\label{classCServer_aec73b7549c448c25c1ee6a4b4e95ec17}
+
+\item 
+const wxString \& {\bfseries GetListName} () const \label{classCServer_afe87aa605022d3c50c383ed17a5f35f6}
+
+\item 
+const wxString \& {\bfseries GetFullIP} () const \label{classCServer_ac571c2347e4f788fa14071c916532e88}
+
+\item 
+const wxString \& {\bfseries GetAddress} () const \label{classCServer_aed450f081b2c488fad86735ee69417a1}
+
+\item 
+uint16 {\bfseries GetPort} () const \label{classCServer_a552e1e898f3216e33a82d519d40539cc}
+
+\item 
+uint16 {\bfseries GetConnPort} () const \label{classCServer_a996b41819f08e5d5f632d307ccf1819b}
+
+\item 
+void {\bfseries SetPort} (uint32 val)\label{classCServer_a1ad2f947f477554d7ac71fa55e096d23}
+
+\item 
+bool {\bfseries AddTagFromFile} ({\bf CFileDataIO} $\ast$servermet)\label{classCServer_a267331d1c9b941d72e513f0aa21f57a5}
+
+\item 
+void {\bfseries SetListName} (const wxString \&newname)\label{classCServer_a1324d33f32024bd953cc7d2fd63bf3bb}
+
+\item 
+void {\bfseries SetDescription} (const wxString \&newdescription)\label{classCServer_a415fc280418181850f0a2360daa090cc}
+
+\item 
+uint32 {\bfseries GetIP} () const \label{classCServer_a8125b321871b7102cd67cf02d130d22e}
+
+\item 
+uint32 {\bfseries GetFiles} () const \label{classCServer_a186bb14e149f2ade0761530d3c47efb9}
+
+\item 
+uint32 {\bfseries GetUsers} () const \label{classCServer_a6e8f05a5747083de44b57e5aa5c86836}
+
+\item 
+const wxString \& {\bfseries GetDescription} () const \label{classCServer_a7d0a0a8c70b3d4c8f88c51107d6b62b2}
+
+\item 
+uint32 {\bfseries GetPing} () const \label{classCServer_a2a8ce3d97a61ce697fe72631418cc611}
+
+\item 
+uint32 {\bfseries GetPreferences} () const \label{classCServer_acbfffcef8e627dae6b5a6cdd088c52a2}
+
+\item 
+uint32 {\bfseries GetMaxUsers} () const \label{classCServer_ae4cd4bb356711be5a036d3c2ed865ef3}
+
+\item 
+void {\bfseries SetMaxUsers} (uint32 in\_\-maxusers)\label{classCServer_a2c26f0d6d6549a95d7a223542d547b32}
+
+\item 
+void {\bfseries SetUserCount} (uint32 in\_\-users)\label{classCServer_a4c8cffa3248c5889ed4793c2299a511c}
+
+\item 
+void {\bfseries SetFileCount} (uint32 in\_\-files)\label{classCServer_a77b866894811a22fb1b1e38df84d7d32}
+
+\item 
+void {\bfseries ResetFailedCount} ()\label{classCServer_a4fededac7b0e86d66c73de7bd70d778b}
+
+\item 
+void {\bfseries AddFailedCount} ()\label{classCServer_a152191099b553b10ddab66a0dad40e65}
+
+\item 
+uint32 {\bfseries GetFailedCount} () const \label{classCServer_aeb377303e93e6828abb2e0d18422b62c}
+
+\item 
+void {\bfseries SetID} (uint32 newip)\label{classCServer_af43e1ed01f576e51d932dbf7f6386a05}
+
+\item 
+const wxString \& {\bfseries GetDynIP} () const \label{classCServer_a3008da9dd5209bbfd018a952ff2625e6}
+
+\item 
+bool {\bfseries HasDynIP} () const \label{classCServer_a6b8d253822dd10ac34843a93030889fd}
+
+\item 
+void {\bfseries SetDynIP} (const wxString \&newdynip)\label{classCServer_ae05c6453354d0c1fec58bd96cefef867}
+
+\item 
+uint32 {\bfseries GetLastPingedTime} () const \label{classCServer_a6e4961fb0a54c8f3671c135997741e3a}
+
+\item 
+void {\bfseries SetLastPingedTime} (uint32 in\_\-lastpingedtime)\label{classCServer_a81ab8ff4d5c73e63e2db7dcf61e68a70}
+
+\item 
+uint32 {\bfseries GetRealLastPingedTime} () const \label{classCServer_aa6e37ebd66c70e1e1ca835c7ce4ab44c}
+
+\item 
+void {\bfseries SetRealLastPingedTime} (uint32 in\_\-lastpingedtime)\label{classCServer_a7f3e695424443a83d3325de6c2c43d2d}
+
+\item 
+uint32 {\bfseries GetLastPinged} () const \label{classCServer_aef4187e834eab2bc644dc161673003de}
+
+\item 
+void {\bfseries SetLastPinged} (uint32 in\_\-lastpinged)\label{classCServer_a545b36f98670081409b0e1178ed2f423}
+
+\item 
+void {\bfseries SetPing} (uint32 in\_\-ping)\label{classCServer_ac5214ccc8284d00eacae33cc45e43386}
+
+\item 
+void {\bfseries SetPreference} (uint32 in\_\-preferences)\label{classCServer_a2008d9552fe630bdcfe3fea0b6a0586d}
+
+\item 
+void {\bfseries SetIsStaticMember} (bool in)\label{classCServer_a09c7bdc411c85e8a5302ad4c150a6930}
+
+\item 
+bool {\bfseries IsStaticMember} () const \label{classCServer_a5c4d1a3c4d1d3e0fe798dfbf89842d6d}
+
+\item 
+uint32 {\bfseries GetChallenge} () const \label{classCServer_af65b18932f5fed1d3588c51b40b3f039}
+
+\item 
+void {\bfseries SetChallenge} (uint32 in\_\-challenge)\label{classCServer_a74c52f064d6dbf7251598a4f1845f313}
+
+\item 
+uint32 {\bfseries GetSoftFiles} () const \label{classCServer_a453256a9068ba36572be2083d2b138e0}
+
+\item 
+void {\bfseries SetSoftFiles} (uint32 in\_\-softfiles)\label{classCServer_a6f7985c45610a17a34c45ce641176f71}
+
+\item 
+uint32 {\bfseries GetHardFiles} () const \label{classCServer_ad55aacecd8c41398e8f6e865f92d8a53}
+
+\item 
+void {\bfseries SetHardFiles} (uint32 in\_\-hardfiles)\label{classCServer_aa640121778cb5719fb80cafbf11d48d8}
+
+\item 
+const wxString \& {\bfseries GetVersion} () const \label{classCServer_a8897f483dc35ad43c2679f30b9bd8d64}
+
+\item 
+void {\bfseries SetVersion} (const wxString \&pszVersion)\label{classCServer_a00cad4386b3f6a074bffec4b99d05933}
+
+\item 
+void {\bfseries SetTCPFlags} (uint32 uFlags)\label{classCServer_ae5d7df89b51013aec8f4940393948a18}
+
+\item 
+uint32 {\bfseries GetTCPFlags} () const \label{classCServer_abfb469f06c2cf84e90eba4722d61a028}
+
+\item 
+void {\bfseries SetUDPFlags} (uint32 uFlags)\label{classCServer_a3e0efab19adfd0288488efe28fa8a8d5}
+
+\item 
+uint32 {\bfseries GetUDPFlags} () const \label{classCServer_ae32175d7a76a8be1a4d56d99f75a555e}
+
+\item 
+uint32 {\bfseries GetLowIDUsers} () const \label{classCServer_a322768f3e6dd18a9e1c45d357f201fbd}
+
+\item 
+void {\bfseries SetLowIDUsers} (uint32 uLowIDUsers)\label{classCServer_a4c41e1f0a833101e255fb06264ed99e5}
+
+\item 
+uint32 {\bfseries GetDescReqChallenge} () const \label{classCServer_a066ac3614bced2722dcaf7d156ffa3ec}
+
+\item 
+void {\bfseries SetDescReqChallenge} (uint32 uDescReqChallenge)\label{classCServer_a155f0fac2db8dad33a15d0a95989bb02}
+
+\item 
+uint8 {\bfseries GetLastDescPingedCount} () const \label{classCServer_aaf56809687acf07d579e6050351ff154}
+
+\item 
+void {\bfseries SetLastDescPingedCount} (bool reset)\label{classCServer_a53c0012b555df056ec2f03d5e5a80799}
+
+\item 
+uint16 {\bfseries GetObfuscationPortTCP} () const \label{classCServer_a5d2e6914bc827e621774ef71df7ceac0}
+
+\item 
+void {\bfseries SetObfuscationPortTCP} (uint16 nPort)\label{classCServer_a3b0cf65439b227bf6a3206304b88c826}
+
+\item 
+uint16 {\bfseries GetObfuscationPortUDP} () const \label{classCServer_a7e8405013df864adfdde495cd1a6dace}
+
+\item 
+void {\bfseries SetObfuscationPortUDP} (uint16 nPort)\label{classCServer_aeda97155a756a9cfcc8ffd07a3cb7e25}
+
+\item 
+uint32 {\bfseries GetServerKeyUDP} (bool bForce=false) const \label{classCServer_abb78ebd4a90968834a257adc31291694}
+
+\item 
+void {\bfseries SetServerKeyUDP} (uint32 dwServerKeyUDP)\label{classCServer_a93f8aa21b8372706acdb267c275aab14}
+
+\item 
+bool {\bfseries GetCryptPingReplyPending} () const \label{classCServer_a84755129f891054062665c807c383bfa}
+
+\item 
+void {\bfseries SetCryptPingReplyPending} (bool bVal)\label{classCServer_af09512e1510552e92b3ec7a3b5672825}
+
+\item 
+uint32 {\bfseries GetServerKeyUDPIP} () const \label{classCServer_aa3b0be7df4486fa28fec06fad6fc6dce}
+
+\item 
+bool {\bfseries GetUnicodeSupport} () const \label{classCServer_a2b3d22843299a41efc48cdb8a41407f0}
+
+\item 
+bool {\bfseries GetRelatedSearchSupport} () const \label{classCServer_af884cfba7fa7487d44b16f33bbf49dec}
+
+\item 
+bool {\bfseries SupportsLargeFilesTCP} () const \label{classCServer_aa8aeeff960807a495f82986f719229c3}
+
+\item 
+bool {\bfseries SupportsLargeFilesUDP} () const \label{classCServer_a92b9e89c94607e4bc53eb6640e73c433}
+
+\item 
+bool {\bfseries SupportsObfuscationUDP} () const \label{classCServer_ae3bb9e18a9a6400a248c6220c888562f}
+
+\item 
+bool {\bfseries SupportsObfuscationTCP} () const \label{classCServer_abd3089227bffe724b66ffcb8e50ce27b}
+
+\item 
+bool {\bfseries SupportsGetSourcesObfuscation} () const \label{classCServer_ab3edf14d208c1b24db9bbc204ae30ae9}
+
+\item 
+const wxString \& {\bfseries GetAuxPortsList} () const \label{classCServer_a1eda8cab7ade824646064dc23e03542c}
+
+\item 
+void {\bfseries SetAuxPortsList} (const wxString \&val)\label{classCServer_a8d6566f16b41198f7a57b49329eac85a}
+
+\item 
+uint64 {\bfseries GetLastDNSSolve} () const \label{classCServer_a37df098eb0a5c5b7901dd9dee9d74007}
+
+\item 
+void {\bfseries SetLastDNSSolve} (uint64 value)\label{classCServer_a781b02c670c355bda5a66f7f3fe90ac7}
+
+\item 
+bool {\bfseries GetDNSError} () const \label{classCServer_aefe9da4a4bb1116bc5bac0a81fe2c00f}
+
+\item 
+void {\bfseries SetDNSError} (bool value)\label{classCServer_a2964666663b69ff11e700e8d76ca3305}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Init} ()\label{classCServer_a1937499c2b557914905bfcdf0dd99480}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries challenge}\label{classCServer_afa4aa5e0e5b05649d103669d6d72177f}
+
+\item 
+uint32 {\bfseries lastpinged}\label{classCServer_ac61f171cdf09ef2e74530f19886ee951}
+
+\item 
+uint32 {\bfseries lastpingedtime}\label{classCServer_a72573bfabb502ac66f80c6473433f25c}
+
+\item 
+uint32 {\bfseries files}\label{classCServer_a834af66abf31fafbc49f97145ec01443}
+
+\item 
+uint32 {\bfseries users}\label{classCServer_a71f50969f551ac68ea688e0ece013990}
+
+\item 
+uint32 {\bfseries maxusers}\label{classCServer_aad26e4955778cb5429434d35cb01f8b7}
+
+\item 
+uint32 {\bfseries softfiles}\label{classCServer_a9d0108fab6b260dd964ce61e5cd977b0}
+
+\item 
+uint32 {\bfseries hardfiles}\label{classCServer_acefda09fd6fe2cfb30424020a7ed60a6}
+
+\item 
+uint32 {\bfseries preferences}\label{classCServer_acf2bdd0fa84145bc7befe4e2ea2e0c17}
+
+\item 
+uint32 {\bfseries ping}\label{classCServer_aa59e8c5b2f9078301e0613f4fbca589d}
+
+\item 
+wxString {\bfseries description}\label{classCServer_ad2129c539ff857f3e8808e32b25f2d5c}
+
+\item 
+wxString {\bfseries listname}\label{classCServer_ade6744a5eef14200c21211b887996966}
+
+\item 
+wxString {\bfseries dynip}\label{classCServer_afa6c23aa138f9a4628ab7bff159691e6}
+
+\item 
+uint32 {\bfseries tagcount}\label{classCServer_a54435d47e9e2013153f787fb350f955a}
+
+\item 
+wxString {\bfseries ipfull}\label{classCServer_af8ec6102b755c8c3a76a38b7dabc5a5e}
+
+\item 
+uint32 {\bfseries ip}\label{classCServer_a6d85b7e3cb888f15a7cab3f71df96382}
+
+\item 
+uint16 {\bfseries port}\label{classCServer_afa2942553c1abd2cb72f6fe381c2b104}
+
+\item 
+uint16 {\bfseries realport}\label{classCServer_a944d9ae8c14d26fb2677c95ab845a4c8}
+
+\item 
+uint32 {\bfseries failedcount}\label{classCServer_a38abb41daeaee6697ef3489838e8d75a}
+
+\item 
+uint32 {\bfseries m\_\-uDescReqChallenge}\label{classCServer_a6da1ed60b8d07ead629aa2932bcac08d}
+
+\item 
+uint8 {\bfseries lastdescpingedcout}\label{classCServer_aac1f035d6a5f95c66bc8c3e127169ead}
+
+\item 
+TagPtrList {\bfseries m\_\-taglist}\label{classCServer_ac9a47cdddab278eb79151e1e5a487bbf}
+
+\item 
+bool {\bfseries staticservermember}\label{classCServer_ab506fa04d714ad49e0de0c281cefd496}
+
+\item 
+wxString {\bfseries m\_\-strVersion}\label{classCServer_a781c1fe2ed1a1dcf89858ab7310d905b}
+
+\item 
+uint32 {\bfseries m\_\-uTCPFlags}\label{classCServer_a6580027e34739970c819b5203e5a8bd8}
+
+\item 
+uint32 {\bfseries m\_\-uUDPFlags}\label{classCServer_ac5fba94688d6b0cc02f1e7bf76429e5a}
+
+\item 
+uint32 {\bfseries m\_\-uLowIDUsers}\label{classCServer_a6614f1a1b62a83796cfc608e3d967e19}
+
+\item 
+wxString {\bfseries m\_\-auxPorts}\label{classCServer_a6af0ea5f0fa7ab853aa523c93fab336c}
+
+\item 
+uint64 {\bfseries m\_\-lastdnssolve}\label{classCServer_ab2a10114da9ed193194b36f2a53a84fe}
+
+\item 
+bool {\bfseries m\_\-dnsfailure}\label{classCServer_ae7c5dae288ad105532f7b4e0e1150f25}
+
+\item 
+bool {\bfseries m\_\-bCryptPingReplyPending}\label{classCServer_a90595c40843312690368af31374272c9}
+
+\item 
+uint32 {\bfseries m\_\-dwServerKeyUDP}\label{classCServer_a194ee60230ae8a661d2da55ddb886686}
+
+\item 
+uint32 {\bfseries m\_\-dwIPServerKeyUDP}\label{classCServer_a6dcc9ae6e28b460620554f9258d1bd02}
+
+\item 
+uint16 {\bfseries m\_\-nObfuscationPortTCP}\label{classCServer_a385f4cc61dc0074fdb44b90633f1573a}
+
+\item 
+uint16 {\bfseries m\_\-nObfuscationPortUDP}\label{classCServer_a4d474cba796831ed0dd16fdbc4184d9e}
+
+\item 
+uint32 {\bfseries m\_\-dwRealLastPingedTime}\label{classCServer_a800f2286c4c93fd4ef94dbc92776bb8f}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CServerListRem}\label{classCServer_a8dc97d3ed6ba99062fcf48ce8f5150ca}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Server.h\item 
+src/amule-\/remote-\/gui.cpp\item 
+src/Server.cpp\end{DoxyCompactItemize}

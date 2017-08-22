@@ -1,0 +1,112 @@
+\section{CFileArea Class Reference}
+\label{classCFileArea}\index{CFileArea@{CFileArea}}
+
+
+This class is used to optimize file read/write using mapped memory if supported.  
+
+
+{\ttfamily \#include $<$FileArea.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CFileArea} ()\label{classCFileArea_a8d39e9694a909e080ae6500861c3cb25}
+
+\item 
+virtual {\bf $\sim$CFileArea} ()\label{classCFileArea_a761b132899b3a4987998becaab6b01c3}
+
+\item 
+bool {\bf Close} ()\label{classCFileArea_aefc237fd82a49ce3331bc009bf6b1659}
+
+\item 
+void {\bf ReadAt} ({\bf CFileAutoClose} \&file, uint64 offset, size\_\-t count)
+\item 
+void {\bf StartWriteAt} ({\bf CFileAutoClose} \&file, uint64 offset, size\_\-t count)\label{classCFileArea_a0d9669a816064a8a3482bc33ed4424b8}
+
+\item 
+bool {\bf FlushAt} ({\bf CFileAutoClose} \&file, uint64 offset, size\_\-t count)\label{classCFileArea_a1b4bcf077a9e0e5258a8a08074cec522}
+
+\item 
+byte $\ast$ {\bf GetBuffer} () const 
+\item 
+void {\bf CheckError} ()\label{classCFileArea_a5ab340f8a3c58b5def7d4b2e2ed61484}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+{\bf CFileArea} (const {\bf CFileArea} \&)\label{classCFileArea_ad272235f664c9112154e63612ee52a74}
+
+\item 
+{\bf CFileArea} \& {\bfseries operator=} (const {\bf CFileArea} \&)\label{classCFileArea_a5b9a2427f1996eae9f2a9a2900283432}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+byte $\ast$ {\bf m\_\-buffer}
+\item 
+byte $\ast$ {\bf m\_\-mmap\_\-buffer}\label{classCFileArea_a9678ddd4a798a9812a6fc5b5c1203c44}
+
+\item 
+size\_\-t {\bf m\_\-length}\label{classCFileArea_aff95df3e74a696f2b4c2a139fa0eaee7}
+
+\item 
+{\bf CFileArea} $\ast$ {\bf m\_\-next}\label{classCFileArea_a0e8ab77a84eb0d0eb5c8029c0db8c689}
+
+\item 
+{\bf CFileAutoClose} $\ast$ {\bf m\_\-file}\label{classCFileArea_a309b40d84efdccf99a3f60d02d471b9b}
+
+\item 
+bool {\bf m\_\-error}\label{classCFileArea_a09ec587b4457a78cb1c669bb9e901288}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CFileAreaSigHandler}\label{classCFileArea_a39b527093c4d955b23d5d6377a1cb236}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to optimize file read/write using mapped memory if supported. 
+
+\subsection{Member Function Documentation}
+\index{CFileArea@{CFileArea}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!CFileArea@{CFileArea}}
+\subsubsection[{GetBuffer}]{\setlength{\rightskip}{0pt plus 5cm}byte$\ast$ CFileArea::GetBuffer () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCFileArea_aeb451a19e50b1cb41b81f57b29335e2b}
+
+
+Get buffer that contains data readed or to write. \begin{DoxyReturn}{Returns}
+allocated buffer or NULL if not initialized 
+\end{DoxyReturn}
+
+
+References m\_\-buffer.\index{CFileArea@{CFileArea}!ReadAt@{ReadAt}}
+\index{ReadAt@{ReadAt}!CFileArea@{CFileArea}}
+\subsubsection[{ReadAt}]{\setlength{\rightskip}{0pt plus 5cm}void CFileArea::ReadAt ({\bf CFileAutoClose} \& {\em file}, \/  uint64 {\em offset}, \/  size\_\-t {\em count})}\label{classCFileArea_ac9eae3430295d028bc0589d798bada94}
+
+
+Init area with a given piece of file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]file to read. \item[{\em offset}]seek address in file. \item[{\em count}]bytes to read.\end{DoxyParams}
+Initialize buffer. Buffer will contain data from current file position for count length. Buffer will be a memory mapped area or a allocated buffer depending on systems. 
+
+References Close(), CFileAutoClose::fd(), m\_\-buffer, m\_\-file, m\_\-length, m\_\-mmap\_\-buffer, CFileAutoClose::ReadAt(), and CFileAutoClose::Unlock().
+
+\subsection{Member Data Documentation}
+\index{CFileArea@{CFileArea}!m\_\-buffer@{m\_\-buffer}}
+\index{m\_\-buffer@{m\_\-buffer}!CFileArea@{CFileArea}}
+\subsubsection[{m\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}byte$\ast$ {\bf CFileArea::m\_\-buffer}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCFileArea_a12d92f1596802b9f81efd67f640d1a0d}
+
+
+Pointer to buffer used for read/write operations. If mapped points inside m\_\-mmap\_\-buffer area otherwise point to an allocated buffer to be freed. 
+
+Referenced by Close(), FlushAt(), GetBuffer(), ReadAt(), and StartWriteAt().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/FileArea.h\item 
+src/FileArea.cpp\end{DoxyCompactItemize}

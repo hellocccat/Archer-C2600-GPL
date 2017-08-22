@@ -1,0 +1,101 @@
+\section{Kademlia::CRoutingBin Class Reference}
+\label{classKademlia_1_1CRoutingBin}\index{Kademlia::CRoutingBin@{Kademlia::CRoutingBin}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries AddContact} ({\bf CContact} $\ast$contact)\label{classKademlia_1_1CRoutingBin_a6d0f02a90cf0e2b0f227d552cc3c5ae2}
+
+\item 
+void {\bfseries SetAlive} ({\bf CContact} $\ast$contact)\label{classKademlia_1_1CRoutingBin_a4df7da5bcd65683f7f4c38ac4dee9ecd}
+
+\item 
+void {\bfseries SetTCPPort} (uint32\_\-t ip, uint16\_\-t port, uint16\_\-t tcpPort)\label{classKademlia_1_1CRoutingBin_a331431560843937eb7f36f42f410ab34}
+
+\item 
+void {\bfseries RemoveContact} ({\bf CContact} $\ast$contact, bool noTrackingAdjust=false)\label{classKademlia_1_1CRoutingBin_a82613eaf4dcc441b934e689a952daf33}
+
+\item 
+{\bf CContact} $\ast$ {\bfseries GetContact} (const {\bf CUInt128} \&id) const   throw ()\label{classKademlia_1_1CRoutingBin_adc6e370c528edc3372e71c1e85a36e53}
+
+\item 
+{\bf CContact} $\ast$ {\bfseries GetContact} (uint32\_\-t ip, uint16\_\-t port, bool tcpPort) const   throw ()\label{classKademlia_1_1CRoutingBin_a92325ccde89320b3f3018cb6dc34e8c7}
+
+\item 
+{\bf CContact} $\ast$ {\bfseries GetOldest} () const   throw ()\label{classKademlia_1_1CRoutingBin_a0a809a7805012e42412c3d449b85fd90}
+
+\item 
+uint32\_\-t {\bfseries GetSize} () const   throw ()\label{classKademlia_1_1CRoutingBin_a21bafef44c41879b0523a0094ff243ad}
+
+\item 
+void {\bfseries GetNumContacts} (uint32\_\-t \&nInOutContacts, uint32\_\-t \&nInOutFilteredContacts, uint8\_\-t minVersion) const   throw ()\label{classKademlia_1_1CRoutingBin_a7824efb559893f87e48e839a25c00a3d}
+
+\item 
+uint32\_\-t {\bfseries GetRemaining} () const   throw ()\label{classKademlia_1_1CRoutingBin_a8f03d2eeb23d70d7299b08c1582c2436}
+
+\item 
+void {\bfseries GetEntries} (ContactList $\ast$result, bool emptyFirst=true) const \label{classKademlia_1_1CRoutingBin_ac553ea0393e3082a3d3ea45324d9e059}
+
+\item 
+void {\bfseries GetClosestTo} (uint32\_\-t maxType, const {\bf CUInt128} \&target, uint32\_\-t maxRequired, ContactMap $\ast$result, bool emptyFirst=true, bool setInUse=false) const \label{classKademlia_1_1CRoutingBin_aea0043a5e4154dc4cafcb285ba4c6a6b}
+
+\item 
+bool {\bfseries ChangeContactIPAddress} ({\bf CContact} $\ast$contact, uint32\_\-t newIP)\label{classKademlia_1_1CRoutingBin_a2540198ca5e518633b6bb322bbfdaefe}
+
+\item 
+void {\bfseries PushToBottom} ({\bf CContact} $\ast$contact)\label{classKademlia_1_1CRoutingBin_a1339d38e54fb204725ceec34302579bd}
+
+\item 
+{\bf CContact} $\ast$ {\bfseries GetRandomContact} (uint32\_\-t maxType, uint32\_\-t minKadVersion) const \label{classKademlia_1_1CRoutingBin_aa0eaee07d533e46134e6d3125c119517}
+
+\item 
+void {\bfseries SetAllContactsVerified} ()\label{classKademlia_1_1CRoutingBin_a45078739976acf71f33d9163378f4e57}
+
+\item 
+bool {\bfseries HasOnlyLANNodes} () const   throw ()\label{classKademlia_1_1CRoutingBin_a23a0a70a59de17d1fe758276f7138f87}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries CheckGlobalIPLimits} (uint32\_\-t ip, uint16\_\-t port)\label{classKademlia_1_1CRoutingBin_a4c3c01318bdbe03722f3ebc533755a08}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-dontDeleteContacts}\label{classKademlia_1_1CRoutingBin_af66215083fa31848e37265a8fce8e92b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries AdjustGlobalTracking} (uint32\_\-t ip, bool increase)\label{classKademlia_1_1CRoutingBin_a76373a81d64dda5e83892c64f69613c2}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ uint32\_\-t, uint32\_\-t $>$ {\bfseries GlobalTrackingMap}\label{classKademlia_1_1CRoutingBin_a03643deea7404e254b6b9f962765f410}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ContactList {\bfseries m\_\-entries}\label{classKademlia_1_1CRoutingBin_a4a812e1ce1a20f4c113e473e9383892d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static GlobalTrackingMap {\bfseries s\_\-globalContactIPs}\label{classKademlia_1_1CRoutingBin_ab51c8ce3d3afa63ea8bd8261f36fe744}
+
+\item 
+static GlobalTrackingMap {\bfseries s\_\-globalContactSubnets}\label{classKademlia_1_1CRoutingBin_a23f700436922e5030771139e17833e5c}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/routing/RoutingBin.h\item 
+src/kademlia/routing/RoutingBin.cpp\end{DoxyCompactItemize}

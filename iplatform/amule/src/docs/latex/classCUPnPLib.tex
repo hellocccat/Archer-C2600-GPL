@@ -1,0 +1,85 @@
+\section{CUPnPLib Class Reference}
+\label{classCUPnPLib}\index{CUPnPLib@{CUPnPLib}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CUPnPLib} ({\bf CUPnPControlPoint} \&ctrlPoint)\label{classCUPnPLib_ae8731a033bfd07fde49535aad93a416f}
+
+\item 
+std::string {\bfseries GetUPnPErrorMessage} (int code) const \label{classCUPnPLib_a8d4ed7e4b65386f0cc9bb4f51164b68b}
+
+\item 
+std::string {\bfseries processUPnPErrorMessage} (const std::string \&messsage, int code, const DOMString errorString, IXML\_\-Document $\ast$doc) const \label{classCUPnPLib_a397a911f4fbdbf6155172938c4471d78}
+
+\item 
+void {\bfseries ProcessActionResponse} (IXML\_\-Document $\ast$RespDoc, const std::string \&actionName) const \label{classCUPnPLib_ad24e6d2abc21a5c380d834df67bb14ec}
+
+\item 
+IXML\_\-Element $\ast$ {\bfseries Element\_\-GetRootElement} (IXML\_\-Document $\ast$doc) const \label{classCUPnPLib_a6dd984ae2ef74898167311fbddf3afd6}
+
+\item 
+IXML\_\-Element $\ast$ {\bfseries Element\_\-GetFirstChild} (IXML\_\-Element $\ast$parent) const \label{classCUPnPLib_a23144e605ed9e30e6088dd6e6a136380}
+
+\item 
+IXML\_\-Element $\ast$ {\bfseries Element\_\-GetNextSibling} (IXML\_\-Element $\ast$child) const \label{classCUPnPLib_ace2f6d65ea1b7507d51997dc00060553}
+
+\item 
+const DOMString {\bfseries Element\_\-GetTag} (IXML\_\-Element $\ast$element) const \label{classCUPnPLib_a288317cf9fa0ad8fe882e5ebab28c2bc}
+
+\item 
+const std::string {\bfseries Element\_\-GetTextValue} (IXML\_\-Element $\ast$element) const \label{classCUPnPLib_af375d3b5038cfd9b430d1888b2f182cf}
+
+\item 
+const std::string {\bfseries Element\_\-GetChildValueByTag} (IXML\_\-Element $\ast$element, const DOMString tag) const \label{classCUPnPLib_a9cf8ea8637e12a6cb489139a13a2f782}
+
+\item 
+IXML\_\-Element $\ast$ {\bfseries Element\_\-GetFirstChildByTag} (IXML\_\-Element $\ast$element, const DOMString tag) const \label{classCUPnPLib_ad0f0a6e1284765d1d66c969a2142e675}
+
+\item 
+IXML\_\-Element $\ast$ {\bfseries Element\_\-GetNextSiblingByTag} (IXML\_\-Element $\ast$element, const DOMString tag) const \label{classCUPnPLib_a81c9aacd7da3773b8dcae0ca1e4dce93}
+
+\item 
+const std::string {\bfseries Element\_\-GetAttributeByTag} (IXML\_\-Element $\ast$element, const DOMString tag) const \label{classCUPnPLib_add3a8febd59fac26a582fe4292f08c21}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CUPnPControlPoint} \& {\bfseries m\_\-ctrlPoint}\label{classCUPnPLib_aa95d67f1b986ed4dd09ab10e39a9d054}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string \& {\bfseries UPNP\_\-ROOT\_\-DEVICE}\label{classCUPnPLib_aae1382a487a6200a3b9d017badfe8bb5}
+
+\item 
+static const std::string \& {\bfseries UPNP\_\-DEVICE\_\-IGW}\label{classCUPnPLib_afcd367eaf19d2b2c059a2dec460a0773}
+
+\item 
+static const std::string \& {\bfseries UPNP\_\-DEVICE\_\-WAN}\label{classCUPnPLib_af8ecb981128cceabdecadcf71aaaccdb}
+
+\item 
+static const std::string \& {\bfseries UPNP\_\-DEVICE\_\-WAN\_\-CONNECTION}\label{classCUPnPLib_aecc9e0a074ababa44a4749bda9106aec}
+
+\item 
+static const std::string \& {\bfseries UPNP\_\-DEVICE\_\-LAN}\label{classCUPnPLib_a9f42102e92af9384545ccaf8a0895645}
+
+\item 
+static const std::string \& {\bfseries UPNP\_\-SERVICE\_\-LAYER3\_\-FORWARDING}\label{classCUPnPLib_a47cfae02e1a41edaf7851362e2869053}
+
+\item 
+static const std::string \& {\bfseries UPNP\_\-SERVICE\_\-WAN\_\-COMMON\_\-INTERFACE\_\-CONFIG}\label{classCUPnPLib_a02aa14c9032eaf1a74d3c41c00f132d2}
+
+\item 
+static const std::string \& {\bfseries UPNP\_\-SERVICE\_\-WAN\_\-IP\_\-CONNECTION}\label{classCUPnPLib_a80c78fc800afa0db1f3be4e50c0a0173}
+
+\item 
+static const std::string \& {\bfseries UPNP\_\-SERVICE\_\-WAN\_\-PPP\_\-CONNECTION}\label{classCUPnPLib_a66f728c3d02d78e08d0eb588a87476b5}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/UPnPBase.h\end{DoxyCompactItemize}

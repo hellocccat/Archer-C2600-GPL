@@ -1,0 +1,60 @@
+\section{DownloadFileInfo Class Reference}
+\label{classDownloadFileInfo}\index{DownloadFileInfo@{DownloadFileInfo}}
+Inheritance diagram for DownloadFileInfo::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classDownloadFileInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries DownloadFileInfo} ({\bf CamulewebApp} $\ast$webApp, {\bf CImageLib} $\ast$imlib)\label{classDownloadFileInfo_a9eb7dd1066d23a557509cb771b05a8e0}
+
+\item 
+void {\bfseries LoadImageParams} (wxString \&tpl, int width, int height)\label{classDownloadFileInfo_ab65fcab86b9ea46e2dc120c95d08dcc0}
+
+\item 
+virtual bool {\bf ReQuery} ()
+\item 
+void {\bfseries ItemInserted} ({\bf DownloadFile} $\ast$item)\label{classDownloadFileInfo_a07f08fdeff133fc050fe395931691e27}
+
+\item 
+void {\bfseries ItemDeleted} ({\bf DownloadFile} $\ast$item)\label{classDownloadFileInfo_abece3292c3479051ff24abed1ade35fd}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf DownloadFileInfo} $\ast$ {\bfseries m\_\-This} = 0\label{classDownloadFileInfo_a712a3eb1ce140d6da353d200054f2b5f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CImageLib} $\ast$ {\bfseries m\_\-ImageLib}\label{classDownloadFileInfo_aefaa624effa06915a9c3668e4215f9e5}
+
+\item 
+wxString {\bfseries m\_\-Template}\label{classDownloadFileInfo_ae22eb7c722707312a6ac62d9889ae371}
+
+\item 
+int {\bfseries m\_\-width}\label{classDownloadFileInfo_a801f4acb8e04fec75d8c1ab7d4b63e2f}
+
+\item 
+int {\bfseries m\_\-height}\label{classDownloadFileInfo_ad6346f4110f2ca95c3fec689e1e4b2c7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{DownloadFileInfo@{DownloadFileInfo}!ReQuery@{ReQuery}}
+\index{ReQuery@{ReQuery}!DownloadFileInfo@{DownloadFileInfo}}
+\subsubsection[{ReQuery}]{\setlength{\rightskip}{0pt plus 5cm}bool DownloadFileInfo::ReQuery ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classDownloadFileInfo_af8f7182b288cba630dc386ddd748d01c}
+Re-\/query server: refresh all dataset 
+
+Implements {\bf ItemsContainer$<$ DownloadFile $>$} \doxyref{}{p.}{classItemsContainer_a66b3954cd3f77947f5fe0e123903b77d}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\item 
+src/webserver/src/WebServer.cpp\end{DoxyCompactItemize}

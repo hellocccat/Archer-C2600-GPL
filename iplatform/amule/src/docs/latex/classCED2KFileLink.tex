@@ -1,0 +1,91 @@
+\section{CED2KFileLink Class Reference}
+\label{classCED2KFileLink}\index{CED2KFileLink@{CED2KFileLink}}
+Inheritance diagram for CED2KFileLink::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCED2KFileLink}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf SED2KLinkSource}
+\begin{DoxyCompactList}\small\item\em Structure used to store sources found in file links. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::deque$<$ {\bf SED2KLinkSource} $>$ {\bfseries CED2KLinkSourceList}\label{classCED2KFileLink_a119459a72f3d8a0ad189c8215c7690dd}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual wxString {\bfseries GetLink} () const \label{classCED2KFileLink_a7c85ec82337f116bcbcc9fed4df70070}
+
+\item 
+wxString {\bfseries GetName} () const \label{classCED2KFileLink_a083ca74999a2cad4f03653e66b37b2d8}
+
+\item 
+uint64 {\bfseries GetSize} () const \label{classCED2KFileLink_a4c796e153f36b72462e4981ee95417f7}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetHashKey} () const \label{classCED2KFileLink_a0af4c8326ed6efe487d0dec380586a1f}
+
+\item 
+bool {\bfseries HasValidAICHHash} () const \label{classCED2KFileLink_a8c6f6b82830d94934101309c86fcd8f1}
+
+\item 
+const {\bf CAICHHash} \& {\bfseries GetAICHHash} () const \label{classCED2KFileLink_a28ce0a30d13c0d552ea2b49f3ebb9d47}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMemFile} $\ast$ {\bfseries m\_\-hashset}\label{classCED2KFileLink_ae1fc968d5f5da6059cd733d7c88c25b5}
+
+\item 
+CED2KLinkSourceList {\bfseries m\_\-sources}\label{classCED2KFileLink_af96e33d725c11c6afa045963bd420bec}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CED2KFileLink} (const wxString \&link)\label{classCED2KFileLink_aa2be65b770235e6aa3381330eb256535}
+
+\item 
+{\bfseries CED2KFileLink} (const {\bf CED2KFileLink} \&)\label{classCED2KFileLink_a0ac188b13282e9f651219357226cc741}
+
+\item 
+{\bf CED2KFileLink} \& {\bfseries operator=} (const {\bf CED2KFileLink} \&)\label{classCED2KFileLink_ae106c08f2c0d03901b05f5d7dd0d8d5b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-name}\label{classCED2KFileLink_a7a6c9b10c5a2b9f26a8b1ac6b11e5100}
+
+\item 
+uint64 {\bfseries m\_\-size}\label{classCED2KFileLink_ad82b11e2fa856b3ce2c915f2ac70cec4}
+
+\item 
+{\bf CMD4Hash} {\bfseries m\_\-hash}\label{classCED2KFileLink_a73fe5fcdf4457f0a1bfb881a854c9e66}
+
+\item 
+bool {\bfseries m\_\-bAICHHashValid}\label{classCED2KFileLink_abdc003e10c462efbf4f5132fc0932a6f}
+
+\item 
+{\bf CAICHHash} {\bfseries m\_\-AICHHash}\label{classCED2KFileLink_a9e83c33b1d3d673d505a6cb35519230d}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CED2KLink}\label{classCED2KFileLink_a279e7ff00da60d35d82d2fff0a8cba76}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ED2KLink.h\item 
+src/ED2KLink.cpp\end{DoxyCompactItemize}

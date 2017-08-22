@@ -1,0 +1,102 @@
+\section{CMuleTrayIcon Class Reference}
+\label{classCMuleTrayIcon}\index{CMuleTrayIcon@{CMuleTrayIcon}}
+
+
+The mule tray icon class is responsible for drawing the mule systray icon and reacting to the user input on it.  
+
+
+{\ttfamily \#include $<$MuleTrayIcon.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleTrayIcon} ()\label{classCMuleTrayIcon_a2a13121da9a46f8c417709935b8c816b}
+
+\item 
+{\bf $\sim$CMuleTrayIcon} ()\label{classCMuleTrayIcon_a14d525ac709168486edae9a97658bac3}
+
+\item 
+void {\bf SetTrayIcon} (int Icon, uint32 percent)
+\item 
+void {\bf SetTrayToolTip} (const wxString \&Tip)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual wxMenu $\ast$ {\bfseries CreatePopupMenu} ()\label{classCMuleTrayIcon_a3215c1a611d29cbb38f6e6dda331c202}
+
+\item 
+void {\bfseries UpdateTray} ()\label{classCMuleTrayIcon_a20d7f57a075883d6cdb197ef822fee84}
+
+\item 
+void {\bfseries SwitchShow} (wxTaskBarIconEvent \&)\label{classCMuleTrayIcon_aea614edca4c7f4c44f2032a1522fe6ce}
+
+\item 
+void {\bfseries SetUploadSpeed} (wxCommandEvent \&)\label{classCMuleTrayIcon_a7e22443f6ec07701f80bbfe7788a0aac}
+
+\item 
+void {\bfseries SetDownloadSpeed} (wxCommandEvent \&)\label{classCMuleTrayIcon_a4aa0ac64546213caffb5818dd7fee1cf}
+
+\item 
+void {\bfseries ServerConnection} (wxCommandEvent \&)\label{classCMuleTrayIcon_a6e0143b69cb4a29db0386e7e9d2cb987}
+
+\item 
+void {\bfseries ShowHide} (wxCommandEvent \&)\label{classCMuleTrayIcon_a89a64530ce6ff5abf16c7407f1a1a3de}
+
+\item 
+void {\bfseries Close} (wxCommandEvent \&)\label{classCMuleTrayIcon_ab48f72c5eba4cca4d06a01b8f4afbfc0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Old\_\-Icon}\label{classCMuleTrayIcon_a71dab918ad04ba3b0acf9b3c81f45ba4}
+
+\item 
+int {\bfseries Old\_\-SpeedSize}\label{classCMuleTrayIcon_a5fb943ff4b968efe8a00a13ed13c83c5}
+
+\item 
+int {\bfseries Disconnected\_\-Icon\_\-size}\label{classCMuleTrayIcon_a91c447ea8a983471036b8f285765988c}
+
+\item 
+int {\bfseries LowId\_\-Icon\_\-size}\label{classCMuleTrayIcon_a03fb9de1d4e64e8d66528a509eb823bc}
+
+\item 
+int {\bfseries HighId\_\-Icon\_\-size}\label{classCMuleTrayIcon_ad5fee0a1f8a5697517f9e5c1eba9b266}
+
+\item 
+wxIcon {\bfseries CurrentIcon}\label{classCMuleTrayIcon_ace79185140440a693dfecf48e11ac9c2}
+
+\item 
+wxMemoryDC {\bfseries IconWithSpeed}\label{classCMuleTrayIcon_adcab6989ce7d6f2dbeb918e6d2fa03d3}
+
+\item 
+wxString {\bfseries CurrentTip}\label{classCMuleTrayIcon_a2b1a37482b7a0156b7ca5c7ebc5bb214}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The mule tray icon class is responsible for drawing the mule systray icon and reacting to the user input on it. 
+
+\subsection{Member Function Documentation}
+\index{CMuleTrayIcon@{CMuleTrayIcon}!SetTrayIcon@{SetTrayIcon}}
+\index{SetTrayIcon@{SetTrayIcon}!CMuleTrayIcon@{CMuleTrayIcon}}
+\subsubsection[{SetTrayIcon}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleTrayIcon::SetTrayIcon (int {\em Icon}, \/  uint32 {\em percent})}\label{classCMuleTrayIcon_aa711f2d5d256c71ca904a91e6b460539}
+
+
+Set the Tray icon. 
+\begin{DoxyParams}{Parameters}
+\item[{\em Icon}]The wxIcon object with the new tray icon \end{DoxyParams}
+\index{CMuleTrayIcon@{CMuleTrayIcon}!SetTrayToolTip@{SetTrayToolTip}}
+\index{SetTrayToolTip@{SetTrayToolTip}!CMuleTrayIcon@{CMuleTrayIcon}}
+\subsubsection[{SetTrayToolTip}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleTrayIcon::SetTrayToolTip (const wxString \& {\em Tip})}\label{classCMuleTrayIcon_af9764baf5b3347f3e970d0bcb5c756ed}
+
+
+Set the Tray tooltip. 
+\begin{DoxyParams}{Parameters}
+\item[{\em Tip}]The wxString object with the new tray tooltip \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MuleTrayIcon.h\item 
+src/MuleTrayIcon.cpp\end{DoxyCompactItemize}

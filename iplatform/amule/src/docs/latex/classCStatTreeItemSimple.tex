@@ -1,0 +1,158 @@
+\section{CStatTreeItemSimple Class Reference}
+\label{classCStatTreeItemSimple}\index{CStatTreeItemSimple@{CStatTreeItemSimple}}
+
+
+Simple tree item.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemSimple::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCStatTreeItemSimple}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemSimple} (const wxString \&label, unsigned flags=stNone, enum {\bf EDisplayMode} displaymode=dmDefault)
+\item 
+void {\bf SetDisplayMode} (enum {\bf EDisplayMode} mode)\label{classCStatTreeItemSimple_a5f0a79371e2372c966cccd805a0b8c88}
+
+\item 
+void {\bf SetValue} (uint64\_\-t value)
+\item 
+void {\bf SetValue} (double value)
+\item 
+void {\bf SetValue} (const wxString \&value)
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\item 
+virtual bool {\bf IsVisible} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum EValueType {\bf m\_\-valuetype}\label{classCStatTreeItemSimple_a156c57bda601e2810f99c6454f1e30bc}
+
+\item 
+enum {\bf EDisplayMode} {\bf m\_\-displaymode}\label{classCStatTreeItemSimple_a1ac4057c1c2fb4c2a5792cb4082c239d}
+
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>uint64\_t {\bf m\_intvalue}\\
+\>double {\bf m\_floatvalue}\\
+\}; \label{classCStatTreeItemSimple_a83c59fe459fa94651780b413550ae58f}
+\\
+
+\end{tabbing}\item 
+wxString {\bf m\_\-stringvalue}\label{classCStatTreeItemSimple_ac6e93ca076df584bbdca81004594657a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple tree item. This tree item has one value and nothing speciality. :) The value might be an arbitrary integer or floating point type, or a wxString string.
+
+The item is able to display value in different formats, see \doxyref{SetDisplayMode()}{p.}{classCStatTreeItemSimple_a5f0a79371e2372c966cccd805a0b8c88}.
+
+\begin{DoxyNote}{Note}
+that you have to specify the right format code on 'label', i.e.: s for string and integers with displayMode dmTime or dmBytes, u or similar for integers, and f or similar for floating point types.
+
+You have to call \doxyref{SetValue()}{p.}{classCStatTreeItemSimple_a341be2daf767e3054dd723722749a72b} after creation for non-\/integer values, otherwise you'll get undesired results. 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemSimple@{CStatTreeItemSimple}!CStatTreeItemSimple@{CStatTreeItemSimple}}
+\index{CStatTreeItemSimple@{CStatTreeItemSimple}!CStatTreeItemSimple@{CStatTreeItemSimple}}
+\subsubsection[{CStatTreeItemSimple}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemSimple::CStatTreeItemSimple (const wxString \& {\em label}, \/  unsigned {\em flags} = {\ttfamily stNone}, \/  enum {\bf EDisplayMode} {\em displaymode} = {\ttfamily dmDefault})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemSimple_a7ceea61bf8a1d3390a7d0eacc76f0fb1}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae} 
+\end{DoxySeeAlso}
+
+
+References SetValue().
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemSimple@{CStatTreeItemSimple}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemSimple@{CStatTreeItemSimple}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemSimple::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemSimple_a017fb550f1f38a07abd27d408dc61864}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+References CECTag::AddTag(), dmBytes, dmTime, m\_\-displaymode, m\_\-floatvalue, m\_\-intvalue, m\_\-stringvalue, and m\_\-valuetype.\index{CStatTreeItemSimple@{CStatTreeItemSimple}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemSimple@{CStatTreeItemSimple}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemSimple::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemSimple_a462f9392e924f8fbfd4bd1be2160b6bd}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+References dmBytes, dmTime, m\_\-displaymode, m\_\-floatvalue, m\_\-intvalue, CStatTreeItemBase::m\_\-label, m\_\-stringvalue, and m\_\-valuetype.\index{CStatTreeItemSimple@{CStatTreeItemSimple}!IsVisible@{IsVisible}}
+\index{IsVisible@{IsVisible}!CStatTreeItemSimple@{CStatTreeItemSimple}}
+\subsubsection[{IsVisible}]{\setlength{\rightskip}{0pt plus 5cm}bool CStatTreeItemSimple::IsVisible () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemSimple_a2d85c7c45039dbe9fb46a70648cc97ce}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::IsVisible()}{p.}{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038}.
+
+References CStatTreeItemBase::m\_\-flags, m\_\-floatvalue, m\_\-intvalue, m\_\-stringvalue, m\_\-valuetype, and stHideIfZero.\index{CStatTreeItemSimple@{CStatTreeItemSimple}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!CStatTreeItemSimple@{CStatTreeItemSimple}}
+\subsubsection[{SetValue}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemSimple::SetValue (const wxString \& {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemSimple_a995230539b146b98a3ccc5fd5ed615f9}
+
+
+Sets a string type value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]the value to be set. \end{DoxyParams}
+
+
+References m\_\-stringvalue, and m\_\-valuetype.\index{CStatTreeItemSimple@{CStatTreeItemSimple}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!CStatTreeItemSimple@{CStatTreeItemSimple}}
+\subsubsection[{SetValue}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemSimple::SetValue (double {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemSimple_a21fee548d1fdc45f4afefa45c77e6281}
+
+
+Sets a floating point type value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]the value to be set. \end{DoxyParams}
+
+
+References m\_\-floatvalue, and m\_\-valuetype.\index{CStatTreeItemSimple@{CStatTreeItemSimple}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!CStatTreeItemSimple@{CStatTreeItemSimple}}
+\subsubsection[{SetValue}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemSimple::SetValue (uint64\_\-t {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemSimple_a341be2daf767e3054dd723722749a72b}
+
+
+Sets an integer type value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]the value to be set. \end{DoxyParams}
+
+
+References m\_\-intvalue, and m\_\-valuetype.
+
+Referenced by CStatTreeItemSimple().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

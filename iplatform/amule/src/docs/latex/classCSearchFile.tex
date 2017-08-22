@@ -1,0 +1,359 @@
+\section{CSearchFile Class Reference}
+\label{classCSearchFile}\index{CSearchFile@{CSearchFile}}
+
+
+Represents a search-\/result returned from a server or client.  
+
+
+{\ttfamily \#include $<$SearchFile.h$>$}Inheritance diagram for CSearchFile::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCSearchFile}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ClientStruct}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries DownloadStatus} \{ \par
+{\bfseries NEW}, 
+{\bfseries DOWNLOADED}, 
+{\bfseries QUEUED}, 
+{\bfseries CANCELED}, 
+\par
+{\bfseries QUEUEDCANCELED}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSearchFile} (class {\bf CEC\_\-SearchFile\_\-Tag} $\ast$tag)
+\item 
+{\bf CSearchFile} (const {\bf CSearchFile} \&other)
+\item 
+{\bf CSearchFile} (const {\bf CMemFile} \&data, bool optUTF8, wxUIntPtr searchID, uint32\_\-t serverIP=0, uint16\_\-t serverPort=0, const wxString \&directory=wxEmptyString, bool kademlia=false)
+\item 
+virtual {\bf $\sim$CSearchFile} ()
+\item 
+void {\bf MergeResults} (const {\bf CSearchFile} \&other)
+\item 
+uint32 {\bf GetSourceCount} () const 
+\item 
+uint32 {\bf GetCompleteSourceCount} () const 
+\item 
+wxUIntPtr {\bf GetSearchID} () const 
+\item 
+bool {\bf IsKademlia} () const 
+\item 
+enum DownloadStatus {\bf GetDownloadStatus} () const 
+\item 
+void {\bf SetDownloadStatus} ()
+\item 
+void {\bf SetDownloadStatus} (enum DownloadStatus s)
+\item 
+{\bf CSearchFile} $\ast$ {\bf GetParent} () const 
+\item 
+const CSearchResultList \& {\bf GetChildren} () const 
+\item 
+bool {\bf HasChildren} () const 
+\item 
+bool {\bf ShowChildren} () const 
+\item 
+void {\bf SetShowChildren} (bool show)
+\item 
+void {\bf AddChild} ({\bf CSearchFile} $\ast$file)
+\item 
+void {\bfseries AddClient} (const {\bf ClientStruct} \&client)\label{classCSearchFile_ad5e9c06c466d11cd12efcc2182b160fd}
+
+\item 
+const std::list$<$ {\bf ClientStruct} $>$ \& {\bfseries GetClients} () const \label{classCSearchFile_ae61b49afbb270bb604cf9d3aa8e08698}
+
+\item 
+uint32\_\-t {\bfseries GetClientID} () const   throw ()\label{classCSearchFile_aa7379aef8e1530c10b325dd232ec6993}
+
+\item 
+void {\bfseries SetClientID} (uint32\_\-t clientID)  throw ()\label{classCSearchFile_a89401b4a9b935ae569902049e63a0381}
+
+\item 
+uint16\_\-t {\bfseries GetClientPort} () const   throw ()\label{classCSearchFile_ac21187c630e6213e49bf8a87cb4689c7}
+
+\item 
+void {\bfseries SetClientPort} (uint16\_\-t port)  throw ()\label{classCSearchFile_a0f9a7826f58ffaae9f426a9183b9a7cd}
+
+\item 
+uint32\_\-t {\bfseries GetClientServerIP} () const   throw ()\label{classCSearchFile_ae65eaffa0a70cbf0613bf38be66aa74d}
+
+\item 
+void {\bfseries SetClientServerIP} (uint32\_\-t serverIP)  throw ()\label{classCSearchFile_a042591dba8e3069ed78b6587b8102935}
+
+\item 
+uint16\_\-t {\bfseries GetClientServerPort} () const   throw ()\label{classCSearchFile_a7f8dd8c6ab71ac729b61ab2a414eb26b}
+
+\item 
+void {\bfseries SetClientServerPort} (uint16\_\-t port)  throw ()\label{classCSearchFile_af2c5d5cc41a7b0035f26aedb038115c5}
+
+\item 
+int {\bfseries GetClientsCount} () const \label{classCSearchFile_a2fea907bde36a241cde7f4ce200ff59a}
+
+\item 
+void {\bfseries SetKadPublishInfo} (uint32\_\-t val)  throw ()\label{classCSearchFile_aa18b04d843d3d52c28c365fdf9114abe}
+
+\item 
+uint32\_\-t {\bfseries GetKadPublishInfo} () const   throw ()\label{classCSearchFile_a2f3a4d4d60cb241a5af82673cc6cf9f4}
+
+\item 
+const wxString \& {\bfseries GetDirectory} () const   throw ()\label{classCSearchFile_a3b04d4c2a4e887a92e1739bbbb8c1c74}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSearchFile} \& {\bf operator=} (const {\bf CSearchFile} \&other)\label{classCSearchFile_af9f3825ab3ef9c668d0eefe270c1c863}
+
+\item 
+void {\bf UpdateParent} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSearchFile} $\ast$ {\bf m\_\-parent}\label{classCSearchFile_a16a6be9a97eed2f28648cd7443261698}
+
+\item 
+CSearchResultList {\bf m\_\-children}\label{classCSearchFile_a961b6debe87a5d0d8f7fe9d3437dc041}
+
+\item 
+bool {\bf m\_\-showChildren}\label{classCSearchFile_acff81979b4642b98c2c03806d550a869}
+
+\item 
+wxUIntPtr {\bf m\_\-searchID}\label{classCSearchFile_a6bae89fa3bb51fe2fe47c8a3248fe9e1}
+
+\item 
+uint32 {\bf m\_\-sourceCount}\label{classCSearchFile_acc036391248ad0d58016298a32f6869c}
+
+\item 
+uint32 {\bf m\_\-completeSourceCount}\label{classCSearchFile_aee73b67e8c0d7b10ee3bd09a8487d2bc}
+
+\item 
+bool {\bf m\_\-kademlia}\label{classCSearchFile_a2a110938ecc467536fbd6a50f22794bb}
+
+\item 
+enum DownloadStatus {\bf m\_\-downloadStatus}\label{classCSearchFile_ae78f2853cbc0271017f775aa4c9728d0}
+
+\item 
+wxString {\bf m\_\-directory}\label{classCSearchFile_ac6b602bc5423e49548db3bd3bdff21b9}
+
+\item 
+std::list$<$ {\bf ClientStruct} $>$ {\bfseries m\_\-clients}\label{classCSearchFile_a7638cdf652e30097d379a565f4e0f02e}
+
+\item 
+uint32\_\-t {\bfseries m\_\-clientID}\label{classCSearchFile_a0d614fae94589392b006861e6d487159}
+
+\item 
+uint16\_\-t {\bfseries m\_\-clientPort}\label{classCSearchFile_afa3dab848621a1276568c50c68cfd7c2}
+
+\item 
+uint32\_\-t {\bfseries m\_\-clientServerIP}\label{classCSearchFile_a19934e1f1afe72bf363a546a9cffeda7}
+
+\item 
+uint16\_\-t {\bfseries m\_\-clientServerPort}\label{classCSearchFile_aabe22ad809bc8c23f273c3d2a49ad822}
+
+\item 
+uint32\_\-t {\bf m\_\-kadPublishInfo}\label{classCSearchFile_a02a51b78e804a800524f41c2d4595acd}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CPartFile}\label{classCSearchFile_a985ebb73b9fcc328266ae4b0040d54c2}
+
+\item 
+class {\bf CSearchListRem}\label{classCSearchFile_a4788fd1a494ee3624a8f3eeb3c3d9850}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a search-\/result returned from a server or client. A file may have either a parent or any number of children. When a child is added to a result, the parent becomes a generic representation of all its children, which will include a copy of the original result. The parent object will contain the sum of sources (total/complete) and will have the most common filename. Children are owned by their parents, and can be displayed on \doxyref{CSearchListCtrl}{p.}{classCSearchListCtrl}.
+
+Basic file parameters (hash, name, size, rating) can be read via the \doxyref{CAbstractFile}{p.}{classCAbstractFile} functions. Tags pertaining to meta-\/data are stored in the taglist inherited from \doxyref{CAbstractFile}{p.}{classCAbstractFile}.
+
+TODO: Server IP/Port are currently not used. TODO: Client ID/Port are currently not used. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CSearchFile@{CSearchFile}!CSearchFile@{CSearchFile}}
+\index{CSearchFile@{CSearchFile}!CSearchFile@{CSearchFile}}
+\subsubsection[{CSearchFile}]{\setlength{\rightskip}{0pt plus 5cm}CSearchFile::CSearchFile (class {\bf CEC\_\-SearchFile\_\-Tag} $\ast$ {\em tag})}\label{classCSearchFile_ab7c977e985b0cd264bdd570ef7be1199}
+
+
+Constructor used to create results on the remote GUI. 
+
+References AddChild(), and m\_\-searchID.
+
+Referenced by CSearchFile().\index{CSearchFile@{CSearchFile}!CSearchFile@{CSearchFile}}
+\index{CSearchFile@{CSearchFile}!CSearchFile@{CSearchFile}}
+\subsubsection[{CSearchFile}]{\setlength{\rightskip}{0pt plus 5cm}CSearchFile::CSearchFile (const {\bf CSearchFile} \& {\em other})}\label{classCSearchFile_a1f1f8d14eb538cac518e95d430af5cd9}
+
+
+Copy constructor, also copies children. 
+
+References CSearchFile(), and m\_\-children.\index{CSearchFile@{CSearchFile}!CSearchFile@{CSearchFile}}
+\index{CSearchFile@{CSearchFile}!CSearchFile@{CSearchFile}}
+\subsubsection[{CSearchFile}]{\setlength{\rightskip}{0pt plus 5cm}CSearchFile::CSearchFile (const {\bf CMemFile} \& {\em data}, \/  bool {\em optUTF8}, \/  wxUIntPtr {\em searchID}, \/  uint32\_\-t {\em serverIP} = {\ttfamily 0}, \/  uint16\_\-t {\em serverPort} = {\ttfamily 0}, \/  const wxString \& {\em directory} = {\ttfamily wxEmptyString}, \/  bool {\em kademlia} = {\ttfamily false})}\label{classCSearchFile_ad9400f37e7f56a66dcc17567e1df8e43}
+
+
+Normal constructor, reads a result from a packet. 
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]\doxyref{Source}{p.}{structSource} of results-\/packet. \item[{\em optUTF8}]Specifies if text-\/strings are to be read as UTF8. \item[{\em searchID}]searchID The \item[{\em serverIP}]The IP of the server that sent this result. \item[{\em serverPort}]The port of the server that sent this result. \item[{\em directory}]If from a clients shared files, the directory this file is in. \item[{\em kademlia}]Specifies if this was from a kad-\/search. \end{DoxyParams}
+
+
+References m\_\-completeSourceCount, m\_\-sourceCount, and SetDownloadStatus().\index{CSearchFile@{CSearchFile}!$\sim$CSearchFile@{$\sim$CSearchFile}}
+\index{$\sim$CSearchFile@{$\sim$CSearchFile}!CSearchFile@{CSearchFile}}
+\subsubsection[{$\sim$CSearchFile}]{\setlength{\rightskip}{0pt plus 5cm}CSearchFile::$\sim$CSearchFile ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCSearchFile_a1dfe0525817150fb0c389c91a86b2c47}
+
+
+Frees all children owned by this file. 
+
+\subsection{Member Function Documentation}
+\index{CSearchFile@{CSearchFile}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!CSearchFile@{CSearchFile}}
+\subsubsection[{AddChild}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchFile::AddChild ({\bf CSearchFile} $\ast$ {\em file})}\label{classCSearchFile_ad89b5c6c21294e393d597618aefd0980}
+
+
+Adds the given file as a child of this file. Note that a file can either be a parent \_\-or\_\- a child, but not both. Also note that it is only legal to add children whose filesize and filehash matches the parent's. AddChild takes ownership of the file. 
+
+References m\_\-children, and m\_\-parent.
+
+Referenced by CSearchList::AddToList(), and CSearchFile().\index{CSearchFile@{CSearchFile}!GetChildren@{GetChildren}}
+\index{GetChildren@{GetChildren}!CSearchFile@{CSearchFile}}
+\subsubsection[{GetChildren}]{\setlength{\rightskip}{0pt plus 5cm}const CSearchResultList\& CSearchFile::GetChildren () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_a98bd90c96312818980144a80d8c82cc2}
+
+
+Returns the list of children belonging to this file. 
+
+References m\_\-children.
+
+Referenced by CSearchListCtrl::AddResult(), and CSearchListCtrl::ShowChildren().\index{CSearchFile@{CSearchFile}!GetCompleteSourceCount@{GetCompleteSourceCount}}
+\index{GetCompleteSourceCount@{GetCompleteSourceCount}!CSearchFile@{CSearchFile}}
+\subsubsection[{GetCompleteSourceCount}]{\setlength{\rightskip}{0pt plus 5cm}uint32 CSearchFile::GetCompleteSourceCount () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_a33c372492edb6402f7412a845112cfaa}
+
+
+Returns the number of sources that have the entire file. 
+
+References m\_\-completeSourceCount.
+
+Referenced by CSearchListCtrl::AddResult(), CSearchListCtrl::SortProc(), and CSearchListCtrl::UpdateResult().\index{CSearchFile@{CSearchFile}!GetDownloadStatus@{GetDownloadStatus}}
+\index{GetDownloadStatus@{GetDownloadStatus}!CSearchFile@{CSearchFile}}
+\subsubsection[{GetDownloadStatus}]{\setlength{\rightskip}{0pt plus 5cm}enum DownloadStatus CSearchFile::GetDownloadStatus () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_a574f4670b9de642cb57ca28baa30afb7}
+
+
+Returns the download status. 
+
+References m\_\-downloadStatus.
+
+Referenced by CSearchListCtrl::IsFiltered(), and CSearchListCtrl::UpdateItemColor().\index{CSearchFile@{CSearchFile}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!CSearchFile@{CSearchFile}}
+\subsubsection[{GetParent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CSearchFile}$\ast$ CSearchFile::GetParent () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_ab0ba2b31b15f5563a6d93b2746723f4c}
+
+
+Returns the parent of this file. 
+
+References m\_\-parent.
+
+Referenced by CSearchListCtrl::AddResult(), CSearchListCtrl::OnDrawItem(), and CSearchListCtrl::SortProc().\index{CSearchFile@{CSearchFile}!GetSearchID@{GetSearchID}}
+\index{GetSearchID@{GetSearchID}!CSearchFile@{CSearchFile}}
+\subsubsection[{GetSearchID}]{\setlength{\rightskip}{0pt plus 5cm}wxUIntPtr CSearchFile::GetSearchID () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_ae59ac296cbf8ba18b50b16754b403ef6}
+
+
+Returns the ID of the search, used to select the right list when displaying. 
+
+References m\_\-searchID.
+
+Referenced by CSearchListCtrl::AddResult(), CSearchDlg::AddResult(), CSearchList::AddToList(), and CSearchDlg::UpdateResult().\index{CSearchFile@{CSearchFile}!GetSourceCount@{GetSourceCount}}
+\index{GetSourceCount@{GetSourceCount}!CSearchFile@{CSearchFile}}
+\subsubsection[{GetSourceCount}]{\setlength{\rightskip}{0pt plus 5cm}uint32 CSearchFile::GetSourceCount () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_a6f56264339fd0ac36617cffcae1dfd42}
+
+
+Returns the total number of sources. 
+
+References m\_\-sourceCount.
+
+Referenced by CSearchListCtrl::AddResult(), CSearchListCtrl::SortProc(), CSearchListCtrl::UpdateItemColor(), UpdateParent(), and CSearchListCtrl::UpdateResult().\index{CSearchFile@{CSearchFile}!HasChildren@{HasChildren}}
+\index{HasChildren@{HasChildren}!CSearchFile@{CSearchFile}}
+\subsubsection[{HasChildren}]{\setlength{\rightskip}{0pt plus 5cm}bool CSearchFile::HasChildren () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_a7a129877061f90e131b038d62d8acc7d}
+
+
+Returns true if this item has children. 
+
+References m\_\-children.
+
+Referenced by CSearchListCtrl::AddResult(), CSearchListCtrl::OnDrawItem(), and CSearchListCtrl::OnItemActivated().\index{CSearchFile@{CSearchFile}!IsKademlia@{IsKademlia}}
+\index{IsKademlia@{IsKademlia}!CSearchFile@{CSearchFile}}
+\subsubsection[{IsKademlia}]{\setlength{\rightskip}{0pt plus 5cm}bool CSearchFile::IsKademlia () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_adf7d826e0a99603e3236308d41d5c700}
+
+
+Returns true if the result is from a Kademlia search. 
+
+References m\_\-kademlia.\index{CSearchFile@{CSearchFile}!MergeResults@{MergeResults}}
+\index{MergeResults@{MergeResults}!CSearchFile@{CSearchFile}}
+\subsubsection[{MergeResults}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchFile::MergeResults (const {\bf CSearchFile} \& {\em other})}\label{classCSearchFile_ad5a1869d14b92cc88f8eea4e95f53e62}
+
+
+Merges the two results into one. Merges the other result into this one, updating various informations.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em other}]The file to be merged into this. \end{DoxyParams}
+
+
+References m\_\-completeSourceCount, m\_\-kademlia, m\_\-kadPublishInfo, and m\_\-sourceCount.\index{CSearchFile@{CSearchFile}!SetDownloadStatus@{SetDownloadStatus}}
+\index{SetDownloadStatus@{SetDownloadStatus}!CSearchFile@{CSearchFile}}
+\subsubsection[{SetDownloadStatus}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchFile::SetDownloadStatus (enum DownloadStatus {\em s})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_a8d04cc87ef7c82cfb6b1d163d563ab39}
+
+
+Set download status directly. 
+
+References m\_\-downloadStatus.\index{CSearchFile@{CSearchFile}!SetDownloadStatus@{SetDownloadStatus}}
+\index{SetDownloadStatus@{SetDownloadStatus}!CSearchFile@{CSearchFile}}
+\subsubsection[{SetDownloadStatus}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchFile::SetDownloadStatus ()}\label{classCSearchFile_a712c25543d1d37fd4c81d3c979b38833}
+
+
+Set download status according to the global lists of knownfile, partfiles, canceledfiles. 
+
+References m\_\-children, and m\_\-downloadStatus.
+
+Referenced by CSearchFile().\index{CSearchFile@{CSearchFile}!SetShowChildren@{SetShowChildren}}
+\index{SetShowChildren@{SetShowChildren}!CSearchFile@{CSearchFile}}
+\subsubsection[{SetShowChildren}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchFile::SetShowChildren (bool {\em show})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_af51c8ccbe2b588e1e4900062446d67f6}
+
+
+Enable/Disable displaying of children (set in \doxyref{CSearchListCtrl}{p.}{classCSearchListCtrl}). 
+
+References m\_\-showChildren.
+
+Referenced by CSearchListCtrl::ShowChildren().\index{CSearchFile@{CSearchFile}!ShowChildren@{ShowChildren}}
+\index{ShowChildren@{ShowChildren}!CSearchFile@{CSearchFile}}
+\subsubsection[{ShowChildren}]{\setlength{\rightskip}{0pt plus 5cm}bool CSearchFile::ShowChildren () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCSearchFile_ab3389517c19a3d78a816773a16627f3d}
+
+
+Returns true if children should be displayed. 
+
+References m\_\-showChildren.
+
+Referenced by CSearchListCtrl::AddResult(), CSearchListCtrl::OnDrawItem(), CSearchListCtrl::OnItemActivated(), and CSearchListCtrl::SetSorting().\index{CSearchFile@{CSearchFile}!UpdateParent@{UpdateParent}}
+\index{UpdateParent@{UpdateParent}!CSearchFile@{CSearchFile}}
+\subsubsection[{UpdateParent}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchFile::UpdateParent ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSearchFile_a20fad99b41711ab92f26f5ff05f2f52a}
+
+
+Updates a parent file so that it shows various common traits. Currently, the most common filename is selected, and an average of fileratings is set, based on files that have a rating only. 
+
+References GetSourceCount(), m\_\-children, m\_\-completeSourceCount, m\_\-kademlia, m\_\-kadPublishInfo, m\_\-parent, and m\_\-sourceCount.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SearchFile.h\item 
+src/amule-\/remote-\/gui.cpp\item 
+src/SearchFile.cpp\end{DoxyCompactItemize}

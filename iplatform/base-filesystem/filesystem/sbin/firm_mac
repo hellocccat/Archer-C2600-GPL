@@ -1,0 +1,38 @@
+#!/bin/sh
+# Copyright(c) 2011-2014 Shenzhen TP-LINK Technologies Co.Ltd.
+# file     firm_mac
+# brief    Get firmware's default mac address
+# author   Zhu Xianfeng<zhuxianfeng@tp-link.net>
+# version  1.0.0
+# date     27Oct14
+# history  arg 1.0.0, 27Oct14, Zhu Xianfeng, Create the file. 
+
+inc_mac(){
+	echo $1 | awk 'BEGIN{FS="-";add=1}{for(i=6;i>0;i--){j="0x"$i;\
+	if(i>3){if(j+add>255){j=j+add-256;add=1;}else{j=j+add;add=0;}}printf("%02x",j);printf "-"}}' \
+	| awk 'BEGIN{FS="-"}{for(i=6;i>0;i--){printf $i;if(i>1){printf "-"}}}'
+}
+
+dec_mac(){
+	echo $1 | awk 'BEGIN{FS="-";dec=1}{for(i=6;i>0;i--){j="0x"$i;\
+	if(i>3){if(j-dec<0){j=j-dec+256;dec=1;}else{j=j-dec;dec=0;}}printf("%02x",j);printf "-"}}' \
+	| awk 'BEGIN{FS="-"}{for(i=6;i>0;i--){printf $i;if(i>1){printf "-"}}}'
+}
+
+local mac=$(getfirm MAC)
+local iface=$1
+
+case "$iface" in
+	lan|2g)
+		;;
+	wan)
+		mac=$(inc_mac $mac)
+		;;
+	5g)
+		mac=$(dec_mac $mac)
+		;;
+	*)
+		;;
+esac
+
+echo -n $mac

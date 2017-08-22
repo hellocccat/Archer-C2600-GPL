@@ -1,0 +1,68 @@
+\section{BitVector Class Reference}
+\label{classBitVector}\index{BitVector@{BitVector}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries size} () const \label{classBitVector_a3f59346049c718e57463397eec090918}
+
+\item 
+bool {\bfseries empty} () const \label{classBitVector_a34e03150d348a6351e649853d86c5955}
+
+\item 
+bool {\bfseries get} (uint32 idx) const \label{classBitVector_a2ebfcb52874a22e384669e14d2c8f663}
+
+\item 
+void {\bfseries set} (uint32 idx, bool value)\label{classBitVector_a6cb40f88a21b22cb25c6aba3493d0ff7}
+
+\item 
+void {\bfseries clear} ()\label{classBitVector_a673b530bb6e520f7f7fa90070e0034db}
+
+\item 
+void {\bfseries setsize} (uint32 newsize, bool value)\label{classBitVector_a463ce03b7d2e86c3b30103ca24da6c52}
+
+\item 
+bool {\bfseries AllTrue} () const \label{classBitVector_a32383cd1c6b20ee700afc3911b3a1c7a}
+
+\item 
+void {\bfseries SetAllTrue} ()\label{classBitVector_a667fdbe1dfde54a7f9d6c8ef29b13709}
+
+\item 
+uint32 {\bfseries SizeBuffer} () const \label{classBitVector_a886730527f73b61f55d5764e68830ec3}
+
+\item 
+const void $\ast$ {\bfseries GetBuffer} () const \label{classBitVector_a2cd24b2fd12c25390e944e9cc58d9a66}
+
+\item 
+void {\bfseries SetBuffer} (const void $\ast$src)\label{classBitVector_af63e5b978eac4de829cacf7665eca9a2}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries m\_\-bits}\label{classBitVector_a65bbd236ee4f2a5d6dde4ff505b47720}
+
+\item 
+uint32 {\bfseries m\_\-bytes}\label{classBitVector_ad33f30bede3b7ab233c0d6e5dcb48117}
+
+\item 
+uint8 $\ast$ {\bfseries m\_\-vector}\label{classBitVector_afe9a841f608cc2a73d471d4336c20a1b}
+
+\item 
+uint8 {\bfseries m\_\-allTrue}\label{classBitVector_a8e32713ff59bd1afa2aa369a0c38ed02}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8 {\bfseries s\_\-posMask} [$\,$] = \{0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80\}\label{classBitVector_ac8aac3534c8101b640e0e22fa2479e81}
+
+\item 
+static const uint8 {\bfseries s\_\-negMask} [$\,$] = \{0xFE, 0xFD, 0xFB, 0xF7, 0xEF, 0xDF, 0xBF, 0x7F\}\label{classBitVector_a0304da147962fc33dbe72573bab804f1}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/BitVector.h\item 
+src/OtherFunctions.cpp\end{DoxyCompactItemize}

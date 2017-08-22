@@ -1,0 +1,70 @@
+\section{CPublishKeyword Class Reference}
+\label{classCPublishKeyword}\index{CPublishKeyword@{CPublishKeyword}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CPublishKeyword} (const wxString \&rstrKeyword)\label{classCPublishKeyword_a8461c5d1ecd4bd7169e3e6083b7d1aea}
+
+\item 
+const {\bf Kademlia::CUInt128} \& {\bfseries GetKadID} () const \label{classCPublishKeyword_a0cc64e45ba5cc9d052f05eaf4d91ff2e}
+
+\item 
+const wxString \& {\bfseries GetKeyword} () const \label{classCPublishKeyword_a31f486aadc0057a84d5fd9713f7cb960}
+
+\item 
+int {\bfseries GetRefCount} () const \label{classCPublishKeyword_a09ad52648dbefd459cf6a480e017591f}
+
+\item 
+const KnownFileArray \& {\bfseries GetReferences} () const \label{classCPublishKeyword_aca8d10de3a5ddf8d0354d5c47e602d7f}
+
+\item 
+uint32 {\bfseries GetNextPublishTime} () const \label{classCPublishKeyword_a78f94b6805d7c6f98cbc0a4d7078e9ad}
+
+\item 
+void {\bfseries SetNextPublishTime} (uint32 tNextPublishTime)\label{classCPublishKeyword_a458579090ae16abb73b3e8608fa23f98}
+
+\item 
+uint32 {\bfseries GetPublishedCount} () const \label{classCPublishKeyword_a5068d4c48e2cb2500a791e13b37ebd6c}
+
+\item 
+void {\bfseries SetPublishedCount} (uint32 uPublishedCount)\label{classCPublishKeyword_ad79bdc808bf2d98b288aee63e0e6fc6b}
+
+\item 
+void {\bfseries IncPublishedCount} ()\label{classCPublishKeyword_a45991e9958d49e6046c119ab3ca246ae}
+
+\item 
+bool {\bfseries AddRef} ({\bf CKnownFile} $\ast$pFile)\label{classCPublishKeyword_a6e47e258e058d2c653285f3a14c05ea0}
+
+\item 
+int {\bfseries RemoveRef} ({\bf CKnownFile} $\ast$pFile)\label{classCPublishKeyword_a51ff0f52f576b33c1ebe945ba9529424}
+
+\item 
+void {\bfseries RemoveAllReferences} ()\label{classCPublishKeyword_a54edaad49dc0f2d480db320c45be201b}
+
+\item 
+void {\bfseries RotateReferences} (unsigned iRotateSize)\label{classCPublishKeyword_ac8a8a7e0d8f8a1c4882768cfebdd9bba}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-strKeyword}\label{classCPublishKeyword_ad5a2eee01f72985535c8be95d08652d2}
+
+\item 
+{\bf Kademlia::CUInt128} {\bfseries m\_\-nKadID}\label{classCPublishKeyword_a097fde16266f6a3f7da5c545414eaef4}
+
+\item 
+uint32 {\bfseries m\_\-tNextPublishTime}\label{classCPublishKeyword_a9e2af73a0767807853da164532db4416}
+
+\item 
+uint32 {\bfseries m\_\-uPublishedCount}\label{classCPublishKeyword_a7356ee575bae371324f76ccf85a546aa}
+
+\item 
+KnownFileArray {\bfseries m\_\-aFiles}\label{classCPublishKeyword_a7f7e62f338731157ba5350de6fe91860}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/SharedFileList.cpp\end{DoxyCompactItemize}

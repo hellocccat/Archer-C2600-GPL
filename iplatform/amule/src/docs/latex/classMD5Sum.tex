@@ -1,0 +1,38 @@
+\section{MD5Sum Class Reference}
+\label{classMD5Sum}\index{MD5Sum@{MD5Sum}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries MD5Sum} (const wxString \&sSource)\label{classMD5Sum_a36a0c49a04a210d9c65eeb0f162da458}
+
+\item 
+{\bfseries MD5Sum} (const uint8 $\ast$buffer, size\_\-t len)\label{classMD5Sum_ab5fdab063a25f678eae18f6dfd13eb3b}
+
+\item 
+wxString {\bfseries Calculate} (const wxString \&sSource)\label{classMD5Sum_a3bb716733693c11a04d2db1985784668}
+
+\item 
+wxString {\bfseries Calculate} (const uint8 $\ast$buffer, size\_\-t len)\label{classMD5Sum_ab3a7927f09eae83593662e560b99b4a1}
+
+\item 
+wxString {\bfseries GetHash} ()\label{classMD5Sum_a027e3786a1bd79249766fc47ed0119e7}
+
+\item 
+const uint8 $\ast$ {\bfseries GetRawHash} () const \label{classMD5Sum_aade33e1413c3efabe0435a0473fe135b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-sHash}\label{classMD5Sum_abc4c27c647ba902a8f5be5f73776d093}
+
+\item 
+uint8 {\bfseries m\_\-rawhash} [16]\label{classMD5Sum_af79d8644699aaf8d7906ec9693a1f188}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/common/MD5Sum.h\item 
+src/libs/common/MD5Sum.cpp\end{DoxyCompactItemize}

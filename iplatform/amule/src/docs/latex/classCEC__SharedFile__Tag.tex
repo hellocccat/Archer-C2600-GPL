@@ -1,0 +1,112 @@
+\section{CEC\_\-SharedFile\_\-Tag Class Reference}
+\label{classCEC__SharedFile__Tag}\index{CEC\_\-SharedFile\_\-Tag@{CEC\_\-SharedFile\_\-Tag}}
+Inheritance diagram for CEC\_\-SharedFile\_\-Tag::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCEC__SharedFile__Tag}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CEC\_\-SharedFile\_\-Tag} (const {\bf CKnownFile} $\ast$file, EC\_\-DETAIL\_\-LEVEL detail\_\-level, {\bf CValueMap} $\ast$valuemap=NULL, ec\_\-tagname\_\-t name=EC\_\-TAG\_\-KNOWNFILE)\label{classCEC__SharedFile__Tag_ae4363f03f8b84fff60492fd4f6687814}
+
+\item 
+uint32 {\bfseries ID} () const \label{classCEC__SharedFile__Tag_a0aaa0c74b2c4f50fa8d8b2af850a5dbc}
+
+\item 
+{\bf CMD4Hash} {\bfseries FileHash} () const \label{classCEC__SharedFile__Tag_ad7e1e20baf013be945244b0cf3bc40d8}
+
+\item 
+wxString {\bfseries FileHashString} () const \label{classCEC__SharedFile__Tag_ae1e41f83f9922153fe799f9d613244d8}
+
+\item 
+wxString {\bfseries FileName} () const \label{classCEC__SharedFile__Tag_a114630bb3e7db86681d0d2f7d35ddd63}
+
+\item 
+bool {\bfseries FileName} (wxString \&target) const \label{classCEC__SharedFile__Tag_a4960da7119c7ad2870c681bc86841d55}
+
+\item 
+wxString {\bfseries FilePath} () const \label{classCEC__SharedFile__Tag_a57ff1f1d5cf50aef95f83595db60b348}
+
+\item 
+bool {\bfseries FilePath} (wxString \&target) const \label{classCEC__SharedFile__Tag_a6d1c56b749a3a515813ec407358c8676}
+
+\item 
+uint64 {\bfseries SizeFull} () const \label{classCEC__SharedFile__Tag_a22ea80352e7c6da978c838140582915b}
+
+\item 
+wxString {\bfseries FileEd2kLink} () const \label{classCEC__SharedFile__Tag_af91303d4da7d3a79c571ceeb2261336a}
+
+\item 
+uint8 {\bfseries UpPrio} (uint8 $\ast$target=0) const \label{classCEC__SharedFile__Tag_ad65c23f0797f4f53542cccc75c8e9472}
+
+\item 
+uint16 {\bfseries GetRequests} (uint16 $\ast$target=0) const \label{classCEC__SharedFile__Tag_ae4692af987cf49c5c489ab5f77c98e31}
+
+\item 
+uint32 {\bfseries GetAllRequests} (uint32 $\ast$target=0) const \label{classCEC__SharedFile__Tag_ab679cd47d801b954639bc09672abaaf8}
+
+\item 
+uint16 {\bfseries GetAccepts} (uint16 $\ast$target=0) const \label{classCEC__SharedFile__Tag_a640d2fbb252a71b62158af0d72a90cea}
+
+\item 
+uint32 {\bfseries GetAllAccepts} (uint32 $\ast$target=0) const \label{classCEC__SharedFile__Tag_afeb15e2342071574bec1779d58074c7a}
+
+\item 
+uint64 {\bfseries GetXferred} (uint64 $\ast$target=0) const \label{classCEC__SharedFile__Tag_a1bd5ec94e1fab090fb88c0d5512cd264}
+
+\item 
+uint64 {\bfseries GetAllXferred} (uint64 $\ast$target=0) const \label{classCEC__SharedFile__Tag_a496bb759fda618d4fd15dcdfd8260a7b}
+
+\item 
+uint16 {\bfseries GetCompleteSourcesLow} (uint16 $\ast$target=0) const \label{classCEC__SharedFile__Tag_a582eeb596ffea64aabc0f7f4bf7593d1}
+
+\item 
+uint16 {\bfseries GetCompleteSourcesHigh} (uint16 $\ast$target=0) const \label{classCEC__SharedFile__Tag_ac4ab288ed673a6fddb7469f2abc6360b}
+
+\item 
+uint16 {\bfseries GetCompleteSources} (uint16 $\ast$target=0) const \label{classCEC__SharedFile__Tag_af823ac7ffa93cd224d15b30796d77081}
+
+\item 
+uint16 {\bfseries GetOnQueue} (uint16 $\ast$target=0) const \label{classCEC__SharedFile__Tag_a7b1047bd522b5e7c313218f8867a480c}
+
+\item 
+bool {\bfseries GetComment} (wxString \&target) const \label{classCEC__SharedFile__Tag_ad06c0c693325e085b406ef61f5fc6dc1}
+
+\item 
+bool {\bfseries GetRating} (uint8 \&target) const \label{classCEC__SharedFile__Tag_a129258e672efc373509578e3ba5bcbeb}
+
+\item 
+bool {\bfseries GetAICHHash} (wxString \&target) const \label{classCEC__SharedFile__Tag_a928a1c212fbf75c4227d7cede3004533}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMD4Hash} {\bf GetMD4Data} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CEC\_\-SharedFile\_\-Tag@{CEC\_\-SharedFile\_\-Tag}!GetMD4Data@{GetMD4Data}}
+\index{GetMD4Data@{GetMD4Data}!CEC_SharedFile_Tag@{CEC\_\-SharedFile\_\-Tag}}
+\subsubsection[{GetMD4Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CMD4Hash} CEC\_\-SharedFile\_\-Tag::GetMD4Data (void)\hspace{0.3cm}{\ttfamily  [private]}}\label{classCEC__SharedFile__Tag_a0853860300c069c6fd2c25024d154289}
+
+
+Returns a \doxyref{CMD4Hash}{p.}{classCMD4Hash} class. This function takes care of converting from MSB to LSB as necessary.
+
+\begin{DoxyReturn}{Returns}
+\doxyref{CMD4Hash}{p.}{classCMD4Hash} class.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CECTag(ec\_\-tagname\_\-t, const CMD4Hash\&)}{p.}{classCECTag_a5e228685b0f90368737b50575f91327c} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CECTag} \doxyref{}{p.}{classCECTag_a6d39258b7b6cb3bc02d3619167a41cd6}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECSpecialTags.h\item 
+src/ECSpecialCoreTags.cpp\end{DoxyCompactItemize}

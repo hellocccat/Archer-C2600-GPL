@@ -1,0 +1,65 @@
+\section{CRangeMap$<$ VALUE, KEYTYPE $>$::iterator\_\-base$<$ RealIterator, ReturnTypeRef, ReturnTypePtr $>$ Class Template Reference}
+\label{classCRangeMap_1_1iterator__base}\index{CRangeMap::iterator\_\-base@{CRangeMap::iterator\_\-base}}
+
+
+This class provides a wrapper around the raw iterators used by \doxyref{CRangeMap}{p.}{classCRangeMap}.  
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries iterator\_\-base} (const RealIterator \&it)\label{classCRangeMap_1_1iterator__base_a8486032533ea7c51a96f8bef187cea22}
+
+\item 
+bool {\bf operator==} (const {\bf iterator\_\-base} \&other) const \label{classCRangeMap_1_1iterator__base_a22536a86180f4cbb34442c8c1b3e71aa}
+
+\item 
+bool {\bf operator!=} (const {\bf iterator\_\-base} \&other) const \label{classCRangeMap_1_1iterator__base_a4ebe51de4ab3a13510517e0ab34e652a}
+
+\item 
+KEYTYPE {\bf keyStart} () const \label{classCRangeMap_1_1iterator__base_a8dcead5f1a417a2636aa2c256791a64d}
+
+\item 
+KEYTYPE {\bf keyEnd} () const \label{classCRangeMap_1_1iterator__base_acbfb41316bc1feffadc71d53867d3ef7}
+
+\item 
+{\bf iterator\_\-base} \& {\bf operator++} ()\label{classCRangeMap_1_1iterator__base_ace4fb48e1740d13c42e2dc1a6032f58b}
+
+\item 
+{\bf iterator\_\-base} {\bf operator++} (int)\label{classCRangeMap_1_1iterator__base_a9f77e532b5af2da130ca78eaa9af3b95}
+
+\item 
+{\bf iterator\_\-base} \& {\bf operator-\/-\/} ()\label{classCRangeMap_1_1iterator__base_a63bbc4baaf8c392e9ed36cf2e6ca4022}
+
+\item 
+{\bf iterator\_\-base} {\bf operator-\/-\/} (int)\label{classCRangeMap_1_1iterator__base_adb3f37d889c3ae3b9b71e3536d8e2e03}
+
+\item 
+ReturnTypeRef {\bf operator$\ast$} () const \label{classCRangeMap_1_1iterator__base_a1e2ab4a2ae5d1d2dd361e7233253badb}
+
+\item 
+ReturnTypePtr {\bf operator-\/$>$} () const \label{classCRangeMap_1_1iterator__base_ab5015f89ae78a950a45b265f67ebeeac}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+RealIterator {\bf m\_\-it}\label{classCRangeMap_1_1iterator__base_a8931449cdc6bcdb447d6fd2cb3b8a175}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CRangeMap$<$ VALUE, KEYTYPE $>$}\label{classCRangeMap_1_1iterator__base_acbdbb2e5de9ca3462b15b2321603527c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename VALUE, typename KEYTYPE = uint64$>$template$<$typename RealIterator, typename ReturnTypeRef, typename ReturnTypePtr$>$ class CRangeMap$<$ VALUE, KEYTYPE $>$::iterator\_\-base$<$ RealIterator, ReturnTypeRef, ReturnTypePtr $>$}
+
+This class provides a wrapper around the raw iterators used by \doxyref{CRangeMap}{p.}{classCRangeMap}. It will act as a normal iterator and also give access the the range values. When used as a per normal, it will return the value specified by the user for that range.
+
+Special member-\/functions are \doxyref{keyStart()}{p.}{classCRangeMap_1_1iterator__base_a8dcead5f1a417a2636aa2c256791a64d} and \doxyref{keyEnd()}{p.}{classCRangeMap_1_1iterator__base_acbfb41316bc1feffadc71d53867d3ef7}. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/RangeMap.h\end{DoxyCompactItemize}

@@ -1,0 +1,116 @@
+\section{CSharedFilesWnd Class Reference}
+\label{classCSharedFilesWnd}\index{CSharedFilesWnd@{CSharedFilesWnd}}
+
+
+This class represents the window containing the list of shared files.  
+
+
+{\ttfamily \#include $<$SharedFilesWnd.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSharedFilesWnd} (wxWindow $\ast$pParent=NULL)\label{classCSharedFilesWnd_aabf3bc4d789b01be16aa081b3048979b}
+
+\item 
+{\bf $\sim$CSharedFilesWnd} ()\label{classCSharedFilesWnd_a91985d91dc2b4b5c4d851342ae5cffb3}
+
+\item 
+void {\bf SelectionUpdated} ()
+\item 
+void {\bf RemoveAllSharedFiles} ()\label{classCSharedFilesWnd_a95e718674780140defc041d01f404972}
+
+\item 
+void {\bf Prepare} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSharedFilesCtrl} $\ast$ {\bf sharedfilesctrl}\label{classCSharedFilesWnd_a0f0e1c8ffc045fa4ab5a5c7438719471}
+
+\item 
+{\bf CSharedFilePeersListCtrl} $\ast$ {\bf peerslistctrl}\label{classCSharedFilesWnd_a8ada8d3b4ca2144fe3f162bbda029a1f}
+
+\item 
+int {\bf m\_\-splitter}\label{classCSharedFilesWnd_a92fa9e42cb4f9f99048b3e6e0cd54b0b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf EClientShow} \{ {\bfseries ClientShowAll} =  0, 
+{\bfseries ClientShowSelected}, 
+{\bfseries ClientShowUploading}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnBtnReloadShared} (wxCommandEvent \&evt)\label{classCSharedFilesWnd_af00b17454d4a67da5dbac3319d2ab51d}
+
+\item 
+void {\bf OnItemSelectionChanged} (wxListEvent \&evt)\label{classCSharedFilesWnd_a1bc582323665747d5a96eaf0a328eff3}
+
+\item 
+void {\bf OnToggleClientList} (wxCommandEvent \&event)\label{classCSharedFilesWnd_a907ccf061c0786ce475bfb97c10d329f}
+
+\item 
+void {\bf OnSashPositionChanging} (wxSplitterEvent \&evt)\label{classCSharedFilesWnd_adad2132c15c5d613e141807496e098aa}
+
+\item 
+void {\bf OnSelectClientsMode} (wxCommandEvent \&evt)\label{classCSharedFilesWnd_ac080eeb7b0c3b0b1c2786022b430bcd9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxGauge $\ast$ {\bf m\_\-bar\_\-requests}\label{classCSharedFilesWnd_ac61ad0779bf80721afb95f96fdc8fb6e}
+
+\item 
+wxGauge $\ast$ {\bf m\_\-bar\_\-accepted}\label{classCSharedFilesWnd_a4551729cff245d8b3aec21aac3189880}
+
+\item 
+wxGauge $\ast$ {\bf m\_\-bar\_\-transfer}\label{classCSharedFilesWnd_a5ed483f064424cc5f2521dc335dc47ba}
+
+\item 
+wxRadioBox $\ast$ {\bf m\_\-radioClientMode}\label{classCSharedFilesWnd_ace15a44ef2c51a2af020f2cd72c0ba49}
+
+\item 
+bool {\bf m\_\-prepared}\label{classCSharedFilesWnd_a0402b7a47886caf73e53d9724e0cb91b}
+
+\item 
+{\bf EClientShow} {\bfseries m\_\-clientShow}\label{classCSharedFilesWnd_a7ff05d2d8492bd45651b22d22b44305a}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bf s\_\-splitterMin} = 90\label{classCSharedFilesWnd_ad7e228a3ec40fb0f3f439c4ee26d28e5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the window containing the list of shared files. 
+
+\subsection{Member Function Documentation}
+\index{CSharedFilesWnd@{CSharedFilesWnd}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!CSharedFilesWnd@{CSharedFilesWnd}}
+\subsubsection[{Prepare}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFilesWnd::Prepare ()}\label{classCSharedFilesWnd_af2c347e668babf9352c553b7a2f5d9e5}
+
+
+Call this function before displaying the dialog. This functions does a few tasks to ensure that the dialog is looking the right way. 
+
+References m\_\-prepared, m\_\-splitter, OnToggleClientList(), peerslistctrl, and s\_\-splitterMin.\index{CSharedFilesWnd@{CSharedFilesWnd}!SelectionUpdated@{SelectionUpdated}}
+\index{SelectionUpdated@{SelectionUpdated}!CSharedFilesWnd@{CSharedFilesWnd}}
+\subsubsection[{SelectionUpdated}]{\setlength{\rightskip}{0pt plus 5cm}void CSharedFilesWnd::SelectionUpdated ()}\label{classCSharedFilesWnd_a616285120a7a02eb00ebec560ce51959}
+
+
+This function updates the statistics of the selected items. Call this function when an item has been selected, or when a selected item changes. It 
+
+References CMuleListCtrl::IsSorting(), m\_\-bar\_\-accepted, m\_\-bar\_\-requests, m\_\-bar\_\-transfer, peerslistctrl, sharedfilesctrl, and CGenericClientListCtrl::ShowSources().
+
+Referenced by OnBtnReloadShared(), OnItemSelectionChanged(), OnSelectClientsMode(), and RemoveAllSharedFiles().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SharedFilesWnd.h\item 
+src/SharedFilesWnd.cpp\end{DoxyCompactItemize}

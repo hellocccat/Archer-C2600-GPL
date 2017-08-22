@@ -1,0 +1,78 @@
+\section{CCaptchaDialog Class Reference}
+\label{classCCaptchaDialog}\index{CCaptchaDialog@{CCaptchaDialog}}
+
+
+The ClientDetailDialog class is responsible for showing the info about a client.  
+
+
+{\ttfamily \#include $<$CaptchaDialog.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CCaptchaDialog} (wxWindow $\ast$parent, const wxImage \&captchaImage, uint64 id)
+\item 
+virtual {\bf $\sim$CCaptchaDialog} ()\label{classCCaptchaDialog_a2c0602cad88db102798ebd44147e7a4e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf OnInitDialog} ()
+\item 
+void {\bf OnBnClose} (wxCommandEvent \&evt)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxSizer $\ast$ {\bfseries captchaDlg} (wxWindow $\ast$parent)\label{classCCaptchaDialog_afa748cbb8f6e68e0effbb33faac6a373}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class wxBitmap $\ast$ {\bfseries m\_\-captchaBitmap}\label{classCCaptchaDialog_aa3b43c06c8fa7ec0e2fc63d9a016fb27}
+
+\item 
+class wxTextCtrl $\ast$ {\bfseries m\_\-TextCtrl}\label{classCCaptchaDialog_aba4029a60dfae8be1f373fdfd69894f7}
+
+\item 
+uint64 {\bfseries m\_\-id}\label{classCCaptchaDialog_a3bfbf3eeab8db7af5f8f1729f5d99813}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The ClientDetailDialog class is responsible for showing the info about a client. It shows all releavant data about the client: ip, port, hash, name, client type and version, uploading/downloading data, credits, server... etc
+
+It's wxDialog, modal, with return value always '0'. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CCaptchaDialog@{CCaptchaDialog}!CCaptchaDialog@{CCaptchaDialog}}
+\index{CCaptchaDialog@{CCaptchaDialog}!CCaptchaDialog@{CCaptchaDialog}}
+\subsubsection[{CCaptchaDialog}]{\setlength{\rightskip}{0pt plus 5cm}CCaptchaDialog::CCaptchaDialog (wxWindow $\ast$ {\em parent}, \/  const wxImage \& {\em captchaImage}, \/  uint64 {\em id})}\label{classCCaptchaDialog_a9b357cb6f9c2e2429df883fe039af12e}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em parent}]The window that created the dialog. \item[{\em client}]The client whose details we're showing. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CCaptchaDialog@{CCaptchaDialog}!OnBnClose@{OnBnClose}}
+\index{OnBnClose@{OnBnClose}!CCaptchaDialog@{CCaptchaDialog}}
+\subsubsection[{OnBnClose}]{\setlength{\rightskip}{0pt plus 5cm}void CCaptchaDialog::OnBnClose (wxCommandEvent \& {\em evt})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCCaptchaDialog_ae6a7b5c6d2c470e87ef0cc134de6093f}
+
+
+Ends the dialog, calling EndModal with return value 0. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]The close event, unused right now \end{DoxyParams}
+\index{CCaptchaDialog@{CCaptchaDialog}!OnInitDialog@{OnInitDialog}}
+\index{OnInitDialog@{OnInitDialog}!CCaptchaDialog@{CCaptchaDialog}}
+\subsubsection[{OnInitDialog}]{\setlength{\rightskip}{0pt plus 5cm}bool CCaptchaDialog::OnInitDialog ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCCaptchaDialog_a2a215b96e4b82f2e626931fc374c25d6}
+
+
+Creates all the data objects in the dialog, filling them accordingly. Called when the dialog object is created. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/CaptchaDialog.h\item 
+src/CaptchaDialog.cpp\end{DoxyCompactItemize}

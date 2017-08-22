@@ -1,0 +1,137 @@
+\section{CSocks5StateMachine Class Reference}
+\label{classCSocks5StateMachine}\index{CSocks5StateMachine@{CSocks5StateMachine}}
+Inheritance diagram for CSocks5StateMachine::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCSocks5StateMachine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSocks5StateMachine} (const {\bf CProxyData} \&proxyData, CProxyCommand proxyCommand)
+\item 
+void {\bfseries process\_\-state} (t\_\-sm\_\-state state, bool entry)\label{classCSocks5StateMachine_a00d6c4a3dd4770882397c7e5a4cbf15c}
+
+\item 
+t\_\-sm\_\-state {\bf next\_\-state} (t\_\-sm\_\-event event)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Socks5State} \{ \par
+{\bfseries SOCKS5\_\-STATE\_\-START} =  PROXY\_\-STATE\_\-START, 
+{\bfseries SOCKS5\_\-STATE\_\-END} =  PROXY\_\-STATE\_\-END, 
+{\bfseries SOCKS5\_\-STATE\_\-SEND\_\-QUERY\_\-AUTHENTICATION\_\-METHOD}, 
+{\bfseries SOCKS5\_\-STATE\_\-RECEIVE\_\-AUTHENTICATION\_\-METHOD}, 
+\par
+{\bfseries SOCKS5\_\-STATE\_\-PROCESS\_\-AUTHENTICATION\_\-METHOD}, 
+{\bfseries SOCKS5\_\-STATE\_\-SEND\_\-AUTHENTICATION\_\-GSSAPI}, 
+{\bfseries SOCKS5\_\-STATE\_\-RECEIVE\_\-AUTHENTICATION\_\-GSSAPI}, 
+{\bfseries SOCKS5\_\-STATE\_\-PROCESS\_\-AUTHENTICATION\_\-GSSAPI}, 
+\par
+{\bfseries SOCKS5\_\-STATE\_\-SEND\_\-AUTHENTICATION\_\-USERNAME\_\-PASSWORD}, 
+{\bfseries SOCKS5\_\-STATE\_\-RECEIVE\_\-AUTHENTICATION\_\-USERNAME\_\-PASSWORD}, 
+{\bfseries SOCKS5\_\-STATE\_\-PROCESS\_\-AUTHENTICATION\_\-USERNAME\_\-PASSWORD}, 
+{\bfseries SOCKS5\_\-STATE\_\-SEND\_\-COMMAND\_\-REQUEST}, 
+\par
+{\bfseries SOCKS5\_\-STATE\_\-RECEIVE\_\-COMMAND\_\-REPLY}, 
+{\bfseries SOCKS5\_\-STATE\_\-PROCESS\_\-COMMAND\_\-REPLY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf process\_\-start} (bool entry)
+\item 
+void {\bfseries process\_\-send\_\-query\_\-authentication\_\-method} (bool entry)\label{classCSocks5StateMachine_a6f4eb2625ebc44a5d8f3b053c160dbfd}
+
+\item 
+void {\bfseries process\_\-receive\_\-authentication\_\-method} (bool entry)\label{classCSocks5StateMachine_a8bab4da06bc43b7e077f7f3a84c2cc46}
+
+\item 
+void {\bfseries process\_\-process\_\-authentication\_\-method} (bool entry)\label{classCSocks5StateMachine_a85bc320686ad44904e4eba1f907144cc}
+
+\item 
+void {\bfseries process\_\-send\_\-authentication\_\-gssapi} (bool entry)\label{classCSocks5StateMachine_a43f26d3fe85424015e4ec3d345ea0614}
+
+\item 
+void {\bfseries process\_\-receive\_\-authentication\_\-gssapi} (bool entry)\label{classCSocks5StateMachine_a71ecad84fafef821fa28ae938b578ab5}
+
+\item 
+void {\bfseries process\_\-process\_\-authentication\_\-gssapi} (bool entry)\label{classCSocks5StateMachine_af93cab5117fb0cb010be00c9a3c8548f}
+
+\item 
+void {\bfseries process\_\-send\_\-authentication\_\-username\_\-password} (bool entry)\label{classCSocks5StateMachine_a2de32a27da420ae8c7575749ff1d018c}
+
+\item 
+void {\bfseries process\_\-receive\_\-authentication\_\-username\_\-password} (bool entry)\label{classCSocks5StateMachine_a828a78619c84c190fa6435a6bfc7eeb8}
+
+\item 
+void {\bfseries process\_\-process\_\-authentication\_\-username\_\-password} (bool entry)\label{classCSocks5StateMachine_a1c3a4ee09e57e920c6037309d3f7f08f}
+
+\item 
+void {\bfseries process\_\-send\_\-command\_\-request} (bool entry)\label{classCSocks5StateMachine_a415c336cc23a3bb370031c0bb726f37d}
+
+\item 
+void {\bfseries process\_\-receive\_\-command\_\-reply} (bool entry)\label{classCSocks5StateMachine_abb9345f11616771c1f14cab95f071bd1}
+
+\item 
+void {\bfseries process\_\-process\_\-command\_\-reply} (bool entry)\label{classCSocks5StateMachine_a62b63ef0b18733fc0cafd658fd498280}
+
+\item 
+void {\bfseries process\_\-end} (bool entry)\label{classCSocks5StateMachine_a5ab603bc3728a32b2e6845cfa4fd319f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Socks5StateProcessor {\bfseries m\_\-process\_\-state} [SOCKS5\_\-MAX\_\-STATES]\label{classCSocks5StateMachine_a2d4582d39eba26983e0adf9134aa8c53}
+
+\item 
+wxString {\bfseries m\_\-state\_\-name} [SOCKS5\_\-MAX\_\-STATES]\label{classCSocks5StateMachine_adbecf9b6288c114507dd02388758d4b4}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries SOCKS5\_\-MAX\_\-STATES} = 14\label{classCSocks5StateMachine_a0d014b2a93a029dd9050d5c05dedd011}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CSocks5StateMachine@{CSocks5StateMachine}!CSocks5StateMachine@{CSocks5StateMachine}}
+\index{CSocks5StateMachine@{CSocks5StateMachine}!CSocks5StateMachine@{CSocks5StateMachine}}
+\subsubsection[{CSocks5StateMachine}]{\setlength{\rightskip}{0pt plus 5cm}CSocks5StateMachine::CSocks5StateMachine (const {\bf CProxyData} \& {\em proxyData}, \/  CProxyCommand {\em proxyCommand})}\label{classCSocks5StateMachine_a55fe2b069f653977fc183a2c044c7878}
+
+
+The state machine constructor must initialize the array of pointer to member functions. Don't waste you time trying to statically initialize this, pointer to member functions require an object to operate on, so this array must be initialized at run time. 
+
+References process\_\-start().
+
+\subsection{Member Function Documentation}
+\index{CSocks5StateMachine@{CSocks5StateMachine}!next\_\-state@{next\_\-state}}
+\index{next\_\-state@{next\_\-state}!CSocks5StateMachine@{CSocks5StateMachine}}
+\subsubsection[{next\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}t\_\-sm\_\-state CSocks5StateMachine::next\_\-state (t\_\-sm\_\-event {\em event})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCSocks5StateMachine_afe61fed0178f3b70fd950b32b37b4e5f}
+
+
+Code this such that the next state is only entered when it is able to perform the operation (read or write). State processing will assume that it can read or write upon entry of the state. This is done using CanSend() and CanReceive(). On daemon, these functions always return true, because sockets are blocking. 
+
+Implements {\bf CStateMachine} \doxyref{}{p.}{classCStateMachine}.\index{CSocks5StateMachine@{CSocks5StateMachine}!process\_\-start@{process\_\-start}}
+\index{process\_\-start@{process\_\-start}!CSocks5StateMachine@{CSocks5StateMachine}}
+\subsubsection[{process\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void CSocks5StateMachine::process\_\-start (bool {\em entry})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCSocks5StateMachine_acdd81d50aaad7e67c448671548c46532}
+
+
+So, this is how you do it: the state machine is clocked by the events that happen inside the event handler. You can add a dummy event whenever you see that the system will not generate an event. But don't add dummy events before reads, reads should only be performed after input events.
+
+Maybe it makes sense to add a dummy event before a read if there is no state change (wait state).
+
+The event system will generate at least 2 events, one wxSOCKET\_\-CONNECTION, one wxSOCKET\_\-OUTPUT, so we will have 2 clocks in our state machine. Plus, each time there is unread data in the receive buffer of the socket, a wxSOCKET\_\-INPUT event will be generated. If you feel you will need more clocks than these, use AddDummyEvent(), but I suggest you review your state machine design first. 
+
+Referenced by CSocks5StateMachine().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Proxy.h\item 
+src/Proxy.cpp\end{DoxyCompactItemize}

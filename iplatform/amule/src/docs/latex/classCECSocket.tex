@@ -1,0 +1,337 @@
+\section{CECSocket Class Reference}
+\label{classCECSocket}\index{CECSocket@{CECSocket}}
+
+
+Socket handler for External Communications (EC).  
+
+
+{\ttfamily \#include $<$ECSocket.h$>$}Inheritance diagram for CECSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCECSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CECSocket} (bool use\_\-events)\label{classCECSocket_a2b302803af38f6c05e80e80839406038}
+
+\item 
+bool {\bfseries ConnectSocket} (uint32\_\-t ip, uint16\_\-t port)\label{classCECSocket_aab0c63c06c5a5186a67017bbf13a1aaa}
+
+\item 
+void {\bfseries CloseSocket} ()\label{classCECSocket_abe44aa29571613bc14d807de6cad04ed}
+
+\item 
+bool {\bfseries HaveNotificationSupport} () const \label{classCECSocket_ab2b69e2cd8e04fb4604d5ab1e1165fbd}
+
+\item 
+void {\bf SendPacket} (const {\bf CECPacket} $\ast$packet)
+\item 
+const {\bf CECPacket} $\ast$ {\bf SendRecvPacket} (const {\bf CECPacket} $\ast$request)
+\item 
+virtual const {\bf CECPacket} $\ast$ {\bf OnPacketReceived} (const {\bf CECPacket} $\ast$packet, uint32 trueSize)
+\item 
+virtual std::string {\bf GetLastErrorMsg} ()
+\item 
+virtual void {\bf OnError} ()
+\item 
+virtual void {\bf OnLost} ()
+\item 
+virtual void {\bf OnConnect} ()
+\item 
+void {\bfseries OnInput} ()\label{classCECSocket_ae1667ef102d103c357761732c3e084d7}
+
+\item 
+void {\bfseries OnOutput} ()\label{classCECSocket_a749929485895d76eb5312c5dc26a2c01}
+
+\item 
+bool {\bfseries WouldBlock} ()\label{classCECSocket_a28083606041a75a7777ea2538ad9ad2e}
+
+\item 
+bool {\bfseries GotError} ()\label{classCECSocket_a2570bea151994c7d9ad1fac65de91fb2}
+
+\item 
+void {\bfseries SocketRead} (void $\ast$ptr, size\_\-t len)\label{classCECSocket_a179303528505134a5ef035c667741a45}
+
+\item 
+void {\bfseries SocketWrite} (const void $\ast$ptr, size\_\-t len)\label{classCECSocket_ae4c7a7c2baa596c53fc3ae9e72d8c91a}
+
+\item 
+bool {\bfseries SocketError} ()\label{classCECSocket_aad7a0fae47b3453f180e57b2feb53603}
+
+\item 
+bool {\bfseries SocketRealError} ()\label{classCECSocket_aed7ffcc51e27ed7ace348dfb8501dc44}
+
+\item 
+size\_\-t {\bfseries GetLastCount} ()\label{classCECSocket_add10b9058fc070514970bfd27ba5a821}
+
+\item 
+bool {\bfseries WaitSocketConnect} (long secs=-\/1, long msecs=0)\label{classCECSocket_a5738d72aaaf49b210335107fe9b9375b}
+
+\item 
+bool {\bfseries WaitSocketWrite} (long secs=-\/1, long msecs=0)\label{classCECSocket_aa5a295d330a81ae0bd1cce2c60619ddb}
+
+\item 
+bool {\bfseries WaitSocketRead} (long secs=-\/1, long msecs=0)\label{classCECSocket_ac0de83d26f9947e82d837a48d96d04b6}
+
+\item 
+bool {\bfseries IsSocketConnected} ()\label{classCECSocket_a575661b19b0502195688650c8ea59177}
+
+\item 
+void {\bfseries DestroySocket} ()\label{classCECSocket_aea1cc85ac59c81178d2b783051e16fd1}
+
+\item 
+bool {\bfseries DataPending} ()\label{classCECSocket_ada6f7c8a608569c0e1a2c4a764e67e33}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries m\_\-my\_\-flags}\label{classCECSocket_a5caffd62f11d8fbb31d4ccd48340c978}
+
+\item 
+bool {\bfseries m\_\-haveNotificationSupport}\label{classCECSocket_ab62bc6dc8602ee8623abe84a9b0cd5c4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CECPacket} $\ast$ {\bfseries ReadPacket} ()\label{classCECSocket_a4c06133738dd0e21f4fece6608507307}
+
+\item 
+uint32 {\bfseries WritePacket} (const {\bf CECPacket} $\ast$packet)\label{classCECSocket_abf319c90afefe080491a1f1107dcc96f}
+
+\item 
+bool {\bfseries ReadNumber} (void $\ast$buffer, size\_\-t len)\label{classCECSocket_a4661cc4f18fdb855d97ec811d90b7894}
+
+\item 
+bool {\bfseries ReadBuffer} (void $\ast$buffer, size\_\-t len)\label{classCECSocket_a4d02f32840ed50fedf8ea3c10b36a32c}
+
+\item 
+bool {\bfseries ReadHeader} ()\label{classCECSocket_aa3dfac56c67bb5dab044298391bd37f7}
+
+\item 
+bool {\bfseries WriteNumber} (const void $\ast$buffer, size\_\-t len)\label{classCECSocket_af28f74b53b70adedee72256b4686b5b5}
+
+\item 
+bool {\bfseries WriteBuffer} (const void $\ast$buffer, size\_\-t len)\label{classCECSocket_a74ee1e43fb657ae423f61b9020d178c6}
+
+\item 
+bool {\bfseries FlushBuffers} ()\label{classCECSocket_a826fc70ae81f6c000d1559bab5bd66db}
+
+\item 
+size\_\-t {\bfseries ReadBufferFromSocket} (void $\ast$buffer, size\_\-t len)\label{classCECSocket_aede069bc0f92dff6dfa413602f444832}
+
+\item 
+void {\bfseries WriteBufferToSocket} (const void $\ast$buffer, size\_\-t len)\label{classCECSocket_ae62ad47aa9a0bed0cba52c78cca78e8b}
+
+\item 
+virtual void {\bfseries WriteDoneAndQueueEmpty} ()=0\label{classCECSocket_ae019b114e448ea5d93866d1f2acef877}
+
+\item 
+virtual bool {\bfseries InternalConnect} (uint32\_\-t ip, uint16\_\-t port, bool wait)=0\label{classCECSocket_a1e90fec9696ded1adf77d784193e8bae}
+
+\item 
+virtual size\_\-t {\bfseries InternalLastCount} ()=0\label{classCECSocket_a3ef62ed28466396072ffae3b37b5cbd9}
+
+\item 
+virtual bool {\bfseries InternalWaitOnConnect} (long secs=-\/1, long msecs=0)=0\label{classCECSocket_a2aafb250281f50a1d8ab48906735f737}
+
+\item 
+virtual bool {\bfseries InternalWaitForWrite} (long secs=-\/1, long msecs=0)=0\label{classCECSocket_a4a62ddc1c90c36f2ee239d12173cc35d}
+
+\item 
+virtual bool {\bfseries InternalWaitForRead} (long secs=-\/1, long msecs=0)=0\label{classCECSocket_ac8013d44e596dbaedb10b01c9a2904dd}
+
+\item 
+virtual int {\bfseries InternalGetLastError} ()=0\label{classCECSocket_a1047b6e1a7760f4724a36150ccfdc24e}
+
+\item 
+virtual void {\bfseries InternalClose} ()=0\label{classCECSocket_a745013891ae838446522e7f4a736339b}
+
+\item 
+virtual bool {\bfseries InternalError} ()=0\label{classCECSocket_a727282be612fa656fc30b63af5a8e4df}
+
+\item 
+virtual void {\bfseries InternalRead} (void $\ast$ptr, size\_\-t len)=0\label{classCECSocket_aed00d6f23392674b18c26fbadb8f9b77}
+
+\item 
+virtual void {\bfseries InternalWrite} (const void $\ast$ptr, size\_\-t len)=0\label{classCECSocket_a5d45f27ced26e65f175320e0c887ce44}
+
+\item 
+virtual bool {\bfseries InternalIsConnected} ()=0\label{classCECSocket_ad740198d139ec3bcdfbc458dca4f7d42}
+
+\item 
+virtual void {\bfseries InternalDestroy} ()=0\label{classCECSocket_accbc334a7003e58c27f79ec6fe003f3d}
+
+\item 
+virtual bool {\bfseries IsAuthorized} ()\label{classCECSocket_a47864e5f05595c948c4fd1136b8a2e09}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const bool {\bfseries m\_\-use\_\-events}\label{classCECSocket_a5291418242b3a7d39e3d05f9408f7316}
+
+\item 
+std::list$<$ {\bf CQueuedData} $\ast$ $>$ {\bfseries m\_\-output\_\-queue}\label{classCECSocket_a2c91657b57df81a805ca33cb27d8bcea}
+
+\item 
+std::vector$<$ unsigned char $>$ {\bfseries m\_\-in\_\-ptr}\label{classCECSocket_aabfb0c93d3ba258edfe7f6bfbd324ad7}
+
+\item 
+std::vector$<$ unsigned char $>$ {\bfseries m\_\-out\_\-ptr}\label{classCECSocket_af14dd36740f7a637660ef44ecb0d7578}
+
+\item 
+std::auto\_\-ptr$<$ {\bf CQueuedData} $>$ {\bfseries m\_\-curr\_\-rx\_\-data}\label{classCECSocket_a5d73de98a83a8cab09e9a063e1422a8d}
+
+\item 
+std::auto\_\-ptr$<$ {\bf CQueuedData} $>$ {\bfseries m\_\-curr\_\-tx\_\-data}\label{classCECSocket_a3c8f981f15b032aef75e23237c408b3d}
+
+\item 
+uint32\_\-t {\bfseries m\_\-rx\_\-flags}\label{classCECSocket_a9d09e22b8c975a999813d9a910120ff4}
+
+\item 
+uint32\_\-t {\bfseries m\_\-tx\_\-flags}\label{classCECSocket_a2219f847569dc0eb4999752837f5cd89}
+
+\item 
+size\_\-t {\bfseries m\_\-bytes\_\-needed}\label{classCECSocket_ab977225306e7eae7eddf4d9363c6e1f8}
+
+\item 
+bool {\bfseries m\_\-in\_\-header}\label{classCECSocket_add42606c971e91d8fbfeb7c10d8b2ef5}
+
+\item 
+uint32\_\-t {\bfseries m\_\-curr\_\-packet\_\-len}\label{classCECSocket_a6f9e9602ff66f6f643de61699ca7fbdc}
+
+\item 
+z\_\-stream {\bfseries m\_\-z}\label{classCECSocket_ae0359d20b5051c21e5e13bc706a807e9}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries EC\_\-SOCKET\_\-BUFFER\_\-SIZE} = 2048\label{classCECSocket_a39706fd77806ec3df8ec15aadb9650c3}
+
+\item 
+static const unsigned int {\bfseries EC\_\-HEADER\_\-SIZE} = 8\label{classCECSocket_a0737ebe75bedbc4d6132d28e2492db70}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CECPacket}\label{classCECSocket_ac1ce8864850b74cf6245bd1add44c9cf}
+
+\item 
+class {\bf CECTag}\label{classCECSocket_aad1a9f7fb264c8cd57983d6425cd02fe}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Socket handler for External Communications (EC). \doxyref{CECSocket}{p.}{classCECSocket} takes care of the transmission of EC packets 
+
+\subsection{Member Function Documentation}
+\index{CECSocket@{CECSocket}!GetLastErrorMsg@{GetLastErrorMsg}}
+\index{GetLastErrorMsg@{GetLastErrorMsg}!CECSocket@{CECSocket}}
+\subsubsection[{GetLastErrorMsg}]{\setlength{\rightskip}{0pt plus 5cm}std::string CECSocket::GetLastErrorMsg ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCECSocket_a24987c711df4f3170357a6beaf6fedc9}
+
+
+Get a message describing the error. 
+\begin{DoxyParams}{Parameters}
+\item[{\em error}]The code of the error for which a message should be returned. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The text descibing the error. 
+\end{DoxyReturn}
+
+
+Referenced by OnError().\index{CECSocket@{CECSocket}!OnConnect@{OnConnect}}
+\index{OnConnect@{OnConnect}!CECSocket@{CECSocket}}
+\subsubsection[{OnConnect}]{\setlength{\rightskip}{0pt plus 5cm}void CECSocket::OnConnect ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCECSocket_a594e4c41c8dcaf3c5469e9a01ffd86b8}
+
+
+Event handler for connection events. This function is called when a connection attempt succeeds. 
+
+Reimplemented in {\bf CRemoteConnect} \doxyref{}{p.}{classCRemoteConnect_acdd5946ff6651fae851be49e9d2d7dc5}.\index{CECSocket@{CECSocket}!OnError@{OnError}}
+\index{OnError@{OnError}!CECSocket@{CECSocket}}
+\subsubsection[{OnError}]{\setlength{\rightskip}{0pt plus 5cm}void CECSocket::OnError ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCECSocket_aaebdc212a0c6d7f32d4fd53fe930e6fa}
+
+
+Error handler. This function is called when an error occurs. Use GetLastError() and GetErrorMsg() to find out the nature of the error.
+
+The default error handler prints out an error message in debug builds, and destroys the socket. 
+
+References GetLastErrorMsg().
+
+Referenced by SendRecvPacket().\index{CECSocket@{CECSocket}!OnLost@{OnLost}}
+\index{OnLost@{OnLost}!CECSocket@{CECSocket}}
+\subsubsection[{OnLost}]{\setlength{\rightskip}{0pt plus 5cm}void CECSocket::OnLost ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCECSocket_aa1245e93fc1a8f8ad6f1ac0e50c51d97}
+
+
+Socket lost event handler. This function is called when the socket is lost (either because of a network failure or because the remote end closed the socket gracefully).
+
+The default handler destroys the socket. 
+
+Reimplemented in {\bf CECServerSocket} \doxyref{}{p.}{classCECServerSocket_a29081455ee9896fc197896d8601452b1}, and {\bf CRemoteConnect} \doxyref{}{p.}{classCRemoteConnect_a1bc6de5e0960a3069a01568f7f5f3add}.\index{CECSocket@{CECSocket}!OnPacketReceived@{OnPacketReceived}}
+\index{OnPacketReceived@{OnPacketReceived}!CECSocket@{CECSocket}}
+\subsubsection[{OnPacketReceived}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CECPacket} $\ast$ CECSocket::OnPacketReceived (const {\bf CECPacket} $\ast$ {\em packet}, \/  uint32 {\em trueSize})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCECSocket_a4026f260f7839bf95a02f1c178bf2d52}
+
+
+Event handler function called when a new packet is received. 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The packet that has been received. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reply packet or {\ttfamily NULL} if no reply needed.
+\end{DoxyReturn}
+In this function the application should process the received packet, and create a reply if necessary. The reply must be allocated on the heap with {\ttfamily new}. If no reply is necessary, the return value of the function should be {\ttfamily NULL}. The library will {\ttfamily delete} both packets.
+
+\begin{DoxyNote}{Note}
+This function won't be called for packets received via the \doxyref{SendRecvPacket()}{p.}{classCECSocket_aaee01cc0fb0b37fb44ddf8b363cfdbd5} function. 
+\end{DoxyNote}
+
+
+Reimplemented in {\bf CECServerSocket} \doxyref{}{p.}{classCECServerSocket_a7e8393ee2814dae9b6eeedcf20c5be30}, and {\bf CRemoteConnect} \doxyref{}{p.}{classCRemoteConnect_af2e8318ab1de92d3f8d1b5c85bd99a2c}.\index{CECSocket@{CECSocket}!SendPacket@{SendPacket}}
+\index{SendPacket@{SendPacket}!CECSocket@{CECSocket}}
+\subsubsection[{SendPacket}]{\setlength{\rightskip}{0pt plus 5cm}void CECSocket::SendPacket (const {\bf CECPacket} $\ast$ {\em packet})}\label{classCECSocket_ad399e6f57eebdf868b20612d6dab14a1}
+
+
+Sends an EC packet and returns immediately. 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The \doxyref{CECPacket}{p.}{classCECPacket} packet to be sent.\end{DoxyParams}
+This is an asynchronous call, the function returns immediately and the packet is sent on idle time.
+
+\begin{DoxyNote}{Note}
+It's the caller's responsibilty to {\ttfamily delete} the {\itshape packet\/}. 
+\end{DoxyNote}
+
+
+Reimplemented in {\bf CRemoteConnect} \doxyref{}{p.}{classCRemoteConnect_aea090f8a0b2dd3475f8bb8795af0f517}.
+
+Referenced by SendRecvPacket().\index{CECSocket@{CECSocket}!SendRecvPacket@{SendRecvPacket}}
+\index{SendRecvPacket@{SendRecvPacket}!CECSocket@{CECSocket}}
+\subsubsection[{SendRecvPacket}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CECPacket} $\ast$ CECSocket::SendRecvPacket (const {\bf CECPacket} $\ast$ {\em request})}\label{classCECSocket_aaee01cc0fb0b37fb44ddf8b363cfdbd5}
+
+
+Sends an EC packet and waits for a reply. 
+\begin{DoxyParams}{Parameters}
+\item[{\em request}]The \doxyref{CECPacket}{p.}{classCECPacket} packet to be sent. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reply packet for the request.
+\end{DoxyReturn}
+Unlike \doxyref{SendPacket()}{p.}{classCECSocket_ad399e6f57eebdf868b20612d6dab14a1}, this call is synchronous and blocking. The packet is sent immediately (or at least as soon as possible), and the function does not return until a reply is received, or a timeout encountered.
+
+The returned packet will be allocated on the heap with {\ttfamily new}, or {\ttfamily NULL} is returned in case of an error (timeout).
+
+\begin{DoxyNote}{Note}
+It's the caller's responsibilty to {\ttfamily delete} both request and reply.
+
+\doxyref{OnPacketReceived()}{p.}{classCECSocket_a4026f260f7839bf95a02f1c178bf2d52} won't be called for packets received via this function. 
+\end{DoxyNote}
+
+
+References OnError(), and SendPacket().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECSocket.h\item 
+src/libs/ec/cpp/ECSocket.cpp\end{DoxyCompactItemize}

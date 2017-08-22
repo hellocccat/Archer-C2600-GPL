@@ -1,0 +1,536 @@
+\section{CMuleListCtrl Class Reference}
+\label{classCMuleListCtrl}\index{CMuleListCtrl@{CMuleListCtrl}}
+
+
+Enhanced wxListCtrl provided custom-\/drawing among other things.  
+
+
+{\ttfamily \#include $<$MuleListCtrl.h$>$}Inheritance diagram for CMuleListCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.69312cm]{classCMuleListCtrl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf ColNameEntry}
+\begin{DoxyCompactList}\small\item\em This class contains a column index, its default width and its name. \item\end{DoxyCompactList}\item 
+class {\bf MuleSortData}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf MLOrder} \{ {\bf SORT\_\-DES} =  0x1000, 
+{\bf SORT\_\-ALT} =  0x2000
+ \}
+\item 
+typedef std::vector$<$ wxUIntPtr $>$ {\bf ItemDataList}\label{classCMuleListCtrl_a410416f876598cff32c3b36409020747}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleListCtrl} (wxWindow $\ast$parent, wxWindowID winid=-\/1, const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=wxLC\_\-ICON, const wxValidator \&validator=wxDefaultValidator, const wxString \&name=wxT(\char`\"{}mulelistctrl\char`\"{}))
+\item 
+virtual {\bf $\sim$CMuleListCtrl} ()
+\item 
+virtual void {\bf SaveSettings} ()
+\item 
+virtual void {\bf LoadSettings} ()
+\item 
+long {\bf GetInsertPos} (wxUIntPtr data)
+\item 
+virtual void {\bf SortList} ()
+\item 
+{\bf ItemDataList} {\bf GetSelectedItems} () const 
+\item 
+void {\bf SetSortFunc} (MuleListCtrlCompare func)
+\item 
+void {\bf ClearSelection} ()\label{classCMuleListCtrl_a66940f86081e12cd23f45703024f00e4}
+
+\item 
+long {\bf InsertColumn} (long col, const wxString \&heading, int format=wxLIST\_\-FORMAT\_\-LEFT, int width=-\/1, const wxString \&name=wxEmptyString)
+\item 
+void {\bf ClearAll} ()
+\item 
+bool {\bf DeleteColumn} (int col)
+\item 
+bool {\bf IsSorting} () const \label{classCMuleListCtrl_a52e804f69af219562a845b9479def333}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned {\bf COLUMN\_\-MASK} = 0xfff\label{classCMuleListCtrl_a87b3dd688c8f3f4a1bf1f359e5dfd7bd}
+
+\item 
+static const unsigned {\bf SORTING\_\-MASK} = 0x3000\label{classCMuleListCtrl_a134a49b68b3aec4f7f52572ed74736cb}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf AltSortAllowed} (unsigned column) const 
+\item 
+virtual wxString {\bf GetTTSText} (unsigned item) const 
+\item 
+void {\bf SetTableName} (const wxString \&name)
+\item 
+virtual wxString {\bf GetOldColumnOrder} () const 
+\item 
+unsigned {\bf GetSortColumn} () const \label{classCMuleListCtrl_ab3435a69f94aaab8076a37ac99fbe877}
+
+\item 
+unsigned {\bf GetSortOrder} () const \label{classCMuleListCtrl_a9a1f92f3b68e887c7c036894d4d537b0}
+
+\item 
+virtual void {\bf SetSorting} (unsigned column, unsigned order)
+\item 
+bool {\bf IsItemSorted} (long item)\label{classCMuleListCtrl_a11939233fad6e8a1e7a8b661afecb9a9}
+
+\item 
+void {\bf OnColumnRClick} (wxListEvent \&evt)\label{classCMuleListCtrl_aa4665429d96a78fc8b0edb2b3f3e6afb}
+
+\item 
+void {\bf OnColumnLClick} (wxListEvent \&evt)\label{classCMuleListCtrl_a320abfc47b9d8dcd2df99b103a1c654c}
+
+\item 
+void {\bf OnMenuSelected} (wxCommandEvent \&evt)\label{classCMuleListCtrl_a46915cf68bef12f3ea7632f0730b3f48}
+
+\item 
+void {\bf OnMouseWheel} (wxMouseEvent \&event)\label{classCMuleListCtrl_a65a9d2badef38b8650012f7989897172}
+
+\item 
+void {\bf OnChar} (wxKeyEvent \&evt)\label{classCMuleListCtrl_a0c45c7e76f28ea6c2deda44e779c41cb}
+
+\item 
+void {\bf OnItemSelected} (wxListEvent \&evt)\label{classCMuleListCtrl_af4b96c0ba4af7e4766dbb0b0c058e451}
+
+\item 
+void {\bfseries OnItemDeleted} (wxListEvent \&evt)\label{classCMuleListCtrl_af189c163b47ca3f1a7471d9e73c69001}
+
+\item 
+void {\bfseries OnAllItemsDeleted} (wxListEvent \&evt)\label{classCMuleListCtrl_a76ebb2954ed34e86ee2ac007a30c92b7}
+
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+long {\bf CheckSelection} (wxListEvent \&event)
+\item 
+long {\bfseries CheckSelection} (wxMouseEvent \&event)\label{classCMuleListCtrl_a3be14652273d98fb8ee6e4d4417139dd}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::pair$<$ unsigned, unsigned $>$ {\bf CColPair}\label{classCMuleListCtrl_ab124990f048b5c1f18eb82f79f31b21e}
+
+\item 
+typedef std::list$<$ {\bf CColPair} $>$ {\bfseries CSortingList}\label{classCMuleListCtrl_a3f2e9d5fb3e6df77be2002f9462a3e17}
+
+\item 
+typedef std::list$<$ {\bf ColNameEntry} $>$ {\bf ColNameList}\label{classCMuleListCtrl_aa346a17036c869889b1bf52204b0d209}
+
+\item 
+typedef std::vector$<$ int $>$ {\bf ColSizeVector}\label{classCMuleListCtrl_a524b502df58bf9974bd517c295535ab2}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ResetTTS} ()\label{classCMuleListCtrl_a2ec7d268b0aaef435531c1ca190c591a}
+
+\item 
+void {\bf SetColumnImage} (unsigned col, int image)
+\item 
+int {\bf CompareItems} (wxUIntPtr item1, wxUIntPtr item2)
+\item 
+const wxString \& {\bf GetColumnName} (int column) const 
+\item 
+int {\bf GetColumnDefaultWidth} (int column) const 
+\item 
+int {\bf GetColumnIndex} (const wxString \&name) const 
+\item 
+int {\bf GetNewColumnIndex} (int oldindex) const 
+\item 
+void {\bf ParseOldConfigEntries} (const wxString \&sortOrders, const wxString \&columnWidths)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bf SortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf m\_\-name}\label{classCMuleListCtrl_a63dd6ecb4ef7faf7b998f3a93e6e7e5f}
+
+\item 
+MuleListCtrlCompare {\bf m\_\-sort\_\-func}\label{classCMuleListCtrl_aab63678eef82f6f6893f0b2e1243c1b9}
+
+\item 
+wxString {\bf m\_\-tts\_\-text}\label{classCMuleListCtrl_a01bc625592ef4de6d7a57953828c82db}
+
+\item 
+unsigned {\bf m\_\-tts\_\-time}\label{classCMuleListCtrl_afb1628652629e431073dc5a3bee45da7}
+
+\item 
+int {\bf m\_\-tts\_\-item}\label{classCMuleListCtrl_a2d27508eee57d5649c18e59300fbb4bc}
+
+\item 
+CSortingList {\bf m\_\-sort\_\-orders}\label{classCMuleListCtrl_aaaddddcc3de5179a5ee6259851865779}
+
+\item 
+{\bf ColNameList} {\bf m\_\-column\_\-names}\label{classCMuleListCtrl_a82f74ba45ba81c7f04837547ea2ce8cb}
+
+\item 
+{\bf ColSizeVector} {\bf m\_\-column\_\-sizes}\label{classCMuleListCtrl_a1b1dd8af2ed951441d668c85dfcd23f0}
+
+\item 
+bool {\bfseries m\_\-isSorting}\label{classCMuleListCtrl_ad78752718891240bed51ead51052cd56}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Enhanced wxListCtrl provided custom-\/drawing among other things. This class provides these features which the original wxListCtrl lacks:
+\begin{DoxyItemize}
+\item Automatic sort arrows upon clicks on the column headers
+\item Custom drawing of items.
+\item Hiding of columns through auto-\/generated popup-\/menu.
+\item Helper function for inserting items pre-\/sorted.
+\item Loading and saving of column properties.
+\item Selection of items by typing an initial part of the text (TTS). 
+\end{DoxyItemize}
+
+\subsection{Member Enumeration Documentation}
+\index{CMuleListCtrl@{CMuleListCtrl}!MLOrder@{MLOrder}}
+\index{MLOrder@{MLOrder}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{MLOrder}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CMuleListCtrl::MLOrder}}\label{classCMuleListCtrl_adcdf3fad361fc9dd64aa3da119e57648}
+
+
+The various ways in which a column can be sorted. If SORT\_\-DES is not set, sorting is taken to be ascending. If SORT\_\-ALT is not set, sorting is taken to be normal. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{SORT\_\-DES@{SORT\_\-DES}!CMuleListCtrl@{CMuleListCtrl}}\index{CMuleListCtrl@{CMuleListCtrl}!SORT\_\-DES@{SORT\_\-DES}}\item[{\em 
+SORT\_\-DES\label{classCMuleListCtrl_adcdf3fad361fc9dd64aa3da119e57648a232b129567ac54160efb9279f9d0e3c0}
+}]If set, sorting is to be in descending order. \index{SORT\_\-ALT@{SORT\_\-ALT}!CMuleListCtrl@{CMuleListCtrl}}\index{CMuleListCtrl@{CMuleListCtrl}!SORT\_\-ALT@{SORT\_\-ALT}}\item[{\em 
+SORT\_\-ALT\label{classCMuleListCtrl_adcdf3fad361fc9dd64aa3da119e57648a8e61e2c8805a50ed4a6ced79b126726b}
+}]If sorting should use alternate method. Is specified in with or without DEC. \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CMuleListCtrl@{CMuleListCtrl}!CMuleListCtrl@{CMuleListCtrl}}
+\index{CMuleListCtrl@{CMuleListCtrl}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{CMuleListCtrl}]{\setlength{\rightskip}{0pt plus 5cm}CMuleListCtrl::CMuleListCtrl (wxWindow $\ast$ {\em parent}, \/  wxWindowID {\em winid} = {\ttfamily -\/1}, \/  const wxPoint \& {\em pos} = {\ttfamily wxDefaultPosition}, \/  const wxSize \& {\em size} = {\ttfamily wxDefaultSize}, \/  long {\em style} = {\ttfamily wxLC\_\-ICON}, \/  const wxValidator \& {\em validator} = {\ttfamily wxDefaultValidator}, \/  const wxString \& {\em name} = {\ttfamily wxT(\char`\"{}mulelistctrl\char`\"{})})}\label{classCMuleListCtrl_a3d2c202974057d0de8a098344a16024d}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+wxGenericListCtrl::wxGenericListCtrl for documentation of parameters. 
+\end{DoxySeeAlso}
+\index{CMuleListCtrl@{CMuleListCtrl}!$\sim$CMuleListCtrl@{$\sim$CMuleListCtrl}}
+\index{$\sim$CMuleListCtrl@{$\sim$CMuleListCtrl}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{$\sim$CMuleListCtrl}]{\setlength{\rightskip}{0pt plus 5cm}CMuleListCtrl::$\sim$CMuleListCtrl ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleListCtrl_a6b7cd88d09fc7b12609ca51bd9277a56}
+
+
+Destructor. If a name for the table has been specified with SetTableName, then column settings will be saved automatically. 
+
+References m\_\-name, and SaveSettings().
+
+\subsection{Member Function Documentation}
+\index{CMuleListCtrl@{CMuleListCtrl}!AltSortAllowed@{AltSortAllowed}}
+\index{AltSortAllowed@{AltSortAllowed}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{AltSortAllowed}]{\setlength{\rightskip}{0pt plus 5cm}bool CMuleListCtrl::AltSortAllowed (unsigned {\em column}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCMuleListCtrl_a399b991679c1de1dbd72219ad68377f6}
+
+
+Must be overwritten to enable alternate sorting. 
+\begin{DoxyParams}{Parameters}
+\item[{\em The}]column being sorted.\end{DoxyParams}
+Subclasses of \doxyref{CMuleListCtrl}{p.}{classCMuleListCtrl} can allow alternative sorting of columns. This is done by overriding this function and returning true for the columns where alternative sorting is desired. 
+
+Reimplemented in {\bf CSearchListCtrl} \doxyref{}{p.}{classCSearchListCtrl_aebee6406c80a1812d2e93bfd28e83637}, and {\bf CSharedFilesCtrl} \doxyref{}{p.}{classCSharedFilesCtrl_a754f337b7e7aa58af3dcc436fd3303ab}.
+
+Referenced by OnColumnLClick().\index{CMuleListCtrl@{CMuleListCtrl}!CheckSelection@{CheckSelection}}
+\index{CheckSelection@{CheckSelection}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{CheckSelection}]{\setlength{\rightskip}{0pt plus 5cm}long CMuleListCtrl::CheckSelection (wxListEvent \& {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCMuleListCtrl_a4e0a0507f1343977840af50c8c78ac72}
+
+
+Check and fix selection state. 
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]The event which triggered the selection. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the item selected or -\/1 if none.
+\end{DoxyReturn}
+This function checks if the clicked item is selected. If not, then the item is selected and all other items are deselected. 
+
+References ClearSelection().
+
+Referenced by CServerListCtrl::OnItemRightClicked(), CSharedFilesCtrl::OnRightClick(), and CSearchListCtrl::OnRightClick().\index{CMuleListCtrl@{CMuleListCtrl}!ClearAll@{ClearAll}}
+\index{ClearAll@{ClearAll}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{ClearAll}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::ClearAll ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMuleListCtrl_a2f41179a98223f143b858809a99bb712}
+
+
+Clears all items and all columns. Intercepted to clear column name list.
+
+For more information see the wxWidgets documentation of wxListCtrl::ClearAll() 
+
+Reimplemented from {\bf MuleExtern::wxGenericListCtrl} \doxyref{}{p.}{classMuleExtern_1_1wxGenericListCtrl}.
+
+References m\_\-column\_\-names.\index{CMuleListCtrl@{CMuleListCtrl}!CompareItems@{CompareItems}}
+\index{CompareItems@{CompareItems}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{CompareItems}]{\setlength{\rightskip}{0pt plus 5cm}int CMuleListCtrl::CompareItems (wxUIntPtr {\em item1}, \/  wxUIntPtr {\em item2})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleListCtrl_ac3effd0167c99c3403c43630c68ca5e0}
+
+
+Compares two items in the list, using the current sort sequence. 
+
+References m\_\-sort\_\-func, and m\_\-sort\_\-orders.
+
+Referenced by GetInsertPos(), and IsItemSorted().\index{CMuleListCtrl@{CMuleListCtrl}!DeleteColumn@{DeleteColumn}}
+\index{DeleteColumn@{DeleteColumn}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{DeleteColumn}]{\setlength{\rightskip}{0pt plus 5cm}bool CMuleListCtrl::DeleteColumn (int {\em col})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMuleListCtrl_a0cd7559f62b014af9b07f02a1494727f}
+
+
+Delete one column from the list. Not implemented yet, intercepted here just as a sanity check. 
+
+Reimplemented from {\bf MuleExtern::wxGenericListCtrl} \doxyref{}{p.}{classMuleExtern_1_1wxGenericListCtrl}.\index{CMuleListCtrl@{CMuleListCtrl}!GetColumnDefaultWidth@{GetColumnDefaultWidth}}
+\index{GetColumnDefaultWidth@{GetColumnDefaultWidth}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{GetColumnDefaultWidth}]{\setlength{\rightskip}{0pt plus 5cm}int CMuleListCtrl::GetColumnDefaultWidth (int {\em column}) const\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleListCtrl_ab3e61b6df8ef24cbce3c0bfac3d88fe7}
+
+
+Get the column default width by index. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em column}]Index of the column whose name we're looking for.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The column default width or wx default width if index is invalid (out of range), or the column name hasn't been set. 
+\end{DoxyReturn}
+
+
+References m\_\-column\_\-names.
+
+Referenced by OnMenuSelected().\index{CMuleListCtrl@{CMuleListCtrl}!GetColumnIndex@{GetColumnIndex}}
+\index{GetColumnIndex@{GetColumnIndex}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{GetColumnIndex}]{\setlength{\rightskip}{0pt plus 5cm}int CMuleListCtrl::GetColumnIndex (const wxString \& {\em name}) const\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleListCtrl_a40bc1c93c9facd95983c42ef9d17182f}
+
+
+Get column index by name. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em name}]Internal name of the colunm whose index is needed.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The column index, or -\/1 in case the name was invalid. 
+\end{DoxyReturn}
+
+
+References m\_\-column\_\-names.
+
+Referenced by GetNewColumnIndex(), and LoadSettings().\index{CMuleListCtrl@{CMuleListCtrl}!GetColumnName@{GetColumnName}}
+\index{GetColumnName@{GetColumnName}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{GetColumnName}]{\setlength{\rightskip}{0pt plus 5cm}const wxString \& CMuleListCtrl::GetColumnName (int {\em column}) const\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleListCtrl_aaf709356506f558e72270e9809d9ec6d}
+
+
+Get the column name by index. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em column}]Index of the column whose name we're looking for.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The column name or an empty string if index is invalid (out of range), or the column name hasn't been set. 
+\end{DoxyReturn}
+
+
+References m\_\-column\_\-names.
+
+Referenced by SaveSettings().\index{CMuleListCtrl@{CMuleListCtrl}!GetInsertPos@{GetInsertPos}}
+\index{GetInsertPos@{GetInsertPos}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{GetInsertPos}]{\setlength{\rightskip}{0pt plus 5cm}long CMuleListCtrl::GetInsertPos (wxUIntPtr {\em data})}\label{classCMuleListCtrl_ad439cd79710fcc2e87e3d8fa7460c1c9}
+
+
+This function tries to locate the best place to insert an item. 
+\begin{DoxyParams}{Parameters}
+\item[{\em The}]userdata of the new item.\end{DoxyParams}
+This function does a binary type search to locate the best place to insert the new item with the specified userdata. It then returns the item after this position. To do this, the sorter-\/function must be set through the SetSortFunc function, otherwise it will just return the position after the last item. 
+
+References CompareItems(), and m\_\-sort\_\-func.
+
+Referenced by CSearchListCtrl::AddResult(), CSharedFilesCtrl::DoShowFile(), and CServerListCtrl::RefreshServer().\index{CMuleListCtrl@{CMuleListCtrl}!GetNewColumnIndex@{GetNewColumnIndex}}
+\index{GetNewColumnIndex@{GetNewColumnIndex}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{GetNewColumnIndex}]{\setlength{\rightskip}{0pt plus 5cm}int CMuleListCtrl::GetNewColumnIndex (int {\em oldindex}) const\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleListCtrl_a4064ba499919672e01ef9e72c5e1d466}
+
+
+Find out the new index of the column by the old index. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em oldindex}]Old column index which we want to turn into a new index.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new index of the column, or -\/1 if an error occured. 
+\end{DoxyReturn}
+
+
+References GetColumnIndex(), and GetOldColumnOrder().
+
+Referenced by ParseOldConfigEntries().\index{CMuleListCtrl@{CMuleListCtrl}!GetOldColumnOrder@{GetOldColumnOrder}}
+\index{GetOldColumnOrder@{GetOldColumnOrder}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{GetOldColumnOrder}]{\setlength{\rightskip}{0pt plus 5cm}wxString CMuleListCtrl::GetOldColumnOrder () const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCMuleListCtrl_af33b74144a9ec361fe1cde2299898a8b}
+
+
+Return old column order. \begin{DoxyReturn}{Returns}
+The pre-\/2.2.2 column order.
+\end{DoxyReturn}
+This function should be overridden in descendant classes to return a comma-\/separated list of the old column order, when column data was saved/loaded by index. The default implementation returns an empty string, meaning that old settings (if any) should be discarded.
+
+\begin{DoxyNote}{Note}
+When you add or remove columns from the list control, DO NOT change this list. This list may only be updated if you changed a column name that is already in this list, to reflect the name change. List order also must be preserved. 
+\end{DoxyNote}
+
+
+Reimplemented in {\bf CDownloadListCtrl} \doxyref{}{p.}{classCDownloadListCtrl_a3be6d059988c69c069f79d0b165dc565}, {\bf CSearchListCtrl} \doxyref{}{p.}{classCSearchListCtrl_ae691e9d478b401f64bc800dffce9cd50}, {\bf CServerListCtrl} \doxyref{}{p.}{classCServerListCtrl_a480dfe4788588452a20344e46a755d4e}, and {\bf CSharedFilesCtrl} \doxyref{}{p.}{classCSharedFilesCtrl_a01f52afa7f00b7bf51555c853fd04eb1}.
+
+Referenced by GetNewColumnIndex().\index{CMuleListCtrl@{CMuleListCtrl}!GetSelectedItems@{GetSelectedItems}}
+\index{GetSelectedItems@{GetSelectedItems}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{GetSelectedItems}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CMuleListCtrl::ItemDataList} CMuleListCtrl::GetSelectedItems () const}\label{classCMuleListCtrl_a0642e9f3a474ac3eb086180446a30f68}
+
+
+Returns a list the user-\/data of all selected items. \begin{DoxyReturn}{Returns}
+A list of data associated with the selected items.
+\end{DoxyReturn}
+This function will return the user-\/data for each selected item in a vector, which can then be manipulated with regards to changes made in the current order of the listctrl items. 
+
+Referenced by CServerListCtrl::OnPriorityChange(), CServerListCtrl::OnStaticChange(), and SortList().\index{CMuleListCtrl@{CMuleListCtrl}!GetTTSText@{GetTTSText}}
+\index{GetTTSText@{GetTTSText}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{GetTTSText}]{\setlength{\rightskip}{0pt plus 5cm}wxString CMuleListCtrl::GetTTSText (unsigned {\em item}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63}
+
+
+Returns the string used when selecting rows via Type-\/To-\/Select. 
+\begin{DoxyParams}{Parameters}
+\item[{\em item}]The index of the item being examined.\end{DoxyParams}
+By default, this function simply returns the text in the first column for the given item. However, when owner-\/drawing is enabled, this function \_\-must\_\- be overriden. 
+
+Reimplemented in {\bf CDownloadListCtrl} \doxyref{}{p.}{classCDownloadListCtrl_a291922edfb9f1b9184e2bfd7f42b20b7}, {\bf CGenericClientListCtrl} \doxyref{}{p.}{classCGenericClientListCtrl_a2ddfb8922f265b76390251a38f75a740}, {\bf CSearchListCtrl} \doxyref{}{p.}{classCSearchListCtrl_ab0a2f22c39f0cad32d0014ab4d29c796}, and {\bf CSharedFilesCtrl} \doxyref{}{p.}{classCSharedFilesCtrl_a635ab043ebc4897fcfd92f28f41f0cb9}.
+
+Referenced by OnChar().\index{CMuleListCtrl@{CMuleListCtrl}!InsertColumn@{InsertColumn}}
+\index{InsertColumn@{InsertColumn}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{InsertColumn}]{\setlength{\rightskip}{0pt plus 5cm}long CMuleListCtrl::InsertColumn (long {\em col}, \/  const wxString \& {\em heading}, \/  int {\em format} = {\ttfamily wxLIST\_\-FORMAT\_\-LEFT}, \/  int {\em width} = {\ttfamily -\/1}, \/  const wxString \& {\em name} = {\ttfamily wxEmptyString})}\label{classCMuleListCtrl_a80b324a0bbf25f8c5ab838693e867178}
+
+
+Insert a new column. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em col}]Column will be inserted at this position. \item[\mbox{$\leftarrow$} {\em heading}]Heading text for the column. \item[\mbox{$\leftarrow$} {\em format}]Format (alignment) of the column. \item[\mbox{$\leftarrow$} {\em width}]The column width. \item[\mbox{$\leftarrow$} {\em name}]Internal name of the column.\end{DoxyParams}
+We override this method to allow a name to be specified for each column. The name is used for saving/loading column settings independently of their index. It is necessary to set a unique name for each column, to let column settings be saved/loaded. If you don't set a name for a column, settings for that column won't be saved.
+
+Requirements about column names:
+\begin{DoxyItemize}
+\item they must not contain the ':' (colon) and ',' (comma) characters,
+\item they should be at least one character long.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Changing the internal name of one column results in width of that column being reset to default, and if sorting was done by that column, sorting being forgotten. If you change the name of a column, don't forget to update the list \doxyref{GetOldColumnOrder()}{p.}{classCMuleListCtrl_af33b74144a9ec361fe1cde2299898a8b} returns, if necessary.
+\end{DoxyNote}
+For more information refer to the wxWidgets documentation of wxListCtrl::InsertColumn() 
+
+References m\_\-column\_\-names.
+
+Referenced by CSearchListCtrl::CSearchListCtrl(), CServerListCtrl::CServerListCtrl(), CSharedFilesCtrl::CSharedFilesCtrl(), and CGenericClientListCtrl::InitColumnData().\index{CMuleListCtrl@{CMuleListCtrl}!LoadSettings@{LoadSettings}}
+\index{LoadSettings@{LoadSettings}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{LoadSettings}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::LoadSettings ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleListCtrl_a431abe8e861911bc4da054c46d9ffda1}
+
+
+Loads column settings. Currently loads the width of all columns, hidden columns, the column to sort by and in which direction to sort. This function also ensures that the items are sorted after the settings have been read. 
+
+References GetColumnIndex(), m\_\-column\_\-sizes, m\_\-name, m\_\-sort\_\-func, m\_\-sort\_\-orders, ParseOldConfigEntries(), SetSorting(), SORT\_\-ALT, SORT\_\-DES, and SortList().
+
+Referenced by CSearchListCtrl::CSearchListCtrl(), CServerListCtrl::CServerListCtrl(), CSharedFilesCtrl::CSharedFilesCtrl(), and CGenericClientListCtrl::InitColumnData().\index{CMuleListCtrl@{CMuleListCtrl}!ParseOldConfigEntries@{ParseOldConfigEntries}}
+\index{ParseOldConfigEntries@{ParseOldConfigEntries}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{ParseOldConfigEntries}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::ParseOldConfigEntries (const wxString \& {\em sortOrders}, \/  const wxString \& {\em columnWidths})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleListCtrl_ad21c5c03f52f4832a79d0d5ae47102e0}
+
+
+Parses old config entries. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em sortOrders}]Old sort orders line. \item[\mbox{$\leftarrow$} {\em columnWidths}]Old column widths line. \end{DoxyParams}
+
+
+References GetNewColumnIndex(), SetSorting(), and SORTING\_\-MASK.
+
+Referenced by LoadSettings().\index{CMuleListCtrl@{CMuleListCtrl}!SaveSettings@{SaveSettings}}
+\index{SaveSettings@{SaveSettings}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{SaveSettings}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::SaveSettings ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleListCtrl_acc0a21990b3721691cb8a67a7d87f037}
+
+
+Saves column settings. Currently saves the width of all columns, hidden columns, the column to sort by and in which direction to sort. 
+
+References GetColumnName(), m\_\-column\_\-sizes, m\_\-name, m\_\-sort\_\-orders, SORT\_\-ALT, and SORT\_\-DES.
+
+Referenced by $\sim$CMuleListCtrl().\index{CMuleListCtrl@{CMuleListCtrl}!SetColumnImage@{SetColumnImage}}
+\index{SetColumnImage@{SetColumnImage}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{SetColumnImage}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::SetColumnImage (unsigned {\em col}, \/  int {\em image})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleListCtrl_ab15f63a39bd04dacaf88eb1b6ce78396}
+
+
+Sets the image of a specific column. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]The column to change. \item[{\em order}]The sorting order to represent. Zero unsets the image. \end{DoxyParams}
+
+
+Referenced by SetSorting().\index{CMuleListCtrl@{CMuleListCtrl}!SetSortFunc@{SetSortFunc}}
+\index{SetSortFunc@{SetSortFunc}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{SetSortFunc}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::SetSortFunc (MuleListCtrlCompare {\em func})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMuleListCtrl_adf837c32d5fe8d69a3f35128eeff7ce2}
+
+
+Sets the sorter function. 
+\begin{DoxyParams}{Parameters}
+\item[{\em func}]See the documentation on wxListCtrl::SortItems for more information about the expected function type. \end{DoxyParams}
+
+
+References m\_\-sort\_\-func.
+
+Referenced by CSearchListCtrl::CSearchListCtrl(), CServerListCtrl::CServerListCtrl(), and CSharedFilesCtrl::CSharedFilesCtrl().\index{CMuleListCtrl@{CMuleListCtrl}!SetSorting@{SetSorting}}
+\index{SetSorting@{SetSorting}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{SetSorting}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::SetSorting (unsigned {\em column}, \/  unsigned {\em order})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCMuleListCtrl_ad9a4018ee74a401b6af5e122c4495242}
+
+
+Set the sort column. 
+\begin{DoxyParams}{Parameters}
+\item[{\em column}]The column with which the list should be sorted. \item[{\em order}]The order in which to sort the column.\end{DoxyParams}
+Note that attempting to sort a column in an unsupported order is an illegal operation. 
+
+Reimplemented in {\bf CSearchListCtrl} \doxyref{}{p.}{classCSearchListCtrl_ad3d1eb62c62c42c9566b025ef0639a46}.
+
+References m\_\-sort\_\-orders, SetColumnImage(), SORT\_\-ALT, SORT\_\-DES, SORTING\_\-MASK, and SortList().
+
+Referenced by LoadSettings(), OnColumnLClick(), and ParseOldConfigEntries().\index{CMuleListCtrl@{CMuleListCtrl}!SetTableName@{SetTableName}}
+\index{SetTableName@{SetTableName}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{SetTableName}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::SetTableName (const wxString \& {\em name})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCMuleListCtrl_ac181e4fc72fa3322d326307c4037e7cd}
+
+
+Sets the internally used table-\/name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The new name or an empty string to disable.\end{DoxyParams}
+You need to call this function with a unique name before you can make use of the LoadSettings/SaveSettings functions. \doxyref{CMuleListCtrl}{p.}{classCMuleListCtrl} uses the name specified in this command to create unique keynames. 
+
+References m\_\-name.
+
+Referenced by CSearchListCtrl::CSearchListCtrl(), CServerListCtrl::CServerListCtrl(), CSharedFilesCtrl::CSharedFilesCtrl(), and CSearchListCtrl::$\sim$CSearchListCtrl().\index{CMuleListCtrl@{CMuleListCtrl}!SortList@{SortList}}
+\index{SortList@{SortList}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{SortList}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleListCtrl::SortList ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleListCtrl_aa1a137100e88785b8f5b7610e3009b09}
+
+
+Sorts the list. Before you can use this function, you will need to specify a sorter function using SetSortFunc. wxListCtrl needs such a function to perform the sort. 
+
+References GetSelectedItems(), IsSorting(), m\_\-sort\_\-func, m\_\-sort\_\-orders, ResetTTS(), and SortProc().
+
+Referenced by CDownloadListCtrl::AddFile(), LoadSettings(), CTransferWnd::OnSetDefaultCat(), CServerListCtrl::RefreshServer(), SetSorting(), CSharedFilesCtrl::ShowFileList(), CGenericClientListCtrl::ShowSources(), and CSearchListCtrl::UpdateResult().\index{CMuleListCtrl@{CMuleListCtrl}!SortProc@{SortProc}}
+\index{SortProc@{SortProc}!CMuleListCtrl@{CMuleListCtrl}}
+\subsubsection[{SortProc}]{\setlength{\rightskip}{0pt plus 5cm}int CMuleListCtrl::SortProc (wxUIntPtr {\em item1}, \/  wxUIntPtr {\em item2}, \/  long {\em sortData})\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCMuleListCtrl_a9958ee438b116457a818ffb29b3c5864}
+
+
+Wrapper around the user-\/provided sorter function. This function ensures that items are sorted in the order specified by clicking on column-\/headers, and also enforces that different entries are never considered equal. This is required for lists that make use of child-\/items, since otherwise, parents may not end up properly located in relation to child-\/items. 
+
+Reimplemented in {\bf CDownloadListCtrl} \doxyref{}{p.}{classCDownloadListCtrl_a5b6cceb0e925646fefc08e412aa340c5}, {\bf CFileDetailListCtrl} \doxyref{}{p.}{classCFileDetailListCtrl_af4b43bfd447928d132b3f4d331d78ce2}, {\bf CGenericClientListCtrl} \doxyref{}{p.}{classCGenericClientListCtrl_a80665bdd86796ffb1bd3d11915d8353d}, {\bf CSearchListCtrl} \doxyref{}{p.}{classCSearchListCtrl_ae4a7636dad1cc7eda05ed618e741d95f}, {\bf CServerListCtrl} \doxyref{}{p.}{classCServerListCtrl_aebb5c10f1dc947d8dac6576cc277d109}, and {\bf CSharedFilesCtrl} \doxyref{}{p.}{classCSharedFilesCtrl_a05faee3f5b100371c6b0c73ebadd9f4f}.
+
+Referenced by SortList().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MuleListCtrl.h\item 
+src/MuleListCtrl.cpp\end{DoxyCompactItemize}

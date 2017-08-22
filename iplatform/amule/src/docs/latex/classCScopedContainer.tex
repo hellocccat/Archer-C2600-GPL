@@ -1,0 +1,65 @@
+\section{CScopedContainer$<$ STL\_\-CONTAINER $>$ Class Template Reference}
+\label{classCScopedContainer}\index{CScopedContainer@{CScopedContainer}}
+
+
+Similar to \doxyref{CScopedPtr}{p.}{classCScopedPtr}, except that a STL container of pointers is expected which has to be freed with DeleteContents.  
+
+
+{\ttfamily \#include $<$ScopedPtr.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CScopedContainer} (STL\_\-CONTAINER $\ast$ptr)
+\item 
+STL\_\-CONTAINER $\ast$ {\bf get} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+STL\_\-CONTAINER $\ast$ {\bfseries m\_\-ptr}\label{classCScopedContainer_ad9550e8df5f220698a0ab537e65ee69a}
+
+\end{DoxyCompactItemize}
+\label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ \begin{DoxyCompactItemize}
+\item 
+STL\_\-CONTAINER \& {\bf operator$\ast$} () const 
+\item 
+{\bf CScopedContainer} (const {\bf CScopedContainer}$<$ STL\_\-CONTAINER $>$ \&)\label{classCScopedContainer_a0ab9f56311faed39b13046fa9d634c63}
+
+\item 
+{\bf CScopedContainer}$<$ STL\_\-CONTAINER $>$ \& {\bfseries operator=} (const {\bf CScopedContainer}$<$ STL\_\-CONTAINER $>$ \&)\label{classCScopedContainer_a0d687d3da054c2d234b5c48ea2beac17}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename STL\_\-CONTAINER$>$ class CScopedContainer$<$ STL\_\-CONTAINER $>$}
+
+Similar to \doxyref{CScopedPtr}{p.}{classCScopedPtr}, except that a STL container of pointers is expected which has to be freed with DeleteContents. \begin{DoxySeeAlso}{See also}
+\doxyref{CScopedPtr}{p.}{classCScopedPtr} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CScopedContainer@{CScopedContainer}!CScopedContainer@{CScopedContainer}}
+\index{CScopedContainer@{CScopedContainer}!CScopedContainer@{CScopedContainer}}
+\subsubsection[{CScopedContainer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename STL\_\-CONTAINER$>$ {\bf CScopedContainer}$<$ STL\_\-CONTAINER $>$::{\bf CScopedContainer} (STL\_\-CONTAINER $\ast$ {\em ptr})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedContainer_aa297eeb123b13f061e66179b6568d083}
+
+
+Constructor. Note that \doxyref{CScopedContainer}{p.}{classCScopedContainer} takes ownership of the array. 
+
+\subsection{Member Function Documentation}
+\index{CScopedContainer@{CScopedContainer}!get@{get}}
+\index{get@{get}!CScopedContainer@{CScopedContainer}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename STL\_\-CONTAINER$>$ STL\_\-CONTAINER$\ast$ {\bf CScopedContainer}$<$ STL\_\-CONTAINER $>$::get () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedContainer_a4a9239d225e0962d27849b8df408ddbc}
+
+
+Returns the actual pointer value. \index{CScopedContainer@{CScopedContainer}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!CScopedContainer@{CScopedContainer}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename STL\_\-CONTAINER$>$ STL\_\-CONTAINER\& {\bf CScopedContainer}$<$ STL\_\-CONTAINER $>$::operator$\ast$ () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCScopedContainer_a4cabe9d9b8349e725dd09f7e80fbb40d}
+
+
+Deference operators. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/ScopedPtr.h\end{DoxyCompactItemize}

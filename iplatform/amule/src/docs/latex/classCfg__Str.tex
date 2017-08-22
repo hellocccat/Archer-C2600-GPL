@@ -1,0 +1,61 @@
+\section{Cfg\_\-Str Class Reference}
+\label{classCfg__Str}\index{Cfg\_\-Str@{Cfg\_\-Str}}
+
+
+Cfg class for wxStrings.  
+Inheritance diagram for Cfg\_\-Str::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classCfg__Str}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cfg\_\-Str} (const wxString \&keyname, wxString \&value, const wxString \&defaultVal=EmptyString)
+\item 
+virtual void {\bf LoadFromFile} (wxConfigBase $\ast$cfg)
+\item 
+virtual void {\bf SaveToFile} (wxConfigBase $\ast$cfg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cfg class for wxStrings. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cfg\_\-Str@{Cfg\_\-Str}!Cfg\_\-Str@{Cfg\_\-Str}}
+\index{Cfg\_\-Str@{Cfg\_\-Str}!Cfg_Str@{Cfg\_\-Str}}
+\subsubsection[{Cfg\_\-Str}]{\setlength{\rightskip}{0pt plus 5cm}Cfg\_\-Str::Cfg\_\-Str (const wxString \& {\em keyname}, \/  wxString \& {\em value}, \/  const wxString \& {\em defaultVal} = {\ttfamily EmptyString})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCfg__Str_a6baa936b5b2f2d7f1769d381a6d65e3a}
+
+
+Constructor. 
+
+\subsection{Member Function Documentation}
+\index{Cfg\_\-Str@{Cfg\_\-Str}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!Cfg_Str@{Cfg\_\-Str}}
+\subsubsection[{LoadFromFile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Cfg\_\-Str::LoadFromFile (wxConfigBase $\ast$ {\em cfg})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Str_aa4e4fc102cd6935ebd24b3b19a3dbff4}
+
+
+Loads the string, using the specified default value. 
+
+Implements {\bf Cfg\_\-Base} \doxyref{}{p.}{classCfg__Base_ae9284946eb2a5bd3158b03a6692e1673}.
+
+Reimplemented in {\bf Cfg\_\-Path} \doxyref{}{p.}{classCfg__Path_ae6f898187d218f6483e88a07a3718407}.
+
+References Cfg\_\-Base::GetKey(), Cfg\_\-Tmpl$<$ wxString $>$::m\_\-default, and Cfg\_\-Tmpl$<$ wxString $>$::m\_\-value.\index{Cfg\_\-Str@{Cfg\_\-Str}!SaveToFile@{SaveToFile}}
+\index{SaveToFile@{SaveToFile}!Cfg_Str@{Cfg\_\-Str}}
+\subsubsection[{SaveToFile}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Cfg\_\-Str::SaveToFile (wxConfigBase $\ast$ {\em cfg})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Str_a1b1daf97ce5f88b0ee79c9f72af721e5}
+
+
+Saves the string to the specified wxConfig object. 
+
+Implements {\bf Cfg\_\-Base} \doxyref{}{p.}{classCfg__Base_af1f3a1732d4288d631d6cc2a0949c194}.
+
+Reimplemented in {\bf Cfg\_\-Path} \doxyref{}{p.}{classCfg__Path_a09f65b495aed4ddc9496c0cdda0ad2bd}.
+
+References Cfg\_\-Base::GetKey(), and Cfg\_\-Tmpl$<$ wxString $>$::m\_\-value.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Preferences.cpp\end{DoxyCompactItemize}

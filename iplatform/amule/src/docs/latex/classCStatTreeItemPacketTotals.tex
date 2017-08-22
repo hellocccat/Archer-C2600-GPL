@@ -1,0 +1,80 @@
+\section{CStatTreeItemPacketTotals Class Reference}
+\label{classCStatTreeItemPacketTotals}\index{CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}}
+
+
+Tree item for counting totals on packet counters.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemPacketTotals::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCStatTreeItemPacketTotals}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemPacketTotals} (const wxString \&label)
+\item 
+void {\bf AddPacketCounter} ({\bf CStatTreeItemPackets} $\ast$counter)\label{classCStatTreeItemPacketTotals_a4f0214b7eb8dd4220addaa57e83df81c}
+
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ {\bf CStatTreeItemPackets} $\ast$ $>$ {\bf m\_\-counters}\label{classCStatTreeItemPacketTotals_a0ea964e062a3489dbca9fe9111f5053e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tree item for counting totals on packet counters. This item sums up a number of packet counters, plus adds its own values. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}!CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}}
+\index{CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}!CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}}
+\subsubsection[{CStatTreeItemPacketTotals}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemPacketTotals::CStatTreeItemPacketTotals (const wxString \& {\em label})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemPacketTotals_a09362681774568c5650a27b953f1978e}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemPackets::CStatTreeItemPackets}{p.}{classCStatTreeItemPackets_acb65c31c5f929e1ee0f23041450ee29c} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemPacketTotals::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemPacketTotals_aaaba27b6c2e8c52940404b9a260d2b99}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemPackets} \doxyref{}{p.}{classCStatTreeItemPackets_ada8cfd5a315e28216febc6df48d09a65}.
+
+References CECTag::AddTag(), CStatTreeItemPackets::m\_\-bytes, m\_\-counters, and CStatTreeItemPackets::m\_\-packets.\index{CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemPacketTotals@{CStatTreeItemPacketTotals}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemPacketTotals::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemPacketTotals_ad655638f42c8479bc422b22c2bfc95c2}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemPackets::GetDisplayString()}{p.}{classCStatTreeItemPackets_ac760a75a10a3ec0f4e88608b4b42449a} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemPackets} \doxyref{}{p.}{classCStatTreeItemPackets_ac760a75a10a3ec0f4e88608b4b42449a}.
+
+References CStatTreeItemPackets::m\_\-bytes, m\_\-counters, CStatTreeItemBase::m\_\-label, and CStatTreeItemPackets::m\_\-packets.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

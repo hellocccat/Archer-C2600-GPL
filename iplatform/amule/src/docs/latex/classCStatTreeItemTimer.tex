@@ -1,0 +1,116 @@
+\section{CStatTreeItemTimer Class Reference}
+\label{classCStatTreeItemTimer}\index{CStatTreeItemTimer@{CStatTreeItemTimer}}
+
+
+Tree item for timer type nodes.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemTimer::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCStatTreeItemTimer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemTimer} (const wxString \&label, unsigned flags=stNone)
+\item 
+void {\bf SetStartTime} (uint64\_\-t value)\label{classCStatTreeItemTimer_a0b6e51c5c4964e4b645579af57a50df1}
+
+\item 
+void {\bf StartTimer} ()\label{classCStatTreeItemTimer_a7d97a610e824c6b0d78ac7a2fd52266e}
+
+\item 
+void {\bf StopTimer} ()\label{classCStatTreeItemTimer_a9a576d2d3b258dcc6363436b4ea0223f}
+
+\item 
+bool {\bf IsRunning} () const \label{classCStatTreeItemTimer_af82a3ecf8a24104af769025fd4b69778}
+
+\item 
+void {\bf ResetTimer} ()\label{classCStatTreeItemTimer_ade253f729d632e2bb19e741332cee16c}
+
+\item 
+uint64\_\-t {\bf GetTimerValue} () const \label{classCStatTreeItemTimer_ac55c174f8feb3b31565b00809d87ad95}
+
+\item 
+{\bf operator uint64\_\-t} () const \label{classCStatTreeItemTimer_a2c3b84ddcf2d9ec45148ddd499a17cce}
+
+\item 
+uint64\_\-t {\bf GetTimerSeconds} () const \label{classCStatTreeItemTimer_a191e8af17235a7d9af630e8d3065bb5f}
+
+\item 
+uint64\_\-t {\bf GetTimerStart} () const \label{classCStatTreeItemTimer_a86ede26edee3ee01ff43edb9680b86a3}
+
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\item 
+virtual bool {\bf IsVisible} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\_\-t {\bf m\_\-value}\label{classCStatTreeItemTimer_aff26f1873583420ac4ac2d4fafc6f0e8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tree item for timer type nodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemTimer@{CStatTreeItemTimer}!CStatTreeItemTimer@{CStatTreeItemTimer}}
+\index{CStatTreeItemTimer@{CStatTreeItemTimer}!CStatTreeItemTimer@{CStatTreeItemTimer}}
+\subsubsection[{CStatTreeItemTimer}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemTimer::CStatTreeItemTimer (const wxString \& {\em label}, \/  unsigned {\em flags} = {\ttfamily stNone})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemTimer_adaca5eb34362aa1f5ebb897b4d94f29b}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemTimer@{CStatTreeItemTimer}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemTimer@{CStatTreeItemTimer}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemTimer::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemTimer_a1ec6bb8e981e70323e90d5cf2acc276d}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+References CECTag::AddTag(), GetTimerSeconds(), and m\_\-value.\index{CStatTreeItemTimer@{CStatTreeItemTimer}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemTimer@{CStatTreeItemTimer}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemTimer::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemTimer_a83826a401956ed7ee2f1103f6ca6e28a}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+References GetTimerSeconds(), CStatTreeItemBase::m\_\-label, and m\_\-value.\index{CStatTreeItemTimer@{CStatTreeItemTimer}!IsVisible@{IsVisible}}
+\index{IsVisible@{IsVisible}!CStatTreeItemTimer@{CStatTreeItemTimer}}
+\subsubsection[{IsVisible}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool CStatTreeItemTimer::IsVisible () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCStatTreeItemTimer_a71d544d9d97753468618df6e0f52351b}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::IsVisible()}{p.}{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038}.
+
+References CStatTreeItemBase::m\_\-flags, m\_\-value, and stHideIfZero.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

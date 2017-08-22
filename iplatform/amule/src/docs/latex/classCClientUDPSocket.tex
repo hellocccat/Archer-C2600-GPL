@@ -1,0 +1,55 @@
+\section{CClientUDPSocket Class Reference}
+\label{classCClientUDPSocket}\index{CClientUDPSocket@{CClientUDPSocket}}
+Inheritance diagram for CClientUDPSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCClientUDPSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CClientUDPSocket} (const {\bf amuleIPV4Address} \&address, const {\bf CProxyData} $\ast$ProxyData=NULL)\label{classCClientUDPSocket_a8f733a0cddf57160bc0ad44cdb7b3255}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnReceive} (int errorCode)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnPacketReceived} (uint32 ip, uint16 port, byte $\ast$buffer, size\_\-t length)
+\item 
+void {\bfseries ProcessPacket} (byte $\ast$packet, int16 size, int8 opcode, uint32 host, uint16 port)\label{classCClientUDPSocket_af734c28deda5784a25ab0495c878ee0b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CClientUDPSocket@{CClientUDPSocket}!OnPacketReceived@{OnPacketReceived}}
+\index{OnPacketReceived@{OnPacketReceived}!CClientUDPSocket@{CClientUDPSocket}}
+\subsubsection[{OnPacketReceived}]{\setlength{\rightskip}{0pt plus 5cm}void CClientUDPSocket::OnPacketReceived (uint32 {\em ip}, \/  uint16 {\em port}, \/  byte $\ast$ {\em buffer}, \/  size\_\-t {\em length})\hspace{0.3cm}{\ttfamily  [private, virtual]}}\label{classCClientUDPSocket_af97a2a0fbb9265d0515ba8e82042cada}
+
+
+This function is called when a packet has been received. 
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]The address from where data was received. \item[{\em buffer}]The data that has been received. \item[{\em length}]The length of the data buffer. \end{DoxyParams}
+
+
+Implements {\bf CMuleUDPSocket} \doxyref{}{p.}{classCMuleUDPSocket_a0edaf41d486ff86538a9325e26fae67b}.\index{CClientUDPSocket@{CClientUDPSocket}!OnReceive@{OnReceive}}
+\index{OnReceive@{OnReceive}!CClientUDPSocket@{CClientUDPSocket}}
+\subsubsection[{OnReceive}]{\setlength{\rightskip}{0pt plus 5cm}void CClientUDPSocket::OnReceive (int {\em errorCode})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCClientUDPSocket_ad619c515065a942b6c36ea4f96e8c6f4}
+
+
+This function is called by aMule when there are data to be received. 
+
+Reimplemented from {\bf CMuleUDPSocket} \doxyref{}{p.}{classCMuleUDPSocket_a6530a886f92a54b03361ec9bd5be6d7a}.
+
+References CMuleUDPSocket::Close().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ClientUDPSocket.h\item 
+src/ClientUDPSocket.cpp\end{DoxyCompactItemize}

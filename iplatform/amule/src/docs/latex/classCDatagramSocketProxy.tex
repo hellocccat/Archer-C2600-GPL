@@ -1,0 +1,50 @@
+\section{CDatagramSocketProxy Class Reference}
+\label{classCDatagramSocketProxy}\index{CDatagramSocketProxy@{CDatagramSocketProxy}}
+Inheritance diagram for CDatagramSocketProxy::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCDatagramSocketProxy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CDatagramSocketProxy} (wxIPaddress \&address, wxSocketFlags flags=wxSOCKET\_\-NONE, const {\bf CProxyData} $\ast$proxyData=NULL)\label{classCDatagramSocketProxy_a3fccac8e839eb63ceccc07ec40a5b9fe}
+
+\item 
+void {\bfseries SetUDPSocketOk} ()\label{classCDatagramSocketProxy_a84e09a7777c9bce96baad3d19ef09265}
+
+\item 
+virtual wxDatagramSocket \& {\bfseries RecvFrom} (wxSockAddress \&addr, void $\ast$buf, wxUint32 nBytes)\label{classCDatagramSocketProxy_aec93fa83e9c6f6990cc513415ae75c5e}
+
+\item 
+virtual wxDatagramSocket \& {\bfseries SendTo} (wxIPaddress \&addr, const void $\ast$buf, wxUint32 nBytes)\label{classCDatagramSocketProxy_a0f8cbd54500ba553c8b6a44c3877283c}
+
+\item 
+virtual wxUint32 {\bfseries LastCount} (void) const \label{classCDatagramSocketProxy_aa537e36245bbff6d75f79e971849bf31}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-udpSocketOk}\label{classCDatagramSocketProxy_a014fa03e74e0f87898c461fbcc0de639}
+
+\item 
+{\bf CProxySocket} {\bfseries m\_\-proxyTCPSocket}\label{classCDatagramSocketProxy_afb7bd27b72280a7a9f7b51b6a1afb1ca}
+
+\item 
+enum UDPOperation {\bfseries m\_\-lastUDPOperation}\label{classCDatagramSocketProxy_a81b4acd7adef278c2f77dcc4a8de972f}
+
+\item 
+unsigned int {\bfseries m\_\-lastUDPOverhead}\label{classCDatagramSocketProxy_aebb1c97cd952c40a608cec464e6443d1}
+
+\item 
+wxMutex {\bfseries m\_\-socketLocker}\label{classCDatagramSocketProxy_a9bc5fede976d08138b293e1c890ab6e3}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Proxy.h\item 
+src/Proxy.cpp\end{DoxyCompactItemize}

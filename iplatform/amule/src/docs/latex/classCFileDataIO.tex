@@ -1,0 +1,297 @@
+\section{CFileDataIO Class Reference}
+\label{classCFileDataIO}\index{CFileDataIO@{CFileDataIO}}
+
+
+This class provides a interface for safe file IO.  
+
+
+{\ttfamily \#include $<$SafeFile.h$>$}Inheritance diagram for CFileDataIO::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCFileDataIO}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$CFileDataIO} ()\label{classCFileDataIO_a626e2cb012fd4db2b7af3981e9921733}
+
+\item 
+virtual uint64 {\bf GetPosition} () const =0\label{classCFileDataIO_a6b153f389378a4f72ac09c56a6a60230}
+
+\item 
+virtual uint64 {\bf GetLength} () const =0\label{classCFileDataIO_a7f54fcd57c88023b87f7e4535becab0a}
+
+\item 
+virtual bool {\bf Eof} () const \label{classCFileDataIO_a0b5a932a7f75ac57670997e45aee0060}
+
+\item 
+virtual uint64 {\bf Seek} (sint64 offset, wxSeekMode from=wxFromStart) const 
+\item 
+virtual void {\bf Read} (void $\ast$buffer, size\_\-t count) const 
+\item 
+virtual void {\bf Write} (const void $\ast$buffer, size\_\-t count)
+\item 
+virtual wxString {\bf ReadString} (bool bOptUTF8, uint8 lenBytes=2, bool SafeRead=false) const 
+\item 
+virtual wxString {\bf ReadOnlyString} (bool bOptUTF8, uint16 length) const 
+\item 
+virtual void {\bf WriteString} (const wxString \&str, EUtf8Str encoding=utf8strNone, uint8 lenBytes=2)
+\item 
+{\bf CTag} $\ast$ {\bfseries ReadTag} (bool bOptACP=false) const \label{classCFileDataIO_ac928bb561dc24f5b0d533d8a3d5dcbb1}
+
+\item 
+void {\bfseries ReadTagPtrList} (TagPtrList $\ast$taglist, bool bOptACP=false) const \label{classCFileDataIO_a30a20542daecccedaa7895801d542c87}
+
+\item 
+void {\bfseries WriteTag} (const {\bf CTag} \&tag)\label{classCFileDataIO_aedb11f781cf9c5794736cfae62737cf3}
+
+\item 
+void {\bfseries WriteTagPtrList} (const TagPtrList \&tagList)\label{classCFileDataIO_aa4e68226393b213bdc4ff1224c00b4bc}
+
+\item 
+uint64 {\bfseries GetIntTagValue} () const \label{classCFileDataIO_a07d0e8260ff4d2a9e6bac82f9cc3ce06}
+
+\item 
+bool {\bfseries IsEmpty} ()\label{classCFileDataIO_affe6e4f4b3bb291929c6fd0a68b0076e}
+
+\item 
+void {\bfseries Append} (const uint8 $\ast$buffer, int n)\label{classCFileDataIO_aba766131c489f08fa02a79b4ccbdb12b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual sint64 {\bf doSeek} (sint64 offset) const =0
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf WriteStringCore} (const char $\ast$str, EUtf8Str encoding, uint8 lenBytes)
+\end{DoxyCompactItemize}
+\label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ \begin{DoxyCompactItemize}
+\item 
+virtual uint8 {\bf ReadUInt8} () const 
+\item 
+virtual uint16 {\bfseries ReadUInt16} () const \label{classCFileDataIO_a5539266e4025c396390ce7f8048bdab2}
+
+\item 
+virtual uint32 {\bfseries ReadUInt32} () const \label{classCFileDataIO_ab6ced46b496d303aa8148f950e0a91d7}
+
+\item 
+virtual uint64 {\bfseries ReadUInt64} () const \label{classCFileDataIO_a2aedb82ec2f5b46296700f5324ff1e9c}
+
+\item 
+virtual {\bf CUInt128} {\bfseries ReadUInt128} () const \label{classCFileDataIO_a4fc3dfba5eab16d70716b86327f9de21}
+
+\item 
+virtual {\bf CMD4Hash} {\bfseries ReadHash} () const \label{classCFileDataIO_ae817430f38a3480ae67da778c69cd6bd}
+
+\item 
+virtual float {\bfseries ReadFloat} () const \label{classCFileDataIO_acd5073b6cb6dd16d8515714897473225}
+
+\item 
+virtual unsigned char $\ast$ {\bfseries ReadBsob} (uint8 $\ast$size) const \label{classCFileDataIO_a88fe093dc71501964993da2dedeb6357}
+
+\item 
+virtual void {\bf WriteUInt8} (uint8 value)
+\item 
+virtual void {\bfseries WriteUInt16} (uint16 value)\label{classCFileDataIO_a8259e0910b87a274202f3c0bb65d30cc}
+
+\item 
+virtual void {\bfseries WriteUInt32} (uint32 value)\label{classCFileDataIO_a08b76e4e173359cf43ca3deee2472e61}
+
+\item 
+virtual void {\bfseries WriteUInt64} (uint64 value)\label{classCFileDataIO_a5513445bed6b6eec31acc91e9a857a12}
+
+\item 
+virtual void {\bfseries WriteUInt128} (const {\bf CUInt128} \&value)\label{classCFileDataIO_a4caddc62fc7dbcc1db2d555f1c20d14b}
+
+\item 
+virtual void {\bfseries WriteHash} (const {\bf CMD4Hash} \&value)\label{classCFileDataIO_a3c3adac8abcaa7ca7fdc9537772aac97}
+
+\item 
+virtual void {\bfseries WriteFloat} (float value)\label{classCFileDataIO_aa88379b92ca41cb5a637843b89693d7a}
+
+\item 
+virtual void {\bfseries WriteBsob} (const unsigned char $\ast$val, uint8 size)\label{classCFileDataIO_aa286c1a7a002db89bdc5e0e66443a8a1}
+
+\item 
+virtual sint64 {\bf doRead} (void $\ast$buffer, size\_\-t count) const =0
+\item 
+virtual sint64 {\bfseries doWrite} (const void $\ast$buffer, size\_\-t count)=0\label{classCFileDataIO_a4f5231a4275363ff2846208447927ae8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a interface for safe file IO. Basic IO operations will either succeed or throw an exception, so that failure cannot be ignored. There are currently 3 types of failures: Read past EOF, errors while reading, and errors while writing.
+
+Beyond basic IO, the interface provides functions for reading and writing a number of simple data-\/types. These are all written and read as little-\/endian in order to allow for communication across platforms.
+
+Note that when empty areas are created, for instance by seeking past the end, then writing, the value of bytes where no data was explicitly written is not specified. 
+
+\subsection{Member Function Documentation}
+\index{CFileDataIO@{CFileDataIO}!doRead@{doRead}}
+\index{doRead@{doRead}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{doRead}]{\setlength{\rightskip}{0pt plus 5cm}virtual sint64 CFileDataIO::doRead (void $\ast$ {\em buffer}, \/  size\_\-t {\em count}) const\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classCFileDataIO_a675efe875eee7c667e2ff1cf01e2c49f}
+
+
+The actual read / write function, as implemented by subclasses. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The buffer to read data into / write data from. \item[{\em count}]The number of bytes to read / written. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read / written or -\/1 in case of errors.
+\end{DoxyReturn}
+Note that the return value must be the actual number of bytes read or written, with the exception that in case of errors, -\/1 may be returned. This is because the return value is used to detect if the operation succeded.
+
+This function should not throw Either of the CSafeIOExceptions, this is done by the CSafeFileIO::Read and the CSafeFileIO::Write functions. 
+
+Implemented in {\bf CFile} \doxyref{}{p.}{classCFile_a196bbaa7720510c1b63c966666b7421f}, and {\bf CMemFile} \doxyref{}{p.}{classCMemFile_a1e0640b805b905fcb917163be91b1b16}.
+
+Referenced by Read().\index{CFileDataIO@{CFileDataIO}!doSeek@{doSeek}}
+\index{doSeek@{doSeek}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{doSeek}]{\setlength{\rightskip}{0pt plus 5cm}virtual sint64 CFileDataIO::doSeek (sint64 {\em offset}) const\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classCFileDataIO_a82c6d4df3c99fd2838b4e3ec6d06f8d3}
+
+
+The actual seek function, as implemented by subclasses. 
+\begin{DoxyParams}{Parameters}
+\item[{\em offset}]The absolute offset to seek to. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting offset.
+\end{DoxyReturn}
+This function should not throw of the CSafeIOExceptions, this is handled by the CSafeFileIO::Seek. At the moment, seeks that fail are considered a fatal error. 
+
+Implemented in {\bf CFile} \doxyref{}{p.}{classCFile_a882df4b2f143b5aa7bfac2504ddadf13}, and {\bf CMemFile} \doxyref{}{p.}{classCMemFile_ae0b38288239fd29aa0b9517f106ebe00}.
+
+Referenced by Seek().\index{CFileDataIO@{CFileDataIO}!Read@{Read}}
+\index{Read@{Read}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}void CFileDataIO::Read (void $\ast$ {\em buffer}, \/  size\_\-t {\em count}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFileDataIO_af64cff2ab84643e7fdcd2b4366fece27}
+
+
+Reads 'count' bytes into 'buffer'. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The target buffer. \item[{\em count}]The number of bytes to read.\end{DoxyParams}
+Note that Read will read the specified number of bytes unless this would read past the end of the file. In that case, a \doxyref{CEOFException}{p.}{structCEOFException} is thrown and the position and target buffer is left unchanged.
+
+However, it is also possible that the read will fail due to IO errors (bad hardware, ect), in which case an \doxyref{CIOFailureException}{p.}{structCIOFailureException} will be thrown. 
+
+References doRead(), and Eof().
+
+Referenced by CAICHSyncTask::ConvertToKnown2ToKnown264(), CFileAutoClose::ReadAt(), ReadOnlyString(), and ReadUInt8().\index{CFileDataIO@{CFileDataIO}!ReadOnlyString@{ReadOnlyString}}
+\index{ReadOnlyString@{ReadOnlyString}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{ReadOnlyString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CFileDataIO::ReadOnlyString (bool {\em bOptUTF8}, \/  uint16 {\em length}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFileDataIO_a0b054e41b6cac3b1cbfe7957d9da225b}
+
+
+Reads a string from the file, where the length is specified directly. 
+\begin{DoxyParams}{Parameters}
+\item[{\em bOptUTF8}]Specifies if the string is UTF8 encoded. \item[{\em length}]The length of the string. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting text-\/string.
+\end{DoxyReturn}
+This function is typically used when the text-\/fields length is not stored as an integer-\/field in front of the text-\/field. 
+
+References Read().
+
+Referenced by ReadString().\index{CFileDataIO@{CFileDataIO}!ReadString@{ReadString}}
+\index{ReadString@{ReadString}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{ReadString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CFileDataIO::ReadString (bool {\em bOptUTF8}, \/  uint8 {\em lenBytes} = {\ttfamily 2}, \/  bool {\em SafeRead} = {\ttfamily false}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFileDataIO_a6b7a23115528a2fa4893cd3d52178c96}
+
+
+Reads a string from the file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em bOptUTF8}]Specifies if the string is UTF8 encoded. \item[{\em lenBytes}]The number of bytes used to store the string length. \item[{\em SafeRead}]Avoids throwing \doxyref{CEOFException}{p.}{structCEOFException}, see below. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting text-\/string.
+\end{DoxyReturn}
+Note that when SafeRead is set to true, CSafeFileIO will crop the length read from the lenght-\/field (see lenBytes), so that at most \doxyref{GetLength()}{p.}{classCFileDataIO_a7f54fcd57c88023b87f7e4535becab0a} -\/ \doxyref{GetPosition()}{p.}{classCFileDataIO_a6b153f389378a4f72ac09c56a6a60230} bytes are read.
+
+\begin{DoxySeeAlso}{See also}
+CSafeFileIO::Read 
+\end{DoxySeeAlso}
+
+
+References GetLength(), GetPosition(), and ReadOnlyString().\index{CFileDataIO@{CFileDataIO}!ReadUInt8@{ReadUInt8}}
+\index{ReadUInt8@{ReadUInt8}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{ReadUInt8}]{\setlength{\rightskip}{0pt plus 5cm}uint8 CFileDataIO::ReadUInt8 () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFileDataIO_a5208221bab44c2615a72e7609d9aacac}
+
+
+Reads the given type from the file, stored as little-\/endian. \begin{DoxySeeAlso}{See also}
+CSafeFileIO::Read 
+\end{DoxySeeAlso}
+
+
+References Read().
+
+Referenced by CPreferences::CPreferences(), CAICHSyncTask::Entry(), and CSearchList::ProcessSharedFileList().\index{CFileDataIO@{CFileDataIO}!Seek@{Seek}}
+\index{Seek@{Seek}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{Seek}]{\setlength{\rightskip}{0pt plus 5cm}uint64 CFileDataIO::Seek (sint64 {\em offset}, \/  wxSeekMode {\em from} = {\ttfamily wxFromStart}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFileDataIO_a220fae57611313cc14d63860c74ff449}
+
+
+Changes the file position. Note that seeking to an negative position is an illegal operation.
+
+\begin{DoxySeeAlso}{See also}
+wxFile::Seek 
+\end{DoxySeeAlso}
+
+
+References doSeek(), GetLength(), and GetPosition().
+
+Referenced by CAllocateFileTask::Entry(), CAICHSyncTask::Entry(), CSearchList::KademliaSearchKeyword(), CDownloadQueue::OnHostnameResolved(), CFileAutoClose::ReadAt(), and CFileAutoClose::WriteAt().\index{CFileDataIO@{CFileDataIO}!Write@{Write}}
+\index{Write@{Write}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{Write}]{\setlength{\rightskip}{0pt plus 5cm}void CFileDataIO::Write (const void $\ast$ {\em buffer}, \/  size\_\-t {\em count})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFileDataIO_a4ea42d721c52cb8df7679f27e899a2e3}
+
+
+Write 'count' bytes from 'buffer' into the file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The source-\/data buffer. \item[{\em count}]The number of bytes to write.\end{DoxyParams}
+Note that Write will throw a \doxyref{CIOFailureException}{p.}{structCIOFailureException} if it fails to write the specified number of bytes, which can be caused by hardware failures, lack of free space, etc. 
+
+Referenced by CAICHSyncTask::ConvertToKnown2ToKnown264(), CAllocateFileTask::Entry(), CFileAutoClose::WriteAt(), WriteStringCore(), and WriteUInt8().\index{CFileDataIO@{CFileDataIO}!WriteString@{WriteString}}
+\index{WriteString@{WriteString}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{WriteString}]{\setlength{\rightskip}{0pt plus 5cm}void CFileDataIO::WriteString (const wxString \& {\em str}, \/  EUtf8Str {\em encoding} = {\ttfamily utf8strNone}, \/  uint8 {\em lenBytes} = {\ttfamily 2})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFileDataIO_a9480e3cfad2ffcbe57670b6d00091ff2}
+
+
+Writes a text-\/string to the file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The string to be written. \item[{\em encoding}]The text-\/ecoding, see EUtf8Str. \item[{\em lenBytes}]The number of bytes used to store the string length.\end{DoxyParams}
+Valid values for the 'lenBytes' parameters is 0 bytes (no length field), 2 bytes and 4 bytes.
+
+\begin{DoxySeeAlso}{See also}
+CSafeFileIO::Write 
+\end{DoxySeeAlso}
+
+
+References WriteStringCore().
+
+Referenced by CUpDownClient::SendChatMessage().\index{CFileDataIO@{CFileDataIO}!WriteStringCore@{WriteStringCore}}
+\index{WriteStringCore@{WriteStringCore}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{WriteStringCore}]{\setlength{\rightskip}{0pt plus 5cm}void CFileDataIO::WriteStringCore (const char $\ast$ {\em str}, \/  EUtf8Str {\em encoding}, \/  uint8 {\em lenBytes})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCFileDataIO_aa75c6ddae8a2b53e75f4c0bdbdbeb205}
+
+
+Helper-\/function that does the actual writing of the string. 
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The string to be written. \item[{\em encoding}]The encoding of the string. \item[{\em lenBytes}]The number of bytes used to store the string length. \end{DoxyParams}
+
+
+References Write().
+
+Referenced by WriteString().\index{CFileDataIO@{CFileDataIO}!WriteUInt8@{WriteUInt8}}
+\index{WriteUInt8@{WriteUInt8}!CFileDataIO@{CFileDataIO}}
+\subsubsection[{WriteUInt8}]{\setlength{\rightskip}{0pt plus 5cm}void CFileDataIO::WriteUInt8 (uint8 {\em value})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCFileDataIO_ab1e35f980795d5ea66c358a4a43872d8}
+
+
+Writes a value of the given type to the file, storing it as little-\/endian. \begin{DoxySeeAlso}{See also}
+CSafeFileIO::Write 
+\end{DoxySeeAlso}
+
+
+References Write().
+
+Referenced by CDownloadQueue::AddSearchToDownload(), CAICHSyncTask::ConvertToKnown2ToKnown264(), CAllocateFileTask::Entry(), CAICHSyncTask::Entry(), and CDownloadQueue::OnHostnameResolved().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SafeFile.h\item 
+src/SafeFile.cpp\end{DoxyCompactItemize}

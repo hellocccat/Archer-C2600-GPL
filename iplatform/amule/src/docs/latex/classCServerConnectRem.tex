@@ -1,0 +1,56 @@
+\section{CServerConnectRem Class Reference}
+\label{classCServerConnectRem}\index{CServerConnectRem@{CServerConnectRem}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries HandlePacket} (const {\bf CECPacket} $\ast$packet)\label{classCServerConnectRem_a74f7ff82073d334c7b1ba6b702c1b7ae}
+
+\item 
+{\bfseries CServerConnectRem} ({\bf CRemoteConnect} $\ast$)\label{classCServerConnectRem_aac3719dd4d038b3830fe72043238cf80}
+
+\item 
+bool {\bfseries IsConnected} ()\label{classCServerConnectRem_a76e72705ffc592ce6eeaa830d56fb7c6}
+
+\item 
+bool {\bfseries IsConnecting} ()\label{classCServerConnectRem_ab8370969770473b3d4e4f28638a6c102}
+
+\item 
+bool {\bfseries IsLowID} ()\label{classCServerConnectRem_a39c8fc6a5df3dfa17490c2735d5e14f9}
+
+\item 
+uint32 {\bfseries GetClientID} ()\label{classCServerConnectRem_adaab42c7b1dd30390a5c5bd3efc3bc50}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetCurrentServer} ()\label{classCServerConnectRem_a7fc4affb22de12f3ea726c39a97d846b}
+
+\item 
+void {\bfseries ConnectToServer} ({\bf CServer} $\ast$server)\label{classCServerConnectRem_abf74551a27335f7b3005b08d4ab3026c}
+
+\item 
+void {\bfseries ConnectToAnyServer} ()\label{classCServerConnectRem_ae4831680a727cf87a3415b421d609510}
+
+\item 
+void {\bfseries StopConnectionTry} ()\label{classCServerConnectRem_a16d02765d8a13c044152b36748b6eee8}
+
+\item 
+void {\bfseries Disconnect} ()\label{classCServerConnectRem_aa4d12b42602c794854fc4422d34620c7}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CRemoteConnect} $\ast$ {\bfseries m\_\-Conn}\label{classCServerConnectRem_a28337fe2c83331acc6ec79bb0b9b8cec}
+
+\item 
+uint32 {\bfseries m\_\-ID}\label{classCServerConnectRem_acc65f613c12fc1621873fef03299774a}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries m\_\-CurrServer}\label{classCServerConnectRem_af1401d3bc53ee1f584f4626943071262}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,83 @@
+\section{CStatTreeItemTotalClients Class Reference}
+\label{classCStatTreeItemTotalClients}\index{CStatTreeItemTotalClients@{CStatTreeItemTotalClients}}
+
+
+Special item for total client count.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemTotalClients::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCStatTreeItemTotalClients}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemTotalClients} (const wxString \&label, const {\bf CStatTreeItemCounter} $\ast$known, const {\bf CStatTreeItemCounter} $\ast$unknown)
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CStatTreeItemCounter} $\ast$ {\bf m\_\-known}\label{classCStatTreeItemTotalClients_a474837d530d5e5571a539e444d2c7cbc}
+
+\item 
+const {\bf CStatTreeItemCounter} $\ast$ {\bf m\_\-unknown}\label{classCStatTreeItemTotalClients_a59bebedfcf073356c1441aa411032a44}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Special item for total client count. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemTotalClients@{CStatTreeItemTotalClients}!CStatTreeItemTotalClients@{CStatTreeItemTotalClients}}
+\index{CStatTreeItemTotalClients@{CStatTreeItemTotalClients}!CStatTreeItemTotalClients@{CStatTreeItemTotalClients}}
+\subsubsection[{CStatTreeItemTotalClients}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemTotalClients::CStatTreeItemTotalClients (const wxString \& {\em label}, \/  const {\bf CStatTreeItemCounter} $\ast$ {\em known}, \/  const {\bf CStatTreeItemCounter} $\ast$ {\em unknown})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemTotalClients_a964d056d6469e96b4b3ed00574fefd1a}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em known}]Counter that counts known clients. \item[{\em unknown}]Counter that counts unknown clients. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemTotalClients@{CStatTreeItemTotalClients}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemTotalClients@{CStatTreeItemTotalClients}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemTotalClients::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemTotalClients_aec507698f1a9bd14fce48d0a19379e2f}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+References CECTag::AddTag(), CStatTreeItemCounterTmpl$<$ \_\-Tp $>$::GetValue(), m\_\-known, and m\_\-unknown.\index{CStatTreeItemTotalClients@{CStatTreeItemTotalClients}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemTotalClients@{CStatTreeItemTotalClients}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemTotalClients::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemTotalClients_acb4b4fcd593ccb622988472769842c68}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+References CStatTreeItemCounterTmpl$<$ \_\-Tp $>$::GetValue(), m\_\-known, CStatTreeItemBase::m\_\-label, and m\_\-unknown.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

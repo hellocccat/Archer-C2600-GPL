@@ -1,0 +1,35 @@
+\section{CEncryptedDatagramSocket Class Reference}
+\label{classCEncryptedDatagramSocket}\index{CEncryptedDatagramSocket@{CEncryptedDatagramSocket}}
+Inheritance diagram for CEncryptedDatagramSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCEncryptedDatagramSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CEncryptedDatagramSocket} (wxIPaddress \&address, wxSocketFlags flags=wxSOCKET\_\-NONE, const {\bf CProxyData} $\ast$proxyData=NULL)\label{classCEncryptedDatagramSocket_ac2a64c1e7892fa0130063ccb73db2bae}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries DecryptReceivedClient} (uint8\_\-t $\ast$bufIn, int bufLen, uint8\_\-t $\ast$$\ast$bufOut, uint32\_\-t ip, uint32\_\-t $\ast$receiverVerifyKey, uint32\_\-t $\ast$senderVerifyKey)\label{classCEncryptedDatagramSocket_ae1ab9608ef0857966fe94f15342a5ec5}
+
+\item 
+static int {\bfseries EncryptSendClient} (uint8\_\-t $\ast$$\ast$buf, int bufLen, const uint8\_\-t $\ast$clientHashOrKadID, bool kad, uint32\_\-t receiverVerifyKey, uint32\_\-t senderVerifyKey)\label{classCEncryptedDatagramSocket_a7ea93684881a27b081052b2d656e7d38}
+
+\item 
+static int {\bfseries DecryptReceivedServer} (uint8\_\-t $\ast$pbyBufIn, int nBufLen, uint8\_\-t $\ast$$\ast$ppbyBufOut, uint32\_\-t dwBaseKey, uint32\_\-t dbgIP)\label{classCEncryptedDatagramSocket_a4908ff619fccb7813a474abd44db549b}
+
+\item 
+static int {\bfseries EncryptSendServer} (uint8\_\-t $\ast$$\ast$ppbyBuf, int nBufLen, uint32\_\-t dwBaseKey)\label{classCEncryptedDatagramSocket_a9309b8945ca52bfdbb145fc0429ff631}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/EncryptedDatagramSocket.h\item 
+src/EncryptedDatagramSocket.cpp\end{DoxyCompactItemize}

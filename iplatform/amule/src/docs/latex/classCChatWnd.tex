@@ -1,0 +1,83 @@
+\section{CChatWnd Class Reference}
+\label{classCChatWnd}\index{CChatWnd@{CChatWnd}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CChatWnd} (wxWindow $\ast$pParent=NULL)\label{classCChatWnd_a2337968d4e06c289e984dbaaa5f69880}
+
+\item 
+void {\bfseries StartSession} ({\bf CFriend} $\ast$friend\_\-client, bool setfocus=true)\label{classCChatWnd_a8bd415e79caea5b41924bb215fcd03d9}
+
+\item 
+void {\bfseries UpdateFriend} ({\bf CFriend} $\ast$toupdate)\label{classCChatWnd_ac51b9767a046e9f759cbe1dd49b086b5}
+
+\item 
+void {\bfseries RemoveFriend} ({\bf CFriend} $\ast$todel)\label{classCChatWnd_aa6dbb9bfa2a02d924e564e3900830405}
+
+\item 
+void {\bfseries ProcessMessage} (uint64 sender, const wxString \&message)\label{classCChatWnd_af5dffcd63b046268364c502ad238d4c1}
+
+\item 
+void {\bfseries ConnectionResult} (bool success, const wxString \&message, uint64 id)\label{classCChatWnd_a25a63e04318b0e2360d5d9474f231b63}
+
+\item 
+void {\bfseries SendMessage} (const wxString \&message, const wxString \&client\_\-name=wxEmptyString, uint64 to\_\-id=0)\label{classCChatWnd_acb19602aaa430813d4c3cbb6c6ca9fd5}
+
+\item 
+bool {\bfseries IsIdValid} (uint64 id)\label{classCChatWnd_a1396ee881e588f0fdb050edaa4aa70ad}
+
+\item 
+void {\bfseries ShowCaptchaResult} (uint64 id, bool ok)\label{classCChatWnd_a16da9d597dddcef876c87de0dd262ec3}
+
+\item 
+void {\bfseries EndSession} (uint64 id)\label{classCChatWnd_a150bae636e8a3c4c3f3d82087c9e1d78}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf OnNMRclickChatTab} (wxMouseEvent \&evt)\label{classCChatWnd_ab540f7cfcdedd11f309222f84593612c}
+
+\item 
+void {\bf OnPopupClose} (wxCommandEvent \&evt)\label{classCChatWnd_a70dc6a93351201df3604629717323608}
+
+\item 
+void {\bf OnPopupCloseAll} (wxCommandEvent \&evt)\label{classCChatWnd_a985372ce93f5c50f79d90c763f8d0dbb}
+
+\item 
+void {\bf OnPopupCloseOthers} (wxCommandEvent \&evt)\label{classCChatWnd_afaf46437b9d5850296d0c5ec917e6da8}
+
+\item 
+void {\bf OnAddFriend} (wxCommandEvent \&evt)\label{classCChatWnd_ad083760d0111ee137027e56d203a8c0c}
+
+\item 
+void {\bfseries OnBnClickedCsend} (wxCommandEvent \&evt)\label{classCChatWnd_a190c0ebf56abda7b8738af93de9c7f89}
+
+\item 
+void {\bfseries OnBnClickedCclose} (wxCommandEvent \&evt)\label{classCChatWnd_ae1148a27734146f3773665b41b856ee6}
+
+\item 
+void {\bfseries OnAllPagesClosed} (wxNotebookEvent \&evt)\label{classCChatWnd_ae868566f63f92b0ed26ae1c9af1dd638}
+
+\item 
+void {\bfseries CheckNewButtonsState} ()\label{classCChatWnd_a8988c0370f68ddf715f9801978b49458}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxMenu $\ast$ {\bf m\_\-menu}\label{classCChatWnd_a39f0018095135cf2b21e800d0af35728}
+
+\item 
+{\bf CFriendListCtrl} $\ast$ {\bf friendlistctrl}\label{classCChatWnd_a422d0a07fa60099efd91cee72530250a}
+
+\item 
+{\bf CChatSelector} $\ast$ {\bf chatselector}\label{classCChatWnd_a8b692e6646ab84f97051f85218fcb8c9}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ChatWnd.h\item 
+src/ChatWnd.cpp\end{DoxyCompactItemize}

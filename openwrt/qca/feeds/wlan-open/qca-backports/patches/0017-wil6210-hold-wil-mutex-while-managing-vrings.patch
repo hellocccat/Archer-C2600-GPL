@@ -1,0 +1,70 @@
+--- a/drivers/net/wireless/ath/wil6210/main.c
++++ b/drivers/net/wireless/ath/wil6210/main.c
+@@ -468,20 +468,26 @@ void wil_bcast_fini(struct wil6210_priv *wil)
+ 
+ static void wil_connect_worker(struct work_struct *work)
+ {
+-	int rc;
++	int rc, cid, ringid;
+ 	struct wil6210_priv *wil = container_of(work, struct wil6210_priv,
+ 						connect_worker);
+ 	struct net_device *ndev = wil_to_ndev(wil);
+ 
+-	int cid = wil->pending_connect_cid;
+-	int ringid = wil_find_free_vring(wil);
++	mutex_lock(&wil->mutex);
+ 
++	cid = wil->pending_connect_cid;
+ 	if (cid < 0) {
+ 		wil_err(wil, "No connection pending\n");
+-		return;
++		goto out;
++	}
++	ringid = wil_find_free_vring(wil);
++	if (ringid < 0) {
++		wil_err(wil, "No free vring found\n");
++		goto out;
+ 	}
+ 
+-	wil_dbg_wmi(wil, "Configure for connection CID %d\n", cid);
++	wil_dbg_wmi(wil, "Configure for connection CID %d vring %d\n",
++		    cid, ringid);
+ 
+ 	rc = wil_vring_init_tx(wil, ringid, 1 << tx_ring_order, cid, 0);
+ 	wil->pending_connect_cid = -1;
+@@ -491,6 +497,8 @@ static void wil_connect_worker(struct work_struct *work)
+ 	} else {
+ 		wil->sta[cid].status = wil_sta_unused;
+ 	}
++out:
++	mutex_unlock(&wil->mutex);
+ }
+ 
+ int wil_priv_init(struct wil6210_priv *wil)
+--- a/drivers/net/wireless/ath/wil6210/txrx.c
++++ b/drivers/net/wireless/ath/wil6210/txrx.c
+@@ -163,6 +163,7 @@ static void wil_vring_free(struct wil6210_priv *wil, struct vring *vring,
+ 	struct device *dev = wil_to_dev(wil);
+ 	size_t sz = vring->size * sizeof(vring->va[0]);
+ 
++	WARN_ON(!mutex_is_locked(&wil->mutex));
+ 	if (tx) {
+ 		int vring_index = vring - wil->vring_tx;
+ 
+@@ -725,6 +726,7 @@ int wil_vring_init_tx(struct wil6210_priv *wil, int id, int size,
+ 
+ 	wil_dbg_misc(wil, "%s() max_mpdu_size %d\n", __func__,
+ 		     cmd.vring_cfg.tx_sw_ring.max_mpdu_size);
++	WARN_ON(!mutex_is_locked(&wil->mutex));
+ 
+ 	if (vring->va) {
+ 		wil_err(wil, "Tx ring [%d] already allocated\n", id);
+@@ -797,6 +799,7 @@ int wil_vring_init_bcast(struct wil6210_priv *wil, int id, int size)
+ 
+ 	wil_dbg_misc(wil, "%s() max_mpdu_size %d\n", __func__,
+ 		     cmd.vring_cfg.tx_sw_ring.max_mpdu_size);
++	WARN_ON(!mutex_is_locked(&wil->mutex));
+ 
+ 	if (vring->va) {
+ 		wil_err(wil, "Tx ring [%d] already allocated\n", id);
+

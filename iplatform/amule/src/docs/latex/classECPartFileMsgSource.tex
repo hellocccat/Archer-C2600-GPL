@@ -1,0 +1,43 @@
+\section{ECPartFileMsgSource Class Reference}
+\label{classECPartFileMsgSource}\index{ECPartFileMsgSource@{ECPartFileMsgSource}}
+Inheritance diagram for ECPartFileMsgSource::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classECPartFileMsgSource}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf PARTFILE\_\-STATUS}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries SetDirty} ({\bf CPartFile} $\ast$file)\label{classECPartFileMsgSource_af793348213ab29dec2ca3f0dd1f418fa}
+
+\item 
+void {\bfseries SetNew} ({\bf CPartFile} $\ast$file)\label{classECPartFileMsgSource_a2118be5dac39d17336a0f80163a01ce2}
+
+\item 
+void {\bfseries SetCompleted} ({\bf CPartFile} $\ast$file)\label{classECPartFileMsgSource_a7280772bdc66a7cefebc7672a713ebd5}
+
+\item 
+void {\bfseries SetRemoved} ({\bf CPartFile} $\ast$file)\label{classECPartFileMsgSource_a60807eb741d8387d23e8efa6b349df27}
+
+\item 
+virtual {\bf CECPacket} $\ast$ {\bfseries GetNextPacket} ()\label{classECPartFileMsgSource_aded2303bb415a5d99c7b701e2a2f1bb5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ {\bf CMD4Hash}, {\bf PARTFILE\_\-STATUS} $>$ {\bfseries m\_\-dirty\_\-status}\label{classECPartFileMsgSource_a5194b53c05517ff993b4f377a6f426c6}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConn.h\item 
+src/ExternalConn.cpp\end{DoxyCompactItemize}

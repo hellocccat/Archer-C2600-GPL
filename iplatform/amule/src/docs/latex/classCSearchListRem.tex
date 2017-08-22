@@ -1,0 +1,71 @@
+\section{CSearchListRem Class Reference}
+\label{classCSearchListRem}\index{CSearchListRem@{CSearchListRem}}
+Inheritance diagram for CSearchListRem::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCSearchListRem}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ long, CSearchResultList $>$ {\bfseries ResultMap}\label{classCSearchListRem_a4770f25992f9ddf320778eb4e8fce478}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CSearchListRem} ({\bf CRemoteConnect} $\ast$)\label{classCSearchListRem_a47b12b4fd3c713c3ec3141c26679cf3d}
+
+\item 
+const CSearchResultList \& {\bfseries GetSearchResults} (long nSearchID)\label{classCSearchListRem_a56596aa32e715a34deb0a212298e5c8f}
+
+\item 
+void {\bfseries RemoveResults} (long nSearchID)\label{classCSearchListRem_a6eecf5c5771c3476b610018812b40caf}
+
+\item 
+const CSearchResultList \& {\bfseries GetSearchResults} (long nSearchID) const \label{classCSearchListRem_aee755e35e394b73dc5838ba55615eda5}
+
+\item 
+wxString {\bfseries StartNewSearch} (uint32 $\ast$nSearchID, SearchType search\_\-type, const {\bf CSearchList::CSearchParams} \&params)\label{classCSearchListRem_ab96de8e3df92137ce2715f7a9efe78ed}
+
+\item 
+void {\bfseries StopSearch} (bool globalOnly=false)\label{classCSearchListRem_a542b7cf810a056008263a5ca988d02d7}
+
+\item 
+{\bf CSearchFile} $\ast$ {\bfseries CreateItem} ({\bf CEC\_\-SearchFile\_\-Tag} $\ast$)\label{classCSearchListRem_ae1fdcf89e9a9cb170798c172e6eae87e}
+
+\item 
+void {\bfseries DeleteItem} ({\bf CSearchFile} $\ast$)\label{classCSearchListRem_a3539e928e3cde6a519d4b491d535d570}
+
+\item 
+uint32 {\bfseries GetItemID} ({\bf CSearchFile} $\ast$)\label{classCSearchListRem_a72b64d1f2309e9bb2eadbadd5bac4549}
+
+\item 
+void {\bfseries ProcessItemUpdate} ({\bf CEC\_\-SearchFile\_\-Tag} $\ast$, {\bf CSearchFile} $\ast$)\label{classCSearchListRem_a073c7b5765ffa532b7894b97ae5de414}
+
+\item 
+bool {\bfseries Phase1Done} (const {\bf CECPacket} $\ast$)\label{classCSearchListRem_a720c07681b147828d12250328bbd8e93}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries m\_\-curr\_\-search}\label{classCSearchListRem_aae7fc60ba5fbe284fae447ade49f2498}
+
+\item 
+ResultMap {\bfseries m\_\-results}\label{classCSearchListRem_ac2e875e02db3b6081181fc67eb2625e8}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries HandlePacket} (const {\bf CECPacket} $\ast$)\label{classCSearchListRem_a4c3cf760a1b07e0a5707b3a61e99ce81}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

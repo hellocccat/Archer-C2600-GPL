@@ -1,0 +1,62 @@
+\section{MuleNotify::CMuleNotiferBase Class Reference}
+\label{classMuleNotify_1_1CMuleNotiferBase}\index{MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}}
+
+
+The base class of the functions.  
+
+
+{\ttfamily \#include $<$GuiEvents.h$>$}Inheritance diagram for MuleNotify::CMuleNotiferBase::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.838323cm]{classMuleNotify_1_1CMuleNotiferBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleNotiferBase} ()
+\item 
+virtual {\bf $\sim$CMuleNotiferBase} ()
+\item 
+virtual void {\bf Notify} () const =0
+\item 
+virtual {\bf CMuleNotiferBase} $\ast$ {\bf Clone} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class of the functions. This class allows the the notification call to be executed without knowing the exact specifics of a given functor. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}!CMuleNotiferBase@{CMuleNotiferBase}}
+\index{CMuleNotiferBase@{CMuleNotiferBase}!MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}}
+\subsubsection[{CMuleNotiferBase}]{\setlength{\rightskip}{0pt plus 5cm}MuleNotify::CMuleNotiferBase::CMuleNotiferBase ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classMuleNotify_1_1CMuleNotiferBase_a938dcd63182c21da62605af4980ddd46}
+
+
+The constructor does nothing. \index{MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}!$\sim$CMuleNotiferBase@{$\sim$CMuleNotiferBase}}
+\index{$\sim$CMuleNotiferBase@{$\sim$CMuleNotiferBase}!MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}}
+\subsubsection[{$\sim$CMuleNotiferBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual MuleNotify::CMuleNotiferBase::$\sim$CMuleNotiferBase ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classMuleNotify_1_1CMuleNotiferBase_a6280e5866e3d9c9fae6307d03486dc11}
+
+
+The destructor is virtual since we will be deleting pointers to this type. 
+
+\subsection{Member Function Documentation}
+\index{MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}!Clone@{Clone}}
+\index{Clone@{Clone}!MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf CMuleNotiferBase}$\ast$ MuleNotify::CMuleNotiferBase::Clone () const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classMuleNotify_1_1CMuleNotiferBase_a1635226025e567acb8625ab2748c7f48}
+
+
+Returns a copy of the functor (function + arguments). 
+
+Implemented in {\bf MuleNotify::CMuleNotifier0} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotifier0_a6ce5403552a8c1a4fb14759e6ff3c676}, {\bf MuleNotify::CMuleNotifier1$<$ ARG $>$} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotifier1_a4f3ea79fa00c0cb2633fe263a5f27c95}, {\bf MuleNotify::CMuleNotifier2$<$ ARG\_\-1, ARG\_\-2 $>$} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotifier2_a6d0917f615962bbafafe207bddfcaf24}, and {\bf MuleNotify::CMuleNotifier3$<$ ARG\_\-1, ARG\_\-2, ARG\_\-3 $>$} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotifier3_a968dfaa60bd8e298bf254a0588ae9e8a}.\index{MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}!Notify@{Notify}}
+\index{Notify@{Notify}!MuleNotify::CMuleNotiferBase@{MuleNotify::CMuleNotiferBase}}
+\subsubsection[{Notify}]{\setlength{\rightskip}{0pt plus 5cm}virtual void MuleNotify::CMuleNotiferBase::Notify () const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classMuleNotify_1_1CMuleNotiferBase_a9f308e62a164a742dc1daab6792b0fd2}
+
+
+Executes the actual notification call. 
+
+Implemented in {\bf MuleNotify::CMuleNotifier0} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotifier0_ae374bb32914a4251d2732ce8a155278f}, {\bf MuleNotify::CMuleNotifier1$<$ ARG $>$} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotifier1_aab44518c6446356c60dbd811608889af}, {\bf MuleNotify::CMuleNotifier2$<$ ARG\_\-1, ARG\_\-2 $>$} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotifier2_aadf62a1fe8e4a8d93907c9e444d10276}, and {\bf MuleNotify::CMuleNotifier3$<$ ARG\_\-1, ARG\_\-2, ARG\_\-3 $>$} \doxyref{}{p.}{classMuleNotify_1_1CMuleNotifier3_afba743f339520b880bb7ea395898fa25}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/GuiEvents.h\end{DoxyCompactItemize}

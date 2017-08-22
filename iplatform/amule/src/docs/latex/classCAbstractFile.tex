@@ -1,0 +1,131 @@
+\section{CAbstractFile Class Reference}
+\label{classCAbstractFile}\index{CAbstractFile@{CAbstractFile}}
+Inheritance diagram for CAbstractFile::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCAbstractFile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CAbstractFile} (const {\bf CAbstractFile} \&other)\label{classCAbstractFile_a55e9b604269513f6d1f0c7f73448ccd1}
+
+\item 
+const {\bf CPath} \& {\bfseries GetFileName} () const \label{classCAbstractFile_ab4a3816fbc58772b336b9afba19f5bcd}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetFileHash} () const \label{classCAbstractFile_a0de068056cbc128357274cd442ff79ee}
+
+\item 
+uint64 {\bfseries GetFileSize} () const \label{classCAbstractFile_aa065454e627cf2b89ce01e69a77cb7d6}
+
+\item 
+bool {\bfseries IsLargeFile} () const \label{classCAbstractFile_af472a69a9b941d6f1739a56d70237c51}
+
+\item 
+virtual void {\bfseries SetFileSize} (uint64 nFileSize)\label{classCAbstractFile_a66a5f89ef73694ad98a50ea3a43b2f07}
+
+\item 
+virtual void {\bfseries SetFileName} (const {\bf CPath} \&filename)\label{classCAbstractFile_a28e4974cb0b6a22795bc6b12b13d3511}
+
+\item 
+uint32 {\bfseries GetIntTagValue} (uint8 tagname) const \label{classCAbstractFile_ace45d7bc66d6b9d8d100fb131546ce8a}
+
+\item 
+uint32 {\bfseries GetIntTagValue} (const wxString \&tagname) const \label{classCAbstractFile_af693a8b41fbc7486b174810e5764e83e}
+
+\item 
+bool {\bfseries GetIntTagValue} (uint8 tagname, uint32 \&ruValue) const \label{classCAbstractFile_a79bd79068e0c3f8a315798ac12f6aa5e}
+
+\item 
+const wxString \& {\bfseries GetStrTagValue} (uint8 tagname) const \label{classCAbstractFile_af6c9d189d560bf19b286abbaf1e6a86b}
+
+\item 
+const wxString \& {\bfseries GetStrTagValue} (const wxString \&tagname) const \label{classCAbstractFile_ac9ee7669cfb8fc31598fa55fad6708dc}
+
+\item 
+const {\bf CTag} $\ast$ {\bfseries GetTag} (const wxString \&tagname) const \label{classCAbstractFile_a26d6c728ee7c01fa49ed4aba70f3c5a0}
+
+\item 
+const {\bf CTag} $\ast$ {\bfseries GetTag} (const wxString \&tagname, uint8 tagtype) const \label{classCAbstractFile_a90fd9b7aa94441089cc6e7cf05d97085}
+
+\item 
+const {\bf CTag} $\ast$ {\bfseries GetTag} (uint8 tagname) const \label{classCAbstractFile_ae28e3879266e0b31251fc79ec1d390c9}
+
+\item 
+const {\bf CTag} $\ast$ {\bfseries GetTag} (uint8 tagname, uint8 tagtype) const \label{classCAbstractFile_ada8c255300680a581ee8f3c89d68fc53}
+
+\item 
+void {\bfseries AddTagUnique} (const {\bf CTag} \&pTag)\label{classCAbstractFile_a970506374f1b3d4c5a17db49dc8138ad}
+
+\item 
+const ArrayOfCTag \& {\bfseries GetTags} () const \label{classCAbstractFile_a8f119531ecc8a3221c4f64dce259a944}
+
+\item 
+void {\bfseries AddNote} ({\bf Kademlia::CEntry} $\ast$pEntry)\label{classCAbstractFile_ab5d88b479ac6046825c523838a4e6297}
+
+\item 
+const CKadEntryPtrList \& {\bfseries getNotes} () const \label{classCAbstractFile_aff8444b5fd9d52c85a9a27c6c3360b52}
+
+\item 
+virtual const wxString \& {\bfseries GetFileComment} () const \label{classCAbstractFile_a553b1d83db494a5a10ad772212e8b957}
+
+\item 
+virtual int8 {\bfseries GetFileRating} () const \label{classCAbstractFile_a343226fe26d5fcc6100e42a2e4cb3429}
+
+\item 
+bool {\bfseries HasComment} () const \label{classCAbstractFile_aa0be8a007dcddd9dfa0072806a281ffa}
+
+\item 
+bool {\bfseries HasRating} () const \label{classCAbstractFile_a5aaa3a34e8c7f9ca64afe4aecb75e10e}
+
+\item 
+int8 {\bfseries UserRating} () const \label{classCAbstractFile_aadac1f2f0911bb7854d40630811211a4}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAbstractFile} \& {\bf operator=} (const {\bf CAbstractFile})\label{classCAbstractFile_ab32bcaacf724bdf08c8d33e76703806b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMD4Hash} {\bfseries m\_\-abyFileHash}\label{classCAbstractFile_ae82ea14c981656d222c109969fea13e2}
+
+\item 
+wxString {\bfseries m\_\-strComment}\label{classCAbstractFile_a6c50f43820d4b57adbac786280c911fb}
+
+\item 
+int8 {\bfseries m\_\-iRating}\label{classCAbstractFile_af9c9c56ae43d7c94446b978563c322bc}
+
+\item 
+bool {\bfseries m\_\-hasComment}\label{classCAbstractFile_a007c29c30d4940dbeb660f729cbf589d}
+
+\item 
+int8 {\bfseries m\_\-iUserRating}\label{classCAbstractFile_a325c7ee61c7c97bba56ba09fad5529ce}
+
+\item 
+ArrayOfCTag {\bfseries m\_\-taglist}\label{classCAbstractFile_a2ae4b461029898704e6733836f0949d2}
+
+\item 
+CKadEntryPtrList {\bfseries m\_\-kadNotes}\label{classCAbstractFile_af648863dfb6723c68df8cf556c22aea5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64 {\bfseries m\_\-nFileSize}\label{classCAbstractFile_ae062242d3737cd7f321f855557074e99}
+
+\item 
+{\bf CPath} {\bfseries m\_\-fileName}\label{classCAbstractFile_a14da522898407dc2ae042f23b8a30e72}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/KnownFile.h\item 
+src/KnownFile.cpp\end{DoxyCompactItemize}

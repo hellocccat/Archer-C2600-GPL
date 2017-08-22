@@ -1,0 +1,80 @@
+\section{CAllocFinishedEvent Class Reference}
+\label{classCAllocFinishedEvent}\index{CAllocFinishedEvent@{CAllocFinishedEvent}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAllocFinishedEvent} ({\bf CPartFile} $\ast$file, bool pause, long result)
+\item 
+virtual wxEvent $\ast$ {\bf Clone} () const 
+\item 
+{\bf CPartFile} $\ast$ {\bf GetFile} () const   throw ()
+\item 
+bool {\bf IsPaused} () const   throw ()
+\item 
+bool {\bf Succeeded} () const   throw ()
+\item 
+long {\bf GetResult} () const   throw ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPartFile} $\ast$ {\bf m\_\-file}\label{classCAllocFinishedEvent_a14843c973173fa9249de94a73a36c393}
+
+\item 
+bool {\bf m\_\-pause}\label{classCAllocFinishedEvent_ac10d0b9d06dd73d9533e90271ed00c91}
+
+\item 
+long {\bf m\_\-result}\label{classCAllocFinishedEvent_a4c8e48a9d0fac4ee4f9c9687f8979743}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CAllocFinishedEvent@{CAllocFinishedEvent}!CAllocFinishedEvent@{CAllocFinishedEvent}}
+\index{CAllocFinishedEvent@{CAllocFinishedEvent}!CAllocFinishedEvent@{CAllocFinishedEvent}}
+\subsubsection[{CAllocFinishedEvent}]{\setlength{\rightskip}{0pt plus 5cm}CAllocFinishedEvent::CAllocFinishedEvent ({\bf CPartFile} $\ast$ {\em file}, \/  bool {\em pause}, \/  long {\em result})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCAllocFinishedEvent_a5baa394172664fbd4e5941977b63f394}
+
+
+Constructor, see getter function for description of parameters. 
+
+\subsection{Member Function Documentation}
+\index{CAllocFinishedEvent@{CAllocFinishedEvent}!Clone@{Clone}}
+\index{Clone@{Clone}!CAllocFinishedEvent@{CAllocFinishedEvent}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}wxEvent $\ast$ CAllocFinishedEvent::Clone (void) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCAllocFinishedEvent_a01f67fab259d692365507fe7f1260600}
+\begin{DoxySeeAlso}{See also}
+wxEvent::Clone 
+\end{DoxySeeAlso}
+\index{CAllocFinishedEvent@{CAllocFinishedEvent}!GetFile@{GetFile}}
+\index{GetFile@{GetFile}!CAllocFinishedEvent@{CAllocFinishedEvent}}
+\subsubsection[{GetFile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CPartFile}$\ast$ CAllocFinishedEvent::GetFile () const  throw ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCAllocFinishedEvent_a4ae07c7bb032999f9ff2ae5d16452700}
+
+
+Returns the partfile for which preallocation was requested. 
+
+References m\_\-file.\index{CAllocFinishedEvent@{CAllocFinishedEvent}!GetResult@{GetResult}}
+\index{GetResult@{GetResult}!CAllocFinishedEvent@{CAllocFinishedEvent}}
+\subsubsection[{GetResult}]{\setlength{\rightskip}{0pt plus 5cm}long CAllocFinishedEvent::GetResult () const  throw ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCAllocFinishedEvent_ae3eefa5553bf6b21b599515b7a982788}
+
+
+Returns the result of the preallocation. 
+
+References m\_\-result.\index{CAllocFinishedEvent@{CAllocFinishedEvent}!IsPaused@{IsPaused}}
+\index{IsPaused@{IsPaused}!CAllocFinishedEvent@{CAllocFinishedEvent}}
+\subsubsection[{IsPaused}]{\setlength{\rightskip}{0pt plus 5cm}bool CAllocFinishedEvent::IsPaused () const  throw ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCAllocFinishedEvent_a4dfc5d565a81ccac35830ab85c8895c2}
+
+
+Returns whether the partfile should start paused. 
+
+References m\_\-pause.\index{CAllocFinishedEvent@{CAllocFinishedEvent}!Succeeded@{Succeeded}}
+\index{Succeeded@{Succeeded}!CAllocFinishedEvent@{CAllocFinishedEvent}}
+\subsubsection[{Succeeded}]{\setlength{\rightskip}{0pt plus 5cm}bool CAllocFinishedEvent::Succeeded () const  throw ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCAllocFinishedEvent_a1d2bdf8cfe0dc51c061bb9c9e11c6cb5}
+
+
+Returns the result of preallocation: true on success, false otherwise. 
+
+References m\_\-result.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadTasks.h\item 
+src/ThreadTasks.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\section{CMuleException Class Reference}
+\label{classCMuleException}\index{CMuleException@{CMuleException}}
+
+
+This exception should be used to implement other types of exceptions.  
+
+
+{\ttfamily \#include $<$MuleDebug.h$>$}Inheritance diagram for CMuleException::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.94737cm]{classCMuleException}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CMuleException} (const wxString \&type, const wxString \&desc)\label{classCMuleException_a48cd388b3d40495d75392b1c8b5ac0f8}
+
+\item 
+virtual const wxString \& {\bfseries what} () const   throw ()\label{classCMuleException_a29db060f7bf8add89c2f6538997c0b15}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-what}\label{classCMuleException_a9fc96da18fa4841c9a975e057609b1a2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This exception should be used to implement other types of exceptions. It should never be caught, instead catch the subtypes. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libs/common/MuleDebug.h\end{DoxyCompactItemize}

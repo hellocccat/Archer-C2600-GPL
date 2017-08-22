@@ -1,0 +1,205 @@
+\section{CMD4Hash Class Reference}
+\label{classCMD4Hash}\index{CMD4Hash@{CMD4Hash}}
+
+
+Container-\/class for the MD4 hashes used in aMule.  
+
+
+{\ttfamily \#include $<$MD4Hash.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMD4Hash} ()
+\item 
+{\bf CMD4Hash} (const {\bf Kademlia::CUInt128} \&hash)
+\item 
+{\bf CMD4Hash} (const unsigned char hash[$\,$])
+\item 
+bool {\bf operator==} (const {\bf CMD4Hash} \&other\_\-hash) const 
+\item 
+bool {\bf operator!=} (const {\bf CMD4Hash} \&other\_\-hash) const 
+\item 
+bool {\bf operator$<$} (const {\bf CMD4Hash} \&other\_\-hash) const 
+\item 
+bool {\bf IsEmpty} () const 
+\item 
+void {\bf Clear} ()
+\item 
+bool {\bf Decode} (const std::string \&hash)
+\item 
+std::string {\bf EncodeSTL} () const 
+\item 
+void {\bf SetHash} (const unsigned char hash[$\,$])
+\item 
+unsigned char $\ast$ {\bf GetHash} ()
+\item 
+const unsigned char $\ast$ {\bfseries GetHash} () const \label{classCMD4Hash_aceb4091fbfef0f0866dace1454b55f02}
+
+\item 
+unsigned char {\bf operator[$\,$]} (size\_\-t i) const 
+\item 
+unsigned char \& {\bfseries operator[$\,$]} (size\_\-t i)\label{classCMD4Hash_a92beb7e9758718fa9d287de55ac96da4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char {\bf m\_\-hash} [MD4HASH\_\-LENGTH]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container-\/class for the MD4 hashes used in aMule. This is a safe representation of the MD4 hashes used in aMule. By transparently wrapping the char array used to store the hash, we get the advantages of assigment, equality and non-\/equality operators, plus other nifty features.
+
+Please remember that the hashes are arrays with length 16 WITHOUT a zero-\/terminator! 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CMD4Hash@{CMD4Hash}!CMD4Hash@{CMD4Hash}}
+\index{CMD4Hash@{CMD4Hash}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{CMD4Hash}]{\setlength{\rightskip}{0pt plus 5cm}CMD4Hash::CMD4Hash ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_a530d679d89b1c2b40604ec95e2a9c808}
+
+
+Default constructor. The default constructor creates an empty hash of length 16. Each field of the char array has an initial value of zero. 
+
+References Clear().\index{CMD4Hash@{CMD4Hash}!CMD4Hash@{CMD4Hash}}
+\index{CMD4Hash@{CMD4Hash}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{CMD4Hash}]{\setlength{\rightskip}{0pt plus 5cm}CMD4Hash::CMD4Hash (const {\bf Kademlia::CUInt128} \& {\em hash})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_a3430f9b697632997980c37f9940151ba}
+
+
+Create a \doxyref{CMD4Hash}{p.}{classCMD4Hash} from a CUInt128. 
+\begin{DoxyParams}{Parameters}
+\item[{\em hash}]The 128 bits integer to be used. \end{DoxyParams}
+
+
+References SetHash().\index{CMD4Hash@{CMD4Hash}!CMD4Hash@{CMD4Hash}}
+\index{CMD4Hash@{CMD4Hash}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{CMD4Hash}]{\setlength{\rightskip}{0pt plus 5cm}CMD4Hash::CMD4Hash (const unsigned char {\em hash}[$\,$])\hspace{0.3cm}{\ttfamily  [inline, explicit]}}\label{classCMD4Hash_a02ca4b235752d12b3065139a3dd7cab7}
+
+
+Cast a unsigned char array to a \doxyref{CMD4Hash}{p.}{classCMD4Hash}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em hash}]The array to be cast.\end{DoxyParams}
+Please note that the array must either be a NULL pointer or be at least 16 chars long, not including any possible zero-\/terminator! 
+
+References SetHash().
+
+\subsection{Member Function Documentation}
+\index{CMD4Hash@{CMD4Hash}!Clear@{Clear}}
+\index{Clear@{Clear}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void CMD4Hash::Clear ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_a2215476215af386a3930b279e0fe87ff}
+
+
+Resets the contents of the hash. This functions sets the value of each field of the hash to zero. \doxyref{IsEmpty()}{p.}{classCMD4Hash_aa35db3e0ba783bce520eea1bff2d2c37} will return true after a call to this function. 
+
+References m\_\-hash.
+
+Referenced by CMD4Hash(), CECFileConfig::ReadHash(), and SetHash().\index{CMD4Hash@{CMD4Hash}!Decode@{Decode}}
+\index{Decode@{Decode}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{Decode}]{\setlength{\rightskip}{0pt plus 5cm}bool CMD4Hash::Decode (const std::string \& {\em hash})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_a7985a952f2e7229897e68df92fc4a60a}
+
+
+Decodes a 32 char long hexadecimal representation of a MD4 hash. 
+\begin{DoxyParams}{Parameters}
+\item[{\em hash}]The hash representation to be converted. Length must be 32. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return value specifies if the hash was succesfully decoded.
+\end{DoxyReturn}
+This function converts a hexadecimal representation of a MD4 hash and stores it in the m\_\-hash data-\/member. 
+
+References m\_\-hash.
+
+Referenced by CECFileConfig::ReadHash().\index{CMD4Hash@{CMD4Hash}!EncodeSTL@{EncodeSTL}}
+\index{EncodeSTL@{EncodeSTL}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{EncodeSTL}]{\setlength{\rightskip}{0pt plus 5cm}std::string CMD4Hash::EncodeSTL () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_ac20d3a08d8bb03d5c32e720860a20141}
+
+
+Creates a 32 char long hexadecimal representation of a MD4 hash. \begin{DoxyReturn}{Returns}
+Hexadecimal representation of the m\_\-hash data-\/member.
+\end{DoxyReturn}
+This function creates a hexadecimal representation of the MD4 hash stored in the m\_\-hash data-\/member and returns it. 
+
+References m\_\-hash.\index{CMD4Hash@{CMD4Hash}!GetHash@{GetHash}}
+\index{GetHash@{GetHash}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{GetHash}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ CMD4Hash::GetHash ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_abc9a244bfd32e75b43eac1acf03b01d1}
+
+
+Explicit access to the hash-\/array. \begin{DoxyReturn}{Returns}
+Pointer to the hash array. 
+\end{DoxyReturn}
+
+
+References m\_\-hash.
+
+Referenced by CECTag::CECTag(), and CPreferences::CPreferences().\index{CMD4Hash@{CMD4Hash}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{IsEmpty}]{\setlength{\rightskip}{0pt plus 5cm}bool CMD4Hash::IsEmpty () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_aa35db3e0ba783bce520eea1bff2d2c37}
+
+
+Returns true if the hash is empty. \begin{DoxyReturn}{Returns}
+True if all fields are zero, false otherwise.
+\end{DoxyReturn}
+This functions checks the contents of the hash and returns true only if each field of the array contains the value zero. To achive an empty hash, the function \doxyref{Clear()}{p.}{classCMD4Hash_a2215476215af386a3930b279e0fe87ff} can be used. 
+
+References m\_\-hash.
+
+Referenced by CPreferences::CPreferences(), CClientDetailDialog::OnInitDialog(), CClientList::UpdateClientHash(), and CECFileConfig::WriteHash().\index{CMD4Hash@{CMD4Hash}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool CMD4Hash::operator!= (const {\bf CMD4Hash} \& {\em other\_\-hash}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_a2470c774147a6598c6bf05c3b9d58885}
+
+
+Non-\/equality operator. Returns true if there is any difference between the two hashes. \index{CMD4Hash@{CMD4Hash}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool CMD4Hash::operator$<$ (const {\bf CMD4Hash} \& {\em other\_\-hash}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_a94be621e7791afb514eba59cecb1ac33}
+
+
+Less than operator. \begin{DoxyReturn}{Returns}
+True if the hash is less than other\_\-hash, false otherwise.
+\end{DoxyReturn}
+The purpose of this function is to enable the usage of CMD4Hashes in sorted STL containers like \doxyref{std::map}{p.}{classstd_1_1map}. 
+
+References m\_\-hash.\index{CMD4Hash@{CMD4Hash}!operator==@{operator==}}
+\index{operator==@{operator==}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool CMD4Hash::operator== (const {\bf CMD4Hash} \& {\em other\_\-hash}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_ab9268a07513535c54491c5f65ae1dc46}
+
+
+Equality operator. Returns true if all fields of both hashes are the same. 
+
+References m\_\-hash.\index{CMD4Hash@{CMD4Hash}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char CMD4Hash::operator[$\,$] (size\_\-t {\em i}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_a95962e18337c466b66ed6e547e4fceed}
+
+
+Explic access to values in the hash-\/array. 
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]An index less than the length of an MD4 hash. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value (or its reference) at the given index. 
+\end{DoxyReturn}
+
+
+References m\_\-hash.\index{CMD4Hash@{CMD4Hash}!SetHash@{SetHash}}
+\index{SetHash@{SetHash}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{SetHash}]{\setlength{\rightskip}{0pt plus 5cm}void CMD4Hash::SetHash (const unsigned char {\em hash}[$\,$])\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCMD4Hash_aa2dfc6d583d47c15884acc92def423e7}
+
+
+Explicitly set the hash-\/array to the contents of a unsigned char array. 
+\begin{DoxyParams}{Parameters}
+\item[{\em hash}]The array to be assigned.\end{DoxyParams}
+The hash must either be a NULL pointer or be of length 16. 
+
+References Clear(), and m\_\-hash.
+
+Referenced by CMD4Hash().
+
+\subsection{Member Data Documentation}
+\index{CMD4Hash@{CMD4Hash}!m\_\-hash@{m\_\-hash}}
+\index{m\_\-hash@{m\_\-hash}!CMD4Hash@{CMD4Hash}}
+\subsubsection[{m\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf CMD4Hash::m\_\-hash}[MD4HASH\_\-LENGTH]\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMD4Hash_aaad37848f8fea00f1ec73c2b07827030}
+
+
+The raw MD4-\/hash. The raw representation of the MD4-\/hash. In most cases, you should try to avoid direct access and instead use the member functions. 
+
+Referenced by Clear(), Decode(), EncodeSTL(), GetHash(), IsEmpty(), operator$<$(), operator==(), operator[$\,$](), and SetHash().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/MD4Hash.h\end{DoxyCompactItemize}

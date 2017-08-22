@@ -1,0 +1,56 @@
+\section{CFriendListRem Class Reference}
+\label{classCFriendListRem}\index{CFriendListRem@{CFriendListRem}}
+Inheritance diagram for CFriendListRem::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCFriendListRem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CFriendListRem} ({\bf CRemoteConnect} $\ast$)\label{classCFriendListRem_a9a1b9ae3640672d0f2e94679c3b02423}
+
+\item 
+void {\bfseries AddFriend} (const {\bf CClientRef} \&toadd)\label{classCFriendListRem_a7dd3912744512e1e6d4f4cdf11545f4c}
+
+\item 
+void {\bfseries AddFriend} (const {\bf CMD4Hash} \&userhash, uint32 lastUsedIP, uint32 lastUsedPort, const wxString \&name)\label{classCFriendListRem_acfd7acddceefb5573f610b1b58f80314}
+
+\item 
+void {\bfseries RemoveFriend} ({\bf CFriend} $\ast$toremove)\label{classCFriendListRem_a1e1e836953a6b6e042be5a6892746733}
+
+\item 
+void {\bfseries RequestSharedFileList} ({\bf CFriend} $\ast$Friend)\label{classCFriendListRem_a24dea8547d5254a61fad06cb2b208916}
+
+\item 
+void {\bfseries RequestSharedFileList} ({\bf CClientRef} \&client)\label{classCFriendListRem_a495a03eeb72bd4f028b07597398b455d}
+
+\item 
+void {\bfseries SetFriendSlot} ({\bf CFriend} $\ast$Friend, bool new\_\-state)\label{classCFriendListRem_a918413d46b0b977b37f882854d3a3a26}
+
+\item 
+{\bf CFriend} $\ast$ {\bfseries CreateItem} ({\bf CEC\_\-Friend\_\-Tag} $\ast$)\label{classCFriendListRem_ac1b2a6ff27e760657ddc4495121b624b}
+
+\item 
+void {\bfseries DeleteItem} ({\bf CFriend} $\ast$)\label{classCFriendListRem_a56a8d2fca6341dbb56d2ab7b12aff154}
+
+\item 
+uint32 {\bfseries GetItemID} ({\bf CFriend} $\ast$)\label{classCFriendListRem_a35775afdcfa97a203458559ce2d70995}
+
+\item 
+void {\bfseries ProcessItemUpdate} ({\bf CEC\_\-Friend\_\-Tag} $\ast$, {\bf CFriend} $\ast$)\label{classCFriendListRem_a1214f9533abcbb6fbffc44c67f40af53}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries HandlePacket} (const {\bf CECPacket} $\ast$)\label{classCFriendListRem_aeead3ac02a10de0a85fd717e39dc2d87}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

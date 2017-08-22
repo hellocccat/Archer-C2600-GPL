@@ -1,0 +1,74 @@
+\section{Cfg\_\-Lang Class Reference}
+\label{classCfg__Lang}\index{Cfg\_\-Lang@{Cfg\_\-Lang}}
+Inheritance diagram for Cfg\_\-Lang::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classCfg__Lang}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf LoadFromFile} (wxConfigBase $\ast$cfg)\label{classCfg__Lang_aa1a4d998b44dc1a8b4193c67515be36b}
+
+\item 
+virtual void {\bf SaveToFile} (wxConfigBase $\ast$cfg)\label{classCfg__Lang_a5d9d02cfcf5148571c9a392ebaa8b9e2}
+
+\item 
+virtual bool {\bf TransferFromWindow} ()
+\item 
+virtual bool {\bf TransferToWindow} ()
+\item 
+virtual void {\bfseries UpdateChoice} (int pos)\label{classCfg__Lang_ad044fd512f19ed6b48652be077c27c86}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries m\_\-selection}\label{classCfg__Lang_a07ff0d13deb6c71ffd27ca6bef24017f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries FillChoice} ()\label{classCfg__Lang_a56a0cb69309e13c871436060996296f4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-languagesReady}\label{classCfg__Lang_ab17e38a921d234fe10cd4c2570f9ba21}
+
+\item 
+int {\bfseries m\_\-changePos}\label{classCfg__Lang_a50afb739731726ac5e3b5182ec4822ad}
+
+\item 
+wxChoice $\ast$ {\bfseries m\_\-langSelector}\label{classCfg__Lang_a23ba446b81344855a12774faed4630a4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Cfg\_\-Lang@{Cfg\_\-Lang}!TransferFromWindow@{TransferFromWindow}}
+\index{TransferFromWindow@{TransferFromWindow}!Cfg_Lang@{Cfg\_\-Lang}}
+\subsubsection[{TransferFromWindow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Lang::TransferFromWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Lang_af7e18d9ba8bd0dcd367c93ec73951473}
+
+
+Updates the assosiated variable, returning true on success. 
+
+Reimplemented from {\bf Cfg\_\-Int$<$ int $>$} \doxyref{}{p.}{classCfg__Int_a03844a2ba87bfe719362fe0175486de2}.
+
+References Cfg\_\-Int$<$ int $>$::TransferFromWindow().\index{Cfg\_\-Lang@{Cfg\_\-Lang}!TransferToWindow@{TransferToWindow}}
+\index{TransferToWindow@{TransferToWindow}!Cfg_Lang@{Cfg\_\-Lang}}
+\subsubsection[{TransferToWindow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Lang::TransferToWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Lang_a427939abc4a2c4003b1d5a36da8b0379}
+
+
+Updates the assosiated widget, returning true on success. 
+
+Reimplemented from {\bf Cfg\_\-Int$<$ int $>$} \doxyref{}{p.}{classCfg__Int_a9eabec1486d7225c8f3f4b62ef2833cd}.
+
+References Cfg\_\-Tmpl$<$ int $>$::m\_\-widget.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Preferences.cpp\end{DoxyCompactItemize}

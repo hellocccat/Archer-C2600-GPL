@@ -1,0 +1,205 @@
+\section{CMuleUDPSocket Class Reference}
+\label{classCMuleUDPSocket}\index{CMuleUDPSocket@{CMuleUDPSocket}}
+Inheritance diagram for CMuleUDPSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCMuleUDPSocket}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf UDPPack}
+\begin{DoxyCompactList}\small\item\em Storage struct used for queueing packets. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMuleUDPSocket} (const wxString \&name, int id, const {\bf amuleIPV4Address} \&address, const {\bf CProxyData} $\ast$ProxyData=NULL)
+\item 
+virtual {\bf $\sim$CMuleUDPSocket} ()\label{classCMuleUDPSocket_a47756015a55a356602e1e70d48decc74}
+
+\item 
+void {\bf Open} ()
+\item 
+void {\bf Close} ()
+\item 
+virtual void {\bf OnSend} (int errorCode)
+\item 
+virtual void {\bf OnReceive} (int errorCode)
+\item 
+virtual void {\bf OnReceiveError} (int errorCode, uint32 ip, uint16 port)
+\item 
+virtual void {\bf OnDisconnected} (int errorCode)
+\item 
+void {\bf SendPacket} ({\bf CPacket} $\ast$packet, uint32 IP, uint16 port, bool bEncrypt, const uint8 $\ast$pachTargetClientHashORKadID, bool bKad, uint32 nReceiverVerifyKey)
+\item 
+bool {\bf Ok} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf OnPacketReceived} (uint32 ip, uint16 port, byte $\ast$buffer, size\_\-t length)=0
+\item 
+{\bf SocketSentBytes} {\bf SendControlData} (uint32 maxNumberOfBytesToSend, uint32 minFragSize)\label{classCMuleUDPSocket_abf76ca7d3443d81c66b676d2f21e74e2}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf SendTo} (uint8\_\-t $\ast$buffer, uint32\_\-t length, uint32\_\-t ip, uint16\_\-t port)
+\item 
+void {\bf CreateSocket} ()
+\item 
+void {\bf DestroySocket} ()\label{classCMuleUDPSocket_a4c7eabf47eae6610d81c87d122f91966}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\_\-busy}\label{classCMuleUDPSocket_a952d07bf4e38e1f023344a183e65ff40}
+
+\item 
+wxString {\bf m\_\-name}\label{classCMuleUDPSocket_a284449076f7db5df1644e19e1ef9f17b}
+
+\item 
+int {\bf m\_\-id}\label{classCMuleUDPSocket_a8230f5737dd11de6b848a5651a2d646e}
+
+\item 
+{\bf amuleIPV4Address} {\bf m\_\-addr}\label{classCMuleUDPSocket_a9e1ed80c0a1c4564de0d089ddb37c7fd}
+
+\item 
+const {\bf CProxyData} $\ast$ {\bf m\_\-proxy}\label{classCMuleUDPSocket_a74b8ad6aaf7a4f02e980ca1a1ee4ebc7}
+
+\item 
+wxMutex {\bf m\_\-mutex}\label{classCMuleUDPSocket_ab1b1266676b25d60483294bce19b04a6}
+
+\item 
+{\bf CEncryptedDatagramSocket} $\ast$ {\bf m\_\-socket}\label{classCMuleUDPSocket_a9c4cf7748d176fa79d4918d52a599b6c}
+
+\item 
+std::list$<$ {\bf UDPPack} $>$ {\bf m\_\-queue}\label{classCMuleUDPSocket_aef3033751fb0d8a06e2ebed663efa0a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CMuleUDPSocket@{CMuleUDPSocket}!CMuleUDPSocket@{CMuleUDPSocket}}
+\index{CMuleUDPSocket@{CMuleUDPSocket}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{CMuleUDPSocket}]{\setlength{\rightskip}{0pt plus 5cm}CMuleUDPSocket::CMuleUDPSocket (const wxString \& {\em name}, \/  int {\em id}, \/  const {\bf amuleIPV4Address} \& {\em address}, \/  const {\bf CProxyData} $\ast$ {\em ProxyData} = {\ttfamily NULL})}\label{classCMuleUDPSocket_a13bffd91a78f8d11828bc54e6f130b68}
+
+
+Opens a UDP socket at the specified address. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name used when logging events. \item[{\em id}]The ID used for events. \item[{\em address}]The address where the socket will listen. \item[{\em ProxyData}]ProxyData assosiated with the socket. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CMuleUDPSocket@{CMuleUDPSocket}!Close@{Close}}
+\index{Close@{Close}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleUDPSocket::Close ()}\label{classCMuleUDPSocket_ac6525b97a0bbb35d8365e603f16b1f31}
+
+
+Closes the socket. The socket can be reopened by calling Open. Closing a already closed socket is an illegal operation. 
+
+References DestroySocket(), and m\_\-mutex.
+
+Referenced by CClientUDPSocket::OnReceive().\index{CMuleUDPSocket@{CMuleUDPSocket}!CreateSocket@{CreateSocket}}
+\index{CreateSocket@{CreateSocket}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{CreateSocket}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleUDPSocket::CreateSocket ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleUDPSocket_a38e7cb10462cdac01305d5bdf64bdf73}
+
+
+Creates a new socket. Calling this function when a socket already exists is an illegal operation. 
+
+References DestroySocket(), m\_\-addr, m\_\-id, m\_\-name, m\_\-proxy, and m\_\-socket.
+
+Referenced by OnDisconnected(), OnReceive(), and Open().\index{CMuleUDPSocket@{CMuleUDPSocket}!Ok@{Ok}}
+\index{Ok@{Ok}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{Ok}]{\setlength{\rightskip}{0pt plus 5cm}bool CMuleUDPSocket::Ok ()}\label{classCMuleUDPSocket_aa34aad8eb01a4818312dc82ebd90ad73}
+
+
+Returns true if the socket is Ok, false otherwise. \begin{DoxySeeAlso}{See also}
+wxSocketBase::Ok 
+\end{DoxySeeAlso}
+
+
+References m\_\-mutex, and m\_\-socket.
+
+Referenced by OnReceive(), and SendPacket().\index{CMuleUDPSocket@{CMuleUDPSocket}!OnDisconnected@{OnDisconnected}}
+\index{OnDisconnected@{OnDisconnected}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{OnDisconnected}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleUDPSocket::OnDisconnected (int {\em errorCode})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleUDPSocket_abcc265d0fff713b56f6b352d8e669fe3}
+
+
+This function is called when the socket is lost (see comments in func. ) 
+
+References CreateSocket(), DestroySocket(), and m\_\-name.\index{CMuleUDPSocket@{CMuleUDPSocket}!OnPacketReceived@{OnPacketReceived}}
+\index{OnPacketReceived@{OnPacketReceived}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{OnPacketReceived}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CMuleUDPSocket::OnPacketReceived (uint32 {\em ip}, \/  uint16 {\em port}, \/  byte $\ast$ {\em buffer}, \/  size\_\-t {\em length})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classCMuleUDPSocket_a0edaf41d486ff86538a9325e26fae67b}
+
+
+This function is called when a packet has been received. 
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]The address from where data was received. \item[{\em buffer}]The data that has been received. \item[{\em length}]The length of the data buffer. \end{DoxyParams}
+
+
+Implemented in {\bf CClientUDPSocket} \doxyref{}{p.}{classCClientUDPSocket_af97a2a0fbb9265d0515ba8e82042cada}, and {\bf CServerUDPSocket} \doxyref{}{p.}{classCServerUDPSocket_a437e145226bf1280af448a3da703f400}.
+
+Referenced by OnReceive().\index{CMuleUDPSocket@{CMuleUDPSocket}!OnReceive@{OnReceive}}
+\index{OnReceive@{OnReceive}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{OnReceive}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleUDPSocket::OnReceive (int {\em errorCode})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleUDPSocket_a6530a886f92a54b03361ec9bd5be6d7a}
+
+
+This function is called by aMule when there are data to be received. 
+
+Reimplemented in {\bf CClientUDPSocket} \doxyref{}{p.}{classCClientUDPSocket_ad619c515065a942b6c36ea4f96e8c6f4}.
+
+References CreateSocket(), DestroySocket(), m\_\-mutex, m\_\-name, m\_\-socket, Ok(), OnPacketReceived(), and OnReceiveError().\index{CMuleUDPSocket@{CMuleUDPSocket}!OnReceiveError@{OnReceiveError}}
+\index{OnReceiveError@{OnReceiveError}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{OnReceiveError}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CMuleUDPSocket::OnReceiveError (int {\em errorCode}, \/  uint32 {\em ip}, \/  uint16 {\em port})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleUDPSocket_afaa611e7682707cec51a328136ca9beb}
+
+
+This function is called by aMule when there is an error while receiving. 
+
+Reimplemented in {\bf CServerUDPSocket} \doxyref{}{p.}{classCServerUDPSocket_a4e2f5904406f068b341252deb8667aed}.
+
+Referenced by OnReceive().\index{CMuleUDPSocket@{CMuleUDPSocket}!OnSend@{OnSend}}
+\index{OnSend@{OnSend}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{OnSend}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleUDPSocket::OnSend (int {\em errorCode})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMuleUDPSocket_a5aa1f0cd13457a5ecc6721d8e90eaf9c}
+
+
+This function is called by aMule when the socket may send. 
+
+References m\_\-busy, m\_\-mutex, and m\_\-queue.\index{CMuleUDPSocket@{CMuleUDPSocket}!Open@{Open}}
+\index{Open@{Open}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{Open}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleUDPSocket::Open ()}\label{classCMuleUDPSocket_af091a7d5a0e41584ba282e38b203d1fc}
+
+
+Opens the socket. The socket is bound to the address specified in the constructor. 
+
+References CreateSocket(), and m\_\-mutex.\index{CMuleUDPSocket@{CMuleUDPSocket}!SendPacket@{SendPacket}}
+\index{SendPacket@{SendPacket}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{SendPacket}]{\setlength{\rightskip}{0pt plus 5cm}void CMuleUDPSocket::SendPacket ({\bf CPacket} $\ast$ {\em packet}, \/  uint32 {\em IP}, \/  uint16 {\em port}, \/  bool {\em bEncrypt}, \/  const uint8 $\ast$ {\em pachTargetClientHashORKadID}, \/  bool {\em bKad}, \/  uint32 {\em nReceiverVerifyKey})}\label{classCMuleUDPSocket_a54f38d3e33e3eab231bf323cbc74ef22}
+
+
+Queues a packet for sending. 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]The packet to send. \item[{\em IP}]The target IP address. \item[{\em port}]The target port. \item[{\em bEncrypt}]If the packet must be encrypted \item[{\em port}]The target port. \item[{\em pachTargetClientHashORKadID}]The client hash or Kad ID \item[{\em bKad}]\item[{\em nReceiverVerifyKey}]Note that \doxyref{CMuleUDPSocket}{p.}{classCMuleUDPSocket} takes ownership of the packet. \end{DoxyParams}
+
+
+References m\_\-mutex, m\_\-name, m\_\-queue, and Ok().\index{CMuleUDPSocket@{CMuleUDPSocket}!SendTo@{SendTo}}
+\index{SendTo@{SendTo}!CMuleUDPSocket@{CMuleUDPSocket}}
+\subsubsection[{SendTo}]{\setlength{\rightskip}{0pt plus 5cm}bool CMuleUDPSocket::SendTo (uint8\_\-t $\ast$ {\em buffer}, \/  uint32\_\-t {\em length}, \/  uint32\_\-t {\em ip}, \/  uint16\_\-t {\em port})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMuleUDPSocket_acb6cd0a44716ce9e1c983ff0c1a5c3f0}
+
+
+Sends a packet to the specified address. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The data to be sent. \item[{\em length}]the length of the data buffer. \item[{\em ip}]The target ip address. \item[{\em port}]The target port. \end{DoxyParams}
+
+
+References m\_\-busy, m\_\-name, and m\_\-socket.
+
+Referenced by SendControlData().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MuleUDPSocket.h\item 
+src/MuleUDPSocket.cpp\end{DoxyCompactItemize}

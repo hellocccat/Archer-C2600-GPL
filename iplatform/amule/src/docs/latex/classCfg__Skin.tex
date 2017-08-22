@@ -1,0 +1,50 @@
+\section{Cfg\_\-Skin Class Reference}
+\label{classCfg__Skin}\index{Cfg\_\-Skin@{Cfg\_\-Skin}}
+Inheritance diagram for Cfg\_\-Skin::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classCfg__Skin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Cfg\_\-Skin} (const wxString \&keyname, wxString \&value, const wxString \&defaultVal=EmptyString)\label{classCfg__Skin_aee889e22fe38c33043aa90acc8a82493}
+
+\item 
+virtual bool {\bf TransferFromWindow} ()
+\item 
+virtual bool {\bf TransferToWindow} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-is\_\-skin}\label{classCfg__Skin_aa67c406f4c398d24c5b18c7669423da4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Cfg\_\-Skin@{Cfg\_\-Skin}!TransferFromWindow@{TransferFromWindow}}
+\index{TransferFromWindow@{TransferFromWindow}!Cfg_Skin@{Cfg\_\-Skin}}
+\subsubsection[{TransferFromWindow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Skin::TransferFromWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Skin_a4513dabfbfb487cfca8ad4748743e34e}
+
+
+Updates the assosiated variable, returning true on success. 
+
+Reimplemented from {\bf Cfg\_\-Tmpl$<$ wxString $>$} \doxyref{}{p.}{classCfg__Tmpl_ac54b5100fdd79c396a42e450fc30e6f8}.
+
+References Cfg\_\-Tmpl$<$ wxString $>$::m\_\-value, Cfg\_\-Tmpl$<$ wxString $>$::m\_\-widget, and Cfg\_\-Tmpl$<$ wxString $>$::TransferFromWindow().\index{Cfg\_\-Skin@{Cfg\_\-Skin}!TransferToWindow@{TransferToWindow}}
+\index{TransferToWindow@{TransferToWindow}!Cfg_Skin@{Cfg\_\-Skin}}
+\subsubsection[{TransferToWindow}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Cfg\_\-Skin::TransferToWindow ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCfg__Skin_a9f292631347b2fec93dea26afab71b5d}
+
+
+Updates the assosiated widget, returning true on success. 
+
+Reimplemented from {\bf Cfg\_\-Tmpl$<$ wxString $>$} \doxyref{}{p.}{classCfg__Tmpl_ae48aebe407826addb147e343f50dd15f}.
+
+References Cfg\_\-Base::GetKey(), Cfg\_\-Tmpl$<$ wxString $>$::m\_\-value, and Cfg\_\-Tmpl$<$ wxString $>$::m\_\-widget.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Preferences.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+do_make_flash_dev() {
+		#create our flash chrdev
+    mknod /dev/flash_chrdev c 239 0
+}
+
+boot_hook_add preinit_mount_root do_make_flash_dev
+

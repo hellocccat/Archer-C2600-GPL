@@ -1,0 +1,106 @@
+\section{CIPFilterTask Class Reference}
+\label{classCIPFilterTask}\index{CIPFilterTask@{CIPFilterTask}}
+
+
+This task loads the two ipfilter.dat files, a task that can take quite a while on a slow system with a large dat-\/ file.  
+Inheritance diagram for CIPFilterTask::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCIPFilterTask}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf rangeObject}
+\begin{DoxyCompactList}\small\item\em This structure is used to contain the range-\/data in the rangemap. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CIPFilterTask} (wxEvtHandler $\ast$owner)\label{classCIPFilterTask_a53af1e726bfaa1c933988ce0b3b6d856}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf CRangeMap}$<$ {\bf rangeObject}, uint32 $>$ {\bf IPMap}\label{classCIPFilterTask_a9e0cfe99a01e8498532735171a50591b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Entry} ()
+\item 
+bool {\bf AddIPRange} (uint32 IPStart, uint32 IPEnd, uint16 AccessLevel, const char $\ast$DEBUG\_\-ONLY(Description))
+\item 
+int {\bf LoadFromFile} (const wxString \&file)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\_\-storeDescriptions}\label{classCIPFilterTask_a9320fde5cd49834a5d5687956eb8f604}
+
+\item 
+CIPFilter::RangeIPs {\bfseries m\_\-rangeIPs}\label{classCIPFilterTask_a9a71cd2d049150e9a692fb5bdc36548a}
+
+\item 
+CIPFilter::RangeLengths {\bfseries m\_\-rangeLengths}\label{classCIPFilterTask_a103705d7d972d22b044536915f10ef7c}
+
+\item 
+CIPFilter::RangeNames {\bfseries m\_\-rangeNames}\label{classCIPFilterTask_a76aa68c3e062ad67fc9e433ada270762}
+
+\item 
+wxEvtHandler $\ast$ {\bf m\_\-owner}\label{classCIPFilterTask_a6d06c407a04f27e227ff09cf5693bf28}
+
+\item 
+{\bf IPMap} {\bfseries m\_\-result}\label{classCIPFilterTask_aa9a637d16f805d5340bcc263cc6d4e39}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This task loads the two ipfilter.dat files, a task that can take quite a while on a slow system with a large dat-\/ file. 
+
+\subsection{Member Function Documentation}
+\index{CIPFilterTask@{CIPFilterTask}!AddIPRange@{AddIPRange}}
+\index{AddIPRange@{AddIPRange}!CIPFilterTask@{CIPFilterTask}}
+\subsubsection[{AddIPRange}]{\setlength{\rightskip}{0pt plus 5cm}bool CIPFilterTask::AddIPRange (uint32 {\em IPStart}, \/  uint32 {\em IPEnd}, \/  uint16 {\em AccessLevel}, \/  const char $\ast$ {\em DEBUG\_\-ONLY}Description)\hspace{0.3cm}{\ttfamily  [inline, private]}}\label{classCIPFilterTask_a2b0ec757ba2581d3b5bf084616a2b00c}
+
+
+Helper function. 
+\begin{DoxyParams}{Parameters}
+\item[{\em IPstart}]The start of the IP-\/range. \item[{\em IPend}]The end of the IP-\/range, must be less than or equal to IPstart. \item[{\em AccessLevel}]The AccessLevel of this range. \item[{\em Description}]The assosiated description of this range. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the range was added, false if it was discarded.
+\end{DoxyReturn}
+This function inserts the specified range into the IPMap. Invalid ranges where the AccessLevel is not within the range 0..255, or where IPEnd $<$ IPstart not inserted. 
+
+References CIPFilterTask::rangeObject::AccessLevel, and CRangeMap$<$ VALUE, KEYTYPE $>$::insert().
+
+Referenced by LoadFromFile().\index{CIPFilterTask@{CIPFilterTask}!Entry@{Entry}}
+\index{Entry@{Entry}!CIPFilterTask@{CIPFilterTask}}
+\subsubsection[{Entry}]{\setlength{\rightskip}{0pt plus 5cm}void CIPFilterTask::Entry ()\hspace{0.3cm}{\ttfamily  [inline, private, virtual]}}\label{classCIPFilterTask_acf33ae8dfe6ddf8b18f762ced3e9ff0e}
+\begin{DoxySeeAlso}{See also}
+wxThread::Entry 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CThreadTask} \doxyref{}{p.}{classCThreadTask_aa771d4d2ec87cb3c73c8d75e12e1a3ec}.
+
+References CRangeMap$<$ VALUE, KEYTYPE $>$::begin(), CRangeMap$<$ VALUE, KEYTYPE $>$::end(), LoadFromFile(), m\_\-owner, and CRangeMap$<$ VALUE, KEYTYPE $>$::size().\index{CIPFilterTask@{CIPFilterTask}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!CIPFilterTask@{CIPFilterTask}}
+\subsubsection[{LoadFromFile}]{\setlength{\rightskip}{0pt plus 5cm}int CIPFilterTask::LoadFromFile (const wxString \& {\em file})\hspace{0.3cm}{\ttfamily  [inline, private]}}\label{classCIPFilterTask_a24aa45fda0770506b9aca92f5f9672e6}
+
+
+Loads a IP-\/list from the specified file, can be text or zip. \begin{DoxyReturn}{Returns}
+True if the file was loaded, false otherwise. 
+\end{DoxyReturn}
+
+
+References AddIPRange(), CPath::FileExists(), CPath::GetRaw(), CLogger::IsEnabled(), and CThreadTask::TestDestroy().
+
+Referenced by Entry().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/IPFilter.cpp\end{DoxyCompactItemize}

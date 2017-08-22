@@ -1,0 +1,196 @@
+\section{COScopeCtrl Class Reference}
+\label{classCOScopeCtrl}\index{COScopeCtrl@{COScopeCtrl}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf PlotDataStruct}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf COScopeCtrl::PlotDataStruct} {\bfseries PlotData\_\-t}\label{classCOScopeCtrl_a43f6a626190d91648a3f97c4e2b81978}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries COScopeCtrl} (int NTrends, int nDecimals, StatsGraphType type, wxWindow $\ast$parent=NULL)\label{classCOScopeCtrl_a75569490592adc84eca45fabebe81077}
+
+\item 
+void {\bfseries SetRange} (float dLower, float dUpper, unsigned iTrend=0)\label{classCOScopeCtrl_a87b9645e02b3633ac080836cc4fd10e6}
+
+\item 
+void {\bfseries SetRanges} (float dLower, float dUpper)\label{classCOScopeCtrl_ac261cb5e789d0ffb1f330ac88b6e79f4}
+
+\item 
+void {\bfseries SetYUnits} (const wxString \&string, const wxString \&YMin=wxEmptyString, const wxString \&YMax=wxEmptyString)\label{classCOScopeCtrl_afa79e26f0ec5e5babe0f615a461f9568}
+
+\item 
+void {\bfseries SetBackgroundColor} (const wxColour \&color)\label{classCOScopeCtrl_a8c4b1ed7ec61da80d91654cd9e8584fa}
+
+\item 
+void {\bfseries SetGridColor} (const wxColour \&color)\label{classCOScopeCtrl_a658f9d06f35b0b224fb507a48a3541c6}
+
+\item 
+void {\bfseries SetPlotColor} (const wxColour \&color, unsigned iTrend=0)\label{classCOScopeCtrl_a238ec9ee7ac191a2af062a72f6fc0809}
+
+\item 
+float {\bfseries GetUpperLimit} ()\label{classCOScopeCtrl_ae6bb41c1878ebbda7096b7e5a70733b2}
+
+\item 
+void {\bfseries Reset} (double sNewPeriod)\label{classCOScopeCtrl_a7363dddcc77c3a1e26a0c57b31e4ee04}
+
+\item 
+void {\bfseries Stop} ()\label{classCOScopeCtrl_a6a665e66546ef236f46d0ed3149b100a}
+
+\item 
+void {\bfseries RecreateGraph} (bool bRefresh=true)\label{classCOScopeCtrl_a168b365685764dc6984b2605a6eb47a0}
+
+\item 
+void {\bfseries RecreateGrid} ()\label{classCOScopeCtrl_abb67ed728576dfa3fb2fd55cc3a57497}
+
+\item 
+void {\bfseries AppendPoints} (double sTimestamp, const std::vector$<$ float $\ast$ $>$ \&apf)\label{classCOScopeCtrl_a73684d9a1c5509c87f7a12e5da544588}
+
+\item 
+void {\bfseries DelayPoints} ()\label{classCOScopeCtrl_aca9cada20f3cb050c4a6fc22844478d8}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+StatsGraphType {\bfseries graph\_\-type}\label{classCOScopeCtrl_a0a9c75c349bd7e1b44994cf0039660a9}
+
+\item 
+unsigned {\bfseries nTrends}\label{classCOScopeCtrl_af03bf05a1dd9001c304dca1973f89f18}
+
+\item 
+unsigned {\bfseries nXGrids}\label{classCOScopeCtrl_ab867d5fa66e8d0c60d5aae2cd402b64e}
+
+\item 
+unsigned {\bfseries nYGrids}\label{classCOScopeCtrl_a12d94fcece9b1ff7e42b2b4d329861fc}
+
+\item 
+unsigned {\bfseries nShiftPixels}\label{classCOScopeCtrl_a13030dd5e7c47bfbf5be76bdbffd6455}
+
+\item 
+unsigned {\bfseries nYDecimals}\label{classCOScopeCtrl_a88591ace15db5972272b836222069117}
+
+\item 
+wxString {\bfseries strXUnits}\label{classCOScopeCtrl_a0756b009a3095daf5348dc39ddc1395c}
+
+\item 
+wxString {\bfseries strYUnits}\label{classCOScopeCtrl_afb71eade618997a9e36c983e95e647ef}
+
+\item 
+wxString {\bfseries strYMin}\label{classCOScopeCtrl_ae5550732945bf0d06f68b5ba5d817158}
+
+\item 
+wxString {\bfseries strYMax}\label{classCOScopeCtrl_a5ca5ab4e09fd4de2441a050ae527b82f}
+
+\item 
+wxColour {\bfseries m\_\-bgColour}\label{classCOScopeCtrl_a9e0f710fe7bf733c8e711ac1016b05d7}
+
+\item 
+wxColour {\bfseries m\_\-gridColour}\label{classCOScopeCtrl_a9690177489934b041a7cae1f8ec3dd42}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries InvalidateGraph} ()\label{classCOScopeCtrl_a028dded403eb2079379d632d58bc90ba}
+
+\item 
+void {\bfseries InvalidateGrid} ()\label{classCOScopeCtrl_a5d8de1661f8454cad8571290fe59046e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PlotData\_\-t} $\ast$ {\bfseries pdsTrends}\label{classCOScopeCtrl_a6a585b9eb939b2874fcf5c0acc310e0d}
+
+\item 
+wxRect {\bfseries m\_\-rectClient}\label{classCOScopeCtrl_a8b98dd39a32dee43a142616ff65cfa75}
+
+\item 
+wxRect {\bfseries m\_\-rectPlot}\label{classCOScopeCtrl_a992b428236df9fda2ee0f37ba8782a00}
+
+\item 
+wxBrush {\bfseries brushBack}\label{classCOScopeCtrl_a4813d8f52656e3a8b8f8faeae8aeef73}
+
+\item 
+wxBitmap {\bfseries m\_\-bmapGrid}\label{classCOScopeCtrl_a9a32e7c63ddcc4952b0e9307b1f0c4ff}
+
+\item 
+wxBitmap {\bfseries m\_\-bmapPlot}\label{classCOScopeCtrl_a11b3ccf6a85315b750edd4363194e94e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnTimer} (wxTimerEvent \&evt)\label{classCOScopeCtrl_a98159e1d4e7c89fe536442b54eda1204}
+
+\item 
+void {\bfseries OnPaint} (wxPaintEvent \&evt)\label{classCOScopeCtrl_af85d6ea6040acfc0758af9bf5a8fca4b}
+
+\item 
+void {\bfseries OnSize} (wxSizeEvent \&evt)\label{classCOScopeCtrl_ad7ab509984a67278afdb5513e1cdd098}
+
+\item 
+void {\bfseries ShiftGraph} (unsigned cntPoints)\label{classCOScopeCtrl_a2415165bee49723ffae811c789f1f841}
+
+\item 
+void {\bfseries PlotHistory} (unsigned cntPoints, bool bShiftGraph, bool bRefresh)\label{classCOScopeCtrl_a12f92249b02978493638af5d695ae379}
+
+\item 
+void {\bfseries DrawPoints} (const std::vector$<$ float $\ast$ $>$ \&apf, unsigned cntPoints)\label{classCOScopeCtrl_a5d6b2a4f6a1f588859861a5e1b6d6457}
+
+\item 
+unsigned {\bfseries GetPlotY} (float fPlot, {\bf PlotData\_\-t} $\ast$ppds)\label{classCOScopeCtrl_ad73b4695d729da4a4b83e02db5d349de}
+
+\item 
+void {\bfseries InvalidateCtrl} (bool bInvalidateGraph=true, bool bInvalidateGrid=true)\label{classCOScopeCtrl_a1d3f33babf29e50af6e38710feef6110}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries bRecreateGrid}\label{classCOScopeCtrl_ac4902cfe002a352eac316e6092e67332}
+
+\item 
+bool {\bfseries bRecreateGraph}\label{classCOScopeCtrl_a9a4ed25e8eabe9be093e5c9e2e77e614}
+
+\item 
+bool {\bfseries bRecreateAll}\label{classCOScopeCtrl_a7e48f2832abce2be0ad19fbaee5a3238}
+
+\item 
+bool {\bfseries bStopped}\label{classCOScopeCtrl_a87f33efe7d5cb9b039d76d606555fe33}
+
+\item 
+int {\bfseries nDelayedPoints}\label{classCOScopeCtrl_a396e7f5f91b0dc5389fa198db823b138}
+
+\item 
+double {\bfseries sLastTimestamp}\label{classCOScopeCtrl_a9d8a4897a62f5e71d0edc06788005f7b}
+
+\item 
+double {\bfseries sLastPeriod}\label{classCOScopeCtrl_a6c9527be9a5884901f0286838f19cda7}
+
+\item 
+wxTimer {\bfseries timerRedraw}\label{classCOScopeCtrl_aa850c91022c439aa9a9702310b0e36b9}
+
+\item 
+bool {\bfseries m\_\-onPaint}\label{classCOScopeCtrl_a453218d555098928e442be949f996614}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CStatisticsDlg}\label{classCOScopeCtrl_ad52500fde9069f98bae7c29011758806}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/OScopeCtrl.h\item 
+src/OScopeCtrl.cpp\end{DoxyCompactItemize}

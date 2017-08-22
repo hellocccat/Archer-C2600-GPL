@@ -1,0 +1,77 @@
+\section{CServerListRem Class Reference}
+\label{classCServerListRem}\index{CServerListRem@{CServerListRem}}
+Inheritance diagram for CServerListRem::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCServerListRem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CServerListRem} ({\bf CRemoteConnect} $\ast$)\label{classCServerListRem_a32855d85378dfe087edf3d06f996f18c}
+
+\item 
+void {\bfseries GetUserFileStatus} (uint32 \&total\_\-user, uint32 \&total\_\-file)\label{classCServerListRem_a492e8586772ef0b99a18f15dc338b0a6}
+
+\item 
+void {\bfseries UpdateUserFileStatus} ({\bf CServer} $\ast$server)\label{classCServerListRem_a5a9753f12c444fd261d13c21dfe88dc4}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetServerByAddress} (const wxString \&address, uint16 port) const \label{classCServerListRem_a4978e2977d062e3c6614b3aca8c2ad49}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries GetServerByIPTCP} (uint32 nIP, uint16 nPort) const \label{classCServerListRem_ad67ceb12a3ce71ef86e3239c463301ef}
+
+\item 
+void {\bfseries RemoveServer} ({\bf CServer} $\ast$server)\label{classCServerListRem_a723313f67431021c77fe13878dda71a7}
+
+\item 
+void {\bfseries UpdateServerMetFromURL} (wxString url)\label{classCServerListRem_a60ea68ca07964216f03af9a3220c1c95}
+
+\item 
+void {\bfseries SetStaticServer} ({\bf CServer} $\ast$server, bool isStatic)\label{classCServerListRem_aa2dba2a894e20633480fabc951a9d2e2}
+
+\item 
+void {\bfseries SetServerPrio} ({\bf CServer} $\ast$server, uint32 prio)\label{classCServerListRem_a2fd53cf9384236133d8134546d68cd81}
+
+\item 
+void {\bfseries SaveServerMet} ()\label{classCServerListRem_aaf55b2a87faf7380e7f959c9246dee2a}
+
+\item 
+void {\bfseries FilterServers} ()\label{classCServerListRem_ae13258cdea87c30c2ce58c3a78ff1c65}
+
+\item 
+{\bf CServer} $\ast$ {\bfseries CreateItem} ({\bf CEC\_\-Server\_\-Tag} $\ast$)\label{classCServerListRem_a9abc13c61492e8f2f4706200632bef71}
+
+\item 
+void {\bfseries DeleteItem} ({\bf CServer} $\ast$)\label{classCServerListRem_aa9d3e29ddad7d9e0f1124e4fae44c3a2}
+
+\item 
+uint32 {\bfseries GetItemID} ({\bf CServer} $\ast$)\label{classCServerListRem_a252e5cfef0b503e8df5cfa14ba48af9f}
+
+\item 
+void {\bfseries ProcessItemUpdate} ({\bf CEC\_\-Server\_\-Tag} $\ast$, {\bf CServer} $\ast$)\label{classCServerListRem_a5e36ad46f0439c8554ec8040e6eb1941}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries HandlePacket} (const {\bf CECPacket} $\ast$packet)\label{classCServerListRem_a2bbd8951794ce7092f993bef8696226b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries m\_\-TotalUser}\label{classCServerListRem_ac68bbdb534927efb00d629ef68a3fa63}
+
+\item 
+uint32 {\bfseries m\_\-TotalFile}\label{classCServerListRem_aaf95e7d3901f4d5338bbec75b9dd25db}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

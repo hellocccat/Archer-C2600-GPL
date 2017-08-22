@@ -1,0 +1,173 @@
+\section{CSearchDlg Class Reference}
+\label{classCSearchDlg}\index{CSearchDlg@{CSearchDlg}}
+
+
+This class represents the Search Dialog, which takes care of enabling the user to search and to display results in a readable manner.  
+
+
+{\ttfamily \#include $<$SearchDlg.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSearchDlg} (wxWindow $\ast$pParent)
+\item 
+{\bf $\sim$CSearchDlg} ()\label{classCSearchDlg_a59823e31694e65cd79dcd7c5a12edf94}
+
+\item 
+void {\bf AddResult} ({\bf CSearchFile} $\ast$toadd)
+\item 
+void {\bf UpdateResult} ({\bf CSearchFile} $\ast$toupdate)
+\item 
+bool {\bf CheckTabNameExists} (const wxString \&searchString)
+\item 
+void {\bf CreateNewTab} (const wxString \&searchString, wxUIntPtr nSearchID)
+\item 
+void {\bf LocalSearchEnd} ()\label{classCSearchDlg_aab0b1873af869a1911e50bd4571ed373}
+
+\item 
+void {\bf KadSearchEnd} (uint32 id)\label{classCSearchDlg_a417a686a3bf6b63f52f80e5af4859433}
+
+\item 
+void {\bf UpdateCatChoice} ()\label{classCSearchDlg_a6acfa55dae3471a2ada25450fe09f4f7}
+
+\item 
+void {\bf UpdateHitCount} ({\bf CSearchListCtrl} $\ast$page)
+\item 
+void {\bf ResetControls} ()\label{classCSearchDlg_ad925cc6baf88a70f31b2242693a2274b}
+
+\item 
+void {\bfseries OnBnClickedDownload} (wxCommandEvent \&ev)\label{classCSearchDlg_abed5b37a68ca258fe40d1d9c8224d37f}
+
+\item 
+{\bf CSearchListCtrl} $\ast$ {\bfseries GetSearchList} (wxUIntPtr id)\label{classCSearchDlg_ac83662290e82dd925a5803ff62ebea87}
+
+\item 
+void {\bfseries UpdateProgress} (uint32 new\_\-value)\label{classCSearchDlg_a59088aee9dda68d26051344f4df8e953}
+
+\item 
+void {\bfseries StartNewSearch} ()\label{classCSearchDlg_a7d6eb15202fc6dd1a91737fa915133ca}
+
+\item 
+void {\bfseries FixSearchTypes} ()\label{classCSearchDlg_a77902eefcad4b1b2ac41d82b5b38bd98}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnFieldChanged} (wxEvent \&evt)\label{classCSearchDlg_a320674c16053fc1407bd37e658e918dd}
+
+\item 
+void {\bfseries OnListItemSelected} (wxListEvent \&ev)\label{classCSearchDlg_a3c2aaa730a1952008f12e55cec832fcd}
+
+\item 
+void {\bfseries OnBnClickedReset} (wxCommandEvent \&ev)\label{classCSearchDlg_a4a103ffcfee1a8f15340aa643f4b439f}
+
+\item 
+void {\bfseries OnBnClickedClear} (wxCommandEvent \&ev)\label{classCSearchDlg_a16b47d3101bb85b4e132845703c2c474}
+
+\item 
+void {\bfseries OnExtendedSearchChange} (wxCommandEvent \&ev)\label{classCSearchDlg_a2e1b915874608c2e2b714ef089c31470}
+
+\item 
+void {\bfseries OnFilterCheckChange} (wxCommandEvent \&ev)\label{classCSearchDlg_a843290b17185b4abbe7ea19abd4ed79d}
+
+\item 
+void {\bfseries OnFilteringChange} (wxCommandEvent \&ev)\label{classCSearchDlg_a37a4cb50e8ab7f8e88e2011bc4f97911}
+
+\item 
+void {\bfseries OnSearchClosing} (wxBookCtrlEvent \&evt)\label{classCSearchDlg_a42bad31ccc915f0790a1fa7ff753584b}
+
+\item 
+void {\bfseries OnBnClickedStart} (wxCommandEvent \&evt)\label{classCSearchDlg_a9abe590a9bd1209a4ca8c9384febf5ed}
+
+\item 
+void {\bfseries OnBnClickedStop} (wxCommandEvent \&evt)\label{classCSearchDlg_a837b41db56e073816c0a0a96826eba05}
+
+\item 
+void {\bf OnSearchPageChanged} (wxBookCtrlEvent \&evt)\label{classCSearchDlg_a3d225fa4c899c5dedf58d1426f3377ef}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries m\_\-last\_\-search\_\-time}\label{classCSearchDlg_a5caed810097840d5169280259998358f}
+
+\item 
+wxGauge $\ast$ {\bfseries m\_\-progressbar}\label{classCSearchDlg_a8a56479acac5544060f77a54f5a3c1fb}
+
+\item 
+{\bf CMuleNotebook} $\ast$ {\bfseries m\_\-notebook}\label{classCSearchDlg_a116986012c623102156215c5e0a3bd2a}
+
+\item 
+wxArrayString {\bfseries m\_\-searchchoices}\label{classCSearchDlg_a70389b1b6c09b35cbb1a27750f5c7a69}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the Search Dialog, which takes care of enabling the user to search and to display results in a readable manner. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CSearchDlg@{CSearchDlg}!CSearchDlg@{CSearchDlg}}
+\index{CSearchDlg@{CSearchDlg}!CSearchDlg@{CSearchDlg}}
+\subsubsection[{CSearchDlg}]{\setlength{\rightskip}{0pt plus 5cm}CSearchDlg::CSearchDlg (wxWindow $\ast$ {\em pParent})}\label{classCSearchDlg_a901ad7f168d73a59d1a42a707e4fdb07}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em pParent}]The parent widget passed to the wxPanel constructor. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CSearchDlg@{CSearchDlg}!AddResult@{AddResult}}
+\index{AddResult@{AddResult}!CSearchDlg@{CSearchDlg}}
+\subsubsection[{AddResult}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchDlg::AddResult ({\bf CSearchFile} $\ast$ {\em toadd})}\label{classCSearchDlg_aca7c875a51b9314eb49e2f2591bc721b}
+
+
+Adds the provided result to the right result-\/list. Please note that there is no duplicates checking, so the files should indeed be a new result. 
+
+References CSearchListCtrl::AddResult(), CSearchFile::GetSearchID(), and UpdateHitCount().\index{CSearchDlg@{CSearchDlg}!CheckTabNameExists@{CheckTabNameExists}}
+\index{CheckTabNameExists@{CheckTabNameExists}!CSearchDlg@{CSearchDlg}}
+\subsubsection[{CheckTabNameExists}]{\setlength{\rightskip}{0pt plus 5cm}bool CSearchDlg::CheckTabNameExists (const wxString \& {\em searchString})}\label{classCSearchDlg_afc82ace31ea9c518e29396266a3ff90f}
+
+
+Checks if a result-\/page with the specified heading exists. 
+\begin{DoxyParams}{Parameters}
+\item[{\em searchString}]The heading to look for. \end{DoxyParams}
+\index{CSearchDlg@{CSearchDlg}!CreateNewTab@{CreateNewTab}}
+\index{CreateNewTab@{CreateNewTab}!CSearchDlg@{CSearchDlg}}
+\subsubsection[{CreateNewTab}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchDlg::CreateNewTab (const wxString \& {\em searchString}, \/  wxUIntPtr {\em nSearchID})}\label{classCSearchDlg_a48f1a9d5a8b6b1f8b2c28d6110383695}
+
+
+Creates a new tab and displays the specified results. 
+\begin{DoxyParams}{Parameters}
+\item[{\em searchString}]This will be the heading of the new page. \item[{\em nSearchID}]The results with this searchId will be displayed. \end{DoxyParams}
+
+
+References CSearchListCtrl::EnableFiltering(), CSearchListCtrl::SetFilter(), and CSearchListCtrl::ShowResults().\index{CSearchDlg@{CSearchDlg}!UpdateHitCount@{UpdateHitCount}}
+\index{UpdateHitCount@{UpdateHitCount}!CSearchDlg@{CSearchDlg}}
+\subsubsection[{UpdateHitCount}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchDlg::UpdateHitCount ({\bf CSearchListCtrl} $\ast$ {\em page})}\label{classCSearchDlg_a24a34cf970916a0e0a51c8fea6ec4191}
+
+
+This function displays the the hit-\/count in the heading for the specified page. 
+\begin{DoxyParams}{Parameters}
+\item[{\em page}]The page to have its heading updated. \end{DoxyParams}
+
+
+References CSearchListCtrl::GetHiddenItemCount().
+
+Referenced by AddResult(), and UpdateResult().\index{CSearchDlg@{CSearchDlg}!UpdateResult@{UpdateResult}}
+\index{UpdateResult@{UpdateResult}!CSearchDlg@{CSearchDlg}}
+\subsubsection[{UpdateResult}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchDlg::UpdateResult ({\bf CSearchFile} $\ast$ {\em toupdate})}\label{classCSearchDlg_ac45ae0d54a46d3df1e9871bedb87690e}
+
+
+Updates a changed result. 
+\begin{DoxyParams}{Parameters}
+\item[{\em A}]pointer to the updated \doxyref{CSearchFile}{p.}{classCSearchFile}.\end{DoxyParams}
+This function will update the source-\/count and color of the result, and if needed, it will also move the result so that the current sorting is maintained. 
+
+References CSearchFile::GetSearchID(), UpdateHitCount(), and CSearchListCtrl::UpdateResult().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SearchDlg.h\item 
+src/SearchDlg.cpp\end{DoxyCompactItemize}

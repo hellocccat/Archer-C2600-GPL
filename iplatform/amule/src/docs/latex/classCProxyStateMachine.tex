@@ -1,0 +1,150 @@
+\section{CProxyStateMachine Class Reference}
+\label{classCProxyStateMachine}\index{CProxyStateMachine@{CProxyStateMachine}}
+
+
+The ProxyStateMachine class is the ancestor of all proxy classes.  
+
+
+{\ttfamily \#include $<$Proxy.h$>$}Inheritance diagram for CProxyStateMachine::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCProxyStateMachine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CProxyStateMachine} (wxString name, const unsigned int max\_\-states, const {\bf CProxyData} \&proxyData, CProxyCommand cmd)
+\item 
+virtual {\bf $\sim$CProxyStateMachine} ()\label{classCProxyStateMachine_a908db34d47f857937e4a7817b3655241}
+
+\item 
+bool {\bfseries Start} (const wxIPaddress \&peerAddress, wxSocketClient $\ast$proxyClientSocket)\label{classCProxyStateMachine_a110706b7d0b0545ebcb262f9a202f29d}
+
+\item 
+t\_\-sm\_\-state {\bfseries HandleEvent} (t\_\-sm\_\-event event)\label{classCProxyStateMachine_a9783cc7f84331f5742419fc0d88c5fd8}
+
+\item 
+void {\bfseries AddDummyEvent} ()\label{classCProxyStateMachine_a38af9dd346408f3f62d7a33a3952970d}
+
+\item 
+void {\bfseries ReactivateSocket} ()\label{classCProxyStateMachine_ace850d0b62aad84b4b21bb0f708be641}
+
+\item 
+char $\ast$ {\bfseries GetBuffer} ()\label{classCProxyStateMachine_a95bf7e1739f65f61e5f918da52039014}
+
+\item 
+wxIPaddress \& {\bfseries GetProxyBoundAddress} (void) const \label{classCProxyStateMachine_ac203f39b3d8a171cdcf07ff726172ac4}
+
+\item 
+unsigned char {\bfseries GetLastReply} (void) const \label{classCProxyStateMachine_a8eefdb12e3ba468b86914909a5e199d7}
+
+\item 
+bool {\bfseries IsEndState} () const \label{classCProxyStateMachine_a1d05bb0a8b6ccc843dd26d0f719d2116}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wxString \& {\bf NewName} (wxString \&s, CProxyCommand cmd)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxSocketBase \& {\bfseries ProxyWrite} (wxSocketBase \&socket, const void $\ast$buffer, wxUint32 nbytes)\label{classCProxyStateMachine_aa205924b0806a723639cd7ae0d268b45}
+
+\item 
+wxSocketBase \& {\bfseries ProxyRead} (wxSocketBase \&socket, void $\ast$buffer)\label{classCProxyStateMachine_a97cb2b3785b88afe9cd139a8b181689d}
+
+\item 
+bool {\bfseries CanReceive} () const \label{classCProxyStateMachine_ae312f40bd9be272708de860dc231a03d}
+
+\item 
+bool {\bfseries CanSend} () const \label{classCProxyStateMachine_a54610e432ab524f08901b13c46a174d2}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CProxyData} \& {\bfseries m\_\-proxyData}\label{classCProxyStateMachine_ad93c941151af911427f7d2e84f842c7e}
+
+\item 
+CProxyCommand {\bfseries m\_\-proxyCommand}\label{classCProxyStateMachine_ab88a8615a3ded1d615de4afb4bbe8edb}
+
+\item 
+char {\bfseries m\_\-buffer} [PROXY\_\-BUFFER\_\-SIZE]\label{classCProxyStateMachine_afe30398fd23e69b30193db7863ad779e}
+
+\item 
+bool {\bfseries m\_\-isLost}\label{classCProxyStateMachine_a11a83f22769dd65b5740bfb22a403ceb}
+
+\item 
+bool {\bfseries m\_\-isConnected}\label{classCProxyStateMachine_a348e918f258c7d9d0a1085fba9fde9e8}
+
+\item 
+bool {\bfseries m\_\-canReceive}\label{classCProxyStateMachine_a7fa930c9678e28691873b08add8ad9a1}
+
+\item 
+bool {\bfseries m\_\-canSend}\label{classCProxyStateMachine_a34dd5a1ff73138a04d24cbd351010b4e}
+
+\item 
+bool {\bfseries m\_\-ok}\label{classCProxyStateMachine_af172dd2433d1557cc9f50e4311f7d4a1}
+
+\item 
+unsigned int {\bfseries m\_\-lastRead}\label{classCProxyStateMachine_a798f86c843b64e0d71dd97e96aa60817}
+
+\item 
+unsigned int {\bfseries m\_\-lastWritten}\label{classCProxyStateMachine_a83e09c9f18545177ee1dcf965f802026}
+
+\item 
+wxSocketError {\bfseries m\_\-lastError}\label{classCProxyStateMachine_a751a684eeac30f940839723e41d01b6b}
+
+\item 
+wxIPaddress $\ast$ {\bfseries m\_\-peerAddress}\label{classCProxyStateMachine_abc0262ce3dd95f3a8315706838cef2d4}
+
+\item 
+wxSocketClient $\ast$ {\bfseries m\_\-proxyClientSocket}\label{classCProxyStateMachine_aac83c28bb0ca7c6c31d67f213587a6cd}
+
+\item 
+wxIPaddress $\ast$ {\bfseries m\_\-proxyBoundAddress}\label{classCProxyStateMachine_a309c2beb98cf4a267f36b7121a352a20}
+
+\item 
+{\bf amuleIPV4Address} {\bfseries m\_\-proxyBoundAddressIPV4}\label{classCProxyStateMachine_a06f244194f1ba8328136d1e1421ffafe}
+
+\item 
+unsigned char {\bfseries m\_\-lastReply}\label{classCProxyStateMachine_ad7a2a5967cc0d0655bdf4a6e0297dd3f}
+
+\item 
+unsigned int {\bfseries m\_\-packetLenght}\label{classCProxyStateMachine_a8cfbcae15a3ca270c311755a4b130d5f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The ProxyStateMachine class is the ancestor of all proxy classes. \doxyref{CProxyStateMachine}{p.}{classCProxyStateMachine} will do all the common work that a proxy class must do and provide the necessary variables. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CProxyStateMachine@{CProxyStateMachine}!CProxyStateMachine@{CProxyStateMachine}}
+\index{CProxyStateMachine@{CProxyStateMachine}!CProxyStateMachine@{CProxyStateMachine}}
+\subsubsection[{CProxyStateMachine}]{\setlength{\rightskip}{0pt plus 5cm}CProxyStateMachine::CProxyStateMachine (wxString {\em name}, \/  const unsigned int {\em max\_\-states}, \/  const {\bf CProxyData} \& {\em proxyData}, \/  CProxyCommand {\em cmd})}\label{classCProxyStateMachine_a6fd1038a4f457e3e91bbab5919ff7c82}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of the state machine. For debug messages only. \item[{\em max\_\-states}]The maximum number of states that this machine will have. \item[{\em proxyData}]The necessary proxy information. \item[{\em cmd}]The type of proxy command to run. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CProxyStateMachine@{CProxyStateMachine}!NewName@{NewName}}
+\index{NewName@{NewName}!CProxyStateMachine@{CProxyStateMachine}}
+\subsubsection[{NewName}]{\setlength{\rightskip}{0pt plus 5cm}wxString \& CProxyStateMachine::NewName (wxString \& {\em s}, \/  CProxyCommand {\em cmd})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCProxyStateMachine_af6189b24a6d9320c5327b377af19f473}
+
+
+Adds a small string to the state machine name, containing the proxy command. 
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]The original state machine name. \item[{\em cmd}]The proxy command. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Proxy.h\item 
+src/Proxy.cpp\end{DoxyCompactItemize}

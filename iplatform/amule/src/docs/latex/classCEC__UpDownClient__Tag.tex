@@ -1,0 +1,160 @@
+\section{CEC\_\-UpDownClient\_\-Tag Class Reference}
+\label{classCEC__UpDownClient__Tag}\index{CEC\_\-UpDownClient\_\-Tag@{CEC\_\-UpDownClient\_\-Tag}}
+Inheritance diagram for CEC\_\-UpDownClient\_\-Tag::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCEC__UpDownClient__Tag}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CEC\_\-UpDownClient\_\-Tag} (const {\bf CUpDownClient} $\ast$client, EC\_\-DETAIL\_\-LEVEL detail\_\-level, {\bf CValueMap} $\ast$valuemap)\label{classCEC__UpDownClient__Tag_a575e74c37dfeb870d24dbd272494b0b4}
+
+\item 
+uint32 {\bfseries ID} () const \label{classCEC__UpDownClient__Tag_ad1949bebf81a5b49f681bd10c2de3aed}
+
+\item 
+{\bf CMD4Hash} {\bfseries UserHash} ({\bf CMD4Hash} $\ast$target=0) const \label{classCEC__UpDownClient__Tag_adaa058b1cdb348caf658b87ff78b6939}
+
+\item 
+uint32 {\bfseries UserID} (uint32 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a9e9df38ee260f4383af1bfd012d46a62}
+
+\item 
+wxString {\bfseries ClientName} (wxString $\ast$target=0) const \label{classCEC__UpDownClient__Tag_ace2d2839ce0f14854ad48ce09ba24939}
+
+\item 
+uint32 {\bfseries SpeedUp} (uint32 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a49dc8114af2d4144a0b07e741e9c247a}
+
+\item 
+float {\bfseries SpeedDown} (float $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a4310eb4067f2c304637b14a3eee66e0e}
+
+\item 
+uint64 {\bfseries XferUp} (uint64 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_abbbb8230cfc374a6a2509d26b0e120a4}
+
+\item 
+uint64 {\bfseries XferDown} (uint64 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a9bf5d2df6b84491c7cb8cff87bdd2ea4}
+
+\item 
+uint64 {\bfseries XferUpSession} (uint64 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a7d50cd668fecf1a2a60aff0172bfb1c6}
+
+\item 
+uint64 {\bfseries XferDownSession} (uint64 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_ac74fd7a258161195f2e69b03dc1e2652}
+
+\item 
+bool {\bfseries FriendSlot} (bool \&target) const \label{classCEC__UpDownClient__Tag_a77920718a7b0bd60dcad2659e5fd806f}
+
+\item 
+bool {\bfseries ClientSoftware} (uint8 \&target) const \label{classCEC__UpDownClient__Tag_acd57de78a21a187a0c289ee3b6b04f05}
+
+\item 
+bool {\bfseries SoftVerStr} (wxString \&target) const \label{classCEC__UpDownClient__Tag_afe859390810a720a2b16b055cd55b20b}
+
+\item 
+bool {\bfseries ClientUploadState} (uint8 \&target) const \label{classCEC__UpDownClient__Tag_aa7430649f870bea768c22770ccd010a5}
+
+\item 
+bool {\bfseries ClientDownloadState} (uint8 \&target) const \label{classCEC__UpDownClient__Tag_ac6198a2dbba2167295ca896e66121748}
+
+\item 
+bool {\bfseries GetSourceFrom} (uint8 \&target) const \label{classCEC__UpDownClient__Tag_a4fac9ff41168db905c95719a4157a8a7}
+
+\item 
+bool {\bfseries UserIP} (uint32 \&target) const \label{classCEC__UpDownClient__Tag_a769e6e765cd803a05933a85baf627bc5}
+
+\item 
+uint16 {\bfseries UserPort} (uint16 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a10576f6e089e68f1944161771d56f4bf}
+
+\item 
+uint32 {\bfseries ServerIP} (uint32 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_ae05cf59f15ec8d2f5fec72a46f3274e4}
+
+\item 
+uint16 {\bfseries ServerPort} (uint16 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a5574560f53adcce6eaff64fcd5be08e5}
+
+\item 
+wxString {\bfseries ServerName} (wxString $\ast$target=0) const \label{classCEC__UpDownClient__Tag_ab1aa7028176709c00204837604d1ea86}
+
+\item 
+bool {\bfseries KadPort} (uint16 \&target) const \label{classCEC__UpDownClient__Tag_a554ad5f13c5ac4a54e5f20d0e26a5cf2}
+
+\item 
+uint32 {\bfseries Score} (uint32 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a7d8fedb76ed90600a1b73c6a00c7c144}
+
+\item 
+uint16 {\bfseries WaitingPosition} (uint16 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a940f31e4ebd0b34e17e5f72258078a81}
+
+\item 
+uint16 {\bfseries RemoteQueueRank} (uint16 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_aebc8eb251ae02c4c0b5d402dce4b737e}
+
+\item 
+uint16 {\bfseries OldRemoteQueueRank} (uint16 $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a110acaba3a97e2a9d67c5440f877f816}
+
+\item 
+EIdentState {\bfseries GetCurrentIdentState} (EIdentState $\ast$target=0) const \label{classCEC__UpDownClient__Tag_a1b6a3ea564561e276dceadf274df9287}
+
+\item 
+bool {\bfseries ObfuscationStatus} (uint8 \&target) const \label{classCEC__UpDownClient__Tag_aaeecfaffc35d56263288e1612efc86ea}
+
+\item 
+bool {\bfseries HasExtendedProtocol} (bool $\ast$target=0) const \label{classCEC__UpDownClient__Tag_aa9eadc0cce9c3625bd88aaf3342013a6}
+
+\item 
+bool {\bfseries NextRequestedPart} (uint16 \&target) const \label{classCEC__UpDownClient__Tag_a2c152181f4dbe1e22c8af3f1e7b28fb2}
+
+\item 
+bool {\bfseries LastDownloadingPart} (uint16 \&target) const \label{classCEC__UpDownClient__Tag_a46352c65fcd5653e5bd2abfee7beec54}
+
+\item 
+bool {\bfseries UploadFile} (uint32 \&target) const \label{classCEC__UpDownClient__Tag_a2d99b6780f091f5f0b77585b44d53873}
+
+\item 
+bool {\bfseries RequestFile} (uint32 \&target) const \label{classCEC__UpDownClient__Tag_abba66191d6fcc824db9aa888542fa23e}
+
+\item 
+bool {\bfseries RemoteFilename} (wxString \&target) const \label{classCEC__UpDownClient__Tag_adb7f54d1037552ab23c5ec39396aa6d2}
+
+\item 
+bool {\bfseries DisableViewShared} (bool \&target) const \label{classCEC__UpDownClient__Tag_a6647f8b352740f5494df38f6d85dd29c}
+
+\item 
+bool {\bfseries Version} (uint32 \&target) const \label{classCEC__UpDownClient__Tag_a5a62cc191dd2e5a8d17941535979ba0e}
+
+\item 
+bool {\bfseries ModVersion} (wxString \&target) const \label{classCEC__UpDownClient__Tag_a9da7cafaa7fcb992165ccb05c3e835b5}
+
+\item 
+bool {\bfseries OSInfo} (wxString \&target) const \label{classCEC__UpDownClient__Tag_aa5b00621ba18efb7a207af838c71ef8c}
+
+\item 
+bool {\bfseries AvailableParts} (uint16 \&target) const \label{classCEC__UpDownClient__Tag_a9a207651ca3a44b986499cf78a21f048}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMD4Hash} {\bf GetMD4Data} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CEC\_\-UpDownClient\_\-Tag@{CEC\_\-UpDownClient\_\-Tag}!GetMD4Data@{GetMD4Data}}
+\index{GetMD4Data@{GetMD4Data}!CEC_UpDownClient_Tag@{CEC\_\-UpDownClient\_\-Tag}}
+\subsubsection[{GetMD4Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CMD4Hash} CEC\_\-UpDownClient\_\-Tag::GetMD4Data (void)\hspace{0.3cm}{\ttfamily  [private]}}\label{classCEC__UpDownClient__Tag_a68ed48666b0a7c5ec8dd81b198e4c8a9}
+
+
+Returns a \doxyref{CMD4Hash}{p.}{classCMD4Hash} class. This function takes care of converting from MSB to LSB as necessary.
+
+\begin{DoxyReturn}{Returns}
+\doxyref{CMD4Hash}{p.}{classCMD4Hash} class.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CECTag(ec\_\-tagname\_\-t, const CMD4Hash\&)}{p.}{classCECTag_a5e228685b0f90368737b50575f91327c} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CECTag} \doxyref{}{p.}{classCECTag_a6d39258b7b6cb3bc02d3619167a41cd6}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECSpecialTags.h\item 
+src/ECSpecialCoreTags.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\section{CED2KLink Class Reference}
+\label{classCED2KLink}\index{CED2KLink@{CED2KLink}}
+Inheritance diagram for CED2KLink::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCED2KLink}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries LinkType} \{ {\bfseries kServerList}, 
+{\bfseries kServer}, 
+{\bfseries kFile}, 
+{\bfseries kInvalid}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+LinkType {\bfseries GetKind} () const \label{classCED2KLink_a496ee4ec35ae9cd01627374b722e4e5f}
+
+\item 
+virtual wxString {\bfseries GetLink} () const =0\label{classCED2KLink_a1f6695503a4e1d9f62ddb7168488f0d8}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf CED2KLink} $\ast$ {\bfseries CreateLinkFromUrl} (const wxString \&link)\label{classCED2KLink_a44b27af5c81fd32d668d1baa58cbf62e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CED2KLink} (LinkType type)\label{classCED2KLink_aacdf2632f1a0717469054b018696f886}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+LinkType {\bfseries m\_\-type}\label{classCED2KLink_a60fd964f31c8c72c5e98eb2b751d44dd}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ED2KLink.h\item 
+src/ED2KLink.cpp\end{DoxyCompactItemize}

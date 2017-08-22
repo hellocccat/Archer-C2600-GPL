@@ -1,0 +1,67 @@
+state="off"
+check_file="/tmp/wifi_button"
+
+check_button_pressed(){
+        echo 1 > $check_file
+        sleep 2
+        cat $check_file
+}
+
+obtain_state() {
+	local disabled
+	local dev="$1"
+	config_get disabled $1 disabled
+
+	if [ "$disabled" = "off" ]; then
+		state="on"
+	fi
+}
+
+do_toggle() {
+    local dev="$1"
+
+    uci set wireless.$dev.disabled=$state
+    wifi_commit
+}
+
+echo $ACTION >/dev/console                                                      
+echo $BUTTON >/dev/console                                                      
+echo $SEEN >/dev/console                                                        
+
+[ "$ACTION" = "released" -a "$BUTTON" = "wireless" ] && {
+	echo 0 > $check_file
+}
+                                   
+if [ "$ACTION" = "released" -a "$BUTTON" = "ledgnr" ]; then     
+       [ -f /tmp/ledpm_enable ] && {
+           local night_on=$(uci get ledpm.leds.enable)
+           local night_enable=$(uci get ledctrl.NIGHT.enable)
+           [ "$night_on" = "on" -a "$night_enable" = "on" ] && return
+       }
+
+       local old=$(uci get ledctrl.GENERAL.enable)                              
+                                                                                
+       echo $old >/dev/console                                                  
+                                                                                
+       if [ "$old" = "on" ]; then                                               
+           uci set ledctrl.GENERAL.enable="off"
+       else                                                                
+           uci set ledctrl.GENERAL.enable="on"
+       fi                                         
+       ledcli "GENERAL"
+       wifi led                                                    
+       uci_commit_flash ledctrl
+       return;                                                             
+fi
+
+[ "$ACTION" = "pressed" -a "$BUTTON" = "wireless" ] && {
+       [ `check_button_pressed` != "1" ] && exit 0;
+       config_load wireless
+       config_foreach obtain_state wifi-device
+       config_foreach do_toggle wifi-device
+       wifi && {
+           if [ "$state" = "on" ]; then
+               ledcli WPS_CANCEL
+           fi
+       }
+}&

@@ -1,0 +1,71 @@
+\section{CClientCreditsList Class Reference}
+\label{classCClientCreditsList}\index{CClientCreditsList@{CClientCreditsList}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8 {\bfseries CreateSignature} ({\bf CClientCredits} $\ast$pTarget, byte $\ast$pachOutput, uint8 nMaxSize, uint32 ChallengeIP, uint8 byChaIPKind, void $\ast$sigkey=NULL)\label{classCClientCreditsList_aadf85f0a66e4b0fc2efe202d42ece3d2}
+
+\item 
+bool {\bfseries VerifyIdent} ({\bf CClientCredits} $\ast$pTarget, const byte $\ast$pachSignature, uint8 nInputSize, uint32 dwForIP, uint8 byChaIPKind)\label{classCClientCreditsList_a7934386f7490648dac589ab8f7a23e32}
+
+\item 
+{\bf CClientCredits} $\ast$ {\bfseries GetCredit} (const {\bf CMD4Hash} \&key)\label{classCClientCreditsList_a0d72f5a70648df80abc8cc094e41cb82}
+
+\item 
+void {\bfseries Process} ()\label{classCClientCreditsList_ac786f01487e8f986588ea0ae934dae99}
+
+\item 
+uint8 {\bfseries GetPubKeyLen} () const \label{classCClientCreditsList_aec9abac860f50b24efb187ebae143a27}
+
+\item 
+const byte $\ast$ {\bfseries GetPublicKey} () const \label{classCClientCreditsList_a6e5549eda61fef9d04ad018e27559718}
+
+\item 
+bool {\bfseries CryptoAvailable} () const \label{classCClientCreditsList_a5c6d978afa491182a0053b6caf509d0e}
+
+\item 
+void {\bfseries SaveList} ()\label{classCClientCreditsList_a4bddce1c5545e1bba3fd128e62945061}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries LoadList} ()\label{classCClientCreditsList_a64a2c09099ce3c2856e690165e710ef4}
+
+\item 
+void {\bfseries InitalizeCrypting} ()\label{classCClientCreditsList_a6084ba1398012b3e4acd750acb9a7eaf}
+
+\item 
+bool {\bfseries CreateKeyPair} ()\label{classCClientCreditsList_a49abf1cbd252d0e37239d85474f839cf}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ {\bf CMD4Hash}, {\bf CClientCredits} $\ast$ $>$ {\bfseries ClientMap}\label{classCClientCreditsList_a35d571679caf1ec3cdfdb304613ccbb5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ClientMap {\bfseries m\_\-mapClients}\label{classCClientCreditsList_a4519fbb5551fff32cabacda3dc3c0f0a}
+
+\item 
+uint32 {\bfseries m\_\-nLastSaved}\label{classCClientCreditsList_a050934800dd95cece32fcbf9223ef59b}
+
+\item 
+void $\ast$ {\bfseries m\_\-pSignkey}\label{classCClientCreditsList_a0b449cb18274687d23acec46ac93f3b5}
+
+\item 
+byte {\bfseries m\_\-abyMyPublicKey} [80]\label{classCClientCreditsList_ab613e7242dc06797bcf2dd43df1ce7f5}
+
+\item 
+uint8 {\bfseries m\_\-nMyPublicKeyLen}\label{classCClientCreditsList_a28188b9065b81459fa819bac0839566a}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ClientCreditsList.h\item 
+src/ClientCreditsList.cpp\end{DoxyCompactItemize}

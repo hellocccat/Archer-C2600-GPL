@@ -1,0 +1,150 @@
+diff --git a/mcproxy/include/proxy/message_format.hpp b/mcproxy/include/proxy/message_format.hpp
+index 942a7cc..693d622 100644
+--- a/mcproxy/include/proxy/message_format.hpp
++++ b/mcproxy/include/proxy/message_format.hpp
+@@ -166,7 +166,11 @@ struct timer_msg : public proxy_msg {
+         : proxy_msg(type, SYSTEMIC)
+         , m_if_index(if_index)
+         , m_gaddr(gaddr)
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+         , m_end_time(std::chrono::monotonic_clock::now() + duration) {
++#else
++        , m_end_time(std::chrono::steady_clock::now() + duration) {
++#endif
+         HC_LOG_TRACE("");
+     }
+ 
+@@ -179,15 +183,27 @@ struct timer_msg : public proxy_msg {
+     }
+ 
+     bool is_remaining_time_greater_than(std::chrono::milliseconds comp_time) {
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+         return (std::chrono::monotonic_clock::now() + comp_time) <= m_end_time;
++#else
++        return (std::chrono::steady_clock::now() + comp_time) <= m_end_time;
++#endif
+     }
+ 
+     std::string get_remaining_time() {
+         using namespace std::chrono;
+         std::ostringstream s;
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+         auto current_time = monotonic_clock::now();
++#else
++        auto current_time = steady_clock::now();
++#endif
+         auto time_span = m_end_time - current_time;
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+         double seconds = time_span.count()  * monotonic_clock::period::num / monotonic_clock::period::den;
++#else
++        double seconds = time_span.count()  * steady_clock::period::num / steady_clock::period::den;
++#endif
+         if (seconds >= 0) {
+             s << seconds << "sec";
+         } else {
+@@ -199,7 +215,11 @@ struct timer_msg : public proxy_msg {
+ private:
+     unsigned int m_if_index;
+     addr_storage m_gaddr;
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+     std::chrono::time_point<std::chrono::monotonic_clock> m_end_time;
++#else
++    std::chrono::time_point<std::chrono::steady_clock> m_end_time;
++#endif
+ };
+ 
+ struct filter_timer_msg : public timer_msg {
+diff --git a/mcproxy/include/proxy/proxy_instance.hpp b/mcproxy/include/proxy/proxy_instance.hpp
+index 609bd02..f67e871 100644
+--- a/mcproxy/include/proxy/proxy_instance.hpp
++++ b/mcproxy/include/proxy/proxy_instance.hpp
+@@ -99,7 +99,11 @@ private:
+     std::unique_ptr<routing_management> m_routing_management;
+ 
+     //to match the proxy debug output with the wireshark time stamp
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+     const std::chrono::time_point<std::chrono::monotonic_clock> m_proxy_start_time;
++#else
++    const std::chrono::time_point<std::chrono::steady_clock> m_proxy_start_time;
++#endif
+ 
+     std::set<upstream_infos> m_upstreams;
+ 
+diff --git a/mcproxy/include/proxy/timing.hpp b/mcproxy/include/proxy/timing.hpp
+index ceef60e..0ea6666 100644
+--- a/mcproxy/include/proxy/timing.hpp
++++ b/mcproxy/include/proxy/timing.hpp
+@@ -45,7 +45,11 @@
+ class worker;
+ 
+ typedef std::tuple<const worker*, std::shared_ptr<proxy_msg>> timing_db_value;
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+ typedef std::chrono::time_point<std::chrono::monotonic_clock> timing_db_key;
++#else
++typedef std::chrono::time_point<std::chrono::steady_clock> timing_db_key;
++#endif
+ typedef std::map<timing_db_key, timing_db_value> timing_db;
+ typedef std::pair<timing_db_key, timing_db_value> timing_db_pair;
+ 
+diff --git a/mcproxy/src/proxy/proxy_instance.cpp b/mcproxy/src/proxy/proxy_instance.cpp
+index dacefbe..b49eda4 100644
+--- a/mcproxy/src/proxy/proxy_instance.cpp
++++ b/mcproxy/src/proxy/proxy_instance.cpp
+@@ -56,7 +56,11 @@ proxy_instance::proxy_instance(group_mem_protocol group_mem_protocol, const std:
+ , m_sender(nullptr)
+ , m_receiver(nullptr)
+ , m_routing(nullptr)
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+ , m_proxy_start_time(std::chrono::monotonic_clock::now())
++#else
++, m_proxy_start_time(std::chrono::steady_clock::now())
++#endif
+ , m_upstream_input_rule(std::make_shared<rule_binding>(instance_name, IT_UPSTREAM, "*", ID_IN, RMT_FIRST, std::chrono::milliseconds(0)))
+ , m_upstream_output_rule(std::make_shared<rule_binding>(instance_name, IT_UPSTREAM, "*", ID_OUT, RMT_ALL, std::chrono::milliseconds(0)))
+ {
+@@ -237,9 +241,17 @@ std::string proxy_instance::to_string() const
+     HC_LOG_TRACE("");
+     std::ostringstream s;
+ 
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+     auto current_time = std::chrono::monotonic_clock::now();
++#else
++    auto current_time = std::chrono::steady_clock::now();
++#endif
+     auto time_span = current_time - m_proxy_start_time;
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+     double seconds = time_span.count()  * std::chrono::monotonic_clock::period::num / std::chrono::monotonic_clock::period::den;
++#else
++    double seconds = time_span.count()  * std::chrono::steady_clock::period::num / std::chrono::steady_clock::period::den;
++#endif
+ 
+     s << "@@##-- proxy instance " << m_instance_name << " (table:" << m_table_number << ",lifetime:" << seconds << "sec)" << " --##@@" << std::endl;;
+     s << m_upstream_input_rule->to_string() << std::endl;
+diff --git a/mcproxy/src/proxy/timing.cpp b/mcproxy/src/proxy/timing.cpp
+index c832522..cd8ec20 100644
+--- a/mcproxy/src/proxy/timing.cpp
++++ b/mcproxy/src/proxy/timing.cpp
+@@ -58,7 +58,11 @@ void timing::worker_thread()
+ 
+         std::lock_guard<std::mutex> lock(m_global_lock);
+ 
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+         timing_db_key now = std::chrono::monotonic_clock::now();
++#else
++        timing_db_key now = std::chrono::steady_clock::now();
++#endif
+ 
+         for (auto it = begin(m_db); it != end(m_db);) {
+             if (it->first <= now) {
+@@ -83,7 +87,11 @@ void timing::worker_thread()
+ void timing::add_time(std::chrono::milliseconds delay, const worker* msg_worker, const std::shared_ptr<proxy_msg>& pr_msg)
+ {
+     HC_LOG_TRACE("");
++#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 7)
+     timing_db_key until = std::chrono::monotonic_clock::now() + delay;
++#else
++    timing_db_key until = std::chrono::steady_clock::now() + delay;
++#endif
+ 
+     std::lock_guard<std::mutex> lock(m_global_lock);
+ 

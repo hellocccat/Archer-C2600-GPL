@@ -1,0 +1,116 @@
+\section{CClientCredits Class Reference}
+\label{classCClientCredits}\index{CClientCredits@{CClientCredits}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CClientCredits} ({\bf CreditStruct} $\ast$in\_\-credits)\label{classCClientCredits_ae08b8e873e85effea0cb6fefefa41501}
+
+\item 
+{\bfseries CClientCredits} (const {\bf CMD4Hash} \&key)\label{classCClientCredits_a4dff2237362aaa8bfbc4e61cbfcc5105}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetKey} () const \label{classCClientCredits_a73b7c372159f7e58396419f5b466430b}
+
+\item 
+const byte $\ast$ {\bfseries GetSecureIdent} () const \label{classCClientCredits_a43e366a7c34536ce3a2afc1d3e58b9d9}
+
+\item 
+uint8 {\bfseries GetSecIDKeyLen} () const \label{classCClientCredits_a399ba61579396b6fe634b2e51dfc28c1}
+
+\item 
+const {\bf CreditStruct} $\ast$ {\bfseries GetDataStruct} () const \label{classCClientCredits_a2caff0d2ba2bbba9486bae1e02c33e28}
+
+\item 
+void {\bfseries ClearWaitStartTime} ()\label{classCClientCredits_aa047416fa3636925e175f5f4a4c28654}
+
+\item 
+void {\bfseries AddDownloaded} (uint32 bytes, uint32 dwForIP, bool cryptoavail)\label{classCClientCredits_a2bd2ef2205597c798773c85b12b3b668}
+
+\item 
+void {\bfseries AddUploaded} (uint32 bytes, uint32 dwForIP, bool cryptoavail)\label{classCClientCredits_ac45d460b2e1b3cc2740e96d69c0ff0c1}
+
+\item 
+uint64 {\bfseries GetUploadedTotal} () const \label{classCClientCredits_a9b70c8727950e89a5810ce2e2d48da24}
+
+\item 
+uint64 {\bfseries GetDownloadedTotal} () const \label{classCClientCredits_aec64a94ea79304910f71c54fafaa221d}
+
+\item 
+float {\bfseries GetScoreRatio} (uint32 dwForIP, bool cryptoavail)\label{classCClientCredits_ac7c2c8520c6c3e72aa38d93bf1eed702}
+
+\item 
+void {\bfseries SetLastSeen} ()\label{classCClientCredits_a7bf9eb670ee0fa4984d83e2f04b85501}
+
+\item 
+bool {\bfseries SetSecureIdent} (const byte $\ast$pachIdent, uint8 nIdentLen)\label{classCClientCredits_a39872fb426adb3a1ab6edb22eb4b0276}
+
+\item 
+EIdentState {\bfseries GetCurrentIdentState} (uint32 dwForIP) const \label{classCClientCredits_ac3c2a6fd713cf7c82a0c89c2fadcc67b}
+
+\item 
+uint32 {\bfseries GetSecureWaitStartTime} (uint32 dwForIP)\label{classCClientCredits_a629a1d366771f7d15a904a542ae8df77}
+
+\item 
+void {\bfseries SetSecWaitStartTime} (uint32 dwForIP)\label{classCClientCredits_a2c46793a174fc8b3bc3db48167d560e5}
+
+\item 
+void {\bfseries Verified} (uint32 dwForIP)\label{classCClientCredits_a219bae03842ecf9bcb29531689069143}
+
+\item 
+EIdentState {\bfseries GetIdentState} () const \label{classCClientCredits_a7e7d25ee12c97f2d26d7443ce8606ce7}
+
+\item 
+void {\bfseries SetIdentState} (EIdentState state)\label{classCClientCredits_a7a4b58df202bdb5370fc9399d3efc77f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32 {\bfseries m\_\-dwCryptRndChallengeFor}\label{classCClientCredits_a24f86897dc5a50ba441af0b84f37b4d0}
+
+\item 
+uint32 {\bfseries m\_\-dwCryptRndChallengeFrom}\label{classCClientCredits_a0188e0fa7ae3d231e2d2b438a1738759}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries InitalizeIdent} ()\label{classCClientCredits_a860f6006964a9a4fb6adbd3853e28828}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+EIdentState {\bfseries m\_\-identState}\label{classCClientCredits_a713738e0277f26cae241b9fb5cfbd6aa}
+
+\item 
+{\bf CreditStruct} $\ast$ {\bfseries m\_\-pCredits}\label{classCClientCredits_a4b647cd00dc1b4f7b60ebb335ae1088e}
+
+\item 
+byte {\bfseries m\_\-abyPublicKey} [80]\label{classCClientCredits_a8be443a8d38d0ff48d3a7af1752346d3}
+
+\item 
+uint8 {\bfseries m\_\-nPublicKeyLen}\label{classCClientCredits_ad814cd183e4873e3b29654e7802fc31c}
+
+\item 
+uint32 {\bfseries m\_\-dwIdentIP}\label{classCClientCredits_aaa17d742ee02c8ae79b78d0c06e81d6c}
+
+\item 
+uint32 {\bfseries m\_\-dwWaitTime}\label{classCClientCredits_ac3037010c4f6aab09f562269b06176f2}
+
+\item 
+uint32 {\bfseries m\_\-dwSecureWaitTime}\label{classCClientCredits_a717e7164eb1974aedd5c02d84779665e}
+
+\item 
+uint32 {\bfseries m\_\-dwUnSecureWaitTime}\label{classCClientCredits_ad09f2feef361535a613ac9bd7ca3750e}
+
+\item 
+uint32 {\bfseries m\_\-dwWaitTimeIP}\label{classCClientCredits_a0104ba854bd727237f1bfdaa07de87df}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ClientCredits.h\item 
+src/ClientCredits.cpp\end{DoxyCompactItemize}

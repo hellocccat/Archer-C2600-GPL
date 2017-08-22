@@ -1,0 +1,116 @@
+\section{CRemoteContainer$<$ T, I, G $>$ Class Template Reference}
+\label{classCRemoteContainer}\index{CRemoteContainer@{CRemoteContainer}}
+Inheritance diagram for CRemoteContainer$<$ T, I, G $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCRemoteContainer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ T $\ast$ $>$::iterator {\bfseries iterator}\label{classCRemoteContainer_af264321d497eb999ad39074a40f95dc5}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CRemoteContainer} ({\bf CRemoteConnect} $\ast$conn, bool inc\_\-tags)\label{classCRemoteContainer_a51ce3403af183814017b33f0841de3b9}
+
+\item 
+iterator {\bfseries begin} ()\label{classCRemoteContainer_aa72884d88da3a04a4a0ffd01a6569c5b}
+
+\item 
+iterator {\bfseries end} ()\label{classCRemoteContainer_a621924bc46a410719eabfd4ac9e04e11}
+
+\item 
+uint32 {\bfseries GetCount} ()\label{classCRemoteContainer_ad24df38eabb0f5e9332fd2a1cff31215}
+
+\item 
+void {\bfseries AddItem} (T $\ast$item)\label{classCRemoteContainer_ae09af8299c4eb8c6a50e690642e67bae}
+
+\item 
+T $\ast$ {\bfseries GetByID} (I id)\label{classCRemoteContainer_a8ac0205b6a056009b643105bbdbef55e}
+
+\item 
+void {\bfseries Flush} ()\label{classCRemoteContainer_ade1c7ea36f6b93cc9f610480bdb2c08f}
+
+\item 
+void {\bfseries FullReload} (int cmd)\label{classCRemoteContainer_a08e69987f1dcd3fa8c6beba2ba097202}
+
+\item 
+void {\bfseries DoRequery} (int cmd, int tag)\label{classCRemoteContainer_ae9274ceac5b096de308c993b716ed540}
+
+\item 
+void {\bfseries ProcessFull} (const {\bf CECPacket} $\ast$reply)\label{classCRemoteContainer_acf48b44473823067920675b59c1c5d9e}
+
+\item 
+void {\bfseries RemoveItem} (iterator \&it)\label{classCRemoteContainer_a369413f060f05fde1840f51bd45c8395}
+
+\item 
+virtual void {\bfseries ProcessUpdate} (const {\bf CECTag} $\ast$reply, {\bf CECPacket} $\ast$full\_\-req, int req\_\-type)\label{classCRemoteContainer_abc9b98d351c77baccd0c8cbbdd15fa4f}
+
+\item 
+virtual T $\ast$ {\bfseries CreateItem} (G $\ast$)\label{classCRemoteContainer_a3cab4b191dcf5779f111d1d7508f8b32}
+
+\item 
+virtual void {\bfseries DeleteItem} (T $\ast$)\label{classCRemoteContainer_aad9857b6f4dc2415721ae4145745cd2c}
+
+\item 
+virtual I {\bfseries GetItemID} (T $\ast$)\label{classCRemoteContainer_a1da2f4f24ad32a8a913381cf328aa5dc}
+
+\item 
+virtual void {\bfseries ProcessItemUpdate} (G $\ast$, T $\ast$)\label{classCRemoteContainer_a0dfd94d9183d4e09108c752346ed17e7}
+
+\item 
+virtual bool {\bfseries Phase1Done} (const {\bf CECPacket} $\ast$)\label{classCRemoteContainer_ad199bba867b4a9731e8520ea67a1b24f}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries IDLE}, 
+{\bfseries STATUS\_\-REQ\_\-SENT}, 
+{\bfseries FULL\_\-REQ\_\-SENT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries HandlePacket} (const {\bf CECPacket} $\ast$packet)\label{classCRemoteContainer_a3751674b5d73f91fdbd9b10969fc5792}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum CRemoteContainer:: \{ ... \}  {\bfseries m\_\-state}\label{classCRemoteContainer_a52f6cb3470b1dd772df17bd906efcaa3}
+
+\item 
+{\bf CRemoteConnect} $\ast$ {\bfseries m\_\-conn}\label{classCRemoteContainer_aab7bbfe630def972705427b15e4b4cd9}
+
+\item 
+std::list$<$ T $\ast$ $>$ {\bfseries m\_\-items}\label{classCRemoteContainer_a9bbd5a7a7aba5b1aa125599f14ba1b0c}
+
+\item 
+std::map$<$ I, T $\ast$ $>$ {\bfseries m\_\-items\_\-hash}\label{classCRemoteContainer_a7288b3f0f8dde45917dbc308c10e253b}
+
+\item 
+int {\bfseries m\_\-item\_\-count}\label{classCRemoteContainer_a05f94f3a7e604254a26e05520a277173}
+
+\item 
+bool {\bfseries m\_\-inc\_\-tags}\label{classCRemoteContainer_a17c83d874b62c30f87531d75d4c24280}
+
+\item 
+int {\bfseries m\_\-full\_\-req\_\-cmd}\label{classCRemoteContainer_ae1cd01c5df16c4579860efee74efc38c}
+
+\item 
+int {\bfseries m\_\-full\_\-req\_\-tag}\label{classCRemoteContainer_a5e3133702c467f36702d914f97ed7798}
+
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$class T, class I, class G = CECTag$>$ class CRemoteContainer$<$ T, I, G $>$}
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\end{DoxyCompactItemize}

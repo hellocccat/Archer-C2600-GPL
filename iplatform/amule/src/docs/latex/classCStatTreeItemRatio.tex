@@ -1,0 +1,95 @@
+\section{CStatTreeItemRatio Class Reference}
+\label{classCStatTreeItemRatio}\index{CStatTreeItemRatio@{CStatTreeItemRatio}}
+
+
+Tree item for displaying ratio between two counters.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemRatio::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCStatTreeItemRatio}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemRatio} (const wxString \&label, const {\bf CStatTreeItemCounter} $\ast$cnt1, const {\bf CStatTreeItemCounter} $\ast$cnt2, uint64\_\-t($\ast$totalfunc1)()=NULL, uint64\_\-t($\ast$totalfunc2)()=NULL)
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CStatTreeItemCounter} $\ast$ {\bf m\_\-counter1}\label{classCStatTreeItemRatio_af13fabba2df50316efbb9dc6981f2e3f}
+
+\item 
+const {\bf CStatTreeItemCounter} $\ast$ {\bf m\_\-counter2}\label{classCStatTreeItemRatio_adf86c7a889216a93a5fb66c19b93503c}
+
+\item 
+uint64\_\-t($\ast$ {\bf m\_\-totalfunc1} )()\label{classCStatTreeItemRatio_aa92f47fae7b24e56f175d28eac3206ef}
+
+\item 
+uint64\_\-t($\ast$ {\bfseries m\_\-totalfunc2} )()\label{classCStatTreeItemRatio_a245b590f509cb440233297500ba15bd1}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf GetString} () const \label{classCStatTreeItemRatio_a4bca82ef41e35ce062e1c4822de5034f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tree item for displaying ratio between two counters. Ratio is counted as counter1:counter2. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemRatio@{CStatTreeItemRatio}!CStatTreeItemRatio@{CStatTreeItemRatio}}
+\index{CStatTreeItemRatio@{CStatTreeItemRatio}!CStatTreeItemRatio@{CStatTreeItemRatio}}
+\subsubsection[{CStatTreeItemRatio}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemRatio::CStatTreeItemRatio (const wxString \& {\em label}, \/  const {\bf CStatTreeItemCounter} $\ast$ {\em cnt1}, \/  const {\bf CStatTreeItemCounter} $\ast$ {\em cnt2}, \/  uint64\_\-t($\ast$)() {\em totalfunc1} = {\ttfamily NULL}, \/  uint64\_\-t($\ast$)() {\em totalfunc2} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemRatio_aaca973bfe9f36cce51962f32a5fa120b}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em cnt1}]First counter to use. \item[{\em cnt2}]Second counter to use. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemRatio@{CStatTreeItemRatio}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemRatio@{CStatTreeItemRatio}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemRatio::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemRatio_aafc3ca216a1a2c15b6440f5e90332a44}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+References CECTag::AddTag(), and GetString().\index{CStatTreeItemRatio@{CStatTreeItemRatio}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemRatio@{CStatTreeItemRatio}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemRatio::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemRatio_a89517825b330834f8f2acdacde0a3c10}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+References GetString(), and CStatTreeItemBase::m\_\-label.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

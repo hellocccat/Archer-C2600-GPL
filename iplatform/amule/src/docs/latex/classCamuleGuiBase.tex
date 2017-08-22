@@ -1,0 +1,57 @@
+\section{CamuleGuiBase Class Reference}
+\label{classCamuleGuiBase}\index{CamuleGuiBase@{CamuleGuiBase}}
+Inheritance diagram for CamuleGuiBase::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCamuleGuiBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries CopyTextToClipboard} (wxString strText)\label{classCamuleGuiBase_a3f1cfc74de12cdb8d641f12882b1df15}
+
+\item 
+void {\bfseries ResetTitle} ()\label{classCamuleGuiBase_a939ad22323fa757c3c83a70dd2fe4fcc}
+
+\item 
+virtual int {\bfseries InitGui} (bool geometry\_\-enable, wxString \&geometry\_\-string)\label{classCamuleGuiBase_aec85607ff17b3f9210c6060b8ff3e9e2}
+
+\item 
+virtual int {\bfseries ShowAlert} (wxString msg, wxString title, int flags)\label{classCamuleGuiBase_a32f07e46167bb221243c52de935cd766}
+
+\item 
+void {\bfseries AddGuiLogLine} (const wxString \&line)\label{classCamuleGuiBase_a993802d6b510402a77c596ea7c63cd93}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-FrameTitle}\label{classCamuleGuiBase_a78aca7f642040bfc12b4657493138d88}
+
+\item 
+{\bf CamuleDlg} $\ast$ {\bfseries amuledlg}\label{classCamuleGuiBase_a53452287adfd7b78aaa035da60c92623}
+
+\item 
+int {\bfseries m\_\-FileDetailDialogActive}\label{classCamuleGuiBase_a50dc377107816abffe6a32916d6bec81}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::list$<$ wxString $>$ {\bf m\_\-logLines}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{CamuleGuiBase@{CamuleGuiBase}!m\_\-logLines@{m\_\-logLines}}
+\index{m\_\-logLines@{m\_\-logLines}!CamuleGuiBase@{CamuleGuiBase}}
+\subsubsection[{m\_\-logLines}]{\setlength{\rightskip}{0pt plus 5cm}std::list$<$wxString$>$ {\bf CamuleGuiBase::m\_\-logLines}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCamuleGuiBase_a35a52ab89e4840022f4806850672ff15}
+
+
+This list is used to contain log messages that are to be displayed on the GUI, when it is currently impossible to do so. This is in order to allows us to queue messages till after the dialog has been created. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule.h\item 
+src/amule-\/gui.cpp\end{DoxyCompactItemize}

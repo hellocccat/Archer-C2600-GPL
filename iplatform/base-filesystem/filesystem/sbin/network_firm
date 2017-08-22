@@ -1,0 +1,126 @@
+#!/usr/bin/lua
+
+local sys   = require "luci.sys"
+local util  = require "luci.util"
+local uci   = require "luci.model.uci"
+
+local uci_r   = uci.cursor()
+local changed = false
+
+local function get_real_ifname(ifname)
+    local tmpnms = {}
+
+    tmpnms = util.split(ifname, " ")
+    for _, v in ipairs(tmpnms) do
+        index = v:find("%.")
+        if index then
+            ifname = string.sub(v, 1, index - 1)
+        else
+            ifname = v
+        end
+        break
+    end
+
+    return ifname
+end
+
+local function get_orig_mac(iface)
+    local mac = nil
+
+    mac = sys.exec("firm_mac " .. iface)
+    mac = mac:gsub("-", ":")
+    return mac
+end
+
+local function set_orig_mac(iface)
+    local ifname = uci_r:get("network", iface, "ifname")
+    local mac    = get_orig_mac(iface)
+    local tmpnms = {}
+
+    ifname = get_real_ifname(ifname)
+    sys.fork_call("ifconfig " .. ifname .. " hw ether " .. mac)
+end
+
+local function get_iface_mac(iface)
+    local ifname = uci_r:get("network", iface, "ifname")
+    local tmpnms = {}
+    local new_mac = nil
+
+    ifname = get_real_ifname(ifname)
+
+    uci_r:foreach("network", "device",
+    function(section)
+        local name    = section["name"]
+        local macaddr = section["macaddr"]
+
+        if not new_mac and name == ifname and macaddr then
+            new_mac = macaddr
+        end
+    end)
+
+    return new_mac or get_orig_mac(iface)
+end
+
+local function set_iface_mac(iface)
+    local mac     = nil
+    local secname = nil
+    local ifname  = uci_r:get("network", iface, "ifname")
+
+    ifname = get_real_ifname(ifname)
+
+    uci_r:foreach("network", "device",
+    function(section)
+        local name = section["name"]
+        local macaddr = section["macaddr"]
+
+        if name == ifname then
+            if macaddr then
+                mac = macaddr
+            end
+            secname = section[".name"]
+            return
+        end
+    end)
+
+    if mac then
+        -- iface has macaddr already
+        return
+    end
+
+    if secname == nil then
+        secname = uci_r:section("network", "device", nil, {
+            name = ifname, 
+            enabled = '1',
+        })
+    end
+
+    if iface == "lan" then
+        mac = get_orig_mac(iface)
+        uci_r:set("network", secname, "macaddr", mac)
+        changed = true
+    elseif iface == "wan" then
+        mac = uci_r:get("network", "wan", "macaddr")
+        if not mac then
+            mac = get_orig_mac(iface)
+            uci_r:set("network", "wan", "macaddr", mac)
+            changed = true
+        end
+    end
+end
+
+function main()
+    set_orig_mac("lan")
+    set_orig_mac("wan")
+
+    if changed == true then
+        uci_r:commit_without_write_flash("network")
+    end
+end
+
+if #arg == 0 then
+    main()
+elseif #arg == 1 and (arg[1] == "lan" or arg[1] == "wan") then
+    io.write(get_iface_mac(arg[1]))
+else
+    io.write("invalid args.\n")
+end

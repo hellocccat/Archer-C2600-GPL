@@ -1,0 +1,21 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2011 OpenWrt.org
+
+START=98
+
+RNGD_MAX_WRITES_PER_SEC=50
+RNGD_AMOUNT=4000
+RNGD_DEVICE="/dev/urandom"
+RNGD_OUT_DEVICE="/dev/random"
+
+start() {
+        if [ -e /dev/hwrng ]; then
+                RNGD_DEVICE="/dev/hwrng"
+                RNGD_OUT_DEVICE="/dev/urandom"
+        fi
+        service_start /sbin/rngd -r $RNGD_DEVICE -o $RNGD_OUT_DEVICE -W $RNGD_AMOUNT -m $RNGD_MAX_WRITES_PER_SEC
+}
+
+stop() {
+	service_stop /sbin/rngd
+}

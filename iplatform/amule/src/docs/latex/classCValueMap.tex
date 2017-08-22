@@ -1,0 +1,67 @@
+\section{CValueMap Class Reference}
+\label{classCValueMap}\index{CValueMap@{CValueMap}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CValueMap} (const {\bf CValueMap} \&valuemap)\label{classCValueMap_a001e70fe2c75eee63fba998debaddc21}
+
+\item 
+void {\bfseries CreateTag} (ec\_\-tagname\_\-t tagname, uint8 value, {\bf CECTag} $\ast$parent)\label{classCValueMap_ad7d858c4427813ae2088acd160917ce2}
+
+\item 
+void {\bfseries CreateTag} (ec\_\-tagname\_\-t tagname, uint16 value, {\bf CECTag} $\ast$parent)\label{classCValueMap_a2baf08efd31561cd771116627cb2db02}
+
+\item 
+void {\bfseries CreateTag} (ec\_\-tagname\_\-t tagname, uint32 value, {\bf CECTag} $\ast$parent)\label{classCValueMap_ac12f2af93861153037357a6e6f6653bc}
+
+\item 
+void {\bfseries CreateTag} (ec\_\-tagname\_\-t tagname, uint64 value, {\bf CECTag} $\ast$parent)\label{classCValueMap_a8447adaf142d4ab9a6092538a080fc99}
+
+\item 
+void {\bfseries CreateTag} (ec\_\-tagname\_\-t tagname, {\bf CMD4Hash} value, {\bf CECTag} $\ast$parent)\label{classCValueMap_ab98a5fe5e1d9ce0991df07e3f1aa62a9}
+
+\item 
+void {\bfseries CreateTag} (ec\_\-tagname\_\-t tagname, wxString value, {\bf CECTag} $\ast$parent)\label{classCValueMap_a5d8ff87143abd9148070605cd17e14b1}
+
+\item 
+bool {\bfseries AddTag} (const {\bf CECTag} \&tag, {\bf CECTag} $\ast$parent)\label{classCValueMap_a3ddf6efe12c872b605c00c001bbdb385}
+
+\item 
+void {\bfseries ForgetTag} (ec\_\-tagname\_\-t tagname)\label{classCValueMap_a2065e5cb4660503dc728cc328fcdb7a9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries CreateTagT} (ec\_\-tagname\_\-t tagname, T value, std::map$<$ ec\_\-tagname\_\-t, T $>$ \&{\bf map}, {\bf CECTag} $\ast$parent)\label{classCValueMap_a141ffd18e0d39f860a73e96a2bf2bbce}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ ec\_\-tagname\_\-t, uint8 $>$ {\bfseries m\_\-map\_\-uint8}\label{classCValueMap_abe732238315fc2a87ce78894895b3723}
+
+\item 
+std::map$<$ ec\_\-tagname\_\-t, uint16 $>$ {\bfseries m\_\-map\_\-uint16}\label{classCValueMap_a1f1b47668bb61ae56f941352a5d1e9bd}
+
+\item 
+std::map$<$ ec\_\-tagname\_\-t, uint32 $>$ {\bfseries m\_\-map\_\-uint32}\label{classCValueMap_a90fb7a193a52c8e42cb2f91fb69c334b}
+
+\item 
+std::map$<$ ec\_\-tagname\_\-t, uint64 $>$ {\bfseries m\_\-map\_\-uint64}\label{classCValueMap_a19873112c81a396ae751d109c91a3d23}
+
+\item 
+std::map$<$ ec\_\-tagname\_\-t, {\bf CMD4Hash} $>$ {\bfseries m\_\-map\_\-md4}\label{classCValueMap_ad385da90c11fb0ba5c2e6aad8086d4ad}
+
+\item 
+std::map$<$ ec\_\-tagname\_\-t, wxString $>$ {\bfseries m\_\-map\_\-string}\label{classCValueMap_aee6c73fdbcc229bbd618733d33e087f3}
+
+\item 
+std::map$<$ ec\_\-tagname\_\-t, {\bf CECTag} $>$ {\bfseries m\_\-map\_\-tag}\label{classCValueMap_ae028d1016ccffd3293f5ee28d8d10048}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECSpecialTags.h\end{DoxyCompactItemize}

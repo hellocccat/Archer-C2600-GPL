@@ -1,0 +1,233 @@
+\section{CMemFile Class Reference}
+\label{classCMemFile}\index{CMemFile@{CMemFile}}
+
+
+\doxyref{CMemFile}{p.}{classCMemFile} handles virtual files stored in memory.  
+
+
+{\ttfamily \#include $<$MemFile.h$>$}Inheritance diagram for CMemFile::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCMemFile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CMemFile} (unsigned int growthRate=1024)
+\item 
+{\bf CMemFile} (byte $\ast$buffer, size\_\-t bufferSize)
+\item 
+{\bfseries CMemFile} (const byte $\ast$buffer, size\_\-t bufferSize)\label{classCMemFile_a84200b6e71b5b54b4d6d879feee2a877}
+
+\item 
+virtual {\bf $\sim$CMemFile} ()
+\item 
+virtual uint64 {\bf GetPosition} () const 
+\item 
+virtual uint64 {\bf GetLength} () const 
+\item 
+virtual void {\bf SetLength} (size\_\-t newLen)
+\item 
+virtual void {\bf Reset} () const \label{classCMemFile_ad19f5de5898510a18227f2eb9460ef06}
+
+\item 
+virtual sint64 {\bf GetAvailable} () const \label{classCMemFile_a38e63abe32b6cb9e1413dd50cf5cdeca}
+
+\item 
+virtual void {\bf ResetData} ()\label{classCMemFile_ae8562bf6cda4ca0cd8761d4166aaff3f}
+
+\item 
+byte $\ast$ {\bfseries GetRawBuffer} () const \label{classCMemFile_a08d171735e9fe821bf97eb444861d9d0}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual sint64 {\bf doRead} (void $\ast$buffer, size\_\-t count) const 
+\item 
+virtual sint64 {\bf doWrite} (const void $\ast$buffer, size\_\-t count)
+\item 
+virtual sint64 {\bf doSeek} (sint64 offset) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf enlargeBuffer} (size\_\-t size)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+{\bf CMemFile} (const {\bf CMemFile} \&)\label{classCMemFile_a0d925d81ded818c3f574ceae8817479a}
+
+\item 
+{\bf CMemFile} \& {\bfseries operator=} (const {\bf CMemFile} \&)\label{classCMemFile_a0feca8d4c207cfa2728eb07af58401ff}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf m\_\-growthRate}\label{classCMemFile_abc236ac4d8c17adbb6d04bac89896776}
+
+\item 
+size\_\-t {\bf m\_\-position}\label{classCMemFile_a6b2c2fc1b0e0ccdf9130036f5395f155}
+
+\item 
+size\_\-t {\bf m\_\-BufferSize}\label{classCMemFile_aee79e74d9f7741a7f5c51d66b338d689}
+
+\item 
+size\_\-t {\bf m\_\-fileSize}\label{classCMemFile_a15df9de65bd82523a3420409bea61d97}
+
+\item 
+bool {\bf m\_\-delete}\label{classCMemFile_a15970dc880da060b6fbd1869be2b2763}
+
+\item 
+bool {\bf m\_\-readonly}\label{classCMemFile_a7b56695a7f52f659d078f0d5f3305bf0}
+
+\item 
+byte $\ast$ {\bf m\_\-buffer}\label{classCMemFile_a1f14ed23d98e1a70b3b44c4436245e0a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{CMemFile}{p.}{classCMemFile} handles virtual files stored in memory. This class allows for manipulation of binary data in memory such as data sent over networks. Using this class rather than writing the stream onto a struct confers the following advantages:
+\begin{DoxyItemize}
+\item Contents may be read dynamically in case of various versions of the same packet.
+\item Endian correction is handled transparently. When reading and writing values, \doxyref{CMemFile}{p.}{classCMemFile} converts to and from little-\/endian, so that no explicit endian convertions are nescesarry.
+\item Strings of dynamic length can be read.
+\end{DoxyItemize}
+
+Most of these advantages also hold for writing packets.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{CFileDataIO}{p.}{classCFileDataIO} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CMemFile@{CMemFile}!CMemFile@{CMemFile}}
+\index{CMemFile@{CMemFile}!CMemFile@{CMemFile}}
+\subsubsection[{CMemFile}]{\setlength{\rightskip}{0pt plus 5cm}CMemFile::CMemFile (unsigned int {\em growthRate} = {\ttfamily 1024})}\label{classCMemFile_a95540dff1e306f58f410c7f1f7a1a2e2}
+
+
+Creates a dynamic file object. 
+\begin{DoxyParams}{Parameters}
+\item[{\em growthRate}]The growth-\/rate of the buffer.\end{DoxyParams}
+The growth-\/rate specified by how much the buffer-\/size will be increased when the memfile runs out of space. Normally this means that the amount of re-\/allocations is cut down at the expence of slightly higher mem-\/usage.
+
+If the size of the entire file to be written is known in advance, one can avoid needless re-\/allocations by specifying the exact length as the growth-\/rate.
+
+If the growth-\/rate is set to zero, the memfile will allocate exactly the needed amount of memory and no more when resizing. 
+
+References m\_\-buffer, m\_\-BufferSize, m\_\-delete, m\_\-fileSize, m\_\-growthRate, m\_\-position, and m\_\-readonly.\index{CMemFile@{CMemFile}!CMemFile@{CMemFile}}
+\index{CMemFile@{CMemFile}!CMemFile@{CMemFile}}
+\subsubsection[{CMemFile}]{\setlength{\rightskip}{0pt plus 5cm}CMemFile::CMemFile (byte $\ast$ {\em buffer}, \/  size\_\-t {\em bufferSize})}\label{classCMemFile_a976ff9320935f40df2bc9e5fa8bc647b}
+
+
+Creates a mem-\/file attached to an already existing buffer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]A pre-\/existing buffer. \item[{\em bufferSize}]The size of the buffer.\end{DoxyParams}
+A buffer attached to a memfile is assumed to already contain data and therefore the file-\/size is set to match the size of of the buffer.
+
+Note that while it is valid to resize the buffer to a length between zero and 'bufferSize', it is not valid to resize it to a length greater than the length specified in the constructor. This also holds for writes that would increase the length.
+
+The buffer is \_\-not\_\- freed by \doxyref{CMemFile}{p.}{classCMemFile} upon destruction.
+
+If the buffer is a const byte$\ast$, the memfile is read-\/only. 
+
+References m\_\-buffer, m\_\-BufferSize, m\_\-delete, m\_\-fileSize, m\_\-growthRate, m\_\-position, and m\_\-readonly.\index{CMemFile@{CMemFile}!$\sim$CMemFile@{$\sim$CMemFile}}
+\index{$\sim$CMemFile@{$\sim$CMemFile}!CMemFile@{CMemFile}}
+\subsubsection[{$\sim$CMemFile}]{\setlength{\rightskip}{0pt plus 5cm}CMemFile::$\sim$CMemFile ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMemFile_a07f4b17b54b0b3f9095df04bda177062}
+
+
+Destructor. 
+
+References m\_\-buffer, and m\_\-delete.
+
+\subsection{Member Function Documentation}
+\index{CMemFile@{CMemFile}!doRead@{doRead}}
+\index{doRead@{doRead}!CMemFile@{CMemFile}}
+\subsubsection[{doRead}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CMemFile::doRead (void $\ast$ {\em buffer}, \/  size\_\-t {\em count}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCMemFile_a1e0640b805b905fcb917163be91b1b16}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CFileDataIO::doRead}{p.}{classCFileDataIO_a675efe875eee7c667e2ff1cf01e2c49f} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO_a675efe875eee7c667e2ff1cf01e2c49f}.
+
+References m\_\-buffer, m\_\-fileSize, and m\_\-position.\index{CMemFile@{CMemFile}!doSeek@{doSeek}}
+\index{doSeek@{doSeek}!CMemFile@{CMemFile}}
+\subsubsection[{doSeek}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CMemFile::doSeek (sint64 {\em offset}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCMemFile_ae0b38288239fd29aa0b9517f106ebe00}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CFileDataIO::doSeek}{p.}{classCFileDataIO_a82c6d4df3c99fd2838b4e3ec6d06f8d3} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO_a82c6d4df3c99fd2838b4e3ec6d06f8d3}.
+
+References m\_\-position.
+
+Referenced by Reset().\index{CMemFile@{CMemFile}!doWrite@{doWrite}}
+\index{doWrite@{doWrite}!CMemFile@{CMemFile}}
+\subsubsection[{doWrite}]{\setlength{\rightskip}{0pt plus 5cm}sint64 CMemFile::doWrite (const void $\ast$ {\em buffer}, \/  size\_\-t {\em count})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCMemFile_a40a51631eccdd5e48160a00c3cc3d474}
+\begin{DoxySeeAlso}{See also}
+CFileDataIO::doWrite 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO}.
+
+References enlargeBuffer(), m\_\-buffer, m\_\-BufferSize, m\_\-fileSize, m\_\-position, and m\_\-readonly.\index{CMemFile@{CMemFile}!enlargeBuffer@{enlargeBuffer}}
+\index{enlargeBuffer@{enlargeBuffer}!CMemFile@{CMemFile}}
+\subsubsection[{enlargeBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void CMemFile::enlargeBuffer (size\_\-t {\em size})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCMemFile_a75b2454202d08ed03e2cf87a9850719d}
+
+
+Enlarges the buffer to at least 'size' length. 
+
+References m\_\-buffer, m\_\-BufferSize, m\_\-delete, m\_\-growthRate, and m\_\-readonly.
+
+Referenced by doWrite(), and SetLength().\index{CMemFile@{CMemFile}!GetLength@{GetLength}}
+\index{GetLength@{GetLength}!CMemFile@{CMemFile}}
+\subsubsection[{GetLength}]{\setlength{\rightskip}{0pt plus 5cm}uint64 CMemFile::GetLength () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMemFile_ade15b3b288c22dd08e8b89545cb76894}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CFileDataIO::GetLength}{p.}{classCFileDataIO_a7f54fcd57c88023b87f7e4535becab0a} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO_a7f54fcd57c88023b87f7e4535becab0a}.
+
+References m\_\-fileSize.
+
+Referenced by GetAvailable(), CSearchList::OnGlobalSearchTimer(), and CSearchList::ProcessSharedFileList().\index{CMemFile@{CMemFile}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!CMemFile@{CMemFile}}
+\subsubsection[{GetPosition}]{\setlength{\rightskip}{0pt plus 5cm}uint64 CMemFile::GetPosition () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMemFile_a98414175b52514cfc0507f232755956f}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CFileDataIO::GetPosition}{p.}{classCFileDataIO_a6b153f389378a4f72ac09c56a6a60230} 
+\end{DoxySeeAlso}
+
+
+Implements {\bf CFileDataIO} \doxyref{}{p.}{classCFileDataIO_a6b153f389378a4f72ac09c56a6a60230}.
+
+References m\_\-position.
+
+Referenced by GetAvailable(), CSearchList::KademliaSearchKeyword(), and CSearchList::ProcessSharedFileList().\index{CMemFile@{CMemFile}!SetLength@{SetLength}}
+\index{SetLength@{SetLength}!CMemFile@{CMemFile}}
+\subsubsection[{SetLength}]{\setlength{\rightskip}{0pt plus 5cm}void CMemFile::SetLength (size\_\-t {\em newLen})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCMemFile_a776a80954f5ea6a618c5619dede64f2a}
+
+
+Changes the length of the file, possibly resizing the buffer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em newLen}]The new length of the file.\end{DoxyParams}
+If the current position is greater than the new length, it will be set to the end of the file.
+
+Note that changing the lenght of a file with an attached buffer to a value greater than the actual buffer size is an illegal operation. 
+
+References enlargeBuffer(), m\_\-BufferSize, m\_\-fileSize, m\_\-position, and m\_\-readonly.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MemFile.h\item 
+src/MemFile.cpp\end{DoxyCompactItemize}

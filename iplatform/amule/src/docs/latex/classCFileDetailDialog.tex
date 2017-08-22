@@ -1,0 +1,86 @@
+\section{CFileDetailDialog Class Reference}
+\label{classCFileDetailDialog}\index{CFileDetailDialog@{CFileDetailDialog}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CFileDetailDialog} (wxWindow $\ast$parent, std::vector$<$ {\bf CPartFile} $\ast$ $>$ \&files, int index)\label{classCFileDetailDialog_a1c1e446d9a42810e972de3ef204655a7}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnTimer} (wxTimerEvent \&evt)\label{classCFileDetailDialog_a52b31e2cbdbd5a42c3ed81e0412aaa46}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries UpdateData} (bool resetFilename)\label{classCFileDetailDialog_a9bfb728f74a9b7fb38046f847c7bc3a8}
+
+\item 
+void {\bfseries OnClosewnd} (wxCommandEvent \&evt)\label{classCFileDetailDialog_a56f7c7ef0965c70d214729bc48dc84d9}
+
+\item 
+void {\bfseries FillSourcenameList} ()\label{classCFileDetailDialog_ad5195e1154bee821c77415ed93500b77}
+
+\item 
+void {\bfseries setEnableForApplyButton} ()\label{classCFileDetailDialog_a0a091e9e058e338ed5d310eaaae2d648}
+
+\item 
+void {\bfseries setValueForFilenameTextEdit} (const wxString \&s)\label{classCFileDetailDialog_a2b8c808bcf057768bd0ee8af634a2490}
+
+\item 
+void {\bfseries resetValueForFilenameTextEdit} ()\label{classCFileDetailDialog_afcd5b99efb0722bc0f9cb303b27a0520}
+
+\item 
+void {\bfseries OnBnClickedButtonStrip} (wxCommandEvent \&evt)\label{classCFileDetailDialog_a51aaf0edba6921da603086ee6c034363}
+
+\item 
+void {\bfseries OnBnClickedShowComment} (wxCommandEvent \&evt)\label{classCFileDetailDialog_a4a7791f49ae32bd0f221b7a7ba24586b}
+
+\item 
+void {\bfseries OnBnClickedTakeOver} (wxCommandEvent \&evt)\label{classCFileDetailDialog_a1bbf8193ec76ef2b46c91dbe2cf5f694}
+
+\item 
+void {\bfseries OnListClickedTakeOver} (wxListEvent \&evt)\label{classCFileDetailDialog_a6151d1bcdda58d928017dfc2c00a0af6}
+
+\item 
+void {\bfseries OnTextFileNameChange} (wxCommandEvent \&evt)\label{classCFileDetailDialog_a31b68ac3155d14045afc684b005b3e8c}
+
+\item 
+void {\bfseries OnBnClickedOk} (wxCommandEvent \&evt)\label{classCFileDetailDialog_ac89e2762319026901df0e7d2c8f16bdf}
+
+\item 
+void {\bfseries OnBnClickedApply} (wxCommandEvent \&evt)\label{classCFileDetailDialog_a4df536b810bd65add78ece5c13445767}
+
+\item 
+void {\bfseries OnBnClickedPrevFile} (wxCommandEvent \&evt)\label{classCFileDetailDialog_a56f95631948e593d2cca9c50570ecf7e}
+
+\item 
+void {\bfseries OnBnClickedNextFile} (wxCommandEvent \&evt)\label{classCFileDetailDialog_a8d3e895706faf45c12b498affff5eafe}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ {\bf CPartFile} $\ast$ $>$ \& {\bfseries m\_\-files}\label{classCFileDetailDialog_a032584808e641ce61016444beea535e8}
+
+\item 
+{\bf CPartFile} $\ast$ {\bfseries m\_\-file}\label{classCFileDetailDialog_a39f9bb5ccdddf3ab5f3cd2d00e2fd6f2}
+
+\item 
+int {\bfseries m\_\-index}\label{classCFileDetailDialog_a9b1d8ed85b0f5e2fc2a1abbce392f9e4}
+
+\item 
+wxTimer {\bfseries m\_\-timer}\label{classCFileDetailDialog_a3ea0acb690767692fd1ee40b95c435ba}
+
+\item 
+bool {\bfseries m\_\-filenameChanged}\label{classCFileDetailDialog_ab38c58cf09eff195c25662cbf5ba8763}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/FileDetailDialog.h\item 
+src/FileDetailDialog.cpp\end{DoxyCompactItemize}

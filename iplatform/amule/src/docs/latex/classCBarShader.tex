@@ -1,0 +1,165 @@
+\section{CBarShader Class Reference}
+\label{classCBarShader}\index{CBarShader@{CBarShader}}
+
+
+The barshader class is responsible for drawing the chunk-\/based progress bars used in aMule.  
+
+
+{\ttfamily \#include $<$BarShader.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CBarShader} (unsigned height=1, unsigned width=1)
+\item 
+{\bf $\sim$CBarShader} ()\label{classCBarShader_aaebbec366c67e4d827e201e61399b885}
+
+\item 
+void {\bf SetWidth} (int width)
+\item 
+void {\bf SetHeight} (unsigned height)
+\item 
+void {\bf Set3dDepth} (unsigned depth)
+\item 
+void {\bf SetFileSize} (uint64 fileSize)
+\item 
+void {\bf FillRange} (uint64 start, uint64 end, const {\bf CMuleColour} \&colour)
+\item 
+void {\bf Fill} (const {\bf CMuleColour} \&colour)
+\item 
+void {\bf Draw} (wxDC $\ast$dc, int iLeft, int iTop, bool bFlat)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf BuildModifiers} ()\label{classCBarShader_a9ae0dd0dc7761408471c031826126e59}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf m\_\-Width}\label{classCBarShader_ae32bab1c3487ed29848911426fb0b93d}
+
+\item 
+unsigned {\bf m\_\-Height}\label{classCBarShader_a1586cbf36bbd36b712b5e64094d90d34}
+
+\item 
+uint64 {\bf m\_\-FileSize}\label{classCBarShader_ae5b03452039c2dae79dac3b557da68e8}
+
+\item 
+double $\ast$ {\bf m\_\-Modifiers}\label{classCBarShader_a11ad1157ce608febec7e547c80cbd277}
+
+\item 
+uint16 {\bf m\_\-used3dlevel}\label{classCBarShader_acf67658aa68a402f164d53a99d6ab83f}
+
+\item 
+std::vector$<$ {\bf CMuleColour} $>$ {\bfseries m\_\-Content}\label{classCBarShader_a2356ff891f246a66be72989f515f5aba}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The barshader class is responsible for drawing the chunk-\/based progress bars used in aMule. \doxyref{CBarShader}{p.}{classCBarShader} represents the chunks of a file through the use of spans, which cover a range in the file with a certain color. New spans can be added on the fly and old spans are automatically removed, resized or merged when necessary.
+
+\doxyref{CBarShader}{p.}{classCBarShader} will try to minimize the number of spans when possible. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CBarShader@{CBarShader}!CBarShader@{CBarShader}}
+\index{CBarShader@{CBarShader}!CBarShader@{CBarShader}}
+\subsubsection[{CBarShader}]{\setlength{\rightskip}{0pt plus 5cm}CBarShader::CBarShader (unsigned {\em height} = {\ttfamily 1}, \/  unsigned {\em width} = {\ttfamily 1})}\label{classCBarShader_a13da71c00efa04e3cd7396e4c0c56cbb}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em height}]The height of the area upon which the span is drawn. \item[{\em width}]The width of the area upon which the span is drawn. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CBarShader@{CBarShader}!Draw@{Draw}}
+\index{Draw@{Draw}!CBarShader@{CBarShader}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void CBarShader::Draw (wxDC $\ast$ {\em dc}, \/  int {\em iLeft}, \/  int {\em iTop}, \/  bool {\em bFlat})}\label{classCBarShader_accbfdf297a59cd375c1b3897dd1b5a40}
+
+
+Draws the bar on the specifed wxDC. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dc}]The wxDC upon which the bar should be drawn. \item[{\em iLeft}]The left position from where to start drawing. \item[{\em iTop}]The top position from where to start drawing. \item[{\em bFlat}]3D effect is not applied if this is true.\end{DoxyParams}
+This functions draws the bar with the height and width specified through either the contructor or with \doxyref{SetWidth()}{p.}{classCBarShader_a10e673952914dde8c77a108ef45c0b45} and \doxyref{SetHeight()}{p.}{classCBarShader_ab9ae6755c1106dbec89913b486bddd8f}. 
+
+References BuildModifiers(), m\_\-Height, m\_\-Modifiers, and m\_\-Width.
+
+Referenced by CSharedFilesCtrl::DrawAvailabilityBar(), CDownloadListCtrl::DrawFileStatusBar(), CGenericClientListCtrl::DrawSourceStatusBar(), and CGenericClientListCtrl::DrawStatusBar().\index{CBarShader@{CBarShader}!Fill@{Fill}}
+\index{Fill@{Fill}!CBarShader@{CBarShader}}
+\subsubsection[{Fill}]{\setlength{\rightskip}{0pt plus 5cm}void CBarShader::Fill (const {\bf CMuleColour} \& {\em colour})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCBarShader_a2d1b8ba02ab99199ea0f099ad3b25831}
+
+
+Fill the entire bar with a span of the specified color. 
+\begin{DoxyParams}{Parameters}
+\item[{\em colour}]The colour of the new span. \end{DoxyParams}
+
+
+References m\_\-Width.
+
+Referenced by CDownloadListCtrl::DrawFileStatusBar(), and SetWidth().\index{CBarShader@{CBarShader}!FillRange@{FillRange}}
+\index{FillRange@{FillRange}!CBarShader@{CBarShader}}
+\subsubsection[{FillRange}]{\setlength{\rightskip}{0pt plus 5cm}void CBarShader::FillRange (uint64 {\em start}, \/  uint64 {\em end}, \/  const {\bf CMuleColour} \& {\em colour})}\label{classCBarShader_a284efbae21dbb6dcf48d10e5cae06722}
+
+
+Fills in a range with a certain color. 
+\begin{DoxyParams}{Parameters}
+\item[{\em start}]The starting position of the new span. \item[{\em end}]The ending position of the new span. Must be larger than start. \item[{\em colour}]The colour of the new span.\end{DoxyParams}
+Calling this function fill the specified range with the specified color. Any spans completly or partially covered by the new span are either removed or resized. If the value of end is larger than the current filesize, the filesize is increased to the value of end. 
+
+References m\_\-FileSize, and m\_\-Width.
+
+Referenced by CSharedFilesCtrl::DrawAvailabilityBar(), CDownloadListCtrl::DrawFileStatusBar(), CGenericClientListCtrl::DrawSourceStatusBar(), and CGenericClientListCtrl::DrawStatusBar().\index{CBarShader@{CBarShader}!Set3dDepth@{Set3dDepth}}
+\index{Set3dDepth@{Set3dDepth}!CBarShader@{CBarShader}}
+\subsubsection[{Set3dDepth}]{\setlength{\rightskip}{0pt plus 5cm}void CBarShader::Set3dDepth (unsigned {\em depth})}\label{classCBarShader_aa7a275f0c3ab13e1b0a7f5d709d415c9}
+
+
+Sets the 3D-\/depth of the bar. 
+\begin{DoxyParams}{Parameters}
+\item[{\em depth}]A value in the range from 1 to 5. \end{DoxyParams}
+
+
+References m\_\-Modifiers, and m\_\-used3dlevel.
+
+Referenced by CSharedFilesCtrl::DrawAvailabilityBar(), CDownloadListCtrl::DrawFileStatusBar(), CGenericClientListCtrl::DrawSourceStatusBar(), and CGenericClientListCtrl::DrawStatusBar().\index{CBarShader@{CBarShader}!SetFileSize@{SetFileSize}}
+\index{SetFileSize@{SetFileSize}!CBarShader@{CBarShader}}
+\subsubsection[{SetFileSize}]{\setlength{\rightskip}{0pt plus 5cm}void CBarShader::SetFileSize (uint64 {\em fileSize})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCBarShader_a30414ebf9c177c9a78db6f3767eb3ae0}
+
+
+Sets a new filesize. 
+\begin{DoxyParams}{Parameters}
+\item[{\em fileSize}]The new filesize.\end{DoxyParams}
+Calling this function sets a new filesize, which is the virtual length of the bar. This function must be called before any filling. 
+
+References m\_\-FileSize.
+
+Referenced by CSharedFilesCtrl::DrawAvailabilityBar(), CDownloadListCtrl::DrawFileStatusBar(), CGenericClientListCtrl::DrawSourceStatusBar(), and CGenericClientListCtrl::DrawStatusBar().\index{CBarShader@{CBarShader}!SetHeight@{SetHeight}}
+\index{SetHeight@{SetHeight}!CBarShader@{CBarShader}}
+\subsubsection[{SetHeight}]{\setlength{\rightskip}{0pt plus 5cm}void CBarShader::SetHeight (unsigned {\em height})}\label{classCBarShader_ab9ae6755c1106dbec89913b486bddd8f}
+
+
+Sets the height of the drawn bar. 
+\begin{DoxyParams}{Parameters}
+\item[{\em height}]The new height.\end{DoxyParams}
+Changes the height of the bar, used when it is drawn. 
+
+References m\_\-Height, and m\_\-Modifiers.
+
+Referenced by CSharedFilesCtrl::DrawAvailabilityBar(), CDownloadListCtrl::DrawFileStatusBar(), CGenericClientListCtrl::DrawSourceStatusBar(), and CGenericClientListCtrl::DrawStatusBar().\index{CBarShader@{CBarShader}!SetWidth@{SetWidth}}
+\index{SetWidth@{SetWidth}!CBarShader@{CBarShader}}
+\subsubsection[{SetWidth}]{\setlength{\rightskip}{0pt plus 5cm}void CBarShader::SetWidth (int {\em width})}\label{classCBarShader_a10e673952914dde8c77a108ef45c0b45}
+
+
+Sets the width of the drawn bar. 
+\begin{DoxyParams}{Parameters}
+\item[{\em width}]The new width.\end{DoxyParams}
+Setting this sets the width the bar which is used when it is drawn and resets the pixel buffer to the fill color. 
+
+References Fill(), and m\_\-Width.
+
+Referenced by CSharedFilesCtrl::DrawAvailabilityBar(), CDownloadListCtrl::DrawFileStatusBar(), CGenericClientListCtrl::DrawSourceStatusBar(), and CGenericClientListCtrl::DrawStatusBar().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/BarShader.h\item 
+src/BarShader.cpp\end{DoxyCompactItemize}

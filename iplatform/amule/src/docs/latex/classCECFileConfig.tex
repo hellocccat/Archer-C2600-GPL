@@ -1,0 +1,54 @@
+\section{CECFileConfig Class Reference}
+\label{classCECFileConfig}\index{CECFileConfig@{CECFileConfig}}
+
+
+Extension to wxFileConfig for reading/writing \doxyref{CMD4Hash}{p.}{classCMD4Hash} values.  
+
+
+{\ttfamily \#include $<$ECFileConfig.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CECFileConfig} (const wxString \&localFilename=wxEmptyString)\label{classCECFileConfig_ab0a7922b05b5e5b7e3b2b36735c1d26e}
+
+\item 
+bool {\bf ReadHash} (const wxString \&key, {\bf CMD4Hash} $\ast$hash)
+\item 
+bool {\bf WriteHash} (const wxString \&key, const {\bf CMD4Hash} \&hash)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extension to wxFileConfig for reading/writing \doxyref{CMD4Hash}{p.}{classCMD4Hash} values. This class converts between the text and binary representation of an MD4 hash, and also maps empty strings to the empty hash and vica versa. 
+
+\subsection{Member Function Documentation}
+\index{CECFileConfig@{CECFileConfig}!ReadHash@{ReadHash}}
+\index{ReadHash@{ReadHash}!CECFileConfig@{CECFileConfig}}
+\subsubsection[{ReadHash}]{\setlength{\rightskip}{0pt plus 5cm}bool CECFileConfig::ReadHash (const wxString \& {\em key}, \/  {\bf CMD4Hash} $\ast$ {\em hash})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCECFileConfig_a8e7732791d68841f25e43ddf18c25b3c}
+
+
+Reads a hash from the config file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]the key to be read \item[{\em hash}]the \doxyref{CMD4Hash}{p.}{classCMD4Hash} object to write the hash to\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+References CMD4Hash::Clear(), and CMD4Hash::Decode().\index{CECFileConfig@{CECFileConfig}!WriteHash@{WriteHash}}
+\index{WriteHash@{WriteHash}!CECFileConfig@{CECFileConfig}}
+\subsubsection[{WriteHash}]{\setlength{\rightskip}{0pt plus 5cm}bool CECFileConfig::WriteHash (const wxString \& {\em key}, \/  const {\bf CMD4Hash} \& {\em hash})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCECFileConfig_aa7c9b2f26c7b188d37218d6f810cc19e}
+
+
+Writes a \doxyref{CMD4Hash}{p.}{classCMD4Hash} object to the config file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]the key to write to \item[{\em hash}]the hash to be written\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise. 
+\end{DoxyReturn}
+
+
+References CMD4Hash::IsEmpty().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECFileConfig.h\end{DoxyCompactItemize}

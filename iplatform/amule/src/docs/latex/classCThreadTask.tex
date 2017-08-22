@@ -1,0 +1,141 @@
+\section{CThreadTask Class Reference}
+\label{classCThreadTask}\index{CThreadTask@{CThreadTask}}
+
+
+Base-\/class of all threaded tasks.  
+
+
+{\ttfamily \#include $<$ThreadScheduler.h$>$}Inheritance diagram for CThreadTask::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.83607cm]{classCThreadTask}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CThreadTask} (const wxString \&type, const wxString \&desc, ETaskPriority priority=ETP\_\-Normal)
+\item 
+virtual {\bf $\sim$CThreadTask} ()
+\item 
+const wxString \& {\bf GetType} () const 
+\item 
+const wxString \& {\bf GetDesc} () const 
+\item 
+ETaskPriority {\bf GetPriority} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf Entry} ()=0
+\item 
+virtual void {\bf OnLastTask} ()
+\item 
+virtual void {\bf OnExit} ()
+\item 
+bool {\bf TestDestroy} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-type}\label{classCThreadTask_ad0edb444e1040b063545c9d2bc0925b5}
+
+\item 
+wxString {\bfseries m\_\-desc}\label{classCThreadTask_aeb1f1b8698b1e40e031644e570e55d3b}
+
+\item 
+ETaskPriority {\bfseries m\_\-priority}\label{classCThreadTask_a71decf1d1af636a767d6d9e3940d0046}
+
+\item 
+{\bf CMuleThread} $\ast$ {\bf m\_\-owner}\label{classCThreadTask_a5d72a204acbbc3920d2bca23e409a9bc}
+
+\item 
+bool {\bf m\_\-abort}\label{classCThreadTask_a3b9f059b166ed21a95e791c185be2d6e}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CThreadScheduler}\label{classCThreadTask_aed3458a7a40b3981c44a79e2c3df5639}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base-\/class of all threaded tasks. This class acts as a pseudo-\/thread, and is transparently executed on a worker thread by the \doxyref{CThreadScheduler}{p.}{classCThreadScheduler} class.
+
+Note that the task type should be an unique description of the task type, as it is used to detect completion of all tasks of a given type and in duplicate detection with the description. The description should be unique for the given task, such that duplicates can be discovered. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CThreadTask@{CThreadTask}!CThreadTask@{CThreadTask}}
+\index{CThreadTask@{CThreadTask}!CThreadTask@{CThreadTask}}
+\subsubsection[{CThreadTask}]{\setlength{\rightskip}{0pt plus 5cm}CThreadTask::CThreadTask (const wxString \& {\em type}, \/  const wxString \& {\em desc}, \/  ETaskPriority {\em priority} = {\ttfamily ETP\_\-Normal})}\label{classCThreadTask_a4d4df7970f1796487267989841f77091}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]Should be a name constant among tasks of the type (hashing, completion, etc). \item[{\em desc}]Should be an unique description for this task, for detecting duplicates. \item[{\em priority}]Decides how soon the task will be carried out. \end{DoxyParams}
+\index{CThreadTask@{CThreadTask}!$\sim$CThreadTask@{$\sim$CThreadTask}}
+\index{$\sim$CThreadTask@{$\sim$CThreadTask}!CThreadTask@{CThreadTask}}
+\subsubsection[{$\sim$CThreadTask}]{\setlength{\rightskip}{0pt plus 5cm}CThreadTask::$\sim$CThreadTask ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCThreadTask_a41967e16c84512e344e5bb7adb52f1eb}
+
+
+Needed since \doxyref{CThreadScheduler}{p.}{classCThreadScheduler} only works with \doxyref{CThreadTask}{p.}{classCThreadTask} pointers. 
+
+\subsection{Member Function Documentation}
+\index{CThreadTask@{CThreadTask}!Entry@{Entry}}
+\index{Entry@{Entry}!CThreadTask@{CThreadTask}}
+\subsubsection[{Entry}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CThreadTask::Entry ()\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classCThreadTask_aa771d4d2ec87cb3c73c8d75e12e1a3ec}
+\begin{DoxySeeAlso}{See also}
+wxThread::Entry 
+\end{DoxySeeAlso}
+
+
+Implemented in {\bf CIPFilterTask} \doxyref{}{p.}{classCIPFilterTask_acf33ae8dfe6ddf8b18f762ced3e9ff0e}, {\bf CHashingTask} \doxyref{}{p.}{classCHashingTask_a5be9891c855b55cc1ced07b509079217}, {\bf CAICHSyncTask} \doxyref{}{p.}{classCAICHSyncTask_a38afe2abf7b4911a886a90ccef0d3c85}, {\bf CCompletionTask} \doxyref{}{p.}{classCCompletionTask_ac8fec26d8a1ee7ee5e9e97aea56d9c86}, and {\bf CAllocateFileTask} \doxyref{}{p.}{classCAllocateFileTask_a03b090460a948ecdd522fa50ceaf6cf8}.\index{CThreadTask@{CThreadTask}!GetDesc@{GetDesc}}
+\index{GetDesc@{GetDesc}!CThreadTask@{CThreadTask}}
+\subsubsection[{GetDesc}]{\setlength{\rightskip}{0pt plus 5cm}const wxString \& CThreadTask::GetDesc () const}\label{classCThreadTask_a200576d3e8a0a917c2c0b0c33cff4fad}
+
+
+Returns the task description, used for debugging and duplicate detection. 
+
+Referenced by CThreadScheduler::AddTask(), and CThreadScheduler::DoAddTask().\index{CThreadTask@{CThreadTask}!GetPriority@{GetPriority}}
+\index{GetPriority@{GetPriority}!CThreadTask@{CThreadTask}}
+\subsubsection[{GetPriority}]{\setlength{\rightskip}{0pt plus 5cm}ETaskPriority CThreadTask::GetPriority () const}\label{classCThreadTask_ae2d27a480bbdb0bf665f76a9af54f2ec}
+
+
+Returns the priority of the task. Used when selecting the next task. \index{CThreadTask@{CThreadTask}!GetType@{GetType}}
+\index{GetType@{GetType}!CThreadTask@{CThreadTask}}
+\subsubsection[{GetType}]{\setlength{\rightskip}{0pt plus 5cm}const wxString \& CThreadTask::GetType () const}\label{classCThreadTask_a2cc15baf378e3b216310f0a86f434000}
+
+
+Returns the task type, used for debugging and duplicate detection. 
+
+Referenced by CThreadScheduler::DoAddTask(), and CHashingTask::OnLastTask().\index{CThreadTask@{CThreadTask}!OnExit@{OnExit}}
+\index{OnExit@{OnExit}!CThreadTask@{CThreadTask}}
+\subsubsection[{OnExit}]{\setlength{\rightskip}{0pt plus 5cm}void CThreadTask::OnExit ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCThreadTask_ad26fca4290faaca0c38914b852ccae78}
+\begin{DoxySeeAlso}{See also}
+wxThread::OnExit 
+\end{DoxySeeAlso}
+
+
+Reimplemented in {\bf CCompletionTask} \doxyref{}{p.}{classCCompletionTask_aed5ffa34885de5ab6df4fba2e3b53e38}, and {\bf CAllocateFileTask} \doxyref{}{p.}{classCAllocateFileTask_abf55789dd62e67cf82f93794e984348a}.\index{CThreadTask@{CThreadTask}!OnLastTask@{OnLastTask}}
+\index{OnLastTask@{OnLastTask}!CThreadTask@{CThreadTask}}
+\subsubsection[{OnLastTask}]{\setlength{\rightskip}{0pt plus 5cm}void CThreadTask::OnLastTask ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCThreadTask_a5eac5242e620a396e9027185ff141ff4}
+
+
+Called when the last task of a specific type has been completed. 
+
+Reimplemented in {\bf CHashingTask} \doxyref{}{p.}{classCHashingTask_a87266d8af8bbab477f854e8af6a171d8}.\index{CThreadTask@{CThreadTask}!TestDestroy@{TestDestroy}}
+\index{TestDestroy@{TestDestroy}!CThreadTask@{CThreadTask}}
+\subsubsection[{TestDestroy}]{\setlength{\rightskip}{0pt plus 5cm}bool CThreadTask::TestDestroy () const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCThreadTask_a06d169e885ee9876edcf42a26b53162e}
+\begin{DoxySeeAlso}{See also}
+wxThread::TestDestroy 
+\end{DoxySeeAlso}
+
+
+References m\_\-abort, m\_\-owner, and CMuleThread::TestDestroy().
+
+Referenced by CHashingTask::Entry(), and CIPFilterTask::LoadFromFile().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ThreadScheduler.h\item 
+src/ThreadScheduler.cpp\end{DoxyCompactItemize}

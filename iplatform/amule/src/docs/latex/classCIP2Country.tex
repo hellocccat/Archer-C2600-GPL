@@ -1,0 +1,53 @@
+\section{CIP2Country Class Reference}
+\label{classCIP2Country}\index{CIP2Country@{CIP2Country}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CIP2Country} (const wxString \&configDir)\label{classCIP2Country_a6b9e179ea26a933a61f7812606c378c3}
+
+\item 
+const {\bf CountryData} \& {\bfseries GetCountryData} (const wxString \&ip)\label{classCIP2Country_a2a6b31b5fbc8731c557e5739d325f324}
+
+\item 
+void {\bfseries Enable} ()\label{classCIP2Country_a8f63a39e0f78fd750130ce690fffa2a8}
+
+\item 
+void {\bfseries Disable} ()\label{classCIP2Country_a043081e5dab4b62d6fa97b7424dcd324}
+
+\item 
+void {\bfseries Update} ()\label{classCIP2Country_ab05a5f23f21bd49a6110f00e8f826ac9}
+
+\item 
+bool {\bfseries IsEnabled} ()\label{classCIP2Country_a8c1a72f83e989cc9681388489906be1d}
+
+\item 
+void {\bfseries DownloadFinished} (uint32 result)\label{classCIP2Country_a00d0c2d1981788ef1c78ca13abeac2e4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries LoadFlags} ()\label{classCIP2Country_a2a9dc2759ed835bc21740fdf4263f0b1}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct GeoIPTag $\ast$ {\bfseries m\_\-geoip}\label{classCIP2Country_a228e66a7f668fea3f8f838a72bf7cb8b}
+
+\item 
+CountryDataMap {\bfseries m\_\-CountryDataMap}\label{classCIP2Country_a47fb95d759354b8083d9987bdd6932fe}
+
+\item 
+wxString {\bfseries m\_\-DataBaseName}\label{classCIP2Country_a1e867dc44795a150c09bc7e81015857d}
+
+\item 
+wxString {\bfseries m\_\-DataBasePath}\label{classCIP2Country_a5725f08baa2959ec58de961dcc124ee1}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/IP2Country.h\item 
+src/IP2Country.cpp\end{DoxyCompactItemize}

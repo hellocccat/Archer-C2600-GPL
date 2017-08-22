@@ -1,0 +1,73 @@
+#!/usr/bin/lua
+--[[
+Copyright(c) 2008-2014 Shenzhen TP-LINK Technologies Co.Ltd.
+
+File    :  ifmac
+Details :  Mac address handler for interface
+Author  :  Zhu Xianfeng <zhuxianfeng@tp-link.net>
+Version :  1.0.0
+Date    :  11 Sep, 2014
+]]--
+
+local sys   = require "luci.sys"
+local uci   = require "luci.model.uci"
+local uci_r = uci.cursor()
+
+-- Folder tree handler
+-- @param N/A
+-- @return table
+local function dev_set_mac(ifname, macaddr)
+    local devname = nil
+    local index   = nil
+    local id      = nil
+
+    index = string.find(ifname, "%.")
+    if index then
+        devname = string.sub(ifname, 1, index - 1)
+        id = string.sub(ifname, index + 1, -1)
+        -- create vlan whenever it exists already
+        sys.fork_call("vconfig add " .. devname .. " " .. id)
+    end
+
+    -- down device whenever it get new macaddr
+    sys.fork_call("ifconfig " .. ifname .. " down")
+    if macaddr then
+        sys.fork_call("ifconfig " .. ifname .. " hw ether " .. macaddr)
+    end
+    -- up device
+    sys.fork_call("ifconfig " .. ifname .. " up")
+end
+
+local function iface_set_mac(iface)
+    local ifname  = uci_r:get("network", iface, "ifname")
+    local new_mac = nil
+
+    uci_r:foreach("network", "device",
+    function(section)
+        local name    = section["name"]
+        local macaddr = section["macaddr"]
+
+        if not new_mac and name == ifname and macaddr then
+            new_mac = macaddr
+        end
+    end)
+
+    dev_set_mac(ifname, new_mac)
+end
+
+local function main()
+    --[[
+    -- set all devices's macaddr 
+    uci_r:foreach("network", "device",
+    function(section)
+        local name    = section["name"]
+        local macaddr = section["macaddr"]
+
+        dev_set_mac(name, macaddr)
+    end)
+    ]]--
+
+    iface_set_mac("wan")
+end
+
+main()

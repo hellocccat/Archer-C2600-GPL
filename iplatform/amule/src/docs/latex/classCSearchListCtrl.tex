@@ -1,0 +1,349 @@
+\section{CSearchListCtrl Class Reference}
+\label{classCSearchListCtrl}\index{CSearchListCtrl@{CSearchListCtrl}}
+
+
+This class is used to display search results.  
+
+
+{\ttfamily \#include $<$SearchListCtrl.h$>$}Inheritance diagram for CSearchListCtrl::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCSearchListCtrl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CSearchListCtrl} (wxWindow $\ast$parent, wxWindowID winid=-\/1, const wxPoint \&pos=wxDefaultPosition, const wxSize \&size=wxDefaultSize, long style=wxLC\_\-ICON, const wxValidator \&validator=wxDefaultValidator, const wxString \&name=wxT(\char`\"{}mulelistctrl\char`\"{}))
+\item 
+virtual {\bf $\sim$CSearchListCtrl} ()\label{classCSearchListCtrl_aa94af812752809984e5516d450cb92b1}
+
+\item 
+void {\bf AddResult} ({\bf CSearchFile} $\ast$toshow)
+\item 
+void {\bf RemoveResult} ({\bf CSearchFile} $\ast$toshow)\label{classCSearchListCtrl_a0dc3966701adaf7bc2cb94d32f93cb87}
+
+\item 
+void {\bf UpdateResult} ({\bf CSearchFile} $\ast$toupdate)
+\item 
+void {\bf ShowResults} (long ResultsId)
+\item 
+void {\bf UpdateItemColor} (long index)
+\item 
+wxUIntPtr {\bf GetSearchId} ()
+\item 
+void {\bf SetFilter} (const wxString \&regExp, bool invert, bool filterKnown)
+\item 
+void {\bf EnableFiltering} (bool enabled)\label{classCSearchListCtrl_a615f00b0ebb5ae43f06ed1c3023a6c2d}
+
+\item 
+size\_\-t {\bf GetHiddenItemCount} () const \label{classCSearchListCtrl_a3808d41ef7dcb443cf53480e261cc54a}
+
+\item 
+void {\bf DownloadSelected} (int category=-\/1)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static wxString {\bfseries DetermineStatusPrintable} ({\bf CSearchFile} $\ast$toshow)\label{classCSearchListCtrl_ab28a808ff0999286a474749cfbec91a2}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CSearchFile} $\ast$ $>$ {\bfseries ResultList}\label{classCSearchListCtrl_acd608e155a61e27aead18e50d2c2c9a5}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bf GetOldColumnOrder} () const \label{classCSearchListCtrl_ae691e9d478b401f64bc800dffce9cd50}
+
+\item 
+void {\bf SetSorting} (unsigned column, unsigned order)
+\item 
+bool {\bf IsFiltered} (const {\bf CSearchFile} $\ast$file)\label{classCSearchListCtrl_aa9147fbbc0ed07f8eebd4828b81d35a7}
+
+\item 
+virtual bool {\bf AltSortAllowed} (unsigned column) const 
+\item 
+virtual wxString {\bf GetTTSText} (unsigned item) const 
+\item 
+void {\bf OnDrawItem} (int item, wxDC $\ast$dc, const wxRect \&rect, const wxRect \&rectHL, bool highlighted)\label{classCSearchListCtrl_ae15bccf1d45f6c81c1cab0c5b836eb74}
+
+\item 
+void {\bf ShowChildren} ({\bf CSearchFile} $\ast$file, bool show)\label{classCSearchListCtrl_a8fae108a6538077420d25f4f43c31792}
+
+\item 
+void {\bf OnRightClick} (wxListEvent \&event)\label{classCSearchListCtrl_a88d562c49ff8807a5621c15f049a68b0}
+
+\item 
+void {\bf OnItemActivated} (wxListEvent \&event)\label{classCSearchListCtrl_a2ac8cfb8fd71d90620d9ffefe9d0f645}
+
+\item 
+void {\bf OnColumnLClick} (wxListEvent \&event)
+\item 
+void {\bf OnColumnResize} (wxListEvent \&event)
+\item 
+void {\bf OnPopupGetUrl} (wxCommandEvent \&event)\label{classCSearchListCtrl_a084fc270a681a2c2b08e637601da776e}
+
+\item 
+void {\bf OnRazorStatsCheck} (wxCommandEvent \&event)\label{classCSearchListCtrl_a4edf096bf4fb7675a3a53b80ed277962}
+
+\item 
+void {\bf OnRelatedSearch} (wxCommandEvent \&event)\label{classCSearchListCtrl_ae5d8def68e6ba717af0752a8c529d59e}
+
+\item 
+void {\bf OnMarkAsKnown} (wxCommandEvent \&event)\label{classCSearchListCtrl_a3b4ba182edeccaa269fe9828e8f8fa61}
+
+\item 
+void {\bf OnPopupDownload} (wxCommandEvent \&event)\label{classCSearchListCtrl_ab259e217b4c29d293bd3f3387b854ada}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int wxCALLBACK {\bf SortProc} (wxUIntPtr item1, wxUIntPtr item2, long sortData)
+\item 
+static void {\bf SyncLists} ({\bf CSearchListCtrl} $\ast$src, {\bf CSearchListCtrl} $\ast$dst)
+\item 
+static void {\bf SyncOtherLists} ({\bf CSearchListCtrl} $\ast$src)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ResultList {\bf m\_\-filteredOut}\label{classCSearchListCtrl_aaa42f4f4389fcd31d3ff95910de513aa}
+
+\item 
+wxRegEx {\bf m\_\-filter}\label{classCSearchListCtrl_ad567283137abbb6e702e8c6c57a744d5}
+
+\item 
+wxString {\bf m\_\-filterText}\label{classCSearchListCtrl_a451a338fe1162e700782dbeb37bc202e}
+
+\item 
+bool {\bf m\_\-filterKnown}\label{classCSearchListCtrl_ae09b1b9bd971f16a21639082373ad8c8}
+
+\item 
+bool {\bf m\_\-invert}\label{classCSearchListCtrl_abe9e0e3a1c1fafc3614a9673ad77e71f}
+
+\item 
+bool {\bf m\_\-filterEnabled}\label{classCSearchListCtrl_a4dee4a2321051eec9f19f95df5126aed}
+
+\item 
+wxUIntPtr {\bf m\_\-nResultsID}\label{classCSearchListCtrl_a80acf401459cc1d3663613385c822f0e}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std::list$<$ {\bf CSearchListCtrl} $\ast$ $>$ {\bf s\_\-lists}\label{classCSearchListCtrl_a49841f472ac849fee4c1f63843554648}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to display search results. Results on added to the list will be colored according to the number of sources and other parameters (see UpdateColor).
+
+To display results, first use the ShowResults function, which will display all current results with the specified id and afterwards you can use the AddResult function to add new results or the UpdateResult function to update already present results. Please note that it is not possible to add results with the AddResult function before calling ShowResults. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CSearchListCtrl@{CSearchListCtrl}!CSearchListCtrl@{CSearchListCtrl}}
+\index{CSearchListCtrl@{CSearchListCtrl}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{CSearchListCtrl}]{\setlength{\rightskip}{0pt plus 5cm}CSearchListCtrl::CSearchListCtrl (wxWindow $\ast$ {\em parent}, \/  wxWindowID {\em winid} = {\ttfamily -\/1}, \/  const wxPoint \& {\em pos} = {\ttfamily wxDefaultPosition}, \/  const wxSize \& {\em size} = {\ttfamily wxDefaultSize}, \/  long {\em style} = {\ttfamily wxLC\_\-ICON}, \/  const wxValidator \& {\em validator} = {\ttfamily wxDefaultValidator}, \/  const wxString \& {\em name} = {\ttfamily wxT(\char`\"{}mulelistctrl\char`\"{})})}\label{classCSearchListCtrl_af646f6a937238b0f5027482d7ffb06a8}
+
+
+Constructor. \begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::CMuleListCtrl}{p.}{classCMuleListCtrl_a3d2c202974057d0de8a098344a16024d} for documentation of parameters. 
+\end{DoxySeeAlso}
+
+
+References CMuleListCtrl::InsertColumn(), CMuleListCtrl::LoadSettings(), m\_\-nResultsID, s\_\-lists, CMuleListCtrl::SetSortFunc(), CMuleListCtrl::SetTableName(), SortProc(), and SyncLists().
+
+\subsection{Member Function Documentation}
+\index{CSearchListCtrl@{CSearchListCtrl}!AddResult@{AddResult}}
+\index{AddResult@{AddResult}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{AddResult}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::AddResult ({\bf CSearchFile} $\ast$ {\em toshow})}\label{classCSearchListCtrl_a2df4496097fdf7dde5648c6c06bd947b}
+
+
+Adds ths specified file to the list. 
+\begin{DoxyParams}{Parameters}
+\item[{\em The}]new result to be shown.\end{DoxyParams}
+Please note that no duplicates checking is done, so the pointer should point to a new file in order to avoid problems. Also note that the result will be inserted sorted according to current sort-\/type, so there is no need to resort the list after adding new items. 
+
+References CSearchFile::GetChildren(), CSearchFile::GetCompleteSourceCount(), CMuleListCtrl::GetInsertPos(), CSearchFile::GetParent(), CPath::GetPrintable(), CSearchFile::GetSearchID(), CSearchFile::GetSourceCount(), CSearchFile::HasChildren(), IsFiltered(), m\_\-filteredOut, m\_\-nResultsID, CSearchFile::ShowChildren(), and UpdateItemColor().
+
+Referenced by CSearchDlg::AddResult(), EnableFiltering(), SetFilter(), ShowChildren(), and ShowResults().\index{CSearchListCtrl@{CSearchListCtrl}!AltSortAllowed@{AltSortAllowed}}
+\index{AltSortAllowed@{AltSortAllowed}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{AltSortAllowed}]{\setlength{\rightskip}{0pt plus 5cm}bool CSearchListCtrl::AltSortAllowed (unsigned {\em column}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCSearchListCtrl_aebee6406c80a1812d2e93bfd28e83637}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::AltSortAllowed}{p.}{classCMuleListCtrl_a399b991679c1de1dbd72219ad68377f6} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a399b991679c1de1dbd72219ad68377f6}.\index{CSearchListCtrl@{CSearchListCtrl}!DownloadSelected@{DownloadSelected}}
+\index{DownloadSelected@{DownloadSelected}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{DownloadSelected}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::DownloadSelected (int {\em category} = {\ttfamily -\/1})}\label{classCSearchListCtrl_a6976553a76655996055bd05363f9cff8}
+
+
+Attempts to download all selected items, updating color-\/scheme as needed. 
+\begin{DoxyParams}{Parameters}
+\item[{\em category}]The target category, or -\/1 to use the drop-\/down selection. \end{DoxyParams}
+
+
+Referenced by OnItemActivated(), and OnPopupDownload().\index{CSearchListCtrl@{CSearchListCtrl}!GetSearchId@{GetSearchId}}
+\index{GetSearchId@{GetSearchId}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{GetSearchId}]{\setlength{\rightskip}{0pt plus 5cm}wxUIntPtr CSearchListCtrl::GetSearchId ()}\label{classCSearchListCtrl_aeec18b08ab3f445f084f1799689dceea}
+
+
+Returns the current Search Id. \begin{DoxyReturn}{Returns}
+The Search Id of the displayed results (set through \doxyref{ShowResults()}{p.}{classCSearchListCtrl_afb852d6ba26d08480cebde35d4cbe387}). 
+\end{DoxyReturn}
+
+
+References m\_\-nResultsID.
+
+Referenced by CSearchDlg::KadSearchEnd().\index{CSearchListCtrl@{CSearchListCtrl}!GetTTSText@{GetTTSText}}
+\index{GetTTSText@{GetTTSText}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{GetTTSText}]{\setlength{\rightskip}{0pt plus 5cm}wxString CSearchListCtrl::GetTTSText (unsigned {\em item}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCSearchListCtrl_ab0a2f22c39f0cad32d0014ab4d29c796}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::GetTTSText}{p.}{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a6a92d8d08bbe72004ac0c9b604ad4b63}.\index{CSearchListCtrl@{CSearchListCtrl}!OnColumnLClick@{OnColumnLClick}}
+\index{OnColumnLClick@{OnColumnLClick}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{OnColumnLClick}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::OnColumnLClick (wxListEvent \& {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCSearchListCtrl_ad9b37f6a79f9d0d5497232b75155e258}
+
+
+Event handler for left-\/clicks on the column headers. This eventhandler takes care of sync'ing all the other lists with this one. 
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a320abfc47b9d8dcd2df99b103a1c654c}.
+
+References SyncOtherLists().\index{CSearchListCtrl@{CSearchListCtrl}!OnColumnResize@{OnColumnResize}}
+\index{OnColumnResize@{OnColumnResize}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{OnColumnResize}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::OnColumnResize (wxListEvent \& {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCSearchListCtrl_ad4a38a02a7928cfbe106f1c712652027}
+
+
+Event handler for resizing of the columns. This eventhandler takes care of sync'ing all the other lists with this one. 
+
+References SyncOtherLists().\index{CSearchListCtrl@{CSearchListCtrl}!SetFilter@{SetFilter}}
+\index{SetFilter@{SetFilter}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{SetFilter}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::SetFilter (const wxString \& {\em regExp}, \/  bool {\em invert}, \/  bool {\em filterKnown})}\label{classCSearchListCtrl_a5081dd67cb50915c7940546acc67915c}
+
+
+Sets the filter which decides which results should be shown. 
+\begin{DoxyParams}{Parameters}
+\item[{\em regExp}]A regular expression targeting the filenames. \item[{\em invert}]If true, invert the results of the filter-\/test. \item[{\em filterKnown}]Should files that are queued or known be filtered out.\end{DoxyParams}
+An invalid regExp will result in all results being displayed. 
+
+References AddResult(), IsFiltered(), m\_\-filter, m\_\-filteredOut, m\_\-filterEnabled, m\_\-filterKnown, m\_\-filterText, and m\_\-invert.
+
+Referenced by CSearchDlg::CreateNewTab(), and EnableFiltering().\index{CSearchListCtrl@{CSearchListCtrl}!SetSorting@{SetSorting}}
+\index{SetSorting@{SetSorting}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{SetSorting}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::SetSorting (unsigned {\em column}, \/  unsigned {\em order})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCSearchListCtrl_ad3d1eb62c62c42c9566b025ef0639a46}
+
+
+Set the sort column. 
+\begin{DoxyParams}{Parameters}
+\item[{\em column}]The column with which the list should be sorted. \item[{\em order}]The order in which to sort the column.\end{DoxyParams}
+Note that attempting to sort a column in an unsupported order is an illegal operation. 
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_ad9a4018ee74a401b6af5e122c4495242}.
+
+References ShowChildren(), and CSearchFile::ShowChildren().
+
+Referenced by SyncLists().\index{CSearchListCtrl@{CSearchListCtrl}!ShowResults@{ShowResults}}
+\index{ShowResults@{ShowResults}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{ShowResults}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::ShowResults (long {\em ResultsId})}\label{classCSearchListCtrl_afb852d6ba26d08480cebde35d4cbe387}
+
+
+Clears the list and inserts all results with the specified Id instead. 
+\begin{DoxyParams}{Parameters}
+\item[{\em nResult}]The ID of the results or Zero to simply reset the list. \end{DoxyParams}
+
+
+References AddResult(), and m\_\-nResultsID.
+
+Referenced by CSearchDlg::CreateNewTab().\index{CSearchListCtrl@{CSearchListCtrl}!SortProc@{SortProc}}
+\index{SortProc@{SortProc}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{SortProc}]{\setlength{\rightskip}{0pt plus 5cm}int CSearchListCtrl::SortProc (wxUIntPtr {\em item1}, \/  wxUIntPtr {\em item2}, \/  long {\em sortData})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCSearchListCtrl_ae4a7636dad1cc7eda05ed618e741d95f}
+
+
+Sorter function used by wxListCtrl::SortItems function. \begin{DoxySeeAlso}{See also}
+\doxyref{CMuleListCtrl::SetSortFunc}{p.}{classCMuleListCtrl_adf837c32d5fe8d69a3f35128eeff7ce2} 
+
+wxListCtrl::SortItems 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CMuleListCtrl} \doxyref{}{p.}{classCMuleListCtrl_a9958ee438b116457a818ffb29b3c5864}.
+
+References CMuleListCtrl::COLUMN\_\-MASK, CSearchFile::GetCompleteSourceCount(), CPath::GetExt(), CSearchFile::GetParent(), CSearchFile::GetSourceCount(), CMuleListCtrl::SORT\_\-ALT, and CMuleListCtrl::SORT\_\-DES.
+
+Referenced by CSearchListCtrl().\index{CSearchListCtrl@{CSearchListCtrl}!SyncLists@{SyncLists}}
+\index{SyncLists@{SyncLists}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{SyncLists}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::SyncLists ({\bf CSearchListCtrl} $\ast$ {\em src}, \/  {\bf CSearchListCtrl} $\ast$ {\em dst})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCSearchListCtrl_ab442e62bf10fd4b8ecdb2fd1fac3fd52}
+
+
+Helper function which syncs two lists. 
+\begin{DoxyParams}{Parameters}
+\item[{\em src}]The source list. \item[{\em dst}]The list to be synced with the source list.\end{DoxyParams}
+This function syncronises the following settings of two lists:
+\begin{DoxyItemize}
+\item Sort column
+\item Sort direction
+\item Column widths
+\end{DoxyItemize}
+
+If either sort column or direction is changed, then the dst list will be resorted. This function is used to ensure that all results list act as one, while still allowing individual selection. 
+
+References CMuleListCtrl::GetSortColumn(), CMuleListCtrl::GetSortOrder(), and SetSorting().
+
+Referenced by CSearchListCtrl(), and SyncOtherLists().\index{CSearchListCtrl@{CSearchListCtrl}!SyncOtherLists@{SyncOtherLists}}
+\index{SyncOtherLists@{SyncOtherLists}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{SyncOtherLists}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::SyncOtherLists ({\bf CSearchListCtrl} $\ast$ {\em src})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCSearchListCtrl_ad90ede82bcd0415d4636a297a211d1db}
+
+
+Helper function which syncs all other lists against the specified one. 
+\begin{DoxyParams}{Parameters}
+\item[{\em src}]The list which all other lists should be synced against.\end{DoxyParams}
+This function just calls \doxyref{SyncLists()}{p.}{classCSearchListCtrl_ab442e62bf10fd4b8ecdb2fd1fac3fd52} on all lists in s\_\-lists, using the src argument as the src argument of the SyncLists function. 
+
+References s\_\-lists, and SyncLists().
+
+Referenced by OnColumnLClick(), and OnColumnResize().\index{CSearchListCtrl@{CSearchListCtrl}!UpdateItemColor@{UpdateItemColor}}
+\index{UpdateItemColor@{UpdateItemColor}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{UpdateItemColor}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::UpdateItemColor (long {\em index})}\label{classCSearchListCtrl_a8b4d6df23bd7a2f099a3aeb95b3c32d0}
+
+
+Updates the colors of item at the specified index. 
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]The zero-\/based index of the item.\end{DoxyParams}
+This function sets the color of the item based on the following:
+\begin{DoxyItemize}
+\item Downloading files are marked in red.
+\item Known (shared/completed) files are marked in green.
+\item New files are marked in blue depending on the number of sources.
+\item Canceled files are marked in magenta. 
+\end{DoxyItemize}
+
+References CSearchFile::GetDownloadStatus(), and CSearchFile::GetSourceCount().
+
+Referenced by AddResult(), and UpdateResult().\index{CSearchListCtrl@{CSearchListCtrl}!UpdateResult@{UpdateResult}}
+\index{UpdateResult@{UpdateResult}!CSearchListCtrl@{CSearchListCtrl}}
+\subsubsection[{UpdateResult}]{\setlength{\rightskip}{0pt plus 5cm}void CSearchListCtrl::UpdateResult ({\bf CSearchFile} $\ast$ {\em toupdate})}\label{classCSearchListCtrl_ac3d870efae6bac83bad1186100479d86}
+
+
+Updates the specified source. 
+\begin{DoxyParams}{Parameters}
+\item[{\em The}]search result to be updated. \end{DoxyParams}
+
+
+References CSearchFile::GetCompleteSourceCount(), CPath::GetPrintable(), CSearchFile::GetSourceCount(), CMuleListCtrl::IsItemSorted(), CMuleListCtrl::SortList(), and UpdateItemColor().
+
+Referenced by CSearchDlg::UpdateResult().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/SearchListCtrl.h\item 
+src/SearchListCtrl.cpp\end{DoxyCompactItemize}

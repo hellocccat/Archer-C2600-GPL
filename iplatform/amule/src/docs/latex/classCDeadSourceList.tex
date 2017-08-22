@@ -1,0 +1,80 @@
+\section{CDeadSourceList Class Reference}
+\label{classCDeadSourceList}\index{CDeadSourceList@{CDeadSourceList}}
+
+
+This class keeps track of \char`\"{}invalid\char`\"{} sources.  
+
+
+{\ttfamily \#include $<$DeadSourceList.h$>$}\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CDeadSource}
+\begin{DoxyCompactList}\small\item\em Record of dead source. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CDeadSourceList} (bool isGlobal=false)
+\item 
+void {\bf AddDeadSource} (const {\bf CUpDownClient} $\ast$client)\label{classCDeadSourceList_a55bdfe27e730f01f12d7df628152772a}
+
+\item 
+bool {\bf IsDeadSource} (const {\bf CUpDownClient} $\ast$client)\label{classCDeadSourceList_ad8bb4f5ab9e3c53ed7fbc9eb7c5acc4e}
+
+\item 
+uint32 {\bf GetDeadSourcesCount} () const \label{classCDeadSourceList_ae11949b139cf91a37ff8dac539ba8d5b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::multimap$<$ uint32, {\bf CDeadSource} $>$ {\bfseries DeadSourceMap}\label{classCDeadSourceList_a89c3e94dac1231234f49ad2e8e4144c2}
+
+\item 
+typedef DeadSourceMap::iterator {\bfseries DeadSourceIterator}\label{classCDeadSourceList_aeab2030b79cff1557d75ac3d0152ec01}
+
+\item 
+typedef std::pair$<$ DeadSourceIterator, DeadSourceIterator $>$ {\bfseries DeadSourcePair}\label{classCDeadSourceList_a868860b3ae63253f79159e615c0099c5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf CleanUp} ()\label{classCDeadSourceList_a347e95e31a1d7afb038bd42225eac601}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+DeadSourceMap {\bf m\_\-sources}\label{classCDeadSourceList_a05ff4f51c84b5831c053df147f812f27}
+
+\item 
+uint32 {\bf m\_\-dwLastCleanUp}\label{classCDeadSourceList_a78952528882b6dbd7e833ec5a704b5ce}
+
+\item 
+bool {\bf m\_\-bGlobalList}\label{classCDeadSourceList_a1c7e70b685a67a02ad343656ae9fe191}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class keeps track of \char`\"{}invalid\char`\"{} sources. A dead source is a source that has been evaluated as being useles which can be due to serveral reasons, such as not responding to queries. This list then allows for those sources to be ignored for an set ammount of time in order to avoid the overhead of trying to connect to them.
+
+This is important, since these sources would be removed and readded repeatedly, causing extra overhead with no gain. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CDeadSourceList@{CDeadSourceList}!CDeadSourceList@{CDeadSourceList}}
+\index{CDeadSourceList@{CDeadSourceList}!CDeadSourceList@{CDeadSourceList}}
+\subsubsection[{CDeadSourceList}]{\setlength{\rightskip}{0pt plus 5cm}CDeadSourceList::CDeadSourceList (bool {\em isGlobal} = {\ttfamily false})}\label{classCDeadSourceList_a9137d692ca9cab8b10f181c9d0baed68}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em isGlobal}]Specifies if the list is global or not, used for debugging. \end{DoxyParams}
+
+
+References m\_\-bGlobalList, and m\_\-dwLastCleanUp.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/DeadSourceList.h\item 
+src/DeadSourceList.cpp\end{DoxyCompactItemize}

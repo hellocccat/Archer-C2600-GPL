@@ -1,0 +1,173 @@
+\section{Kademlia::CKademlia Class Reference}
+\label{classKademlia_1_1CKademlia}\index{Kademlia::CKademlia@{Kademlia::CKademlia}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries Start} ()\label{classKademlia_1_1CKademlia_a827f77e99b8a0490960a002ae5eb19f8}
+
+\item 
+static void {\bfseries Start} ({\bf CPrefs} $\ast$prefs)\label{classKademlia_1_1CKademlia_a15e9de1365637d43ed234da0b9e7c801}
+
+\item 
+static void {\bfseries Stop} ()\label{classKademlia_1_1CKademlia_ad75fb679d22346b8a93bd7ceee13df8d}
+
+\item 
+static {\bf CPrefs} $\ast$ {\bfseries GetPrefs} ()  throw ()\label{classKademlia_1_1CKademlia_aad98fa01988628360395c172c577efd3}
+
+\item 
+static {\bf CRoutingZone} $\ast$ {\bfseries GetRoutingZone} ()\label{classKademlia_1_1CKademlia_ac73180443018fe2905b204b05c43ae4a}
+
+\item 
+static {\bf CKademliaUDPListener} $\ast$ {\bfseries GetUDPListener} ()\label{classKademlia_1_1CKademlia_a360ce6e0556318855d45dcaa95b3476a}
+
+\item 
+static {\bf CIndexed} $\ast$ {\bfseries GetIndexed} ()\label{classKademlia_1_1CKademlia_a9efbeb66faa092c867a1b4a3b5cd6f7e}
+
+\item 
+static bool {\bfseries IsRunning} ()  throw ()\label{classKademlia_1_1CKademlia_a6ce56bf42c8ead354f03267e3332fc14}
+
+\item 
+static bool {\bfseries IsConnected} ()  throw ()\label{classKademlia_1_1CKademlia_a014fe6b96f79d614a5c26051187bc273}
+
+\item 
+static bool {\bfseries IsFirewalled} ()\label{classKademlia_1_1CKademlia_a8c44d5637ba6c11bd0d56bb3d39b7c08}
+
+\item 
+static void {\bfseries RecheckFirewalled} ()\label{classKademlia_1_1CKademlia_ac5176f0f919c107502afd6a87e8508e1}
+
+\item 
+static uint32\_\-t {\bfseries GetKademliaUsers} (bool newMethod=false)\label{classKademlia_1_1CKademlia_ac59ab900c1694877f03fc9a75869ad08}
+
+\item 
+static uint32\_\-t {\bfseries GetKademliaFiles} ()  throw ()\label{classKademlia_1_1CKademlia_ab2a3d0c114cc6d3d78d3657d9628542a}
+
+\item 
+static uint32\_\-t {\bfseries GetTotalStoreKey} ()  throw ()\label{classKademlia_1_1CKademlia_a8acf9b33e80d82febeed33464297aa70}
+
+\item 
+static uint32\_\-t {\bfseries GetTotalStoreSrc} ()  throw ()\label{classKademlia_1_1CKademlia_a1a05168e440ccea6d98a771cad71d76f}
+
+\item 
+static uint32\_\-t {\bfseries GetTotalStoreNotes} ()  throw ()\label{classKademlia_1_1CKademlia_afeb61ac8551de5de32ee608e5161a596}
+
+\item 
+static uint32\_\-t {\bfseries GetTotalFile} ()  throw ()\label{classKademlia_1_1CKademlia_a1c4a7fd0c0f78d00bf9ab48870594467}
+
+\item 
+static bool {\bfseries GetPublish} ()  throw ()\label{classKademlia_1_1CKademlia_a84e7e002288754fea6f9841c39783140}
+
+\item 
+static uint32\_\-t {\bfseries GetIPAddress} ()  throw ()\label{classKademlia_1_1CKademlia_a89d847e4e9ac924c1b1e447f096224a5}
+
+\item 
+static void {\bfseries Bootstrap} (uint32\_\-t ip, uint16\_\-t port)\label{classKademlia_1_1CKademlia_a7533a54eda7234a8187a4af5f6cb68cc}
+
+\item 
+static void {\bfseries ProcessPacket} (const uint8\_\-t $\ast$data, uint32\_\-t lenData, uint32\_\-t ip, uint16\_\-t port, bool validReceiverKey, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CKademlia_ad421f5f98ad5310d608add16d532f735}
+
+\item 
+static void {\bfseries AddEvent} ({\bf CRoutingZone} $\ast$zone)  throw ()\label{classKademlia_1_1CKademlia_a3bc3d5e8e0de9b87d0b51e6ac70b3282}
+
+\item 
+static void {\bfseries RemoveEvent} ({\bf CRoutingZone} $\ast$zone)\label{classKademlia_1_1CKademlia_a1212a44976e873d38915c8000f8f4a0a}
+
+\item 
+static void {\bfseries Process} ()\label{classKademlia_1_1CKademlia_ad54e21b064b974488ae1e05893bb3c4c}
+
+\item 
+static void {\bfseries StatsAddClosestDistance} (const {\bf CUInt128} \&distance)\label{classKademlia_1_1CKademlia_a1c15d350b02bdfb553ce26cd4a3b7ab9}
+
+\item 
+static bool {\bfseries FindNodeIDByIP} ({\bf CKadClientSearcher} \&requester, uint32\_\-t ip, uint16\_\-t tcpPort, uint16\_\-t udpPort)\label{classKademlia_1_1CKademlia_a872a86c78ebda09e58a67b5081609db9}
+
+\item 
+static bool {\bfseries FindIPByNodeID} ({\bf CKadClientSearcher} \&requester, const uint8\_\-t $\ast$nodeID)\label{classKademlia_1_1CKademlia_add0909037800a14a6a27a8982d8ff200}
+
+\item 
+static void {\bfseries CancelClientSearch} ({\bf CKadClientSearcher} \&fromRequester)\label{classKademlia_1_1CKademlia_ad7e0f7abf2e28a09ece258aac3e0f2f4}
+
+\item 
+static bool {\bfseries IsRunningInLANMode} ()\label{classKademlia_1_1CKademlia_a4b82c4efa322b547d29163ff9233f49f}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static ContactList {\bfseries s\_\-bootstrapList}\label{classKademlia_1_1CKademlia_ad7c84f07d061d49309a0d04bf9cc2652}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\_\-t {\bfseries CalculateKadUsersNew} ()\label{classKademlia_1_1CKademlia_a0f5427ec731cfaf6e9a6f43a7a7d277c}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CPrefs} $\ast$ {\bfseries m\_\-prefs}\label{classKademlia_1_1CKademlia_a843d65c5d31c22700468e9da34319cbe}
+
+\item 
+{\bf CRoutingZone} $\ast$ {\bfseries m\_\-routingZone}\label{classKademlia_1_1CKademlia_ae14654497b0b47bda67724d15223b954}
+
+\item 
+{\bf CKademliaUDPListener} $\ast$ {\bfseries m\_\-udpListener}\label{classKademlia_1_1CKademlia_aa12ab7f56685f76b41aec672e8e9aa3e}
+
+\item 
+{\bf CIndexed} $\ast$ {\bfseries m\_\-indexed}\label{classKademlia_1_1CKademlia_ac5bf38dba9951d7ee402c1a830989439}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf CKademlia} $\ast$ {\bfseries instance} = NULL\label{classKademlia_1_1CKademlia_adc11f47d6cc9179f694e8241e6846ad5}
+
+\item 
+static EventMap {\bfseries m\_\-events}\label{classKademlia_1_1CKademlia_a6474ca09c79e5e6ed7f00fa3ce3f95bf}
+
+\item 
+static time\_\-t {\bfseries m\_\-nextSearchJumpStart}\label{classKademlia_1_1CKademlia_a40440adcf4a7a45eafc4549a964e389b}
+
+\item 
+static time\_\-t {\bfseries m\_\-nextSelfLookup}\label{classKademlia_1_1CKademlia_add2f936df18ec9bdb8fe9811aae4c850}
+
+\item 
+static time\_\-t {\bfseries m\_\-nextFirewallCheck}\label{classKademlia_1_1CKademlia_a8c9b68fb8b15ed3fd541b8ee06ec68af}
+
+\item 
+static time\_\-t {\bfseries m\_\-nextFindBuddy}\label{classKademlia_1_1CKademlia_aeee916254b5c8ce3306a0a71c79c393f}
+
+\item 
+static time\_\-t {\bfseries m\_\-statusUpdate}\label{classKademlia_1_1CKademlia_ac63477ba8b94481bc091715c5d6b04b1}
+
+\item 
+static time\_\-t {\bfseries m\_\-bigTimer}\label{classKademlia_1_1CKademlia_a08ac60c7b37547738839cf066ef19548}
+
+\item 
+static time\_\-t {\bfseries m\_\-bootstrap}\label{classKademlia_1_1CKademlia_a468746e9c250b7d5163ccdba93511353}
+
+\item 
+static time\_\-t {\bfseries m\_\-consolidate}\label{classKademlia_1_1CKademlia_a4732f782b657611c2a7ba89fe9860303}
+
+\item 
+static time\_\-t {\bfseries m\_\-externPortLookup}\label{classKademlia_1_1CKademlia_a438c72d7b056a94ba75c5d622dfd827e}
+
+\item 
+static time\_\-t {\bfseries m\_\-lanModeCheck} = 0\label{classKademlia_1_1CKademlia_ab894eebeae31c04c843b10c5d9f12b61}
+
+\item 
+static bool {\bfseries m\_\-running} = false\label{classKademlia_1_1CKademlia_abfae94e447aa5a881329c8518a4c4470}
+
+\item 
+static bool {\bfseries m\_\-lanMode} = false\label{classKademlia_1_1CKademlia_a6e368d536ee25282378adb5484a8806d}
+
+\item 
+static std::list$<$ uint32\_\-t $>$ {\bfseries m\_\-statsEstUsersProbes}\label{classKademlia_1_1CKademlia_ae6b07f0581f9b013c4b1254992cf3db5}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/kademlia/Kademlia.h\item 
+src/kademlia/kademlia/Kademlia.cpp\end{DoxyCompactItemize}

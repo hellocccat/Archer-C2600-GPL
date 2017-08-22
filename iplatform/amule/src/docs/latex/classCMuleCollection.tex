@@ -1,0 +1,62 @@
+\section{CMuleCollection Class Reference}
+\label{classCMuleCollection}\index{CMuleCollection@{CMuleCollection}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries Open} (const std::string \&File)\label{classCMuleCollection_ad5f2debd9c8c0fd1a4f153f1cba320a1}
+
+\item 
+size\_\-t {\bfseries GetFileCount} () const \label{classCMuleCollection_a157bb941021f96977770e2d036271583}
+
+\item 
+std::string {\bfseries GetEd2kLink} (size\_\-t index) const \label{classCMuleCollection_ae0a72bd028566dee75be0e3eb27ea688}
+
+\item 
+std::string {\bfseries GetFileName} (size\_\-t index) const \label{classCMuleCollection_abca759943dd587345a63fb0333712ab6}
+
+\item 
+uint64\_\-t {\bfseries GetFileSize} (size\_\-t index) const \label{classCMuleCollection_a19cabf8303d16beb0ca069dd73859686}
+
+\item 
+std::string {\bfseries GetFileHash} (size\_\-t index) const \label{classCMuleCollection_ada02bf7edf0552678da6962efe19e11e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries OpenBinary} (const std::string \&File)\label{classCMuleCollection_a444b8db69ac52dc054548d1df1a6313b}
+
+\item 
+bool {\bfseries OpenText} (const std::string \&File)\label{classCMuleCollection_acef8ee75fbdae451e38984044418314c}
+
+\item 
+bool {\bfseries AddLink} (const std::string \&Link)\label{classCMuleCollection_ac79b51221435dfe4042c728188481a40}
+
+\item 
+bool {\bfseries AddFile} (const std::string \&fileName, uint64\_\-t fileSize, const std::string \&fileHash)\label{classCMuleCollection_aca9d4ee6fd7b35a6d451ad3377af35a8}
+
+\item 
+{\footnotesize template$<$typename intType $>$ }\\intType {\bfseries ReadInt} (std::ifstream \&infile)\label{classCMuleCollection_a336e4d29d481dc2187b43f54a0ca6a50}
+
+\item 
+std::string {\bfseries ReadString} (std::ifstream \&infile, int TagType)\label{classCMuleCollection_a45672115a65f9c855a3bc68751200223}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries IsValidHash} (const std::string \&fileHash)\label{classCMuleCollection_a5825af7927b217d44d6299ec2e62b570}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ {\bf CollectionFile} $>$ {\bfseries vCollection}\label{classCMuleCollection_a27f31b07ae18efcfaee27604965d6620}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/MuleCollection.h\item 
+src/MuleCollection.cpp\end{DoxyCompactItemize}

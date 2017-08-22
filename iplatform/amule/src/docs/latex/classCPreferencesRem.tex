@@ -1,0 +1,53 @@
+\section{CPreferencesRem Class Reference}
+\label{classCPreferencesRem}\index{CPreferencesRem@{CPreferencesRem}}
+Inheritance diagram for CPreferencesRem::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCPreferencesRem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CPreferencesRem} ({\bf CRemoteConnect} $\ast$)\label{classCPreferencesRem_a59fdb249dbb1ecebce5ebdd7df73c2f4}
+
+\item 
+bool {\bfseries CreateCategory} ({\bf Category\_\-Struct} $\ast$\&category, const wxString \&name, const {\bf CPath} \&path, const wxString \&comment, uint32 color, uint8 prio)\label{classCPreferencesRem_a2c0a32e4c57b1cd3cf28b0482df56224}
+
+\item 
+bool {\bfseries UpdateCategory} (uint8 cat, const wxString \&name, const {\bf CPath} \&path, const wxString \&comment, uint32 color, uint8 prio)\label{classCPreferencesRem_a3360d3404c224a7f04617f18ecc19dec}
+
+\item 
+void {\bfseries RemoveCat} (uint8 cat)\label{classCPreferencesRem_a910926543fc1123e26811a7c991cdec3}
+
+\item 
+bool {\bfseries LoadRemote} ()\label{classCPreferencesRem_aeae9025db7d0b018f69cdf006a62568b}
+
+\item 
+void {\bfseries SendToRemote} ()\label{classCPreferencesRem_aac2928280b0098a9fe9cfca1e2670521}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries HandlePacket} (const {\bf CECPacket} $\ast$packet)\label{classCPreferencesRem_a76a3a31438819369fa8fded22011856e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CRemoteConnect} $\ast$ {\bfseries m\_\-conn}\label{classCPreferencesRem_a6ad1d472f369a03ee0c8c9699f496426}
+
+\item 
+uint32 {\bfseries m\_\-exchange\_\-send\_\-selected\_\-prefs}\label{classCPreferencesRem_a6253938d4acd457bdfcac36a418818ce}
+
+\item 
+uint32 {\bfseries m\_\-exchange\_\-recv\_\-selected\_\-prefs}\label{classCPreferencesRem_ae75c701716cf106d5763bebaccbc5884}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/amule-\/remote-\/gui.h\item 
+src/amule-\/remote-\/gui.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,113 @@
+\section{CStatisticsDlg Class Reference}
+\label{classCStatisticsDlg}\index{CStatisticsDlg@{CStatisticsDlg}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CStatisticsDlg} (wxWindow $\ast$pParent, {\bf CStatistics} $\ast$stats)\label{classCStatisticsDlg_ac732a2a5fc987c268b068a3142aaede0}
+
+\item 
+void {\bfseries UpdateStatGraphs} (const uint32 peakconnections, const {\bf GraphUpdateInfo} \&update)\label{classCStatisticsDlg_a86681eaafda90561397a438853e98eca}
+
+\item 
+void {\bfseries SetUpdatePeriod} (int step)\label{classCStatisticsDlg_a0ca22ccf4470c136061b921d7bd1c0bf}
+
+\item 
+void {\bfseries ResetAveragingTime} ()\label{classCStatisticsDlg_a0149b49c795fe6a29562293b98ef058c}
+
+\item 
+void {\bfseries ShowStatistics} (bool init=false)\label{classCStatisticsDlg_acdf657eda0b9578c0cf222dc94d5d85a}
+
+\item 
+void {\bfseries SetARange} (bool SetDownload, int maxValue)\label{classCStatisticsDlg_ac7d1b5f67a67cb8108fd2648ec71a0d9}
+
+\item 
+void {\bfseries FillTree} ({\bf CStatTreeItemBase} $\ast$statssubtree, wxTreeItemId \&StatsGUITree, const NodeIdSet \&expandednodes)\label{classCStatisticsDlg_a90043c3a35f19a9e42f12d03d78524c5}
+
+\item 
+void {\bfseries GetExpandedNodes} (NodeIdSet \&nodeset, const wxTreeItemId \&root)\label{classCStatisticsDlg_ab83fc3d8e0ffdd9a3c945abecc9651d9}
+
+\item 
+void {\bfseries Init} ()\label{classCStatisticsDlg_a1f86c10a388d2aa08ef1adb58dacd786}
+
+\item 
+void {\bfseries InitTree} ()\label{classCStatisticsDlg_a03789f468907be76160ecf46055a100e}
+
+\item 
+void {\bfseries InitGraphs} ()\label{classCStatisticsDlg_aa9e1425a49d64cc7a4abd1e1a381d4ff}
+
+\item 
+void {\bfseries ApplyStatsColor} (int index)\label{classCStatisticsDlg_a0fe25919015a0bfa23172e189397a3ed}
+
+\item 
+void {\bfseries RebuildStatTreeRemote} (const {\bf CECTag} $\ast$)\label{classCStatisticsDlg_afab621fe3f9b552d4e75a67854ff3075}
+
+\item 
+{\bf COScopeCtrl} $\ast$ {\bfseries GetDLScope} ()\label{classCStatisticsDlg_a06c089cdcf883c5ddf0f4747f69769ff}
+
+\item 
+{\bf COScopeCtrl} $\ast$ {\bfseries GetConnScope} ()\label{classCStatisticsDlg_a7a065de743e3ba0af70a164b932734cf}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const wxColour \& {\bfseries getColors} (unsigned num)\label{classCStatisticsDlg_a840c036884587b75b71916bc3fa5ff2e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf COScopeCtrl} $\ast$ {\bfseries pscopeDL}\label{classCStatisticsDlg_ab29c0ea464b7470aac1186642c7d9328}
+
+\item 
+{\bf COScopeCtrl} $\ast$ {\bfseries pscopeUL}\label{classCStatisticsDlg_afda689444bf79d260929f414e6464e69}
+
+\item 
+{\bf COScopeCtrl} $\ast$ {\bfseries pscopeConn}\label{classCStatisticsDlg_a54d9664f5d4a4607c776e38fd3e0310e}
+
+\item 
+wxTreeCtrl $\ast$ {\bfseries stattree}\label{classCStatisticsDlg_a5015f9cdb61ee545d299a6b80da15d08}
+
+\item 
+{\bf CStatistics} $\ast$ {\bfseries m\_\-stats}\label{classCStatisticsDlg_ac1876e7936d79e0a79dea74749d99735}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static wxColour {\bfseries acrStat} [15]
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf PrefsUnifiedDlg}\label{classCStatisticsDlg_ac24ec000139eca6e3db54b6c0fa40c93}
+
+\item 
+class {\bf CPreferences}\label{classCStatisticsDlg_a22cb0cab0a8dc23af268bf7f5cf94806}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{CStatisticsDlg@{CStatisticsDlg}!acrStat@{acrStat}}
+\index{acrStat@{acrStat}!CStatisticsDlg@{CStatisticsDlg}}
+\subsubsection[{acrStat}]{\setlength{\rightskip}{0pt plus 5cm}wxColour CStatisticsDlg::acrStat\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCStatisticsDlg_a3093af7dc1b24ba43124cbef2c8c75de}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+    { 
+        wxColour(0,0,64), wxColour(192,192,255), wxColour(128, 255, 128), wxColou
+      r(0, 210, 0),
+        wxColour(0, 128, 0), wxColour(255, 128, 128), wxColour(200, 0, 0), wxColo
+      ur(140, 0, 0),
+        wxColour(150, 150, 255), wxColour(192, 0, 192), wxColour(255, 255, 128), 
+      wxColour(0, 0, 0), 
+        wxColour(128, 255, 128), wxColour(0, 210, 0), wxColour(0, 128, 0)
+    }
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/StatisticsDlg.h\item 
+src/StatisticsDlg.cpp\end{DoxyCompactItemize}

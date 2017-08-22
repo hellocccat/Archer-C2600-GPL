@@ -1,0 +1,68 @@
+\section{CPartFileConvertDlg Class Reference}
+\label{classCPartFileConvertDlg}\index{CPartFileConvertDlg@{CPartFileConvertDlg}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CPartFileConvertDlg} (wxWindow $\ast$parent)\label{classCPartFileConvertDlg_ae888b8fe2a0aec9a591ee468a25709a2}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries ShowGUI} (wxWindow $\ast$parent)\label{classCPartFileConvertDlg_a7b6deacba844b755328d0f395f650de6}
+
+\item 
+static void {\bfseries UpdateProgress} (float percent, wxString text=wxEmptyString, wxString header=wxEmptyString)\label{classCPartFileConvertDlg_a3201ea34628d500f98613d79987b90b1}
+
+\item 
+static void {\bfseries UpdateJobInfo} ({\bf ConvertInfo} \&info)\label{classCPartFileConvertDlg_afc8188a32de176462ff43116253dfccb}
+
+\item 
+static void {\bfseries RemoveJobInfo} (unsigned id)\label{classCPartFileConvertDlg_afbb5100e7668aa959e69f179a2412c66}
+
+\item 
+static void {\bfseries ClearInfo} ()\label{classCPartFileConvertDlg_a506141ffffe0d7fadd8db1ca9d537b44}
+
+\item 
+static void {\bfseries CloseGUI} ()\label{classCPartFileConvertDlg_ac7c4fba6162863b7b88a530ac38cd441}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnAddFolder} (wxCommandEvent \&event)\label{classCPartFileConvertDlg_a14970638f601ff895c716ce239ba8f17}
+
+\item 
+void {\bfseries OnClose} (wxCloseEvent \&event)\label{classCPartFileConvertDlg_a47c0cb2ab21426ecb6e593ed402fd0fb}
+
+\item 
+void {\bfseries OnCloseButton} (wxCommandEvent \&event)\label{classCPartFileConvertDlg_a73df2aa744739e55e90df0db31d395bb}
+
+\item 
+void {\bfseries RetrySel} (wxCommandEvent \&event)\label{classCPartFileConvertDlg_afc809b556f9952d4c7ea89fd35c1d284}
+
+\item 
+void {\bfseries RemoveSel} (wxCommandEvent \&event)\label{classCPartFileConvertDlg_ab39da9989ddcb0ce3b462d429ada7f64}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxGauge $\ast$ {\bfseries m\_\-pb\_\-current}\label{classCPartFileConvertDlg_a7389f99c9801d7c9e046d798f69f6b81}
+
+\item 
+wxListCtrl $\ast$ {\bfseries m\_\-joblist}\label{classCPartFileConvertDlg_a181054cf142621737e53ef810e14a0ec}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf CPartFileConvertDlg} $\ast$ {\bfseries s\_\-convertgui} = NULL\label{classCPartFileConvertDlg_a3fe33f34e6bbe5a5850a6957e4e3f9c3}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/PartFileConvertDlg.h\item 
+src/PartFileConvertDlg.cpp\end{DoxyCompactItemize}

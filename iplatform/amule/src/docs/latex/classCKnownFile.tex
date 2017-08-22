@@ -1,0 +1,346 @@
+\section{CKnownFile Class Reference}
+\label{classCKnownFile}\index{CKnownFile@{CKnownFile}}
+Inheritance diagram for CKnownFile::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCKnownFile}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::set$<$ {\bf CClientRef} $>$ {\bfseries SourceSet}\label{classCKnownFile_a022cdbbdd0aa00d0a9c57373f03b3c63}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CKnownFile} (uint32 ecid)\label{classCKnownFile_aa3408043c6232da2569401e4258f2413}
+
+\item 
+{\bfseries CKnownFile} (const {\bf CSearchFile} \&searchFile)\label{classCKnownFile_a404618aa6e0093af1f60fb81a25789ca}
+
+\item 
+void {\bfseries SetFilePath} (const {\bf CPath} \&filePath)\label{classCKnownFile_ad77beca29a10bb655a7a43dd5a5e825d}
+
+\item 
+const {\bf CPath} \& {\bfseries GetFilePath} () const \label{classCKnownFile_a0e3ce4fdacadbb9b536c40e2a6cf948d}
+
+\item 
+virtual bool {\bfseries IsPartFile} () const \label{classCKnownFile_a6855d5965df3e2d1ca9a4bab1e84cf7c}
+
+\item 
+virtual bool {\bfseries IsCompleted} () const \label{classCKnownFile_a168f76ad65a3478c947c8d7d721ccf06}
+
+\item 
+virtual bool {\bfseries IsCPartFile} () const \label{classCKnownFile_af16539a4293b267a674f51f0c5819d09}
+
+\item 
+virtual bool {\bfseries LoadFromFile} (const {\bf CFileDataIO} $\ast$file)\label{classCKnownFile_a8c384642e273969104313f99ec4d7271}
+
+\item 
+virtual uint8 {\bfseries GetStatus} (bool ignorepause=false) const \label{classCKnownFile_a9ce5a48c32bc7a6b9b6bc5c01109d729}
+
+\item 
+bool {\bfseries WriteToFile} ({\bf CFileDataIO} $\ast$file)\label{classCKnownFile_acd29ab66c501c86bb65d9bd0ee2c589d}
+
+\item 
+time\_\-t {\bfseries GetLastChangeDatetime} () const \label{classCKnownFile_adcc2c17e450cec77eaf95cbe1adc2324}
+
+\item 
+void {\bfseries SetLastChangeDatetime} (time\_\-t t)\label{classCKnownFile_a79cdac530dce417bf16c63ee805b51f9}
+
+\item 
+virtual void {\bfseries SetFileSize} (uint64 nFileSize)\label{classCKnownFile_a653fc8ba8fdcf464af863af37b63c0ba}
+
+\item 
+size\_\-t {\bfseries GetHashCount} () const \label{classCKnownFile_add138ad4189ce9f1a4447517a52ce7d7}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetPartHash} (uint16 part) const \label{classCKnownFile_af2a09938818bf1a32cf131cec3fbe72a}
+
+\item 
+uint32 {\bfseries GetED2KPartHashCount} () const \label{classCKnownFile_ac033431cd2693eb62ac44cb44f5435f7}
+
+\item 
+uint16 {\bfseries GetPartCount} () const \label{classCKnownFile_aecc179372cbaf00e58d110885485bc6d}
+
+\item 
+uint16 {\bfseries GetED2KPartCount} () const \label{classCKnownFile_af1f1f080de67d6cf2f040666516e6a31}
+
+\item 
+uint32 {\bfseries GetPartSize} (uint16 part) const \label{classCKnownFile_a8af731a3ade05cf465398346ed8db6d7}
+
+\item 
+uint8 {\bfseries GetUpPriority} () const \label{classCKnownFile_af3cf73fc8e7091c03d6f5435d4c27f67}
+
+\item 
+void {\bfseries SetUpPriority} (uint8 newUpPriority, bool bSave=true)\label{classCKnownFile_a79d6080ffdb31bc74989223ddb347636}
+
+\item 
+bool {\bfseries IsAutoUpPriority} () const \label{classCKnownFile_a241a650315cc91b13d772f2699e69a02}
+
+\item 
+void {\bfseries SetAutoUpPriority} (bool flag)\label{classCKnownFile_a21dfe079e3f857f13594014f76f7c2c7}
+
+\item 
+void {\bfseries UpdateAutoUpPriority} ()\label{classCKnownFile_ad56847538bd3f59b7c55f9d3d76d87ad}
+
+\item 
+uint16 {\bfseries GetQueuedCount} () const \label{classCKnownFile_ac50d1010f0c15371c9f711a4f85478eb}
+
+\item 
+bool {\bfseries LoadHashsetFromFile} (const {\bf CFileDataIO} $\ast$file, bool checkhash)\label{classCKnownFile_aa400d6470a6a19a8d3947f5173bf6ef1}
+
+\item 
+void {\bfseries AddUploadingClient} ({\bf CUpDownClient} $\ast$client)\label{classCKnownFile_a8575684e488aa58bba3ac9c745dc2452}
+
+\item 
+void {\bfseries RemoveUploadingClient} ({\bf CUpDownClient} $\ast$client)\label{classCKnownFile_a2ec034d448205ebd0cbc8e00928dce76}
+
+\item 
+const wxString \& {\bfseries GetFileComment} () const \label{classCKnownFile_a13499094e7bda349fd5f4524f5bbc9ec}
+
+\item 
+int8 {\bfseries GetFileRating} () const \label{classCKnownFile_a64b60aae40b49cd56cc2aa5ad728e589}
+
+\item 
+void {\bfseries SetFileCommentRating} (const wxString \&strNewComment, int8 iNewRating)\label{classCKnownFile_a0bcc025a31bf864b162733a42ac762a0}
+
+\item 
+void {\bfseries SetPublishedED2K} (bool val)\label{classCKnownFile_a90caf29047a889352b54b0147e56306b}
+
+\item 
+bool {\bfseries GetPublishedED2K} () const \label{classCKnownFile_aae7ebf8010e7f4e9613c8c9f44248f00}
+
+\item 
+uint32 {\bfseries GetKadFileSearchID} () const \label{classCKnownFile_ae769110ad03d71abada6155153699eba}
+
+\item 
+void {\bfseries SetKadFileSearchID} (uint32 id)\label{classCKnownFile_a5d3a8cd4f4804097d3a223f2dfe59444}
+
+\item 
+const Kademlia::WordList \& {\bfseries GetKadKeywords} () const \label{classCKnownFile_ab8b1a9241372f4f77c527afad35df6b2}
+
+\item 
+uint32 {\bfseries GetLastPublishTimeKadSrc} () const \label{classCKnownFile_a819db0e92b41d2d3a12e7b6926242483}
+
+\item 
+void {\bfseries SetLastPublishTimeKadSrc} (uint32 time, uint32 buddyip)\label{classCKnownFile_afb87dd320e349517f29966998c59ae12}
+
+\item 
+uint32 {\bfseries GetLastPublishBuddy} () const \label{classCKnownFile_ae8e36ba12467272557e4ea603b199d4a}
+
+\item 
+void {\bfseries SetLastPublishTimeKadNotes} (uint32 time)\label{classCKnownFile_a21cb0470dd09298a99399ab2e9bf9ee5}
+
+\item 
+uint32 {\bfseries GetLastPublishTimeKadNotes} () const \label{classCKnownFile_a7a1a5546c047680115c5f6ef29c40677}
+
+\item 
+bool {\bfseries PublishSrc} ()\label{classCKnownFile_acc9b9041be17de13bf0ff49f1aa10b1f}
+
+\item 
+bool {\bfseries PublishNotes} ()\label{classCKnownFile_a4b1d3502c3412bff81e6bbf53aaf159e}
+
+\item 
+uint32 {\bfseries GetMetaDataVer} () const \label{classCKnownFile_aba58df55d130ba649c6c84aa3edfdbab}
+
+\item 
+virtual {\bf CPacket} $\ast$ {\bfseries CreateSrcInfoPacket} (const {\bf CUpDownClient} $\ast$forClient, uint8 byRequestedVersion, uint16 nRequestedOptions)\label{classCKnownFile_a1ae3cd0ed33c062d64be3634eedbef13}
+
+\item 
+void {\bfseries CreateOfferedFilePacket} ({\bf CMemFile} $\ast$files, class {\bf CServer} $\ast$pServer, {\bf CUpDownClient} $\ast$pClient)\label{classCKnownFile_a096d55252c105728cce67ec696d7be4b}
+
+\item 
+virtual void {\bfseries UpdatePartsInfo} ()\label{classCKnownFile_aeb9582fd7a7ade6a332f2ad731ee6079}
+
+\item 
+wxString {\bf GetAICHMasterHash} () const \label{classCKnownFile_a07c99fe890f543411e9b3b6a061485aa}
+
+\item 
+bool {\bf HasProperAICHHashSet} () const 
+\item 
+void {\bf UpdateUpPartsFrequency} ({\bf CUpDownClient} $\ast$client, bool increment)
+\item 
+void {\bfseries ClearPriority} ()\label{classCKnownFile_ac02961c7dcf713cc9a54ffb30f9c3ede}
+
+\item 
+virtual wxString {\bfseries GetFeedback} () const \label{classCKnownFile_afb6d7757dc504c567283e5d75ef59649}
+
+\item 
+void {\bfseries SetShowSources} (bool val)\label{classCKnownFile_a4639b2fdc8a40cb3f05836cd34ddc9de}
+
+\item 
+bool {\bfseries ShowSources} () const \label{classCKnownFile_a5ed9f506a7435fcc7227a107a9d505fa}
+
+\item 
+void {\bfseries SetShowPeers} (bool val)\label{classCKnownFile_ac9fc793e83a819e42f6df3fd4817fad8}
+
+\item 
+bool {\bfseries ShowPeers} () const \label{classCKnownFile_a7e2649d41f53091c96804589b02c4d7d}
+
+\item 
+virtual void {\bfseries SetFileName} (const {\bf CPath} \&filename)\label{classCKnownFile_aa409b861477750b8e122b2200ee3f70b}
+
+\item 
+{\bf CAICHHashSet} $\ast$ {\bfseries GetAICHHashset} () const \label{classCKnownFile_a6e9f637df6c2974d7aaaa0f67edb82ef}
+
+\item 
+void {\bfseries SetAICHHashset} ({\bf CAICHHashSet} $\ast$val)\label{classCKnownFile_a60cf6d39ea65718e5cec6b5563657907}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries CreateHashFromHashlist} (const ArrayOfCMD4Hash \&hashes, {\bf CMD4Hash} $\ast$Output)\label{classCKnownFile_a8c3a99a465f662c8bae49d7542232cdd}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CFileStatistic} {\bfseries statistic}\label{classCKnownFile_aad03bb86e87b0d6053ec5aeaf77380f3}
+
+\item 
+time\_\-t {\bfseries m\_\-nCompleteSourcesTime}\label{classCKnownFile_abb0ca13fe6adb5c51978681fa4b31c46}
+
+\item 
+uint16 {\bfseries m\_\-nCompleteSourcesCount}\label{classCKnownFile_ac90c67090938ab807282c05112c0028a}
+
+\item 
+uint16 {\bfseries m\_\-nCompleteSourcesCountLo}\label{classCKnownFile_ac366c0e61d68eb756a152ca576b2561a}
+
+\item 
+uint16 {\bfseries m\_\-nCompleteSourcesCountHi}\label{classCKnownFile_a3982ec274a8451078e3f295b41261bea}
+
+\item 
+SourceSet {\bfseries m\_\-ClientUploadList}\label{classCKnownFile_a5222d2919019345ebe64351611ba28a4}
+
+\item 
+ArrayOfUInts16 {\bfseries m\_\-AvailPartFrequency}\label{classCKnownFile_a94be76ef560fcfbcde324400c6a6c163}
+
+\item 
+time\_\-t {\bfseries m\_\-lastDateChanged}\label{classCKnownFile_a9ff12c480858967b21e5a678c60a90c6}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries LoadTagsFromFile} (const {\bf CFileDataIO} $\ast$file)\label{classCKnownFile_ae528486203dc676f34ed75ed43e7059f}
+
+\item 
+bool {\bfseries LoadDateFromFile} (const {\bf CFileDataIO} $\ast$file)\label{classCKnownFile_abba6128868e77b3f4db4c69136c723bc}
+
+\item 
+void {\bfseries LoadComment} () const \label{classCKnownFile_a9729768f9aaa60980bed8dc975ba73e7}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries CreateHashFromFile} (class {\bf CFileAutoClose} \&file, uint64 offset, uint32 Length, {\bf CMD4Hash} $\ast$Output, {\bf CAICHHashTree} $\ast$pShaHashOut)\label{classCKnownFile_ae8cb4313c8594be43ceacd3999a6ae70}
+
+\item 
+static void {\bfseries CreateHashFromInput} (const byte $\ast$input, uint32 Length, {\bf CMD4Hash} $\ast$Output, {\bf CAICHHashTree} $\ast$pShaHashOut)\label{classCKnownFile_a00ac4f53c1016efb07d59bd7a75e9bd9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CAICHHashSet} $\ast$ {\bfseries m\_\-pAICHHashSet}\label{classCKnownFile_acc36b04b7a61d986cb3b5b0e4cb1f208}
+
+\item 
+ArrayOfCMD4Hash {\bfseries m\_\-hashlist}\label{classCKnownFile_ac22ab004595855c9779ead226424f27a}
+
+\item 
+{\bf CPath} {\bfseries m\_\-filePath}\label{classCKnownFile_ae7f9c649cc2d0e6df51b86294dbfca1e}
+
+\item 
+bool {\bfseries m\_\-bCommentLoaded}\label{classCKnownFile_a80c44e7eaca016e8dc7a17ce205f061a}
+
+\item 
+uint16 {\bfseries m\_\-iPartCount}\label{classCKnownFile_a724494d03d9ff856b8763c9b26400f28}
+
+\item 
+uint16 {\bfseries m\_\-iED2KPartCount}\label{classCKnownFile_a5cffc0d2889620571a53be43842ecaa9}
+
+\item 
+uint16 {\bfseries m\_\-iED2KPartHashCount}\label{classCKnownFile_a3431b7937e065af6b40c95d1438ddbc7}
+
+\item 
+uint32 {\bfseries m\_\-sizeLastPart}\label{classCKnownFile_abf0e279f51c3e6ddccc056e08f0a1098}
+
+\item 
+uint8 {\bfseries m\_\-iUpPriority}\label{classCKnownFile_ae9db13295e0866370f3c0327ee13d7b2}
+
+\item 
+bool {\bfseries m\_\-bAutoUpPriority}\label{classCKnownFile_a9e89f2cc158d0d8707d8b6e2cdedb19d}
+
+\item 
+bool {\bfseries m\_\-PublishedED2K}\label{classCKnownFile_adcae197eaccff62b5e14eb908212328e}
+
+\item 
+Kademlia::WordList {\bfseries wordlist}\label{classCKnownFile_a9bc30ea2ac1674fe5e070ca36d197f18}
+
+\item 
+uint32 {\bfseries kadFileSearchID}\label{classCKnownFile_a8084f6ed5c74fe80d444226688153016}
+
+\item 
+uint32 {\bfseries m\_\-lastPublishTimeKadSrc}\label{classCKnownFile_aea65785c341aa83378c4fb5d7e30e8b4}
+
+\item 
+uint32 {\bfseries m\_\-lastPublishTimeKadNotes}\label{classCKnownFile_aa101705c4770572b818cc889930814ae}
+
+\item 
+uint32 {\bfseries m\_\-lastBuddyIP}\label{classCKnownFile_a7ec9ea10c1e44b5495516a0de4aa3794}
+
+\item 
+bool {\bfseries m\_\-showSources}\label{classCKnownFile_a42473f611ba563782c9ee7dd4d11cf6d}
+
+\item 
+bool {\bfseries m\_\-showPeers}\label{classCKnownFile_a13a19ce550301f4ff4375c3a98b2cb53}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Init} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CHashingTask}\label{classCKnownFile_ad78a753481f356c59ff241b3074d6e32}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{CKnownFile@{CKnownFile}!HasProperAICHHashSet@{HasProperAICHHashSet}}
+\index{HasProperAICHHashSet@{HasProperAICHHashSet}!CKnownFile@{CKnownFile}}
+\subsubsection[{HasProperAICHHashSet}]{\setlength{\rightskip}{0pt plus 5cm}bool CKnownFile::HasProperAICHHashSet () const}\label{classCKnownFile_acbab8212cfdd0d7cc667d8cc65ed104e}
+
+
+Returns true if the AICH-\/Hashset is valid, and verified or complete. 
+
+Referenced by GetAICHMasterHash(), and CSharedFilesCtrl::OnRightClick().\index{CKnownFile@{CKnownFile}!Init@{Init}}
+\index{Init@{Init}!CKnownFile@{CKnownFile}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void CKnownFile::Init ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCKnownFile_a46f2e1beb58feef600edf10b0d26f9eb}
+
+
+Common initializations for constructors. 
+
+Reimplemented in {\bf CPartFile} \doxyref{}{p.}{classCPartFile_a041189da060e9f01e9c1698201e03c6b}.\index{CKnownFile@{CKnownFile}!UpdateUpPartsFrequency@{UpdateUpPartsFrequency}}
+\index{UpdateUpPartsFrequency@{UpdateUpPartsFrequency}!CKnownFile@{CKnownFile}}
+\subsubsection[{UpdateUpPartsFrequency}]{\setlength{\rightskip}{0pt plus 5cm}void CKnownFile::UpdateUpPartsFrequency ({\bf CUpDownClient} $\ast$ {\em client}, \/  bool {\em increment})}\label{classCKnownFile_a0f0d575e3f5bce510ce58cba62fc3240}
+
+
+Updates the requency of uploading parts from with the data the client provides. 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]The clients whoose uploading parts should be considered. \item[{\em increment}]If true, the counts are incremented, otherwise they are decremented.\end{DoxyParams}
+This functions updates the frequency list of file-\/upparts, using the clients upparts-\/status. This function should be called by clients every time they update their upparts-\/status, or when they are added or removed from the file. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/KnownFile.h\item 
+src/amule-\/remote-\/gui.cpp\item 
+src/KnownFile.cpp\end{DoxyCompactItemize}

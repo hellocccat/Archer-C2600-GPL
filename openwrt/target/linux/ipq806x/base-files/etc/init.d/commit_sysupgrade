@@ -1,0 +1,64 @@
+#!/bin/sh /etc/rc.common
+#
+# Copyright (c) 2014 The Linux Foundation. All rights reserved.
+# Copyright (C) 2011 OpenWrt.org
+
+START=99
+
+do_flash_mtd() {
+	local bin=$1
+	local mtdname=$2
+
+	local mtdpart=$(grep "\"${mtdname}\"" /proc/mtd | awk -F: '{print $1}')
+	local pgsz=$(cat /sys/class/mtd/${mtdpart}/writesize)
+
+	dd if=/tmp/${bin}.bin bs=${pgsz} conv=sync | mtd write - -e ${mtdname} ${mtdname}
+}
+
+do_flash_emmc() {
+        local bin=$1
+        local emmcblock=$2
+
+        dd if=/dev/zero of=${emmcblock}
+        dd if=/tmp/${bin}.bin of=${emmcblock}
+}
+
+do_flash_bootconfig() {
+	local bin=$1
+	local mtdname=$2
+	local emmcblock
+
+	# Fail safe upgrade
+	if [ -f /proc/boot_info/getbinary ]; then
+		cat /proc/boot_info/getbinary > /tmp/${bin}.bin
+		emmcblock="$(find_mmc_part "0:$mtdname")"
+
+		if [ -e "$emmcblock" ]; then
+			do_flash_emmc $bin $emmcblock
+		else
+			do_flash_mtd $bin $mtdname
+		fi
+
+	fi
+}
+
+start() {
+	local upgrade_in_progress
+
+	upgrade_in_progress=/proc/boot_info/upgradeinprogress
+	[ -f $upgrade_in_progress ] && upgrade_in_progress=`cat $upgrade_in_progress`
+
+	if [ $upgrade_in_progress -eq 1 ]; then
+		echo 0 > /proc/boot_info/upgradeinprogress
+		# update bootconfig
+		do_flash_bootconfig bootconfig "BOOTCONFIG"
+
+		cmp /etc/config/sysupgrade_primaryboot /proc/boot_info/rootfs/primaryboot || {\
+			if [ -f /etc/config/sysupgrade_version ]; then
+				cat /etc/config/sysupgrade_version > /sys/devices/system/qfprom/qfprom0/version
+				rm -f /etc/config/sysupgrade_version
+			fi
+		}
+		rm -f /etc/config/sysupgrade_primaryboot
+	fi
+}

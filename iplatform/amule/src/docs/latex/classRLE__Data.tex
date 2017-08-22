@@ -1,0 +1,70 @@
+\section{RLE\_\-Data Class Reference}
+\label{classRLE__Data}\index{RLE\_\-Data@{RLE\_\-Data}}
+
+
+{\ttfamily \#include $<$RLE.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries RLE\_\-Data} (int len=0, bool use\_\-diff=true)\label{classRLE__Data_a61f10cbdcbc3a7f2a1aa4fd3722cf48e}
+
+\item 
+{\bfseries RLE\_\-Data} (const {\bf RLE\_\-Data} \&obj)\label{classRLE__Data_aa764c13086ea49b1d7c2359f0ce15430}
+
+\item 
+{\bf RLE\_\-Data} \& {\bfseries operator=} (const {\bf RLE\_\-Data} \&)\label{classRLE__Data_ae705d9419278504d7a0a74d28051dc6d}
+
+\item 
+const uint8 $\ast$ {\bfseries Encode} (const ArrayOfUInts16 \&data, int \&outlen, bool \&changed)\label{classRLE__Data_a38318f35235a1f3c9b1872e86003404a}
+
+\item 
+const uint8 $\ast$ {\bfseries Encode} (const ArrayOfUInts64 \&data, int \&outlen, bool \&changed)\label{classRLE__Data_ab1586279b4564812c789889a133210c6}
+
+\item 
+const uint8 $\ast$ {\bfseries Decode} (const uint8 $\ast$data, int len)\label{classRLE__Data_aec57e6045f16a8ac986aed276da4ae00}
+
+\item 
+void {\bfseries Decode} (const uint8 $\ast$data, int len, ArrayOfUInts64 \&outdata)\label{classRLE__Data_a823d487c09c0f2eff20a67a2c7afb951}
+
+\item 
+void {\bfseries ResetEncoder} ()\label{classRLE__Data_af243518ad706ecd35ea75fff09a260f2}
+
+\item 
+const uint8 $\ast$ {\bfseries Buffer} () const \label{classRLE__Data_a4482e3c6e106325c723cf4f7eb397947}
+
+\item 
+int {\bfseries Size} () const \label{classRLE__Data_a9e9f20ee1271b6c7707dfd47168c4884}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries setup} (int len, bool use\_\-diff, uint8 $\ast$content=0)\label{classRLE__Data_a44592939837439aa85b44acfcba59ec0}
+
+\item 
+bool {\bfseries Realloc} (int size)\label{classRLE__Data_a0911ca974c14e47177984cae45f82413}
+
+\item 
+const uint8 $\ast$ {\bfseries Encode} (const uint8 $\ast$data, int inlen, int \&outlen, bool \&changed)\label{classRLE__Data_a876907c56b1f7dee6a5a771e7fd2ae92}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8 $\ast$ {\bfseries m\_\-buff}\label{classRLE__Data_ada13bdaeecf99ee384cfccde53168ab3}
+
+\item 
+int {\bfseries m\_\-len}\label{classRLE__Data_adaba46dc32f08db8897ea57a0c26a907}
+
+\item 
+bool {\bfseries m\_\-use\_\-diff}\label{classRLE__Data_ad78febb8c630e251004761fe5f19a498}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+General purpose RLE implementation. Just encode or create differential data with previous 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/RLE.h\item 
+src/RLE.cpp\end{DoxyCompactItemize}

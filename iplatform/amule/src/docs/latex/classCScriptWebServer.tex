@@ -1,0 +1,59 @@
+\section{CScriptWebServer Class Reference}
+\label{classCScriptWebServer}\index{CScriptWebServer@{CScriptWebServer}}
+Inheritance diagram for CScriptWebServer::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCScriptWebServer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CScriptWebServer} ({\bf CamulewebApp} $\ast$webApp, const wxString \&templateDir)\label{classCScriptWebServer_a3feec6d496d51066636830e0413d3db9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries ProcessURL} ({\bf ThreadData})\label{classCScriptWebServer_a9b842a7727679693a6bc05f6f4d1810e}
+
+\item 
+virtual void {\bfseries ProcessImgFileReq} ({\bf ThreadData})\label{classCScriptWebServer_ac7c9e7bd880e6d0262a17235e792baa1}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bfseries ProcessHtmlRequest} (const char $\ast$filename, long \&size)\label{classCScriptWebServer_aca95abd93ae76d9c05e647e16886c0fb}
+
+\item 
+char $\ast$ {\bfseries ProcessPhpRequest} (const char $\ast$filename, {\bf CSession} $\ast$sess, long \&size)\label{classCScriptWebServer_a1b96b9caa1d2e296c8d6edcaacdf1869}
+
+\item 
+char $\ast$ {\bfseries GetErrorPage} (const char $\ast$message, long \&size)\label{classCScriptWebServer_a402a64475860a63434695e8941f8bd03}
+
+\item 
+char $\ast$ {\bfseries Get\_\-404\_\-Page} (long \&size)\label{classCScriptWebServer_aeee089dee60950ab3a2959d228c513de}
+
+\item 
+{\bf CSession} $\ast$ {\bfseries CheckLoggedin} ({\bf ThreadData} \&)\label{classCScriptWebServer_abdf21bb79cecd59fdc5b297ab3b3c852}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxString {\bfseries m\_\-wwwroot}\label{classCScriptWebServer_a41ca3e2bed6746598de192f58cfb5bb8}
+
+\item 
+wxString {\bfseries m\_\-index}\label{classCScriptWebServer_ac322f334f96896a152176e54dfbe7242}
+
+\item 
+std::map$<$ int, {\bf CSession} $>$ {\bfseries m\_\-sessions}\label{classCScriptWebServer_a3d849089f72663935f2768f774c5bf28}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/webserver/src/WebServer.h\item 
+src/webserver/src/WebServer.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,143 @@
+\section{src/StatTree.h File Reference}
+\label{StatTree_8h}\index{src/StatTree.h@{src/StatTree.h}}
+
+
+Interface to stat tree nodes.  
+{\ttfamily \#include $<$list$>$}\par
+{\ttfamily \#include $<$wx/string.h$>$}\par
+{\ttfamily \#include $<$wx/thread.h$>$}\par
+{\ttfamily \#include \char`\"{}Types.h\char`\"{}}\par
+{\ttfamily \#include $<$wx/datetime.h$>$}\par
+{\ttfamily \#include \char`\"{}GetTickCount.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CStatTreeItemBase}
+\begin{DoxyCompactList}\small\item\em Base tree item class. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemSimple}
+\begin{DoxyCompactList}\small\item\em Simple tree item. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemCounterTmpl$<$ \_\-Tp $>$}
+\begin{DoxyCompactList}\small\item\em Counter-\/type tree item template. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemHiddenCounter}
+\begin{DoxyCompactList}\small\item\em A counter, which does not display its value :P. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemUlDlCounter}
+\begin{DoxyCompactList}\small\item\em Item for the session/total upload/download counter. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemCounterMax}
+\begin{DoxyCompactList}\small\item\em Counter-\/like tree item which remembers its max value. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemPackets}
+\begin{DoxyCompactList}\small\item\em Tree item for counting packets. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemPacketTotals}
+\begin{DoxyCompactList}\small\item\em Tree item for counting totals on packet counters. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemTimer}
+\begin{DoxyCompactList}\small\item\em Tree item for timer type nodes. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemAverage}
+\begin{DoxyCompactList}\small\item\em Tree item for shared files average size. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemAverageSpeed}
+\begin{DoxyCompactList}\small\item\em Tree item for average up/down speed. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemRatio}
+\begin{DoxyCompactList}\small\item\em Tree item for displaying ratio between two counters. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemReconnects}
+\begin{DoxyCompactList}\small\item\em Special counter for reconnects. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemMaxConnLimitReached}
+\begin{DoxyCompactList}\small\item\em Special item for Max Connection Limit Reached. \item\end{DoxyCompactList}\item 
+class {\bf CStatTreeItemTotalClients}
+\begin{DoxyCompactList}\small\item\em Special item for total client count. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries VIRTUAL}~virtual\label{StatTree_8h_a6dd04ec3fff7c731cc71d6796699d902}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::list$<$ {\bf CStatTreeItemBase} $\ast$ $>$::iterator {\bfseries StatTreeItemIterator}\label{StatTree_8h_ae112039c51485b728ccaa76dd56ce273}
+
+\item 
+typedef {\bf CStatTreeItemCounterTmpl}$<$ uint64\_\-t $>$ {\bfseries CStatTreeItemCounter}\label{StatTree_8h_a1f2e8621cea9d0cf960bf9698d0b1444}
+
+\item 
+typedef {\bf CStatTreeItemCounterTmpl}$<$ uint32\_\-t $>$ {\bfseries CStatTreeItemNativeCounter}\label{StatTree_8h_a40d45bd7e650a5b28bcf72eae6da35ea}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf EStatTreeFlags} \{ \par
+{\bf stNone} =  0, 
+{\bf stSortChildren} =  1, 
+{\bf stShowPercent} =  2, 
+{\bf stHideIfZero} =  4, 
+\par
+{\bf stSortByValue} =  8, 
+{\bf stCapChildren} =  16
+ \}
+\item 
+enum {\bfseries EValueType} \{ {\bfseries vtUnknown}, 
+{\bfseries vtString}, 
+{\bfseries vtInteger}, 
+{\bfseries vtFloat}
+ \}
+\item 
+enum {\bf EDisplayMode} \{ {\bf dmDefault}, 
+{\bf dmTime}, 
+{\bf dmBytes}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries NewStatTreeItemId} ()\label{StatTree_8h_a505e10f0b561d63a9d23b4a94af9520b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface to stat tree nodes. This file defines various classes representing statistics tree nodes. 
+
+\subsection{Enumeration Type Documentation}
+\index{StatTree.h@{StatTree.h}!EDisplayMode@{EDisplayMode}}
+\index{EDisplayMode@{EDisplayMode}!StatTree.h@{StatTree.h}}
+\subsubsection[{EDisplayMode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf EDisplayMode}}\label{StatTree_8h_a52741520f9fb5da67dcd921164954c1b}
+
+
+Display modes for Simple and Counter items. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{dmDefault@{dmDefault}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!dmDefault@{dmDefault}}\item[{\em 
+dmDefault\label{StatTree_8h_a52741520f9fb5da67dcd921164954c1ba6d7fecb765fe685112884d9390323b84}
+}]Default display mode. \index{dmTime@{dmTime}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!dmTime@{dmTime}}\item[{\em 
+dmTime\label{StatTree_8h_a52741520f9fb5da67dcd921164954c1ba9149413d1595a636bb47af32707ec485}
+}]Treat integer value as time in seconds. \index{dmBytes@{dmBytes}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!dmBytes@{dmBytes}}\item[{\em 
+dmBytes\label{StatTree_8h_a52741520f9fb5da67dcd921164954c1baed64a54f2f2b52b26dd718b41c92193b}
+}]Treat integer value as bytes count. \end{description}
+\end{Desc}
+
+\index{StatTree.h@{StatTree.h}!EStatTreeFlags@{EStatTreeFlags}}
+\index{EStatTreeFlags@{EStatTreeFlags}!StatTree.h@{StatTree.h}}
+\subsubsection[{EStatTreeFlags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf EStatTreeFlags}}\label{StatTree_8h_a4c45cb65446952630a4b747aa53684c2}
+
+
+Stat tree flags. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{stNone@{stNone}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!stNone@{stNone}}\item[{\em 
+stNone\label{StatTree_8h_a4c45cb65446952630a4b747aa53684c2a03d0db7f0824b99e7f7b443fc20ea80f}
+}]Nothing. Really. \index{stSortChildren@{stSortChildren}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!stSortChildren@{stSortChildren}}\item[{\em 
+stSortChildren\label{StatTree_8h_a4c45cb65446952630a4b747aa53684c2ab76c36dc759dc5df1b6900a60cd2360f}
+}]Childrens are sorted descending by their ID. \index{stShowPercent@{stShowPercent}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!stShowPercent@{stShowPercent}}\item[{\em 
+stShowPercent\label{StatTree_8h_a4c45cb65446952630a4b747aa53684c2ac118d1459257ad8a8719c85fe278e4c1}
+}]Shows percentage compared to parent. Counters only, whose parent is also counter! (khmm...) \index{stHideIfZero@{stHideIfZero}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!stHideIfZero@{stHideIfZero}}\item[{\em 
+stHideIfZero\label{StatTree_8h_a4c45cb65446952630a4b747aa53684c2ab8a240c44ec2274acf0bc2be50667e02}
+}]Hides item (and children) if value is zero. \index{stSortByValue@{stSortByValue}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!stSortByValue@{stSortByValue}}\item[{\em 
+stSortByValue\label{StatTree_8h_a4c45cb65446952630a4b747aa53684c2a4af9a51410c2cb224c79eeb6b69d4b16}
+}]Together with stSortChildren, sorts children by their value. WARNING! This assumes that value-\/sorted children are counters! Sort-\/by-\/value works only on children with ID between 0x00000100-\/0x7fffffff. \begin{DoxyNote}{Note}
+\doxyref{CStatTreeItemBase::ReSortChildren()}{p.}{classCStatTreeItemBase_ada194dac9e0903e9ad50b4257cfd89ce} must be called to get sort order right. 
+\end{DoxyNote}
+\index{stCapChildren@{stCapChildren}!StatTree.h@{StatTree.h}}\index{StatTree.h@{StatTree.h}!stCapChildren@{stCapChildren}}\item[{\em 
+stCapChildren\label{StatTree_8h_a4c45cb65446952630a4b747aa53684c2a28edd6a48c575f1feed19a99d05670d9}
+}]Caps children list. Shows only top n children, where n is set by CStatisticsDlg::FillTree() to thePrefs::GetMaxClientVersions(). The list itself is not changed, only visibility is ignored on items outside the top n visible.
+
+On an EC request, visibility range can be set with the EC\_\-TAG\_\-STATTREE\_\-CAPPING tag. \end{description}
+\end{Desc}
+

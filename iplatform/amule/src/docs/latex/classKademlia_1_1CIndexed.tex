@@ -1,0 +1,92 @@
+\section{Kademlia::CIndexed Class Reference}
+\label{classKademlia_1_1CIndexed}\index{Kademlia::CIndexed@{Kademlia::CIndexed}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries AddKeyword} (const {\bf CUInt128} \&keyWordID, const {\bf CUInt128} \&sourceID, {\bf Kademlia::CKeyEntry} $\ast$entry, uint8\_\-t \&load)\label{classKademlia_1_1CIndexed_a0403f879023918be5218fd8a9b1aa803}
+
+\item 
+bool {\bfseries AddSources} (const {\bf CUInt128} \&keyWordID, const {\bf CUInt128} \&sourceID, {\bf Kademlia::CEntry} $\ast$entry, uint8\_\-t \&load)\label{classKademlia_1_1CIndexed_a4e8ce472633ceaf61035529ff9023e7b}
+
+\item 
+bool {\bfseries AddNotes} (const {\bf CUInt128} \&keyID, const {\bf CUInt128} \&sourceID, {\bf Kademlia::CEntry} $\ast$entry, uint8\_\-t \&load)\label{classKademlia_1_1CIndexed_ad73d3a913e96f802c2fabe73f4afb8fb}
+
+\item 
+bool {\bfseries AddLoad} (const {\bf CUInt128} \&keyID, uint32\_\-t time)\label{classKademlia_1_1CIndexed_aadaff6df606cc1a345bcb9623d63e894}
+
+\item 
+size\_\-t {\bfseries GetFileKeyCount} () const   throw ()\label{classKademlia_1_1CIndexed_ae6e78ac19a2f4ab566ddf0440d4c10fb}
+
+\item 
+void {\bfseries SendValidKeywordResult} (const {\bf CUInt128} \&keyID, const {\bf SSearchTerm} $\ast$pSearchTerms, uint32\_\-t ip, uint16\_\-t port, bool oldClient, uint16\_\-t startPosition, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CIndexed_ad6ac3c2bbf537b75c4b937b7d69bf49a}
+
+\item 
+void {\bfseries SendValidSourceResult} (const {\bf CUInt128} \&keyID, uint32\_\-t ip, uint16\_\-t port, uint16\_\-t startPosition, uint64\_\-t fileSize, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CIndexed_a391c26034714db981e4acc8e392fe005}
+
+\item 
+void {\bfseries SendValidNoteResult} (const {\bf CUInt128} \&keyID, uint32\_\-t ip, uint16\_\-t port, uint64\_\-t fileSize, const {\bf CKadUDPKey} \&senderKey)\label{classKademlia_1_1CIndexed_a2de26ab5097fe3e87cdce520738883c7}
+
+\item 
+bool {\bfseries SendStoreRequest} (const {\bf CUInt128} \&keyID)\label{classKademlia_1_1CIndexed_ad4a82a5a72068304b738c67db48b0c0a}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bfseries m\_\-totalIndexSource}\label{classKademlia_1_1CIndexed_a5e6f7ef68df953d780313c4306c44dbf}
+
+\item 
+uint32\_\-t {\bfseries m\_\-totalIndexKeyword}\label{classKademlia_1_1CIndexed_aec94cae1a706d508963aa446221d90ac}
+
+\item 
+uint32\_\-t {\bfseries m\_\-totalIndexNotes}\label{classKademlia_1_1CIndexed_a582ed0ef87756aa3acc61cbb2b9e161d}
+
+\item 
+uint32\_\-t {\bfseries m\_\-totalIndexLoad}\label{classKademlia_1_1CIndexed_abefc8344fef41a0b5a0310d2c753bc30}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries ReadFile} ()\label{classKademlia_1_1CIndexed_abdd8a3ef2c62246fa6cd8d68cdbd4ce1}
+
+\item 
+void {\bfseries Clean} ()\label{classKademlia_1_1CIndexed_ae7847c464d3214a9d567c9c78000a4b0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+time\_\-t {\bfseries m\_\-lastClean}\label{classKademlia_1_1CIndexed_ae842865bec5fd5757449e232276eec9f}
+
+\item 
+KeyHashMap {\bfseries m\_\-Keyword\_\-map}\label{classKademlia_1_1CIndexed_a64713929ee2f9b8241651abdfee9f32f}
+
+\item 
+SrcHashMap {\bfseries m\_\-Sources\_\-map}\label{classKademlia_1_1CIndexed_a7e5d33ad0081d18b40ac454cb55fe208}
+
+\item 
+SrcHashMap {\bfseries m\_\-Notes\_\-map}\label{classKademlia_1_1CIndexed_a39733d2ce004812db7a57977f7f07af1}
+
+\item 
+LoadMap {\bfseries m\_\-Load\_\-map}\label{classKademlia_1_1CIndexed_a778511ecb1b73e9d6d83c478ab812a29}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static wxString {\bfseries m\_\-sfilename}\label{classKademlia_1_1CIndexed_ab8fb38ee5f4eaf7032c7b3874a78ad86}
+
+\item 
+static wxString {\bfseries m\_\-kfilename}\label{classKademlia_1_1CIndexed_a0b26c69dee43abe7e9f5ee7b11abb327}
+
+\item 
+static wxString {\bfseries m\_\-loadfilename}\label{classKademlia_1_1CIndexed_a4469a2e99f37be195f575a6e64cfee9e}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/kademlia/kademlia/Indexed.h\item 
+src/kademlia/kademlia/Indexed.cpp\end{DoxyCompactItemize}

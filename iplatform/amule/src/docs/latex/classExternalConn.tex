@@ -1,0 +1,53 @@
+\section{ExternalConn Class Reference}
+\label{classExternalConn}\index{ExternalConn@{ExternalConn}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries ExternalConn} ({\bf amuleIPV4Address} addr, wxString $\ast$msg)\label{classExternalConn_a82b246b3b48c853236747b53ea63899e}
+
+\item 
+void {\bfseries AddSocket} ({\bf CECServerSocket} $\ast$s)\label{classExternalConn_aa7e902e89229c9e4e44c30509758b5a8}
+
+\item 
+void {\bfseries RemoveSocket} ({\bf CECServerSocket} $\ast$s)\label{classExternalConn_a421037c69cf98fe849ddb0e60e3d951d}
+
+\item 
+void {\bfseries KillAllSockets} ()\label{classExternalConn_a81cc841337eb562f906244151cf12c16}
+
+\item 
+void {\bfseries ResetAllLogs} ()\label{classExternalConn_a775e4f286d82b554c775b92c6ff0718b}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wxSocketServer $\ast$ {\bfseries m\_\-ECServer}\label{classExternalConn_a65c7a864ee74b09a7f2590c3e400682a}
+
+\item 
+{\bf ECNotifier} $\ast$ {\bfseries m\_\-ec\_\-notifier}\label{classExternalConn_a0b7ebe8e5735f2412d1dd19b0e274fa8}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::set$<$ {\bf CECServerSocket} $\ast$ $>$ {\bfseries SocketSet}\label{classExternalConn_a148605a865540e391c73d59b93866f77}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries OnServerEvent} (wxSocketEvent \&event)\label{classExternalConn_a232a60e38f703be5f0664108cb80ee33}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SocketSet {\bfseries socket\_\-list}\label{classExternalConn_a2f6c014c4bda197cbe2e598bb732ef5f}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/ExternalConn.h\item 
+src/ExternalConn.cpp\end{DoxyCompactItemize}

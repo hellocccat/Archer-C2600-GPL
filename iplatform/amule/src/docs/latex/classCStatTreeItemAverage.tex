@@ -1,0 +1,98 @@
+\section{CStatTreeItemAverage Class Reference}
+\label{classCStatTreeItemAverage}\index{CStatTreeItemAverage@{CStatTreeItemAverage}}
+
+
+Tree item for shared files average size.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemAverage::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCStatTreeItemAverage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemAverage} (const wxString \&label, const {\bf CStatTreeItemCounter} $\ast$dividend, const {\bf CStatTreeItemCounter} $\ast$divisor, enum {\bf EDisplayMode} displaymode)
+\item 
+virtual wxString {\bf GetDisplayString} () const 
+\item 
+virtual bool {\bf IsVisible} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$tag) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf CStatTreeItemCounter} $\ast$ {\bf m\_\-dividend}\label{classCStatTreeItemAverage_a90f60355d1489159fa738e06242a52f6}
+
+\item 
+const {\bf CStatTreeItemCounter} $\ast$ {\bf m\_\-divisor}\label{classCStatTreeItemAverage_a9310304e25eb679c912f4f81fab191c0}
+
+\item 
+enum {\bf EDisplayMode} {\bf m\_\-displaymode}\label{classCStatTreeItemAverage_aa0e6ca2a72c960d8f412746a3e556fd2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tree item for shared files average size. Average is counted as dividend / divisor, if divisor is non-\/zero. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemAverage@{CStatTreeItemAverage}!CStatTreeItemAverage@{CStatTreeItemAverage}}
+\index{CStatTreeItemAverage@{CStatTreeItemAverage}!CStatTreeItemAverage@{CStatTreeItemAverage}}
+\subsubsection[{CStatTreeItemAverage}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemAverage::CStatTreeItemAverage (const wxString \& {\em label}, \/  const {\bf CStatTreeItemCounter} $\ast$ {\em dividend}, \/  const {\bf CStatTreeItemCounter} $\ast$ {\em divisor}, \/  enum {\bf EDisplayMode} {\em displaymode})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemAverage_afbb357d8d75e731d1d34a5caf9795b63}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::CStatTreeItemBase}{p.}{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dividend}]What to divide. \item[{\em divisor}]Divide by what. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemAverage@{CStatTreeItemAverage}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemAverage@{CStatTreeItemAverage}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}void CStatTreeItemAverage::AddECValues ({\bf CECTag} $\ast$ {\em tag}) const\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCStatTreeItemAverage_aa47d060060cb4f303a2f5bd008d3fa24}
+
+
+Add values to EC tag being generated. 
+\begin{DoxyParams}{Parameters}
+\item[{\em tag}]The tag to which values should be added.\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::AddECValues}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}.
+
+References CECTag::AddTag(), dmBytes, dmTime, m\_\-displaymode, and m\_\-divisor.\index{CStatTreeItemAverage@{CStatTreeItemAverage}!GetDisplayString@{GetDisplayString}}
+\index{GetDisplayString@{GetDisplayString}!CStatTreeItemAverage@{CStatTreeItemAverage}}
+\subsubsection[{GetDisplayString}]{\setlength{\rightskip}{0pt plus 5cm}wxString CStatTreeItemAverage::GetDisplayString () const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemAverage_a8cc2d623c05fc56a44758ea3ffe456cd}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::GetDisplayString()}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}.
+
+References dmBytes, dmTime, m\_\-displaymode, m\_\-dividend, m\_\-divisor, and CStatTreeItemBase::m\_\-label.\index{CStatTreeItemAverage@{CStatTreeItemAverage}!IsVisible@{IsVisible}}
+\index{IsVisible@{IsVisible}!CStatTreeItemAverage@{CStatTreeItemAverage}}
+\subsubsection[{IsVisible}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool CStatTreeItemAverage::IsVisible () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCStatTreeItemAverage_a5d1e307b5d83ade86751377874acbcb5}
+\begin{DoxySeeAlso}{See also}
+\doxyref{CStatTreeItemBase::IsVisible()}{p.}{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from {\bf CStatTreeItemBase} \doxyref{}{p.}{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038}.
+
+References m\_\-divisor.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

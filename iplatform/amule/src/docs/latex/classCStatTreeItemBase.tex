@@ -1,0 +1,214 @@
+\section{CStatTreeItemBase Class Reference}
+\label{classCStatTreeItemBase}\index{CStatTreeItemBase@{CStatTreeItemBase}}
+
+
+Base tree item class.  
+
+
+{\ttfamily \#include $<$StatTree.h$>$}Inheritance diagram for CStatTreeItemBase::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12cm]{classCStatTreeItemBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CStatTreeItemBase} (const wxString \&label, unsigned flags=stNone)
+\item 
+VIRTUAL {\bf $\sim$CStatTreeItemBase} ()\label{classCStatTreeItemBase_ab023df6cdccfde1c2a52f39891ed0fbf}
+
+\item 
+{\bf CStatTreeItemBase} $\ast$ {\bf AddChild} ({\bf CStatTreeItemBase} $\ast$child, uint32\_\-t id=0, bool skipOneLevel=false)
+\item 
+bool {\bf HasChildren} ()
+\item 
+bool {\bf HasVisibleChildren} ()
+\item 
+bool {\bf HasChildWithId} (uint32\_\-t id)
+\item 
+{\bf CStatTreeItemBase} $\ast$ {\bf GetChildById} (uint32\_\-t id)
+\item 
+StatTreeItemIterator {\bf GetFirstVisibleChild} (uint32\_\-t max\_\-children)
+\item 
+void {\bf GetNextVisibleChild} (StatTreeItemIterator \&it)\label{classCStatTreeItemBase_a4bdd03f7579a3223b4688892b1e825a6}
+
+\item 
+bool {\bf IsAtEndOfList} (StatTreeItemIterator \&it)\label{classCStatTreeItemBase_a83b3bbf03d7527d2d80eeac09b5684ab}
+
+\item 
+void {\bf ReSortChildren} ()\label{classCStatTreeItemBase_ada194dac9e0903e9ad50b4257cfd89ce}
+
+\item 
+virtual wxString {\bf GetDisplayString} () const \label{classCStatTreeItemBase_a400271010c4a407b5acf89b2eeebab91}
+
+\item 
+wxMutex \& {\bf GetLock} ()
+\item 
+uint32\_\-t {\bf GetUniqueId} () const \label{classCStatTreeItemBase_a0aec55f8dce4249754c834329bdf15bf}
+
+\item 
+VIRTUAL bool {\bf IsVisible} () const \label{classCStatTreeItemBase_a19b227512f866d38d970e79ec3f2b038}
+
+\item 
+virtual {\bf CECTag} $\ast$ {\bf CreateECTag} (uint32\_\-t max\_\-children)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf AddECValues} ({\bf CECTag} $\ast$) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const wxString {\bf m\_\-label}\label{classCStatTreeItemBase_aff9b65c237054a79b8287e9797b39f3d}
+
+\item 
+{\bf CStatTreeItemBase} $\ast$ {\bf m\_\-parent}\label{classCStatTreeItemBase_a9b5c11fee0a40959e788ce718b8e5bbd}
+
+\item 
+unsigned {\bf m\_\-flags}\label{classCStatTreeItemBase_a381d5d5b8a388e5a5e494b2353d38039}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf ValueSort} (const {\bf CStatTreeItemBase} $\ast$a, const {\bf CStatTreeItemBase} $\ast$b)\label{classCStatTreeItemBase_a01f4a7e74bfa83fdcef47125ab3ef874}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\_\-t {\bf m\_\-id}\label{classCStatTreeItemBase_ad6462cfd4611742f72eb8e44f3f5616c}
+
+\item 
+uint32\_\-t {\bf m\_\-visible\_\-counter}\label{classCStatTreeItemBase_ad78b1acf303a36a1e55f5c6d1c23873f}
+
+\item 
+uint32\_\-t {\bf m\_\-uniqueid}\label{classCStatTreeItemBase_a4a03e36c5a0a943585ba20fbef29bd0f}
+
+\item 
+std::list$<$ {\bf CStatTreeItemBase} $\ast$ $>$ {\bf m\_\-children}\label{classCStatTreeItemBase_ac0d3fc55808e4fd60d98a25cff18f4cf}
+
+\item 
+wxMutex {\bf m\_\-lock}\label{classCStatTreeItemBase_a2729c0f4c99576536fd6732175ada1dc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base tree item class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CStatTreeItemBase@{CStatTreeItemBase}!CStatTreeItemBase@{CStatTreeItemBase}}
+\index{CStatTreeItemBase@{CStatTreeItemBase}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{CStatTreeItemBase}]{\setlength{\rightskip}{0pt plus 5cm}CStatTreeItemBase::CStatTreeItemBase (const wxString \& {\em label}, \/  unsigned {\em flags} = {\ttfamily stNone})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemBase_ad51711e2b4e55d505989a6d775afeaae}
+
+
+Creates an item with a constant label. 
+\begin{DoxyParams}{Parameters}
+\item[{\em label}]Visible text for the item. \item[{\em flags}]Flags to use. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CStatTreeItemBase@{CStatTreeItemBase}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{AddChild}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CStatTreeItemBase} $\ast$ CStatTreeItemBase::AddChild ({\bf CStatTreeItemBase} $\ast$ {\em child}, \/  uint32\_\-t {\em id} = {\ttfamily 0}, \/  bool {\em skipOneLevel} = {\ttfamily false})}\label{classCStatTreeItemBase_a4cf48eff9305226c04063678acdf6471}
+
+
+Adds a new child node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em child}]child to add. \item[{\em id}]an optional ID for the new item. \item[{\em skipOneLevel}]activates a trick to let the code work for aMule OSInfo and Version trees.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly added item. 
+\end{DoxyReturn}
+
+
+References m\_\-children, m\_\-flags, m\_\-id, m\_\-lock, m\_\-parent, and stSortChildren.\index{CStatTreeItemBase@{CStatTreeItemBase}!AddECValues@{AddECValues}}
+\index{AddECValues@{AddECValues}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{AddECValues}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CStatTreeItemBase::AddECValues ({\bf CECTag} $\ast$) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCStatTreeItemBase_a6dba68fdd622bfd6235a7b88e297e4dd}
+
+
+Add values to the EC tag being generated. Should have a real implementation in children which have some value. The given parameter is the tag to which values should be added. 
+
+Reimplemented in {\bf CStatTreeItemRateCounter} \doxyref{}{p.}{classCStatTreeItemRateCounter_a164cd0444b1968089a2becd5dbebf556}, {\bf CStatTreeItemPeakConnections} \doxyref{}{p.}{classCStatTreeItemPeakConnections_a75ed9da4893b62502ae931322b08eded}, {\bf CStatTreeItemSimple} \doxyref{}{p.}{classCStatTreeItemSimple_a017fb550f1f38a07abd27d408dc61864}, {\bf CStatTreeItemCounterTmpl$<$ \_\-Tp $>$} \doxyref{}{p.}{classCStatTreeItemCounterTmpl_a66b6cef53bb90774ef812524342484d7}, {\bf CStatTreeItemHiddenCounter} \doxyref{}{p.}{classCStatTreeItemHiddenCounter_a808edea2371f62a0d979636e4c39161a}, {\bf CStatTreeItemUlDlCounter} \doxyref{}{p.}{classCStatTreeItemUlDlCounter_a3cfabe67d20d78e5f02486d5d21427dd}, {\bf CStatTreeItemCounterMax} \doxyref{}{p.}{classCStatTreeItemCounterMax_ae671b0c7b2238b10d1df8ed3a1e130fc}, {\bf CStatTreeItemPackets} \doxyref{}{p.}{classCStatTreeItemPackets_ada8cfd5a315e28216febc6df48d09a65}, {\bf CStatTreeItemPacketTotals} \doxyref{}{p.}{classCStatTreeItemPacketTotals_aaaba27b6c2e8c52940404b9a260d2b99}, {\bf CStatTreeItemTimer} \doxyref{}{p.}{classCStatTreeItemTimer_a1ec6bb8e981e70323e90d5cf2acc276d}, {\bf CStatTreeItemAverage} \doxyref{}{p.}{classCStatTreeItemAverage_aa47d060060cb4f303a2f5bd008d3fa24}, {\bf CStatTreeItemAverageSpeed} \doxyref{}{p.}{classCStatTreeItemAverageSpeed_ab00cc8dba0ce4cd0006fb504a5c8c516}, {\bf CStatTreeItemRatio} \doxyref{}{p.}{classCStatTreeItemRatio_aafc3ca216a1a2c15b6440f5e90332a44}, {\bf CStatTreeItemReconnects} \doxyref{}{p.}{classCStatTreeItemReconnects_ad95e7e632bcbbe3a36b961494fa1aec6}, {\bf CStatTreeItemMaxConnLimitReached} \doxyref{}{p.}{classCStatTreeItemMaxConnLimitReached_a93d9120fc6446c012ab28d7c4e255b9d}, {\bf CStatTreeItemTotalClients} \doxyref{}{p.}{classCStatTreeItemTotalClients_aec507698f1a9bd14fce48d0a19379e2f}, {\bf CStatTreeItemCounterTmpl$<$ uint32\_\-t $>$} \doxyref{}{p.}{classCStatTreeItemCounterTmpl_a66b6cef53bb90774ef812524342484d7}, and {\bf CStatTreeItemCounterTmpl$<$ uint64\_\-t $>$} \doxyref{}{p.}{classCStatTreeItemCounterTmpl_a66b6cef53bb90774ef812524342484d7}.
+
+Referenced by CreateECTag().\index{CStatTreeItemBase@{CStatTreeItemBase}!CreateECTag@{CreateECTag}}
+\index{CreateECTag@{CreateECTag}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{CreateECTag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CECTag} $\ast$ CStatTreeItemBase::CreateECTag (uint32\_\-t {\em max\_\-children})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCStatTreeItemBase_a06c4f914823a4705abafe58d8af9ccea}
+
+
+Create an EC tag from this node (and children). 
+\begin{DoxyParams}{Parameters}
+\item[{\em max\_\-children}]The maximum number of children to show, when the stCapChildren flag is set. Otherwise it has no effect. (0 = unlimited)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A EC tag containing this node and all its children. 
+\end{DoxyReturn}
+
+
+References AddECValues(), CECTag::AddTag(), IsVisible(), m\_\-children, m\_\-flags, m\_\-label, m\_\-lock, m\_\-uniqueid, m\_\-visible\_\-counter, and stCapChildren.\index{CStatTreeItemBase@{CStatTreeItemBase}!GetChildById@{GetChildById}}
+\index{GetChildById@{GetChildById}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{GetChildById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CStatTreeItemBase} $\ast$ CStatTreeItemBase::GetChildById (uint32\_\-t {\em id})}\label{classCStatTreeItemBase_a83beca9065c9ca9ad92ac7a51cb4c9eb}
+
+
+Access a specific child. \begin{DoxyReturn}{Returns}
+the child with the given ID, or NULL if not found. 
+\end{DoxyReturn}
+
+
+References m\_\-children, and m\_\-lock.\index{CStatTreeItemBase@{CStatTreeItemBase}!GetFirstVisibleChild@{GetFirstVisibleChild}}
+\index{GetFirstVisibleChild@{GetFirstVisibleChild}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{GetFirstVisibleChild}]{\setlength{\rightskip}{0pt plus 5cm}StatTreeItemIterator CStatTreeItemBase::GetFirstVisibleChild (uint32\_\-t {\em max\_\-children})}\label{classCStatTreeItemBase_a9d479bf0c9b25a7ae41f9dacc2b6119c}
+
+
+Get the first visible child. 
+\begin{DoxyParams}{Parameters}
+\item[{\em max\_\-children}]The maximum number of children to show, when the stCapChildren flag is set. Otherwise it has no effect. (0 = unlimited)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator, that should be passed to \doxyref{GetNextVisibleChild()}{p.}{classCStatTreeItemBase_a4bdd03f7579a3223b4688892b1e825a6} and \doxyref{IsAtEndOfList()}{p.}{classCStatTreeItemBase_a83b3bbf03d7527d2d80eeac09b5684ab}. 
+\end{DoxyReturn}
+
+
+References m\_\-children, and m\_\-visible\_\-counter.\index{CStatTreeItemBase@{CStatTreeItemBase}!GetLock@{GetLock}}
+\index{GetLock@{GetLock}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{GetLock}]{\setlength{\rightskip}{0pt plus 5cm}wxMutex\& CStatTreeItemBase::GetLock ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemBase_a1ed98f3a21ee4bb2a7d68e4339012854}
+
+
+Returns the mutex used to lock the child list of this node. This function is used by \doxyref{CStatisticsDlg}{p.}{classCStatisticsDlg} to be able to lock the core tree while updating the GUI tree. 
+
+References m\_\-lock.\index{CStatTreeItemBase@{CStatTreeItemBase}!HasChildren@{HasChildren}}
+\index{HasChildren@{HasChildren}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{HasChildren}]{\setlength{\rightskip}{0pt plus 5cm}bool CStatTreeItemBase::HasChildren ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCStatTreeItemBase_a43d0b34ad0e01cce1aae85a818dd9c66}
+
+
+Check for children. \begin{DoxyReturn}{Returns}
+true if this node has children, false otherwise. 
+\end{DoxyReturn}
+
+
+References m\_\-children, and m\_\-lock.\index{CStatTreeItemBase@{CStatTreeItemBase}!HasChildWithId@{HasChildWithId}}
+\index{HasChildWithId@{HasChildWithId}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{HasChildWithId}]{\setlength{\rightskip}{0pt plus 5cm}bool CStatTreeItemBase::HasChildWithId (uint32\_\-t {\em id})}\label{classCStatTreeItemBase_a2113f971bcd0cbcc05e1dca4ac325aed}
+
+
+Check for a given child. \begin{DoxyReturn}{Returns}
+true if this node has a child with the given ID. 
+\end{DoxyReturn}
+
+
+References m\_\-children, and m\_\-lock.\index{CStatTreeItemBase@{CStatTreeItemBase}!HasVisibleChildren@{HasVisibleChildren}}
+\index{HasVisibleChildren@{HasVisibleChildren}!CStatTreeItemBase@{CStatTreeItemBase}}
+\subsubsection[{HasVisibleChildren}]{\setlength{\rightskip}{0pt plus 5cm}bool CStatTreeItemBase::HasVisibleChildren ()}\label{classCStatTreeItemBase_a0fb3bd9662b47ee86bc91c9a08f812b8}
+
+
+Check for visible children. \begin{DoxyReturn}{Returns}
+true if this node has children and at least one of them is visible. 
+\end{DoxyReturn}
+
+
+References m\_\-children, and m\_\-lock.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/{\bf StatTree.h}\item 
+src/StatTree.cpp\end{DoxyCompactItemize}

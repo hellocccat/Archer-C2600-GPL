@@ -1,0 +1,9 @@
+#!/bin/sh
+
+. /lib/functions.sh
+
+[ "$INTERFACE" != "wan" ] && exit 0
+[ "$ACTION" != "ifup" ] && exit 0
+
+/etc/init.d/qca-nss-ecm reload
+exit 0

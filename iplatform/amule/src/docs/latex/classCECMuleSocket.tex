@@ -1,0 +1,70 @@
+\section{CECMuleSocket Class Reference}
+\label{classCECMuleSocket}\index{CECMuleSocket@{CECMuleSocket}}
+
+
+Socket handler for External Communications (EC), wx implementation.  
+
+
+{\ttfamily \#include $<$ECMuleSocket.h$>$}Inheritance diagram for CECMuleSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCECMuleSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CECMuleSocket} (bool use\_\-events)\label{classCECMuleSocket_ae38ee36620f4ef6a82b59af2141205d3}
+
+\item 
+bool {\bfseries ConnectSocket} (wxIPV4address \&address)\label{classCECMuleSocket_af887246814c7531d8c2f4e50a6604b3b}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries InternalConnect} (uint32\_\-t ip, uint16\_\-t port, bool wait)\label{classCECMuleSocket_a713a9f83270ba31a3ea93d24ba5fee88}
+
+\item 
+int {\bfseries InternalGetLastError} ()\label{classCECMuleSocket_aff3592b4a82fc4ff8e7eab153134a86f}
+
+\item 
+size\_\-t {\bfseries InternalLastCount} ()\label{classCECMuleSocket_a3997763b1a32c982eb6460407644d6dd}
+
+\item 
+bool {\bfseries InternalWaitOnConnect} (long secs=-\/1, long msecs=0)\label{classCECMuleSocket_ab3d3ca0005297ead207893d9aa114837}
+
+\item 
+bool {\bfseries InternalWaitForWrite} (long secs=-\/1, long msecs=0)\label{classCECMuleSocket_aa9a45ee38cb49871d641adeea3aad118}
+
+\item 
+bool {\bfseries InternalWaitForRead} (long secs=-\/1, long msecs=0)\label{classCECMuleSocket_a4ae1388b468eb19d5703171024e5c772}
+
+\item 
+bool {\bfseries InternalError} ()\label{classCECMuleSocket_a9ae3511632be6b9dd7fba4ea0eea1253}
+
+\item 
+void {\bfseries InternalClose} ()\label{classCECMuleSocket_a0d2d47fc5b8a4ae23080a7c4d0e80172}
+
+\item 
+void {\bfseries InternalRead} (void $\ast$ptr, size\_\-t len)\label{classCECMuleSocket_a7a7bab4e9c412528d736e153a23ddb2b}
+
+\item 
+void {\bfseries InternalWrite} (const void $\ast$ptr, size\_\-t len)\label{classCECMuleSocket_a56ab9b9eade83e661bb3603f2f27b93b}
+
+\item 
+bool {\bfseries InternalIsConnected} ()\label{classCECMuleSocket_aba7c02f6846661bd66b2162419dc4168}
+
+\item 
+void {\bfseries InternalDestroy} ()\label{classCECMuleSocket_a93a460185fcb5d0ece80f0fd4911b152}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Socket handler for External Communications (EC), wx implementation. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/libs/ec/cpp/ECMuleSocket.h\item 
+src/libs/ec/cpp/ECMuleSocket.cpp\end{DoxyCompactItemize}

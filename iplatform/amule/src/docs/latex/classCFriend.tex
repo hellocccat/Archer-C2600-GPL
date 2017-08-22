@@ -1,0 +1,101 @@
+\section{CFriend Class Reference}
+\label{classCFriend}\index{CFriend@{CFriend}}
+Inheritance diagram for CFriend::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCFriend}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CFriend} ({\bf CClientRef} client)\label{classCFriend_a39831b9fa5c2e30eb3891fe2a9173b5d}
+
+\item 
+{\bfseries CFriend} (const {\bf CMD4Hash} \&userhash, uint32 tm\_\-dwLastSeen, uint32 tm\_\-dwLastUsedIP, uint32 tm\_\-nLastUsedPort, uint32 tm\_\-dwLastChatted, const wxString \&tm\_\-strName)\label{classCFriend_a3bd2ed2e1bcc4bc62528f73e3e0bc824}
+
+\item 
+{\bfseries CFriend} (uint32 ecid)\label{classCFriend_a4e0b2a93303f3b50f6c24ad121b4b3cc}
+
+\item 
+void {\bfseries SetUserHash} (const {\bf CMD4Hash} \&userhash)\label{classCFriend_a040bb882be4e2a5fc45dfc26011c7465}
+
+\item 
+bool {\bfseries HasHash} () const \label{classCFriend_a57377762c02e9579081fadfe29056088}
+
+\item 
+const {\bf CMD4Hash} \& {\bfseries GetUserHash} () const \label{classCFriend_a83eeaf8e7f34fcd9df43724d7e6d1f04}
+
+\item 
+void {\bfseries SetName} (const wxString \&name)\label{classCFriend_a0ac06bae1e1b9b7e6494773ab0daa92a}
+
+\item 
+void {\bfseries LinkClient} ({\bf CClientRef} client)\label{classCFriend_a9d4b07b9bc5c5e6002f806753f8778f7}
+
+\item 
+const {\bf CClientRef} \& {\bfseries GetLinkedClient} () const \label{classCFriend_afd77bf62a25ca5f44225debcb6b14e7e}
+
+\item 
+void {\bfseries UnLinkClient} (bool notify=true)\label{classCFriend_a7cbe8dde4e210c81837697c8fe0ce248}
+
+\item 
+bool {\bfseries HasFriendSlot} ()\label{classCFriend_a39a088867dbe6184699158cf04a021c6}
+
+\item 
+const wxString \& {\bfseries GetName} () const \label{classCFriend_a031df755abe82fb0c97eed8069cb6235}
+
+\item 
+uint16 {\bfseries GetPort} () const \label{classCFriend_a1715c38ff18e020073bc3aa9e2076e4a}
+
+\item 
+uint32 {\bfseries GetIP} () const \label{classCFriend_a1c72942563d8736307f50622ea0927d2}
+
+\item 
+void {\bfseries LoadFromFile} ({\bf CFileDataIO} $\ast$file)\label{classCFriend_a120df3aba1cb8eba304c5be09f9bccec}
+
+\item 
+void {\bfseries WriteToFile} ({\bf CFileDataIO} $\ast$file)\label{classCFriend_aed9e36ebcb387c965741e33ec91a30b3}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Init} ()\label{classCFriend_aff3a816ecb3bf71f58d8a358fe4c6f3e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CClientRef} {\bfseries m\_\-LinkedClient}\label{classCFriend_a778fa59bf923ce964272162f108c0623}
+
+\item 
+{\bf CMD4Hash} {\bfseries m\_\-UserHash}\label{classCFriend_a19731e99fd98e8fc0bb8cfa14727df96}
+
+\item 
+uint32 {\bfseries m\_\-dwLastUsedIP}\label{classCFriend_aa17852a9662ece66ff6dcb3e769cbaec}
+
+\item 
+uint16 {\bfseries m\_\-nLastUsedPort}\label{classCFriend_a89ac1fc7a4f1261a59c98343c7c5eed5}
+
+\item 
+wxString {\bfseries m\_\-strName}\label{classCFriend_ac879b31ff5d2a7cd4d9b493ef3017151}
+
+\item 
+uint32 {\bfseries m\_\-dwLastSeen}\label{classCFriend_a388c6c3983fdd7f4c573696f5d13b2a8}
+
+\item 
+uint32 {\bfseries m\_\-dwLastChatted}\label{classCFriend_a971b9f6b719fc9caab0d7a71de97e205}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CFriendListRem}\label{classCFriend_a9af1fcd206f7b0d725482ede402c4500}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Friend.h\item 
+src/Friend.cpp\end{DoxyCompactItemize}
